@@ -33,3 +33,10 @@
 - The checksum ignores the line ends, because git on Windows can change them on checkout.
 - Smoke test: `Qwen/Qwen3-0.6B`, `float32`, CPU, 2 test tasks. The command ends and writes the three result files. Each task takes approximately 35 s. The model refuses both tasks, so the score is 0. The smoke test checks only the code path.
 - uv was not installed on the local machine. Thus the tests ran with `.venv/Scripts/python.exe -m pytest`, with the same packages.
+
+### Archive of `e1-base-system`
+
+- Archive the OpenSpec change `e1-base-system`. The change is now in `openspec/changes/archive/2026-11-01-e1-base-system/`.
+- Add six main specs in `openspec/specs/`: `agent-loop`, `environment`, `environment-tools`, `evaluation`, `task-set` and `task-verifier`. They have the requirements of the delta specs of the change.
+- `openspec validate --specs --strict` passes for all six specs.
+- 227 tests pass and 6 tests skip (`.venv/Scripts/python.exe -m pytest`).
