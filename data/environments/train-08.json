@@ -1,0 +1,653 @@
+{
+  "name": "train-08",
+  "project": "LOG",
+  "persons": [
+    {
+      "id": "u1",
+      "name": "Anna Wiśniewska"
+    },
+    {
+      "id": "u2",
+      "name": "Agnieszka Kowalska"
+    },
+    {
+      "id": "u3",
+      "name": "Magdalena Krawczyk"
+    },
+    {
+      "id": "u4",
+      "name": "Krzysztof Nowak"
+    },
+    {
+      "id": "u5",
+      "name": "Marek Mazur"
+    },
+    {
+      "id": "u6",
+      "name": "Tomasz Dąbrowski"
+    }
+  ],
+  "sprints": [
+    {
+      "id": "s1",
+      "name": "Sprint 1",
+      "state": "closed"
+    },
+    {
+      "id": "s2",
+      "name": "Sprint 2",
+      "state": "active"
+    },
+    {
+      "id": "s3",
+      "name": "Sprint 3",
+      "state": "future"
+    },
+    {
+      "id": "s4",
+      "name": "Sprint 4",
+      "state": "future"
+    }
+  ],
+  "issues": [
+    {
+      "key": "LOG-1",
+      "title": "Brak tłumaczeń rejestracji konta",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u6",
+      "labels": [
+        "api",
+        "security"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        },
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "LOG-2",
+      "title": "Eksport wyszukiwarki do CSV",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "database"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "LOG-3",
+      "title": "Dodanie testów historii zamówień",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "critical",
+      "assignee": "u6",
+      "labels": [
+        "api",
+        "database"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "LOG-4",
+      "title": "Wersja mobilna historii zamówień",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": "u3",
+      "labels": [
+        "ui"
+      ],
+      "sprint": "s3",
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        },
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "LOG-5",
+      "title": "Wersja mobilna wyszukiwarki",
+      "description": "Prośba od klienta.",
+      "type": "story",
+      "status": "done",
+      "priority": "high",
+      "assignee": null,
+      "labels": [
+        "database"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "LOG-6",
+      "title": "Optymalizacja zapytań kalendarza",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "done",
+      "priority": "high",
+      "assignee": "u2",
+      "labels": [
+        "database",
+        "security"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "LOG-7",
+      "title": "Błąd walidacji ustawień konta",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "critical",
+      "assignee": "u6",
+      "labels": [
+        "database"
+      ],
+      "sprint": "s4",
+      "comments": []
+    },
+    {
+      "key": "LOG-8",
+      "title": "Niepoprawne wyświetlanie koszyka",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "bug",
+      "status": "done",
+      "priority": "critical",
+      "assignee": "u3",
+      "labels": [],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "LOG-9",
+      "title": "Wolne ładowanie strony głównej",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u3",
+      "labels": [
+        "security"
+      ],
+      "sprint": "s3",
+      "comments": []
+    },
+    {
+      "key": "LOG-10",
+      "title": "Dodanie testów wyszukiwarki",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "task",
+      "status": "done",
+      "priority": "low",
+      "assignee": "u4",
+      "labels": [
+        "backend"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "LOG-11",
+      "title": "Migracja raportu sprzedaży do nowej wersji",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "done",
+      "priority": "low",
+      "assignee": null,
+      "labels": [],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "LOG-12",
+      "title": "Wersja mobilna strony głównej",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": "u6",
+      "labels": [
+        "database",
+        "frontend"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "LOG-13",
+      "title": "Wersja mobilna panelu administratora",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u3",
+      "labels": [
+        "backend",
+        "database"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        }
+      ]
+    },
+    {
+      "key": "LOG-14",
+      "title": "Awaria historii zamówień po wdrożeniu",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "done",
+      "priority": "low",
+      "assignee": "u2",
+      "labels": [
+        "docs"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "LOG-15",
+      "title": "Optymalizacja zapytań wyszukiwarki",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "task",
+      "status": "in_progress",
+      "priority": "low",
+      "assignee": "u4",
+      "labels": [
+        "ui"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "LOG-16",
+      "title": "Uproszczenie formularza logowania",
+      "description": "Prośba od klienta.",
+      "type": "story",
+      "status": "done",
+      "priority": "low",
+      "assignee": null,
+      "labels": [
+        "database"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "LOG-17",
+      "title": "Wolne ładowanie raportu sprzedaży",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u5",
+      "labels": [
+        "security"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "LOG-18",
+      "title": "Optymalizacja zapytań listy zamówień",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "in_progress",
+      "priority": "low",
+      "assignee": null,
+      "labels": [
+        "database",
+        "frontend"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "LOG-19",
+      "title": "Refaktoryzacja katalogu produktów",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u3",
+      "labels": [],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "LOG-20",
+      "title": "Niepoprawne wyświetlanie modułu płatności",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "bug",
+      "status": "done",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "database",
+        "docs"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "LOG-21",
+      "title": "Niepoprawne wyświetlanie profilu użytkownika",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "critical",
+      "assignee": "u3",
+      "labels": [
+        "security"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "LOG-22",
+      "title": "Brak tłumaczeń raportu sprzedaży",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "done",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "api",
+        "ui"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "LOG-23",
+      "title": "Migracja panelu administratora do nowej wersji",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "done",
+      "priority": "low",
+      "assignee": null,
+      "labels": [
+        "api",
+        "performance"
+      ],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        },
+        {
+          "text": "Zależy od zmian w API."
+        }
+      ]
+    },
+    {
+      "key": "LOG-24",
+      "title": "Wolne ładowanie powiadomień",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "done",
+      "priority": "high",
+      "assignee": "u2",
+      "labels": [
+        "backend",
+        "database"
+      ],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "LOG-25",
+      "title": "Awaria raportu sprzedaży po wdrożeniu",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u4",
+      "labels": [
+        "backend",
+        "ui"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "LOG-26",
+      "title": "Dodanie testów strony głównej",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": null,
+      "labels": [
+        "backend",
+        "ui"
+      ],
+      "sprint": "s4",
+      "comments": []
+    },
+    {
+      "key": "LOG-27",
+      "title": "Optymalizacja zapytań ustawień konta",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u6",
+      "labels": [
+        "backend"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "LOG-28",
+      "title": "Aktualizacja dokumentacji panelu administratora",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "task",
+      "status": "done",
+      "priority": "medium",
+      "assignee": "u4",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "LOG-29",
+      "title": "Brak tłumaczeń kalendarza",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "bug",
+      "status": "done",
+      "priority": "medium",
+      "assignee": "u3",
+      "labels": [],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        },
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "LOG-30",
+      "title": "Wersja mobilna powiadomień",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u5",
+      "labels": [
+        "frontend",
+        "ui"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "LOG-31",
+      "title": "Dodanie testów koszyka",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "done",
+      "priority": "high",
+      "assignee": "u4",
+      "labels": [
+        "performance"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "LOG-32",
+      "title": "Migracja wyszukiwarki do nowej wersji",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u2",
+      "labels": [
+        "database",
+        "ui"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "LOG-33",
+      "title": "Optymalizacja zapytań profilu użytkownika",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": "u6",
+      "labels": [
+        "security"
+      ],
+      "sprint": "s3",
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "LOG-34",
+      "title": "Optymalizacja zapytań historii zamówień",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "api",
+        "backend"
+      ],
+      "sprint": "s3",
+      "comments": [
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "LOG-35",
+      "title": "Migracja rejestracji konta do nowej wersji",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u1",
+      "labels": [
+        "backend",
+        "ui"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "LOG-36",
+      "title": "Migracja strony głównej do nowej wersji",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u3",
+      "labels": [
+        "frontend",
+        "ui"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        }
+      ]
+    },
+    {
+      "key": "LOG-37",
+      "title": "Migracja katalogu produktów do nowej wersji",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": "u3",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": null,
+      "comments": []
+    }
+  ]
+}

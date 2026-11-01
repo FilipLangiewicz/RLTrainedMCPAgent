@@ -1,0 +1,552 @@
+{
+  "name": "train-10",
+  "project": "CHAT",
+  "persons": [
+    {
+      "id": "u1",
+      "name": "Krzysztof Kowalski"
+    },
+    {
+      "id": "u2",
+      "name": "Ewa Mazur"
+    },
+    {
+      "id": "u3",
+      "name": "Magdalena Kamińska"
+    },
+    {
+      "id": "u4",
+      "name": "Joanna Zielińska"
+    },
+    {
+      "id": "u5",
+      "name": "Piotr Dąbrowski"
+    },
+    {
+      "id": "u6",
+      "name": "Tomasz Kowalczyk"
+    }
+  ],
+  "sprints": [
+    {
+      "id": "s1",
+      "name": "Sprint 1",
+      "state": "closed"
+    },
+    {
+      "id": "s2",
+      "name": "Sprint 2",
+      "state": "active"
+    },
+    {
+      "id": "s3",
+      "name": "Sprint 3",
+      "state": "future"
+    },
+    {
+      "id": "s4",
+      "name": "Sprint 4",
+      "state": "future"
+    }
+  ],
+  "issues": [
+    {
+      "key": "CHAT-1",
+      "title": "Migracja formularza logowania do nowej wersji",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "done",
+      "priority": "low",
+      "assignee": "u1",
+      "labels": [
+        "database"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "CHAT-2",
+      "title": "Uproszczenie listy zamówień",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u3",
+      "labels": [],
+      "sprint": "s3",
+      "comments": []
+    },
+    {
+      "key": "CHAT-3",
+      "title": "Dodanie testów formularza logowania",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": "u5",
+      "labels": [],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "CHAT-4",
+      "title": "Awaria historii zamówień po wdrożeniu",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "done",
+      "priority": "high",
+      "assignee": "u3",
+      "labels": [
+        "performance"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "CHAT-5",
+      "title": "Brak tłumaczeń profilu użytkownika",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "frontend"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "CHAT-6",
+      "title": "Uproszczenie katalogu produktów",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "story",
+      "status": "in_progress",
+      "priority": "high",
+      "assignee": "u4",
+      "labels": [
+        "frontend",
+        "performance"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "CHAT-7",
+      "title": "Brak tłumaczeń wyszukiwarki",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "database",
+        "security"
+      ],
+      "sprint": "s4",
+      "comments": []
+    },
+    {
+      "key": "CHAT-8",
+      "title": "Błąd walidacji powiadomień",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "done",
+      "priority": "medium",
+      "assignee": "u2",
+      "labels": [
+        "backend"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "CHAT-9",
+      "title": "Migracja ustawień konta do nowej wersji",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": "u2",
+      "labels": [
+        "performance"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "CHAT-10",
+      "title": "Aktualizacja dokumentacji historii zamówień",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "done",
+      "priority": "high",
+      "assignee": "u1",
+      "labels": [
+        "security"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "CHAT-11",
+      "title": "Migracja modułu płatności do nowej wersji",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u4",
+      "labels": [
+        "backend",
+        "database"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "CHAT-12",
+      "title": "Nowy widok kalendarza",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "story",
+      "status": "done",
+      "priority": "medium",
+      "assignee": "u3",
+      "labels": [
+        "ui"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "CHAT-13",
+      "title": "Błąd walidacji katalogu produktów",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u4",
+      "labels": [],
+      "sprint": "s4",
+      "comments": []
+    },
+    {
+      "key": "CHAT-14",
+      "title": "Brak tłumaczeń strony głównej",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "critical",
+      "assignee": "u5",
+      "labels": [],
+      "sprint": "s4",
+      "comments": []
+    },
+    {
+      "key": "CHAT-15",
+      "title": "Brak tłumaczeń raportu sprzedaży",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "done",
+      "priority": "critical",
+      "assignee": "u3",
+      "labels": [
+        "api",
+        "docs"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "CHAT-16",
+      "title": "Dodanie testów ustawień konta",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "done",
+      "priority": "low",
+      "assignee": "u1",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "CHAT-17",
+      "title": "Błąd walidacji ustawień konta",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u5",
+      "labels": [
+        "backend",
+        "performance"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Sprawdzę to jutro."
+        },
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "CHAT-18",
+      "title": "Awaria listy zamówień po wdrożeniu",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "critical",
+      "assignee": "u5",
+      "labels": [
+        "docs",
+        "frontend"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "CHAT-19",
+      "title": "Aktualizacja dokumentacji panelu administratora",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "critical",
+      "assignee": "u1",
+      "labels": [
+        "api"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "CHAT-20",
+      "title": "Niepoprawne wyświetlanie modułu płatności",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "done",
+      "priority": "critical",
+      "assignee": "u5",
+      "labels": [],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "CHAT-21",
+      "title": "Wersja mobilna historii zamówień",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "story",
+      "status": "in_progress",
+      "priority": "high",
+      "assignee": null,
+      "labels": [],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        },
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "CHAT-22",
+      "title": "Uproszczenie ustawień konta",
+      "description": "Prośba od klienta.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u5",
+      "labels": [
+        "database"
+      ],
+      "sprint": "s3",
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "CHAT-23",
+      "title": "Niepoprawne wyświetlanie katalogu produktów",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "critical",
+      "assignee": "u6",
+      "labels": [
+        "backend"
+      ],
+      "sprint": "s4",
+      "comments": []
+    },
+    {
+      "key": "CHAT-24",
+      "title": "Wolne ładowanie rejestracji konta",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u2",
+      "labels": [
+        "backend",
+        "frontend"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "CHAT-25",
+      "title": "Migracja kalendarza do nowej wersji",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u1",
+      "labels": [],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "CHAT-26",
+      "title": "Błąd walidacji wyszukiwarki",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "done",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "frontend"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "CHAT-27",
+      "title": "Błąd walidacji koszyka",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u2",
+      "labels": [],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "CHAT-28",
+      "title": "Eksport profilu użytkownika do CSV",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "story",
+      "status": "done",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "database"
+      ],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "CHAT-29",
+      "title": "Eksport formularza logowania do CSV",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "story",
+      "status": "done",
+      "priority": "medium",
+      "assignee": "u3",
+      "labels": [
+        "api"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "CHAT-30",
+      "title": "Wolne ładowanie listy zamówień",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "done",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "api",
+        "performance"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "CHAT-31",
+      "title": "Uproszczenie historii zamówień",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "story",
+      "status": "done",
+      "priority": "high",
+      "assignee": null,
+      "labels": [
+        "backend"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "CHAT-32",
+      "title": "Wersja mobilna kalendarza",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": null,
+      "labels": [],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Sprawdzę to jutro."
+        },
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "CHAT-33",
+      "title": "Awaria formularza logowania po wdrożeniu",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u5",
+      "labels": [
+        "database",
+        "ui"
+      ],
+      "sprint": null,
+      "comments": []
+    }
+  ]
+}

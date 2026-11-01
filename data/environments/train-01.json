@@ -1,0 +1,552 @@
+{
+  "name": "train-01",
+  "project": "ERP",
+  "persons": [
+    {
+      "id": "u1",
+      "name": "Tomasz Kamiński"
+    },
+    {
+      "id": "u2",
+      "name": "Jakub Kowalski"
+    },
+    {
+      "id": "u3",
+      "name": "Paweł Dąbrowski"
+    },
+    {
+      "id": "u4",
+      "name": "Zofia Zielińska"
+    },
+    {
+      "id": "u5",
+      "name": "Magdalena Wiśniewska"
+    },
+    {
+      "id": "u6",
+      "name": "Piotr Zieliński"
+    }
+  ],
+  "sprints": [
+    {
+      "id": "s1",
+      "name": "Sprint 1",
+      "state": "closed"
+    },
+    {
+      "id": "s2",
+      "name": "Sprint 2",
+      "state": "active"
+    },
+    {
+      "id": "s3",
+      "name": "Sprint 3",
+      "state": "future"
+    },
+    {
+      "id": "s4",
+      "name": "Sprint 4",
+      "state": "future"
+    }
+  ],
+  "issues": [
+    {
+      "key": "ERP-1",
+      "title": "Wersja mobilna powiadomień",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "story",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": "u4",
+      "labels": [
+        "security"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "ERP-2",
+      "title": "Brak tłumaczeń modułu płatności",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "critical",
+      "assignee": "u3",
+      "labels": [
+        "backend",
+        "ui"
+      ],
+      "sprint": "s4",
+      "comments": []
+    },
+    {
+      "key": "ERP-3",
+      "title": "Migracja ustawień konta do nowej wersji",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u5",
+      "labels": [
+        "backend"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "ERP-4",
+      "title": "Awaria powiadomień po wdrożeniu",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "done",
+      "priority": "high",
+      "assignee": null,
+      "labels": [
+        "performance"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "ERP-5",
+      "title": "Optymalizacja zapytań panelu administratora",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "done",
+      "priority": "medium",
+      "assignee": "u5",
+      "labels": [
+        "performance"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "ERP-6",
+      "title": "Migracja wyszukiwarki do nowej wersji",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "task",
+      "status": "done",
+      "priority": "low",
+      "assignee": null,
+      "labels": [
+        "docs"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "ERP-7",
+      "title": "Optymalizacja zapytań raportu sprzedaży",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "task",
+      "status": "done",
+      "priority": "critical",
+      "assignee": "u5",
+      "labels": [
+        "api"
+      ],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "ERP-8",
+      "title": "Refaktoryzacja historii zamówień",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u4",
+      "labels": [],
+      "sprint": "s3",
+      "comments": []
+    },
+    {
+      "key": "ERP-9",
+      "title": "Wolne ładowanie raportu sprzedaży",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "done",
+      "priority": "medium",
+      "assignee": "u3",
+      "labels": [
+        "ui"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "ERP-10",
+      "title": "Aktualizacja dokumentacji wyszukiwarki",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": null,
+      "labels": [
+        "backend"
+      ],
+      "sprint": "s4",
+      "comments": []
+    },
+    {
+      "key": "ERP-11",
+      "title": "Aktualizacja dokumentacji koszyka",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "done",
+      "priority": "high",
+      "assignee": "u5",
+      "labels": [
+        "docs"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "ERP-12",
+      "title": "Migracja listy zamówień do nowej wersji",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u4",
+      "labels": [
+        "performance"
+      ],
+      "sprint": "s4",
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "ERP-13",
+      "title": "Awaria profilu użytkownika po wdrożeniu",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u4",
+      "labels": [
+        "docs",
+        "security"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "ERP-14",
+      "title": "Wolne ładowanie katalogu produktów",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "in_progress",
+      "priority": "high",
+      "assignee": "u3",
+      "labels": [
+        "backend",
+        "ui"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "ERP-15",
+      "title": "Awaria wyszukiwarki po wdrożeniu",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "done",
+      "priority": "high",
+      "assignee": null,
+      "labels": [
+        "security",
+        "ui"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "ERP-16",
+      "title": "Brak tłumaczeń ustawień konta",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "done",
+      "priority": "critical",
+      "assignee": "u1",
+      "labels": [
+        "api",
+        "docs"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "ERP-17",
+      "title": "Optymalizacja zapytań kalendarza",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "done",
+      "priority": "high",
+      "assignee": "u5",
+      "labels": [
+        "database"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "ERP-18",
+      "title": "Uproszczenie formularza logowania",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": null,
+      "labels": [
+        "performance"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "ERP-19",
+      "title": "Aktualizacja dokumentacji kalendarza",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": "u1",
+      "labels": [
+        "backend"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "ERP-20",
+      "title": "Wolne ładowanie profilu użytkownika",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "done",
+      "priority": "high",
+      "assignee": "u3",
+      "labels": [
+        "backend",
+        "ui"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "ERP-21",
+      "title": "Optymalizacja zapytań profilu użytkownika",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": null,
+      "labels": [
+        "ui"
+      ],
+      "sprint": "s3",
+      "comments": [
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "ERP-22",
+      "title": "Aktualizacja dokumentacji rejestracji konta",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "in_progress",
+      "priority": "critical",
+      "assignee": "u2",
+      "labels": [
+        "database"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        },
+        {
+          "text": "Zależy od zmian w API."
+        }
+      ]
+    },
+    {
+      "key": "ERP-23",
+      "title": "Refaktoryzacja strony głównej",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u5",
+      "labels": [
+        "performance",
+        "security"
+      ],
+      "sprint": "s4",
+      "comments": []
+    },
+    {
+      "key": "ERP-24",
+      "title": "Brak tłumaczeń kalendarza",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "critical",
+      "assignee": "u5",
+      "labels": [
+        "performance",
+        "ui"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "ERP-25",
+      "title": "Aktualizacja dokumentacji strony głównej",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u6",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": "s4",
+      "comments": []
+    },
+    {
+      "key": "ERP-26",
+      "title": "Niepoprawne wyświetlanie listy zamówień",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "bug",
+      "status": "done",
+      "priority": "critical",
+      "assignee": "u3",
+      "labels": [
+        "performance",
+        "ui"
+      ],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "ERP-27",
+      "title": "Nowy widok kalendarza",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "story",
+      "status": "done",
+      "priority": "low",
+      "assignee": null,
+      "labels": [],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "ERP-28",
+      "title": "Dodanie testów kalendarza",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u4",
+      "labels": [],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        },
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "ERP-29",
+      "title": "Optymalizacja zapytań wyszukiwarki",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u1",
+      "labels": [
+        "api",
+        "docs"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "ERP-30",
+      "title": "Eksport modułu płatności do CSV",
+      "description": "Prośba od klienta.",
+      "type": "story",
+      "status": "done",
+      "priority": "high",
+      "assignee": "u4",
+      "labels": [
+        "api"
+      ],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Omówione na daily."
+        },
+        {
+          "text": "Zależy od zmian w API."
+        }
+      ]
+    },
+    {
+      "key": "ERP-31",
+      "title": "Refaktoryzacja formularza logowania",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u6",
+      "labels": [
+        "ui"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        },
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    }
+  ]
+}

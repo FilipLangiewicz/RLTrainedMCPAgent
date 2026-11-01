@@ -1,0 +1,609 @@
+{
+  "name": "train-15",
+  "project": "CAR",
+  "persons": [
+    {
+      "id": "u1",
+      "name": "Marek Kowalczyk"
+    },
+    {
+      "id": "u2",
+      "name": "Marta Mazur"
+    },
+    {
+      "id": "u3",
+      "name": "Piotr Wiśniewski"
+    },
+    {
+      "id": "u4",
+      "name": "Anna Wiśniewska"
+    },
+    {
+      "id": "u5",
+      "name": "Łukasz Krawczyk"
+    },
+    {
+      "id": "u6",
+      "name": "Ewa Lewandowska"
+    }
+  ],
+  "sprints": [
+    {
+      "id": "s1",
+      "name": "Sprint 1",
+      "state": "closed"
+    },
+    {
+      "id": "s2",
+      "name": "Sprint 2",
+      "state": "active"
+    },
+    {
+      "id": "s3",
+      "name": "Sprint 3",
+      "state": "future"
+    },
+    {
+      "id": "s4",
+      "name": "Sprint 4",
+      "state": "future"
+    }
+  ],
+  "issues": [
+    {
+      "key": "CAR-1",
+      "title": "Migracja kalendarza do nowej wersji",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "done",
+      "priority": "medium",
+      "assignee": "u4",
+      "labels": [
+        "backend",
+        "database"
+      ],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "CAR-2",
+      "title": "Niepoprawne wyświetlanie koszyka",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "frontend",
+        "performance"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "CAR-3",
+      "title": "Błąd walidacji historii zamówień",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u4",
+      "labels": [
+        "database",
+        "security"
+      ],
+      "sprint": "s4",
+      "comments": []
+    },
+    {
+      "key": "CAR-4",
+      "title": "Dodanie testów listy zamówień",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": "u1",
+      "labels": [
+        "performance",
+        "ui"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "CAR-5",
+      "title": "Optymalizacja zapytań modułu płatności",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [],
+      "sprint": "s3",
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        },
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "CAR-6",
+      "title": "Dodanie testów panelu administratora",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": null,
+      "labels": [
+        "api",
+        "performance"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "CAR-7",
+      "title": "Aktualizacja dokumentacji historii zamówień",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "done",
+      "priority": "low",
+      "assignee": "u3",
+      "labels": [
+        "api"
+      ],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "CAR-8",
+      "title": "Optymalizacja zapytań wyszukiwarki",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "done",
+      "priority": "medium",
+      "assignee": "u2",
+      "labels": [
+        "performance"
+      ],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "CAR-9",
+      "title": "Niepoprawne wyświetlanie panelu administratora",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "bug",
+      "status": "done",
+      "priority": "high",
+      "assignee": "u3",
+      "labels": [
+        "backend",
+        "database"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "CAR-10",
+      "title": "Uproszczenie modułu płatności",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u4",
+      "labels": [],
+      "sprint": "s4",
+      "comments": []
+    },
+    {
+      "key": "CAR-11",
+      "title": "Eksport rejestracji konta do CSV",
+      "description": "Prośba od klienta.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": null,
+      "labels": [
+        "docs"
+      ],
+      "sprint": "s4",
+      "comments": []
+    },
+    {
+      "key": "CAR-12",
+      "title": "Optymalizacja zapytań panelu administratora",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": "u4",
+      "labels": [
+        "api",
+        "backend"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "CAR-13",
+      "title": "Awaria profilu użytkownika po wdrożeniu",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "bug",
+      "status": "done",
+      "priority": "high",
+      "assignee": "u2",
+      "labels": [],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        }
+      ]
+    },
+    {
+      "key": "CAR-14",
+      "title": "Wolne ładowanie wyszukiwarki",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "critical",
+      "assignee": "u6",
+      "labels": [
+        "backend",
+        "ui"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        }
+      ]
+    },
+    {
+      "key": "CAR-15",
+      "title": "Aktualizacja dokumentacji wyszukiwarki",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u6",
+      "labels": [],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "CAR-16",
+      "title": "Wolne ładowanie rejestracji konta",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u1",
+      "labels": [
+        "database",
+        "frontend"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "CAR-17",
+      "title": "Błąd walidacji powiadomień",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "done",
+      "priority": "critical",
+      "assignee": "u5",
+      "labels": [],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "CAR-18",
+      "title": "Brak tłumaczeń rejestracji konta",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": "u6",
+      "labels": [
+        "database"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "CAR-19",
+      "title": "Optymalizacja zapytań kalendarza",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u1",
+      "labels": [
+        "api",
+        "ui"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "CAR-20",
+      "title": "Wolne ładowanie katalogu produktów",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u2",
+      "labels": [],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "CAR-21",
+      "title": "Optymalizacja zapytań historii zamówień",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "task",
+      "status": "in_progress",
+      "priority": "low",
+      "assignee": null,
+      "labels": [
+        "frontend",
+        "ui"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "CAR-22",
+      "title": "Eksport raportu sprzedaży do CSV",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "story",
+      "status": "done",
+      "priority": "critical",
+      "assignee": null,
+      "labels": [
+        "docs"
+      ],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        },
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "CAR-23",
+      "title": "Aktualizacja dokumentacji katalogu produktów",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u4",
+      "labels": [
+        "database",
+        "security"
+      ],
+      "sprint": "s4",
+      "comments": [
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "CAR-24",
+      "title": "Awaria koszyka po wdrożeniu",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u6",
+      "labels": [
+        "api",
+        "frontend"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "CAR-25",
+      "title": "Wolne ładowanie historii zamówień",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": "u6",
+      "labels": [],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "CAR-26",
+      "title": "Aktualizacja dokumentacji ustawień konta",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "task",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "performance"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "CAR-27",
+      "title": "Niepoprawne wyświetlanie listy zamówień",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "bug",
+      "status": "done",
+      "priority": "critical",
+      "assignee": "u3",
+      "labels": [
+        "database"
+      ],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "CAR-28",
+      "title": "Niepoprawne wyświetlanie strony głównej",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "done",
+      "priority": "critical",
+      "assignee": "u4",
+      "labels": [
+        "api",
+        "backend"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "CAR-29",
+      "title": "Wolne ładowanie kalendarza",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": "u1",
+      "labels": [
+        "backend",
+        "database"
+      ],
+      "sprint": "s3",
+      "comments": []
+    },
+    {
+      "key": "CAR-30",
+      "title": "Dodanie testów katalogu produktów",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "api",
+        "frontend"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        }
+      ]
+    },
+    {
+      "key": "CAR-31",
+      "title": "Dodanie testów koszyka",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u4",
+      "labels": [
+        "performance"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        },
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "CAR-32",
+      "title": "Eksport listy zamówień do CSV",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "story",
+      "status": "in_progress",
+      "priority": "low",
+      "assignee": "u2",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "CAR-33",
+      "title": "Niepoprawne wyświetlanie raportu sprzedaży",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u6",
+      "labels": [
+        "performance"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "CAR-34",
+      "title": "Awaria powiadomień po wdrożeniu",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u6",
+      "labels": [
+        "backend"
+      ],
+      "sprint": "s4",
+      "comments": []
+    }
+  ]
+}
