@@ -13,3 +13,4 @@
 - Add OpenSpec 1.14.0: the folder `openspec/` and the commands and skills of OpenSpec.
 - Add the rules for OpenSpec to `AGENTS.md`. Use it only for changes to the code of the system. Do the plan and the implementation in two chats.
 - Add the context and the rules for the artifacts to `openspec/config.yaml`.
+- Add the OpenSpec change `e1-base-system` (plan only, no code). It defines the environment, the MCP tools, the task set, the verifier, the agent loop and the evaluation for E1.
