@@ -40,3 +40,10 @@
 - Add six main specs in `openspec/specs/`: `agent-loop`, `environment`, `environment-tools`, `evaluation`, `task-set` and `task-verifier`. They have the requirements of the delta specs of the change.
 - `openspec validate --specs --strict` passes for all six specs.
 - 227 tests pass and 6 tests skip (`.venv/Scripts/python.exe -m pytest`).
+
+### Baseline job
+
+- Add the job `2026-11-01_01_baseline-v1` and its row in `jobs/JOBS.md`. It runs `Qwen/Qwen3-1.7B` with the prompt `v1` on the 200 test tasks on Kaggle (2x T4).
+- Each GPU runs one half of the tasks. Then the job merges the two halves into one `metrics.json`.
+- If one half fails, the job does not stop with an error. Thus Kaggle keeps the results of the other half.
+- Add `six` to `requirements-dev.in`. `kaggle` 2.2.5 imports `six`, but it does not declare it. Without it, the Kaggle CLI does not start. The lock for Kaggle does not change.
