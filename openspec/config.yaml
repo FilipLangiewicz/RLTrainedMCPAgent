@@ -1,0 +1,17 @@
+schema: spec-driven
+
+# The full rules of the team are in AGENTS.md. This context repeats the rules that each artifact must obey.
+context: |
+  Read AGENTS.md in the root folder before you write an artifact. Obey its rules.
+  Use OpenSpec only for changes to the code of the system: simulator, MCP tools, task format, verifier, agent loop, adapter to a real system.
+  Do not use OpenSpec for research work: experiments, variants of a model, configs of Kaggle jobs.
+  Write all artifacts in English, in Simplified Technical English (see AGENTS.md).
+  Keep names in specs independent of the domain: environment, task, tool. Do not use jira_* names.
+  Keep the design simple. Add a new file only when the design gives its name and its reason.
+
+rules:
+  proposal:
+    - State what is out of scope.
+  tasks:
+    - Give each task a size that one agent session can complete.
+    - Add a task for the tests and a task for the entry in docs/WORKLOG.md.

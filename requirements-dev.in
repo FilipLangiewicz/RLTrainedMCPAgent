@@ -1,0 +1,5 @@
+# The tools for the local machines only. Kaggle does not install them.
+kaggle>=1.7
+pytest>=8.3
+ruff>=0.8
+ipykernel>=6.29

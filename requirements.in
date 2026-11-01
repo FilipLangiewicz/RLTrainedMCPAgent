@@ -1,0 +1,20 @@
+# The direct dependencies of the code. Kaggle installs them too.
+# After a change, make the locks again (see AGENTS.md).
+
+# The CPU build of PyTorch for the local machines. Kaggle keeps its own GPU build.
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# Agent and MCP
+mcp>=1.20
+openai>=1.50
+pydantic>=2.8
+pyyaml>=6.0
+python-dotenv>=1.0
+
+# Training
+torch>=2.5
+transformers>=4.50
+peft>=0.14
+trl>=0.20
+datasets>=3.0
+accelerate>=1.2

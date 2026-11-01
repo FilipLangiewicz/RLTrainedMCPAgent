@@ -1,0 +1,36 @@
+# Python and environment
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Secrets
+.env
+kaggle.json
+
+# Local settings of tools
+.claude/settings.local.json
+
+# Data, model weights and logs
+**/jobs/runs/*/output/**/*.npy
+**/jobs/runs/*/output/**/*.npz
+**/jobs/runs/*/output/**/*.log
+*.pt
+*.zip
+*.safetensors
+*.bin
+*.gguf
+checkpoints/
+outputs/
+wandb/
+unsloth_compiled_cache/
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*:Zone.Identifier
