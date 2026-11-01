@@ -1,0 +1,11 @@
+model:
+  backend: transformers
+  name: Qwen/Qwen3-1.7B
+  dtype: float16
+  enable_thinking: false
+  max_new_tokens: 512
+agent:
+  max_steps: 15
+tasks:
+  split: test
+  limit: null
