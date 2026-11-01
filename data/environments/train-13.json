@@ -1,0 +1,567 @@
+{
+  "name": "train-13",
+  "project": "EDU",
+  "persons": [
+    {
+      "id": "u1",
+      "name": "Jakub Zieliński"
+    },
+    {
+      "id": "u2",
+      "name": "Piotr Zieliński"
+    },
+    {
+      "id": "u3",
+      "name": "Katarzyna Sikora"
+    },
+    {
+      "id": "u4",
+      "name": "Ewa Kowalska"
+    },
+    {
+      "id": "u5",
+      "name": "Magdalena Zielińska"
+    },
+    {
+      "id": "u6",
+      "name": "Agnieszka Mazur"
+    }
+  ],
+  "sprints": [
+    {
+      "id": "s1",
+      "name": "Sprint 1",
+      "state": "closed"
+    },
+    {
+      "id": "s2",
+      "name": "Sprint 2",
+      "state": "active"
+    },
+    {
+      "id": "s3",
+      "name": "Sprint 3",
+      "state": "future"
+    },
+    {
+      "id": "s4",
+      "name": "Sprint 4",
+      "state": "future"
+    }
+  ],
+  "issues": [
+    {
+      "key": "EDU-1",
+      "title": "Brak tłumaczeń formularza logowania",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "bug",
+      "status": "done",
+      "priority": "medium",
+      "assignee": "u3",
+      "labels": [
+        "performance",
+        "ui"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "EDU-2",
+      "title": "Aktualizacja dokumentacji historii zamówień",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "task",
+      "status": "done",
+      "priority": "low",
+      "assignee": null,
+      "labels": [
+        "performance"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "EDU-3",
+      "title": "Migracja koszyka do nowej wersji",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "database"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        },
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "EDU-4",
+      "title": "Awaria koszyka po wdrożeniu",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u1",
+      "labels": [
+        "docs",
+        "security"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "EDU-5",
+      "title": "Wersja mobilna strony głównej",
+      "description": "Prośba od klienta.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u3",
+      "labels": [
+        "performance"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        },
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "EDU-6",
+      "title": "Wolne ładowanie modułu płatności",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "in_progress",
+      "priority": "low",
+      "assignee": "u5",
+      "labels": [
+        "api",
+        "docs"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "EDU-7",
+      "title": "Dodanie testów historii zamówień",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": "u1",
+      "labels": [
+        "database",
+        "security"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "EDU-8",
+      "title": "Optymalizacja zapytań raportu sprzedaży",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": null,
+      "labels": [
+        "docs"
+      ],
+      "sprint": "s3",
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        },
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "EDU-9",
+      "title": "Awaria rejestracji konta po wdrożeniu",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "in_progress",
+      "priority": "high",
+      "assignee": "u5",
+      "labels": [
+        "docs",
+        "ui"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "EDU-10",
+      "title": "Brak tłumaczeń profilu użytkownika",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "done",
+      "priority": "critical",
+      "assignee": "u6",
+      "labels": [
+        "docs"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "EDU-11",
+      "title": "Optymalizacja zapytań panelu administratora",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "task",
+      "status": "in_progress",
+      "priority": "low",
+      "assignee": "u6",
+      "labels": [
+        "api",
+        "frontend"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "EDU-12",
+      "title": "Refaktoryzacja formularza logowania",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "done",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "security"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "EDU-13",
+      "title": "Migracja ustawień konta do nowej wersji",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "in_progress",
+      "priority": "high",
+      "assignee": null,
+      "labels": [
+        "docs"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Omówione na daily."
+        },
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "EDU-14",
+      "title": "Wolne ładowanie strony głównej",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u2",
+      "labels": [],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        },
+        {
+          "text": "Zależy od zmian w API."
+        }
+      ]
+    },
+    {
+      "key": "EDU-15",
+      "title": "Personalizacja listy zamówień",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "story",
+      "status": "done",
+      "priority": "high",
+      "assignee": "u4",
+      "labels": [
+        "database"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "EDU-16",
+      "title": "Optymalizacja zapytań historii zamówień",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "database"
+      ],
+      "sprint": "s4",
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "EDU-17",
+      "title": "Dodanie testów formularza logowania",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": null,
+      "labels": [
+        "frontend"
+      ],
+      "sprint": "s4",
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        },
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "EDU-18",
+      "title": "Błąd walidacji ustawień konta",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u1",
+      "labels": [
+        "security"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "EDU-19",
+      "title": "Aktualizacja dokumentacji profilu użytkownika",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "done",
+      "priority": "high",
+      "assignee": "u2",
+      "labels": [
+        "ui"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "EDU-20",
+      "title": "Aktualizacja dokumentacji rejestracji konta",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u3",
+      "labels": [
+        "backend",
+        "ui"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "EDU-21",
+      "title": "Personalizacja raportu sprzedaży",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": null,
+      "labels": [
+        "backend",
+        "database"
+      ],
+      "sprint": "s4",
+      "comments": []
+    },
+    {
+      "key": "EDU-22",
+      "title": "Dodanie testów wyszukiwarki",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "in_progress",
+      "priority": "high",
+      "assignee": null,
+      "labels": [
+        "docs",
+        "ui"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "EDU-23",
+      "title": "Dodanie testów listy zamówień",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "done",
+      "priority": "critical",
+      "assignee": null,
+      "labels": [
+        "ui"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "EDU-24",
+      "title": "Wolne ładowanie koszyka",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u5",
+      "labels": [
+        "api",
+        "backend"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "EDU-25",
+      "title": "Personalizacja powiadomień",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "story",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": "u3",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        }
+      ]
+    },
+    {
+      "key": "EDU-26",
+      "title": "Awaria raportu sprzedaży po wdrożeniu",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u6",
+      "labels": [
+        "ui"
+      ],
+      "sprint": "s3",
+      "comments": []
+    },
+    {
+      "key": "EDU-27",
+      "title": "Brak tłumaczeń koszyka",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u6",
+      "labels": [
+        "api",
+        "backend"
+      ],
+      "sprint": "s3",
+      "comments": []
+    },
+    {
+      "key": "EDU-28",
+      "title": "Awaria powiadomień po wdrożeniu",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u4",
+      "labels": [],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        }
+      ]
+    },
+    {
+      "key": "EDU-29",
+      "title": "Awaria formularza logowania po wdrożeniu",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "EDU-30",
+      "title": "Błąd walidacji historii zamówień",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "docs"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "EDU-31",
+      "title": "Dodanie testów panelu administratora",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "security"
+      ],
+      "sprint": "s4",
+      "comments": []
+    }
+  ]
+}

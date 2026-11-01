@@ -1,0 +1,641 @@
+{
+  "name": "train-19",
+  "project": "NEWS",
+  "persons": [
+    {
+      "id": "u1",
+      "name": "Anna Nowak"
+    },
+    {
+      "id": "u2",
+      "name": "Piotr Krawczyk"
+    },
+    {
+      "id": "u3",
+      "name": "Agnieszka Zielińska"
+    },
+    {
+      "id": "u4",
+      "name": "Marta Wójcik"
+    },
+    {
+      "id": "u5",
+      "name": "Katarzyna Kowalczyk"
+    },
+    {
+      "id": "u6",
+      "name": "Łukasz Kamiński"
+    }
+  ],
+  "sprints": [
+    {
+      "id": "s1",
+      "name": "Sprint 1",
+      "state": "closed"
+    },
+    {
+      "id": "s2",
+      "name": "Sprint 2",
+      "state": "active"
+    },
+    {
+      "id": "s3",
+      "name": "Sprint 3",
+      "state": "future"
+    },
+    {
+      "id": "s4",
+      "name": "Sprint 4",
+      "state": "future"
+    }
+  ],
+  "issues": [
+    {
+      "key": "NEWS-1",
+      "title": "Nowy widok modułu płatności",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u2",
+      "labels": [
+        "database",
+        "security"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "NEWS-2",
+      "title": "Migracja katalogu produktów do nowej wersji",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "done",
+      "priority": "low",
+      "assignee": "u2",
+      "labels": [
+        "security"
+      ],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "NEWS-3",
+      "title": "Błąd walidacji ustawień konta",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": "u5",
+      "labels": [],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "NEWS-4",
+      "title": "Niepoprawne wyświetlanie panelu administratora",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u4",
+      "labels": [
+        "database",
+        "frontend"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        }
+      ]
+    },
+    {
+      "key": "NEWS-5",
+      "title": "Awaria katalogu produktów po wdrożeniu",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u1",
+      "labels": [
+        "api",
+        "performance"
+      ],
+      "sprint": "s4",
+      "comments": []
+    },
+    {
+      "key": "NEWS-6",
+      "title": "Refaktoryzacja rejestracji konta",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": "u3",
+      "labels": [
+        "ui"
+      ],
+      "sprint": "s4",
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        }
+      ]
+    },
+    {
+      "key": "NEWS-7",
+      "title": "Personalizacja raportu sprzedaży",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "story",
+      "status": "done",
+      "priority": "medium",
+      "assignee": "u6",
+      "labels": [
+        "api"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "NEWS-8",
+      "title": "Wersja mobilna listy zamówień",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": null,
+      "labels": [
+        "database",
+        "docs"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "NEWS-9",
+      "title": "Wersja mobilna strony głównej",
+      "description": "Prośba od klienta.",
+      "type": "story",
+      "status": "done",
+      "priority": "low",
+      "assignee": null,
+      "labels": [],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "NEWS-10",
+      "title": "Refaktoryzacja kalendarza",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u4",
+      "labels": [
+        "performance",
+        "ui"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        }
+      ]
+    },
+    {
+      "key": "NEWS-11",
+      "title": "Dodanie testów modułu płatności",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "in_progress",
+      "priority": "high",
+      "assignee": "u1",
+      "labels": [
+        "security"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "NEWS-12",
+      "title": "Migracja strony głównej do nowej wersji",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": null,
+      "labels": [
+        "security"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        },
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "NEWS-13",
+      "title": "Refaktoryzacja profilu użytkownika",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u2",
+      "labels": [
+        "backend",
+        "performance"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "NEWS-14",
+      "title": "Wolne ładowanie raportu sprzedaży",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u2",
+      "labels": [
+        "docs",
+        "ui"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        },
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "NEWS-15",
+      "title": "Brak tłumaczeń listy zamówień",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "critical",
+      "assignee": "u1",
+      "labels": [
+        "backend"
+      ],
+      "sprint": "s3",
+      "comments": []
+    },
+    {
+      "key": "NEWS-16",
+      "title": "Brak tłumaczeń profilu użytkownika",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "critical",
+      "assignee": "u5",
+      "labels": [
+        "backend"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "NEWS-17",
+      "title": "Migracja ustawień konta do nowej wersji",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "done",
+      "priority": "medium",
+      "assignee": "u3",
+      "labels": [
+        "security"
+      ],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        },
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "NEWS-18",
+      "title": "Refaktoryzacja formularza logowania",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u4",
+      "labels": [
+        "docs"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "NEWS-19",
+      "title": "Refaktoryzacja historii zamówień",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "done",
+      "priority": "low",
+      "assignee": "u1",
+      "labels": [
+        "api",
+        "database"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "NEWS-20",
+      "title": "Aktualizacja dokumentacji wyszukiwarki",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": "u6",
+      "labels": [
+        "frontend",
+        "performance"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "NEWS-21",
+      "title": "Błąd walidacji modułu płatności",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u4",
+      "labels": [
+        "api"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "NEWS-22",
+      "title": "Brak tłumaczeń strony głównej",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": "u6",
+      "labels": [
+        "backend",
+        "performance"
+      ],
+      "sprint": "s3",
+      "comments": []
+    },
+    {
+      "key": "NEWS-23",
+      "title": "Niepoprawne wyświetlanie formularza logowania",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "bug",
+      "status": "in_progress",
+      "priority": "critical",
+      "assignee": "u5",
+      "labels": [
+        "performance"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "NEWS-24",
+      "title": "Personalizacja rejestracji konta",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "story",
+      "status": "done",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "docs"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "NEWS-25",
+      "title": "Aktualizacja dokumentacji historii zamówień",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": "u5",
+      "labels": [
+        "api"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "NEWS-26",
+      "title": "Dodanie testów strony głównej",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": "u3",
+      "labels": [
+        "database",
+        "security"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        },
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "NEWS-27",
+      "title": "Dodanie testów historii zamówień",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "done",
+      "priority": "low",
+      "assignee": "u6",
+      "labels": [
+        "backend",
+        "performance"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "NEWS-28",
+      "title": "Brak tłumaczeń historii zamówień",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u5",
+      "labels": [
+        "performance"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "NEWS-29",
+      "title": "Awaria profilu użytkownika po wdrożeniu",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "in_progress",
+      "priority": "critical",
+      "assignee": null,
+      "labels": [],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "NEWS-30",
+      "title": "Migracja rejestracji konta do nowej wersji",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u4",
+      "labels": [
+        "api"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "NEWS-31",
+      "title": "Brak tłumaczeń wyszukiwarki",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "backend"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "NEWS-32",
+      "title": "Błąd walidacji raportu sprzedaży",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "bug",
+      "status": "in_progress",
+      "priority": "high",
+      "assignee": "u4",
+      "labels": [
+        "docs"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "NEWS-33",
+      "title": "Optymalizacja zapytań koszyka",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": null,
+      "labels": [],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "NEWS-34",
+      "title": "Awaria ustawień konta po wdrożeniu",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "bug",
+      "status": "done",
+      "priority": "low",
+      "assignee": "u2",
+      "labels": [
+        "performance"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        }
+      ]
+    },
+    {
+      "key": "NEWS-35",
+      "title": "Niepoprawne wyświetlanie historii zamówień",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": null,
+      "labels": [
+        "frontend",
+        "ui"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "NEWS-36",
+      "title": "Dodanie testów raportu sprzedaży",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u2",
+      "labels": [],
+      "sprint": null,
+      "comments": []
+    }
+  ]
+}

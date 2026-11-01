@@ -1,0 +1,506 @@
+{
+  "name": "train-05",
+  "project": "BI",
+  "persons": [
+    {
+      "id": "u1",
+      "name": "Magdalena Nowak"
+    },
+    {
+      "id": "u2",
+      "name": "Anna Kowalczyk"
+    },
+    {
+      "id": "u3",
+      "name": "Jakub Kamiński"
+    },
+    {
+      "id": "u4",
+      "name": "Michał Lewandowski"
+    },
+    {
+      "id": "u5",
+      "name": "Katarzyna Kowalczyk"
+    },
+    {
+      "id": "u6",
+      "name": "Marek Kamiński"
+    }
+  ],
+  "sprints": [
+    {
+      "id": "s1",
+      "name": "Sprint 1",
+      "state": "closed"
+    },
+    {
+      "id": "s2",
+      "name": "Sprint 2",
+      "state": "active"
+    },
+    {
+      "id": "s3",
+      "name": "Sprint 3",
+      "state": "future"
+    },
+    {
+      "id": "s4",
+      "name": "Sprint 4",
+      "state": "future"
+    }
+  ],
+  "issues": [
+    {
+      "key": "BI-1",
+      "title": "Awaria powiadomień po wdrożeniu",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u1",
+      "labels": [
+        "performance"
+      ],
+      "sprint": "s4",
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "BI-2",
+      "title": "Migracja koszyka do nowej wersji",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "done",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "BI-3",
+      "title": "Wersja mobilna powiadomień",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "story",
+      "status": "in_progress",
+      "priority": "low",
+      "assignee": "u6",
+      "labels": [
+        "backend"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "BI-4",
+      "title": "Błąd walidacji kalendarza",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "performance"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "BI-5",
+      "title": "Migracja katalogu produktów do nowej wersji",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u6",
+      "labels": [
+        "docs",
+        "ui"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        }
+      ]
+    },
+    {
+      "key": "BI-6",
+      "title": "Personalizacja listy zamówień",
+      "description": "Prośba od klienta.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u4",
+      "labels": [
+        "docs",
+        "ui"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "BI-7",
+      "title": "Optymalizacja zapytań historii zamówień",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "done",
+      "priority": "critical",
+      "assignee": "u6",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "BI-8",
+      "title": "Migracja rejestracji konta do nowej wersji",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": null,
+      "labels": [
+        "database"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "BI-9",
+      "title": "Dodanie testów wyszukiwarki",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "task",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "BI-10",
+      "title": "Awaria rejestracji konta po wdrożeniu",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "bug",
+      "status": "in_progress",
+      "priority": "high",
+      "assignee": null,
+      "labels": [],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "BI-11",
+      "title": "Awaria kalendarza po wdrożeniu",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u2",
+      "labels": [],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "BI-12",
+      "title": "Aktualizacja dokumentacji profilu użytkownika",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "done",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "database",
+        "frontend"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "BI-13",
+      "title": "Eksport strony głównej do CSV",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": null,
+      "labels": [
+        "security",
+        "ui"
+      ],
+      "sprint": "s3",
+      "comments": []
+    },
+    {
+      "key": "BI-14",
+      "title": "Aktualizacja dokumentacji raportu sprzedaży",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "done",
+      "priority": "medium",
+      "assignee": "u6",
+      "labels": [
+        "backend"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "BI-15",
+      "title": "Błąd walidacji profilu użytkownika",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "critical",
+      "assignee": "u6",
+      "labels": [
+        "database"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "BI-16",
+      "title": "Niepoprawne wyświetlanie listy zamówień",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u2",
+      "labels": [
+        "api",
+        "database"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "BI-17",
+      "title": "Nowy widok rejestracji konta",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u6",
+      "labels": [],
+      "sprint": "s4",
+      "comments": []
+    },
+    {
+      "key": "BI-18",
+      "title": "Awaria listy zamówień po wdrożeniu",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "done",
+      "priority": "high",
+      "assignee": "u6",
+      "labels": [],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "BI-19",
+      "title": "Dodanie testów powiadomień",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "done",
+      "priority": "low",
+      "assignee": null,
+      "labels": [
+        "security"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "BI-20",
+      "title": "Personalizacja panelu administratora",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u2",
+      "labels": [
+        "database",
+        "security"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Omówione na daily."
+        },
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "BI-21",
+      "title": "Uproszczenie historii zamówień",
+      "description": "Prośba od klienta.",
+      "type": "story",
+      "status": "done",
+      "priority": "high",
+      "assignee": null,
+      "labels": [],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "BI-22",
+      "title": "Wersja mobilna strony głównej",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u4",
+      "labels": [
+        "backend"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "BI-23",
+      "title": "Eksport powiadomień do CSV",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "story",
+      "status": "in_progress",
+      "priority": "high",
+      "assignee": "u6",
+      "labels": [],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "BI-24",
+      "title": "Optymalizacja zapytań koszyka",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "done",
+      "priority": "medium",
+      "assignee": "u6",
+      "labels": [
+        "backend",
+        "ui"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "BI-25",
+      "title": "Optymalizacja zapytań raportu sprzedaży",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u2",
+      "labels": [
+        "performance"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Sprawdzę to jutro."
+        },
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "BI-26",
+      "title": "Wolne ładowanie powiadomień",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": null,
+      "labels": [],
+      "sprint": "s3",
+      "comments": []
+    },
+    {
+      "key": "BI-27",
+      "title": "Refaktoryzacja katalogu produktów",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "frontend"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "BI-28",
+      "title": "Optymalizacja zapytań panelu administratora",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "done",
+      "priority": "medium",
+      "assignee": "u5",
+      "labels": [
+        "api",
+        "docs"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "BI-29",
+      "title": "Niepoprawne wyświetlanie ustawień konta",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": null,
+      "labels": [
+        "performance"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "BI-30",
+      "title": "Brak tłumaczeń powiadomień",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u6",
+      "labels": [
+        "performance"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    }
+  ]
+}

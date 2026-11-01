@@ -1,0 +1,647 @@
+{
+  "name": "train-18",
+  "project": "CLUB",
+  "persons": [
+    {
+      "id": "u1",
+      "name": "Krzysztof Mazur"
+    },
+    {
+      "id": "u2",
+      "name": "Marek Nowak"
+    },
+    {
+      "id": "u3",
+      "name": "Marta Sikora"
+    },
+    {
+      "id": "u4",
+      "name": "Joanna Wójcik"
+    },
+    {
+      "id": "u5",
+      "name": "Paweł Mazur"
+    },
+    {
+      "id": "u6",
+      "name": "Ewa Kamińska"
+    }
+  ],
+  "sprints": [
+    {
+      "id": "s1",
+      "name": "Sprint 1",
+      "state": "closed"
+    },
+    {
+      "id": "s2",
+      "name": "Sprint 2",
+      "state": "active"
+    },
+    {
+      "id": "s3",
+      "name": "Sprint 3",
+      "state": "future"
+    },
+    {
+      "id": "s4",
+      "name": "Sprint 4",
+      "state": "future"
+    }
+  ],
+  "issues": [
+    {
+      "key": "CLUB-1",
+      "title": "Niepoprawne wyświetlanie strony głównej",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "done",
+      "priority": "low",
+      "assignee": "u6",
+      "labels": [
+        "ui"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "CLUB-2",
+      "title": "Personalizacja raportu sprzedaży",
+      "description": "Prośba od klienta.",
+      "type": "story",
+      "status": "in_progress",
+      "priority": "high",
+      "assignee": "u5",
+      "labels": [
+        "backend"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "CLUB-3",
+      "title": "Optymalizacja zapytań modułu płatności",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": "u3",
+      "labels": [
+        "security"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        }
+      ]
+    },
+    {
+      "key": "CLUB-4",
+      "title": "Dodanie testów koszyka",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u1",
+      "labels": [
+        "security"
+      ],
+      "sprint": "s4",
+      "comments": []
+    },
+    {
+      "key": "CLUB-5",
+      "title": "Wersja mobilna listy zamówień",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "critical",
+      "assignee": "u1",
+      "labels": [
+        "backend"
+      ],
+      "sprint": "s3",
+      "comments": [
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "CLUB-6",
+      "title": "Aktualizacja dokumentacji listy zamówień",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "done",
+      "priority": "low",
+      "assignee": "u4",
+      "labels": [],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "CLUB-7",
+      "title": "Brak tłumaczeń panelu administratora",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "done",
+      "priority": "high",
+      "assignee": null,
+      "labels": [],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "CLUB-8",
+      "title": "Optymalizacja zapytań panelu administratora",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u6",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "CLUB-9",
+      "title": "Awaria modułu płatności po wdrożeniu",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": "u6",
+      "labels": [
+        "database"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        },
+        {
+          "text": "Zależy od zmian w API."
+        }
+      ]
+    },
+    {
+      "key": "CLUB-10",
+      "title": "Brak tłumaczeń formularza logowania",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "database"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "CLUB-11",
+      "title": "Aktualizacja dokumentacji strony głównej",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u5",
+      "labels": [
+        "backend"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "CLUB-12",
+      "title": "Niepoprawne wyświetlanie kalendarza",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "done",
+      "priority": "medium",
+      "assignee": "u6",
+      "labels": [],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "CLUB-13",
+      "title": "Personalizacja panelu administratora",
+      "description": "Prośba od klienta.",
+      "type": "story",
+      "status": "done",
+      "priority": "high",
+      "assignee": "u3",
+      "labels": [],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "CLUB-14",
+      "title": "Wersja mobilna raportu sprzedaży",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "story",
+      "status": "done",
+      "priority": "high",
+      "assignee": null,
+      "labels": [
+        "security"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "CLUB-15",
+      "title": "Refaktoryzacja listy zamówień",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u3",
+      "labels": [
+        "database",
+        "ui"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "CLUB-16",
+      "title": "Uproszczenie ustawień konta",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "story",
+      "status": "in_progress",
+      "priority": "low",
+      "assignee": "u4",
+      "labels": [
+        "performance"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "CLUB-17",
+      "title": "Nowy widok katalogu produktów",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "story",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": "u4",
+      "labels": [],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "CLUB-18",
+      "title": "Awaria formularza logowania po wdrożeniu",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": "u5",
+      "labels": [],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Omówione na daily."
+        },
+        {
+          "text": "Sprawdzę to jutro."
+        }
+      ]
+    },
+    {
+      "key": "CLUB-19",
+      "title": "Dodanie testów listy zamówień",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "security"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "CLUB-20",
+      "title": "Eksport panelu administratora do CSV",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "story",
+      "status": "done",
+      "priority": "low",
+      "assignee": "u6",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "CLUB-21",
+      "title": "Brak tłumaczeń ustawień konta",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "high",
+      "assignee": "u5",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Potrzebny dostęp do środowiska testowego."
+        }
+      ]
+    },
+    {
+      "key": "CLUB-22",
+      "title": "Brak tłumaczeń historii zamówień",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "critical",
+      "assignee": "u4",
+      "labels": [],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "CLUB-23",
+      "title": "Optymalizacja zapytań rejestracji konta",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": "u5",
+      "labels": [],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "CLUB-24",
+      "title": "Uproszczenie powiadomień",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "story",
+      "status": "done",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "backend",
+        "database"
+      ],
+      "sprint": "s1",
+      "comments": []
+    },
+    {
+      "key": "CLUB-25",
+      "title": "Brak tłumaczeń kalendarza",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "bug",
+      "status": "in_progress",
+      "priority": "high",
+      "assignee": "u5",
+      "labels": [
+        "database",
+        "frontend"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "CLUB-26",
+      "title": "Wolne ładowanie powiadomień",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u4",
+      "labels": [
+        "ui"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "CLUB-27",
+      "title": "Optymalizacja zapytań listy zamówień",
+      "description": "Szczegóły są w notatkach ze spotkania.",
+      "type": "task",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": "u3",
+      "labels": [
+        "backend",
+        "performance"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "CLUB-28",
+      "title": "Nowy widok ustawień konta",
+      "description": "Prośba od klienta.",
+      "type": "story",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u5",
+      "labels": [
+        "database",
+        "docs"
+      ],
+      "sprint": null,
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        }
+      ]
+    },
+    {
+      "key": "CLUB-29",
+      "title": "Refaktoryzacja raportu sprzedaży",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": "u2",
+      "labels": [],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "CLUB-30",
+      "title": "Dodanie testów wyszukiwarki",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "security"
+      ],
+      "sprint": "s3",
+      "comments": [
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "CLUB-31",
+      "title": "Refaktoryzacja wyszukiwarki",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": null,
+      "labels": [
+        "frontend"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "CLUB-32",
+      "title": "Wolne ładowanie modułu płatności",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": "u2",
+      "labels": [
+        "database"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "CLUB-33",
+      "title": "Refaktoryzacja profilu użytkownika",
+      "description": "Prośba od klienta.",
+      "type": "task",
+      "status": "to_do",
+      "priority": "low",
+      "assignee": null,
+      "labels": [
+        "performance"
+      ],
+      "sprint": "s3",
+      "comments": []
+    },
+    {
+      "key": "CLUB-34",
+      "title": "Błąd walidacji wyszukiwarki",
+      "description": "Problem zgłosił zespół wsparcia.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "medium",
+      "assignee": "u2",
+      "labels": [],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        },
+        {
+          "text": "Omówione na daily."
+        }
+      ]
+    },
+    {
+      "key": "CLUB-35",
+      "title": "Niepoprawne wyświetlanie ustawień konta",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "in_progress",
+      "priority": "high",
+      "assignee": "u4",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": "s2",
+      "comments": []
+    },
+    {
+      "key": "CLUB-36",
+      "title": "Brak tłumaczeń strony głównej",
+      "description": "Do ustalenia zakres z właścicielem produktu.",
+      "type": "bug",
+      "status": "done",
+      "priority": "high",
+      "assignee": "u3",
+      "labels": [
+        "ui"
+      ],
+      "sprint": "s2",
+      "comments": [
+        {
+          "text": "Zależy od zmian w API."
+        },
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    },
+    {
+      "key": "CLUB-37",
+      "title": "Błąd walidacji koszyka",
+      "description": "Prośba od klienta.",
+      "type": "bug",
+      "status": "to_do",
+      "priority": "critical",
+      "assignee": "u4",
+      "labels": [
+        "backend"
+      ],
+      "sprint": null,
+      "comments": []
+    },
+    {
+      "key": "CLUB-38",
+      "title": "Dodanie testów historii zamówień",
+      "description": "Zgłoszenie z przeglądu sprintu.",
+      "type": "task",
+      "status": "done",
+      "priority": "medium",
+      "assignee": "u2",
+      "labels": [
+        "security"
+      ],
+      "sprint": "s1",
+      "comments": [
+        {
+          "text": "Mamy logi z produkcji."
+        }
+      ]
+    }
+  ]
+}
