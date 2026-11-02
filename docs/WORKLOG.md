@@ -47,3 +47,18 @@
 - Each GPU runs one half of the tasks. Then the job merges the two halves into one `metrics.json`.
 - If one half fails, the job does not stop with an error. Thus Kaggle keeps the results of the other half.
 - Add `six` to `requirements-dev.in`. `kaggle` 2.2.5 imports `six`, but it does not declare it. Without it, the Kaggle CLI does not start. The lock for Kaggle does not change.
+
+## 2026-11-02
+
+### Results of `baseline-v1`
+
+- Download the results of the job `2026-11-01_01_baseline-v1` into its `output/` folder. The job is complete (commit `ef60350`, torch 2.11.0+cu128, 2x T4, 399 s).
+- Score: 0.205 on 200 test tasks. `correct` is 0.055 and `correct_refusal` is 0.150.
+- `easy`: 0.157 (11 of 70). `multi_step`: 0.000 (0 of 100). `refusal`: 1.000 (30 of 30).
+- The model refuses 151 of 170 possible tasks (`easy` and `multi_step`) at the first step, without a tool call. It writes that it has no access to the board.
+- Thus the score of the `refusal` tasks shows only this behavior, not a correct decision.
+- The model uses tools in only 20 tasks. It never calls `list_users`.
+- In 5 tasks the model gives a first name as the assignee (for example "Michał"). The tool returns an error, and the model refuses.
+- In 1 task the model repeats the same `search_issues` call 15 times, until the step limit.
+- The correct tasks are in `create_issue` (6), `add_comment` (4) and `change_priority` (1).
+- Mean time: 3.5 s for each task. Mean tokens: 1861 input and 59 output.
