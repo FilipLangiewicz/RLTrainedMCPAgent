@@ -99,3 +99,11 @@
 - Measure the size of the schemas: 3820 tokens (Gemma 4 E2B) and 4679 tokens (Qwen3.5-2B). All 63 tools have 12979 and 15708 tokens.
 - Add to `docs/JIRA_MCP.md` the procedures for a Jira Cloud site, an API token, the start of the server and a new copy of the schemas.
 - Add `jira_get_worklog` to the selected tools. Now 14 tools are selected. The schemas have 3904 tokens (Gemma 4 E2B) and 4806 tokens (Qwen3.5-2B).
+
+### Next steps
+
+1. Make a Jira Cloud site (Free plan) and an API token (see `docs/JIRA_MCP.md`).
+2. Run the 14 tools on the site. Record their real results and error messages.
+3. Start a new OpenSpec change: the simulator with the contracts of `docs/JIRA_TOOLS.md`.
+4. Make the task set again for the new tools, and a contract test with the recorded results.
+5. Run a new baseline with the models of `docs/MODELS.md`.
