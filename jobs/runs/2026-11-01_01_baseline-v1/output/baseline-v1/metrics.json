@@ -1,0 +1,169 @@
+{
+  "n": 200,
+  "score": 0.205,
+  "correct": 0.055,
+  "correct_refusal": 0.15,
+  "by_difficulty": {
+    "easy": {
+      "n": 70,
+      "score": 0.1571,
+      "correct": 0.1571,
+      "correct_refusal": 0.0
+    },
+    "multi_step": {
+      "n": 100,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "refusal": {
+      "n": 30,
+      "score": 1.0,
+      "correct": 0.0,
+      "correct_refusal": 1.0
+    }
+  },
+  "by_category": {
+    "add_comment": {
+      "n": 10,
+      "score": 0.4,
+      "correct": 0.4,
+      "correct_refusal": 0.0
+    },
+    "add_label": {
+      "n": 10,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "assign_filtered": {
+      "n": 17,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "assign_issue": {
+      "n": 10,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "change_priority": {
+      "n": 10,
+      "score": 0.1,
+      "correct": 0.1,
+      "correct_refusal": 0.0
+    },
+    "change_status": {
+      "n": 10,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "close_person_sprint": {
+      "n": 17,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "create_in_sprint": {
+      "n": 16,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "create_issue": {
+      "n": 10,
+      "score": 0.6,
+      "correct": 0.6,
+      "correct_refusal": 0.0
+    },
+    "missing_entity": {
+      "n": 10,
+      "score": 1.0,
+      "correct": 0.0,
+      "correct_refusal": 1.0
+    },
+    "move_bugs_next_sprint": {
+      "n": 17,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "move_issue": {
+      "n": 10,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "no_tool": {
+      "n": 10,
+      "score": 1.0,
+      "correct": 0.0,
+      "correct_refusal": 1.0
+    },
+    "out_of_domain": {
+      "n": 10,
+      "score": 1.0,
+      "correct": 0.0,
+      "correct_refusal": 1.0
+    },
+    "reassign_person": {
+      "n": 17,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "start_unassigned_bugs": {
+      "n": 16,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    }
+  },
+  "mean_steps": 1.165,
+  "mean_invalid_calls": 0.0,
+  "mean_tool_errors": 0.035,
+  "mean_input_tokens": 1860.585,
+  "mean_output_tokens": 59.02,
+  "mean_time_s": 3.476,
+  "total_time_s": 695.102,
+  "errors": 0,
+  "run": {
+    "codename": "baseline-v1",
+    "config": {
+      "model": {
+        "backend": "transformers",
+        "name": "Qwen/Qwen3-1.7B",
+        "dtype": "float16",
+        "enable_thinking": false,
+        "max_new_tokens": 512
+      },
+      "agent": {
+        "max_steps": 15
+      },
+      "tasks": {
+        "split": "test",
+        "limit": null
+      }
+    },
+    "model": "Qwen/Qwen3-1.7B",
+    "model_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "prompt_version": "v1",
+    "git_commit": "ef6035047a752e2adb4d56a395044212381c21c5",
+    "python": "3.13.15",
+    "torch": "2.11.0+cu128",
+    "transformers": "5.22.1",
+    "device": "Tesla T4",
+    "date": "2026-11-01T23:11:06+00:00",
+    "wall_time_s": 398.945,
+    "shards": [
+      "0/2",
+      "1/2"
+    ],
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  }
+}
