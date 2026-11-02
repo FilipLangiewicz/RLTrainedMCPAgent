@@ -90,3 +90,11 @@
 - Move `JIRA_MCP.md` to `docs/JIRA_MCP.md`. Remove the Rovo MCP Server and the comparison with the old simulator tools.
 - Add the pinned version, the sources and an estimate of the schema size of each of the 63 Jira tools.
 - Add a proposal: 12 tools, with a maximum of 15. The main limit is the context of 8192 tokens of Bielik-1.5B.
+
+### Contracts of the selected Jira tools
+
+- Select 13 tools of `mcp-atlassian` 0.23.1. They cover search, issue creation, assignment, status, labels, comments, worklogs and sprints.
+- Each operation has one way. `docs/JIRA_TOOLS.md` gives the operations, the used arguments and the result formats.
+- Add `data/mcp_atlassian_tools.json`: the exact schemas of the 13 tools from `list_tools()` of the real server.
+- Measure the size of the schemas: 3820 tokens (Gemma 4 E2B) and 4679 tokens (Qwen3.5-2B). All 63 tools have 12979 and 15708 tokens.
+- Add to `docs/JIRA_MCP.md` the procedures for a Jira Cloud site, an API token, the start of the server and a new copy of the schemas.
