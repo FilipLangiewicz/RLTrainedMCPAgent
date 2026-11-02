@@ -123,15 +123,15 @@ The column "Tokens" gives the size of one tool schema in the prompt of `google/g
 
 ## Selected tools
 
-The project uses 13 of the 63 Jira tools. `docs/JIRA_TOOLS.md` gives their contracts. `data/mcp_atlassian_tools.json` has their exact schemas.
+The project uses 14 of the 63 Jira tools. `docs/JIRA_TOOLS.md` gives their contracts. `data/mcp_atlassian_tools.json` has their exact schemas.
 
 ```text
-jira_search,jira_get_issue,jira_search_assignable_users,jira_get_agile_boards,jira_get_sprints_from_board,jira_get_transitions,jira_create_issue,jira_update_issue,jira_transition_issue,jira_add_comment,jira_add_worklog,jira_add_issues_to_sprint,jira_move_issues_to_backlog
+jira_search,jira_get_issue,jira_search_assignable_users,jira_get_agile_boards,jira_get_sprints_from_board,jira_get_transitions,jira_get_worklog,jira_create_issue,jira_update_issue,jira_transition_issue,jira_add_comment,jira_add_worklog,jira_add_issues_to_sprint,jira_move_issues_to_backlog
 ```
 
 These facts limit the number of tools:
 
-1. **Context**: the tool schemas go into the prompt for each step. The 13 tools have 3820 tokens (Gemma 4) or 4679 tokens (Qwen3.5). Bielik-1.5B has a maximum context of 8192 tokens.
+1. **Context**: the tool schemas go into the prompt for each step. The 14 tools have 3904 tokens (Gemma 4) or 4806 tokens (Qwen3.5). Bielik-1.5B has a maximum context of 8192 tokens.
 2. **Selection of a tool**: a small model selects the wrong tool more frequently when the list is long, and when two tools do similar things.
 3. **Training data**: each tool needs tasks in the train set and in the test set.
 
@@ -167,13 +167,13 @@ Source: https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-f
 
 ## Start the server
 
-The goal is a server with only the 13 selected tools. Do these steps in the root folder of the repository:
+The goal is a server with only the 14 selected tools. Do these steps in the root folder of the repository:
 
 1. Install uv (see `AGENTS.md`).
 2. Start the server:
 
    ```bash
-   uvx mcp-atlassian==0.23.1 --env-file .env --toolsets all --enabled-tools "jira_search,jira_get_issue,jira_search_assignable_users,jira_get_agile_boards,jira_get_sprints_from_board,jira_get_transitions,jira_create_issue,jira_update_issue,jira_transition_issue,jira_add_comment,jira_add_worklog,jira_add_issues_to_sprint,jira_move_issues_to_backlog"
+   uvx mcp-atlassian==0.23.1 --env-file .env --toolsets all --enabled-tools "jira_search,jira_get_issue,jira_search_assignable_users,jira_get_agile_boards,jira_get_sprints_from_board,jira_get_transitions,jira_get_worklog,jira_create_issue,jira_update_issue,jira_transition_issue,jira_add_comment,jira_add_worklog,jira_add_issues_to_sprint,jira_move_issues_to_backlog"
    ```
 
 `uvx` runs the server in a separate environment. Thus the server does not change `.venv`. The server uses `mcp` 1.x, and `.venv` has `mcp` 2.x.
@@ -186,17 +186,17 @@ The goal is a new copy of `data/mcp_atlassian_tools.json`, for example after a c
 2. Install the server: `uv pip install --python <folder> mcp-atlassian==0.23.1`.
 3. Set `JIRA_URL`, `JIRA_USERNAME` and `JIRA_API_TOKEN` to any values, and set `TOOLSETS=all`.
 4. Connect `fastmcp.Client` to `mcp_atlassian.servers.main.main_mcp` in the same process and call `list_tools()`.
-5. Save `name`, `description`, `inputSchema` and `annotations` of the 13 selected tools in the same order.
+5. Save `name`, `description`, `inputSchema` and `annotations` of the 14 selected tools in the same order.
 
 ## How we checked the data
 
 1. Download the sdist 0.23.1 from PyPI. Compare its SHA-256 with the value from PyPI.
 2. Read `src/mcp_atlassian/servers/jira.py`, `jira/issues.py`, `servers/main.py` and `utils/toolsets.py`.
 3. Install 0.23.1 in a separate environment (`fastmcp` 3.4.11, `mcp` 1.30.0). Call `list_tools()` on the server with dummy credentials. The result has 63 Jira tools.
-4. Save the schemas of the 13 selected tools in `data/mcp_atlassian_tools.json`.
+4. Save the schemas of the 14 selected tools in `data/mcp_atlassian_tools.json`.
 5. Count the tokens of the schemas with the chat templates of `Qwen/Qwen3.5-2B` and `google/gemma-4-E2B-it`.
 
-We did not connect the server to a real Jira site. Do this test when the Jira Cloud site exists. Also record real results of the 13 tools. The simulator must copy their format.
+We did not connect the server to a real Jira site. Do this test when the Jira Cloud site exists. Also record real results of the 14 tools. The simulator must copy their format.
 
 The code shows these facts:
 

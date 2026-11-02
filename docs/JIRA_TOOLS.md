@@ -26,21 +26,22 @@ This file is a proposal. The team must agree on the final list.
 | Change the priority, the summary or the description | `jira_update_issue` | none |
 | Add a comment | `jira_add_comment` | the `comment` argument of `jira_transition_issue` |
 | Log work time | `jira_add_worklog` | none |
+| Read the logged time | `jira_get_worklog` | the argument `include=worklogs` of `jira_get_issue` |
 | Move an issue to a sprint | `jira_get_agile_boards`, `jira_get_sprints_from_board`, then `jira_add_issues_to_sprint` | the sprint custom field in `additional_fields` of `jira_update_issue` |
 | Move an issue to the backlog | `jira_move_issues_to_backlog` | none |
 
 ## Size
 
-The size is the number of tokens that the tool schemas add to the prompt. The measurement uses the chat template of each model with all 13 tools.
+The size is the number of tokens that the tool schemas add to the prompt. The measurement uses the chat template of each model with all 14 tools.
 
-| Model | 13 selected tools | All 63 Jira tools |
+| Model | 14 selected tools | All 63 Jira tools |
 |---|---|---|
-| `Qwen/Qwen3.5-2B` | 4679 | 15708 |
-| `google/gemma-4-E2B-it` | 3820 | 12979 |
+| `Qwen/Qwen3.5-2B` | 4806 | 15708 |
+| `google/gemma-4-E2B-it` | 3904 | 12979 |
 
 The Bielik tokenizer is in a gated repository on Hugging Face. The measurement for Bielik needs an account that accepted the license.
 
-## Tools (13)
+## Tools (14)
 
 The column "Used arguments" gives the arguments that the tasks use. A star (*) marks a required argument.
 
@@ -54,18 +55,19 @@ The column "Used arguments" gives the arguments that the tasks use. A star (*) m
 | 4 | `jira_get_agile_boards` | `project_key` | `[{"id", "name", "type"}, ...]` |
 | 5 | `jira_get_sprints_from_board` | `board_id`*, `state` | `[{"id", "name", "state", "start_date", "end_date", "goal"}, ...]` |
 | 6 | `jira_get_transitions` | `issue_key`* | `[{"id", "name", "to_status"}, ...]` |
+| 7 | `jira_get_worklog` | `issue_key`* | `{"worklogs": [{"id", "comment", "created", "updated", "started", "time_spent", "time_spent_seconds", "author"}, ...]}` |
 
 ### Write tools
 
 | # | Tool | Used arguments | Result |
 |---|---|---|---|
-| 7 | `jira_create_issue` | `project_key`*, `summary`*, `issue_type`*, `assignee`, `description`, `additional_fields` | `{"message", "issue": issue}` |
-| 8 | `jira_update_issue` | `issue_key`*, `fields`*, `return_fields` | `{"message": "Issue updated successfully", "issue": issue}` |
-| 9 | `jira_transition_issue` | `issue_key`*, `transition_id`* | `{"message": "Issue <key> transitioned successfully", "issue": issue}` |
-| 10 | `jira_add_comment` | `issue_key`*, `body`* | The new comment |
-| 11 | `jira_add_worklog` | `issue_key`*, `time_spent`*, `comment` | `{"message": "Worklog added successfully", "worklog": {...}}` |
-| 12 | `jira_add_issues_to_sprint` | `sprint_id`*, `issue_keys`* | `{"message": "Successfully added <n> issue(s) to sprint", ...}` |
-| 13 | `jira_move_issues_to_backlog` | `issue_keys`* | `{"message": "Successfully moved <n> issue(s) to backlog", ...}` |
+| 8 | `jira_create_issue` | `project_key`*, `summary`*, `issue_type`*, `assignee`, `description`, `additional_fields` | `{"message", "issue": issue}` |
+| 9 | `jira_update_issue` | `issue_key`*, `fields`*, `return_fields` | `{"message": "Issue updated successfully", "issue": issue}` |
+| 10 | `jira_transition_issue` | `issue_key`*, `transition_id`* | `{"message": "Issue <key> transitioned successfully", "issue": issue}` |
+| 11 | `jira_add_comment` | `issue_key`*, `body`* | The new comment |
+| 12 | `jira_add_worklog` | `issue_key`*, `time_spent`*, `comment` | `{"message": "Worklog added successfully", "worklog": {...}}` |
+| 13 | `jira_add_issues_to_sprint` | `sprint_id`*, `issue_keys`* | `{"message": "Successfully added <n> issue(s) to sprint", ...}` |
+| 14 | `jira_move_issues_to_backlog` | `issue_keys`* | `{"message": "Successfully moved <n> issue(s) to backlog", ...}` |
 
 ### Notes on the arguments
 
@@ -98,7 +100,6 @@ These tools are not in the selection. Each tool adds tokens to the prompt (the v
 
 | Tool | Tokens | Use |
 |---|---|---|
-| `jira_get_worklog` | 89 | Read the logged time of an issue. |
 | `jira_create_issue_link` and `jira_get_link_types` | 387 | Link two issues, for example "WEB-5 blokuje WEB-7". |
 | `jira_link_to_epic` | 134 | Put an issue into an epic. The simulator must have epics. |
 | `jira_delete_issue` | 85 | Delete an issue. A destructive operation. |

@@ -259,6 +259,28 @@
     }
   },
   {
+    "name": "jira_get_worklog",
+    "description": "Get worklog entries for a Jira issue.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "issue_key": {
+          "description": "Jira issue key (e.g., 'PROJ-123', 'ACV2-642')",
+          "pattern": "^[A-Z][A-Z0-9_]+-\\d+(?:-\\d+)*$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "issue_key"
+      ],
+      "type": "object"
+    },
+    "annotations": {
+      "title": "Get Worklog",
+      "readOnlyHint": true
+    }
+  },
+  {
     "name": "jira_create_issue",
     "description": "Create a new Jira issue with optional Epic link or parent for subtasks.",
     "inputSchema": {
