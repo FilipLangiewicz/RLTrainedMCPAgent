@@ -17,7 +17,7 @@ Read these files before you start a task:
 
 - Make the environment as the section "Environment" of this file tells. Use Python 3.13, not the version in the examples of `KAGGLE.md`.
 - `.venv` is in the root folder of the repository. Thus `jobs/wait.sh` finds the `kaggle` command in `../.venv`, not in `../../.venv`.
-- `run.py` clones the full repository and installs `requirements-kaggle.txt` (see the sections "Environment" and "Compute").
+- `run.py` clones the full repository from the branch of the task and installs `requirements-kaggle.txt` (see the sections "Environment" and "Compute").
 
 ## Language
 
@@ -41,7 +41,9 @@ This rule does not apply to an API model that the project uses as a reference in
 ## Git
 
 - `main` has only work that operates.
-- Do each task on a branch from `main`, for example `e1-simulator`. Merge the branch into `main` when the task is complete.
+- Do each task on a branch from `main`, for example `e1-simulator`.
+- Do not merge a branch into `main` directly. Open a pull request on GitHub when the task is complete.
+- Merge each pull request with "Squash and merge". Then `main` gets one commit for each task, and this commit shows the full change.
 - Write the subject of a commit message in the imperative, for example "Add task verifier".
 - Run the tests before each merge: `uv run --no-project python -m pytest`.
 
@@ -82,7 +84,7 @@ Do the plan and the implementation of a change in two different chats. The secon
 5. Chat 2 (implementation): start a new chat. Use `/opsx:apply <change>` to do the tasks.
 6. If the plan must change during the implementation, use `/opsx:update` to correct the artifacts first.
 7. When all tasks are complete and the tests pass, use `/opsx:archive <change>`. This step moves the change to `openspec/changes/archive/` and updates `openspec/specs/`.
-8. Merge the branch into `main`.
+8. Open a pull request and merge it into `main` with "Squash and merge".
 
 The rules for the artifacts are in `openspec/config.yaml`. Do not edit the commands and skills of OpenSpec manually. The command `openspec update` makes them again.
 
@@ -198,7 +200,9 @@ The course grades a before/after measurement on the same test set. These rules k
 - The local machines have no GPU.
 - Run short tests locally on the CPU.
 - Run long computations on Kaggle (GPU or CPU). Examples: train a model, run a full evaluation.
-- The repository is the project. Thus `run.py` clones the full repository from `main`. It does not use a sparse checkout or a project folder, as the examples in `KAGGLE.md` do.
+- The repository is the project. Thus `run.py` clones the full repository. It does not use a sparse checkout or a project folder, as the examples in `KAGGLE.md` do.
+- `run.py` clones the branch of the task (`BRANCH`), not `main`. A Kaggle job does not need a merge into `main`.
+- Push the branch before the push of the kernel. The log of the run records the commit hash.
 - On Kaggle, install only `requirements-kaggle.txt` (see "Install the packages on Kaggle").
 
 ## Text in files (Simplified Technical English)

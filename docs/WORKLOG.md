@@ -62,3 +62,8 @@
 - In 1 task the model repeats the same `search_issues` call 15 times, until the step limit.
 - The correct tasks are in `create_issue` (6), `add_comment` (4) and `change_priority` (1).
 - Mean time: 3.5 s for each task. Mean tokens: 1861 input and 59 output.
+
+### Rules for branches and Kaggle
+
+- Change `AGENTS.md`: `run.py` clones the branch of the task, not `main`. A Kaggle job does not need a merge into `main`.
+- Change `AGENTS.md`: each branch goes into `main` through a pull request with "Squash and merge". Do not merge a branch into `main` directly.
