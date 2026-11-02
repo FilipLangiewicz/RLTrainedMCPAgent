@@ -82,3 +82,11 @@
 - Add `docs/MODELS.md`. It lists six candidate models from three families: Qwen3.5 (2B, 4B), Bielik v3 (1.5B, 4.5B) and Gemma 4 (E2B, E4B).
 - For each model, the file gives the license, the release date, the links to Hugging Face and Kaggle, and an estimate of the VRAM.
 - The team removes Qwen3 from the candidates. The decision about SFT and RL for each model is open.
+
+### Decision: mcp-atlassian
+
+- The team selects `mcp-atlassian` 0.23.1 as the reference for real Jira. The simulator must give the same tools as this server.
+- The team does not use the results of `baseline-v1`. The new candidate models are in `docs/MODELS.md`.
+- Move `JIRA_MCP.md` to `docs/JIRA_MCP.md`. Remove the Rovo MCP Server and the comparison with the old simulator tools.
+- Add the pinned version, the sources and an estimate of the schema size of each of the 63 Jira tools.
+- Add a proposal: 12 tools, with a maximum of 15. The main limit is the context of 8192 tokens of Bielik-1.5B.
