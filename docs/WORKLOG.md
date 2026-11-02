@@ -72,3 +72,10 @@
 
 - Add `.claude/` to `.gitignore` and remove the commands and skills of OpenSpec from git. The local files stay.
 - Change `AGENTS.md`: each team member makes the commands and skills with `openspec init --tools claude`. This command does not change `openspec/`.
+
+### Research of the real Jira MCP servers
+
+- Add `JIRA_MCP.md`. It describes the two real MCP servers for Jira: the Atlassian Rovo MCP Server (v2, 52 Jira tools) and `mcp-atlassian` 0.23.1 (63 Jira tools).
+- It lists all Jira tools of both servers and maps the 7 simulator tools to them.
+- The simulator tools are our own design. They cover only a subset of Jira: issues, persons, sprints and comments.
+- The check of `mcp-atlassian` used its source code from PyPI. The data of the Rovo server comes from the documentation of Atlassian.
