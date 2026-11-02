@@ -79,3 +79,6 @@
 - It lists all Jira tools of both servers and maps the 7 simulator tools to them.
 - The simulator tools are our own design. They cover only a subset of Jira: issues, persons, sprints and comments.
 - The check of `mcp-atlassian` used its source code from PyPI. The data of the Rovo server comes from the documentation of Atlassian.
+- Add `docs/MODELS.md`. It lists six candidate models from three families: Qwen3.5 (2B, 4B), Bielik v3 (1.5B, 4.5B) and Gemma 4 (E2B, E4B).
+- For each model, the file gives the license, the release date, the links to Hugging Face and Kaggle, and an estimate of the VRAM.
+- The team removes Qwen3 from the candidates. The decision about SFT and RL for each model is open.
