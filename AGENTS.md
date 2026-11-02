@@ -56,7 +56,7 @@ This rule does not apply to an API model that the project uses as a reference in
 - Do not change the files in `docs/task/`. They are the original course materials.
 - Do not create `CLAUDE.md` or `CLAUDE.local.md`. If one of these files exists, Claude Code does not read `AGENTS.md`.
 - Keep personal settings of a tool out of git (see `.gitignore`).
-- Commit the commands and skills that `openspec init` makes. All team members use the same commands and skills.
+- Do not commit the folder `.claude/`. Each team member makes the commands and skills of OpenSpec locally (see "Install OpenSpec").
 
 ## OpenSpec
 
@@ -86,7 +86,7 @@ Do the plan and the implementation of a change in two different chats. The secon
 7. When all tasks are complete and the tests pass, use `/opsx:archive <change>`. This step moves the change to `openspec/changes/archive/` and updates `openspec/specs/`.
 8. Open a pull request and merge it into `main` with "Squash and merge".
 
-The rules for the artifacts are in `openspec/config.yaml`. Do not edit the commands and skills of OpenSpec manually. The command `openspec update` makes them again.
+The rules for the artifacts are in `openspec/config.yaml`. Do not edit the commands and skills of OpenSpec manually. The command `openspec init --tools claude` makes them again.
 
 ## Environment
 
@@ -139,7 +139,15 @@ All team members use the same version of the OpenSpec CLI. The skills of OpenSpe
    openspec --version
    ```
 
-To change the version of OpenSpec, change the version in step 2. Then run `openspec update` and commit the changed files.
+4. Make the commands and skills of OpenSpec for Claude Code. Do this step in the root folder of the repository:
+
+   ```bash
+   openspec init --tools claude
+   ```
+
+   This step writes the commands and skills into `.claude/`. It does not change the folder `openspec/`. Git ignores `.claude/`.
+
+To change the version of OpenSpec, change the version in step 2. Then each team member does steps 2 to 4 again.
 
 ### Install the packages on Kaggle
 

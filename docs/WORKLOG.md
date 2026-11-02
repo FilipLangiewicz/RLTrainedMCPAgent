@@ -67,3 +67,8 @@
 
 - Change `AGENTS.md`: `run.py` clones the branch of the task, not `main`. A Kaggle job does not need a merge into `main`.
 - Change `AGENTS.md`: each branch goes into `main` through a pull request with "Squash and merge". Do not merge a branch into `main` directly.
+
+### Remove `.claude/` from git
+
+- Add `.claude/` to `.gitignore` and remove the commands and skills of OpenSpec from git. The local files stay.
+- Change `AGENTS.md`: each team member makes the commands and skills with `openspec init --tools claude`. This command does not change `openspec/`.
