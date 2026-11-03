@@ -128,3 +128,11 @@
 - Two tools hide an error: `jira_create_issue` with an unknown assignee, and `jira_add_worklog` with an incorrect time.
 - Invite 6 persons with aliases of the e-mail address of the team. Their accounts are not active until a person accepts each invitation and sets the name.
 - Delete the test issues `SCRUM-5` to `SCRUM-7`.
+
+### Language of Jira
+
+- The team selects English as the Jira language of the API account. The issues, the comments and the tasks can be in Polish or in English.
+- Set the Jira language with `PUT /rest/api/3/mypreferences/locale`. Now the results and JQL use the same names (`In Progress`, `Task`, `Done`).
+- Record the results of the 14 tools again. `data/jira_recorded_results.json` now has 43 calls in English.
+- The 6 invited persons now have access to Jira. Their display names are still the e-mail aliases.
+- Delete the test issues `SCRUM-8` to `SCRUM-12`.

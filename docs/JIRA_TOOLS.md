@@ -96,31 +96,36 @@ The keys depend on the argument `fields`. If an issue has no assignee, the resul
 
 ## Behavior of real Jira
 
-On 2026-11-03 we ran all 14 tools on the Jira Cloud site. `data/jira_recorded_results.json` has 42 calls with their real results and errors. The simulator must copy this behavior.
+On 2026-11-03 we ran all 14 tools on the Jira Cloud site. `data/jira_recorded_results.json` has 43 calls with their real results and errors. The simulator must copy this behavior.
 
-### Names in two languages
+### Language of Jira
 
-Jira translates the system names into the language of the account. The account of the API token has the language `pl_PL`. The text of the users (summary, description, comments) does not change.
+The team decision: the Jira language of the API account is English (`en_US`). The issues, the comments and the tasks can be in Polish or in English.
 
-| Thing | Name in JQL and in the configuration | Name in the results of the tools |
-|---|---|---|
-| Status | `Backlog`, `In Progress`, `In review`, `Cancelled`, `Done` | `Backlog`, `W toku`, `W trakcie weryfikacji`, `Anulowano`, `Gotowe` |
-| Transition | not used in JQL | `Backlog`, `W toku`, `In review`, `Cancelled`, `Gotowe` |
-| Status category | `To Do`, `In Progress`, `Done` | `Do zrobienia`, `W toku`, `Gotowe` |
-| Issue type | `Task`, `Epic`, `Subtask` | `Zadanie`, `Epik`, `Subtask` |
-| Priority | `Highest`, `High`, `Medium`, `Low`, `Lowest` | the same |
+Jira translates the system names into the Jira language of the account. With the language `pl_PL`, the results showed `W toku` and `Zadanie`, but JQL accepted only `In Progress` and `Task`. A JQL with a translated name gave no error and returned no issues. With English, the results and JQL use the same names:
 
-JQL accepts only the names in the second column. A JQL with a translated name gives no error and returns no issues. For example, `status = "W toku"` returns an empty list, but `status = "In Progress"` returns the issues. `jira_create_issue` accepts both `Task` and `Zadanie`.
+| Thing | Names |
+|---|---|
+| Status | `Backlog`, `In Progress`, `In review`, `Cancelled`, `Done` |
+| Transition | `Backlog` (11), `In Progress` (21), `In review` (31), `Cancelled` (41), `Done` (51) |
+| Status category | `To Do`, `In Progress`, `Done` |
+| Issue type | `Task`, `Epic`, `Subtask` |
+| Priority | `Highest`, `High`, `Medium`, `Low`, `Lowest` |
+
+To set the Jira language of the account, send `PUT /rest/api/3/mypreferences/locale` with `{"locale": "en_US"}`. The profile of the Atlassian account can keep a different language.
+
+The text of the users does not change. Thus a Polish summary stays Polish.
+
+A translated name is now an error of the model. `status = "W toku"` returns an empty list without an error. `jira_create_issue` with `issue_type` `Zadanie` gives the error "Specify a valid issue type".
 
 ### Other facts
 
 - `jira_search` always returns `"total": -1`. The search API of Jira Cloud does not give the number of results.
-- A JQL without a condition (for example `ORDER BY created DESC`) gives the error "Nieograniczone zapytania JQL nie są tutaj dozwolone".
-- The error messages of Jira are in Polish. The error messages of the MCP server are in English.
+- A JQL without a condition (for example `ORDER BY created DESC`) gives the error "Unbounded JQL queries are not allowed here. Please add a search restriction to your query.".
 - `jira_create_issue` with an unknown `assignee` creates the issue without an assignee. The result shows no error.
 - `jira_add_worklog` with an incorrect `time_spent` (for example "półtorej godziny") logs `1m`. The result shows no error.
 - A new issue without a priority gets `Medium`.
-- A person with an invitation that is not accepted is not in the results of `jira_search_assignable_users`.
+- A person without access to Jira is not in the results of `jira_search_assignable_users`.
 - The server changes Markdown to the Jira format and back. The result of `jira_create_issue` and `jira_update_issue` shows the Jira wiki format (`*bold*`). `jira_get_issue` shows Markdown (`**bold**`). `jira_search` and `jira_add_comment` lose the format (bold text goes onto a separate line).
 - The dates in the results use the time zone of the computer that runs the server. On Windows with the Polish language, a date is `2026-11-02 23:55:34 Środkowoeuropejski czas stand.`. The dates of comments and worklogs have the ISO format (`2026-11-03 21:01:02.367000+01:00`).
 - The default value of `fields` in the schemas of `jira_search` and `jira_get_issue` has a different order of fields after each start of the server. The server makes it from a Python set.
