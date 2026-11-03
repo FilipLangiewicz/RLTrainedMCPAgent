@@ -155,5 +155,13 @@
 ### Not complete
 
 - The team must review the test set. Then the test set is frozen.
-- The OpenSpec change `openspec/changes/e1-jira-tasks/` is a draft. The proposal and the specs still describe the generation of the tasks. They must change: the change only reads the task files. `openspec validate` does not pass yet. `design.md` and `tasks.md` do not exist yet.
 - The train set does not exist yet.
+
+### Plan of the OpenSpec change `e1-jira-tasks`
+
+- Rewrite the proposal and the delta specs. The change does not generate tasks. It reads the task files and checks them.
+- Add `design.md`: the modules, the low-level MCP server with the exact schemas, the result formats, the errors, the JQL subset, the verifier and the contract test. It has Mermaid diagrams and tables.
+- Add `tasks.md`: 8 groups of tasks. The implementation starts in a new chat with `/opsx:apply e1-jira-tasks`.
+- `openspec validate e1-jira-tasks --strict` passes.
+- Check on the Jira Cloud site how the server finds a person. `assignee` needs the full name or the e-mail. Case and Polish letters do not matter. A first name only gives an error. Add this to `docs/JIRA_TOOLS.md`.
+- The team set the display names of the 6 invited accounts: Rudolf Igor, Katarzyna Wisniewska, John Pork, Robert Małysz, Daria Wasilewska and Barbara Liskov.

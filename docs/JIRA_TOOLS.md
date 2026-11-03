@@ -125,6 +125,8 @@ A translated name is now an error of the model. `status = "W toku"` returns an e
 - `summary ~` and `text ~` find whole words. Polish forms do not match: `summary ~ "zadania"` does not find "Zadanie 1".
 - Without `ORDER BY`, the search result starts with the highest key.
 - The status category of `Cancelled` on this site is `In Progress`. Thus `statusCategory != Done` also finds the `Cancelled` issues.
+- `assignee` in `jira_update_issue` works only with the full display name or the e-mail. The comparison ignores case and Polish letters: "rudolf igor" and "Robert Malysz" operate. A first name only ("Rudolf") gives the error "Could not find account ID for user". The server does a second search, but on Jira Cloud this search gets the error 400, because it does not give a project.
+- `jira_search_assignable_users` finds a person when a word of the display name starts with the query ("Rud" finds "Rudolf Igor").
 - A JQL without a condition (for example `ORDER BY created DESC`) gives the error "Unbounded JQL queries are not allowed here. Please add a search restriction to your query.".
 - `jira_create_issue` with an unknown `assignee` creates the issue without an assignee. The result shows no error.
 - `jira_add_worklog` with an incorrect `time_spent` (for example "półtorej godziny") logs `1m`. The result shows no error.
