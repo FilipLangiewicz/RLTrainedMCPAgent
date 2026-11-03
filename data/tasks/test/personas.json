@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Rudolf Igor",
+    "board": "test-web",
+    "role": "Product owner of the web shop",
+    "style": "Says awkward things that people do not say at work: too much private detail, strange remarks about colleagues, sudden changes of topic, odd suspicions (somebody moves his chair, an issue looks at him). The request itself is always clear."
+  },
+  {
+    "name": "Ewa Mazur",
+    "board": "test-web",
+    "role": "QA lead",
+    "style": "Precise and polite. Uses 'proszę', issue keys and exact status names. Short full sentences."
+  },
+  {
+    "name": "Daniel Brooks",
+    "board": "test-web",
+    "role": "Frontend developer from Ireland",
+    "style": "Polish with English words (bump, ticket, label). Lower case, no full stops, 'pls' and 'thx'."
+  },
+  {
+    "name": "Zofia Kaczmarek",
+    "board": "test-web",
+    "role": "Customer service lead",
+    "style": "Tells what customers say. Describes the problem in words and does not know issue keys. Long, kind sentences."
+  },
+  {
+    "name": "Marta Pawlak",
+    "board": "test-app",
+    "role": "Product manager of the mobile app",
+    "style": "Very short commands without greetings. Often names a deadline or the release."
+  },
+  {
+    "name": "Kamil Dudek",
+    "board": "test-app",
+    "role": "Android developer",
+    "style": "Casual spoken Polish: 'ogarnij', 'wrzuć', 'siema'. Lower case, sometimes no Polish letters."
+  },
+  {
+    "name": "Sophie Grant",
+    "board": "test-app",
+    "role": "iOS developer from the UK",
+    "style": "Very polite. Writes careful Polish with English technical terms. Thanks for each action."
+  },
+  {
+    "name": "Tomasz Baran",
+    "board": "test-api",
+    "role": "Backend tech lead",
+    "style": "Technical and dry. Gives the technical background of the request, then the exact action."
+  },
+  {
+    "name": "Oliver Hayes",
+    "board": "test-api",
+    "role": "Integration engineer from the UK",
+    "style": "Mixes Polish and English in one sentence. Talks about partners and endpoints."
+  },
+  {
+    "name": "Natalia Zając",
+    "board": "test-api",
+    "role": "Scrum master",
+    "style": "Talks about the sprint, the planning and the team. Friendly, uses 'zespole' and 'dziękuję'."
+  },
+  {
+    "name": "Joanna Kurek",
+    "board": "test-data",
+    "role": "Head of analytics",
+    "style": "Business context first (management, a report, a deadline). Asks for numbers."
+  },
+  {
+    "name": "Igor Kwiatkowski",
+    "board": "test-data",
+    "role": "Data engineer",
+    "style": "One short line. Minimum of words, no greetings."
+  },
+  {
+    "name": "Priya Raman",
+    "board": "test-data",
+    "role": "Data scientist from India",
+    "style": "Polite Polish with English data terms (pipeline, dashboard, dataset)."
+  },
+  {
+    "name": "Karolina Bielecka",
+    "board": "test-ops",
+    "role": "Head of infrastructure",
+    "style": "Urgent tone. Short sentences, sometimes capital letters or exclamation marks during incidents."
+  },
+  {
+    "name": "Wojciech Michalak",
+    "board": "test-ops",
+    "role": "Senior system administrator",
+    "style": "Formal, old style: 'uprzejmie proszę', 'Szanowni'. Long correct sentences."
+  },
+  {
+    "name": "Ethan Cole",
+    "board": "test-ops",
+    "role": "Site reliability engineer",
+    "style": "Mostly English jargon inside Polish sentences (on-call, alert, rollback)."
+  }
+]

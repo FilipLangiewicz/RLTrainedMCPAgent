@@ -1,0 +1,933 @@
+{
+  "name": "test-ops",
+  "site": "https://example.atlassian.net",
+  "now": "2026-11-10T10:00:00.000+0100",
+  "project": {
+    "key": "OPS",
+    "name": "JayWalk - infrastruktura"
+  },
+  "board": {
+    "id": "15",
+    "name": "OPS board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:c4f02116-4c96-53e6-a249-c875d73053a7",
+      "display_name": "Karolina Bielecka",
+      "email": "karolina.bielecka@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:e6e4c4e8-5447-5f23-abba-73425ee2ccae",
+      "display_name": "Wojciech Michalak",
+      "email": "wojciech.michalak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:efb28699-bb4b-52b3-8b99-49a1a564296e",
+      "display_name": "Ethan Cole",
+      "email": "ethan.cole@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:eee84346-58ab-518d-948c-e0a60d9fda7d",
+      "display_name": "Filip Górski",
+      "email": "filip.gorski@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:ef88e7f2-7a34-5044-98cc-b47fd3c58fb9",
+      "display_name": "Aleksandra Rutkowska",
+      "email": "aleksandra.rutkowska@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:63d89a7a-96f3-5679-926b-629e622bd89a",
+      "display_name": "Aleksandra Lewicka",
+      "email": "aleksandra.lewicka@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:d50dc3d1-0448-5be3-b1d8-a955253169f7",
+      "display_name": "Sebastian Kowal",
+      "email": "sebastian.kowal@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "81",
+      "name": "OPS Sprint 30",
+      "state": "closed",
+      "start_date": "2026-10-20T09:00:00.000Z",
+      "end_date": "2026-11-03T09:00:00.000Z",
+      "goal": "Nowy klaster"
+    },
+    {
+      "id": "82",
+      "name": "OPS Sprint 31",
+      "state": "active",
+      "start_date": "2026-11-03T09:00:00.000Z",
+      "end_date": "2026-11-17T09:00:00.000Z",
+      "goal": "Gotowość na Black Week"
+    },
+    {
+      "id": "83",
+      "name": "OPS Sprint 32",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Bezpieczeństwo i baza danych"
+    },
+    {
+      "id": "84",
+      "name": "OPS Sprint 33",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "15001",
+      "key": "OPS-1",
+      "summary": "Migracja sklepu na nowy klaster Kubernetes",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:eee84346-58ab-518d-948c-e0a60d9fda7d",
+      "reporter": "712020:e6e4c4e8-5447-5f23-abba-73425ee2ccae",
+      "labels": [
+        "kubernetes"
+      ],
+      "sprint": "81",
+      "created": "2026-09-02T22:00:00.000+0100",
+      "updated": "2026-09-05T22:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "150011",
+          "author": "712020:eee84346-58ab-518d-948c-e0a60d9fda7d",
+          "time_spent_seconds": 36000,
+          "comment": "",
+          "started": "2026-09-04T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "15002",
+      "key": "OPS-2",
+      "summary": "Alerty o dysku nie dochodzą na PagerDuty",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:efb28699-bb4b-52b3-8b99-49a1a564296e",
+      "reporter": "712020:efb28699-bb4b-52b3-8b99-49a1a564296e",
+      "labels": [
+        "monitoring",
+        "incident"
+      ],
+      "sprint": "81",
+      "created": "2026-09-04T11:00:00.000+0100",
+      "updated": "2026-09-07T11:00:00.000+0100",
+      "comments": [
+        {
+          "id": "150021",
+          "author": "712020:efb28699-bb4b-52b3-8b99-49a1a564296e",
+          "body": "Fixed the routing key, alerts are flowing again.",
+          "created": "2026-09-05T11:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "15003",
+      "key": "OPS-3",
+      "summary": "Cache zależności w pipeline CI",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Low",
+      "assignee": "712020:ef88e7f2-7a34-5044-98cc-b47fd3c58fb9",
+      "reporter": "712020:eee84346-58ab-518d-948c-e0a60d9fda7d",
+      "labels": [
+        "ci"
+      ],
+      "sprint": "81",
+      "created": "2026-09-06T00:00:00.000+0100",
+      "updated": "2026-09-09T00:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15004",
+      "key": "OPS-4",
+      "summary": "Packet loss between zones B and C",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:ef88e7f2-7a34-5044-98cc-b47fd3c58fb9",
+      "labels": [
+        "network"
+      ],
+      "sprint": "81",
+      "created": "2026-09-07T13:00:00.000+0100",
+      "updated": "2026-09-10T13:00:00.000+0100",
+      "comments": [
+        {
+          "id": "150041",
+          "author": "712020:efb28699-bb4b-52b3-8b99-49a1a564296e",
+          "body": "Provider issue, resolved on their side.",
+          "created": "2026-09-08T13:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "15005",
+      "key": "OPS-5",
+      "summary": "Autoskalowanie sklepu na Black Week",
+      "description": "Cel: 10 razy więcej ruchu niż w zeszłym roku. Test obciążeniowy 20 listopada.",
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:c4f02116-4c96-53e6-a249-c875d73053a7",
+      "reporter": "712020:63d89a7a-96f3-5679-926b-629e622bd89a",
+      "labels": [
+        "kubernetes",
+        "incident"
+      ],
+      "sprint": "82",
+      "created": "2026-09-09T02:00:00.000+0100",
+      "updated": "2026-09-12T02:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "150051",
+          "author": "712020:c4f02116-4c96-53e6-a249-c875d73053a7",
+          "time_spent_seconds": 10800,
+          "comment": "Plan pojemności",
+          "started": "2026-09-10T04:00:00.000+0100"
+        },
+        {
+          "id": "150052",
+          "author": "712020:eee84346-58ab-518d-948c-e0a60d9fda7d",
+          "time_spent_seconds": 18000,
+          "comment": "Konfiguracja HPA",
+          "started": "2026-09-11T04:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "15006",
+      "key": "OPS-6",
+      "summary": "Backup bazy zamówień trwa ponad 6 godzin",
+      "description": "Okno backupu nachodzi na poranny ruch.",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:e6e4c4e8-5447-5f23-abba-73425ee2ccae",
+      "reporter": "712020:c4f02116-4c96-53e6-a249-c875d73053a7",
+      "labels": [
+        "backup",
+        "database"
+      ],
+      "sprint": "82",
+      "created": "2026-09-10T15:00:00.000+0100",
+      "updated": "2026-09-13T15:00:00.000+0100",
+      "comments": [
+        {
+          "id": "150061",
+          "author": "712020:c4f02116-4c96-53e6-a249-c875d73053a7",
+          "body": "To musi być gotowe przed Black Week!",
+          "created": "2026-09-11T15:00:00.000+0100"
+        },
+        {
+          "id": "150062",
+          "author": "712020:e6e4c4e8-5447-5f23-abba-73425ee2ccae",
+          "body": "Testuję backup przyrostowy.",
+          "created": "2026-09-12T15:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "15007",
+      "key": "OPS-7",
+      "summary": "Certyfikat TLS dla api.jaywalk.example wygasa 25 listopada",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:e6e4c4e8-5447-5f23-abba-73425ee2ccae",
+      "labels": [
+        "certificates",
+        "security"
+      ],
+      "sprint": "82",
+      "created": "2026-09-12T04:00:00.000+0100",
+      "updated": "2026-09-15T04:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15008",
+      "key": "OPS-8",
+      "summary": "Równoległe testy w pipeline CI",
+      "description": "",
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:ef88e7f2-7a34-5044-98cc-b47fd3c58fb9",
+      "reporter": "712020:efb28699-bb4b-52b3-8b99-49a1a564296e",
+      "labels": [
+        "ci"
+      ],
+      "sprint": "82",
+      "created": "2026-09-13T17:00:00.000+0100",
+      "updated": "2026-09-16T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15009",
+      "key": "OPS-9",
+      "summary": "Grafana alert for 5xx fires twice per incident",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "High",
+      "assignee": "712020:efb28699-bb4b-52b3-8b99-49a1a564296e",
+      "reporter": "712020:eee84346-58ab-518d-948c-e0a60d9fda7d",
+      "labels": [
+        "monitoring"
+      ],
+      "sprint": "82",
+      "created": "2026-09-15T06:00:00.000+0100",
+      "updated": "2026-09-18T06:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15010",
+      "key": "OPS-10",
+      "summary": "Raport kosztów chmury za październik",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:ef88e7f2-7a34-5044-98cc-b47fd3c58fb9",
+      "labels": [
+        "cost"
+      ],
+      "sprint": "82",
+      "created": "2026-09-16T19:00:00.000+0100",
+      "updated": "2026-09-19T19:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15011",
+      "key": "OPS-11",
+      "summary": "Replika bazy do odczytu dla raportów",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:63d89a7a-96f3-5679-926b-629e622bd89a",
+      "reporter": "712020:63d89a7a-96f3-5679-926b-629e622bd89a",
+      "labels": [
+        "database"
+      ],
+      "sprint": "82",
+      "created": "2026-09-18T08:00:00.000+0100",
+      "updated": "2026-09-21T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15012",
+      "key": "OPS-12",
+      "summary": "Pody ingress restartują się przy dużym ruchu",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:eee84346-58ab-518d-948c-e0a60d9fda7d",
+      "reporter": "712020:c4f02116-4c96-53e6-a249-c875d73053a7",
+      "labels": [
+        "kubernetes",
+        "network"
+      ],
+      "sprint": "82",
+      "created": "2026-09-19T21:00:00.000+0100",
+      "updated": "2026-09-22T21:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "150121",
+          "author": "712020:eee84346-58ab-518d-948c-e0a60d9fda7d",
+          "time_spent_seconds": 12600,
+          "comment": "",
+          "started": "2026-09-20T23:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "15013",
+      "key": "OPS-13",
+      "summary": "Test odtworzenia backupu z zeszłego tygodnia",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Low",
+      "assignee": "712020:e6e4c4e8-5447-5f23-abba-73425ee2ccae",
+      "reporter": "712020:e6e4c4e8-5447-5f23-abba-73425ee2ccae",
+      "labels": [
+        "backup"
+      ],
+      "sprint": "82",
+      "created": "2026-09-21T10:00:00.000+0100",
+      "updated": "2026-09-24T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15014",
+      "key": "OPS-14",
+      "summary": "Literówka w nazwie dashboardu 'Producja'",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:efb28699-bb4b-52b3-8b99-49a1a564296e",
+      "labels": [
+        "monitoring"
+      ],
+      "sprint": "82",
+      "created": "2026-09-22T23:00:00.000+0100",
+      "updated": "2026-09-25T23:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15015",
+      "key": "OPS-15",
+      "summary": "Logowanie SSO do paneli administracyjnych",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:eee84346-58ab-518d-948c-e0a60d9fda7d",
+      "labels": [
+        "security"
+      ],
+      "sprint": "83",
+      "created": "2026-09-24T12:00:00.000+0100",
+      "updated": "2026-09-27T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15016",
+      "key": "OPS-16",
+      "summary": "Migrate uptime checks to the new provider",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:efb28699-bb4b-52b3-8b99-49a1a564296e",
+      "reporter": "712020:ef88e7f2-7a34-5044-98cc-b47fd3c58fb9",
+      "labels": [
+        "monitoring"
+      ],
+      "sprint": "83",
+      "created": "2026-09-26T01:00:00.000+0100",
+      "updated": "2026-09-29T01:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15017",
+      "key": "OPS-17",
+      "summary": "Aktualizacja PostgreSQL do wersji 17",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:63d89a7a-96f3-5679-926b-629e622bd89a",
+      "labels": [
+        "database"
+      ],
+      "sprint": "83",
+      "created": "2026-09-27T14:00:00.000+0100",
+      "updated": "2026-09-30T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15018",
+      "key": "OPS-18",
+      "summary": "Pipeline CI nie czyści starych obrazów Docker",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:c4f02116-4c96-53e6-a249-c875d73053a7",
+      "labels": [
+        "ci"
+      ],
+      "sprint": "83",
+      "created": "2026-09-29T03:00:00.000+0100",
+      "updated": "2026-10-02T03:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15019",
+      "key": "OPS-19",
+      "summary": "Panel admina dostępny z internetu bez VPN",
+      "description": "Adres /admin odpowiada spoza sieci firmowej.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": null,
+      "reporter": "712020:e6e4c4e8-5447-5f23-abba-73425ee2ccae",
+      "labels": [
+        "security",
+        "network"
+      ],
+      "sprint": null,
+      "created": "2026-09-30T16:00:00.000+0100",
+      "updated": "2026-10-03T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15020",
+      "key": "OPS-20",
+      "summary": "Szablon pipeline dla nowych serwisów",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:ef88e7f2-7a34-5044-98cc-b47fd3c58fb9",
+      "reporter": "712020:efb28699-bb4b-52b3-8b99-49a1a564296e",
+      "labels": [
+        "ci"
+      ],
+      "sprint": null,
+      "created": "2026-10-02T05:00:00.000+0100",
+      "updated": "2026-10-05T05:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15021",
+      "key": "OPS-21",
+      "summary": "Wyłączanie środowisk testowych na noc",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:eee84346-58ab-518d-948c-e0a60d9fda7d",
+      "labels": [
+        "cost"
+      ],
+      "sprint": null,
+      "created": "2026-10-03T18:00:00.000+0100",
+      "updated": "2026-10-06T18:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15022",
+      "key": "OPS-22",
+      "summary": "Brak metryk z repliki bazy",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:63d89a7a-96f3-5679-926b-629e622bd89a",
+      "reporter": "712020:ef88e7f2-7a34-5044-98cc-b47fd3c58fb9",
+      "labels": [
+        "database",
+        "monitoring"
+      ],
+      "sprint": null,
+      "created": "2026-10-05T07:00:00.000+0100",
+      "updated": "2026-10-08T07:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15023",
+      "key": "OPS-23",
+      "summary": "Clean up unused cloud volumes",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:63d89a7a-96f3-5679-926b-629e622bd89a",
+      "labels": [
+        "cost"
+      ],
+      "sprint": null,
+      "created": "2026-10-06T20:00:00.000+0100",
+      "updated": "2026-10-09T20:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15024",
+      "key": "OPS-24",
+      "summary": "Węzły klastra kończą się pamięcią w nocy",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:eee84346-58ab-518d-948c-e0a60d9fda7d",
+      "reporter": "712020:c4f02116-4c96-53e6-a249-c875d73053a7",
+      "labels": [
+        "kubernetes"
+      ],
+      "sprint": null,
+      "created": "2026-10-08T09:00:00.000+0100",
+      "updated": "2026-10-11T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15025",
+      "key": "OPS-25",
+      "summary": "Kopia zapasowa konfiguracji routerów",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:e6e4c4e8-5447-5f23-abba-73425ee2ccae",
+      "reporter": "712020:e6e4c4e8-5447-5f23-abba-73425ee2ccae",
+      "labels": [
+        "backup"
+      ],
+      "sprint": null,
+      "created": "2026-10-09T22:00:00.000+0100",
+      "updated": "2026-10-12T22:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15026",
+      "key": "OPS-26",
+      "summary": "Dashboard kosztów nie pokazuje danych z listopada",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:efb28699-bb4b-52b3-8b99-49a1a564296e",
+      "labels": [
+        "monitoring"
+      ],
+      "sprint": null,
+      "created": "2026-10-11T11:00:00.000+0100",
+      "updated": "2026-10-14T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15027",
+      "key": "OPS-27",
+      "summary": "On-call runbook for the checkout service",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:efb28699-bb4b-52b3-8b99-49a1a564296e",
+      "reporter": "712020:eee84346-58ab-518d-948c-e0a60d9fda7d",
+      "labels": [
+        "monitoring",
+        "incident"
+      ],
+      "sprint": null,
+      "created": "2026-10-13T00:00:00.000+0100",
+      "updated": "2026-10-16T00:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15028",
+      "key": "OPS-28",
+      "summary": "Rotacja haseł do kont serwisowych",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:ef88e7f2-7a34-5044-98cc-b47fd3c58fb9",
+      "labels": [
+        "security"
+      ],
+      "sprint": null,
+      "created": "2026-10-14T13:00:00.000+0100",
+      "updated": "2026-10-17T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15029",
+      "key": "OPS-29",
+      "summary": "Zapytania analityczne blokują bazę sklepu",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:63d89a7a-96f3-5679-926b-629e622bd89a",
+      "reporter": "712020:63d89a7a-96f3-5679-926b-629e622bd89a",
+      "labels": [
+        "database"
+      ],
+      "sprint": "82",
+      "created": "2026-10-16T02:00:00.000+0100",
+      "updated": "2026-10-19T02:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15030",
+      "key": "OPS-30",
+      "summary": "Dokumentacja sieci biura w Krakowie",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:d50dc3d1-0448-5be3-b1d8-a955253169f7",
+      "reporter": "712020:c4f02116-4c96-53e6-a249-c875d73053a7",
+      "labels": [
+        "network"
+      ],
+      "sprint": null,
+      "created": "2026-10-17T15:00:00.000+0100",
+      "updated": "2026-10-20T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15031",
+      "key": "OPS-31",
+      "summary": "Brak monitoringu dat wygaśnięcia certyfikatów",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:e6e4c4e8-5447-5f23-abba-73425ee2ccae",
+      "labels": [
+        "certificates"
+      ],
+      "sprint": "82",
+      "created": "2026-10-19T04:00:00.000+0100",
+      "updated": "2026-10-22T04:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15032",
+      "key": "OPS-32",
+      "summary": "Plan dyżurów na Black Week",
+      "description": "",
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "Low",
+      "assignee": "712020:c4f02116-4c96-53e6-a249-c875d73053a7",
+      "reporter": "712020:efb28699-bb4b-52b3-8b99-49a1a564296e",
+      "labels": [],
+      "sprint": "82",
+      "created": "2026-10-20T17:00:00.000+0100",
+      "updated": "2026-10-23T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "150321",
+          "author": "712020:c4f02116-4c96-53e6-a249-c875d73053a7",
+          "time_spent_seconds": 3600,
+          "comment": "",
+          "started": "2026-10-21T19:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "15033",
+      "key": "OPS-33",
+      "summary": "Stare klucze SSH byłych pracowników na serwerach",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:eee84346-58ab-518d-948c-e0a60d9fda7d",
+      "labels": [
+        "security"
+      ],
+      "sprint": null,
+      "created": "2026-10-22T06:00:00.000+0100",
+      "updated": "2026-10-25T06:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15034",
+      "key": "OPS-34",
+      "summary": "Środowisko testowe na żądanie dla każdej gałęzi",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:ef88e7f2-7a34-5044-98cc-b47fd3c58fb9",
+      "labels": [
+        "kubernetes"
+      ],
+      "sprint": null,
+      "created": "2026-10-23T19:00:00.000+0100",
+      "updated": "2026-10-26T19:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15035",
+      "key": "OPS-35",
+      "summary": "Limity zasobów dla wszystkich podów",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:eee84346-58ab-518d-948c-e0a60d9fda7d",
+      "reporter": "712020:63d89a7a-96f3-5679-926b-629e622bd89a",
+      "labels": [
+        "kubernetes",
+        "monitoring"
+      ],
+      "sprint": "82",
+      "created": "2026-10-25T08:00:00.000+0100",
+      "updated": "2026-10-28T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "150351",
+          "author": "712020:eee84346-58ab-518d-948c-e0a60d9fda7d",
+          "time_spent_seconds": 7200,
+          "comment": "",
+          "started": "2026-10-26T10:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "15036",
+      "key": "OPS-36",
+      "summary": "Testy end-to-end losowo padają w CI",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:ef88e7f2-7a34-5044-98cc-b47fd3c58fb9",
+      "reporter": "712020:c4f02116-4c96-53e6-a249-c875d73053a7",
+      "labels": [
+        "ci"
+      ],
+      "sprint": "83",
+      "created": "2026-10-26T21:00:00.000+0100",
+      "updated": "2026-10-29T21:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15037",
+      "key": "OPS-37",
+      "summary": "Prepare the disaster recovery drill agenda",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:d50dc3d1-0448-5be3-b1d8-a955253169f7",
+      "reporter": "712020:e6e4c4e8-5447-5f23-abba-73425ee2ccae",
+      "labels": [],
+      "sprint": null,
+      "created": "2026-10-28T10:00:00.000+0100",
+      "updated": "2026-10-31T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15038",
+      "key": "OPS-38",
+      "summary": "Backup plików z CDN pomija nowe katalogi",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:e6e4c4e8-5447-5f23-abba-73425ee2ccae",
+      "reporter": "712020:efb28699-bb4b-52b3-8b99-49a1a564296e",
+      "labels": [
+        "backup"
+      ],
+      "sprint": "82",
+      "created": "2026-10-29T23:00:00.000+0100",
+      "updated": "2026-11-01T23:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15039",
+      "key": "OPS-39",
+      "summary": "Ograniczenie ruchu do bazy tylko z podsieci aplikacji",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:eee84346-58ab-518d-948c-e0a60d9fda7d",
+      "labels": [
+        "network"
+      ],
+      "sprint": null,
+      "created": "2026-10-31T12:00:00.000+0100",
+      "updated": "2026-11-03T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "15040",
+      "key": "OPS-40",
+      "summary": "Ćwiczenia z awarii centrum danych",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:c4f02116-4c96-53e6-a249-c875d73053a7",
+      "reporter": "712020:ef88e7f2-7a34-5044-98cc-b47fd3c58fb9",
+      "labels": [
+        "incident"
+      ],
+      "sprint": "83",
+      "created": "2026-11-02T01:00:00.000+0100",
+      "updated": "2026-11-05T01:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

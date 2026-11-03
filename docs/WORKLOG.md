@@ -136,3 +136,24 @@
 - Record the results of the 14 tools again. `data/jira_recorded_results.json` now has 43 calls in English.
 - The 6 invited persons now have access to Jira. Their display names are still the e-mail aliases.
 - Delete the test issues `SCRUM-8` to `SCRUM-12`.
+
+## 2026-11-04
+
+### New test set (not frozen yet)
+
+- The team decides: the data comes before the code. The OpenSpec change of the new simulator does not make the task set. It only reads the task files.
+- Add 5 test boards in `data/environments/`: `test-web`, `test-app`, `test-api`, `test-data`, `test-ops`. They are the Jira projects of one invented company: JayWalk, a brand of sport shoes with an online shop.
+- Each board has 40 issues, 7 or 8 persons and 4 sprints. Each board has a person who is not active and two persons with the same first name.
+- Add the test set in `data/tasks/test/`: `queries.json` (instructions), `solutions.json` (correct tool calls and answers), `expected.json` (expected results) and `personas.json` (authors).
+- The test set has 200 tasks in 8 categories: 72 `easy`, 103 `multi_step` and 25 `refusal`.
+- Each instruction has one of 16 authors. All instructions of one author have the same style.
+- A temporary script outside the repository made the files and checked them: each key exists, each search gives the expected issues, each change category has a change, and the counts agree.
+- Add `docs/TASKS.md`: the flow, the categories, the counts, the authors, the file formats and the review procedure.
+- Check two facts on the Jira Cloud site: `openSprints()` finds only the active sprint, and `~` finds only whole words. Add them to `docs/JIRA_TOOLS.md`.
+- The old files (`data/tasks/*/tasks.jsonl`, the old boards) stay until the new simulator replaces the old one. The old tests pass.
+
+### Not complete
+
+- The team must review the test set. Then the test set is frozen.
+- The OpenSpec change `openspec/changes/e1-jira-tasks/` is a draft. The proposal and the specs still describe the generation of the tasks. They must change: the change only reads the task files. `openspec validate` does not pass yet. `design.md` and `tasks.md` do not exist yet.
+- The train set does not exist yet.

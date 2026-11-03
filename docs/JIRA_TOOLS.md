@@ -121,6 +121,10 @@ A translated name is now an error of the model. `status = "W toku"` returns an e
 ### Other facts
 
 - `jira_search` always returns `"total": -1`. The search API of Jira Cloud does not give the number of results.
+- `sprint in openSprints()` finds only issues in the active sprint. `sprint in futureSprints()` finds the issues in future sprints.
+- `summary ~` and `text ~` find whole words. Polish forms do not match: `summary ~ "zadania"` does not find "Zadanie 1".
+- Without `ORDER BY`, the search result starts with the highest key.
+- The status category of `Cancelled` on this site is `In Progress`. Thus `statusCategory != Done` also finds the `Cancelled` issues.
 - A JQL without a condition (for example `ORDER BY created DESC`) gives the error "Unbounded JQL queries are not allowed here. Please add a search restriction to your query.".
 - `jira_create_issue` with an unknown `assignee` creates the issue without an assignee. The result shows no error.
 - `jira_add_worklog` with an incorrect `time_spent` (for example "półtorej godziny") logs `1m`. The result shows no error.
