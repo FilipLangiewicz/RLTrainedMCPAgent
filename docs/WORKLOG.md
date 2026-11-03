@@ -107,3 +107,12 @@
 3. Start a new OpenSpec change: the simulator with the contracts of `docs/JIRA_TOOLS.md`.
 4. Make the task set again for the new tools, and a contract test with the recorded results.
 5. Run a new baseline with the models of `docs/MODELS.md`.
+
+## 2026-11-03
+
+### Kaggle account for each project
+
+- Add `jobs/kaggle.sh`. It runs the Kaggle CLI of `.venv`. If `.kaggle/access_token` of the project is not empty, the CLI uses this token. Otherwise the CLI uses `~/.kaggle/access_token`.
+- `jobs/wait.sh` calls `jobs/kaggle.sh`. Thus it uses the same account as the push.
+- `KAGGLE.md`: add the selection of the account. All Kaggle commands use `bash jobs/kaggle.sh`. The user in the kernel id must be the selected account.
+- `.gitignore`: add `.kaggle/`.

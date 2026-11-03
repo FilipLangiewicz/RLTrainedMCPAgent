@@ -11,6 +11,7 @@ __pycache__/
 .env
 kaggle.json
 .kaggle/
+.kaggle/
 
 # Local settings of tools
 .claude/

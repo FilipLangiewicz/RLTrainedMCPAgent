@@ -16,7 +16,7 @@ Read these files before you start a task:
 `KAGGLE.md` is a general method from other projects. If `KAGGLE.md` and this file do not agree, obey this file. These differences apply in this repository:
 
 - Make the environment as the section "Environment" of this file tells. Use Python 3.13, not the version in the examples of `KAGGLE.md`.
-- `.venv` is in the root folder of the repository. Thus `jobs/wait.sh` finds the `kaggle` command in `../.venv`, not in `../../.venv`.
+- `.venv` is in the root folder of the repository. Thus `jobs/kaggle.sh` finds the `kaggle` command in `../.venv`, not in `../../.venv`.
 - `run.py` clones the full repository from the branch of the task and installs `requirements-kaggle.txt` (see the sections "Environment" and "Compute").
 
 ## Language
