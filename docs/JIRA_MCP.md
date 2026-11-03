@@ -196,7 +196,7 @@ The goal is a new copy of `data/mcp_atlassian_tools.json`, for example after a c
 4. Save the schemas of the 14 selected tools in `data/mcp_atlassian_tools.json`.
 5. Count the tokens of the schemas with the chat templates of `Qwen/Qwen3.5-2B` and `google/gemma-4-E2B-it`.
 
-We did not connect the server to a real Jira site. Do this test when the Jira Cloud site exists. Also record real results of the 14 tools. The simulator must copy their format.
+On 2026-11-03 we connected the server to the Jira Cloud site and ran all 14 tools. The server operates correctly. A client with `mcp` 2.x from `.venv` connects to the server with `mcp` 1.x through stdio. The schemas of the live server are the same as `data/mcp_atlassian_tools.json`, but the order of the default `fields` can change (see `docs/JIRA_TOOLS.md`). The real results are in `data/jira_recorded_results.json`.
 
 The code shows these facts:
 

@@ -49,12 +49,12 @@ The column "Used arguments" gives the arguments that the tasks use. A star (*) m
 
 | # | Tool | Used arguments | Result |
 |---|---|---|---|
-| 1 | `jira_search` | `jql`*, `fields`, `limit` | `{"total", "start_at", "max_results", "issues": [issue, ...]}` |
+| 1 | `jira_search` | `jql`*, `fields`, `limit` | `{"total": -1, "start_at", "max_results", "issues": [issue, ...]}` |
 | 2 | `jira_get_issue` | `issue_key`*, `fields`, `comment_limit` | One issue (see "Issue"), with its comments |
 | 3 | `jira_search_assignable_users` | `query`*, `project_key` | `{"success": true, "count", "users": [user, ...]}` |
 | 4 | `jira_get_agile_boards` | `project_key` | `[{"id", "name", "type"}, ...]` |
 | 5 | `jira_get_sprints_from_board` | `board_id`*, `state` | `[{"id", "name", "state", "start_date", "end_date", "goal"}, ...]` |
-| 6 | `jira_get_transitions` | `issue_key`* | `[{"id", "name", "to_status"}, ...]` |
+| 6 | `jira_get_transitions` | `issue_key`* | `[{"id": <number>, "name"}, ...]` |
 | 7 | `jira_get_worklog` | `issue_key`* | `{"worklogs": [{"id", "comment", "created", "updated", "started", "time_spent", "time_spent_seconds", "author"}, ...]}` |
 
 ### Write tools
@@ -64,7 +64,7 @@ The column "Used arguments" gives the arguments that the tasks use. A star (*) m
 | 8 | `jira_create_issue` | `project_key`*, `summary`*, `issue_type`*, `assignee`, `description`, `additional_fields` | `{"message", "issue": issue}` |
 | 9 | `jira_update_issue` | `issue_key`*, `fields`*, `return_fields` | `{"message": "Issue updated successfully", "issue": issue}` |
 | 10 | `jira_transition_issue` | `issue_key`*, `transition_id`* | `{"message": "Issue <key> transitioned successfully", "issue": issue}` |
-| 11 | `jira_add_comment` | `issue_key`*, `body`* | The new comment |
+| 11 | `jira_add_comment` | `issue_key`*, `body`* | `{"id", "body", "created", "author"}` |
 | 12 | `jira_add_worklog` | `issue_key`*, `time_spent`*, `comment` | `{"message": "Worklog added successfully", "worklog": {...}}` |
 | 13 | `jira_add_issues_to_sprint` | `sprint_id`*, `issue_keys`* | `{"message": "Successfully added <n> issue(s) to sprint", ...}` |
 | 14 | `jira_move_issues_to_backlog` | `issue_keys`* | `{"message": "Successfully moved <n> issue(s) to backlog", ...}` |
@@ -73,7 +73,7 @@ The column "Used arguments" gives the arguments that the tasks use. A star (*) m
 
 - `jql`: a JQL text, for example `project = WEB AND status = "In Progress" AND labels = frontend`.
 - `fields` of `jira_update_issue`: a JSON text, not a JSON object. Example: `'{"assignee": "Anna Kowalczyk", "labels": ["frontend", "ui"]}'`.
-- `assignee`: an e-mail, a display name or an account id. The server finds the account id. An unknown person gives an error.
+- `assignee`: an e-mail, a display name or an account id. The server finds the account id. An unknown person gives an error in `jira_update_issue`. In `jira_create_issue`, an unknown person gives no error (see "Behavior of real Jira").
 - `labels`: the full list. The new list replaces the old list. To add one label, the model reads the old list first.
 - `priority` in `fields` or `additional_fields`: `{"priority": {"name": "High"}}`.
 - `return_fields`: the default is `*all`, and the result can be large. The value `key,status` makes a short result.
@@ -92,7 +92,38 @@ The column "Used arguments" gives the arguments that the tasks use. A star (*) m
 - `created`, `updated`
 - `comments` (only in `jira_get_issue`)
 
-The keys depend on the argument `fields`. Record real results on the Jira Cloud site before the implementation of the simulator (see `docs/JIRA_MCP.md`). Then the simulator can copy their format.
+The keys depend on the argument `fields`. If an issue has no assignee, the result has `"assignee": {"display_name": "Unassigned"}`, not `null`.
+
+## Behavior of real Jira
+
+On 2026-11-03 we ran all 14 tools on the Jira Cloud site. `data/jira_recorded_results.json` has 42 calls with their real results and errors. The simulator must copy this behavior.
+
+### Names in two languages
+
+Jira translates the system names into the language of the account. The account of the API token has the language `pl_PL`. The text of the users (summary, description, comments) does not change.
+
+| Thing | Name in JQL and in the configuration | Name in the results of the tools |
+|---|---|---|
+| Status | `Backlog`, `In Progress`, `In review`, `Cancelled`, `Done` | `Backlog`, `W toku`, `W trakcie weryfikacji`, `Anulowano`, `Gotowe` |
+| Transition | not used in JQL | `Backlog`, `W toku`, `In review`, `Cancelled`, `Gotowe` |
+| Status category | `To Do`, `In Progress`, `Done` | `Do zrobienia`, `W toku`, `Gotowe` |
+| Issue type | `Task`, `Epic`, `Subtask` | `Zadanie`, `Epik`, `Subtask` |
+| Priority | `Highest`, `High`, `Medium`, `Low`, `Lowest` | the same |
+
+JQL accepts only the names in the second column. A JQL with a translated name gives no error and returns no issues. For example, `status = "W toku"` returns an empty list, but `status = "In Progress"` returns the issues. `jira_create_issue` accepts both `Task` and `Zadanie`.
+
+### Other facts
+
+- `jira_search` always returns `"total": -1`. The search API of Jira Cloud does not give the number of results.
+- A JQL without a condition (for example `ORDER BY created DESC`) gives the error "Nieograniczone zapytania JQL nie są tutaj dozwolone".
+- The error messages of Jira are in Polish. The error messages of the MCP server are in English.
+- `jira_create_issue` with an unknown `assignee` creates the issue without an assignee. The result shows no error.
+- `jira_add_worklog` with an incorrect `time_spent` (for example "półtorej godziny") logs `1m`. The result shows no error.
+- A new issue without a priority gets `Medium`.
+- A person with an invitation that is not accepted is not in the results of `jira_search_assignable_users`.
+- The server changes Markdown to the Jira format and back. The result of `jira_create_issue` and `jira_update_issue` shows the Jira wiki format (`*bold*`). `jira_get_issue` shows Markdown (`**bold**`). `jira_search` and `jira_add_comment` lose the format (bold text goes onto a separate line).
+- The dates in the results use the time zone of the computer that runs the server. On Windows with the Polish language, a date is `2026-11-02 23:55:34 Środkowoeuropejski czas stand.`. The dates of comments and worklogs have the ISO format (`2026-11-03 21:01:02.367000+01:00`).
+- The default value of `fields` in the schemas of `jira_search` and `jira_get_issue` has a different order of fields after each start of the server. The server makes it from a Python set.
 
 ## Candidates for more tools
 

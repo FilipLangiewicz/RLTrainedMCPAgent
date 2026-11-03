@@ -116,3 +116,15 @@
 - `jobs/wait.sh` calls `jobs/kaggle.sh`. Thus it uses the same account as the push.
 - `KAGGLE.md`: add the selection of the account. All Kaggle commands use `bash jobs/kaggle.sh`. The user in the kernel id must be the selected account.
 - `.gitignore`: add `.kaggle/`.
+
+### Test of the MCP server on Jira Cloud
+
+- The Jira Cloud site `combains.atlassian.net` exists. It has one team-managed Scrum project `SCRUM` with board 1 and two sprints.
+- The account of the API token is a Jira administrator and an administrator of the project `SCRUM`. It can delete issues.
+- Run all 14 selected tools of `mcp-atlassian` 0.23.1 on the site. All tools operate. The schemas of the live server agree with `data/mcp_atlassian_tools.json`.
+- Add `data/jira_recorded_results.json`: 42 calls with their real results and errors. The e-mail addresses are replaced with `user@example.com`.
+- Add the section "Behavior of real Jira" to `docs/JIRA_TOOLS.md`. Correct the results of `jira_search`, `jira_get_transitions` and `jira_add_comment`.
+- Important fact: the results show translated names (`W toku`, `Zadanie`), but JQL accepts only the original names (`In Progress`, `Task`). A translated name in JQL returns an empty list without an error.
+- Two tools hide an error: `jira_create_issue` with an unknown assignee, and `jira_add_worklog` with an incorrect time.
+- Invite 6 persons with aliases of the e-mail address of the team. Their accounts are not active until a person accepts each invitation and sets the name.
+- Delete the test issues `SCRUM-5` to `SCRUM-7`.
