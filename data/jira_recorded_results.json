@@ -1,0 +1,447 @@
+{
+ "server": "mcp-atlassian 0.23.1",
+ "site": "Jira Cloud Free, team-managed Scrum project SCRUM",
+ "jira_language": "en_US",
+ "server_host_timezone": "Europe/Warsaw (Windows)",
+ "date": "2026-11-03",
+ "calls": [
+  {
+   "tool": "jira_search",
+   "note": "",
+   "args": {
+    "jql": "project = SCRUM ORDER BY key",
+    "fields": "summary,status,assignee,labels,priority",
+    "limit": 10
+   },
+   "is_error": false,
+   "text": "{\n  \"total\": -1,\n  \"start_at\": 0,\n  \"max_results\": 10,\n  \"issues\": [\n    {\n      \"id\": \"10000\",\n      \"key\": \"SCRUM-1\",\n      \"summary\": \"Zadanie 1\",\n      \"browse_url\": \"https://combains.atlassian.net/browse/SCRUM-1\",\n      \"status\": {\n        \"name\": \"Backlog\",\n        \"category\": \"To Do\",\n        \"color\": \"blue-gray\"\n      },\n      \"assignee\": {\n        \"display_name\": \"Unassigned\"\n      }\n    },\n    {\n      \"id\": \"10001\",\n      \"key\": \"SCRUM-2\",\n      \"summary\": \"Zadanie 2\",\n      \"browse_url\": \"https://combains.atlassian.net/browse/SCRUM-2\",\n      \"status\": {\n        \"name\": \"In Progress\",\n        \"category\": \"In Progress\",\n        \"color\": \"yellow\"\n      },\n      \"assignee\": {\n        \"display_name\": \"Unassigned\"\n      }\n    },\n    {\n      \"id\": \"10002\",\n      \"key\": \"SCRUM-3\",\n      \"summary\": \"Zadanie 3\",\n      \"browse_url\": \"https://combains.atlassian.net/browse/SCRUM-3\",\n      \"status\": {\n        \"name\": \"In Progress\",\n        \"category\": \"In Progress\",\n        \"color\": \"yellow\"\n      },\n      \"assignee\": {\n        \"display_name\": \"Unassigned\"\n      }\n    },\n    {\n      \"id\": \"10003\",\n      \"key\": \"SCRUM-4\",\n      \"summary\": \"Zadania podrzędne 2.1\",\n      \"browse_url\": \"https://combains.atlassian.net/browse/SCRUM-4\",\n      \"status\": {\n        \"name\": \"Backlog\",\n        \"category\": \"To Do\",\n        \"color\": \"blue-gray\"\n      },\n      \"assignee\": {\n        \"display_name\": \"Unassigned\"\n      }\n    }\n  ]\n}"
+  },
+  {
+   "tool": "jira_search",
+   "note": "",
+   "args": {
+    "jql": "ORDER BY created DESC",
+    "limit": 5
+   },
+   "is_error": true,
+   "text": "Error calling tool 'search': Unbounded JQL queries are not allowed here. Please add a search restriction to your query."
+  },
+  {
+   "tool": "jira_get_issue",
+   "note": "",
+   "args": {
+    "issue_key": "SCRUM-2"
+   },
+   "is_error": false,
+   "text": "{\n  \"id\": \"10001\",\n  \"key\": \"SCRUM-2\",\n  \"summary\": \"Zadanie 2\",\n  \"browse_url\": \"https://combains.atlassian.net/browse/SCRUM-2\",\n  \"status\": {\n    \"name\": \"In Progress\",\n    \"category\": \"In Progress\",\n    \"color\": \"yellow\"\n  },\n  \"issue_type\": {\n    \"name\": \"Task\"\n  },\n  \"assignee\": {\n    \"display_name\": \"Unassigned\"\n  },\n  \"reporter\": {\n    \"account_id\": \"712020:42691f82-5c77-4848-b7de-e03ced3dfdef\",\n    \"display_name\": \"Kombajn\",\n    \"name\": \"Kombajn\",\n    \"email\": null,\n    \"avatar_url\": \"https://secure.gravatar.com/avatar/e26ab5c15aef8b87af6d46b1286e8f37?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-3.png\"\n  },\n  \"created\": \"2026-11-02 23:55:34 Środkowoeuropejski czas stand.\",\n  \"updated\": \"2026-11-02 23:55:36 Środkowoeuropejski czas stand.\"\n}"
+  },
+  {
+   "tool": "jira_get_issue",
+   "note": "",
+   "args": {
+    "issue_key": "SCRUM-999"
+   },
+   "is_error": true,
+   "text": "Error calling tool 'get_issue': Issue SCRUM-999 not found. Verify the issue key and project access."
+  },
+  {
+   "tool": "jira_search_assignable_users",
+   "note": "",
+   "args": {
+    "query": "Kombajn",
+    "project_key": "SCRUM"
+   },
+   "is_error": false,
+   "text": "{\n  \"success\": true,\n  \"count\": 1,\n  \"users\": [\n    {\n      \"account_id\": \"712020:42691f82-5c77-4848-b7de-e03ced3dfdef\",\n      \"display_name\": \"Kombajn\",\n      \"name\": \"Kombajn\",\n      \"email\": \"\",\n      \"avatar_url\": \"https://secure.gravatar.com/avatar/e26ab5c15aef8b87af6d46b1286e8f37?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-3.png\"\n    }\n  ]\n}"
+  },
+  {
+   "tool": "jira_search_assignable_users",
+   "note": "",
+   "args": {
+    "query": "Nieistniejacy",
+    "project_key": "SCRUM"
+   },
+   "is_error": false,
+   "text": "{\n  \"success\": true,\n  \"count\": 0,\n  \"users\": []\n}"
+  },
+  {
+   "tool": "jira_get_agile_boards",
+   "note": "",
+   "args": {
+    "project_key": "SCRUM"
+   },
+   "is_error": false,
+   "text": "[\n  {\n    \"id\": \"1\",\n    \"name\": \"SCRUM board\",\n    \"type\": \"simple\"\n  }\n]"
+  },
+  {
+   "tool": "jira_get_sprints_from_board",
+   "note": "",
+   "args": {
+    "board_id": "1"
+   },
+   "is_error": false,
+   "text": "[\n  {\n    \"id\": \"2\",\n    \"name\": \"SCRUM Sprint 0\",\n    \"state\": \"active\",\n    \"start_date\": \"2026-11-02T22:55:36.361Z\",\n    \"end_date\": \"2026-11-16T22:55:36.361Z\"\n  },\n  {\n    \"id\": \"1\",\n    \"name\": \"SCRUM Sprint 1\",\n    \"state\": \"future\"\n  }\n]"
+  },
+  {
+   "tool": "jira_get_sprints_from_board",
+   "note": "",
+   "args": {
+    "board_id": "1",
+    "state": "active"
+   },
+   "is_error": false,
+   "text": "[\n  {\n    \"id\": \"2\",\n    \"name\": \"SCRUM Sprint 0\",\n    \"state\": \"active\",\n    \"start_date\": \"2026-11-02T22:55:36.361Z\",\n    \"end_date\": \"2026-11-16T22:55:36.361Z\"\n  }\n]"
+  },
+  {
+   "tool": "jira_get_transitions",
+   "note": "",
+   "args": {
+    "issue_key": "SCRUM-1"
+   },
+   "is_error": false,
+   "text": "[\n  {\n    \"id\": 11,\n    \"name\": \"Backlog\"\n  },\n  {\n    \"id\": 21,\n    \"name\": \"In Progress\"\n  },\n  {\n    \"id\": 31,\n    \"name\": \"In review\"\n  },\n  {\n    \"id\": 41,\n    \"name\": \"Cancelled\"\n  },\n  {\n    \"id\": 51,\n    \"name\": \"Done\"\n  }\n]"
+  },
+  {
+   "tool": "jira_get_worklog",
+   "note": "",
+   "args": {
+    "issue_key": "SCRUM-1"
+   },
+   "is_error": false,
+   "text": "{\n  \"worklogs\": []\n}"
+  },
+  {
+   "tool": "jira_create_issue",
+   "note": "full",
+   "args": {
+    "project_key": "SCRUM",
+    "summary": "TEST Błąd logowania na stronie głównej",
+    "issue_type": "Task",
+    "description": "Użytkownik **nie może** się zalogować.\n\n- krok 1\n- krok 2",
+    "additional_fields": "{\"labels\": [\"frontend\", \"bug\"], \"priority\": {\"name\": \"High\"}}"
+   },
+   "is_error": false,
+   "text": "{\n  \"message\": \"Issue created successfully\",\n  \"issue\": {\n    \"id\": \"10009\",\n    \"key\": \"SCRUM-10\",\n    \"summary\": \"TEST Błąd logowania na stronie głównej\",\n    \"url\": \"https://combains.atlassian.net/rest/api/2/issue/10009\",\n    \"description\": \"Użytkownik *nie może* się zalogować.\\n\\n* krok 1\\n* krok 2\",\n    \"status\": {\n      \"name\": \"Backlog\",\n      \"category\": \"To Do\",\n      \"color\": \"blue-gray\"\n    },\n    \"issue_type\": {\n      \"name\": \"Task\"\n    },\n    \"priority\": {\n      \"name\": \"High\"\n    },\n    \"project\": {\n      \"key\": \"SCRUM\",\n      \"name\": \"CombAIns Team\",\n      \"avatar_url\": \"https://combains.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10402\"\n    },\n    \"worklog\": {\n      \"startAt\": 0,\n      \"maxResults\": 20,\n      \"total\": 0,\n      \"worklogs\": []\n    },\n    \"assignee\": {\n      \"display_name\": \"Unassigned\"\n    },\n    \"reporter\": {\n      \"account_id\": \"712020:91a8e307-53f4-4856-88f5-7523318d0912\",\n      \"display_name\": \"CombAIns Assistant\",\n      \"name\": \"CombAIns Assistant\",\n      \"email\": \"user@example.com\",\n      \"avatar_url\": \"https://secure.gravatar.com/avatar/2bbe9d5b5ad2843ccf192c18029355ac?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FCA-4.png\"\n    },\n    \"labels\": [\n      \"bug\",\n      \"frontend\"\n    ],\n    \"created\": \"2026-11-03 21:14:28 Środkowoeuropejski czas stand.\",\n    \"updated\": \"2026-11-03 21:14:28 Środkowoeuropejski czas stand.\"\n  }\n}"
+  },
+  {
+   "tool": "jira_create_issue",
+   "note": "assignee by name",
+   "args": {
+    "project_key": "SCRUM",
+    "summary": "TEST Update the API docs",
+    "issue_type": "Task",
+    "assignee": "Kombajn"
+   },
+   "is_error": false,
+   "text": "{\n  \"message\": \"Issue created successfully\",\n  \"issue\": {\n    \"id\": \"10010\",\n    \"key\": \"SCRUM-11\",\n    \"summary\": \"TEST Update the API docs\",\n    \"url\": \"https://combains.atlassian.net/rest/api/2/issue/10010\",\n    \"status\": {\n      \"name\": \"Backlog\",\n      \"category\": \"To Do\",\n      \"color\": \"blue-gray\"\n    },\n    \"issue_type\": {\n      \"name\": \"Task\"\n    },\n    \"priority\": {\n      \"name\": \"Medium\"\n    },\n    \"project\": {\n      \"key\": \"SCRUM\",\n      \"name\": \"CombAIns Team\",\n      \"avatar_url\": \"https://combains.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10402\"\n    },\n    \"worklog\": {\n      \"startAt\": 0,\n      \"maxResults\": 20,\n      \"total\": 0,\n      \"worklogs\": []\n    },\n    \"assignee\": {\n      \"account_id\": \"712020:42691f82-5c77-4848-b7de-e03ced3dfdef\",\n      \"display_name\": \"Kombajn\",\n      \"name\": \"Kombajn\",\n      \"email\": null,\n      \"avatar_url\": \"https://secure.gravatar.com/avatar/e26ab5c15aef8b87af6d46b1286e8f37?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-3.png\"\n    },\n    \"reporter\": {\n      \"account_id\": \"712020:91a8e307-53f4-4856-88f5-7523318d0912\",\n      \"display_name\": \"CombAIns Assistant\",\n      \"name\": \"CombAIns Assistant\",\n      \"email\": \"user@example.com\",\n      \"avatar_url\": \"https://secure.gravatar.com/avatar/2bbe9d5b5ad2843ccf192c18029355ac?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FCA-4.png\"\n    },\n    \"created\": \"2026-11-03 21:14:29 Środkowoeuropejski czas stand.\",\n    \"updated\": \"2026-11-03 21:14:29 Środkowoeuropejski czas stand.\"\n  }\n}"
+  },
+  {
+   "tool": "jira_create_issue",
+   "note": "translated issue type",
+   "args": {
+    "project_key": "SCRUM",
+    "summary": "TEST x",
+    "issue_type": "Zadanie"
+   },
+   "is_error": true,
+   "text": "Error calling tool 'create_issue': Specify a valid issue type"
+  },
+  {
+   "tool": "jira_create_issue",
+   "note": "unknown assignee",
+   "args": {
+    "project_key": "SCRUM",
+    "summary": "TEST x",
+    "issue_type": "Task",
+    "assignee": "Nieistniejąca Osoba"
+   },
+   "is_error": false,
+   "text": "{\n  \"message\": \"Issue created successfully\",\n  \"issue\": {\n    \"id\": \"10011\",\n    \"key\": \"SCRUM-12\",\n    \"summary\": \"TEST x\",\n    \"url\": \"https://combains.atlassian.net/rest/api/2/issue/10011\",\n    \"status\": {\n      \"name\": \"Backlog\",\n      \"category\": \"To Do\",\n      \"color\": \"blue-gray\"\n    },\n    \"issue_type\": {\n      \"name\": \"Task\"\n    },\n    \"priority\": {\n      \"name\": \"Medium\"\n    },\n    \"project\": {\n      \"key\": \"SCRUM\",\n      \"name\": \"CombAIns Team\",\n      \"avatar_url\": \"https://combains.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10402\"\n    },\n    \"worklog\": {\n      \"startAt\": 0,\n      \"maxResults\": 20,\n      \"total\": 0,\n      \"worklogs\": []\n    },\n    \"assignee\": {\n      \"display_name\": \"Unassigned\"\n    },\n    \"reporter\": {\n      \"account_id\": \"712020:91a8e307-53f4-4856-88f5-7523318d0912\",\n      \"display_name\": \"CombAIns Assistant\",\n      \"name\": \"CombAIns Assistant\",\n      \"email\": \"user@example.com\",\n      \"avatar_url\": \"https://secure.gravatar.com/avatar/2bbe9d5b5ad2843ccf192c18029355ac?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FCA-4.png\"\n    },\n    \"created\": \"2026-11-03 21:14:31 Środkowoeuropejski czas stand.\",\n    \"updated\": \"2026-11-03 21:14:31 Środkowoeuropejski czas stand.\"\n  }\n}"
+  },
+  {
+   "tool": "jira_create_issue",
+   "note": "unknown issue type",
+   "args": {
+    "project_key": "SCRUM",
+    "summary": "TEST x",
+    "issue_type": "Bug"
+   },
+   "is_error": true,
+   "text": "Error calling tool 'create_issue': Specify a valid issue type"
+  },
+  {
+   "tool": "jira_search_assignable_users",
+   "note": "prefix",
+   "args": {
+    "query": "Komb",
+    "project_key": "SCRUM"
+   },
+   "is_error": false,
+   "text": "{\n  \"success\": true,\n  \"count\": 1,\n  \"users\": [\n    {\n      \"account_id\": \"712020:42691f82-5c77-4848-b7de-e03ced3dfdef\",\n      \"display_name\": \"Kombajn\",\n      \"name\": \"Kombajn\",\n      \"email\": \"\",\n      \"avatar_url\": \"https://secure.gravatar.com/avatar/e26ab5c15aef8b87af6d46b1286e8f37?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-3.png\"\n    }\n  ]\n}"
+  },
+  {
+   "tool": "jira_search_assignable_users",
+   "note": "invited users",
+   "args": {
+    "query": "user+anna",
+    "project_key": "SCRUM"
+   },
+   "is_error": false,
+   "text": "{\n  \"success\": true,\n  \"count\": 6,\n  \"users\": [\n    {\n      \"account_id\": \"712020:080572a7-4529-4672-9215-28efbad28aa3\",\n      \"display_name\": \"user+anna.kowalczyk\",\n      \"name\": \"user+anna.kowalczyk\",\n      \"email\": \"\",\n      \"avatar_url\": \"https://secure.gravatar.com/avatar/5cd3f2e96f806d8aecc9e51d1d1ca2de?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FL-5.png\"\n    },\n    {\n      \"account_id\": \"712020:b92b0bae-e6d8-4889-bb75-5243378be4b4\",\n      \"display_name\": \"user+katarzyna.wisniewska\",\n      \"name\": \"user+katarzyna.wisniewska\",\n      \"email\": \"\",\n      \"avatar_url\": \"https://secure.gravatar.com/avatar/5016fabf9733705e32aaa30fd0550134?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FL-1.png\"\n    },\n    {\n      \"account_id\": \"712020:5c2f0420-2346-4cb4-b153-1ff2087635e2\",\n      \"display_name\": \"user+piotr.nowak\",\n      \"name\": \"user+piotr.nowak\",\n      \"email\": \"\",\n      \"avatar_url\": \"https://secure.gravatar.com/avatar/3f4950d5d65daeb8c8a635055d3d060d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FL-6.png\"\n    },\n    {\n      \"account_id\": \"712020:f1e60b75-5979-4b6b-9600-d52bb7b89a7a\",\n      \"display_name\": \"user+tomasz.zielinski\",\n      \"name\": \"user+tomasz.zielinski\",\n      \"email\": \"\",\n      \"avatar_url\": \"https://secure.gravatar.com/avatar/0e93295650ecd60d4970ab9f128c9ad7?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FL-6.png\"\n    },\n    {\n      \"account_id\": \"712020:866fec7a-53dc-4e16-b149-dba1119755b4\",\n      \"display_name\": \"user+james.miller\",\n      \"name\": \"user+james.miller\",\n      \"email\": \"\",\n      \"avatar_url\": \"https://secure.gravatar.com/avatar/6597c06cea377388f9bf5a864efd52ca?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FL-2.png\"\n    },\n    {\n      \"account_id\": \"712020:1a43a413-4b4b-46cc-aeb0-cc3dd500c7be\",\n      \"display_name\": \"user+laura.schmidt\",\n      \"name\": \"user+laura.schmidt\",\n      \"email\": \"\",\n      \"avatar_url\": \"https://secure.gravatar.com/avatar/9056372c0780237441b47ea87d057984?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FL-2.png\"\n    }\n  ]\n}"
+  },
+  {
+   "tool": "jira_update_issue",
+   "note": "assignee by name",
+   "args": {
+    "issue_key": "SCRUM-10",
+    "fields": "{\"assignee\": \"Kombajn\"}",
+    "return_fields": "key,status,assignee"
+   },
+   "is_error": false,
+   "text": "{\n  \"message\": \"Issue updated successfully\",\n  \"issue\": {\n    \"id\": \"10009\",\n    \"key\": \"SCRUM-10\",\n    \"status\": {\n      \"name\": \"Backlog\",\n      \"category\": \"To Do\",\n      \"color\": \"blue-gray\"\n    },\n    \"assignee\": {\n      \"account_id\": \"712020:42691f82-5c77-4848-b7de-e03ced3dfdef\",\n      \"display_name\": \"Kombajn\",\n      \"name\": \"Kombajn\",\n      \"email\": null,\n      \"avatar_url\": \"https://secure.gravatar.com/avatar/e26ab5c15aef8b87af6d46b1286e8f37?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-3.png\"\n    }\n  }\n}"
+  },
+  {
+   "tool": "jira_update_issue",
+   "note": "labels",
+   "args": {
+    "issue_key": "SCRUM-10",
+    "fields": "{\"labels\": [\"frontend\", \"ui\"]}",
+    "return_fields": "key,labels"
+   },
+   "is_error": false,
+   "text": "{\n  \"message\": \"Issue updated successfully\",\n  \"issue\": {\n    \"id\": \"10009\",\n    \"key\": \"SCRUM-10\",\n    \"labels\": [\n      \"frontend\",\n      \"ui\"\n    ]\n  }\n}"
+  },
+  {
+   "tool": "jira_update_issue",
+   "note": "priority",
+   "args": {
+    "issue_key": "SCRUM-10",
+    "fields": "{\"priority\": {\"name\": \"Low\"}}",
+    "return_fields": "key,priority"
+   },
+   "is_error": false,
+   "text": "{\n  \"message\": \"Issue updated successfully\",\n  \"issue\": {\n    \"id\": \"10009\",\n    \"key\": \"SCRUM-10\",\n    \"priority\": {\n      \"name\": \"Low\"\n    }\n  }\n}"
+  },
+  {
+   "tool": "jira_update_issue",
+   "note": "bad priority",
+   "args": {
+    "issue_key": "SCRUM-10",
+    "fields": "{\"priority\": {\"name\": \"Wysoki\"}}",
+    "return_fields": "key,priority"
+   },
+   "is_error": true,
+   "text": "Error calling tool 'update_issue': Failed to update issue SCRUM-10: Failed to update issue SCRUM-10: Specify the Priority (name) in the string format"
+  },
+  {
+   "tool": "jira_update_issue",
+   "note": "unknown assignee",
+   "args": {
+    "issue_key": "SCRUM-10",
+    "fields": "{\"assignee\": \"Nieistniejąca Osoba\"}",
+    "return_fields": "key"
+   },
+   "is_error": true,
+   "text": "Error calling tool 'update_issue': Failed to update issue SCRUM-10: Failed to update issue SCRUM-10: Could not update assignee: Could not find account ID for user: Nieistniejąca Osoba"
+  },
+  {
+   "tool": "jira_update_issue",
+   "note": "summary, default return_fields",
+   "args": {
+    "issue_key": "SCRUM-10",
+    "fields": "{\"summary\": \"TEST Błąd logowania (Chrome)\"}"
+   },
+   "is_error": false,
+   "text": "{\n  \"message\": \"Issue updated successfully\",\n  \"issue\": {\n    \"id\": \"10009\",\n    \"key\": \"SCRUM-10\",\n    \"summary\": \"TEST Błąd logowania (Chrome)\",\n    \"url\": \"https://combains.atlassian.net/rest/api/2/issue/10009\",\n    \"description\": \"Użytkownik *nie może* się zalogować.\\n\\n* krok 1\\n* krok 2\",\n    \"status\": {\n      \"name\": \"Backlog\",\n      \"category\": \"To Do\",\n      \"color\": \"blue-gray\"\n    },\n    \"issue_type\": {\n      \"name\": \"Task\"\n    },\n    \"priority\": {\n      \"name\": \"Low\"\n    },\n    \"project\": {\n      \"key\": \"SCRUM\",\n      \"name\": \"CombAIns Team\",\n      \"avatar_url\": \"https://combains.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10402\"\n    },\n    \"worklog\": {\n      \"startAt\": 0,\n      \"maxResults\": 20,\n      \"total\": 0,\n      \"worklogs\": []\n    },\n    \"assignee\": {\n      \"account_id\": \"712020:42691f82-5c77-4848-b7de-e03ced3dfdef\",\n      \"display_name\": \"Kombajn\",\n      \"name\": \"Kombajn\",\n      \"email\": null,\n      \"avatar_url\": \"https://secure.gravatar.com/avatar/e26ab5c15aef8b87af6d46b1286e8f37?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-3.png\"\n    },\n    \"reporter\": {\n      \"account_id\": \"712020:91a8e307-53f4-4856-88f5-7523318d0912\",\n      \"display_name\": \"CombAIns Assistant\",\n      \"name\": \"CombAIns Assistant\",\n      \"email\": \"user@example.com\",\n      \"avatar_url\": \"https://secure.gravatar.com/avatar/2bbe9d5b5ad2843ccf192c18029355ac?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FCA-4.png\"\n    },\n    \"labels\": [\n      \"frontend\",\n      \"ui\"\n    ],\n    \"created\": \"2026-11-03 21:14:28 Środkowoeuropejski czas stand.\",\n    \"updated\": \"2026-11-03 21:14:38 Środkowoeuropejski czas stand.\",\n    \"customfield_10037\": {\n      \"value\": null\n    },\n    \"customfield_10020\": {\n      \"value\": null\n    },\n    \"customfield_10021\": {\n      \"value\": null\n    },\n    \"customfield_10026\": {\n      \"value\": null\n    },\n    \"customfield_10016\": {\n      \"value\": null\n    },\n    \"customfield_10019\": {\n      \"value\": \"0|i0000s:\"\n    },\n    \"customfield_10015\": {\n      \"value\": null\n    },\n    \"customfield_10001\": {\n      \"value\": null\n    },\n    \"customfield_10039\": {\n      \"value\": null\n    }\n  }\n}"
+  },
+  {
+   "tool": "jira_update_issue",
+   "note": "missing issue",
+   "args": {
+    "issue_key": "SCRUM-999",
+    "fields": "{\"summary\": \"x\"}"
+   },
+   "is_error": true,
+   "text": "Error calling tool 'update_issue': Failed to update issue SCRUM-999: Failed to update issue SCRUM-999: Issue does not exist or you do not have permission to see it."
+  },
+  {
+   "tool": "jira_get_transitions",
+   "note": "",
+   "args": {
+    "issue_key": "SCRUM-10"
+   },
+   "is_error": false,
+   "text": "[\n  {\n    \"id\": 11,\n    \"name\": \"Backlog\"\n  },\n  {\n    \"id\": 21,\n    \"name\": \"In Progress\"\n  },\n  {\n    \"id\": 31,\n    \"name\": \"In review\"\n  },\n  {\n    \"id\": 41,\n    \"name\": \"Cancelled\"\n  },\n  {\n    \"id\": 51,\n    \"name\": \"Done\"\n  }\n]"
+  },
+  {
+   "tool": "jira_transition_issue",
+   "note": "to In Progress",
+   "args": {
+    "issue_key": "SCRUM-10",
+    "transition_id": "21"
+   },
+   "is_error": false,
+   "text": "{\n  \"message\": \"Issue SCRUM-10 transitioned successfully\",\n  \"issue\": {\n    \"id\": \"10009\",\n    \"key\": \"SCRUM-10\",\n    \"summary\": \"TEST Błąd logowania (Chrome)\",\n    \"browse_url\": \"https://combains.atlassian.net/browse/SCRUM-10\",\n    \"description\": \"Użytkownik **nie może** się zalogować.\\n\\n- krok 1\\n- krok 2\",\n    \"status\": {\n      \"name\": \"In Progress\",\n      \"category\": \"In Progress\",\n      \"color\": \"yellow\"\n    },\n    \"issue_type\": {\n      \"name\": \"Task\"\n    },\n    \"priority\": {\n      \"name\": \"Low\"\n    },\n    \"assignee\": {\n      \"account_id\": \"712020:42691f82-5c77-4848-b7de-e03ced3dfdef\",\n      \"display_name\": \"Kombajn\",\n      \"name\": \"Kombajn\",\n      \"email\": null,\n      \"avatar_url\": \"https://secure.gravatar.com/avatar/e26ab5c15aef8b87af6d46b1286e8f37?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-3.png\"\n    },\n    \"reporter\": {\n      \"account_id\": \"712020:91a8e307-53f4-4856-88f5-7523318d0912\",\n      \"display_name\": \"CombAIns Assistant\",\n      \"name\": \"CombAIns Assistant\",\n      \"email\": \"user@example.com\",\n      \"avatar_url\": \"https://secure.gravatar.com/avatar/2bbe9d5b5ad2843ccf192c18029355ac?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FCA-4.png\"\n    },\n    \"labels\": [\n      \"frontend\",\n      \"ui\"\n    ],\n    \"created\": \"2026-11-03 21:14:28 Środkowoeuropejski czas stand.\",\n    \"updated\": \"2026-11-03 21:14:39 Środkowoeuropejski czas stand.\"\n  }\n}"
+  },
+  {
+   "tool": "jira_transition_issue",
+   "note": "bad id",
+   "args": {
+    "issue_key": "SCRUM-10",
+    "transition_id": "999"
+   },
+   "is_error": true,
+   "text": "Error calling tool 'transition_issue': Transition id '999' is not valid for this issue."
+  },
+  {
+   "tool": "jira_add_comment",
+   "note": "",
+   "args": {
+    "issue_key": "SCRUM-10",
+    "body": "Sprawdziłem w **Chrome** 120. Reproduced on Firefox too."
+   },
+   "is_error": false,
+   "text": "{\n  \"id\": \"10002\",\n  \"body\": \"Sprawdziłem w \\nChrome\\n 120. Reproduced on Firefox too.\",\n  \"created\": \"2026-11-03 21:14:41.577000+01:00\",\n  \"author\": \"CombAIns Assistant\"\n}"
+  },
+  {
+   "tool": "jira_add_comment",
+   "note": "missing issue",
+   "args": {
+    "issue_key": "SCRUM-999",
+    "body": "x"
+   },
+   "is_error": true,
+   "text": "Error calling tool 'add_comment': Error adding comment: Issue does not exist or you do not have permission to see it."
+  },
+  {
+   "tool": "jira_add_worklog",
+   "note": "",
+   "args": {
+    "issue_key": "SCRUM-10",
+    "time_spent": "1h 30m",
+    "comment": "Analiza błędu"
+   },
+   "is_error": false,
+   "text": "{\n  \"message\": \"Worklog added successfully\",\n  \"worklog\": {\n    \"id\": \"10004\",\n    \"comment\": \"Analiza błędu\",\n    \"created\": \"2026-11-03 21:14:42.222000+01:00\",\n    \"updated\": \"2026-11-03 21:14:42.222000+01:00\",\n    \"started\": \"2026-11-03 21:14:42.211000+01:00\",\n    \"time_spent\": \"1h 30m\",\n    \"time_spent_seconds\": 5400,\n    \"author\": \"CombAIns Assistant\",\n    \"original_estimate_updated\": false,\n    \"remaining_estimate_updated\": false\n  }\n}"
+  },
+  {
+   "tool": "jira_add_worklog",
+   "note": "bad format",
+   "args": {
+    "issue_key": "SCRUM-10",
+    "time_spent": "półtorej godziny"
+   },
+   "is_error": false,
+   "text": "{\n  \"message\": \"Worklog added successfully\",\n  \"worklog\": {\n    \"id\": \"10005\",\n    \"comment\": \"\",\n    \"created\": \"2026-11-03 21:14:42.750000+01:00\",\n    \"updated\": \"2026-11-03 21:14:42.750000+01:00\",\n    \"started\": \"2026-11-03 21:14:42.739000+01:00\",\n    \"time_spent\": \"1m\",\n    \"time_spent_seconds\": 60,\n    \"author\": \"CombAIns Assistant\",\n    \"original_estimate_updated\": false,\n    \"remaining_estimate_updated\": false\n  }\n}"
+  },
+  {
+   "tool": "jira_get_worklog",
+   "note": "",
+   "args": {
+    "issue_key": "SCRUM-10"
+   },
+   "is_error": false,
+   "text": "{\n  \"worklogs\": [\n    {\n      \"id\": \"10004\",\n      \"comment\": \"Analiza błędu\",\n      \"created\": \"2026-11-03 21:14:42.222000+01:00\",\n      \"updated\": \"2026-11-03 21:14:42.222000+01:00\",\n      \"started\": \"2026-11-03 21:14:42.211000+01:00\",\n      \"time_spent\": \"1h 30m\",\n      \"time_spent_seconds\": 5400,\n      \"author\": \"CombAIns Assistant\"\n    },\n    {\n      \"id\": \"10005\",\n      \"comment\": \"\",\n      \"created\": \"2026-11-03 21:14:42.750000+01:00\",\n      \"updated\": \"2026-11-03 21:14:42.750000+01:00\",\n      \"started\": \"2026-11-03 21:14:42.739000+01:00\",\n      \"time_spent\": \"1m\",\n      \"time_spent_seconds\": 60,\n      \"author\": \"CombAIns Assistant\"\n    }\n  ]\n}"
+  },
+  {
+   "tool": "jira_add_issues_to_sprint",
+   "note": "",
+   "args": {
+    "sprint_id": "2",
+    "issue_keys": "SCRUM-10,SCRUM-11"
+   },
+   "is_error": false,
+   "text": "{\n  \"message\": \"Successfully added 2 issue(s) to sprint\",\n  \"sprint_id\": \"2\",\n  \"issue_keys\": [\n    \"SCRUM-10\",\n    \"SCRUM-11\"\n  ]\n}"
+  },
+  {
+   "tool": "jira_add_issues_to_sprint",
+   "note": "bad sprint",
+   "args": {
+    "sprint_id": "999",
+    "issue_keys": "SCRUM-10"
+   },
+   "is_error": true,
+   "text": "Error calling tool 'add_issues_to_sprint': We could not find the sprint"
+  },
+  {
+   "tool": "jira_search",
+   "note": "open sprint",
+   "args": {
+    "jql": "project = SCRUM AND sprint in openSprints()",
+    "fields": "summary,status,assignee",
+    "limit": 10
+   },
+   "is_error": false,
+   "text": "{\n  \"total\": -1,\n  \"start_at\": 0,\n  \"max_results\": 10,\n  \"issues\": [\n    {\n      \"id\": \"10010\",\n      \"key\": \"SCRUM-11\",\n      \"summary\": \"TEST Update the API docs\",\n      \"browse_url\": \"https://combains.atlassian.net/browse/SCRUM-11\",\n      \"status\": {\n        \"name\": \"Backlog\",\n        \"category\": \"To Do\",\n        \"color\": \"blue-gray\"\n      },\n      \"assignee\": {\n        \"account_id\": \"712020:42691f82-5c77-4848-b7de-e03ced3dfdef\",\n        \"display_name\": \"Kombajn\",\n        \"name\": \"Kombajn\",\n        \"email\": null,\n        \"avatar_url\": \"https://secure.gravatar.com/avatar/e26ab5c15aef8b87af6d46b1286e8f37?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-3.png\"\n      }\n    },\n    {\n      \"id\": \"10009\",\n      \"key\": \"SCRUM-10\",\n      \"summary\": \"TEST Błąd logowania (Chrome)\",\n      \"browse_url\": \"https://combains.atlassian.net/browse/SCRUM-10\",\n      \"status\": {\n        \"name\": \"In Progress\",\n        \"category\": \"In Progress\",\n        \"color\": \"yellow\"\n      },\n      \"assignee\": {\n        \"account_id\": \"712020:42691f82-5c77-4848-b7de-e03ced3dfdef\",\n        \"display_name\": \"Kombajn\",\n        \"name\": \"Kombajn\",\n        \"email\": null,\n        \"avatar_url\": \"https://secure.gravatar.com/avatar/e26ab5c15aef8b87af6d46b1286e8f37?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-3.png\"\n      }\n    },\n    {\n      \"id\": \"10001\",\n      \"key\": \"SCRUM-2\",\n      \"summary\": \"Zadanie 2\",\n      \"browse_url\": \"https://combains.atlassian.net/browse/SCRUM-2\",\n      \"status\": {\n        \"name\": \"In Progress\",\n        \"category\": \"In Progress\",\n        \"color\": \"yellow\"\n      },\n      \"assignee\": {\n        \"display_name\": \"Unassigned\"\n      }\n    },\n    {\n      \"id\": \"10000\",\n      \"key\": \"SCRUM-1\",\n      \"summary\": \"Zadanie 1\",\n      \"browse_url\": \"https://combains.atlassian.net/browse/SCRUM-1\",\n      \"status\": {\n        \"name\": \"Backlog\",\n        \"category\": \"To Do\",\n        \"color\": \"blue-gray\"\n      },\n      \"assignee\": {\n        \"display_name\": \"Unassigned\"\n      }\n    }\n  ]\n}"
+  },
+  {
+   "tool": "jira_move_issues_to_backlog",
+   "note": "",
+   "args": {
+    "issue_keys": "SCRUM-11"
+   },
+   "is_error": false,
+   "text": "{\n  \"message\": \"Successfully moved 1 issue(s) to backlog\",\n  \"issue_keys\": [\n    \"SCRUM-11\"\n  ]\n}"
+  },
+  {
+   "tool": "jira_search",
+   "note": "default fields",
+   "args": {
+    "jql": "project = SCRUM AND labels = frontend AND status = \"In Progress\"",
+    "limit": 10
+   },
+   "is_error": false,
+   "text": "{\n  \"total\": -1,\n  \"start_at\": 0,\n  \"max_results\": 10,\n  \"issues\": [\n    {\n      \"id\": \"10009\",\n      \"key\": \"SCRUM-10\",\n      \"summary\": \"TEST Błąd logowania (Chrome)\",\n      \"browse_url\": \"https://combains.atlassian.net/browse/SCRUM-10\",\n      \"description\": \"Użytkownik \\nnie może\\n się zalogować.\\nkrok 1\\nkrok 2\",\n      \"status\": {\n        \"name\": \"In Progress\",\n        \"category\": \"In Progress\",\n        \"color\": \"yellow\"\n      },\n      \"issue_type\": {\n        \"name\": \"Task\"\n      },\n      \"priority\": {\n        \"name\": \"Low\"\n      },\n      \"assignee\": {\n        \"account_id\": \"712020:42691f82-5c77-4848-b7de-e03ced3dfdef\",\n        \"display_name\": \"Kombajn\",\n        \"name\": \"Kombajn\",\n        \"email\": null,\n        \"avatar_url\": \"https://secure.gravatar.com/avatar/e26ab5c15aef8b87af6d46b1286e8f37?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-3.png\"\n      },\n      \"reporter\": {\n        \"account_id\": \"712020:91a8e307-53f4-4856-88f5-7523318d0912\",\n        \"display_name\": \"CombAIns Assistant\",\n        \"name\": \"CombAIns Assistant\",\n        \"email\": \"user@example.com\",\n        \"avatar_url\": \"https://secure.gravatar.com/avatar/2bbe9d5b5ad2843ccf192c18029355ac?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FCA-4.png\"\n      },\n      \"labels\": [\n        \"frontend\",\n        \"ui\"\n      ],\n      \"created\": \"2026-11-03 21:14:28 Środkowoeuropejski czas stand.\",\n      \"updated\": \"2026-11-03 21:14:43 Środkowoeuropejski czas stand.\"\n    }\n  ]\n}"
+  },
+  {
+   "tool": "jira_search",
+   "note": "translated status name",
+   "args": {
+    "jql": "project = SCRUM AND status = \"W toku\"",
+    "limit": 10
+   },
+   "is_error": false,
+   "text": "{\n  \"total\": -1,\n  \"start_at\": 0,\n  \"max_results\": 10,\n  \"issues\": []\n}"
+  },
+  {
+   "tool": "jira_search",
+   "note": "assignee name",
+   "args": {
+    "jql": "project = SCRUM AND assignee = \"Kombajn\"",
+    "limit": 10
+   },
+   "is_error": false,
+   "text": "{\n  \"total\": -1,\n  \"start_at\": 0,\n  \"max_results\": 10,\n  \"issues\": [\n    {\n      \"id\": \"10010\",\n      \"key\": \"SCRUM-11\",\n      \"summary\": \"TEST Update the API docs\",\n      \"browse_url\": \"https://combains.atlassian.net/browse/SCRUM-11\",\n      \"status\": {\n        \"name\": \"Backlog\",\n        \"category\": \"To Do\",\n        \"color\": \"blue-gray\"\n      },\n      \"issue_type\": {\n        \"name\": \"Task\"\n      },\n      \"priority\": {\n        \"name\": \"Medium\"\n      },\n      \"assignee\": {\n        \"account_id\": \"712020:42691f82-5c77-4848-b7de-e03ced3dfdef\",\n        \"display_name\": \"Kombajn\",\n        \"name\": \"Kombajn\",\n        \"email\": null,\n        \"avatar_url\": \"https://secure.gravatar.com/avatar/e26ab5c15aef8b87af6d46b1286e8f37?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-3.png\"\n      },\n      \"reporter\": {\n        \"account_id\": \"712020:91a8e307-53f4-4856-88f5-7523318d0912\",\n        \"display_name\": \"CombAIns Assistant\",\n        \"name\": \"CombAIns Assistant\",\n        \"email\": \"user@example.com\",\n        \"avatar_url\": \"https://secure.gravatar.com/avatar/2bbe9d5b5ad2843ccf192c18029355ac?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FCA-4.png\"\n      },\n      \"created\": \"2026-11-03 21:14:29 Środkowoeuropejski czas stand.\",\n      \"updated\": \"2026-11-03 21:14:44 Środkowoeuropejski czas stand.\"\n    },\n    {\n      \"id\": \"10009\",\n      \"key\": \"SCRUM-10\",\n      \"summary\": \"TEST Błąd logowania (Chrome)\",\n      \"browse_url\": \"https://combains.atlassian.net/browse/SCRUM-10\",\n      \"description\": \"Użytkownik \\nnie może\\n się zalogować.\\nkrok 1\\nkrok 2\",\n      \"status\": {\n        \"name\": \"In Progress\",\n        \"category\": \"In Progress\",\n        \"color\": \"yellow\"\n      },\n      \"issue_type\": {\n        \"name\": \"Task\"\n      },\n      \"priority\": {\n        \"name\": \"Low\"\n      },\n      \"assignee\": {\n        \"account_id\": \"712020:42691f82-5c77-4848-b7de-e03ced3dfdef\",\n        \"display_name\": \"Kombajn\",\n        \"name\": \"Kombajn\",\n        \"email\": null,\n        \"avatar_url\": \"https://secure.gravatar.com/avatar/e26ab5c15aef8b87af6d46b1286e8f37?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-3.png\"\n      },\n      \"reporter\": {\n        \"account_id\": \"712020:91a8e307-53f4-4856-88f5-7523318d0912\",\n        \"display_name\": \"CombAIns Assistant\",\n        \"name\": \"CombAIns Assistant\",\n        \"email\": \"user@example.com\",\n        \"avatar_url\": \"https://secure.gravatar.com/avatar/2bbe9d5b5ad2843ccf192c18029355ac?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FCA-4.png\"\n      },\n      \"labels\": [\n        \"frontend\",\n        \"ui\"\n      ],\n      \"created\": \"2026-11-03 21:14:28 Środkowoeuropejski czas stand.\",\n      \"updated\": \"2026-11-03 21:14:43 Środkowoeuropejski czas stand.\"\n    }\n  ]\n}"
+  },
+  {
+   "tool": "jira_search",
+   "note": "syntax error",
+   "args": {
+    "jql": "project = SCRUM AND (status = ",
+    "limit": 10
+   },
+   "is_error": true,
+   "text": "Error calling tool 'search': Error in JQL Query: Expecting either a value, list or function before the end of the query."
+  },
+  {
+   "tool": "jira_search",
+   "note": "empty",
+   "args": {
+    "jql": "project = SCRUM AND labels = nieistniejaca",
+    "limit": 10
+   },
+   "is_error": false,
+   "text": "{\n  \"total\": -1,\n  \"start_at\": 0,\n  \"max_results\": 10,\n  \"issues\": []\n}"
+  },
+  {
+   "tool": "jira_get_issue",
+   "note": "with comments",
+   "args": {
+    "issue_key": "SCRUM-10",
+    "comment_limit": 5
+   },
+   "is_error": false,
+   "text": "{\n  \"id\": \"10009\",\n  \"key\": \"SCRUM-10\",\n  \"summary\": \"TEST Błąd logowania (Chrome)\",\n  \"browse_url\": \"https://combains.atlassian.net/browse/SCRUM-10\",\n  \"description\": \"Użytkownik **nie może** się zalogować.\\n\\n- krok 1\\n- krok 2\",\n  \"status\": {\n    \"name\": \"In Progress\",\n    \"category\": \"In Progress\",\n    \"color\": \"yellow\"\n  },\n  \"issue_type\": {\n    \"name\": \"Task\"\n  },\n  \"priority\": {\n    \"name\": \"Low\"\n  },\n  \"assignee\": {\n    \"account_id\": \"712020:42691f82-5c77-4848-b7de-e03ced3dfdef\",\n    \"display_name\": \"Kombajn\",\n    \"name\": \"Kombajn\",\n    \"email\": null,\n    \"avatar_url\": \"https://secure.gravatar.com/avatar/e26ab5c15aef8b87af6d46b1286e8f37?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-3.png\"\n  },\n  \"reporter\": {\n    \"account_id\": \"712020:91a8e307-53f4-4856-88f5-7523318d0912\",\n    \"display_name\": \"CombAIns Assistant\",\n    \"name\": \"CombAIns Assistant\",\n    \"email\": \"user@example.com\",\n    \"avatar_url\": \"https://secure.gravatar.com/avatar/2bbe9d5b5ad2843ccf192c18029355ac?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FCA-4.png\"\n  },\n  \"labels\": [\n    \"frontend\",\n    \"ui\"\n  ],\n  \"created\": \"2026-11-03 21:14:28 Środkowoeuropejski czas stand.\",\n  \"updated\": \"2026-11-03 21:14:43 Środkowoeuropejski czas stand.\",\n  \"comments\": [\n    {\n      \"id\": \"10002\",\n      \"body\": \"Sprawdziłem w **Chrome** 120. Reproduced on Firefox too.\",\n      \"author\": {\n        \"account_id\": \"712020:91a8e307-53f4-4856-88f5-7523318d0912\",\n        \"display_name\": \"CombAIns Assistant\",\n        \"name\": \"CombAIns Assistant\",\n        \"email\": \"user@example.com\",\n        \"avatar_url\": \"https://secure.gravatar.com/avatar/2bbe9d5b5ad2843ccf192c18029355ac?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FCA-4.png\"\n      },\n      \"created\": \"2026-11-03T21:14:41.577+0100\",\n      \"updated\": \"2026-11-03T21:14:41.577+0100\"\n    }\n  ]\n}"
+  }
+ ]
+}

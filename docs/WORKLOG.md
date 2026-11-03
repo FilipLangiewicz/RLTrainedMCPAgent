@@ -72,3 +72,67 @@
 
 - Add `.claude/` to `.gitignore` and remove the commands and skills of OpenSpec from git. The local files stay.
 - Change `AGENTS.md`: each team member makes the commands and skills with `openspec init --tools claude`. This command does not change `openspec/`.
+
+### Research of the real Jira MCP servers
+
+- Add `JIRA_MCP.md`. It describes the two real MCP servers for Jira: the Atlassian Rovo MCP Server (v2, 52 Jira tools) and `mcp-atlassian` 0.23.1 (63 Jira tools).
+- It lists all Jira tools of both servers and maps the 7 simulator tools to them.
+- The simulator tools are our own design. They cover only a subset of Jira: issues, persons, sprints and comments.
+- The check of `mcp-atlassian` used its source code from PyPI. The data of the Rovo server comes from the documentation of Atlassian.
+- Add `docs/MODELS.md`. It lists six candidate models from three families: Qwen3.5 (2B, 4B), Bielik v3 (1.5B, 4.5B) and Gemma 4 (E2B, E4B).
+- For each model, the file gives the license, the release date, the links to Hugging Face and Kaggle, and an estimate of the VRAM.
+- The team removes Qwen3 from the candidates. The decision about SFT and RL for each model is open.
+
+### Decision: mcp-atlassian
+
+- The team selects `mcp-atlassian` 0.23.1 as the reference for real Jira. The simulator must give the same tools as this server.
+- The team does not use the results of `baseline-v1`. The new candidate models are in `docs/MODELS.md`.
+- Move `JIRA_MCP.md` to `docs/JIRA_MCP.md`. Remove the Rovo MCP Server and the comparison with the old simulator tools.
+- Add the pinned version, the sources and an estimate of the schema size of each of the 63 Jira tools.
+- Add a proposal: 12 tools, with a maximum of 15. The main limit is the context of 8192 tokens of Bielik-1.5B.
+
+### Contracts of the selected Jira tools
+
+- Select 13 tools of `mcp-atlassian` 0.23.1. They cover search, issue creation, assignment, status, labels, comments, worklogs and sprints.
+- Each operation has one way. `docs/JIRA_TOOLS.md` gives the operations, the used arguments and the result formats.
+- Add `data/mcp_atlassian_tools.json`: the exact schemas of the 13 tools from `list_tools()` of the real server.
+- Measure the size of the schemas: 3820 tokens (Gemma 4 E2B) and 4679 tokens (Qwen3.5-2B). All 63 tools have 12979 and 15708 tokens.
+- Add to `docs/JIRA_MCP.md` the procedures for a Jira Cloud site, an API token, the start of the server and a new copy of the schemas.
+- Add `jira_get_worklog` to the selected tools. Now 14 tools are selected. The schemas have 3904 tokens (Gemma 4 E2B) and 4806 tokens (Qwen3.5-2B).
+
+### Next steps
+
+1. Make a Jira Cloud site (Free plan) and an API token (see `docs/JIRA_MCP.md`).
+2. Run the 14 tools on the site. Record their real results and error messages.
+3. Start a new OpenSpec change: the simulator with the contracts of `docs/JIRA_TOOLS.md`.
+4. Make the task set again for the new tools, and a contract test with the recorded results.
+5. Run a new baseline with the models of `docs/MODELS.md`.
+
+## 2026-11-03
+
+### Kaggle account for each project
+
+- Add `jobs/kaggle.sh`. It runs the Kaggle CLI of `.venv`. If `.kaggle/access_token` of the project is not empty, the CLI uses this token. Otherwise the CLI uses `~/.kaggle/access_token`.
+- `jobs/wait.sh` calls `jobs/kaggle.sh`. Thus it uses the same account as the push.
+- `KAGGLE.md`: add the selection of the account. All Kaggle commands use `bash jobs/kaggle.sh`. The user in the kernel id must be the selected account.
+- `.gitignore`: add `.kaggle/`.
+
+### Test of the MCP server on Jira Cloud
+
+- The Jira Cloud site `combains.atlassian.net` exists. It has one team-managed Scrum project `SCRUM` with board 1 and two sprints.
+- The account of the API token is a Jira administrator and an administrator of the project `SCRUM`. It can delete issues.
+- Run all 14 selected tools of `mcp-atlassian` 0.23.1 on the site. All tools operate. The schemas of the live server agree with `data/mcp_atlassian_tools.json`.
+- Add `data/jira_recorded_results.json`: 42 calls with their real results and errors. The e-mail addresses are replaced with `user@example.com`.
+- Add the section "Behavior of real Jira" to `docs/JIRA_TOOLS.md`. Correct the results of `jira_search`, `jira_get_transitions` and `jira_add_comment`.
+- Important fact: the results show translated names (`W toku`, `Zadanie`), but JQL accepts only the original names (`In Progress`, `Task`). A translated name in JQL returns an empty list without an error.
+- Two tools hide an error: `jira_create_issue` with an unknown assignee, and `jira_add_worklog` with an incorrect time.
+- Invite 6 persons with aliases of the e-mail address of the team. Their accounts are not active until a person accepts each invitation and sets the name.
+- Delete the test issues `SCRUM-5` to `SCRUM-7`.
+
+### Language of Jira
+
+- The team selects English as the Jira language of the API account. The issues, the comments and the tasks can be in Polish or in English.
+- Set the Jira language with `PUT /rest/api/3/mypreferences/locale`. Now the results and JQL use the same names (`In Progress`, `Task`, `Done`).
+- Record the results of the 14 tools again. `data/jira_recorded_results.json` now has 43 calls in English.
+- The 6 invited persons now have access to Jira. Their display names are still the e-mail aliases.
+- Delete the test issues `SCRUM-8` to `SCRUM-12`.
