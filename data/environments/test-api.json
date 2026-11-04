@@ -1,0 +1,929 @@
+{
+  "name": "test-api",
+  "site": "https://example.atlassian.net",
+  "now": "2026-11-10T10:00:00.000+0100",
+  "project": {
+    "key": "API",
+    "name": "JayWalk - API dla partnerów"
+  },
+  "board": {
+    "id": "13",
+    "name": "API board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:316e5d21-f949-59c5-9fb8-f7eeec421665",
+      "display_name": "Tomasz Baran",
+      "email": "tomasz.baran@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:40ad616d-9dd9-50f4-9a81-41513d2934aa",
+      "display_name": "Tomasz Kubiak",
+      "email": "tomasz.kubiak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:83e24b9c-d63d-5f2d-9594-0ce5fd375a82",
+      "display_name": "Oliver Hayes",
+      "email": "oliver.hayes@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:24d499df-ddc9-5a0f-b6fd-92f557c7b9e5",
+      "display_name": "Natalia Zając",
+      "email": "natalia.zajac@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:c33b1f08-d1c2-533e-9a0f-fa2ea64afdcd",
+      "display_name": "Agnieszka Duda",
+      "email": "agnieszka.duda@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:005c1a9d-fceb-50b9-a166-f41966068b28",
+      "display_name": "Krzysztof Malinowski",
+      "email": "krzysztof.malinowski@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:d6bc3d63-9549-573b-b02b-62ef2e980c89",
+      "display_name": "Grzegorz Sowa",
+      "email": "grzegorz.sowa@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "61",
+      "name": "API Sprint 21",
+      "state": "closed",
+      "start_date": "2026-10-20T09:00:00.000Z",
+      "end_date": "2026-11-03T09:00:00.000Z",
+      "goal": "OAuth dla partnerów"
+    },
+    {
+      "id": "62",
+      "name": "API Sprint 22",
+      "state": "active",
+      "start_date": "2026-11-03T09:00:00.000Z",
+      "end_date": "2026-11-17T09:00:00.000Z",
+      "goal": "Limity zapytań i webhooki dla partnerów"
+    },
+    {
+      "id": "63",
+      "name": "API Sprint 23",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Rezerwacje i podpisy webhooków"
+    },
+    {
+      "id": "64",
+      "name": "API Sprint 24",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "13001",
+      "key": "API-1",
+      "summary": "OAuth2 client credentials dla partnerów",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:316e5d21-f949-59c5-9fb8-f7eeec421665",
+      "reporter": "712020:40ad616d-9dd9-50f4-9a81-41513d2934aa",
+      "labels": [
+        "auth"
+      ],
+      "sprint": "61",
+      "created": "2026-09-02T22:00:00.000+0100",
+      "updated": "2026-09-05T22:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "130011",
+          "author": "712020:316e5d21-f949-59c5-9fb8-f7eeec421665",
+          "time_spent_seconds": 28800,
+          "comment": "",
+          "started": "2026-09-04T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "13002",
+      "key": "API-2",
+      "summary": "Endpoint /orders zwraca 500 dla zamówień bez adresu",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:005c1a9d-fceb-50b9-a166-f41966068b28",
+      "reporter": "712020:83e24b9c-d63d-5f2d-9594-0ce5fd375a82",
+      "labels": [
+        "orders"
+      ],
+      "sprint": "61",
+      "created": "2026-09-04T11:00:00.000+0100",
+      "updated": "2026-09-07T11:00:00.000+0100",
+      "comments": [
+        {
+          "id": "130021",
+          "author": "712020:005c1a9d-fceb-50b9-a166-f41966068b28",
+          "body": "Poprawione, brak adresu zwraca teraz 422.",
+          "created": "2026-09-05T11:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "13003",
+      "key": "API-3",
+      "summary": "Opis kodów błędów w dokumentacji API",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Low",
+      "assignee": "712020:c33b1f08-d1c2-533e-9a0f-fa2ea64afdcd",
+      "reporter": "712020:24d499df-ddc9-5a0f-b6fd-92f557c7b9e5",
+      "labels": [
+        "docs"
+      ],
+      "sprint": "61",
+      "created": "2026-09-06T00:00:00.000+0100",
+      "updated": "2026-09-09T00:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13004",
+      "key": "API-4",
+      "summary": "Webhook retries ignore the Retry-After header",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Cancelled",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:c33b1f08-d1c2-533e-9a0f-fa2ea64afdcd",
+      "labels": [
+        "webhooks"
+      ],
+      "sprint": "61",
+      "created": "2026-09-07T13:00:00.000+0100",
+      "updated": "2026-09-10T13:00:00.000+0100",
+      "comments": [
+        {
+          "id": "130041",
+          "author": "712020:83e24b9c-d63d-5f2d-9594-0ce5fd375a82",
+          "body": "Duplicate of a partner-side issue, closing.",
+          "created": "2026-09-08T13:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "13005",
+      "key": "API-5",
+      "summary": "Limity zapytań per partner (rate limiting)",
+      "description": "Limit 100 zapytań na minutę na klucz API, odpowiedź 429 z nagłówkiem Retry-After.",
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:316e5d21-f949-59c5-9fb8-f7eeec421665",
+      "reporter": "712020:005c1a9d-fceb-50b9-a166-f41966068b28",
+      "labels": [
+        "rate-limit",
+        "partners"
+      ],
+      "sprint": "62",
+      "created": "2026-09-09T02:00:00.000+0100",
+      "updated": "2026-09-12T02:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "130051",
+          "author": "712020:316e5d21-f949-59c5-9fb8-f7eeec421665",
+          "time_spent_seconds": 18000,
+          "comment": "Projekt limitów",
+          "started": "2026-09-10T04:00:00.000+0100"
+        },
+        {
+          "id": "130052",
+          "author": "712020:40ad616d-9dd9-50f4-9a81-41513d2934aa",
+          "time_spent_seconds": 10800,
+          "comment": "Testy w Redis",
+          "started": "2026-09-11T04:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "13006",
+      "key": "API-6",
+      "summary": "Stany magazynowe rozjeżdżają się z systemem sklepu stacjonarnego",
+      "description": "Partner Sportland widzi inne stany niż sklep. Różnice do 3 par na model.",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:40ad616d-9dd9-50f4-9a81-41513d2934aa",
+      "reporter": "712020:316e5d21-f949-59c5-9fb8-f7eeec421665",
+      "labels": [
+        "inventory",
+        "partners"
+      ],
+      "sprint": "62",
+      "created": "2026-09-10T15:00:00.000+0100",
+      "updated": "2026-09-13T15:00:00.000+0100",
+      "comments": [
+        {
+          "id": "130061",
+          "author": "712020:83e24b9c-d63d-5f2d-9594-0ce5fd375a82",
+          "body": "Sportland complained again this morning.",
+          "created": "2026-09-11T15:00:00.000+0100"
+        },
+        {
+          "id": "130062",
+          "author": "712020:40ad616d-9dd9-50f4-9a81-41513d2934aa",
+          "body": "Sprawdzam kolejkę synchronizacji.",
+          "created": "2026-09-12T15:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "13007",
+      "key": "API-7",
+      "summary": "Webhook order.paid wysyłany przed zapisaniem płatności",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:40ad616d-9dd9-50f4-9a81-41513d2934aa",
+      "labels": [
+        "webhooks",
+        "partners"
+      ],
+      "sprint": "62",
+      "created": "2026-09-12T04:00:00.000+0100",
+      "updated": "2026-09-15T04:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13008",
+      "key": "API-8",
+      "summary": "Przykłady w Postmanie dla nowych endpointów",
+      "description": "",
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:c33b1f08-d1c2-533e-9a0f-fa2ea64afdcd",
+      "reporter": "712020:83e24b9c-d63d-5f2d-9594-0ce5fd375a82",
+      "labels": [
+        "docs"
+      ],
+      "sprint": "62",
+      "created": "2026-09-13T17:00:00.000+0100",
+      "updated": "2026-09-16T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13009",
+      "key": "API-9",
+      "summary": "Refresh token can be reused after rotation",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "High",
+      "assignee": "712020:83e24b9c-d63d-5f2d-9594-0ce5fd375a82",
+      "reporter": "712020:24d499df-ddc9-5a0f-b6fd-92f557c7b9e5",
+      "labels": [
+        "auth",
+        "security"
+      ],
+      "sprint": "62",
+      "created": "2026-09-15T06:00:00.000+0100",
+      "updated": "2026-09-18T06:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13010",
+      "key": "API-10",
+      "summary": "Alert na wzrost błędów 5xx powyżej 2%",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:c33b1f08-d1c2-533e-9a0f-fa2ea64afdcd",
+      "labels": [
+        "monitoring"
+      ],
+      "sprint": "62",
+      "created": "2026-09-16T19:00:00.000+0100",
+      "updated": "2026-09-19T19:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13011",
+      "key": "API-11",
+      "summary": "Endpoint do anulowania zamówienia przez partnera",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:005c1a9d-fceb-50b9-a166-f41966068b28",
+      "reporter": "712020:005c1a9d-fceb-50b9-a166-f41966068b28",
+      "labels": [
+        "orders"
+      ],
+      "sprint": "62",
+      "created": "2026-09-18T08:00:00.000+0100",
+      "updated": "2026-09-21T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13012",
+      "key": "API-12",
+      "summary": "Wolne zapytanie o zamówienia z filtrem dat",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:005c1a9d-fceb-50b9-a166-f41966068b28",
+      "reporter": "712020:316e5d21-f949-59c5-9fb8-f7eeec421665",
+      "labels": [
+        "performance",
+        "orders"
+      ],
+      "sprint": "62",
+      "created": "2026-09-19T21:00:00.000+0100",
+      "updated": "2026-09-22T21:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "130121",
+          "author": "712020:005c1a9d-fceb-50b9-a166-f41966068b28",
+          "time_spent_seconds": 9000,
+          "comment": "",
+          "started": "2026-09-20T23:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "13013",
+      "key": "API-13",
+      "summary": "Retrospektywa sprintu 21 - podsumowanie",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Low",
+      "assignee": "712020:24d499df-ddc9-5a0f-b6fd-92f557c7b9e5",
+      "reporter": "712020:40ad616d-9dd9-50f4-9a81-41513d2934aa",
+      "labels": [],
+      "sprint": "62",
+      "created": "2026-09-21T10:00:00.000+0100",
+      "updated": "2026-09-24T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13014",
+      "key": "API-14",
+      "summary": "Literówki w opisie endpointu /returns",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:83e24b9c-d63d-5f2d-9594-0ce5fd375a82",
+      "labels": [
+        "docs"
+      ],
+      "sprint": "62",
+      "created": "2026-09-22T23:00:00.000+0100",
+      "updated": "2026-09-25T23:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13015",
+      "key": "API-15",
+      "summary": "Rezerwacja par na 15 minut po dodaniu do koszyka",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:24d499df-ddc9-5a0f-b6fd-92f557c7b9e5",
+      "labels": [
+        "inventory"
+      ],
+      "sprint": "63",
+      "created": "2026-09-24T12:00:00.000+0100",
+      "updated": "2026-09-27T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13016",
+      "key": "API-16",
+      "summary": "Onboarding guide for new marketplace partners",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:83e24b9c-d63d-5f2d-9594-0ce5fd375a82",
+      "reporter": "712020:c33b1f08-d1c2-533e-9a0f-fa2ea64afdcd",
+      "labels": [
+        "partners"
+      ],
+      "sprint": "63",
+      "created": "2026-09-26T01:00:00.000+0100",
+      "updated": "2026-09-29T01:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13017",
+      "key": "API-17",
+      "summary": "Podpisywanie webhooków HMAC",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:005c1a9d-fceb-50b9-a166-f41966068b28",
+      "labels": [
+        "webhooks"
+      ],
+      "sprint": "63",
+      "created": "2026-09-27T14:00:00.000+0100",
+      "updated": "2026-09-30T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13018",
+      "key": "API-18",
+      "summary": "Rozmiary połówkowe (np. 42,5) gubione przy imporcie",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:316e5d21-f949-59c5-9fb8-f7eeec421665",
+      "labels": [
+        "inventory"
+      ],
+      "sprint": "63",
+      "created": "2026-09-29T03:00:00.000+0100",
+      "updated": "2026-10-02T03:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13019",
+      "key": "API-19",
+      "summary": "Klucze API widoczne w logach aplikacji",
+      "description": "Nagłówek X-Api-Key trafia do logów w całości.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": null,
+      "reporter": "712020:40ad616d-9dd9-50f4-9a81-41513d2934aa",
+      "labels": [
+        "security",
+        "auth"
+      ],
+      "sprint": null,
+      "created": "2026-09-30T16:00:00.000+0100",
+      "updated": "2026-10-03T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13020",
+      "key": "API-20",
+      "summary": "Wersjonowanie dokumentacji API",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:c33b1f08-d1c2-533e-9a0f-fa2ea64afdcd",
+      "reporter": "712020:83e24b9c-d63d-5f2d-9594-0ce5fd375a82",
+      "labels": [
+        "docs"
+      ],
+      "sprint": null,
+      "created": "2026-10-02T05:00:00.000+0100",
+      "updated": "2026-10-05T05:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13021",
+      "key": "API-21",
+      "summary": "Panel partnera: statystyki zapytań",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:24d499df-ddc9-5a0f-b6fd-92f557c7b9e5",
+      "labels": [
+        "partners"
+      ],
+      "sprint": null,
+      "created": "2026-10-03T18:00:00.000+0100",
+      "updated": "2026-10-06T18:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13022",
+      "key": "API-22",
+      "summary": "Timeout przy eksporcie katalogu produktów",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:316e5d21-f949-59c5-9fb8-f7eeec421665",
+      "reporter": "712020:c33b1f08-d1c2-533e-9a0f-fa2ea64afdcd",
+      "labels": [
+        "performance"
+      ],
+      "sprint": null,
+      "created": "2026-10-05T07:00:00.000+0100",
+      "updated": "2026-10-08T07:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13023",
+      "key": "API-23",
+      "summary": "Remove old Grafana dashboards",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": "712020:d6bc3d63-9549-573b-b02b-62ef2e980c89",
+      "reporter": "712020:005c1a9d-fceb-50b9-a166-f41966068b28",
+      "labels": [
+        "monitoring"
+      ],
+      "sprint": null,
+      "created": "2026-10-06T20:00:00.000+0100",
+      "updated": "2026-10-09T20:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13024",
+      "key": "API-24",
+      "summary": "Zamówienia partnera Sportland bez numeru faktury",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:40ad616d-9dd9-50f4-9a81-41513d2934aa",
+      "reporter": "712020:316e5d21-f949-59c5-9fb8-f7eeec421665",
+      "labels": [
+        "orders",
+        "partners"
+      ],
+      "sprint": null,
+      "created": "2026-10-08T09:00:00.000+0100",
+      "updated": "2026-10-11T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13025",
+      "key": "API-25",
+      "summary": "Aktualizacja frameworka do najnowszej wersji LTS",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:005c1a9d-fceb-50b9-a166-f41966068b28",
+      "reporter": "712020:40ad616d-9dd9-50f4-9a81-41513d2934aa",
+      "labels": [],
+      "sprint": null,
+      "created": "2026-10-09T22:00:00.000+0100",
+      "updated": "2026-10-12T22:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13026",
+      "key": "API-26",
+      "summary": "Zły przykład JSON w opisie /inventory",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:83e24b9c-d63d-5f2d-9594-0ce5fd375a82",
+      "labels": [
+        "docs"
+      ],
+      "sprint": null,
+      "created": "2026-10-11T11:00:00.000+0100",
+      "updated": "2026-10-14T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13027",
+      "key": "API-27",
+      "summary": "Webhook for stock level changes",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:83e24b9c-d63d-5f2d-9594-0ce5fd375a82",
+      "reporter": "712020:24d499df-ddc9-5a0f-b6fd-92f557c7b9e5",
+      "labels": [
+        "partners",
+        "webhooks"
+      ],
+      "sprint": null,
+      "created": "2026-10-13T00:00:00.000+0100",
+      "updated": "2026-10-16T00:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13028",
+      "key": "API-28",
+      "summary": "Test penetracyjny API partnerów",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:c33b1f08-d1c2-533e-9a0f-fa2ea64afdcd",
+      "labels": [
+        "security"
+      ],
+      "sprint": null,
+      "created": "2026-10-14T13:00:00.000+0100",
+      "updated": "2026-10-17T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13029",
+      "key": "API-29",
+      "summary": "Limit zapytań liczony podwójnie dla żądań HEAD",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:40ad616d-9dd9-50f4-9a81-41513d2934aa",
+      "reporter": "712020:005c1a9d-fceb-50b9-a166-f41966068b28",
+      "labels": [
+        "rate-limit"
+      ],
+      "sprint": "62",
+      "created": "2026-10-16T02:00:00.000+0100",
+      "updated": "2026-10-19T02:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13030",
+      "key": "API-30",
+      "summary": "Migracja logów do nowego klastra",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:d6bc3d63-9549-573b-b02b-62ef2e980c89",
+      "reporter": "712020:316e5d21-f949-59c5-9fb8-f7eeec421665",
+      "labels": [
+        "monitoring"
+      ],
+      "sprint": null,
+      "created": "2026-10-17T15:00:00.000+0100",
+      "updated": "2026-10-20T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13031",
+      "key": "API-31",
+      "summary": "Brak paginacji w /orders/history",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:40ad616d-9dd9-50f4-9a81-41513d2934aa",
+      "labels": [
+        "orders"
+      ],
+      "sprint": "62",
+      "created": "2026-10-19T04:00:00.000+0100",
+      "updated": "2026-10-22T04:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13032",
+      "key": "API-32",
+      "summary": "Planowanie przyrostu Q1 z partnerami",
+      "description": "",
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "Low",
+      "assignee": "712020:24d499df-ddc9-5a0f-b6fd-92f557c7b9e5",
+      "reporter": "712020:83e24b9c-d63d-5f2d-9594-0ce5fd375a82",
+      "labels": [],
+      "sprint": "62",
+      "created": "2026-10-20T17:00:00.000+0100",
+      "updated": "2026-10-23T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "130321",
+          "author": "712020:24d499df-ddc9-5a0f-b6fd-92f557c7b9e5",
+          "time_spent_seconds": 5400,
+          "comment": "",
+          "started": "2026-10-21T19:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "13033",
+      "key": "API-33",
+      "summary": "Brak unieważnienia sesji po zmianie hasła partnera",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:24d499df-ddc9-5a0f-b6fd-92f557c7b9e5",
+      "labels": [
+        "auth"
+      ],
+      "sprint": null,
+      "created": "2026-10-22T06:00:00.000+0100",
+      "updated": "2026-10-25T06:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13034",
+      "key": "API-34",
+      "summary": "Zamówienia hurtowe powyżej 100 par",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:c33b1f08-d1c2-533e-9a0f-fa2ea64afdcd",
+      "labels": [
+        "orders"
+      ],
+      "sprint": null,
+      "created": "2026-10-23T19:00:00.000+0100",
+      "updated": "2026-10-26T19:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13035",
+      "key": "API-35",
+      "summary": "Dashboard opóźnień API w Grafanie",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:316e5d21-f949-59c5-9fb8-f7eeec421665",
+      "reporter": "712020:005c1a9d-fceb-50b9-a166-f41966068b28",
+      "labels": [
+        "monitoring"
+      ],
+      "sprint": "62",
+      "created": "2026-10-25T08:00:00.000+0100",
+      "updated": "2026-10-28T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "130351",
+          "author": "712020:316e5d21-f949-59c5-9fb8-f7eeec421665",
+          "time_spent_seconds": 7200,
+          "comment": "",
+          "started": "2026-10-26T10:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "13036",
+      "key": "API-36",
+      "summary": "Brak opisu limitów zapytań w dokumentacji",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:c33b1f08-d1c2-533e-9a0f-fa2ea64afdcd",
+      "reporter": "712020:316e5d21-f949-59c5-9fb8-f7eeec421665",
+      "labels": [
+        "docs"
+      ],
+      "sprint": "63",
+      "created": "2026-10-26T21:00:00.000+0100",
+      "updated": "2026-10-29T21:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13037",
+      "key": "API-37",
+      "summary": "Prepare the agenda for the partner sync",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:24d499df-ddc9-5a0f-b6fd-92f557c7b9e5",
+      "reporter": "712020:40ad616d-9dd9-50f4-9a81-41513d2934aa",
+      "labels": [],
+      "sprint": null,
+      "created": "2026-10-28T10:00:00.000+0100",
+      "updated": "2026-10-31T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13038",
+      "key": "API-38",
+      "summary": "Webhook order.shipped bez numeru przesyłki",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:005c1a9d-fceb-50b9-a166-f41966068b28",
+      "reporter": "712020:83e24b9c-d63d-5f2d-9594-0ce5fd375a82",
+      "labels": [
+        "webhooks"
+      ],
+      "sprint": "62",
+      "created": "2026-10-29T23:00:00.000+0100",
+      "updated": "2026-11-01T23:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13039",
+      "key": "API-39",
+      "summary": "Cache odpowiedzi dla katalogu produktów",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:24d499df-ddc9-5a0f-b6fd-92f557c7b9e5",
+      "labels": [
+        "performance"
+      ],
+      "sprint": null,
+      "created": "2026-10-31T12:00:00.000+0100",
+      "updated": "2026-11-03T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "13040",
+      "key": "API-40",
+      "summary": "Stany magazynowe w czasie rzeczywistym przez WebSocket",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:316e5d21-f949-59c5-9fb8-f7eeec421665",
+      "reporter": "712020:c33b1f08-d1c2-533e-9a0f-fa2ea64afdcd",
+      "labels": [
+        "inventory",
+        "partners"
+      ],
+      "sprint": "63",
+      "created": "2026-11-02T01:00:00.000+0100",
+      "updated": "2026-11-05T01:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

@@ -1,0 +1,957 @@
+{
+  "name": "test-web",
+  "site": "https://example.atlassian.net",
+  "now": "2026-11-10T10:00:00.000+0100",
+  "project": {
+    "key": "WEB",
+    "name": "JayWalk - sklep internetowy"
+  },
+  "board": {
+    "id": "11",
+    "name": "WEB board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:9446920f-ebdd-52ca-8aff-986928c30b64",
+      "display_name": "Rudolf Igor",
+      "email": "rudolf.igor@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:a09c9c1b-a545-577e-a6ba-54be8f17424f",
+      "display_name": "Ewa Mazur",
+      "email": "ewa.mazur@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:f4df49f4-c51c-586f-b284-38fb9cdd4557",
+      "display_name": "Daniel Brooks",
+      "email": "daniel.brooks@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:05f88950-bf78-5e6a-baa2-8f56e5746ac8",
+      "display_name": "Zofia Kaczmarek",
+      "email": "zofia.kaczmarek@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:78144146-bb22-5c9f-825b-19df9d0f960c",
+      "display_name": "Anna Wróbel",
+      "email": "anna.wrobel@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:1394d3c8-c7db-55a7-affb-953cc6708502",
+      "display_name": "Anna Sikora",
+      "email": "anna.sikora@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:69fb6dc6-8383-52b7-aa83-7a56f11d9058",
+      "display_name": "Michał Krawczyk",
+      "email": "michal.krawczyk@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:10200bad-ed83-5fc3-95da-bebcb4436c3d",
+      "display_name": "Paweł Jasiński",
+      "email": "pawel.jasinski@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "41",
+      "name": "WEB Sprint 14",
+      "state": "closed",
+      "start_date": "2026-10-20T09:00:00.000Z",
+      "end_date": "2026-11-03T09:00:00.000Z",
+      "goal": "Nowy koszyk"
+    },
+    {
+      "id": "42",
+      "name": "WEB Sprint 15",
+      "state": "active",
+      "start_date": "2026-11-03T09:00:00.000Z",
+      "end_date": "2026-11-17T09:00:00.000Z",
+      "goal": "Płatności BLIK i szybszy panel klienta"
+    },
+    {
+      "id": "43",
+      "name": "WEB Sprint 16",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Wyszukiwarka i filtry rozmiarów"
+    },
+    {
+      "id": "44",
+      "name": "WEB Sprint 17",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "11001",
+      "key": "WEB-1",
+      "summary": "Nowy widok koszyka",
+      "description": "Przebudowa koszyka według makiety: zdjęcie buta, rozmiar, kolor, ilość.",
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:69fb6dc6-8383-52b7-aa83-7a56f11d9058",
+      "reporter": "712020:a09c9c1b-a545-577e-a6ba-54be8f17424f",
+      "labels": [
+        "frontend",
+        "checkout"
+      ],
+      "sprint": "41",
+      "created": "2026-09-02T22:00:00.000+0100",
+      "updated": "2026-09-05T22:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "110011",
+          "author": "712020:69fb6dc6-8383-52b7-aa83-7a56f11d9058",
+          "time_spent_seconds": 21600,
+          "comment": "",
+          "started": "2026-09-04T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "11002",
+      "key": "WEB-2",
+      "summary": "Rabat na sneakersy sumuje się z kodem promocyjnym",
+      "description": "Rabat -20% na kolekcję Street łączy się z kodem z newslettera.",
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:a09c9c1b-a545-577e-a6ba-54be8f17424f",
+      "reporter": "712020:f4df49f4-c51c-586f-b284-38fb9cdd4557",
+      "labels": [
+        "backend",
+        "checkout"
+      ],
+      "sprint": "41",
+      "created": "2026-09-04T11:00:00.000+0100",
+      "updated": "2026-09-07T11:00:00.000+0100",
+      "comments": [
+        {
+          "id": "110021",
+          "author": "712020:a09c9c1b-a545-577e-a6ba-54be8f17424f",
+          "body": "Poprawione, rabaty nie łączą się już z kodami.",
+          "created": "2026-09-05T11:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "11003",
+      "key": "WEB-3",
+      "summary": "Meta description dla kategorii Bieganie i Trail",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Low",
+      "assignee": "712020:78144146-bb22-5c9f-825b-19df9d0f960c",
+      "reporter": "712020:05f88950-bf78-5e6a-baa2-8f56e5746ac8",
+      "labels": [
+        "seo"
+      ],
+      "sprint": "41",
+      "created": "2026-09-06T00:00:00.000+0100",
+      "updated": "2026-09-09T00:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11004",
+      "key": "WEB-4",
+      "summary": "Checkout button misaligned on Firefox ESR",
+      "description": "Could not reproduce after the CSS refactor.",
+      "issue_type": "Bug",
+      "status": "Cancelled",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:78144146-bb22-5c9f-825b-19df9d0f960c",
+      "labels": [
+        "frontend",
+        "checkout"
+      ],
+      "sprint": "41",
+      "created": "2026-09-07T13:00:00.000+0100",
+      "updated": "2026-09-10T13:00:00.000+0100",
+      "comments": [
+        {
+          "id": "110041",
+          "author": "712020:f4df49f4-c51c-586f-b284-38fb9cdd4557",
+          "body": "Closing, not reproducible on 115 ESR.",
+          "created": "2026-09-08T13:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "11005",
+      "key": "WEB-5",
+      "summary": "Integracja płatności BLIK",
+      "description": "Klient wybiera BLIK, wpisuje kod, a status płatności wraca webhookiem.",
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:69fb6dc6-8383-52b7-aa83-7a56f11d9058",
+      "reporter": "712020:1394d3c8-c7db-55a7-affb-953cc6708502",
+      "labels": [
+        "payments",
+        "backend"
+      ],
+      "sprint": "42",
+      "created": "2026-09-09T02:00:00.000+0100",
+      "updated": "2026-09-12T02:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "110051",
+          "author": "712020:69fb6dc6-8383-52b7-aa83-7a56f11d9058",
+          "time_spent_seconds": 14400,
+          "comment": "Konfiguracja sandboxa",
+          "started": "2026-09-10T04:00:00.000+0100"
+        },
+        {
+          "id": "110052",
+          "author": "712020:69fb6dc6-8383-52b7-aa83-7a56f11d9058",
+          "time_spent_seconds": 12600,
+          "comment": "Obsługa webhooków",
+          "started": "2026-09-11T04:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "11006",
+      "key": "WEB-6",
+      "summary": "Duplicate payment webhook creates two orders",
+      "description": "When the provider retries the webhook, we create a second order. We need an idempotency key.",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:a09c9c1b-a545-577e-a6ba-54be8f17424f",
+      "reporter": "712020:69fb6dc6-8383-52b7-aa83-7a56f11d9058",
+      "labels": [
+        "payments",
+        "backend"
+      ],
+      "sprint": "42",
+      "created": "2026-09-10T15:00:00.000+0100",
+      "updated": "2026-09-13T15:00:00.000+0100",
+      "comments": [
+        {
+          "id": "110061",
+          "author": "712020:f4df49f4-c51c-586f-b284-38fb9cdd4557",
+          "body": "Seen 3 times on production this week.",
+          "created": "2026-09-11T15:00:00.000+0100"
+        },
+        {
+          "id": "110062",
+          "author": "712020:a09c9c1b-a545-577e-a6ba-54be8f17424f",
+          "body": "Dodaję klucz idempotencji w tabeli payments.",
+          "created": "2026-09-12T15:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "11007",
+      "key": "WEB-7",
+      "summary": "Wolne ładowanie listy zamówień w panelu klienta",
+      "description": "Lista zamówień ładuje się ponad 6 sekund u klientów z historią powyżej 200 zamówień.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:9446920f-ebdd-52ca-8aff-986928c30b64",
+      "labels": [
+        "frontend",
+        "performance"
+      ],
+      "sprint": "42",
+      "created": "2026-09-12T04:00:00.000+0100",
+      "updated": "2026-09-15T04:00:00.000+0100",
+      "comments": [
+        {
+          "id": "110071",
+          "author": "712020:05f88950-bf78-5e6a-baa2-8f56e5746ac8",
+          "body": "Klientka z Gdańska dzwoniła w tej sprawie trzeci raz.",
+          "created": "2026-09-13T04:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "11008",
+      "key": "WEB-8",
+      "summary": "Nowe ikony metod płatności w checkout",
+      "description": "",
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:78144146-bb22-5c9f-825b-19df9d0f960c",
+      "reporter": "712020:a09c9c1b-a545-577e-a6ba-54be8f17424f",
+      "labels": [
+        "frontend",
+        "ui"
+      ],
+      "sprint": "42",
+      "created": "2026-09-13T17:00:00.000+0100",
+      "updated": "2026-09-16T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11009",
+      "key": "WEB-9",
+      "summary": "Coupon field accepts expired codes",
+      "description": "Validation runs only on the backend after submit, so the UI shows the discount first.",
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "High",
+      "assignee": "712020:f4df49f4-c51c-586f-b284-38fb9cdd4557",
+      "reporter": "712020:f4df49f4-c51c-586f-b284-38fb9cdd4557",
+      "labels": [
+        "frontend",
+        "checkout"
+      ],
+      "sprint": "42",
+      "created": "2026-09-15T06:00:00.000+0100",
+      "updated": "2026-09-18T06:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11010",
+      "key": "WEB-10",
+      "summary": "Eksport zamówień do CSV dla działu zwrotów",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:05f88950-bf78-5e6a-baa2-8f56e5746ac8",
+      "labels": [
+        "backend",
+        "returns"
+      ],
+      "sprint": "42",
+      "created": "2026-09-16T19:00:00.000+0100",
+      "updated": "2026-09-19T19:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11011",
+      "key": "WEB-11",
+      "summary": "Podpowiedzi w wyszukiwarce butów",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:05f88950-bf78-5e6a-baa2-8f56e5746ac8",
+      "reporter": "712020:78144146-bb22-5c9f-825b-19df9d0f960c",
+      "labels": [
+        "search"
+      ],
+      "sprint": "42",
+      "created": "2026-09-18T08:00:00.000+0100",
+      "updated": "2026-09-21T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11012",
+      "key": "WEB-12",
+      "summary": "Brak etykiet aria w formularzu adresu dostawy",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:1394d3c8-c7db-55a7-affb-953cc6708502",
+      "reporter": "712020:1394d3c8-c7db-55a7-affb-953cc6708502",
+      "labels": [
+        "frontend",
+        "accessibility"
+      ],
+      "sprint": "42",
+      "created": "2026-09-19T21:00:00.000+0100",
+      "updated": "2026-09-22T21:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "110121",
+          "author": "712020:1394d3c8-c7db-55a7-affb-953cc6708502",
+          "time_spent_seconds": 7200,
+          "comment": "",
+          "started": "2026-09-20T23:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "11013",
+      "key": "WEB-13",
+      "summary": "Mapa strony XML dla kolekcji zimowej",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Low",
+      "assignee": "712020:1394d3c8-c7db-55a7-affb-953cc6708502",
+      "reporter": "712020:69fb6dc6-8383-52b7-aa83-7a56f11d9058",
+      "labels": [
+        "seo"
+      ],
+      "sprint": "42",
+      "created": "2026-09-21T10:00:00.000+0100",
+      "updated": "2026-09-24T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11014",
+      "key": "WEB-14",
+      "summary": "Literówka w stopce: 'Regulamim'",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:9446920f-ebdd-52ca-8aff-986928c30b64",
+      "labels": [
+        "ui"
+      ],
+      "sprint": "42",
+      "created": "2026-09-22T23:00:00.000+0100",
+      "updated": "2026-09-25T23:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11015",
+      "key": "WEB-15",
+      "summary": "Filtr: dostępność rozmiaru w sklepie stacjonarnym",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:a09c9c1b-a545-577e-a6ba-54be8f17424f",
+      "labels": [
+        "search",
+        "backend"
+      ],
+      "sprint": "43",
+      "created": "2026-09-24T12:00:00.000+0100",
+      "updated": "2026-09-27T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11016",
+      "key": "WEB-16",
+      "summary": "Migrate product gallery to the new image CDN",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:f4df49f4-c51c-586f-b284-38fb9cdd4557",
+      "reporter": "712020:f4df49f4-c51c-586f-b284-38fb9cdd4557",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": "43",
+      "created": "2026-09-26T01:00:00.000+0100",
+      "updated": "2026-09-29T01:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11017",
+      "key": "WEB-17",
+      "summary": "Zakupy bez zakładania konta (guest checkout)",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:05f88950-bf78-5e6a-baa2-8f56e5746ac8",
+      "labels": [
+        "checkout"
+      ],
+      "sprint": "43",
+      "created": "2026-09-27T14:00:00.000+0100",
+      "updated": "2026-09-30T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11018",
+      "key": "WEB-18",
+      "summary": "Wyszukiwarka nie znajduje butów wpisanych bez polskich znaków",
+      "description": "Fraza 'zolte trampki' nie zwraca produktu 'Żółte trampki'.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:78144146-bb22-5c9f-825b-19df9d0f960c",
+      "labels": [
+        "search"
+      ],
+      "sprint": "43",
+      "created": "2026-09-29T03:00:00.000+0100",
+      "updated": "2026-10-02T03:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11019",
+      "key": "WEB-19",
+      "summary": "Reset hasła nie unieważnia starych tokenów",
+      "description": "Stary link do resetu działa nadal po zmianie hasła.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": null,
+      "reporter": "712020:1394d3c8-c7db-55a7-affb-953cc6708502",
+      "labels": [
+        "security",
+        "backend"
+      ],
+      "sprint": null,
+      "created": "2026-09-30T16:00:00.000+0100",
+      "updated": "2026-10-03T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11020",
+      "key": "WEB-20",
+      "summary": "Dark mode dla panelu klienta",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:78144146-bb22-5c9f-825b-19df9d0f960c",
+      "reporter": "712020:69fb6dc6-8383-52b7-aa83-7a56f11d9058",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": null,
+      "created": "2026-10-02T05:00:00.000+0100",
+      "updated": "2026-10-05T05:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11021",
+      "key": "WEB-21",
+      "summary": "Lista życzeń: udostępnianie linkiem",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:9446920f-ebdd-52ca-8aff-986928c30b64",
+      "labels": [
+        "ui"
+      ],
+      "sprint": null,
+      "created": "2026-10-03T18:00:00.000+0100",
+      "updated": "2026-10-06T18:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11022",
+      "key": "WEB-22",
+      "summary": "Timeout przy generowaniu faktur zbiorczych",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:69fb6dc6-8383-52b7-aa83-7a56f11d9058",
+      "reporter": "712020:a09c9c1b-a545-577e-a6ba-54be8f17424f",
+      "labels": [
+        "backend",
+        "performance"
+      ],
+      "sprint": null,
+      "created": "2026-10-05T07:00:00.000+0100",
+      "updated": "2026-10-08T07:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11023",
+      "key": "WEB-23",
+      "summary": "Canonical URLs for paginated category pages",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:f4df49f4-c51c-586f-b284-38fb9cdd4557",
+      "labels": [
+        "seo"
+      ],
+      "sprint": null,
+      "created": "2026-10-06T20:00:00.000+0100",
+      "updated": "2026-10-09T20:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11024",
+      "key": "WEB-24",
+      "summary": "Zwrot pieniędzy na kartę nie zmienia statusu zamówienia",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:a09c9c1b-a545-577e-a6ba-54be8f17424f",
+      "reporter": "712020:05f88950-bf78-5e6a-baa2-8f56e5746ac8",
+      "labels": [
+        "payments",
+        "returns"
+      ],
+      "sprint": null,
+      "created": "2026-10-08T09:00:00.000+0100",
+      "updated": "2026-10-11T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11025",
+      "key": "WEB-25",
+      "summary": "Aktualizacja biblioteki do wysyłki maili",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:05f88950-bf78-5e6a-baa2-8f56e5746ac8",
+      "reporter": "712020:78144146-bb22-5c9f-825b-19df9d0f960c",
+      "labels": [
+        "backend"
+      ],
+      "sprint": null,
+      "created": "2026-10-09T22:00:00.000+0100",
+      "updated": "2026-10-12T22:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11026",
+      "key": "WEB-26",
+      "summary": "Przycisk 'Pokaż więcej' znika na tablecie w poziomie",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:1394d3c8-c7db-55a7-affb-953cc6708502",
+      "labels": [
+        "frontend",
+        "ui"
+      ],
+      "sprint": null,
+      "created": "2026-10-11T11:00:00.000+0100",
+      "updated": "2026-10-14T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11027",
+      "key": "WEB-27",
+      "summary": "Apple Pay on the product page",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:f4df49f4-c51c-586f-b284-38fb9cdd4557",
+      "reporter": "712020:69fb6dc6-8383-52b7-aa83-7a56f11d9058",
+      "labels": [
+        "checkout",
+        "frontend"
+      ],
+      "sprint": null,
+      "created": "2026-10-13T00:00:00.000+0100",
+      "updated": "2026-10-16T00:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11028",
+      "key": "WEB-28",
+      "summary": "Audyt kontrastu kolorów WCAG 2.1",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:9446920f-ebdd-52ca-8aff-986928c30b64",
+      "labels": [
+        "accessibility"
+      ],
+      "sprint": null,
+      "created": "2026-10-14T13:00:00.000+0100",
+      "updated": "2026-10-17T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11029",
+      "key": "WEB-29",
+      "summary": "Newsletter wysyła podwójne maile po zapisie",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:05f88950-bf78-5e6a-baa2-8f56e5746ac8",
+      "reporter": "712020:a09c9c1b-a545-577e-a6ba-54be8f17424f",
+      "labels": [
+        "backend"
+      ],
+      "sprint": "42",
+      "created": "2026-10-16T02:00:00.000+0100",
+      "updated": "2026-10-19T02:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11030",
+      "key": "WEB-30",
+      "summary": "Skrypt czyszczący porzucone koszyki",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:10200bad-ed83-5fc3-95da-bebcb4436c3d",
+      "reporter": "712020:f4df49f4-c51c-586f-b284-38fb9cdd4557",
+      "labels": [
+        "backend"
+      ],
+      "sprint": null,
+      "created": "2026-10-17T15:00:00.000+0100",
+      "updated": "2026-10-20T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11031",
+      "key": "WEB-31",
+      "summary": "Walidacja kodu pocztowego odrzuca adresy zagraniczne",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:05f88950-bf78-5e6a-baa2-8f56e5746ac8",
+      "labels": [
+        "checkout"
+      ],
+      "sprint": "42",
+      "created": "2026-10-19T04:00:00.000+0100",
+      "updated": "2026-10-22T04:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11032",
+      "key": "WEB-32",
+      "summary": "Banner: darmowa dostawa od 199 zł",
+      "description": "",
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "Low",
+      "assignee": "712020:78144146-bb22-5c9f-825b-19df9d0f960c",
+      "reporter": "712020:78144146-bb22-5c9f-825b-19df9d0f960c",
+      "labels": [
+        "ui"
+      ],
+      "sprint": "42",
+      "created": "2026-10-20T17:00:00.000+0100",
+      "updated": "2026-10-23T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "110321",
+          "author": "712020:78144146-bb22-5c9f-825b-19df9d0f960c",
+          "time_spent_seconds": 5400,
+          "comment": "",
+          "started": "2026-10-21T19:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "11033",
+      "key": "WEB-33",
+      "summary": "Brak limitu prób logowania",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:1394d3c8-c7db-55a7-affb-953cc6708502",
+      "labels": [
+        "security"
+      ],
+      "sprint": null,
+      "created": "2026-10-22T06:00:00.000+0100",
+      "updated": "2026-10-25T06:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11034",
+      "key": "WEB-34",
+      "summary": "Płatności odroczone: kup teraz, zapłać za 30 dni",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:69fb6dc6-8383-52b7-aa83-7a56f11d9058",
+      "labels": [
+        "payments"
+      ],
+      "sprint": null,
+      "created": "2026-10-23T19:00:00.000+0100",
+      "updated": "2026-10-26T19:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11035",
+      "key": "WEB-35",
+      "summary": "Logi webhooków płatności w Kibanie",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:69fb6dc6-8383-52b7-aa83-7a56f11d9058",
+      "reporter": "712020:9446920f-ebdd-52ca-8aff-986928c30b64",
+      "labels": [
+        "backend"
+      ],
+      "sprint": "42",
+      "created": "2026-10-25T08:00:00.000+0100",
+      "updated": "2026-10-28T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "110351",
+          "author": "712020:69fb6dc6-8383-52b7-aa83-7a56f11d9058",
+          "time_spent_seconds": 7200,
+          "comment": "",
+          "started": "2026-10-26T10:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "11036",
+      "key": "WEB-36",
+      "summary": "Zdjęcia butów rozmyte na ekranach Retina",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:1394d3c8-c7db-55a7-affb-953cc6708502",
+      "reporter": "712020:a09c9c1b-a545-577e-a6ba-54be8f17424f",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": "43",
+      "created": "2026-10-26T21:00:00.000+0100",
+      "updated": "2026-10-29T21:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11037",
+      "key": "WEB-37",
+      "summary": "Prepare questions for the CDN vendor call",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:9446920f-ebdd-52ca-8aff-986928c30b64",
+      "reporter": "712020:f4df49f4-c51c-586f-b284-38fb9cdd4557",
+      "labels": [],
+      "sprint": null,
+      "created": "2026-10-28T10:00:00.000+0100",
+      "updated": "2026-10-31T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11038",
+      "key": "WEB-38",
+      "summary": "Koszt dostawy liczony dwa razy po zmianie adresu",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:a09c9c1b-a545-577e-a6ba-54be8f17424f",
+      "reporter": "712020:05f88950-bf78-5e6a-baa2-8f56e5746ac8",
+      "labels": [
+        "backend",
+        "checkout"
+      ],
+      "sprint": "42",
+      "created": "2026-10-29T23:00:00.000+0100",
+      "updated": "2026-11-01T23:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11039",
+      "key": "WEB-39",
+      "summary": "Lazy loading zdjęć na stronie głównej",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:78144146-bb22-5c9f-825b-19df9d0f960c",
+      "labels": [
+        "performance"
+      ],
+      "sprint": null,
+      "created": "2026-10-31T12:00:00.000+0100",
+      "updated": "2026-11-03T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "11040",
+      "key": "WEB-40",
+      "summary": "Tabela rozmiarów z porównaniem EU/UK/US",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:9446920f-ebdd-52ca-8aff-986928c30b64",
+      "reporter": "712020:1394d3c8-c7db-55a7-affb-953cc6708502",
+      "labels": [
+        "returns",
+        "frontend"
+      ],
+      "sprint": "43",
+      "created": "2026-11-02T01:00:00.000+0100",
+      "updated": "2026-11-05T01:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

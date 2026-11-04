@@ -1,5 +1,5 @@
 import hashlib
-import random
+import json
 import re
 import shutil
 from collections import Counter
@@ -7,172 +7,214 @@ from pathlib import Path
 
 import pytest
 
-from src.environment import LABELS, PROJECT_KEYS, generate_board, load_board
+from src.environment import load_board
 from src.tasks import (
-    BOARDS,
-    COUNTS,
-    DATA_DIR,
-    TEMPLATES,
-    Task,
+    CATEGORIES,
+    REFUSAL_KINDS,
+    TaskFileError,
     board_path,
-    check_reference,
-    generate_all,
     load_tasks,
-    make_task,
-    save_tasks,
-    tasks_path,
+    split_dir,
 )
-from src.tools import apply_calls
+from src.tools import READ_TOOLS, apply_calls
 from src.verifier import grade
 
-# SHA-256 of the frozen test set (E1). The hash ignores the line ends, because git can change them on checkout.
-FROZEN = {
-    "tasks/test/tasks.jsonl": "e7d101d3a47cc34cb5cd46bccd17859bb1c6ca418011527a579aaa04ad365530",
-    "environments/test-01.json": "4fd7d7048ba0f3ad095c4d583cef2d00605f15a67fd5ea2979946f6652181222",
-    "environments/test-02.json": "b19bc038995c2e319586dd8f599d70f72e4c5a722996eb5ed78cbec493e0ab4f",
-    "environments/test-03.json": "cc435c8799b7e2dd3690de46a4faac3668af1ca503b44c17f225299dcb749ce1",
-    "environments/test-04.json": "700e8627b7bbd0fde99aea2c1353af64c197bc8b5b3dc225db70fbf4bc86e610",
-    "environments/test-05.json": "6e40368d675ab51f5ee1914c8248ef0874461c408b1d9ef1ddd0dc889ec8260b",
-}
-TOOL_WORDS = ("update_issue", "create_issue", "add_comment", "in_progress", "to_do", "assignee")
-
-
-def checksum(path: Path) -> str:
-    return hashlib.sha256(Path(path).read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+ROOT = Path(__file__).resolve().parents[1]
+DATA = ROOT / "data"
+KEY_RE = re.compile(r"\b[A-Z][A-Z0-9_]+-\d+\b")
 
 
 @pytest.fixture(scope="module")
-def test_tasks():
+def tasks():
     return load_tasks("test")
 
 
-@pytest.fixture(scope="module")
-def train_tasks():
-    return load_tasks("train")
+# Loader
+
+def test_load_test_set(tasks):
+    assert len(tasks) == 200
+    t = tasks[0]
+    assert t.id == "test-001" and t.author and t.instruction and t.board and t.reference_answer
+    query = next(t for t in tasks if t.category == "query")
+    assert query.expected_answer is not None and query.changes is None
 
 
-def template_cases(difficulty):
-    return [(t, seed) for t in TEMPLATES[difficulty] for seed in range(8)]
+def test_missing_train_split(tmp_path):
+    assert load_tasks("train", tmp_path) == []
 
 
-def run_template(template, difficulty, seed):
-    board = generate_board("test-x", PROJECT_KEYS[seed % 5], seed)
-    for n in range(30):
-        task = make_task(template, difficulty, board, random.Random(f"{seed}-{n}"), "test")
-        if task is not None:
-            break
-    else:
-        pytest.skip("no target on this board")
-    final = board.copy_board()
-    apply_calls(final, [c.model_dump() for c in task.solution])
-    return task, board, final
+def broken_copy(tmp_path, edit):
+    """Copy the test split and the boards to tmp_path and change one file with `edit(name, rows)`."""
+    shutil.copytree(DATA / "environments", tmp_path / "environments")
+    folder = tmp_path / "tasks" / "test"
+    shutil.copytree(split_dir("test"), folder)
+    for name in ("queries.json", "solutions.json", "expected.json", "personas.json"):
+        rows = json.loads((folder / name).read_text(encoding="utf-8"))
+        edit(name, rows)
+        (folder / name).write_text(json.dumps(rows, ensure_ascii=False), encoding="utf-8")
+    return tmp_path
 
 
-@pytest.mark.parametrize(("template", "seed"), template_cases("easy"), ids=lambda x: getattr(x, "__name__", x))
-def test_easy_template(template, seed):
-    task, board, final = run_template(template, "easy", seed)
-    assert task.expected
-    assert grade(task, board, final, "Gotowe.").grade == "correct"
+def test_missing_solution(tmp_path):
+    def edit(name, rows):
+        if name == "queries.json":
+            rows.append({"id": "test-201", "author": "Ewa Mazur", "instruction": "x"})
+    with pytest.raises(TaskFileError, match="test-201"):
+        load_tasks("test", broken_copy(tmp_path, edit))
 
 
-@pytest.mark.parametrize(("template", "seed"), template_cases("multi_step"), ids=lambda x: getattr(x, "__name__", x))
-def test_multi_step_template(template, seed):
-    task, board, final = run_template(template, "multi_step", seed)
-    assert task.expected
-    assert grade(task, board, final, "Gotowe.").grade == "correct"
+@pytest.mark.parametrize("key,value,message", [
+    ("board", "test-xyz", "unknown board"),
+    ("category", "delete", "category"),
+    ("difficulty", "hard", "difficulty"),
+    ("answer", {"type": "date", "value": "x"}, "answer type"),
+])
+def test_values_not_allowed(tmp_path, key, value, message):
+    def edit(name, rows):
+        if name == "expected.json":
+            rows[0][key] = value
+    with pytest.raises(TaskFileError, match=f"test-001: .*{message}"):
+        load_tasks("test", broken_copy(tmp_path, edit))
 
 
-@pytest.mark.parametrize(("template", "seed"), template_cases("refusal"), ids=lambda x: getattr(x, "__name__", x))
-def test_refusal_template(template, seed):
-    task, board, final = run_template(template, "refusal", seed)
-    assert task.solution == [] and task.expected == []
-    assert grade(task, board, final, "ODMOWA: nie mogę").grade == "correct_refusal"
+def test_unknown_author_and_refusal_kind(tmp_path):
+    def edit(name, rows):
+        if name == "queries.json":
+            rows[1]["author"] = "Nikt"
+    with pytest.raises(TaskFileError, match="test-002: unknown author"):
+        load_tasks("test", broken_copy(tmp_path / "a", edit))
+
+    def edit2(name, rows):
+        if name == "expected.json":
+            next(r for r in rows if r["category"] == "refusal")["refusal_kind"] = "rude"
+    with pytest.raises(TaskFileError, match="refusal kind 'rude'"):
+        load_tasks("test", broken_copy(tmp_path / "b", edit2))
 
 
-def test_refusal_tasks_in_files(test_tasks, train_tasks):
-    refusals = [t for t in test_tasks + train_tasks if t.difficulty == "refusal"]
-    assert refusals
-    assert all(t.solution == [] and t.expected == [] for t in refusals)
-    assert {t.category for t in refusals} == {"out_of_domain", "no_tool", "missing_entity"}
+# Rules of the task set
 
-
-def test_task_format(test_tasks):
-    assert set(Task.model_fields) == {
-        "id", "split", "category", "difficulty", "board", "instruction", "solution", "expected"
-    }
-    assert len({t.id for t in test_tasks}) == len(test_tasks)
-    assert all(t.split == "test" for t in test_tasks)
-    assert all(t.expected for t in test_tasks if t.difficulty != "refusal")
-
-
-def test_save_and_load(test_tasks, tmp_path):
-    save_tasks(test_tasks[:5], tasks_path("test", tmp_path))
-    assert load_tasks("test", tmp_path) == test_tasks[:5]
-
-
-def test_counts(test_tasks, train_tasks):
-    counts = Counter(t.difficulty for t in test_tasks)
-    n = len(test_tasks)
+def test_counts(tasks):
+    by_difficulty = Counter(t.difficulty for t in tasks)
+    n = len(tasks)
     assert n >= 150
-    assert counts["easy"] >= 0.3 * n and counts["multi_step"] >= 0.4 * n and counts["refusal"] >= 0.1 * n
-    assert dict(counts) == COUNTS["test"]
-    assert dict(Counter(t.difficulty for t in train_tasks)) == COUNTS["train"]
+    assert by_difficulty["easy"] >= 0.3 * n
+    assert by_difficulty["multi_step"] >= 0.4 * n
+    assert by_difficulty["refusal"] >= 0.1 * n
+    assert set(Counter(t.category for t in tasks)) == set(CATEGORIES)
+    assert {t.refusal_kind for t in tasks if t.category == "refusal"} == set(REFUSAL_KINDS)
 
 
-def test_each_category_has_more_than_one_text(test_tasks):
-    variants = {}
-    for t in test_tasks:
-        # Replace keys, titles, numbers, names and labels, so that only the text template is left.
-        text = re.sub(r"[A-Z]+-\d+", "K", t.instruction)
-        text = re.sub(r"„[^”]*”", "Q", text)
-        text = re.sub(r"\d+", "#", text)
-        text = " ".join("N" if w[0].isupper() else w for w in text.split()[1:])
-        text = re.sub(r"\b(" + "|".join(LABELS) + r")\b", "L", text)
-        variants.setdefault(t.category, set()).add(text)
-    assert all(len(v) > 1 for v in variants.values()), variants
+def test_categories_and_difficulties(tasks):
+    for t in tasks:
+        if t.category in ("bulk", "workflow"):
+            assert t.difficulty == "multi_step", t.id
+        assert (t.category == "refusal") == (t.difficulty == "refusal"), t.id
 
 
-def test_words_of_a_user(test_tasks, train_tasks):
-    for t in test_tasks + train_tasks:
-        assert not re.search(r"\bu\d\b|\bs\d\b", t.instruction), t.instruction
-        assert not any(word in t.instruction for word in TOOL_WORDS), t.instruction
+def test_refusal_solutions(tasks):
+    for t in tasks:
+        if t.category == "refusal":
+            assert t.reference_answer.startswith("ODMOWA:"), t.id
+            assert all(c.name in READ_TOOLS for c in t.calls), t.id
 
 
-def test_separate_splits(test_tasks, train_tasks):
-    assert {t.board for t in test_tasks} <= set(BOARDS["test"])
-    assert {t.board for t in train_tasks} <= set(BOARDS["train"])
-    assert not {t.board for t in test_tasks} & {t.board for t in train_tasks}
-    assert not {t.instruction for t in test_tasks} & {t.instruction for t in train_tasks}
-    assert len({t.instruction for t in test_tasks}) == len(test_tasks)
-    test_keys = {load_board(board_path(b)).project for b in BOARDS["test"]}
-    train_keys = {load_board(board_path(b)).project for b in BOARDS["train"]}
-    assert not test_keys & train_keys
+def test_author_belongs_to_board(tasks):
+    personas = {p["name"]: p["board"] for p in json.loads((split_dir("test") / "personas.json").read_text(encoding="utf-8"))}
+    assert all(personas[t.author] == t.board for t in tasks)
 
 
-def test_reference_solutions_of_test_set(test_tasks):
-    boards = {name: load_board(board_path(name)) for name in BOARDS["test"]}
-    for task in test_tasks:
-        check_reference(task, boards[task.board])
+def test_keys_of_easy_tasks(tasks):
+    """An easy task gives each existing issue key that it changes or reads."""
+    for t in tasks:
+        if t.difficulty != "easy":
+            continue
+        board = load_board(board_path(t.board))
+        keys = {c["issue"] for c in t.changes or [] if "issue" in c}
+        for call in t.calls:
+            keys |= set(KEY_RE.findall(str(call.arguments.get("issue_key", ""))))
+            keys |= set(KEY_RE.findall(str(call.arguments.get("issue_keys", ""))))
+        keys = {k for k in keys if board.find_issue(k)}
+        missing = {k for k in keys if not re.search(rf"\b{k}\b", t.instruction, re.IGNORECASE)}
+        assert not missing, (t.id, missing)
 
 
-def test_same_output_from_two_runs(tmp_path):
-    generate_all(2026, tmp_path / "a")
-    generate_all(2026, tmp_path / "b")
-    files = sorted(p.relative_to(tmp_path / "a") for p in (tmp_path / "a").rglob("*") if p.is_file())
-    assert len(files) == 27
-    for f in files:
-        assert (tmp_path / "a" / f).read_bytes() == (tmp_path / "b" / f).read_bytes(), f
+def test_different_instructions(tasks):
+    texts = Counter(t.instruction.strip().lower() for t in tasks)
+    assert [text for text, n in texts.items() if n > 1] == []
 
 
-@pytest.mark.parametrize("name", sorted(FROZEN))
-def test_frozen_test_set(name):
-    assert checksum(DATA_DIR / name) == FROZEN[name], f"{name} changed. The test set is frozen since E1."
+def test_no_ids_in_instructions(tasks):
+    for t in tasks:
+        board = load_board(board_path(t.board))
+        assert not any(p.account_id in t.instruction for p in board.persons), t.id
+        assert not re.search(r"\bjira_\w+", t.instruction), t.id
+
+
+def test_separate_splits(tasks):
+    train = load_tasks("train")
+    test_boards = {t.board for t in tasks}
+    train_boards = {t.board for t in train}
+    assert not test_boards & train_boards
+    assert not {t.instruction for t in tasks} & {t.instruction for t in train}
+    summaries = [{i.summary for b in boards for i in load_board(board_path(b)).issues}
+                 for boards in (test_boards, train_boards)]
+    assert not summaries[0] & summaries[1]
+
+
+# Reference solutions (D10)
+
+def test_reference_solutions(tasks):
+    for t in tasks:
+        initial = load_board(board_path(t.board))
+        board = initial.copy_board()
+        results = apply_calls(board, [c.model_dump() for c in t.calls])
+        for call, result in zip(t.calls, results, strict=True):
+            # The error of a read call shows that the entity of a missing_entity task does not exist.
+            allowed = t.refusal_kind == "missing_entity" and call.name in READ_TOOLS
+            assert not result.is_error or allowed, (t.id, call.name, result.text)
+        g = grade(t, initial, board, t.reference_answer)
+        assert g.grade in ("correct", "correct_refusal"), (t.id, g.reason)
+
+
+# Frozen test set
+
+# The test set was frozen on 2026-11-05. A change of these files needs a new run of all variants.
+FROZEN: dict[str, str] = {
+    "tasks/test/queries.json": "b93f77c47ee99eb77a0abbbc9d5fd947c546c8bdbf0f238d651a23a1c35a0ccd",
+    "tasks/test/solutions.json": "743ebc80477915d57a7592874aa10c882283670b915dff4089efbf06c089592f",
+    "tasks/test/expected.json": "d0850f62dafa8f24e169982cab448dcbc2c437a82a55de6a4e2cab10ca700b06",
+    "environments/test-web.json": "194bb74800847c21b1905de7d88ea466d4ce298ef4528b88bdbfa3f6837c4c2e",
+    "environments/test-app.json": "5bc82435043b2d4cfaf361b8736bdc87ddbf4d722fbb1c89784fffe51d2c648d",
+    "environments/test-api.json": "e4755a881b389e69cf43ee1661fe914e4e103c4ece698475e94f3dc9234a73be",
+    "environments/test-data.json": "c3ea7d8710c63d88ca38583aad4db68a8f1968867e0370e5235353d23c7e7253",
+    "environments/test-ops.json": "b0bad77e4ab86dba5afe3f274130ab2f9e249f653b6090feb60cfcdd60a8b891",
+}
+FROZEN_FILES = [f"tasks/test/{n}" for n in ("queries.json", "solutions.json", "expected.json")] + [
+    f"environments/test-{b}.json" for b in ("web", "app", "api", "data", "ops")]
+
+
+def checksums(data_dir: Path) -> dict[str, str]:
+    """SHA-256 of each frozen file. The line ends do not matter."""
+    return {name: hashlib.sha256((data_dir / name).read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+            for name in FROZEN_FILES}
+
+
+def changed_files(want: dict[str, str], data_dir: Path) -> list[str]:
+    got = checksums(data_dir)
+    return [name for name in FROZEN_FILES if want.get(name) != got[name]]
+
+
+@pytest.mark.skipif(not FROZEN, reason="test set not frozen yet")
+def test_frozen_test_set():
+    assert changed_files(FROZEN, DATA) == []
 
 
 def test_checksum_finds_a_change(tmp_path):
-    copy = tmp_path / "tasks.jsonl"
-    shutil.copy(DATA_DIR / "tasks/test/tasks.jsonl", copy)
-    lines = copy.read_text(encoding="utf-8").splitlines(keepends=True)
-    lines[10] = lines[10].replace("„", '"', 1) if "„" in lines[10] else lines[10].replace(".", "!", 1)
-    copy.write_text("".join(lines), encoding="utf-8", newline="\n")
-    assert checksum(copy) != FROZEN["tasks/test/tasks.jsonl"]
+    for name in FROZEN_FILES:
+        (tmp_path / name).parent.mkdir(parents=True, exist_ok=True)
+        (tmp_path / name).write_bytes((DATA / name).read_bytes().replace(b"\n", b"\r\n"))
+    want = checksums(DATA)
+    assert changed_files(want, tmp_path) == []
+    path = tmp_path / "tasks/test/queries.json"
+    path.write_text(path.read_text(encoding="utf-8").replace("WEB-7", "WEB-8", 1), encoding="utf-8")
+    assert changed_files(want, tmp_path) == ["tasks/test/queries.json"]

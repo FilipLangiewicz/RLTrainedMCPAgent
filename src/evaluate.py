@@ -11,8 +11,9 @@ from pathlib import Path
 
 import yaml
 
-from src.agent import PROMPT_VERSION, Trajectory, make_backend, run_task
+from src.agent import DEFAULT_MAX_STEPS, DEFAULT_PROMPT, Trajectory, run_task
 from src.environment import load_board
+from src.models import Prompt, check_config, load_prompt, make_model
 from src.tasks import DATA_DIR, board_path, load_tasks
 from src.tools import build_server
 from src.verifier import grade
@@ -72,12 +73,12 @@ def _versions() -> dict:
     return versions
 
 
-def evaluate_task(task, backend, max_steps: int, data_dir: Path = DATA_DIR) -> tuple[dict, dict]:
+def evaluate_task(task, model, prompt: Prompt, max_steps: int, data_dir: Path = DATA_DIR) -> tuple[dict, dict]:
     """Do one task on a new copy of its board. Return the result line and the trajectory."""
     initial = load_board(board_path(task.board, data_dir))
     board = initial.copy_board()
     try:
-        traj = run_task(backend, build_server(board), task.instruction, max_steps, task.id)
+        traj = run_task(model, build_server(board), task.instruction, prompt, max_steps, task.id)
     except Exception as e:  # noqa: BLE001  A failure of one task must not stop the run.
         traj = Trajectory(task_id=task.id, instruction=task.instruction, stop_reason="error", error=f"{type(e).__name__}: {e}")
     if traj.stop_reason == "error":
@@ -86,7 +87,8 @@ def evaluate_task(task, backend, max_steps: int, data_dir: Path = DATA_DIR) -> t
         g = grade(task, initial, board, traj.final_answer)
         result_grade, reason = g.grade, g.reason
     result = {
-        "task_id": task.id, "difficulty": task.difficulty, "category": task.category,
+        "task_id": task.id, "author": task.author, "board": task.board,
+        "difficulty": task.difficulty, "category": task.category,
         "grade": result_grade, "reason": reason, "stop_reason": traj.stop_reason,
         "steps": traj.steps, "invalid_calls": traj.invalid_calls, "tool_errors": traj.tool_errors,
         "input_tokens": traj.input_tokens, "output_tokens": traj.output_tokens, "time_s": traj.time_s,
@@ -133,25 +135,31 @@ def _write_metrics(output_dir: Path, results: list[dict], run: dict) -> dict:
     return metrics
 
 
-def run_evaluation(cfg: dict, output_dir: Path, shard: tuple[int, int] = (0, 1), backend=None,
+def run_evaluation(cfg: dict, output_dir: Path, shard: tuple[int, int] = (0, 1), model=None,
                    data_dir: Path = DATA_DIR) -> dict:
-    """Run the agent on the tasks of shard `i` of `n`. Write results.jsonl, trajectories.jsonl and metrics.json."""
+    """Run the agent on the tasks of shard `i` of `n`. Write results.jsonl, trajectories.jsonl and metrics.json.
+
+    The checks of the model config and of the prompt file stop the run before the first task.
+    """
     i, n = shard
+    agent_cfg = cfg.get("agent") or {}
+    cfg["model"] = check_config(cfg["model"])
+    prompt = load_prompt("system", agent_cfg.get("prompt", DEFAULT_PROMPT))
+    max_steps = agent_cfg.get("max_steps", DEFAULT_MAX_STEPS)
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     tasks = load_tasks(cfg["tasks"]["split"], data_dir)
     if cfg["tasks"].get("limit"):
         tasks = tasks[: cfg["tasks"]["limit"]]
     tasks = [t for pos, t in enumerate(tasks) if pos % n == i]
-    backend = backend or make_backend(cfg["model"])
-    max_steps = cfg.get("agent", {}).get("max_steps", 15)
+    model = model or make_model(cfg["model"])
 
     started = datetime.now(UTC)
     results = []
     with open(output_dir / "results.jsonl", "w", encoding="utf-8", newline="\n") as fr, \
             open(output_dir / "trajectories.jsonl", "w", encoding="utf-8", newline="\n") as ft:
         for task in tasks:
-            result, traj = evaluate_task(task, backend, max_steps, data_dir)
+            result, traj = evaluate_task(task, model, prompt, max_steps, data_dir)
             results.append(result)
             # Write each line at once, so that a stopped run keeps its results.
             fr.write(json.dumps(result, ensure_ascii=False) + "\n")
@@ -163,9 +171,9 @@ def run_evaluation(cfg: dict, output_dir: Path, shard: tuple[int, int] = (0, 1),
     run = {
         "codename": cfg["codename"],
         "config": {k: v for k, v in cfg.items() if k != "codename"},
-        "model": getattr(backend, "name", cfg["model"].get("name")),
-        "model_revision": getattr(backend, "revision", None),
-        "prompt_version": PROMPT_VERSION,
+        "model": model.describe(),
+        "prompt_version": prompt.version,
+        "prompt_sha256": prompt.sha256,
         "git_commit": _git_commit(),
         **_versions(),
         "date": started.isoformat(timespec="seconds"),

@@ -136,3 +136,105 @@
 - Record the results of the 14 tools again. `data/jira_recorded_results.json` now has 43 calls in English.
 - The 6 invited persons now have access to Jira. Their display names are still the e-mail aliases.
 - Delete the test issues `SCRUM-8` to `SCRUM-12`.
+
+## 2026-11-04
+
+### New test set (not frozen yet)
+
+- The team decides: the data comes before the code. The OpenSpec change of the new simulator does not make the task set. It only reads the task files.
+- Add 5 test boards in `data/environments/`: `test-web`, `test-app`, `test-api`, `test-data`, `test-ops`. They are the Jira projects of one invented company: JayWalk, a brand of sport shoes with an online shop.
+- Each board has 40 issues, 7 or 8 persons and 4 sprints. Each board has a person who is not active and two persons with the same first name.
+- Add the test set in `data/tasks/test/`: `queries.json` (instructions), `solutions.json` (correct tool calls and answers), `expected.json` (expected results) and `personas.json` (authors).
+- The test set has 200 tasks in 8 categories: 72 `easy`, 103 `multi_step` and 25 `refusal`.
+- Each instruction has one of 16 authors. All instructions of one author have the same style.
+- A temporary script outside the repository made the files and checked them: each key exists, each search gives the expected issues, each change category has a change, and the counts agree.
+- Add `docs/TASKS.md`: the flow, the categories, the counts, the authors, the file formats and the review procedure.
+- Check two facts on the Jira Cloud site: `openSprints()` finds only the active sprint, and `~` finds only whole words. Add them to `docs/JIRA_TOOLS.md`.
+- The old files (`data/tasks/*/tasks.jsonl`, the old boards) stay until the new simulator replaces the old one. The old tests pass.
+
+### Not complete
+
+- The team must review the test set. Then the test set is frozen.
+- The train set does not exist yet.
+
+### Plan of the OpenSpec change `e1-jira-tasks`
+
+- Rewrite the proposal and the delta specs. The change does not generate tasks. It reads the task files and checks them.
+- Add `design.md`: the modules, the low-level MCP server with the exact schemas, the result formats, the errors, the JQL subset, the verifier and the contract test. It has Mermaid diagrams and tables.
+- Add `tasks.md`: 8 groups of tasks. The implementation starts in a new chat with `/opsx:apply e1-jira-tasks`.
+- `openspec validate e1-jira-tasks --strict` passes.
+- Check on the Jira Cloud site how the server finds a person. `assignee` needs the full name or the e-mail. Case and Polish letters do not matter. A first name only gives an error. Add this to `docs/JIRA_TOOLS.md`.
+- The team set the display names of the 6 invited accounts: Rudolf Igor, Katarzyna Wisniewska, John Pork, Robert Małysz, Daria Wasilewska and Barbara Liskov.
+
+## 2026-11-05
+
+### Removal of the old data
+
+- Remove the old boards (`data/environments/test-0*.json`, `train-*.json`) and the old task files (`data/tasks/*/tasks.jsonl`).
+- Remove `tests/test_tasks.py` and `tests/test_evaluate.py`. They read the old files. The OpenSpec change `e1-jira-tasks` writes new tests for the loader and the evaluation.
+- The old code in `src/` stays until the implementation of `e1-jira-tasks`. 81 tests pass.
+
+### Decisions about the models and the baseline
+
+- The team does not use the old baseline `baseline-v1`.
+- The candidate models are the six models of `docs/MODELS.md`.
+- The weights of all six models go into private Kaggle Models of the project account, one time. This also applies to Gemma 4, because the official Kaggle copy can go away.
+- Each model gets its own Kaggle notebook. A failure then affects only one model, and the output stays under the disk limit of Kaggle.
+- The jobs record the Hugging Face commit and the Kaggle Model version. Later jobs attach the frozen weights and need no internet.
+- The download of the weights and the new baseline are research work. They are not part of an OpenSpec change. `jobs/JOBS.md` records them.
+- The thinking mode comes from the config of a run (`model.thinking`), not from `.env`. Thus `metrics.json` records it.
+
+### Next steps
+
+1. Complete the OpenSpec change `e1-jira-tasks` (plan, then implementation in a new chat).
+2. After the change: make the Kaggle jobs for the weights of the six models.
+3. Then: run the new baseline with the frozen weights.
+
+### Revision of the OpenSpec change `e1-jira-tasks`
+
+- Add the capability `model-layer`: one interface for all models, the families `qwen3.5`, `gemma4` and `bielik`, the backends `transformers`, `openai` and `scripted`, and the thinking switch from the config of a run.
+- Bielik has no native tool calls. Its family puts the tool list and the tool-call format into the system prompt.
+- Move the system prompts into versioned files in `prompts/` (`system-v2.md`, `tools-bielik-v1.md`). The run records the version and the SHA-256 of the prompt file.
+- The download of the weights and the runs of real models are out of scope of the change.
+- Add the design decisions D14 (model layer) and D15 (thinking in the config). Add the task groups "Model layer and prompts" and "Agent and evaluation".
+- `openspec validate e1-jira-tasks --strict` passes.
+
+### Implementation of the OpenSpec change `e1-jira-tasks`
+
+- `src/environment.py`: the board file in the Jira format, the fixed values of the Jira Cloud site, the operations with the fixed clock, the person rules and `diff()` in the format of `expected.json`.
+- `src/jql.py` (new): the JQL subset of design D8 with the semantics of the site.
+- `src/tools.py`: a low-level MCP server with the 14 tools of `data/mcp_atlassian_tools.json`. It has the result formats and the error messages of the real server. A failed call does not change the board.
+- `src/verifier.py`: the comparison with the expected changes as multisets, the grade of `query` tasks and the answer types. A person name in a Polish case form is correct ("Ewy Mazur").
+- `src/tasks.py`: the loader of the three task files and its checks. The old task generator is removed.
+- `src/models.py` (new): the model layer with the families `qwen3.5`, `gemma4` and `bielik`, and the backends `transformers`, `openai` and `scripted`. The parsers of Qwen3.5 and Gemma 4 agree with the chat templates of the models.
+- `prompts/system-v2.md` and `prompts/tools-bielik-v1.md` (new). The run records the version and the SHA-256 of the prompt.
+- `src/agent.py`: only the loop and the trajectory. The default step limit is 25. The thinking text goes into the trajectory.
+- `src/evaluate.py`: the new loader, the model layer and the prompt file. `metrics.json` records the model data and the prompt. Each line of `results.jsonl` has the author and the board.
+- All 200 reference solutions get `correct` or `correct_refusal` on the simulator. No data file changed.
+- The contract test runs the 43 recorded calls. It has three exceptions with reasons: the site issues have no priority, the site project has no type `Bug`, and the site has custom fields.
+- The recording showed two rules that are new in `docs/JIRA_TOOLS.md`: the user search accepts one word of the query, and the results show the labels in alphabetical order.
+- Decision: in a `missing_entity` refusal task, a read call of the reference solution can give an error (`test-078` reads `APP-140`). The spec of the change has this exception now.
+- `docs/MODELS.md` has the keys of the run config.
+- Tests: 197 pass, 1 is skipped (the checksum test, until the freeze of the test set).
+
+### Archive of the OpenSpec change `e1-jira-tasks`
+
+- Merge the delta specs into `openspec/specs/`. The new main spec `model-layer` has 6 requirements.
+- Move the change to `openspec/changes/archive/`.
+- The team did not review or freeze the test set yet. The checksum test stays skipped until the freeze.
+
+## 2026-11-05
+
+### Review of the test set
+
+- The team wrote 31 corrections of instructions as comments on the commit `bb7bd91` (`data/tasks/test/queries.json`).
+- Apply 30 corrections to `queries.json`. The corrections make the requests clearer ("Zmień APP-24 na Highest.") or remove the strange remarks of the author Rudolf Igor. The expected result of each task does not change.
+- Do not apply the correction of `test-115`. The new text "Stwórz issue - ..." asks for a new issue, but the task changes the existing issue `API-24`. The team kept the old text.
+- `solutions.json` and `expected.json` do not change.
+- Check: the evaluation with the reference calls gives the score 1.0 on all 200 tasks. The only tool error is the intended read of `APP-140` in `test-078`.
+- The test set is not frozen yet.
+
+### Freeze of the test set
+
+- Freeze the test set: `tests/test_tasks.py` has the SHA-256 checksums of `queries.json`, `solutions.json`, `expected.json` and the 5 test boards. The checksums ignore the line ends.
+- From now on, a change of these files needs a new run of all variants (see `AGENTS.md`).

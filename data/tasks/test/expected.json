@@ -1,0 +1,3050 @@
+[
+  {
+    "id": "test-001",
+    "board": "test-web",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Ewa Mazur"
+    }
+  },
+  {
+    "id": "test-002",
+    "board": "test-web",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 27000
+    }
+  },
+  {
+    "id": "test-003",
+    "board": "test-web",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "Highest"
+    }
+  },
+  {
+    "id": "test-004",
+    "board": "test-web",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "WEB-6",
+        "WEB-5"
+      ]
+    }
+  },
+  {
+    "id": "test-005",
+    "board": "test-web",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 3
+    }
+  },
+  {
+    "id": "test-006",
+    "board": "test-web",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "person",
+      "value": "Anna Sikora"
+    }
+  },
+  {
+    "id": "test-007",
+    "board": "test-web",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "WEB-7",
+        "field": "assignee",
+        "value": "Michał Krawczyk"
+      }
+    ]
+  },
+  {
+    "id": "test-008",
+    "board": "test-web",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "WEB-9",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "test-009",
+    "board": "test-web",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "WEB-22",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "test-010",
+    "board": "test-web",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "WEB-7",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "WEB-7",
+        "field": "assignee",
+        "value": "Ewa Mazur"
+      }
+    ]
+  },
+  {
+    "id": "test-011",
+    "board": "test-web",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "WEB-14",
+        "field": "labels",
+        "value": [
+          "ui",
+          "frontend"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "test-012",
+    "board": "test-web",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "WEB-29",
+        "field": "status",
+        "value": "In review"
+      }
+    ]
+  },
+  {
+    "id": "test-013",
+    "board": "test-web",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "WEB-12",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "poprawki aria w formularzu"
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-014",
+    "board": "test-web",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "WEB-6",
+        "comment": "Wdrożenie poprawki planujemy na czwartek."
+      }
+    ]
+  },
+  {
+    "id": "test-015",
+    "board": "test-web",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "WEB-24",
+        "comment": "Czekamy na odpowiedź operatora płatności."
+      }
+    ]
+  },
+  {
+    "id": "test-016",
+    "board": "test-web",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "WEB-31",
+        "worklog": {
+          "seconds": 2700,
+          "comment": "analiza"
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-017",
+    "board": "test-web",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "WEB-38",
+        "comment": "przyczyną jest podwójne przeliczenie w checkout"
+      },
+      {
+        "issue": "WEB-38",
+        "worklog": {
+          "seconds": 5400,
+          "comment": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-018",
+    "board": "test-web",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Kalkulator rat pokazuje złą kwotę dla koszyka powyżej 5000 zł",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-019",
+    "board": "test-web",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Update cookie banner texts for the new privacy policy",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "frontend"
+          ],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-020",
+    "board": "test-web",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Przygotować raport sprzedaży z Black Week",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Zofia Kaczmarek",
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-021",
+    "board": "test-web",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Program JayWalk Club - punkty za każdą parę butów",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": "WEB Sprint 16"
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-022",
+    "board": "test-web",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Koszyk czyści się po zmianie języka",
+          "issue_type": "Bug",
+          "priority": "Highest",
+          "assignee": "Daniel Brooks",
+          "labels": [],
+          "sprint": "WEB Sprint 15"
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-023",
+    "board": "test-web",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "WEB-10",
+        "field": "sprint",
+        "value": "WEB Sprint 16"
+      }
+    ]
+  },
+  {
+    "id": "test-024",
+    "board": "test-web",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "WEB-14",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "test-025",
+    "board": "test-web",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "WEB-19",
+        "field": "sprint",
+        "value": "WEB Sprint 15"
+      }
+    ]
+  },
+  {
+    "id": "test-026",
+    "board": "test-web",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "WEB-7",
+        "field": "sprint",
+        "value": "WEB Sprint 16"
+      },
+      {
+        "issue": "WEB-14",
+        "field": "sprint",
+        "value": "WEB Sprint 16"
+      },
+      {
+        "issue": "WEB-31",
+        "field": "sprint",
+        "value": "WEB Sprint 16"
+      }
+    ]
+  },
+  {
+    "id": "test-027",
+    "board": "test-web",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "WEB-20",
+        "field": "sprint",
+        "value": "WEB Sprint 17"
+      }
+    ]
+  },
+  {
+    "id": "test-028",
+    "board": "test-web",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "WEB-19",
+        "field": "assignee",
+        "value": "Michał Krawczyk"
+      },
+      {
+        "issue": "WEB-33",
+        "field": "assignee",
+        "value": "Michał Krawczyk"
+      }
+    ]
+  },
+  {
+    "id": "test-029",
+    "board": "test-web",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "WEB-31",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "WEB-38",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "test-030",
+    "board": "test-web",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "WEB-21",
+        "field": "labels",
+        "value": [
+          "ui",
+          "ux-review"
+        ]
+      },
+      {
+        "issue": "WEB-26",
+        "field": "labels",
+        "value": [
+          "frontend",
+          "ui",
+          "ux-review"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "test-031",
+    "board": "test-web",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "WEB-11",
+        "field": "assignee",
+        "value": "Ewa Mazur"
+      },
+      {
+        "issue": "WEB-29",
+        "field": "assignee",
+        "value": "Ewa Mazur"
+      }
+    ]
+  },
+  {
+    "id": "test-032",
+    "board": "test-web",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "WEB-32",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "WEB-32",
+        "comment": "banner jest już na produkcji"
+      },
+      {
+        "issue": "WEB-32",
+        "worklog": {
+          "seconds": 1800,
+          "comment": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-033",
+    "board": "test-web",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "WEB-6",
+        "field": "status",
+        "value": "In review"
+      },
+      {
+        "issue": "WEB-6",
+        "field": "assignee",
+        "value": "Daniel Brooks"
+      },
+      {
+        "issue": "WEB-6",
+        "comment": "Poprawka z kluczem idempotencji czeka na review."
+      }
+    ]
+  },
+  {
+    "id": "test-034",
+    "board": "test-web",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Przygotować checklistę release 2.4",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Anna Wróbel",
+          "labels": [],
+          "sprint": "WEB Sprint 15",
+          "comments": [
+            "Lista ma być gotowa przed piątkiem."
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-035",
+    "board": "test-web",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "WEB-19",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "WEB-19",
+        "field": "assignee",
+        "value": "Michał Krawczyk"
+      },
+      {
+        "issue": "WEB-19",
+        "field": "sprint",
+        "value": "WEB Sprint 15"
+      }
+    ]
+  },
+  {
+    "id": "test-036",
+    "board": "test-web",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "test-037",
+    "board": "test-web",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "test-038",
+    "board": "test-web",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "test-039",
+    "board": "test-web",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "test-040",
+    "board": "test-web",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "test-041",
+    "board": "test-app",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "Backlog"
+    }
+  },
+  {
+    "id": "test-042",
+    "board": "test-app",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Kamil Szewczyk"
+    }
+  },
+  {
+    "id": "test-043",
+    "board": "test-app",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 30600
+    }
+  },
+  {
+    "id": "test-044",
+    "board": "test-app",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 2
+    }
+  },
+  {
+    "id": "test-045",
+    "board": "test-app",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "APP-31",
+        "APP-11",
+        "APP-7"
+      ]
+    }
+  },
+  {
+    "id": "test-046",
+    "board": "test-app",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "person",
+      "value": "Kamil Dudek"
+    }
+  },
+  {
+    "id": "test-047",
+    "board": "test-app",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "APP-24",
+        "field": "priority",
+        "value": "Highest"
+      }
+    ]
+  },
+  {
+    "id": "test-048",
+    "board": "test-app",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "APP-12",
+        "field": "status",
+        "value": "In review"
+      }
+    ]
+  },
+  {
+    "id": "test-049",
+    "board": "test-app",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "APP-26",
+        "field": "assignee",
+        "value": "Sophie Grant"
+      }
+    ]
+  },
+  {
+    "id": "test-050",
+    "board": "test-app",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "APP-9",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "test-051",
+    "board": "test-app",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "APP-31",
+        "field": "labels",
+        "value": [
+          "ios",
+          "regression"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "test-052",
+    "board": "test-app",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "APP-24",
+        "field": "assignee",
+        "value": "Bartosz Lis"
+      }
+    ]
+  },
+  {
+    "id": "test-053",
+    "board": "test-app",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "APP-6",
+        "worklog": {
+          "seconds": 10800,
+          "comment": "debug kamery"
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-054",
+    "board": "test-app",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "APP-5",
+        "comment": "Drop przesunięty na 20 listopada."
+      }
+    ]
+  },
+  {
+    "id": "test-055",
+    "board": "test-app",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "APP-11",
+        "comment": "Waiting for the final photos from the design team."
+      }
+    ]
+  },
+  {
+    "id": "test-056",
+    "board": "test-app",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "APP-29",
+        "worklog": {
+          "seconds": 8100,
+          "comment": "testy na 30 parach"
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-057",
+    "board": "test-app",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "APP-18",
+        "comment": "nie da sie tego obejsc na androidzie 14"
+      }
+    ]
+  },
+  {
+    "id": "test-058",
+    "board": "test-app",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Brak ceny w EUR na ekranie produktu",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-059",
+    "board": "test-app",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Prepare the TestFlight build for the 3.2 release",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-060",
+    "board": "test-app",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Refaktor ekranu skanera",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "android"
+          ],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-061",
+    "board": "test-app",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Tryb offline dla listy ulubionych",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": "Olga Czarnecka",
+          "labels": [],
+          "sprint": "APP Sprint 10"
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-062",
+    "board": "test-app",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Push notifications show the wrong sneaker photo",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": "APP Sprint 9"
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-063",
+    "board": "test-app",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "APP-37",
+        "field": "sprint",
+        "value": "APP Sprint 9"
+      }
+    ]
+  },
+  {
+    "id": "test-064",
+    "board": "test-app",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "APP-14",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "test-065",
+    "board": "test-app",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "APP-34",
+        "field": "sprint",
+        "value": "APP Sprint 10"
+      }
+    ]
+  },
+  {
+    "id": "test-066",
+    "board": "test-app",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "APP-16",
+        "field": "sprint",
+        "value": "APP Sprint 9"
+      }
+    ]
+  },
+  {
+    "id": "test-067",
+    "board": "test-app",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "APP-19",
+        "field": "sprint",
+        "value": "APP Sprint 10"
+      },
+      {
+        "issue": "APP-33",
+        "field": "sprint",
+        "value": "APP Sprint 10"
+      }
+    ]
+  },
+  {
+    "id": "test-068",
+    "board": "test-app",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "APP-7",
+        "field": "assignee",
+        "value": "Kamil Szewczyk"
+      },
+      {
+        "issue": "APP-14",
+        "field": "assignee",
+        "value": "Kamil Szewczyk"
+      },
+      {
+        "issue": "APP-31",
+        "field": "assignee",
+        "value": "Kamil Szewczyk"
+      }
+    ]
+  },
+  {
+    "id": "test-069",
+    "board": "test-app",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "APP-7",
+        "field": "labels",
+        "value": [
+          "ios",
+          "login",
+          "ios-17"
+        ]
+      },
+      {
+        "issue": "APP-26",
+        "field": "labels",
+        "value": [
+          "ios",
+          "ui",
+          "ios-17"
+        ]
+      },
+      {
+        "issue": "APP-31",
+        "field": "labels",
+        "value": [
+          "ios",
+          "ios-17"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "test-070",
+    "board": "test-app",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "APP-10",
+        "field": "priority",
+        "value": "Low"
+      },
+      {
+        "issue": "APP-23",
+        "field": "priority",
+        "value": "Low"
+      }
+    ]
+  },
+  {
+    "id": "test-071",
+    "board": "test-app",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "APP-30",
+        "field": "assignee",
+        "value": "Bartosz Lis"
+      },
+      {
+        "issue": "APP-39",
+        "field": "assignee",
+        "value": "Bartosz Lis"
+      }
+    ]
+  },
+  {
+    "id": "test-072",
+    "board": "test-app",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "APP-6",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "APP-6",
+        "comment": "fix w wersji 3.1.2"
+      },
+      {
+        "issue": "APP-6",
+        "worklog": {
+          "seconds": 3600,
+          "comment": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-073",
+    "board": "test-app",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "APP-19",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "APP-19",
+        "field": "assignee",
+        "value": "Bartosz Lis"
+      },
+      {
+        "issue": "APP-19",
+        "field": "sprint",
+        "value": "APP Sprint 9"
+      }
+    ]
+  },
+  {
+    "id": "test-074",
+    "board": "test-app",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Update App Store screenshots",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Olga Czarnecka",
+          "labels": [],
+          "sprint": "APP Sprint 10",
+          "comments": [
+            "Screenshots must show the new JayWalk Volt"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-075",
+    "board": "test-app",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "APP-5",
+        "field": "status",
+        "value": "In review"
+      },
+      {
+        "issue": "APP-5",
+        "comment": "Testy obciążeniowe OK, 50 tys. użytkowników."
+      }
+    ]
+  },
+  {
+    "id": "test-076",
+    "board": "test-app",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "test-077",
+    "board": "test-app",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "test-078",
+    "board": "test-app",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "test-079",
+    "board": "test-app",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "test-080",
+    "board": "test-app",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "test-081",
+    "board": "test-api",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Oliver Hayes"
+    }
+  },
+  {
+    "id": "test-082",
+    "board": "test-api",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 28800
+    }
+  },
+  {
+    "id": "test-083",
+    "board": "test-api",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "In review"
+    }
+  },
+  {
+    "id": "test-084",
+    "board": "test-api",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 5
+    }
+  },
+  {
+    "id": "test-085",
+    "board": "test-api",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "API-40",
+        "API-27",
+        "API-24",
+        "API-21",
+        "API-16",
+        "API-7",
+        "API-6",
+        "API-5"
+      ]
+    }
+  },
+  {
+    "id": "test-086",
+    "board": "test-api",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "person",
+      "value": "Tomasz Kubiak"
+    }
+  },
+  {
+    "id": "test-087",
+    "board": "test-api",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "API-22",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "test-088",
+    "board": "test-api",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "API-12",
+        "field": "status",
+        "value": "In review"
+      }
+    ]
+  },
+  {
+    "id": "test-089",
+    "board": "test-api",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "API-26",
+        "field": "assignee",
+        "value": "Agnieszka Duda"
+      }
+    ]
+  },
+  {
+    "id": "test-090",
+    "board": "test-api",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "API-19",
+        "field": "assignee",
+        "value": "Krzysztof Malinowski"
+      }
+    ]
+  },
+  {
+    "id": "test-091",
+    "board": "test-api",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "API-18",
+        "field": "labels",
+        "value": [
+          "inventory",
+          "partners"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "test-092",
+    "board": "test-api",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "API-10",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "test-093",
+    "board": "test-api",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "API-29",
+        "worklog": {
+          "seconds": 6300,
+          "comment": "analiza liczenia żądań HEAD"
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-094",
+    "board": "test-api",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "API-32",
+        "comment": "Spotkanie z partnerami przesunięte na środę."
+      }
+    ]
+  },
+  {
+    "id": "test-095",
+    "board": "test-api",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "API-6",
+        "comment": "Sportland confirmed the difference is only for size 44."
+      }
+    ]
+  },
+  {
+    "id": "test-096",
+    "board": "test-api",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "API-31",
+        "worklog": {
+          "seconds": 3000,
+          "comment": "reprodukcja na danych produkcyjnych"
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-097",
+    "board": "test-api",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "API-38",
+        "comment": "carrier API returns the number with a delay"
+      },
+      {
+        "issue": "API-38",
+        "worklog": {
+          "seconds": 3600,
+          "comment": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-098",
+    "board": "test-api",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Endpoint /inventory zwraca stany sprzed godziny",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-099",
+    "board": "test-api",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Retrospektywa sprintu 22 - podsumowanie",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-100",
+    "board": "test-api",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Bulk order API for partners",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "partners"
+          ],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-101",
+    "board": "test-api",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Limity zapytań per endpoint",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": "Tomasz Kubiak",
+          "labels": [],
+          "sprint": "API Sprint 23"
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-102",
+    "board": "test-api",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Przygotować demo dla partnerów",
+          "issue_type": "Task",
+          "priority": "High",
+          "assignee": "Oliver Hayes",
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-103",
+    "board": "test-api",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "API-20",
+        "field": "sprint",
+        "value": "API Sprint 22"
+      }
+    ]
+  },
+  {
+    "id": "test-104",
+    "board": "test-api",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "API-14",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "test-105",
+    "board": "test-api",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "API-27",
+        "field": "sprint",
+        "value": "API Sprint 23"
+      }
+    ]
+  },
+  {
+    "id": "test-106",
+    "board": "test-api",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "API-20",
+        "field": "sprint",
+        "value": "API Sprint 23"
+      },
+      {
+        "issue": "API-26",
+        "field": "sprint",
+        "value": "API Sprint 23"
+      }
+    ]
+  },
+  {
+    "id": "test-107",
+    "board": "test-api",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "API-17",
+        "field": "sprint",
+        "value": "API Sprint 22"
+      }
+    ]
+  },
+  {
+    "id": "test-108",
+    "board": "test-api",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "API-7",
+        "field": "assignee",
+        "value": "Agnieszka Duda"
+      },
+      {
+        "issue": "API-10",
+        "field": "assignee",
+        "value": "Agnieszka Duda"
+      },
+      {
+        "issue": "API-14",
+        "field": "assignee",
+        "value": "Agnieszka Duda"
+      },
+      {
+        "issue": "API-31",
+        "field": "assignee",
+        "value": "Agnieszka Duda"
+      }
+    ]
+  },
+  {
+    "id": "test-109",
+    "board": "test-api",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "API-9",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "API-33",
+        "field": "priority",
+        "value": "Highest"
+      }
+    ]
+  },
+  {
+    "id": "test-110",
+    "board": "test-api",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "API-7",
+        "field": "labels",
+        "value": [
+          "webhooks",
+          "partners",
+          "partner-impact"
+        ]
+      },
+      {
+        "issue": "API-17",
+        "field": "labels",
+        "value": [
+          "webhooks",
+          "partner-impact"
+        ]
+      },
+      {
+        "issue": "API-27",
+        "field": "labels",
+        "value": [
+          "partners",
+          "webhooks",
+          "partner-impact"
+        ]
+      },
+      {
+        "issue": "API-38",
+        "field": "labels",
+        "value": [
+          "webhooks",
+          "partner-impact"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "test-111",
+    "board": "test-api",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "API-23",
+        "field": "assignee",
+        "value": "Tomasz Baran"
+      },
+      {
+        "issue": "API-30",
+        "field": "assignee",
+        "value": "Tomasz Baran"
+      }
+    ]
+  },
+  {
+    "id": "test-112",
+    "board": "test-api",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "API-29",
+        "field": "status",
+        "value": "In review"
+      },
+      {
+        "issue": "API-29",
+        "comment": "Żądania HEAD nie liczą się już do limitu."
+      },
+      {
+        "issue": "API-29",
+        "worklog": {
+          "seconds": 7200,
+          "comment": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-113",
+    "board": "test-api",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "API-9",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "API-9",
+        "field": "assignee",
+        "value": "Tomasz Baran"
+      },
+      {
+        "issue": "API-9",
+        "comment": "please check the rotation flow"
+      }
+    ]
+  },
+  {
+    "id": "test-114",
+    "board": "test-api",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Planowanie sprintu 23",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Natalia Zając",
+          "labels": [],
+          "sprint": "API Sprint 23",
+          "comments": [
+            "Proszę przygotować estymacje przed spotkaniem."
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-115",
+    "board": "test-api",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "API-24",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "API-24",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "API-24",
+        "field": "sprint",
+        "value": "API Sprint 22"
+      }
+    ]
+  },
+  {
+    "id": "test-116",
+    "board": "test-api",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "test-117",
+    "board": "test-api",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "test-118",
+    "board": "test-api",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "test-119",
+    "board": "test-api",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "test-120",
+    "board": "test-api",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "test-121",
+    "board": "test-data",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Marek Sobczak"
+    }
+  },
+  {
+    "id": "test-122",
+    "board": "test-data",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 27000
+    }
+  },
+  {
+    "id": "test-123",
+    "board": "test-data",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "Medium"
+    }
+  },
+  {
+    "id": "test-124",
+    "board": "test-data",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 3
+    }
+  },
+  {
+    "id": "test-125",
+    "board": "test-data",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "DATA-27",
+        "DATA-16",
+        "DATA-15",
+        "DATA-9"
+      ]
+    }
+  },
+  {
+    "id": "test-126",
+    "board": "test-data",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "time",
+      "value": 5400
+    }
+  },
+  {
+    "id": "test-127",
+    "board": "test-data",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DATA-19",
+        "field": "assignee",
+        "value": "Łukasz Ostrowski"
+      }
+    ]
+  },
+  {
+    "id": "test-128",
+    "board": "test-data",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DATA-24",
+        "field": "priority",
+        "value": "Highest"
+      }
+    ]
+  },
+  {
+    "id": "test-129",
+    "board": "test-data",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DATA-16",
+        "field": "status",
+        "value": "In Progress"
+      }
+    ]
+  },
+  {
+    "id": "test-130",
+    "board": "test-data",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DATA-22",
+        "field": "priority",
+        "value": "Highest"
+      }
+    ]
+  },
+  {
+    "id": "test-131",
+    "board": "test-data",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DATA-14",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "test-132",
+    "board": "test-data",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DATA-5",
+        "field": "labels",
+        "value": [
+          "sales",
+          "dashboard",
+          "black-week"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "test-133",
+    "board": "test-data",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DATA-24",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "debug schedulera"
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-134",
+    "board": "test-data",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DATA-5",
+        "comment": "Zarząd chce wersję wstępną do piątku."
+      }
+    ]
+  },
+  {
+    "id": "test-135",
+    "board": "test-data",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DATA-9",
+        "comment": "The model now uses 0.5 size steps."
+      }
+    ]
+  },
+  {
+    "id": "test-136",
+    "board": "test-data",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DATA-6",
+        "worklog": {
+          "seconds": 10800,
+          "comment": "uzgodnienia z operatorem"
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-137",
+    "board": "test-data",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DATA-29",
+        "comment": "exchange rates come from the wrong day"
+      },
+      {
+        "issue": "DATA-29",
+        "worklog": {
+          "seconds": 4800,
+          "comment": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-138",
+    "board": "test-data",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Raport zwrotów za listopad dla zarządu",
+          "issue_type": "Task",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-139",
+    "board": "test-data",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Brak danych z kasy w sklepie w Poznaniu",
+          "issue_type": "Bug",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-140",
+    "board": "test-data",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Customer lifetime value dashboard",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "dashboard"
+          ],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-141",
+    "board": "test-data",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Analiza sprzedaży butów do biegania",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Monika Grabowska",
+          "labels": [],
+          "sprint": "DATA Sprint 6"
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-142",
+    "board": "test-data",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Job ETL zwrotów nie startuje po zmianie czasu",
+          "issue_type": "Bug",
+          "priority": "Highest",
+          "assignee": "Łukasz Ostrowski",
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-143",
+    "board": "test-data",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DATA-17",
+        "field": "sprint",
+        "value": "DATA Sprint 6"
+      }
+    ]
+  },
+  {
+    "id": "test-144",
+    "board": "test-data",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DATA-14",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "test-145",
+    "board": "test-data",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DATA-15",
+        "field": "sprint",
+        "value": "DATA Sprint 6"
+      },
+      {
+        "issue": "DATA-16",
+        "field": "sprint",
+        "value": "DATA Sprint 6"
+      }
+    ]
+  },
+  {
+    "id": "test-146",
+    "board": "test-data",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DATA-19",
+        "field": "sprint",
+        "value": "DATA Sprint 6"
+      },
+      {
+        "issue": "DATA-33",
+        "field": "sprint",
+        "value": "DATA Sprint 6"
+      }
+    ]
+  },
+  {
+    "id": "test-147",
+    "board": "test-data",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DATA-39",
+        "field": "sprint",
+        "value": "DATA Sprint 7"
+      }
+    ]
+  },
+  {
+    "id": "test-148",
+    "board": "test-data",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DATA-7",
+        "field": "assignee",
+        "value": "Marek Sobczak"
+      },
+      {
+        "issue": "DATA-14",
+        "field": "assignee",
+        "value": "Marek Sobczak"
+      },
+      {
+        "issue": "DATA-31",
+        "field": "assignee",
+        "value": "Marek Sobczak"
+      }
+    ]
+  },
+  {
+    "id": "test-149",
+    "board": "test-data",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DATA-30",
+        "field": "assignee",
+        "value": "Igor Kwiatkowski"
+      },
+      {
+        "issue": "DATA-40",
+        "field": "assignee",
+        "value": "Igor Kwiatkowski"
+      }
+    ]
+  },
+  {
+    "id": "test-150",
+    "board": "test-data",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DATA-5",
+        "field": "labels",
+        "value": [
+          "sales",
+          "dashboard",
+          "board-review"
+        ]
+      },
+      {
+        "issue": "DATA-7",
+        "field": "labels",
+        "value": [
+          "data-quality",
+          "sales",
+          "board-review"
+        ]
+      },
+      {
+        "issue": "DATA-11",
+        "field": "labels",
+        "value": [
+          "sales",
+          "board-review"
+        ]
+      },
+      {
+        "issue": "DATA-22",
+        "field": "labels",
+        "value": [
+          "sales",
+          "data-quality",
+          "board-review"
+        ]
+      },
+      {
+        "issue": "DATA-29",
+        "field": "labels",
+        "value": [
+          "sales",
+          "board-review"
+        ]
+      },
+      {
+        "issue": "DATA-34",
+        "field": "labels",
+        "value": [
+          "sales",
+          "board-review"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "test-151",
+    "board": "test-data",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DATA-14",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "DATA-26",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "DATA-36",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "test-152",
+    "board": "test-data",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DATA-12",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "DATA-12",
+        "comment": "dodany indeks na sku"
+      },
+      {
+        "issue": "DATA-12",
+        "worklog": {
+          "seconds": 3600,
+          "comment": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-153",
+    "board": "test-data",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DATA-19",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "DATA-19",
+        "field": "assignee",
+        "value": "Łukasz Ostrowski"
+      },
+      {
+        "issue": "DATA-19",
+        "field": "sprint",
+        "value": "DATA Sprint 6"
+      }
+    ]
+  },
+  {
+    "id": "test-154",
+    "board": "test-data",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Validate the churn dataset",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Priya Raman",
+          "labels": [],
+          "sprint": "DATA Sprint 7",
+          "comments": [
+            "Need access to the CRM export"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-155",
+    "board": "test-data",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DATA-7",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "DATA-7",
+        "field": "assignee",
+        "value": "Marek Sobczak"
+      },
+      {
+        "issue": "DATA-7",
+        "comment": "Sprawdzić korekty po zwrotach."
+      }
+    ]
+  },
+  {
+    "id": "test-156",
+    "board": "test-data",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "test-157",
+    "board": "test-data",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "test-158",
+    "board": "test-data",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "test-159",
+    "board": "test-data",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "test-160",
+    "board": "test-data",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "test-161",
+    "board": "test-ops",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Filip Górski"
+    }
+  },
+  {
+    "id": "test-162",
+    "board": "test-ops",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 28800
+    }
+  },
+  {
+    "id": "test-163",
+    "board": "test-ops",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "High"
+    }
+  },
+  {
+    "id": "test-164",
+    "board": "test-ops",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 3
+    }
+  },
+  {
+    "id": "test-165",
+    "board": "test-ops",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "OPS-14",
+        "OPS-9"
+      ]
+    }
+  },
+  {
+    "id": "test-166",
+    "board": "test-ops",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "person",
+      "value": "Aleksandra Lewicka"
+    }
+  },
+  {
+    "id": "test-167",
+    "board": "test-ops",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "OPS-7",
+        "field": "priority",
+        "value": "Highest"
+      }
+    ]
+  },
+  {
+    "id": "test-168",
+    "board": "test-ops",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "OPS-9",
+        "field": "status",
+        "value": "In Progress"
+      }
+    ]
+  },
+  {
+    "id": "test-169",
+    "board": "test-ops",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "OPS-39",
+        "field": "assignee",
+        "value": "Wojciech Michalak"
+      }
+    ]
+  },
+  {
+    "id": "test-170",
+    "board": "test-ops",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "OPS-19",
+        "field": "assignee",
+        "value": "Ethan Cole"
+      }
+    ]
+  },
+  {
+    "id": "test-171",
+    "board": "test-ops",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "OPS-12",
+        "field": "labels",
+        "value": [
+          "kubernetes",
+          "network",
+          "black-week"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "test-172",
+    "board": "test-ops",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "OPS-25",
+        "field": "status",
+        "value": "In Progress"
+      }
+    ]
+  },
+  {
+    "id": "test-173",
+    "board": "test-ops",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "OPS-12",
+        "worklog": {
+          "seconds": 4500,
+          "comment": "tuning ingress timeouts"
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-174",
+    "board": "test-ops",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "OPS-5",
+        "comment": "Test obciążeniowy przesunięty na 21 listopada!"
+      }
+    ]
+  },
+  {
+    "id": "test-175",
+    "board": "test-ops",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "OPS-6",
+        "comment": "Backup przyrostowy skraca czas do 2 godzin."
+      }
+    ]
+  },
+  {
+    "id": "test-176",
+    "board": "test-ops",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "OPS-7",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "odnowienie certyfikatu"
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-177",
+    "board": "test-ops",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "OPS-36",
+        "comment": "retries hide the real problem"
+      },
+      {
+        "issue": "OPS-36",
+        "worklog": {
+          "seconds": 2700,
+          "comment": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-178",
+    "board": "test-ops",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Sklep zwraca 503 przy 5000 użytkowników",
+          "issue_type": "Bug",
+          "priority": "Highest",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-179",
+    "board": "test-ops",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Add synthetic checks for the checkout flow",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "monitoring"
+          ],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-180",
+    "board": "test-ops",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Przegląd uprawnień w chmurze za IV kwartał",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-181",
+    "board": "test-ops",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Dyżur Black Week - lista kontaktów",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Filip Górski",
+          "labels": [],
+          "sprint": "OPS Sprint 31"
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-182",
+    "board": "test-ops",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Node exporter missing on new nodes",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": "Filip Górski",
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-183",
+    "board": "test-ops",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "OPS-33",
+        "field": "sprint",
+        "value": "OPS Sprint 31"
+      }
+    ]
+  },
+  {
+    "id": "test-184",
+    "board": "test-ops",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "OPS-14",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "test-185",
+    "board": "test-ops",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "OPS-19",
+        "field": "sprint",
+        "value": "OPS Sprint 31"
+      },
+      {
+        "issue": "OPS-28",
+        "field": "sprint",
+        "value": "OPS Sprint 31"
+      },
+      {
+        "issue": "OPS-33",
+        "field": "sprint",
+        "value": "OPS Sprint 31"
+      }
+    ]
+  },
+  {
+    "id": "test-186",
+    "board": "test-ops",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "OPS-17",
+        "field": "sprint",
+        "value": "OPS Sprint 33"
+      }
+    ]
+  },
+  {
+    "id": "test-187",
+    "board": "test-ops",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "OPS-21",
+        "field": "sprint",
+        "value": "OPS Sprint 32"
+      },
+      {
+        "issue": "OPS-23",
+        "field": "sprint",
+        "value": "OPS Sprint 32"
+      }
+    ]
+  },
+  {
+    "id": "test-188",
+    "board": "test-ops",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "OPS-7",
+        "field": "assignee",
+        "value": "Wojciech Michalak"
+      },
+      {
+        "issue": "OPS-14",
+        "field": "assignee",
+        "value": "Wojciech Michalak"
+      },
+      {
+        "issue": "OPS-31",
+        "field": "assignee",
+        "value": "Wojciech Michalak"
+      }
+    ]
+  },
+  {
+    "id": "test-189",
+    "board": "test-ops",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "OPS-30",
+        "field": "assignee",
+        "value": "Ethan Cole"
+      },
+      {
+        "issue": "OPS-37",
+        "field": "assignee",
+        "value": "Ethan Cole"
+      }
+    ]
+  },
+  {
+    "id": "test-190",
+    "board": "test-ops",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "OPS-18",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "OPS-36",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "test-191",
+    "board": "test-ops",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "OPS-5",
+        "field": "labels",
+        "value": [
+          "kubernetes",
+          "incident",
+          "black-week"
+        ]
+      },
+      {
+        "issue": "OPS-12",
+        "field": "labels",
+        "value": [
+          "kubernetes",
+          "network",
+          "black-week"
+        ]
+      },
+      {
+        "issue": "OPS-24",
+        "field": "labels",
+        "value": [
+          "kubernetes",
+          "black-week"
+        ]
+      },
+      {
+        "issue": "OPS-34",
+        "field": "labels",
+        "value": [
+          "kubernetes",
+          "black-week"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "test-192",
+    "board": "test-ops",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "OPS-9",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "OPS-9",
+        "comment": "dedup rule added in Alertmanager"
+      },
+      {
+        "issue": "OPS-9",
+        "worklog": {
+          "seconds": 1800,
+          "comment": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-193",
+    "board": "test-ops",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "OPS-24",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "OPS-24",
+        "field": "assignee",
+        "value": "Aleksandra Rutkowska"
+      },
+      {
+        "issue": "OPS-24",
+        "field": "sprint",
+        "value": "OPS Sprint 31"
+      }
+    ]
+  },
+  {
+    "id": "test-194",
+    "board": "test-ops",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Przegląd planu odtwarzania po awarii",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Wojciech Michalak",
+          "labels": [],
+          "sprint": "OPS Sprint 32",
+          "comments": [
+            "Proszę o uwagi do piątku."
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-195",
+    "board": "test-ops",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "OPS-12",
+        "field": "status",
+        "value": "In review"
+      },
+      {
+        "issue": "OPS-12",
+        "comment": "increased worker connections"
+      },
+      {
+        "issue": "OPS-12",
+        "worklog": {
+          "seconds": 3600,
+          "comment": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "test-196",
+    "board": "test-ops",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "test-197",
+    "board": "test-ops",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "test-198",
+    "board": "test-ops",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "test-199",
+    "board": "test-ops",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "test-200",
+    "board": "test-ops",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  }
+]

@@ -1,151 +1,192 @@
+from pathlib import Path
+
 import pytest
 
 from src.environment import (
-    FIRST_NAMES,
-    SURNAMES,
     Board,
     BoardError,
-    Issue,
     diff,
-    generate_board,
+    format_time,
     load_board,
-    name_forms,
+    parse_time,
     save_board,
 )
 
+ROOT = Path(__file__).resolve().parents[1]
+BOARDS = sorted((ROOT / "data" / "environments").glob("test-*.json"))
+
 
 @pytest.fixture
-def board() -> Board:
-    return generate_board("test-x", "WEB", seed=1)
+def web() -> Board:
+    return load_board(ROOT / "data" / "environments" / "test-web.json")
 
 
-def test_round_trip(board, tmp_path):
-    path = tmp_path / "board.json"
-    save_board(board, path)
-    assert load_board(path) == board
+def test_five_test_boards():
+    assert [p.stem for p in BOARDS] == ["test-api", "test-app", "test-data", "test-ops", "test-web"]
 
 
-def test_issue_fields(board):
+@pytest.mark.parametrize("path", BOARDS, ids=lambda p: p.stem)
+def test_board_loads(path):
+    board = load_board(path)
+    assert board.issues and board.persons and board.sprints
+    assert all(p.email.endswith("@example.com") for p in board.persons)
     issue = board.issues[0]
-    assert set(Issue.model_fields) == {
-        "key", "title", "description", "type", "status", "priority", "assignee", "labels", "sprint", "comments"
-    }
-    assert issue.key.startswith("WEB-")
+    for field in ("id", "key", "summary", "description", "issue_type", "status", "priority", "assignee",
+                  "reporter", "labels", "sprint", "created", "updated", "comments", "worklogs"):
+        assert hasattr(issue, field)
 
 
-def test_board_size(board):
-    assert len(board.persons) == 6
-    assert [s.state for s in board.sprints] == ["closed", "active", "future", "future"]
-    assert 30 <= len(board.issues) <= 40
+def test_save_and_load(web, tmp_path):
+    save_board(web, tmp_path / "b.json")
+    assert load_board(tmp_path / "b.json") == web
 
 
-def test_same_seed_same_board():
-    assert generate_board("b", "WEB", seed=7) == generate_board("b", "WEB", seed=7)
-    assert generate_board("b", "WEB", seed=7) != generate_board("b", "WEB", seed=8)
+# Allowed values
+
+def test_translated_type(web):
+    with pytest.raises(BoardError, match="Specify a valid issue type"):
+        web.create_issue("x", "Zadanie")
+    assert diff(load_board(ROOT / "data/environments/test-web.json"), web) == []
 
 
-@pytest.mark.parametrize("seed", range(20))
-def test_unique_first_names(seed):
-    board = generate_board("b", "WEB", seed=seed)
-    firsts = [p.name.split()[0] for p in board.persons]
-    assert len(set(firsts)) == len(firsts)
+def test_unknown_priority(web):
+    before = web.copy_board()
+    with pytest.raises(BoardError, match=r"Specify the Priority \(name\) in the string format"):
+        web.update_fields("WEB-7", {"priority": {"name": "Wysoki"}})
+    assert web == before
 
 
-def test_names_from_fixed_list(board):
-    surnames = {s for pair in SURNAMES for s in pair}
-    for p in board.persons:
-        first, last = p.name.split()
-        assert first in FIRST_NAMES and last in surnames
-        assert set(name_forms(p)) == {"gender", "nom", "gen", "dat", "acc", "ins"}
-
-
-def test_value_not_allowed(board):
-    before = board.copy_board()
-    with pytest.raises(BoardError, match="to_do, in_progress, done"):
-        board.update_issue("WEB-1", status="closed")
-    assert board == before
-
-
-def test_unknown_person(board):
-    before = board.copy_board()
-    with pytest.raises(BoardError, match="u99"):
-        board.update_issue("WEB-1", assignee="u99", status="done")
-    assert board == before
-
-
-def test_closed_sprint(board):
+def test_closed_sprint(web):
+    closed = next(s for s in web.sprints if s.state == "closed")
     with pytest.raises(BoardError, match="closed"):
-        board.update_issue("WEB-1", sprint="s1")
+        web.add_to_sprint(closed.id, ["WEB-7"])
 
 
-def test_unknown_issue(board):
-    before = board.copy_board()
-    with pytest.raises(BoardError, match="WEB-999"):
-        board.update_issue("WEB-999", status="done")
-    with pytest.raises(BoardError, match="WEB-999"):
-        board.add_comment("WEB-999", "x")
-    assert board == before
+def test_unknown_sprint(web):
+    with pytest.raises(BoardError, match="We could not find the sprint"):
+        web.add_to_sprint("999", ["WEB-7"])
 
 
-def test_search_two_filters(board):
-    found = board.search(label="frontend", type="bug")
-    expected = [i for i in board.issues if i.type == "bug" and "frontend" in i.labels]
-    assert found == expected
+def test_unknown_issue(web):
+    before = web.copy_board()
+    with pytest.raises(BoardError, match="Issue does not exist"):
+        web.update_fields("WEB-999", {"summary": "x"})
+    assert web == before
 
 
-def test_search_unassigned_and_backlog(board):
-    assert all(i.assignee is None for i in board.search(assignee="unassigned"))
-    assert all(i.sprint is None for i in board.search(sprint="backlog"))
-    assert len(board.search(assignee="unassigned")) == sum(i.assignee is None for i in board.issues)
+# Operations
 
-
-def test_search_text_and_order(board):
-    issue = board.issues[5]
-    word = issue.title.split()[-1].upper()
-    found = board.search(text=word)
-    assert issue in found
-    numbers = [int(i.key.split("-")[1]) for i in board.search()]
-    assert numbers == sorted(numbers)
-
-
-def test_search_bad_filter(board):
-    with pytest.raises(BoardError):
-        board.search(priority="urgent")
-
-
-def test_new_issue_key(board):
-    board.issues = [i for i in board.issues if int(i.key.split("-")[1]) <= 40]
-    board.issues[-1].key = "WEB-40"
-    issue = board.create_issue("Nowe zadanie", "task")
+def test_new_issue(web):
+    issue = web.create_issue("Nowy bug", "bug")
     assert issue.key == "WEB-41"
-    assert issue.status == "to_do"
+    assert (issue.status, issue.priority, issue.issue_type) == ("Backlog", "Medium", "Bug")
+    assert issue.reporter == web.user.account_id
+    assert issue.created == web.now
 
 
-def test_labels(board):
-    board.update_issue("WEB-2", add_labels=["docs", "api"], remove_labels=["docs"])
-    assert "api" in board.issue("WEB-2").labels
-    assert "docs" not in board.issue("WEB-2").labels
+def test_new_issue_unknown_assignee(web):
+    issue = web.create_issue("x", "Task", assignee="Ewa")
+    assert issue.assignee is None
 
 
-def test_diff_empty(board):
-    assert diff(board, board.copy_board()) == []
+def test_transition(web):
+    web.update_fields("WEB-7", {"status": "In Progress"})
+    assert web.transition("WEB-7", "51").status == "Done"
+    with pytest.raises(BoardError, match="Transition id '999' is not valid for this issue."):
+        web.transition("WEB-7", "999")
 
 
-def test_diff_assignee(board):
-    after = board.copy_board()
-    after.issue("WEB-12").assignee = "u4" if board.issue("WEB-12").assignee == "u3" else "u3"
-    value = after.issue("WEB-12").assignee
-    assert diff(board, after) == [{"op": "update", "key": "WEB-12", "field": "assignee", "value": value}]
+def test_labels_replace(web):
+    assert web.update_fields("WEB-14", {"labels": ["frontend"]}).labels == ["frontend"]
 
 
-def test_diff_all_kinds(board):
-    after = board.copy_board()
-    after.add_comment("WEB-3", "Czekamy na review")
-    after.update_issue("WEB-2", add_labels=["zzz"])
-    new = after.create_issue("Nowy bug", "bug", sprint="s2")
-    changes = diff(board, after)
-    assert [c["op"] for c in changes] == ["update", "comment", "create"]
-    assert changes[0]["value"] == sorted(set(board.issue("WEB-2").labels) | {"zzz"})
-    assert changes[1] == {"op": "comment", "key": "WEB-3", "text": "Czekamy na review"}
-    assert "key" not in changes[2]["fields"]
-    assert changes[2]["fields"]["title"] == new.title
+@pytest.mark.parametrize("text,seconds", [
+    ("1h 30m", 5400), ("90m", 5400), ("2h", 7200), ("1d", 28800), ("1w", 144000), ("45M", 2700),
+    ("półtorej godziny", 60), ("1,5h", 60), ("", 60),
+])
+def test_parse_time(text, seconds):
+    assert parse_time(text) == seconds
+
+
+def test_format_time():
+    assert format_time(5400) == "1h 30m"
+    assert format_time(60) == "1m"
+
+
+def test_same_calls_give_same_board(web):
+    def run(board):
+        board.create_issue("x", "Task", assignee="Ewa Mazur")
+        board.add_comment("WEB-41", "komentarz")
+        board.add_worklog("WEB-5", "1h 30m")
+        board.add_to_sprint("43", ["WEB-41"])
+        return board
+
+    assert run(web.copy_board()) == run(web.copy_board())
+
+
+# Persons
+
+def test_person_without_polish_letters():
+    board = load_board(ROOT / "data/environments/test-data.json")
+    lukasz = next(p for p in board.persons if p.display_name == "Łukasz Ostrowski")
+    assert board.find_person("lukasz ostrowski") == lukasz
+    assert board.find_person("LUKASZ.OSTROWSKI@example.com") == lukasz
+
+
+def test_first_name_only(web):
+    assert web.find_person("Ewa") is None
+    with pytest.raises(BoardError, match="Could not find account ID for user: Ewa"):
+        web.update_fields("WEB-7", {"assignee": "Ewa"})
+
+
+def test_prefix_search(web):
+    assert {p.display_name for p in web.search_persons("Ann")} == {"Anna Wróbel", "Anna Sikora"}
+    assert [p.display_name for p in web.search_persons("Rud")] == ["Rudolf Igor"]
+    assert [p.display_name for p in web.search_persons("wrob")] == ["Anna Wróbel"]
+
+
+def test_inactive_person(web):
+    assert web.search_persons("Paweł") == []
+    assert web.find_person("Paweł Jasiński") is None
+    with pytest.raises(BoardError, match="Could not find account ID"):
+        web.update_fields("WEB-7", {"assignee": "Paweł Jasiński"})
+
+
+# Difference
+
+def test_no_change(web):
+    assert diff(web, web.copy_board()) == []
+
+
+def test_diff_assignee(web):
+    final = web.copy_board()
+    final.update_fields("WEB-7", {"assignee": "Ewa Mazur"})
+    assert diff(web, final) == [{"issue": "WEB-7", "field": "assignee", "value": "Ewa Mazur"}]
+
+
+def test_diff_comment(web):
+    final = web.copy_board()
+    final.add_comment("WEB-6", "Czekamy na review")
+    assert diff(web, final) == [{"issue": "WEB-6", "comment": "Czekamy na review"}]
+
+
+def test_diff_worklog(web):
+    final = web.copy_board()
+    final.add_worklog("WEB-5", "1h 30m")
+    assert diff(web, final) == [{"issue": "WEB-5", "worklog": {"seconds": 5400, "comment": ""}}]
+
+
+def test_diff_sprint_by_name(web):
+    final = web.copy_board()
+    final.add_to_sprint("43", ["WEB-10"])
+    assert diff(web, final) == [{"issue": "WEB-10", "field": "sprint", "value": "WEB Sprint 16"}]
+
+
+def test_diff_new_issue_with_comment(web):
+    final = web.copy_board()
+    final.create_issue("Checklista", "Task", assignee="Anna Wróbel")
+    final.add_comment("WEB-41", "Do piątku.")
+    assert diff(web, final) == [{"new_issue": {
+        "summary": "Checklista", "description": None, "issue_type": "Task", "status": "Backlog",
+        "priority": "Medium", "assignee": "Anna Wróbel", "labels": [], "sprint": None, "comments": ["Do piątku."],
+    }}]

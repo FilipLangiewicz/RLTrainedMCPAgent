@@ -18,11 +18,19 @@ The agent SHALL give the model a system prompt, the task instruction and the too
 - **THEN** the loop stops after step 15 with the stop reason `max_steps`
 
 ### Requirement: System prompt
-The system prompt SHALL tell the model to use the tools, to answer the user in Polish, and to start the answer with `ODMOWA:` when the tools cannot do the task. The prompt SHALL have a version name that the run records.
+The system prompt SHALL come from a file `prompts/system-<version>.md`. The config of a run SHALL give the version, and the run SHALL record it. A changed prompt SHALL get a new file and a new version. The prompt `v2` SHALL tell the model to use the tools, to answer in Polish, that the names of statuses, issue types and priorities are in English, that numbers are digits, and to start the answer with `ODMOWA:` when the task is not possible or not clear.
 
 #### Scenario: Recorded prompt
 - **WHEN** a run ends
 - **THEN** the result of the run contains the version name of the system prompt
+
+#### Scenario: Version of the new prompt
+- **WHEN** the config of a run does not give a prompt version
+- **THEN** the agent uses `prompts/system-v2.md` and records the version `v2`
+
+#### Scenario: Unknown version
+- **WHEN** the config gives the prompt version `v9` and the file `prompts/system-v9.md` does not exist
+- **THEN** the run stops before the first task with an error that names the file
 
 ### Requirement: Invalid tool calls
 The agent SHALL not stop on an invalid tool call. When the model output has a tool call that the agent cannot parse, or a call of an unknown tool, the agent SHALL give an error message to the model as the tool result and continue. The trajectory SHALL count these errors.
@@ -31,20 +39,6 @@ The agent SHALL not stop on an invalid tool call. When the model output has a to
 - **WHEN** the model output has a tool call with broken JSON
 - **THEN** the model gets an error message as the tool result
 - **AND** the counter of invalid calls increases by one
-
-### Requirement: Model backends
-The agent SHALL support two backends with the same loop. The `transformers` backend SHALL run a local model, by default `Qwen/Qwen3-1.7B`, with its own chat template and tool-call format. The `openai` backend SHALL use an OpenAI-compatible API with a base URL and a model name from the config. The API key SHALL come only from the environment variables or `.env`.
-
-#### Scenario: Backend from the config
-- **WHEN** the config sets the backend `transformers` and the model `Qwen/Qwen3-1.7B`
-- **THEN** the agent runs this model locally
-
-### Requirement: Repeatable generation
-The agent SHALL use greedy decoding (temperature 0) by default. For Qwen3, the thinking mode SHALL be off by default, and the config SHALL be able to turn it on.
-
-#### Scenario: Two runs
-- **WHEN** the agent does the same task two times with the same config on the same machine
-- **THEN** the two trajectories are equal
 
 ### Requirement: Trajectory record
 For each task, the agent SHALL record all messages, all tool calls with their arguments and results, the final answer, the stop reason, the number of steps, the number of invalid calls, the input and output tokens, and the time of the task.

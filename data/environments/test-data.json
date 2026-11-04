@@ -1,0 +1,936 @@
+{
+  "name": "test-data",
+  "site": "https://example.atlassian.net",
+  "now": "2026-11-10T10:00:00.000+0100",
+  "project": {
+    "key": "DATA",
+    "name": "JayWalk - dane i raporty"
+  },
+  "board": {
+    "id": "14",
+    "name": "DATA board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:1af9da15-5479-5bad-8687-208a24df3d02",
+      "display_name": "Joanna Kurek",
+      "email": "joanna.kurek@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:5374bf70-0392-5ea1-a498-051dfc24bb52",
+      "display_name": "Igor Kwiatkowski",
+      "email": "igor.kwiatkowski@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:0b7ef11c-e55d-5026-8ec3-9e28a92eefc8",
+      "display_name": "Priya Raman",
+      "email": "priya.raman@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:ae423add-9039-56f9-ae0b-d86368d2abfa",
+      "display_name": "Marek Sobczak",
+      "email": "marek.sobczak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:a7f3f9a3-add7-56a1-b1ec-b98273b679aa",
+      "display_name": "Monika Grabowska",
+      "email": "monika.grabowska@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:74ec38eb-2561-5d77-9ab8-fe7aff0edc15",
+      "display_name": "Łukasz Ostrowski",
+      "email": "lukasz.ostrowski@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:2de7da59-5e6f-586f-9242-5e7eb0028236",
+      "display_name": "Edyta Wilk",
+      "email": "edyta.wilk@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "71",
+      "name": "DATA Sprint 5",
+      "state": "closed",
+      "start_date": "2026-10-20T09:00:00.000Z",
+      "end_date": "2026-11-03T09:00:00.000Z",
+      "goal": "Hurtownia co godzinę"
+    },
+    {
+      "id": "72",
+      "name": "DATA Sprint 6",
+      "state": "active",
+      "start_date": "2026-11-03T09:00:00.000Z",
+      "end_date": "2026-11-17T09:00:00.000Z",
+      "goal": "Raport Black Week i jakość danych"
+    },
+    {
+      "id": "73",
+      "name": "DATA Sprint 7",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Zwroty i modele ML"
+    },
+    {
+      "id": "74",
+      "name": "DATA Sprint 8",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "14001",
+      "key": "DATA-1",
+      "summary": "Ładowanie zamówień do hurtowni co godzinę",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:5374bf70-0392-5ea1-a498-051dfc24bb52",
+      "reporter": "712020:5374bf70-0392-5ea1-a498-051dfc24bb52",
+      "labels": [
+        "etl",
+        "warehouse"
+      ],
+      "sprint": "71",
+      "created": "2026-09-02T22:00:00.000+0100",
+      "updated": "2026-09-05T22:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "140011",
+          "author": "712020:5374bf70-0392-5ea1-a498-051dfc24bb52",
+          "time_spent_seconds": 21600,
+          "comment": "",
+          "started": "2026-09-04T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "14002",
+      "key": "DATA-2",
+      "summary": "Duplikaty zamówień po ponownym uruchomieniu ETL",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:74ec38eb-2561-5d77-9ab8-fe7aff0edc15",
+      "reporter": "712020:0b7ef11c-e55d-5026-8ec3-9e28a92eefc8",
+      "labels": [
+        "etl",
+        "data-quality"
+      ],
+      "sprint": "71",
+      "created": "2026-09-04T11:00:00.000+0100",
+      "updated": "2026-09-07T11:00:00.000+0100",
+      "comments": [
+        {
+          "id": "140021",
+          "author": "712020:74ec38eb-2561-5d77-9ab8-fe7aff0edc15",
+          "body": "Dodany klucz deduplikacji, dane poprawione.",
+          "created": "2026-09-05T11:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "14003",
+      "key": "DATA-3",
+      "summary": "Nowe kolory na dashboardzie sprzedaży",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Low",
+      "assignee": "712020:a7f3f9a3-add7-56a1-b1ec-b98273b679aa",
+      "reporter": "712020:ae423add-9039-56f9-ae0b-d86368d2abfa",
+      "labels": [
+        "dashboard"
+      ],
+      "sprint": "71",
+      "created": "2026-09-06T00:00:00.000+0100",
+      "updated": "2026-09-09T00:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14004",
+      "key": "DATA-4",
+      "summary": "Dashboard shows wrong week numbers in January",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:a7f3f9a3-add7-56a1-b1ec-b98273b679aa",
+      "labels": [
+        "dashboard"
+      ],
+      "sprint": "71",
+      "created": "2026-09-07T13:00:00.000+0100",
+      "updated": "2026-09-10T13:00:00.000+0100",
+      "comments": [
+        {
+          "id": "140041",
+          "author": "712020:0b7ef11c-e55d-5026-8ec3-9e28a92eefc8",
+          "body": "Not a bug, ISO weeks are expected.",
+          "created": "2026-09-08T13:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "14005",
+      "key": "DATA-5",
+      "summary": "Raport sprzedaży Black Week dla zarządu",
+      "description": "Sprzedaż dzienna, top 20 modeli i porównanie z zeszłym rokiem.",
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:1af9da15-5479-5bad-8687-208a24df3d02",
+      "reporter": "712020:74ec38eb-2561-5d77-9ab8-fe7aff0edc15",
+      "labels": [
+        "sales",
+        "dashboard"
+      ],
+      "sprint": "72",
+      "created": "2026-09-09T02:00:00.000+0100",
+      "updated": "2026-09-12T02:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "140051",
+          "author": "712020:1af9da15-5479-5bad-8687-208a24df3d02",
+          "time_spent_seconds": 10800,
+          "comment": "Wymagania",
+          "started": "2026-09-10T04:00:00.000+0100"
+        },
+        {
+          "id": "140052",
+          "author": "712020:ae423add-9039-56f9-ae0b-d86368d2abfa",
+          "time_spent_seconds": 16200,
+          "comment": "Zapytania SQL",
+          "started": "2026-09-11T04:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "14006",
+      "key": "DATA-6",
+      "summary": "Zwroty z paczkomatów nie trafiają do hurtowni",
+      "description": "Od 3 listopada brakuje około 200 zwrotów dziennie.",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:5374bf70-0392-5ea1-a498-051dfc24bb52",
+      "reporter": "712020:1af9da15-5479-5bad-8687-208a24df3d02",
+      "labels": [
+        "etl",
+        "returns"
+      ],
+      "sprint": "72",
+      "created": "2026-09-10T15:00:00.000+0100",
+      "updated": "2026-09-13T15:00:00.000+0100",
+      "comments": [
+        {
+          "id": "140061",
+          "author": "712020:1af9da15-5479-5bad-8687-208a24df3d02",
+          "body": "Zarząd pyta o wskaźnik zwrotów, potrzebujemy tego szybko.",
+          "created": "2026-09-11T15:00:00.000+0100"
+        },
+        {
+          "id": "140062",
+          "author": "712020:5374bf70-0392-5ea1-a498-051dfc24bb52",
+          "body": "Operator zmienił format pliku.",
+          "created": "2026-09-12T15:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "14007",
+      "key": "DATA-7",
+      "summary": "Ujemne ilości sprzedaży w tabeli fact_sales",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:5374bf70-0392-5ea1-a498-051dfc24bb52",
+      "labels": [
+        "data-quality",
+        "sales"
+      ],
+      "sprint": "72",
+      "created": "2026-09-12T04:00:00.000+0100",
+      "updated": "2026-09-15T04:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14008",
+      "key": "DATA-8",
+      "summary": "Dashboard kampanii mailowych",
+      "description": "",
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:a7f3f9a3-add7-56a1-b1ec-b98273b679aa",
+      "reporter": "712020:0b7ef11c-e55d-5026-8ec3-9e28a92eefc8",
+      "labels": [
+        "dashboard",
+        "marketing"
+      ],
+      "sprint": "72",
+      "created": "2026-09-13T17:00:00.000+0100",
+      "updated": "2026-09-16T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14009",
+      "key": "DATA-9",
+      "summary": "Size recommendation model ignores half sizes",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:0b7ef11c-e55d-5026-8ec3-9e28a92eefc8",
+      "reporter": "712020:ae423add-9039-56f9-ae0b-d86368d2abfa",
+      "labels": [
+        "ml"
+      ],
+      "sprint": "72",
+      "created": "2026-09-15T06:00:00.000+0100",
+      "updated": "2026-09-18T06:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14010",
+      "key": "DATA-10",
+      "summary": "Anonimizacja e-maili klientów w środowisku testowym",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:a7f3f9a3-add7-56a1-b1ec-b98273b679aa",
+      "labels": [
+        "privacy"
+      ],
+      "sprint": "72",
+      "created": "2026-09-16T19:00:00.000+0100",
+      "updated": "2026-09-19T19:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14011",
+      "key": "DATA-11",
+      "summary": "Prognoza sprzedaży na grudzień",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:ae423add-9039-56f9-ae0b-d86368d2abfa",
+      "reporter": "712020:74ec38eb-2561-5d77-9ab8-fe7aff0edc15",
+      "labels": [
+        "sales"
+      ],
+      "sprint": "72",
+      "created": "2026-09-18T08:00:00.000+0100",
+      "updated": "2026-09-21T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14012",
+      "key": "DATA-12",
+      "summary": "Wolne zapytanie o stany magazynowe w hurtowni",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:74ec38eb-2561-5d77-9ab8-fe7aff0edc15",
+      "reporter": "712020:1af9da15-5479-5bad-8687-208a24df3d02",
+      "labels": [
+        "performance",
+        "warehouse"
+      ],
+      "sprint": "72",
+      "created": "2026-09-19T21:00:00.000+0100",
+      "updated": "2026-09-22T21:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "140121",
+          "author": "712020:74ec38eb-2561-5d77-9ab8-fe7aff0edc15",
+          "time_spent_seconds": 7200,
+          "comment": "",
+          "started": "2026-09-20T23:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "14013",
+      "key": "DATA-13",
+      "summary": "Monitoring czasu trwania jobów ETL",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Low",
+      "assignee": "712020:5374bf70-0392-5ea1-a498-051dfc24bb52",
+      "reporter": "712020:5374bf70-0392-5ea1-a498-051dfc24bb52",
+      "labels": [
+        "etl"
+      ],
+      "sprint": "72",
+      "created": "2026-09-21T10:00:00.000+0100",
+      "updated": "2026-09-24T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14014",
+      "key": "DATA-14",
+      "summary": "Literówka w tytule wykresu: 'Sprzedarz'",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:0b7ef11c-e55d-5026-8ec3-9e28a92eefc8",
+      "labels": [
+        "dashboard"
+      ],
+      "sprint": "72",
+      "created": "2026-09-22T23:00:00.000+0100",
+      "updated": "2026-09-25T23:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14015",
+      "key": "DATA-15",
+      "summary": "Rekomendacje produktów na podstawie historii zakupów",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:ae423add-9039-56f9-ae0b-d86368d2abfa",
+      "labels": [
+        "ml"
+      ],
+      "sprint": "73",
+      "created": "2026-09-24T12:00:00.000+0100",
+      "updated": "2026-09-27T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14016",
+      "key": "DATA-16",
+      "summary": "Retrain the size model on November data",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:0b7ef11c-e55d-5026-8ec3-9e28a92eefc8",
+      "reporter": "712020:a7f3f9a3-add7-56a1-b1ec-b98273b679aa",
+      "labels": [
+        "ml"
+      ],
+      "sprint": "73",
+      "created": "2026-09-26T01:00:00.000+0100",
+      "updated": "2026-09-29T01:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14017",
+      "key": "DATA-17",
+      "summary": "Dashboard zwrotów według powodu zwrotu",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:74ec38eb-2561-5d77-9ab8-fe7aff0edc15",
+      "labels": [
+        "returns",
+        "dashboard"
+      ],
+      "sprint": "73",
+      "created": "2026-09-27T14:00:00.000+0100",
+      "updated": "2026-09-30T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14018",
+      "key": "DATA-18",
+      "summary": "Strefa czasowa w danych z aplikacji mobilnej przesunięta o godzinę",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:1af9da15-5479-5bad-8687-208a24df3d02",
+      "labels": [
+        "etl"
+      ],
+      "sprint": "73",
+      "created": "2026-09-29T03:00:00.000+0100",
+      "updated": "2026-10-02T03:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14019",
+      "key": "DATA-19",
+      "summary": "Pełne numery telefonów klientów w tabeli raportowej",
+      "description": "Kolumna phone w report_customers ma pełne numery zamiast zamaskowanych.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": null,
+      "reporter": "712020:5374bf70-0392-5ea1-a498-051dfc24bb52",
+      "labels": [
+        "privacy",
+        "warehouse"
+      ],
+      "sprint": null,
+      "created": "2026-09-30T16:00:00.000+0100",
+      "updated": "2026-10-03T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14020",
+      "key": "DATA-20",
+      "summary": "Wersja mobilna dashboardu sprzedaży",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:a7f3f9a3-add7-56a1-b1ec-b98273b679aa",
+      "reporter": "712020:0b7ef11c-e55d-5026-8ec3-9e28a92eefc8",
+      "labels": [
+        "dashboard"
+      ],
+      "sprint": null,
+      "created": "2026-10-02T05:00:00.000+0100",
+      "updated": "2026-10-05T05:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14021",
+      "key": "DATA-21",
+      "summary": "Segmentacja klientów JayWalk Club",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:ae423add-9039-56f9-ae0b-d86368d2abfa",
+      "labels": [
+        "marketing"
+      ],
+      "sprint": null,
+      "created": "2026-10-03T18:00:00.000+0100",
+      "updated": "2026-10-06T18:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14022",
+      "key": "DATA-22",
+      "summary": "Rabaty liczone dwa razy w raporcie marży",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:ae423add-9039-56f9-ae0b-d86368d2abfa",
+      "reporter": "712020:a7f3f9a3-add7-56a1-b1ec-b98273b679aa",
+      "labels": [
+        "sales",
+        "data-quality"
+      ],
+      "sprint": null,
+      "created": "2026-10-05T07:00:00.000+0100",
+      "updated": "2026-10-08T07:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14023",
+      "key": "DATA-23",
+      "summary": "Archive tables older than 3 years",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:74ec38eb-2561-5d77-9ab8-fe7aff0edc15",
+      "labels": [
+        "warehouse"
+      ],
+      "sprint": null,
+      "created": "2026-10-06T20:00:00.000+0100",
+      "updated": "2026-10-09T20:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14024",
+      "key": "DATA-24",
+      "summary": "Job ETL dla aplikacji mobilnej kończy się błędem co niedzielę",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:74ec38eb-2561-5d77-9ab8-fe7aff0edc15",
+      "reporter": "712020:1af9da15-5479-5bad-8687-208a24df3d02",
+      "labels": [
+        "etl"
+      ],
+      "sprint": null,
+      "created": "2026-10-08T09:00:00.000+0100",
+      "updated": "2026-10-11T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14025",
+      "key": "DATA-25",
+      "summary": "Migracja jobów ETL na nowy scheduler",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:5374bf70-0392-5ea1-a498-051dfc24bb52",
+      "reporter": "712020:5374bf70-0392-5ea1-a498-051dfc24bb52",
+      "labels": [
+        "etl"
+      ],
+      "sprint": null,
+      "created": "2026-10-09T22:00:00.000+0100",
+      "updated": "2026-10-12T22:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14026",
+      "key": "DATA-26",
+      "summary": "Filtr kraju nie działa na wykresie zwrotów",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:0b7ef11c-e55d-5026-8ec3-9e28a92eefc8",
+      "labels": [
+        "dashboard"
+      ],
+      "sprint": null,
+      "created": "2026-10-11T11:00:00.000+0100",
+      "updated": "2026-10-14T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14027",
+      "key": "DATA-27",
+      "summary": "Churn prediction for JayWalk Club members",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:0b7ef11c-e55d-5026-8ec3-9e28a92eefc8",
+      "reporter": "712020:ae423add-9039-56f9-ae0b-d86368d2abfa",
+      "labels": [
+        "ml",
+        "marketing"
+      ],
+      "sprint": null,
+      "created": "2026-10-13T00:00:00.000+0100",
+      "updated": "2026-10-16T00:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14028",
+      "key": "DATA-28",
+      "summary": "Testy jakości danych dla tabeli zamówień",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:a7f3f9a3-add7-56a1-b1ec-b98273b679aa",
+      "labels": [
+        "data-quality"
+      ],
+      "sprint": null,
+      "created": "2026-10-14T13:00:00.000+0100",
+      "updated": "2026-10-17T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14029",
+      "key": "DATA-29",
+      "summary": "Sprzedaż z marketplace'ów liczona w złej walucie",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:ae423add-9039-56f9-ae0b-d86368d2abfa",
+      "reporter": "712020:74ec38eb-2561-5d77-9ab8-fe7aff0edc15",
+      "labels": [
+        "sales"
+      ],
+      "sprint": "72",
+      "created": "2026-10-16T02:00:00.000+0100",
+      "updated": "2026-10-19T02:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14030",
+      "key": "DATA-30",
+      "summary": "Dokumentacja modelu danych hurtowni",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:2de7da59-5e6f-586f-9242-5e7eb0028236",
+      "reporter": "712020:1af9da15-5479-5bad-8687-208a24df3d02",
+      "labels": [
+        "warehouse"
+      ],
+      "sprint": null,
+      "created": "2026-10-17T15:00:00.000+0100",
+      "updated": "2026-10-20T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14031",
+      "key": "DATA-31",
+      "summary": "Brak kategorii dla 300 nowych modeli butów",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:5374bf70-0392-5ea1-a498-051dfc24bb52",
+      "labels": [
+        "data-quality"
+      ],
+      "sprint": "72",
+      "created": "2026-10-19T04:00:00.000+0100",
+      "updated": "2026-10-22T04:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14032",
+      "key": "DATA-32",
+      "summary": "Prezentacja wyników Q3 dla zarządu",
+      "description": "",
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "Low",
+      "assignee": "712020:1af9da15-5479-5bad-8687-208a24df3d02",
+      "reporter": "712020:0b7ef11c-e55d-5026-8ec3-9e28a92eefc8",
+      "labels": [],
+      "sprint": "72",
+      "created": "2026-10-20T17:00:00.000+0100",
+      "updated": "2026-10-23T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "140321",
+          "author": "712020:1af9da15-5479-5bad-8687-208a24df3d02",
+          "time_spent_seconds": 7200,
+          "comment": "",
+          "started": "2026-10-21T19:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "14033",
+      "key": "DATA-33",
+      "summary": "Dane klientów z UE w kopii zapasowej poza UE",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:ae423add-9039-56f9-ae0b-d86368d2abfa",
+      "labels": [
+        "privacy"
+      ],
+      "sprint": null,
+      "created": "2026-10-22T06:00:00.000+0100",
+      "updated": "2026-10-25T06:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14034",
+      "key": "DATA-34",
+      "summary": "Raport sprzedaży według rozmiaru",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:a7f3f9a3-add7-56a1-b1ec-b98273b679aa",
+      "labels": [
+        "sales"
+      ],
+      "sprint": null,
+      "created": "2026-10-23T19:00:00.000+0100",
+      "updated": "2026-10-26T19:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14035",
+      "key": "DATA-35",
+      "summary": "Alert na nieudane joby ETL w Slacku",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:5374bf70-0392-5ea1-a498-051dfc24bb52",
+      "reporter": "712020:74ec38eb-2561-5d77-9ab8-fe7aff0edc15",
+      "labels": [
+        "etl"
+      ],
+      "sprint": "72",
+      "created": "2026-10-25T08:00:00.000+0100",
+      "updated": "2026-10-28T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "140351",
+          "author": "712020:5374bf70-0392-5ea1-a498-051dfc24bb52",
+          "time_spent_seconds": 5400,
+          "comment": "",
+          "started": "2026-10-26T10:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "14036",
+      "key": "DATA-36",
+      "summary": "Dashboard sprzedaży ładuje się ponad minutę",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:a7f3f9a3-add7-56a1-b1ec-b98273b679aa",
+      "reporter": "712020:1af9da15-5479-5bad-8687-208a24df3d02",
+      "labels": [
+        "dashboard"
+      ],
+      "sprint": "73",
+      "created": "2026-10-26T21:00:00.000+0100",
+      "updated": "2026-10-29T21:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14037",
+      "key": "DATA-37",
+      "summary": "Prepare KPI definitions for the board meeting",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:1af9da15-5479-5bad-8687-208a24df3d02",
+      "reporter": "712020:5374bf70-0392-5ea1-a498-051dfc24bb52",
+      "labels": [],
+      "sprint": null,
+      "created": "2026-10-28T10:00:00.000+0100",
+      "updated": "2026-10-31T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14038",
+      "key": "DATA-38",
+      "summary": "Powód zwrotu 'inny' nadpisuje szczegóły z formularza",
+      "description": "",
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:74ec38eb-2561-5d77-9ab8-fe7aff0edc15",
+      "reporter": "712020:0b7ef11c-e55d-5026-8ec3-9e28a92eefc8",
+      "labels": [
+        "returns",
+        "etl"
+      ],
+      "sprint": "72",
+      "created": "2026-10-29T23:00:00.000+0100",
+      "updated": "2026-11-01T23:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14039",
+      "key": "DATA-39",
+      "summary": "Partycjonowanie tabeli fact_sales po dacie",
+      "description": "",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:ae423add-9039-56f9-ae0b-d86368d2abfa",
+      "labels": [
+        "performance"
+      ],
+      "sprint": null,
+      "created": "2026-10-31T12:00:00.000+0100",
+      "updated": "2026-11-03T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "14040",
+      "key": "DATA-40",
+      "summary": "Wskaźnik zwrotów per model w dashboardzie",
+      "description": "",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:2de7da59-5e6f-586f-9242-5e7eb0028236",
+      "reporter": "712020:a7f3f9a3-add7-56a1-b1ec-b98273b679aa",
+      "labels": [
+        "returns"
+      ],
+      "sprint": "73",
+      "created": "2026-11-02T01:00:00.000+0100",
+      "updated": "2026-11-05T01:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

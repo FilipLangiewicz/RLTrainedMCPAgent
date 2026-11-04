@@ -1,314 +1,398 @@
-"""Simulator of a project management system: one board in memory."""
+"""Simulator of one Jira Cloud project in memory: the board file, the operations and the difference of two states."""
 
 import json
-import random
+import re
+from datetime import datetime
 from pathlib import Path
 from typing import Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, PrivateAttr
 
-TYPES = ("bug", "task", "story")
-STATUSES = ("to_do", "in_progress", "done")
-PRIORITIES = ("low", "medium", "high", "critical")
+# The values of the Jira Cloud site with the English language (docs/TASKS.md).
+TYPES = ("Task", "Bug", "Story")
+PRIORITIES = ("Highest", "High", "Medium", "Low", "Lowest")
 SPRINT_STATES = ("closed", "active", "future")
-LABELS = ("frontend", "backend", "api", "ui", "database", "security", "docs", "performance")
-
-# The test boards use the first 5 keys, the train boards use the next 20 keys.
-PROJECT_KEYS = (
-    "WEB", "APP", "API", "SHOP", "CRM",
-    "ERP", "HR", "PAY", "CMS", "BI", "DOC", "OPS", "LOG", "MAIL", "CHAT",
-    "MAP", "GAME", "EDU", "BANK", "CAR", "FOOD", "TRIP", "CLUB", "NEWS", "CARE",
-)
-
-# Invented persons: the first name, the gender, and the Polish forms that the
-# instructions use: nominative, genitive, dative, accusative, instrumental.
-FIRST_NAMES = {
-    "Anna": ("f", "Ania", "Ani", "Ani", "Anię", "Anią"),
-    "Katarzyna": ("f", "Kasia", "Kasi", "Kasi", "Kasię", "Kasią"),
-    "Magdalena": ("f", "Magda", "Magdy", "Magdzie", "Magdę", "Magdą"),
-    "Agnieszka": ("f", "Agnieszka", "Agnieszki", "Agnieszce", "Agnieszkę", "Agnieszką"),
-    "Zofia": ("f", "Zosia", "Zosi", "Zosi", "Zosię", "Zosią"),
-    "Ewa": ("f", "Ewa", "Ewy", "Ewie", "Ewę", "Ewą"),
-    "Marta": ("f", "Marta", "Marty", "Marcie", "Martę", "Martą"),
-    "Joanna": ("f", "Asia", "Asi", "Asi", "Asię", "Asią"),
-    "Piotr": ("m", "Piotrek", "Piotrka", "Piotrkowi", "Piotrka", "Piotrkiem"),
-    "Tomasz": ("m", "Tomek", "Tomka", "Tomkowi", "Tomka", "Tomkiem"),
-    "Michał": ("m", "Michał", "Michała", "Michałowi", "Michała", "Michałem"),
-    "Krzysztof": ("m", "Krzysiek", "Krzyśka", "Krzyśkowi", "Krzyśka", "Krzyśkiem"),
-    "Paweł": ("m", "Paweł", "Pawła", "Pawłowi", "Pawła", "Pawłem"),
-    "Marek": ("m", "Marek", "Marka", "Markowi", "Marka", "Markiem"),
-    "Jakub": ("m", "Kuba", "Kuby", "Kubie", "Kubę", "Kubą"),
-    "Łukasz": ("m", "Łukasz", "Łukasza", "Łukaszowi", "Łukasza", "Łukaszem"),
+# Status: (category, color in results, transition id). On this site the category of Cancelled is In Progress.
+STATUSES = {
+    "Backlog": ("To Do", "blue-gray", 11),
+    "In Progress": ("In Progress", "yellow", 21),
+    "In review": ("In Progress", "yellow", 31),
+    "Cancelled": ("In Progress", "yellow", 41),
+    "Done": ("Done", "green", 51),
 }
-CASES = ("nom", "gen", "dat", "acc", "ins")
-SURNAMES = (  # (male, female)
-    ("Kowalski", "Kowalska"), ("Wiśniewski", "Wiśniewska"), ("Zieliński", "Zielińska"),
-    ("Lewandowski", "Lewandowska"), ("Kamiński", "Kamińska"), ("Dąbrowski", "Dąbrowska"),
-    ("Nowak", "Nowak"), ("Kowalczyk", "Kowalczyk"), ("Wójcik", "Wójcik"),
-    ("Mazur", "Mazur"), ("Krawczyk", "Krawczyk"), ("Sikora", "Sikora"),
-)
+TRANSITIONS = {tid: name for name, (_, _, tid) in STATUSES.items()}
+STATUS_CATEGORIES = ("To Do", "In Progress", "Done")
 
-TITLE_TEMPLATES = {
-    "bug": (
-        "Błąd walidacji {}", "Awaria {} po wdrożeniu", "Wolne ładowanie {}",
-        "Niepoprawne wyświetlanie {}", "Brak tłumaczeń {}",
-    ),
-    "task": (
-        "Refaktoryzacja {}", "Dodanie testów {}", "Aktualizacja dokumentacji {}",
-        "Optymalizacja zapytań {}", "Migracja {} do nowej wersji",
-    ),
-    "story": (
-        "Nowy widok {}", "Eksport {} do CSV", "Personalizacja {}",
-        "Uproszczenie {}", "Wersja mobilna {}",
-    ),
-}
-TITLE_OBJECTS = (  # genitive case
-    "formularza logowania", "koszyka", "panelu administratora", "wyszukiwarki",
-    "raportu sprzedaży", "profilu użytkownika", "listy zamówień", "strony głównej",
-    "modułu płatności", "rejestracji konta", "powiadomień", "kalendarza",
-    "historii zamówień", "ustawień konta", "katalogu produktów",
-)
-DESCRIPTIONS = (
-    "Zgłoszenie z przeglądu sprintu.",
-    "Problem zgłosił zespół wsparcia.",
-    "Szczegóły są w notatkach ze spotkania.",
-    "Do ustalenia zakres z właścicielem produktu.",
-    "Prośba od klienta.",
-)
-COMMENTS = (
-    "Sprawdzę to jutro.",
-    "Mamy logi z produkcji.",
-    "Potrzebny dostęp do środowiska testowego.",
-    "Zależy od zmian w API.",
-    "Omówione na daily.",
-)
+# Jira time units: 1 week = 5 days, 1 day = 8 hours.
+TIME_UNITS = {"w": 5 * 8 * 3600, "d": 8 * 3600, "h": 3600, "m": 60}
+TIME_RE = re.compile(r"\s*(\d+)\s*([wdhm])\s*", re.IGNORECASE)
+UNREADABLE_TIME_SECONDS = 60
+
+POLISH = str.maketrans("ąćęłńóśźżĄĆĘŁŃÓŚŹŻ", "acelnoszzACELNOSZZ")
+
+NO_ISSUE = "Issue does not exist or you do not have permission to see it."
 
 
-class BoardError(ValueError):
-    """An operation is not possible. The message tells the cause."""
-
-
-class Person(BaseModel):
-    id: str
-    name: str
-
-
-class Sprint(BaseModel):
-    id: str
-    name: str
-    state: Literal["closed", "active", "future"]
-
-
-class Comment(BaseModel):
-    text: str
-
-
-class Issue(BaseModel):
-    key: str
-    title: str
-    description: str = ""
-    type: Literal["bug", "task", "story"]
-    status: Literal["to_do", "in_progress", "done"] = "to_do"
-    priority: Literal["low", "medium", "high", "critical"] = "medium"
-    assignee: str | None = None
-    labels: list[str] = Field(default_factory=list)
-    sprint: str | None = None
-    comments: list[Comment] = Field(default_factory=list)
-
-    def short(self) -> dict:
-        return self.model_dump(include={"key", "title", "type", "status", "priority", "assignee", "labels", "sprint"})
+def fold(text: str) -> str:
+    """Lower case without Polish letters. Real Jira compares person names in this way."""
+    return " ".join(text.translate(POLISH).casefold().split())
 
 
 def key_number(key: str) -> int:
     return int(key.rsplit("-", 1)[1])
 
 
+class BoardError(ValueError):
+    """An operation is not possible. The message is the message of real Jira."""
+
+
+class Project(BaseModel):
+    key: str
+    name: str
+
+
+class AgileBoard(BaseModel):
+    id: str
+    name: str
+    type: Literal["scrum", "kanban", "simple"]
+
+
+class Person(BaseModel):
+    account_id: str
+    display_name: str
+    email: str
+    active: bool
+
+
+class Sprint(BaseModel):
+    id: str
+    name: str
+    state: Literal["closed", "active", "future"]
+    start_date: str | None
+    end_date: str | None
+    goal: str = ""
+
+
+class Comment(BaseModel):
+    id: str
+    author: str
+    body: str
+    created: str
+
+
+class Worklog(BaseModel):
+    id: str
+    author: str
+    time_spent_seconds: int
+    comment: str
+    started: str
+
+
+class Issue(BaseModel):
+    id: str
+    key: str
+    summary: str
+    description: str | None
+    issue_type: Literal["Task", "Bug", "Story"]
+    status: Literal["Backlog", "In Progress", "In review", "Done", "Cancelled"]
+    priority: Literal["Highest", "High", "Medium", "Low", "Lowest"]
+    assignee: str | None
+    reporter: str | None
+    labels: list[str] = Field(default_factory=list)
+    sprint: str | None
+    created: str
+    updated: str
+    comments: list[Comment] = Field(default_factory=list)
+    worklogs: list[Worklog] = Field(default_factory=list)
+
+
 class Board(BaseModel):
     name: str
-    project: str
+    site: str
+    now: str
+    project: Project
+    board: AgileBoard
     persons: list[Person]
     sprints: list[Sprint]
     issues: list[Issue]
+    # Real Jira does not use the number of a deleted issue again. The contract test sets it.
+    _last_number: int = PrivateAttr(default=0)
 
     def copy_board(self) -> "Board":
         return self.model_copy(deep=True)
 
-    def person(self, person_id: str) -> Person:
-        for p in self.persons:
-            if p.id == person_id:
-                return p
-        raise BoardError(f"Unknown person '{person_id}'. Known person ids: {', '.join(p.id for p in self.persons)}.")
+    # Lookups
 
-    def sprint(self, sprint_id: str) -> Sprint:
-        for s in self.sprints:
-            if s.id == sprint_id:
-                return s
-        raise BoardError(f"Unknown sprint '{sprint_id}'. Known sprint ids: {', '.join(s.id for s in self.sprints)}.")
+    @property
+    def user(self) -> Person:
+        """The account of the agent: the first active person. It is the author of new issues, comments and worklogs."""
+        return next(p for p in self.persons if p.active)
+
+    def person(self, account_id: str | None) -> Person | None:
+        return next((p for p in self.persons if p.account_id == account_id), None)
+
+    def display_name(self, account_id: str | None) -> str | None:
+        p = self.person(account_id)
+        return p.display_name if p else None
+
+    def find_issue(self, key: str) -> Issue | None:
+        key = str(key).strip().upper()
+        return next((i for i in self.issues if i.key == key), None)
 
     def issue(self, key: str) -> Issue:
-        for i in self.issues:
-            if i.key == key:
-                return i
-        raise BoardError(f"Issue '{key}' does not exist.")
+        issue = self.find_issue(key)
+        if issue is None:
+            raise BoardError(NO_ISSUE)
+        return issue
 
-    def active_sprint(self) -> Sprint:
-        return next(s for s in self.sprints if s.state == "active")
+    def sprint(self, sprint_id: str | None) -> Sprint | None:
+        return next((s for s in self.sprints if s.id == str(sprint_id).strip()), None)
 
-    def next_sprint(self) -> Sprint:
-        return min((s for s in self.sprints if s.state == "future"), key=lambda s: int(s.id[1:]))
+    def sprint_name(self, sprint_id: str | None) -> str | None:
+        s = self.sprint(sprint_id)
+        return s.name if s else None
 
-    # Validation. Each check raises BoardError before a change, so a failed operation does not change the board.
+    # Persons (D7)
 
-    def _check(self, field: str, value: str | None) -> None:
-        allowed = {"type": TYPES, "status": STATUSES, "priority": PRIORITIES}
-        if field in allowed:
-            if value not in allowed[field]:
-                raise BoardError(f"Value '{value}' is not allowed for {field}. Allowed values: {', '.join(allowed[field])}.")
-        elif field == "assignee":
-            if value is not None:
-                self.person(value)
-        elif field == "sprint":
-            if value is not None and self.sprint(value).state == "closed":
-                raise BoardError(f"Sprint '{value}' is closed. Use an active or a future sprint.")
-        elif field == "title" and (not value or not value.strip()):
-            raise BoardError("The title must not be empty.")
+    def find_person(self, value: str) -> Person | None:
+        """Find an active person by the full display name, the e-mail or the account id."""
+        value = str(value).strip()
+        if value.lower().startswith("accountid:"):
+            value = value.split(":", 1)[1]
+        for p in self.persons:
+            if p.active and (p.account_id == value or fold(p.display_name) == fold(value) or fold(p.email) == fold(value)):
+                return p
+        return None
+
+    def search_persons(self, query: str) -> list[Person]:
+        """Active persons with a word of the display name or the e-mail that starts with a word of the query.
+
+        The server sends the query in the URL without encoding, so "+" is a space. The recording of "user+anna"
+        found all six persons with "user" in the name, so one word of the query is sufficient.
+        """
+        full = fold(query)
+        queries = [q for q in re.split(r"[\s+]+", full) if q]
+        found = []
+        for p in self.persons:
+            name, email = fold(p.display_name), fold(p.email)
+            words = re.split(r"[\s+.@_-]+", name) + re.split(r"[\s+.@_-]+", email)
+            if p.active and queries and (name.startswith(full) or email.startswith(full)
+                                         or any(w.startswith(q) for q in queries for w in words if w)):
+                found.append(p)
+        return found
+
+    # Checks. Each check raises BoardError before a change, so a failed operation does not change the board.
+
+    def check_type(self, value) -> str:
+        name = value.get("name") if isinstance(value, dict) else value
+        match = next((t for t in TYPES if isinstance(name, str) and t.lower() == name.strip().lower()), None)
+        if match is None:
+            raise BoardError("Specify a valid issue type")
+        return match
+
+    def check_priority(self, value) -> str:
+        name = value.get("name") if isinstance(value, dict) else value
+        match = next((p for p in PRIORITIES if isinstance(name, str) and p.lower() == name.strip().lower()), None)
+        if match is None:
+            raise BoardError("Specify the Priority (name) in the string format")
+        return match
+
+    def check_assignee(self, value) -> str | None:
+        if value is None:
+            return None
+        if isinstance(value, dict):
+            value = value.get("accountId") or value.get("account_id") or value.get("name") or value.get("emailAddress")
+        person = self.find_person(str(value)) if value else None
+        if person is None:
+            raise BoardError(f"Could not update assignee: Could not find account ID for user: {value}")
+        return person.account_id
+
+    def check_sprint(self, sprint_id) -> Sprint:
+        sprint = self.sprint(sprint_id)
+        if sprint is None:
+            raise BoardError("We could not find the sprint")
+        if sprint.state == "closed":
+            raise BoardError(f"Sprint with id {sprint.id} is closed. Issues cannot be added to a closed sprint.")
+        return sprint
 
     @staticmethod
-    def _clean_labels(labels: list[str]) -> list[str]:
-        clean = [label.strip() for label in labels]
-        if any(not label or " " in label for label in clean):
-            raise BoardError("A label must be one word without spaces.")
-        return clean
+    def check_labels(labels) -> list[str]:
+        if isinstance(labels, str):
+            labels = [labels]
+        if not isinstance(labels, list) or not all(isinstance(x, str) for x in labels):
+            raise BoardError("The labels field must be a list of texts.")
+        clean = [x.strip() for x in labels]
+        if any(not x or " " in x for x in clean):
+            raise BoardError("The label must not contain spaces.")
+        return list(dict.fromkeys(clean))
+
+    # Clock and ids
+
+    def _next_id(self, items) -> str:
+        return str(max((int(x.id) for x in items), default=10000) + 1)
+
+    def _next_issue(self) -> tuple[str, str]:
+        number = max([key_number(i.key) for i in self.issues] + [self._last_number]) + 1
+        self._last_number = number
+        return self._next_id(self.issues), f"{self.project.key}-{number}"
 
     # Operations
 
-    def search(
-        self,
-        status: str | None = None,
-        assignee: str | None = None,
-        label: str | None = None,
-        type: str | None = None,
-        priority: str | None = None,
-        sprint: str | None = None,
-        text: str | None = None,
-    ) -> list[Issue]:
-        for field, value in (("status", status), ("type", type), ("priority", priority)):
-            if value is not None:
-                self._check(field, value)
-        if assignee not in (None, "unassigned"):
-            self.person(assignee)
-        if sprint not in (None, "backlog"):
-            self.sprint(sprint)
-        found = []
-        for i in self.issues:
-            if status is not None and i.status != status:
-                continue
-            if type is not None and i.type != type:
-                continue
-            if priority is not None and i.priority != priority:
-                continue
-            if label is not None and label not in i.labels:
-                continue
-            if assignee is not None and i.assignee != (None if assignee == "unassigned" else assignee):
-                continue
-            if sprint is not None and i.sprint != (None if sprint == "backlog" else sprint):
-                continue
-            if text is not None and text.lower() not in i.title.lower():
-                continue
-            found.append(i)
-        return sorted(found, key=lambda i: key_number(i.key))
-
-    def create_issue(
-        self,
-        title: str,
-        type: str,
-        description: str = "",
-        priority: str = "medium",
-        assignee: str | None = None,
-        labels: list[str] | None = None,
-        sprint: str | None = None,
-    ) -> Issue:
-        for field, value in (("title", title), ("type", type), ("priority", priority),
-                             ("assignee", assignee), ("sprint", sprint)):
-            self._check(field, value)
-        number = max((key_number(i.key) for i in self.issues), default=0) + 1
+    def create_issue(self, summary: str, issue_type, description: str | None = None, assignee: str | None = None,
+                     priority=None, labels=None) -> Issue:
+        """Create an issue. An unknown assignee gives no error: real Jira creates the issue without an assignee."""
+        issue_type = self.check_type(issue_type)
+        priority = self.check_priority(priority) if priority is not None else "Medium"
+        labels = self.check_labels(labels) if labels is not None else []
+        if not isinstance(summary, str) or not summary.strip():
+            raise BoardError("You must specify a summary of the issue.")
+        person = self.find_person(assignee) if assignee else None
+        issue_id, key = self._next_issue()
         issue = Issue(
-            key=f"{self.project}-{number}",
-            title=title.strip(),
-            description=description,
-            type=type,
-            priority=priority,
-            assignee=assignee,
-            labels=sorted(set(self._clean_labels(labels or []))),
-            sprint=sprint,
+            id=issue_id, key=key, summary=summary.strip(), description=description or None,
+            issue_type=issue_type, status="Backlog", priority=priority,
+            assignee=person.account_id if person else None, reporter=self.user.account_id,
+            labels=labels, sprint=None, created=self.now, updated=self.now,
         )
         self.issues.append(issue)
         return issue
 
-    def update_issue(self, key: str, add_labels: list[str] | None = None,
-                     remove_labels: list[str] | None = None, **fields) -> Issue:
-        """Change the fields of an issue. `fields` can have: title, description, type, status, priority, assignee, sprint."""
+    def update_fields(self, key: str, fields: dict) -> Issue:
+        """Change the fields of an issue. The labels replace the old list. Unknown fields are ignored."""
         issue = self.issue(key)
-        allowed = {"title", "description", "type", "status", "priority", "assignee", "sprint"}
-        unknown = set(fields) - allowed
-        if unknown:
-            raise BoardError(f"Unknown fields: {', '.join(sorted(unknown))}.")
-        if not fields and not add_labels and not remove_labels:
-            raise BoardError("Give at least one field to change.")
-        for field, value in fields.items():
-            self._check(field, value)
-        add = self._clean_labels(add_labels or [])
-        remove = self._clean_labels(remove_labels or [])
-        for field, value in fields.items():
-            setattr(issue, field, value.strip() if field == "title" else value)
-        issue.labels = sorted((set(issue.labels) | set(add)) - set(remove))
+        changes = {}
+        for name, value in fields.items():
+            if name == "summary":
+                if not isinstance(value, str) or not value.strip():
+                    raise BoardError("You must specify a summary of the issue.")
+                changes["summary"] = value.strip()
+            elif name == "description":
+                changes["description"] = value or None
+            elif name == "priority":
+                changes["priority"] = self.check_priority(value)
+            elif name == "assignee":
+                changes["assignee"] = self.check_assignee(value)
+            elif name == "labels":
+                changes["labels"] = self.check_labels(value)
+            elif name in ("issuetype", "issue_type"):
+                changes["issue_type"] = self.check_type(value)
+            elif name == "status":
+                status = value.get("name") if isinstance(value, dict) else value
+                match = next((s for s in STATUSES if isinstance(status, str) and s.lower() == status.strip().lower()), None)
+                if match is None:
+                    raise BoardError(f"Status '{status}' not found among the available transitions.")
+                changes["status"] = match
+        for name, value in changes.items():
+            setattr(issue, name, value)
+        if changes:
+            issue.updated = self.now
         return issue
 
-    def add_comment(self, key: str, text: str) -> Issue:
+    def transition(self, key: str, transition_id) -> Issue:
         issue = self.issue(key)
-        if not text or not text.strip():
-            raise BoardError("The comment text must not be empty.")
-        issue.comments.append(Comment(text=text.strip()))
+        try:
+            status = TRANSITIONS[int(str(transition_id).strip())]
+        except (KeyError, ValueError):
+            raise BoardError(f"Transition id '{transition_id}' is not valid for this issue.") from None
+        issue.status = status
+        issue.updated = self.now
         return issue
 
+    def add_comment(self, key: str, body: str) -> Comment:
+        issue = self.issue(key)
+        if not isinstance(body, str) or not body.strip():
+            raise BoardError("Comment body can not be empty!")
+        comment = Comment(id=self._next_id([c for i in self.issues for c in i.comments]),
+                          author=self.user.account_id, body=body, created=self.now)
+        issue.comments.append(comment)
+        issue.updated = self.now
+        return comment
 
-# Difference of two states
+    def add_worklog(self, key: str, time_spent: str, comment: str | None = None) -> Worklog:
+        issue = self.issue(key)
+        worklog = Worklog(id=self._next_id([w for i in self.issues for w in i.worklogs]),
+                          author=self.user.account_id, time_spent_seconds=parse_time(time_spent),
+                          comment=comment or "", started=self.now)
+        issue.worklogs.append(worklog)
+        issue.updated = self.now
+        return worklog
 
-FIELDS = ("title", "description", "type", "status", "priority", "assignee", "labels", "sprint")
+    def add_to_sprint(self, sprint_id, keys: list[str]) -> list[Issue]:
+        sprint = self.check_sprint(sprint_id)
+        issues = [self.issue(k) for k in keys]
+        for issue in issues:
+            issue.sprint = sprint.id
+            issue.updated = self.now
+        return issues
+
+    def move_to_backlog(self, keys: list[str]) -> list[Issue]:
+        issues = [self.issue(k) for k in keys]
+        for issue in issues:
+            issue.sprint = None
+            issue.updated = self.now
+        return issues
 
 
-def _entry_order(entry: dict) -> tuple:
-    if entry["op"] == "create":
-        return (1, 0, "", json.dumps(entry, ensure_ascii=False, sort_keys=True))
-    return (0, key_number(entry["key"]), entry["op"] + entry.get("field", ""),
-            json.dumps(entry, ensure_ascii=False, sort_keys=True))
+# Time of a worklog
+
+def parse_time(text) -> int:
+    """Seconds of a Jira time such as '1h 30m'. Real Jira logs one minute for a text that it cannot read."""
+    text = str(text or "")
+    parts = TIME_RE.findall(text)
+    if not parts or TIME_RE.sub("", text).strip():
+        return UNREADABLE_TIME_SECONDS
+    seconds = sum(int(n) * TIME_UNITS[u.lower()] for n, u in parts)
+    return seconds or UNREADABLE_TIME_SECONDS
 
 
-def sort_changes(changes: list[dict]) -> list[dict]:
-    return sorted(changes, key=_entry_order)
+def format_time(seconds: int) -> str:
+    parts = []
+    for unit, size in TIME_UNITS.items():
+        n, seconds = divmod(seconds, size)
+        if n:
+            parts.append(f"{n}{unit}")
+    return " ".join(parts) or "0m"
 
 
-def diff(before: Board, after: Board) -> list[dict]:
-    """List the changes from `before` to `after` in the format of design.md."""
-    old = {i.key: i for i in before.issues}
+def parse_date(text: str) -> datetime:
+    return datetime.strptime(text.replace("Z", "+0000"), "%Y-%m-%dT%H:%M:%S.%f%z")
+
+
+# Difference of two states (D9)
+
+FIELDS = ("summary", "description", "issue_type", "status", "priority", "assignee", "labels", "sprint")
+
+
+def _field_value(board: Board, issue: Issue, field: str):
+    value = getattr(issue, field)
+    if field in ("assignee", "reporter"):
+        return board.display_name(value)
+    if field == "sprint":
+        return board.sprint_name(value)
+    return value
+
+
+def diff(initial: Board, final: Board) -> list[dict]:
+    """List the changes from `initial` to `final` in the format of the changes in `expected.json`."""
+    old = {i.key: i for i in initial.issues}
     changes = []
-    for issue in after.issues:
+    for issue in sorted(final.issues, key=lambda i: key_number(i.key)):
         prev = old.get(issue.key)
         if prev is None:
-            fields = issue.model_dump(include=set(FIELDS))
-            fields["labels"] = sorted(fields["labels"])
-            fields["comments"] = [c.text for c in issue.comments]
-            changes.append({"op": "create", "fields": fields})
-            continue
-        for field in FIELDS:
-            a, b = getattr(prev, field), getattr(issue, field)
-            if field == "labels":
-                a, b = sorted(a), sorted(b)
-            if a != b:
-                changes.append({"op": "update", "key": issue.key, "field": field, "value": b})
-        for c in issue.comments[len(prev.comments):]:
-            changes.append({"op": "comment", "key": issue.key, "text": c.text})
-    return sort_changes(changes)
+            new = {f: _field_value(final, issue, f) for f in FIELDS}
+            new["comments"] = [c.body for c in issue.comments]
+            changes.append({"new_issue": new})
+            prev_comments, prev_worklogs = {c.id for c in issue.comments}, set()
+        else:
+            for field in FIELDS:
+                a, b = _field_value(initial, prev, field), _field_value(final, issue, field)
+                if a != b:
+                    changes.append({"issue": issue.key, "field": field, "value": b})
+            prev_comments, prev_worklogs = {c.id for c in prev.comments}, {w.id for w in prev.worklogs}
+        changes += [{"issue": issue.key, "comment": c.body} for c in issue.comments if c.id not in prev_comments]
+        changes += [{"issue": issue.key, "worklog": {"seconds": w.time_spent_seconds, "comment": w.comment}}
+                    for w in issue.worklogs if w.id not in prev_worklogs]
+    return changes
 
 
 # Save and load
@@ -322,61 +406,3 @@ def save_board(board: Board, path: Path) -> None:
 
 def load_board(path: Path) -> Board:
     return Board.model_validate_json(Path(path).read_text(encoding="utf-8"))
-
-
-# Generator
-
-def name_forms(person: Person) -> dict:
-    """Return the gender and the Polish case forms of the first name of a person."""
-    gender, *forms = FIRST_NAMES[person.name.split()[0]]
-    return {"gender": gender, **dict(zip(CASES, forms))}
-
-
-def generate_board(name: str, project: str, seed: int, n_persons: int = 6,
-                   n_sprints: int = 4, n_issues: tuple[int, int] = (30, 40)) -> Board:
-    rng = random.Random(f"{seed}-{name}-{project}")
-    first_names = rng.sample(sorted(FIRST_NAMES), n_persons)
-    persons = []
-    for idx, first in enumerate(first_names, start=1):
-        male, female = rng.choice(SURNAMES)
-        last = male if FIRST_NAMES[first][0] == "m" else female
-        persons.append(Person(id=f"u{idx}", name=f"{first} {last}"))
-
-    states = ["closed", "active"] + ["future"] * (n_sprints - 2)
-    sprints = [Sprint(id=f"s{n}", name=f"Sprint {n}", state=state) for n, state in enumerate(states, start=1)]
-    closed = [s.id for s in sprints if s.state == "closed"]
-    active = [s.id for s in sprints if s.state == "active"]
-    future = [s.id for s in sprints if s.state == "future"]
-
-    count = rng.randint(*n_issues)
-    titles = set()
-    issues = []
-    while len(issues) < count:
-        type_ = rng.choices(TYPES, weights=(40, 40, 20))[0]
-        title = rng.choice(TITLE_TEMPLATES[type_]).format(rng.choice(TITLE_OBJECTS))
-        if title in titles:
-            continue
-        titles.add(title)
-        place = rng.choices(("closed", "active", "future", "backlog"), weights=(20, 35, 20, 25))[0]
-        if place == "closed":
-            sprint, status = rng.choice(closed), "done"
-        elif place == "active":
-            sprint, status = active[0], rng.choices(STATUSES, weights=(40, 35, 25))[0]
-        elif place == "future":
-            sprint, status = rng.choice(future), "to_do"
-        else:
-            sprint, status = None, rng.choices(("to_do", "in_progress"), weights=(85, 15))[0]
-        priority_weights = (15, 35, 35, 15) if type_ == "bug" else (25, 45, 22, 8)
-        issues.append(Issue(
-            key=f"{project}-{len(issues) + 1}",
-            title=title,
-            description=rng.choice(DESCRIPTIONS),
-            type=type_,
-            status=status,
-            priority=rng.choices(PRIORITIES, weights=priority_weights)[0],
-            assignee=None if rng.random() < 0.25 else rng.choice(persons).id,
-            labels=sorted(rng.sample(LABELS, rng.choices((0, 1, 2), weights=(20, 50, 30))[0])),
-            sprint=sprint,
-            comments=[Comment(text=t) for t in rng.sample(COMMENTS, rng.choices((0, 1, 2), weights=(60, 30, 10))[0])],
-        ))
-    return Board(name=name, project=project, persons=persons, sprints=sprints, issues=issues)

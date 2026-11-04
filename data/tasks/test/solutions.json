@@ -1,0 +1,4689 @@
+[
+  {
+    "id": "test-001",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "WEB-6"
+        }
+      }
+    ],
+    "answer": "WEB-6 jest przypisane do Ewy Mazur."
+  },
+  {
+    "id": "test-002",
+    "calls": [
+      {
+        "name": "jira_get_worklog",
+        "arguments": {
+          "issue_key": "WEB-5"
+        }
+      }
+    ],
+    "answer": "Na WEB-5 zalogowano łącznie 7h 30m."
+  },
+  {
+    "id": "test-003",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "WEB-19",
+          "fields": "priority"
+        }
+      }
+    ],
+    "answer": "WEB-19 ma priorytet Highest."
+  },
+  {
+    "id": "test-004",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = WEB AND sprint in openSprints() AND labels = payments AND statusCategory != Done",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "Nieskończone zgłoszenia z płatności w bieżącym sprincie: WEB-5 i WEB-6."
+  },
+  {
+    "id": "test-005",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = WEB AND type = Bug AND priority in (High, Highest) AND sprint is EMPTY",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "W backlogu bez sprintu są 3 takie bugi."
+  },
+  {
+    "id": "test-006",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = WEB AND text ~ \"rozmyte\"",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "Zgłoszeniem WEB-36 o rozmytych zdjęciach zajmuje się Anna Sikora."
+  },
+  {
+    "id": "test-007",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Michał",
+          "project_key": "WEB"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "WEB-7",
+          "fields": "{\"assignee\": \"Michał Krawczyk\"}"
+        }
+      }
+    ],
+    "answer": "WEB-7 jest przypisane do Michała Krawczyka."
+  },
+  {
+    "id": "test-008",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "WEB-9"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "WEB-9",
+          "transition_id": "51"
+        }
+      }
+    ],
+    "answer": "WEB-9 ma status Done."
+  },
+  {
+    "id": "test-009",
+    "calls": [
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "WEB-22",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "WEB-22 ma priorytet High."
+  },
+  {
+    "id": "test-010",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = WEB AND text ~ \"listy zamówień\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Ewa",
+          "project_key": "WEB"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "WEB-7",
+          "fields": "{\"assignee\": \"Ewa Mazur\", \"priority\": {\"name\": \"Highest\"}}"
+        }
+      }
+    ],
+    "answer": "WEB-7 jest przypisane do Ewy Mazur z priorytetem Highest."
+  },
+  {
+    "id": "test-011",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = WEB AND summary ~ \"stopce\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "WEB-14",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "WEB-14",
+          "fields": "{\"labels\": [\"ui\", \"frontend\"]}"
+        }
+      }
+    ],
+    "answer": "WEB-14 ma teraz label frontend."
+  },
+  {
+    "id": "test-012",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = WEB AND text ~ \"newsletter\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "WEB-29"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "WEB-29",
+          "transition_id": "31"
+        }
+      }
+    ],
+    "answer": "WEB-29 ma status In review."
+  },
+  {
+    "id": "test-013",
+    "calls": [
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "WEB-12",
+          "time_spent": "2h",
+          "comment": "poprawki aria w formularzu"
+        }
+      }
+    ],
+    "answer": "Zalogowano 2h na WEB-12."
+  },
+  {
+    "id": "test-014",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "WEB-6",
+          "body": "Wdrożenie poprawki planujemy na czwartek."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do WEB-6."
+  },
+  {
+    "id": "test-015",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "WEB-24",
+          "body": "Czekamy na odpowiedź operatora płatności."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do WEB-24."
+  },
+  {
+    "id": "test-016",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = WEB AND text ~ \"kodu pocztowego\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "WEB-31",
+          "time_spent": "45m",
+          "comment": "analiza"
+        }
+      }
+    ],
+    "answer": "Zalogowano 45 minut na WEB-31."
+  },
+  {
+    "id": "test-017",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = WEB AND summary ~ \"dostawy dwa razy\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "WEB-38",
+          "time_spent": "1h 30m"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "WEB-38",
+          "body": "przyczyną jest podwójne przeliczenie w checkout"
+        }
+      }
+    ],
+    "answer": "Zalogowano 1h 30m na WEB-38 i dodano komentarz."
+  },
+  {
+    "id": "test-018",
+    "calls": [
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "WEB",
+          "summary": "Kalkulator rat pokazuje złą kwotę dla koszyka powyżej 5000 zł",
+          "issue_type": "Bug",
+          "additional_fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Założono bug WEB-41."
+  },
+  {
+    "id": "test-019",
+    "calls": [
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "WEB",
+          "summary": "Update cookie banner texts for the new privacy policy",
+          "issue_type": "Task",
+          "additional_fields": "{\"labels\": [\"frontend\"]}"
+        }
+      }
+    ],
+    "answer": "Założono zadanie WEB-41."
+  },
+  {
+    "id": "test-020",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Zofia",
+          "project_key": "WEB"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "WEB",
+          "summary": "Przygotować raport sprzedaży z Black Week",
+          "issue_type": "Task",
+          "assignee": "Zofia Kaczmarek"
+        }
+      }
+    ],
+    "answer": "Założono zadanie WEB-41 dla Zofii Kaczmarek."
+  },
+  {
+    "id": "test-021",
+    "calls": [
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "WEB",
+          "summary": "Program JayWalk Club - punkty za każdą parę butów",
+          "issue_type": "Story"
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "WEB"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "11"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "43",
+          "issue_keys": "WEB-41"
+        }
+      }
+    ],
+    "answer": "Założono story WEB-41 w sprincie WEB Sprint 16."
+  },
+  {
+    "id": "test-022",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Daniel",
+          "project_key": "WEB"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "WEB",
+          "summary": "Koszyk czyści się po zmianie języka",
+          "issue_type": "Bug",
+          "assignee": "Daniel Brooks",
+          "additional_fields": "{\"priority\": {\"name\": \"Highest\"}}"
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "WEB"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "11"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "42",
+          "issue_keys": "WEB-41"
+        }
+      }
+    ],
+    "answer": "Założono bug WEB-41 dla Daniela Brooksa w bieżącym sprincie."
+  },
+  {
+    "id": "test-023",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "WEB"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "11"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "43",
+          "issue_keys": "WEB-10"
+        }
+      }
+    ],
+    "answer": "WEB-10 jest w sprincie WEB Sprint 16."
+  },
+  {
+    "id": "test-024",
+    "calls": [
+      {
+        "name": "jira_move_issues_to_backlog",
+        "arguments": {
+          "issue_keys": "WEB-14"
+        }
+      }
+    ],
+    "answer": "WEB-14 jest w backlogu."
+  },
+  {
+    "id": "test-025",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "WEB"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "11"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "42",
+          "issue_keys": "WEB-19"
+        }
+      }
+    ],
+    "answer": "WEB-19 jest w bieżącym sprincie."
+  },
+  {
+    "id": "test-026",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = WEB AND sprint in openSprints() AND type = Bug AND status = Backlog",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "WEB"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "11"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "43",
+          "issue_keys": "WEB-31,WEB-14,WEB-7"
+        }
+      }
+    ],
+    "answer": "Przeniesiono do WEB Sprint 16: WEB-31, WEB-14, WEB-7."
+  },
+  {
+    "id": "test-027",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = WEB AND summary ~ \"dark mode\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "WEB"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "11"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "44",
+          "issue_keys": "WEB-20"
+        }
+      }
+    ],
+    "answer": "WEB-20 jest w sprincie WEB Sprint 17."
+  },
+  {
+    "id": "test-028",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = WEB AND type = Bug AND labels = security AND assignee is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Michał",
+          "project_key": "WEB"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "WEB-33",
+          "fields": "{\"assignee\": \"Michał Krawczyk\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "WEB-19",
+          "fields": "{\"assignee\": \"Michał Krawczyk\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Michałowi Krawczykowi: WEB-33, WEB-19."
+  },
+  {
+    "id": "test-029",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = WEB AND type = Bug AND labels = checkout AND status in (Backlog, \"In Progress\", \"In review\")",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "WEB-38",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "WEB-31",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "WEB-9",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Priorytet High mają teraz: WEB-38, WEB-31, WEB-9."
+  },
+  {
+    "id": "test-030",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = WEB AND labels = ui AND sprint is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "WEB-26",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "WEB-26",
+          "fields": "{\"labels\": [\"frontend\", \"ui\", \"ux-review\"]}"
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "WEB-21",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "WEB-21",
+          "fields": "{\"labels\": [\"ui\", \"ux-review\"]}"
+        }
+      }
+    ],
+    "answer": "Dodano label ux-review do: WEB-26, WEB-21."
+  },
+  {
+    "id": "test-031",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = WEB AND assignee = \"Zofia Kaczmarek\" AND sprint in openSprints() AND statusCategory != Done",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Ewa",
+          "project_key": "WEB"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "WEB-29",
+          "fields": "{\"assignee\": \"Ewa Mazur\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "WEB-11",
+          "fields": "{\"assignee\": \"Ewa Mazur\"}"
+        }
+      }
+    ],
+    "answer": "Przepisano na Ewę Mazur: WEB-29, WEB-11."
+  },
+  {
+    "id": "test-032",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "WEB-32"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "WEB-32",
+          "transition_id": "51"
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "WEB-32",
+          "time_spent": "30m"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "WEB-32",
+          "body": "banner jest już na produkcji"
+        }
+      }
+    ],
+    "answer": "WEB-32 ma status Done, zalogowano 30m i dodano komentarz."
+  },
+  {
+    "id": "test-033",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = WEB AND summary ~ \"webhook\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Daniel",
+          "project_key": "WEB"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "WEB-6",
+          "fields": "{\"assignee\": \"Daniel Brooks\"}"
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "WEB-6"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "WEB-6",
+          "transition_id": "31"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "WEB-6",
+          "body": "Poprawka z kluczem idempotencji czeka na review."
+        }
+      }
+    ],
+    "answer": "WEB-6 jest przypisane do Daniela Brooksa, ma status In review i nowy komentarz."
+  },
+  {
+    "id": "test-034",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Anna",
+          "project_key": "WEB"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "WEB",
+          "summary": "Przygotować checklistę release 2.4",
+          "issue_type": "Task",
+          "assignee": "Anna Wróbel"
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "WEB"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "11"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "42",
+          "issue_keys": "WEB-41"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "WEB-41",
+          "body": "Lista ma być gotowa przed piątkiem."
+        }
+      }
+    ],
+    "answer": "Założono WEB-41 dla Anny Wróbel w bieżącym sprincie i dodano komentarz."
+  },
+  {
+    "id": "test-035",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = WEB AND summary ~ \"reset hasła\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Michał",
+          "project_key": "WEB"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "WEB-19",
+          "fields": "{\"assignee\": \"Michał Krawczyk\"}"
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "WEB"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "11"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "42",
+          "issue_keys": "WEB-19"
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "WEB-19"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "WEB-19",
+          "transition_id": "21"
+        }
+      }
+    ],
+    "answer": "WEB-19 jest przypisane do Michała Krawczyka, w bieżącym sprincie, ze statusem In Progress."
+  },
+  {
+    "id": "test-036",
+    "calls": [],
+    "answer": "ODMOWA: nie mam narzędzia do usuwania zgłoszeń. Mogę na przykład zmienić jego status na Cancelled."
+  },
+  {
+    "id": "test-037",
+    "calls": [],
+    "answer": "ODMOWA: nie mam narzędzia do zamykania ani rozpoczynania sprintów."
+  },
+  {
+    "id": "test-038",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Paweł",
+          "project_key": "WEB"
+        }
+      }
+    ],
+    "answer": "ODMOWA: nie znalazłem w projekcie aktywnej osoby o imieniu Paweł."
+  },
+  {
+    "id": "test-039",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Anna",
+          "project_key": "WEB"
+        }
+      }
+    ],
+    "answer": "ODMOWA: w projekcie są dwie osoby o imieniu Anna: Anna Wróbel i Anna Sikora. Napisz, o którą chodzi."
+  },
+  {
+    "id": "test-040",
+    "calls": [],
+    "answer": "ODMOWA: pomagam tylko w pracy z Jirą tego projektu."
+  },
+  {
+    "id": "test-041",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "APP-7",
+          "fields": "status"
+        }
+      }
+    ],
+    "answer": "APP-7 ma status Backlog."
+  },
+  {
+    "id": "test-042",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "APP-29"
+        }
+      }
+    ],
+    "answer": "APP-29 jest przypisane do Kamila Szewczyka."
+  },
+  {
+    "id": "test-043",
+    "calls": [
+      {
+        "name": "jira_get_worklog",
+        "arguments": {
+          "issue_key": "APP-5"
+        }
+      }
+    ],
+    "answer": "Na APP-5 zalogowano łącznie 8h 30m."
+  },
+  {
+    "id": "test-044",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = APP AND labels = crash AND status in (Backlog, \"In Progress\", \"In review\")",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "Otwarte są 2 zgłoszenia z crashami."
+  },
+  {
+    "id": "test-045",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = APP AND labels = ios AND sprint in openSprints() AND statusCategory != Done",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "Niezakończone zgłoszenia iOS w bieżącym sprincie: APP-31, APP-11, APP-7."
+  },
+  {
+    "id": "test-046",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = APP AND summary ~ \"baterii\"",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "Zgłoszeniem APP-36 o zużyciu baterii zajmuje się Kamil Dudek."
+  },
+  {
+    "id": "test-047",
+    "calls": [
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "APP-24",
+          "fields": "{\"priority\": {\"name\": \"Highest\"}}"
+        }
+      }
+    ],
+    "answer": "APP-24 ma priorytet Highest."
+  },
+  {
+    "id": "test-048",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "APP-12"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "APP-12",
+          "transition_id": "31"
+        }
+      }
+    ],
+    "answer": "APP-12 ma status In review."
+  },
+  {
+    "id": "test-049",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Sophie",
+          "project_key": "APP"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "APP-26",
+          "fields": "{\"assignee\": \"Sophie Grant\"}"
+        }
+      }
+    ],
+    "answer": "APP-26 jest przypisane do Sophie Grant."
+  },
+  {
+    "id": "test-050",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = APP AND summary ~ \"ciemny motyw\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "APP-9"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "APP-9",
+          "transition_id": "51"
+        }
+      }
+    ],
+    "answer": "APP-9 ma status Done."
+  },
+  {
+    "id": "test-051",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = APP AND summary ~ \"galerii\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "APP-31",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "APP-31",
+          "fields": "{\"labels\": [\"ios\", \"regression\"]}"
+        }
+      }
+    ],
+    "answer": "APP-31 ma teraz label regression."
+  },
+  {
+    "id": "test-052",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = APP AND summary ~ \"zmianie języka\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Bartosz",
+          "project_key": "APP"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "APP-24",
+          "fields": "{\"assignee\": \"Bartosz Lis\"}"
+        }
+      }
+    ],
+    "answer": "APP-24 jest przypisane do Bartosza Lisa."
+  },
+  {
+    "id": "test-053",
+    "calls": [
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "APP-6",
+          "time_spent": "3h",
+          "comment": "debug kamery"
+        }
+      }
+    ],
+    "answer": "Zalogowano 3h na APP-6."
+  },
+  {
+    "id": "test-054",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "APP-5",
+          "body": "Drop przesunięty na 20 listopada."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do APP-5."
+  },
+  {
+    "id": "test-055",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "APP-11",
+          "body": "Waiting for the final photos from the design team."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do APP-11."
+  },
+  {
+    "id": "test-056",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = APP AND summary ~ \"skaner rozmiaru\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "APP-29",
+          "time_spent": "2h 15m",
+          "comment": "testy na 30 parach"
+        }
+      }
+    ],
+    "answer": "Zalogowano 2h 15m na APP-29."
+  },
+  {
+    "id": "test-057",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = APP AND summary ~ \"wymuszonym zatrzymaniu\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "APP-18",
+          "body": "nie da sie tego obejsc na androidzie 14"
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do APP-18."
+  },
+  {
+    "id": "test-058",
+    "calls": [
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "APP",
+          "summary": "Brak ceny w EUR na ekranie produktu",
+          "issue_type": "Bug",
+          "additional_fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Założono bug APP-41."
+  },
+  {
+    "id": "test-059",
+    "calls": [
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "APP",
+          "summary": "Prepare the TestFlight build for the 3.2 release",
+          "issue_type": "Task"
+        }
+      }
+    ],
+    "answer": "Założono zadanie APP-41."
+  },
+  {
+    "id": "test-060",
+    "calls": [
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "APP",
+          "summary": "Refaktor ekranu skanera",
+          "issue_type": "Task",
+          "additional_fields": "{\"labels\": [\"android\"]}"
+        }
+      }
+    ],
+    "answer": "Założono zadanie APP-41."
+  },
+  {
+    "id": "test-061",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Olga",
+          "project_key": "APP"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "APP",
+          "summary": "Tryb offline dla listy ulubionych",
+          "issue_type": "Story",
+          "assignee": "Olga Czarnecka"
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "APP"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "12"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "53",
+          "issue_keys": "APP-41"
+        }
+      }
+    ],
+    "answer": "Założono story APP-41 dla Olgi Czarneckiej w sprincie APP Sprint 10."
+  },
+  {
+    "id": "test-062",
+    "calls": [
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "APP",
+          "summary": "Push notifications show the wrong sneaker photo",
+          "issue_type": "Bug",
+          "additional_fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "APP"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "12"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "52",
+          "issue_keys": "APP-41"
+        }
+      }
+    ],
+    "answer": "Założono bug APP-41 w bieżącym sprincie."
+  },
+  {
+    "id": "test-063",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "APP"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "12"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "52",
+          "issue_keys": "APP-37"
+        }
+      }
+    ],
+    "answer": "APP-37 jest w sprincie APP Sprint 9."
+  },
+  {
+    "id": "test-064",
+    "calls": [
+      {
+        "name": "jira_move_issues_to_backlog",
+        "arguments": {
+          "issue_keys": "APP-14"
+        }
+      }
+    ],
+    "answer": "APP-14 jest w backlogu."
+  },
+  {
+    "id": "test-065",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = APP AND labels = drops AND sprint is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "APP"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "12"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "53",
+          "issue_keys": "APP-34"
+        }
+      }
+    ],
+    "answer": "APP-34 jest w sprincie APP Sprint 10."
+  },
+  {
+    "id": "test-066",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = APP AND summary ~ \"iOS SDK\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "APP"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "12"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "52",
+          "issue_keys": "APP-16"
+        }
+      }
+    ],
+    "answer": "APP-16 jest w bieżącym sprincie."
+  },
+  {
+    "id": "test-067",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = APP AND type = Bug AND labels = login AND sprint is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "APP"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "12"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "53",
+          "issue_keys": "APP-33,APP-19"
+        }
+      }
+    ],
+    "answer": "Przeniesiono do APP Sprint 10: APP-33, APP-19."
+  },
+  {
+    "id": "test-068",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = APP AND type = Bug AND assignee is EMPTY AND sprint in openSprints()",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Kamil",
+          "project_key": "APP"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "APP-31",
+          "fields": "{\"assignee\": \"Kamil Szewczyk\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "APP-14",
+          "fields": "{\"assignee\": \"Kamil Szewczyk\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "APP-7",
+          "fields": "{\"assignee\": \"Kamil Szewczyk\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Kamilowi Szewczykowi: APP-31, APP-14, APP-7."
+  },
+  {
+    "id": "test-069",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = APP AND type = Bug AND labels = ios AND status in (Backlog, \"In Progress\", \"In review\")",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "APP-31",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "APP-31",
+          "fields": "{\"labels\": [\"ios\", \"ios-17\"]}"
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "APP-26",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "APP-26",
+          "fields": "{\"labels\": [\"ios\", \"ui\", \"ios-17\"]}"
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "APP-7",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "APP-7",
+          "fields": "{\"labels\": [\"ios\", \"login\", \"ios-17\"]}"
+        }
+      }
+    ],
+    "answer": "Dodano label ios-17 do: APP-31, APP-26, APP-7."
+  },
+  {
+    "id": "test-070",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = APP AND type = Task AND labels = analytics",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "APP-23",
+          "fields": "{\"priority\": {\"name\": \"Low\"}}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "APP-10",
+          "fields": "{\"priority\": {\"name\": \"Low\"}}"
+        }
+      }
+    ],
+    "answer": "Priorytet Low mają teraz: APP-23, APP-10."
+  },
+  {
+    "id": "test-071",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = APP AND assignee = \"Hubert Nowicki\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Bartosz",
+          "project_key": "APP"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "APP-39",
+          "fields": "{\"assignee\": \"Bartosz Lis\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "APP-30",
+          "fields": "{\"assignee\": \"Bartosz Lis\"}"
+        }
+      }
+    ],
+    "answer": "Przepisano na Bartosza Lisa: APP-39, APP-30."
+  },
+  {
+    "id": "test-072",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "APP-6"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "APP-6",
+          "transition_id": "51"
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "APP-6",
+          "time_spent": "1h"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "APP-6",
+          "body": "fix w wersji 3.1.2"
+        }
+      }
+    ],
+    "answer": "APP-6 ma status Done, zalogowano 1h i dodano komentarz."
+  },
+  {
+    "id": "test-073",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = APP AND summary ~ \"token sesji\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Bartosz",
+          "project_key": "APP"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "APP-19",
+          "fields": "{\"assignee\": \"Bartosz Lis\"}"
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "APP"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "12"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "52",
+          "issue_keys": "APP-19"
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "APP-19"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "APP-19",
+          "transition_id": "21"
+        }
+      }
+    ],
+    "answer": "APP-19 jest przypisane do Bartosza Lisa, w bieżącym sprincie, ze statusem In Progress."
+  },
+  {
+    "id": "test-074",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Olga",
+          "project_key": "APP"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "APP",
+          "summary": "Update App Store screenshots",
+          "issue_type": "Task",
+          "assignee": "Olga Czarnecka"
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "APP"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "12"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "53",
+          "issue_keys": "APP-41"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "APP-41",
+          "body": "Screenshots must show the new JayWalk Volt"
+        }
+      }
+    ],
+    "answer": "Założono APP-41 dla Olgi Czarneckiej w sprincie APP Sprint 10 i dodano komentarz."
+  },
+  {
+    "id": "test-075",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = APP AND summary ~ \"kolejka wirtualna\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "APP-5"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "APP-5",
+          "transition_id": "31"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "APP-5",
+          "body": "Testy obciążeniowe OK, 50 tys. użytkowników."
+        }
+      }
+    ],
+    "answer": "APP-5 ma status In review i nowy komentarz."
+  },
+  {
+    "id": "test-076",
+    "calls": [],
+    "answer": "ODMOWA: nie mam narzędzia do wysyłania maili."
+  },
+  {
+    "id": "test-077",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Hubert",
+          "project_key": "APP"
+        }
+      }
+    ],
+    "answer": "ODMOWA: nie znalazłem w projekcie aktywnej osoby o imieniu Hubert."
+  },
+  {
+    "id": "test-078",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "APP-140"
+        }
+      }
+    ],
+    "answer": "ODMOWA: zgłoszenie APP-140 nie istnieje."
+  },
+  {
+    "id": "test-079",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Kamil",
+          "project_key": "APP"
+        }
+      }
+    ],
+    "answer": "ODMOWA: w projekcie są dwie osoby o imieniu Kamil: Kamil Dudek i Kamil Szewczyk. Napisz, o którą chodzi."
+  },
+  {
+    "id": "test-080",
+    "calls": [],
+    "answer": "ODMOWA: pomagam tylko w pracy z Jirą tego projektu."
+  },
+  {
+    "id": "test-081",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "API-9"
+        }
+      }
+    ],
+    "answer": "API-9 jest przypisane do Olivera Hayesa."
+  },
+  {
+    "id": "test-082",
+    "calls": [
+      {
+        "name": "jira_get_worklog",
+        "arguments": {
+          "issue_key": "API-5"
+        }
+      }
+    ],
+    "answer": "Na API-5 zalogowano łącznie 8h."
+  },
+  {
+    "id": "test-083",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "API-38",
+          "fields": "status"
+        }
+      }
+    ],
+    "answer": "API-38 ma status In review."
+  },
+  {
+    "id": "test-084",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = API AND sprint in openSprints() AND status = Backlog",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "W bieżącym sprincie 5 zgłoszeń ma status Backlog."
+  },
+  {
+    "id": "test-085",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = API AND labels = partners AND statusCategory != Done",
+          "limit": 20
+        }
+      }
+    ],
+    "answer": "Otwarte zgłoszenia z labelem partners: API-40, API-27, API-24, API-21, API-16, API-7, API-6, API-5."
+  },
+  {
+    "id": "test-086",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = API AND summary ~ \"rozjeżdżają\"",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "Zgłoszeniem API-6 zajmuje się Tomasz Kubiak."
+  },
+  {
+    "id": "test-087",
+    "calls": [
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "API-22",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "API-22 ma priorytet High."
+  },
+  {
+    "id": "test-088",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "API-12"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "API-12",
+          "transition_id": "31"
+        }
+      }
+    ],
+    "answer": "API-12 ma status In review."
+  },
+  {
+    "id": "test-089",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Agnieszka",
+          "project_key": "API"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "API-26",
+          "fields": "{\"assignee\": \"Agnieszka Duda\"}"
+        }
+      }
+    ],
+    "answer": "API-26 jest przypisane do Agnieszki Dudy."
+  },
+  {
+    "id": "test-090",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = API AND summary ~ \"logach\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Krzysztof",
+          "project_key": "API"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "API-19",
+          "fields": "{\"assignee\": \"Krzysztof Malinowski\"}"
+        }
+      }
+    ],
+    "answer": "API-19 jest przypisane do Krzysztofa Malinowskiego."
+  },
+  {
+    "id": "test-091",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = API AND summary ~ \"połówkowe\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "API-18",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "API-18",
+          "fields": "{\"labels\": [\"inventory\", \"partners\"]}"
+        }
+      }
+    ],
+    "answer": "API-18 ma teraz label partners."
+  },
+  {
+    "id": "test-092",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = API AND summary ~ \"5xx\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "API-10"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "API-10",
+          "transition_id": "51"
+        }
+      }
+    ],
+    "answer": "API-10 ma status Done."
+  },
+  {
+    "id": "test-093",
+    "calls": [
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "API-29",
+          "time_spent": "1h 45m",
+          "comment": "analiza liczenia żądań HEAD"
+        }
+      }
+    ],
+    "answer": "Zalogowano 1h 45m na API-29."
+  },
+  {
+    "id": "test-094",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "API-32",
+          "body": "Spotkanie z partnerami przesunięte na środę."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do API-32."
+  },
+  {
+    "id": "test-095",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "API-6",
+          "body": "Sportland confirmed the difference is only for size 44."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do API-6."
+  },
+  {
+    "id": "test-096",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = API AND summary ~ \"paginacji\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "API-31",
+          "time_spent": "50m",
+          "comment": "reprodukcja na danych produkcyjnych"
+        }
+      }
+    ],
+    "answer": "Zalogowano 50 minut na API-31."
+  },
+  {
+    "id": "test-097",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = API AND summary ~ \"shipped\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "API-38",
+          "time_spent": "1h"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "API-38",
+          "body": "carrier API returns the number with a delay"
+        }
+      }
+    ],
+    "answer": "Zalogowano 1h na API-38 i dodano komentarz."
+  },
+  {
+    "id": "test-098",
+    "calls": [
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "API",
+          "summary": "Endpoint /inventory zwraca stany sprzed godziny",
+          "issue_type": "Bug",
+          "additional_fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Założono bug API-41."
+  },
+  {
+    "id": "test-099",
+    "calls": [
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "API",
+          "summary": "Retrospektywa sprintu 22 - podsumowanie",
+          "issue_type": "Task"
+        }
+      }
+    ],
+    "answer": "Założono zadanie API-41."
+  },
+  {
+    "id": "test-100",
+    "calls": [
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "API",
+          "summary": "Bulk order API for partners",
+          "issue_type": "Story",
+          "additional_fields": "{\"labels\": [\"partners\"]}"
+        }
+      }
+    ],
+    "answer": "Założono story API-41."
+  },
+  {
+    "id": "test-101",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Tomasz",
+          "project_key": "API"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "API",
+          "summary": "Limity zapytań per endpoint",
+          "issue_type": "Story",
+          "assignee": "Tomasz Kubiak"
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "API"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "13"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "63",
+          "issue_keys": "API-41"
+        }
+      }
+    ],
+    "answer": "Założono story API-41 dla Tomasza Kubiaka w sprincie API Sprint 23."
+  },
+  {
+    "id": "test-102",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Oliver",
+          "project_key": "API"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "API",
+          "summary": "Przygotować demo dla partnerów",
+          "issue_type": "Task",
+          "assignee": "Oliver Hayes",
+          "additional_fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Założono zadanie API-41 dla Olivera Hayesa."
+  },
+  {
+    "id": "test-103",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "API"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "13"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "62",
+          "issue_keys": "API-20"
+        }
+      }
+    ],
+    "answer": "API-20 jest w sprincie API Sprint 22."
+  },
+  {
+    "id": "test-104",
+    "calls": [
+      {
+        "name": "jira_move_issues_to_backlog",
+        "arguments": {
+          "issue_keys": "API-14"
+        }
+      }
+    ],
+    "answer": "API-14 jest w backlogu."
+  },
+  {
+    "id": "test-105",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "API"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "13"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "63",
+          "issue_keys": "API-27"
+        }
+      }
+    ],
+    "answer": "API-27 jest w sprincie API Sprint 23."
+  },
+  {
+    "id": "test-106",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = API AND labels = docs AND sprint is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "API"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "13"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "63",
+          "issue_keys": "API-26,API-20"
+        }
+      }
+    ],
+    "answer": "Przeniesiono do API Sprint 23: API-26, API-20."
+  },
+  {
+    "id": "test-107",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = API AND summary ~ \"HMAC\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "API"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "13"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "62",
+          "issue_keys": "API-17"
+        }
+      }
+    ],
+    "answer": "API-17 jest w bieżącym sprincie."
+  },
+  {
+    "id": "test-108",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = API AND assignee is EMPTY AND sprint in openSprints()",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Agnieszka",
+          "project_key": "API"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "API-31",
+          "fields": "{\"assignee\": \"Agnieszka Duda\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "API-14",
+          "fields": "{\"assignee\": \"Agnieszka Duda\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "API-10",
+          "fields": "{\"assignee\": \"Agnieszka Duda\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "API-7",
+          "fields": "{\"assignee\": \"Agnieszka Duda\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Agnieszce Dudzie: API-31, API-14, API-10, API-7."
+  },
+  {
+    "id": "test-109",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = API AND type = Bug AND labels = auth AND status in (Backlog, \"In Progress\", \"In review\")",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "API-33",
+          "fields": "{\"priority\": {\"name\": \"Highest\"}}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "API-19",
+          "fields": "{\"priority\": {\"name\": \"Highest\"}}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "API-9",
+          "fields": "{\"priority\": {\"name\": \"Highest\"}}"
+        }
+      }
+    ],
+    "answer": "Priorytet Highest mają teraz: API-33, API-19, API-9."
+  },
+  {
+    "id": "test-110",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = API AND labels = webhooks AND status in (Backlog, \"In Progress\", \"In review\")",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "API-38",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "API-38",
+          "fields": "{\"labels\": [\"webhooks\", \"partner-impact\"]}"
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "API-27",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "API-27",
+          "fields": "{\"labels\": [\"partners\", \"webhooks\", \"partner-impact\"]}"
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "API-17",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "API-17",
+          "fields": "{\"labels\": [\"webhooks\", \"partner-impact\"]}"
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "API-7",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "API-7",
+          "fields": "{\"labels\": [\"webhooks\", \"partners\", \"partner-impact\"]}"
+        }
+      }
+    ],
+    "answer": "Dodano label partner-impact do: API-38, API-27, API-17, API-7."
+  },
+  {
+    "id": "test-111",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = API AND assignee = \"Grzegorz Sowa\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Tomasz",
+          "project_key": "API"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "API-30",
+          "fields": "{\"assignee\": \"Tomasz Baran\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "API-23",
+          "fields": "{\"assignee\": \"Tomasz Baran\"}"
+        }
+      }
+    ],
+    "answer": "Przepisano na Tomasza Barana: API-30, API-23."
+  },
+  {
+    "id": "test-112",
+    "calls": [
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "API-29",
+          "time_spent": "2h"
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "API-29"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "API-29",
+          "transition_id": "31"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "API-29",
+          "body": "Żądania HEAD nie liczą się już do limitu."
+        }
+      }
+    ],
+    "answer": "Zalogowano 2h na API-29, status to In review i dodano komentarz."
+  },
+  {
+    "id": "test-113",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = API AND summary ~ \"refresh token\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Tomasz",
+          "project_key": "API"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "API-9",
+          "fields": "{\"assignee\": \"Tomasz Baran\"}"
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "API-9"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "API-9",
+          "transition_id": "21"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "API-9",
+          "body": "please check the rotation flow"
+        }
+      }
+    ],
+    "answer": "API-9 jest przypisane do Tomasza Barana, ma status In Progress i nowy komentarz."
+  },
+  {
+    "id": "test-114",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Natalia",
+          "project_key": "API"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "API",
+          "summary": "Planowanie sprintu 23",
+          "issue_type": "Task",
+          "assignee": "Natalia Zając"
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "API"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "13"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "63",
+          "issue_keys": "API-41"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "API-41",
+          "body": "Proszę przygotować estymacje przed spotkaniem."
+        }
+      }
+    ],
+    "answer": "Założono API-41 dla Natalii Zając w sprincie API Sprint 23 i dodano komentarz."
+  },
+  {
+    "id": "test-115",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = API AND summary ~ \"faktury\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "API"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "13"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "62",
+          "issue_keys": "API-24"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "API-24",
+          "fields": "{\"priority\": {\"name\": \"Highest\"}}"
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "API-24"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "API-24",
+          "transition_id": "21"
+        }
+      }
+    ],
+    "answer": "API-24 jest w bieżącym sprincie, z priorytetem Highest i statusem In Progress."
+  },
+  {
+    "id": "test-116",
+    "calls": [],
+    "answer": "ODMOWA: nie mam narzędzia do łączenia zgłoszeń."
+  },
+  {
+    "id": "test-117",
+    "calls": [],
+    "answer": "ODMOWA: nie mam narzędzia do dodawania obserwatorów."
+  },
+  {
+    "id": "test-118",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Grzegorz",
+          "project_key": "API"
+        }
+      }
+    ],
+    "answer": "ODMOWA: nie znalazłem w projekcie aktywnej osoby o imieniu Grzegorz."
+  },
+  {
+    "id": "test-119",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Tomasz",
+          "project_key": "API"
+        }
+      }
+    ],
+    "answer": "ODMOWA: w projekcie są dwie osoby o imieniu Tomasz: Tomasz Baran i Tomasz Kubiak. Napisz, o którą chodzi."
+  },
+  {
+    "id": "test-120",
+    "calls": [],
+    "answer": "ODMOWA: pomagam tylko w pracy z Jirą tego projektu."
+  },
+  {
+    "id": "test-121",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "DATA-11"
+        }
+      }
+    ],
+    "answer": "Za DATA-11 odpowiada Marek Sobczak."
+  },
+  {
+    "id": "test-122",
+    "calls": [
+      {
+        "name": "jira_get_worklog",
+        "arguments": {
+          "issue_key": "DATA-5"
+        }
+      }
+    ],
+    "answer": "Na DATA-5 zalogowano łącznie 7h 30m."
+  },
+  {
+    "id": "test-123",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "DATA-9",
+          "fields": "priority"
+        }
+      }
+    ],
+    "answer": "DATA-9 ma priorytet Medium."
+  },
+  {
+    "id": "test-124",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = DATA AND type = Bug AND labels = data-quality AND status in (Backlog, \"In Progress\", \"In review\")",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "Otwarte są 3 bugi z jakością danych."
+  },
+  {
+    "id": "test-125",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = DATA AND labels = ml AND statusCategory != Done",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "Niezakończone zgłoszenia z labelem ml: DATA-27, DATA-16, DATA-15, DATA-9."
+  },
+  {
+    "id": "test-126",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = DATA AND labels = etl AND sprint in openSprints()",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_worklog",
+        "arguments": {
+          "issue_key": "DATA-38"
+        }
+      },
+      {
+        "name": "jira_get_worklog",
+        "arguments": {
+          "issue_key": "DATA-35"
+        }
+      },
+      {
+        "name": "jira_get_worklog",
+        "arguments": {
+          "issue_key": "DATA-13"
+        }
+      },
+      {
+        "name": "jira_get_worklog",
+        "arguments": {
+          "issue_key": "DATA-6"
+        }
+      }
+    ],
+    "answer": "Na zgłoszenia ETL w bieżącym sprincie zalogowano łącznie 1h 30m."
+  },
+  {
+    "id": "test-127",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Łukasz",
+          "project_key": "DATA"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "DATA-19",
+          "fields": "{\"assignee\": \"Łukasz Ostrowski\"}"
+        }
+      }
+    ],
+    "answer": "DATA-19 jest przypisane do Łukasza Ostrowskiego."
+  },
+  {
+    "id": "test-128",
+    "calls": [
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "DATA-24",
+          "fields": "{\"priority\": {\"name\": \"Highest\"}}"
+        }
+      }
+    ],
+    "answer": "DATA-24 ma priorytet Highest."
+  },
+  {
+    "id": "test-129",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "DATA-16"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "DATA-16",
+          "transition_id": "21"
+        }
+      }
+    ],
+    "answer": "DATA-16 ma status In Progress."
+  },
+  {
+    "id": "test-130",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = DATA AND summary ~ \"marży\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "DATA-22",
+          "fields": "{\"priority\": {\"name\": \"Highest\"}}"
+        }
+      }
+    ],
+    "answer": "DATA-22 ma priorytet Highest."
+  },
+  {
+    "id": "test-131",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = DATA AND summary ~ \"literówka\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "DATA-14"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "DATA-14",
+          "transition_id": "51"
+        }
+      }
+    ],
+    "answer": "DATA-14 ma status Done."
+  },
+  {
+    "id": "test-132",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = DATA AND summary ~ \"Black Week\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "DATA-5",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "DATA-5",
+          "fields": "{\"labels\": [\"sales\", \"dashboard\", \"black-week\"]}"
+        }
+      }
+    ],
+    "answer": "DATA-5 ma teraz label black-week."
+  },
+  {
+    "id": "test-133",
+    "calls": [
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "DATA-24",
+          "time_spent": "2h",
+          "comment": "debug schedulera"
+        }
+      }
+    ],
+    "answer": "Zalogowano 2h na DATA-24."
+  },
+  {
+    "id": "test-134",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "DATA-5",
+          "body": "Zarząd chce wersję wstępną do piątku."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do DATA-5."
+  },
+  {
+    "id": "test-135",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "DATA-9",
+          "body": "The model now uses 0.5 size steps."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do DATA-9."
+  },
+  {
+    "id": "test-136",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = DATA AND summary ~ \"paczkomatów\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "DATA-6",
+          "time_spent": "3h",
+          "comment": "uzgodnienia z operatorem"
+        }
+      }
+    ],
+    "answer": "Zalogowano 3h na DATA-6."
+  },
+  {
+    "id": "test-137",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = DATA AND summary ~ \"walucie\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "DATA-29",
+          "time_spent": "1h 20m"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "DATA-29",
+          "body": "exchange rates come from the wrong day"
+        }
+      }
+    ],
+    "answer": "Zalogowano 1h 20m na DATA-29 i dodano komentarz."
+  },
+  {
+    "id": "test-138",
+    "calls": [
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "DATA",
+          "summary": "Raport zwrotów za listopad dla zarządu",
+          "issue_type": "Task",
+          "additional_fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Założono zadanie DATA-41."
+  },
+  {
+    "id": "test-139",
+    "calls": [
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "DATA",
+          "summary": "Brak danych z kasy w sklepie w Poznaniu",
+          "issue_type": "Bug"
+        }
+      }
+    ],
+    "answer": "Założono bug DATA-41."
+  },
+  {
+    "id": "test-140",
+    "calls": [
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "DATA",
+          "summary": "Customer lifetime value dashboard",
+          "issue_type": "Story",
+          "additional_fields": "{\"labels\": [\"dashboard\"]}"
+        }
+      }
+    ],
+    "answer": "Założono story DATA-41."
+  },
+  {
+    "id": "test-141",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Monika",
+          "project_key": "DATA"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "DATA",
+          "summary": "Analiza sprzedaży butów do biegania",
+          "issue_type": "Task",
+          "assignee": "Monika Grabowska"
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "DATA"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "14"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "72",
+          "issue_keys": "DATA-41"
+        }
+      }
+    ],
+    "answer": "Założono zadanie DATA-41 dla Moniki Grabowskiej w bieżącym sprincie."
+  },
+  {
+    "id": "test-142",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Łukasz",
+          "project_key": "DATA"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "DATA",
+          "summary": "Job ETL zwrotów nie startuje po zmianie czasu",
+          "issue_type": "Bug",
+          "assignee": "Łukasz Ostrowski",
+          "additional_fields": "{\"priority\": {\"name\": \"Highest\"}}"
+        }
+      }
+    ],
+    "answer": "Założono bug DATA-41 dla Łukasza Ostrowskiego."
+  },
+  {
+    "id": "test-143",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "DATA"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "14"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "72",
+          "issue_keys": "DATA-17"
+        }
+      }
+    ],
+    "answer": "DATA-17 jest w bieżącym sprincie."
+  },
+  {
+    "id": "test-144",
+    "calls": [
+      {
+        "name": "jira_move_issues_to_backlog",
+        "arguments": {
+          "issue_keys": "DATA-14"
+        }
+      }
+    ],
+    "answer": "DATA-14 jest w backlogu."
+  },
+  {
+    "id": "test-145",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = DATA AND labels = ml AND sprint in futureSprints()",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "DATA"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "14"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "72",
+          "issue_keys": "DATA-16,DATA-15"
+        }
+      }
+    ],
+    "answer": "Przeniesiono do bieżącego sprintu: DATA-16, DATA-15."
+  },
+  {
+    "id": "test-146",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = DATA AND labels = privacy AND sprint is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "DATA"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "14"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "72",
+          "issue_keys": "DATA-33,DATA-19"
+        }
+      }
+    ],
+    "answer": "Przeniesiono do bieżącego sprintu: DATA-33, DATA-19."
+  },
+  {
+    "id": "test-147",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = DATA AND summary ~ \"partycjonowanie\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "DATA"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "14"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "73",
+          "issue_keys": "DATA-39"
+        }
+      }
+    ],
+    "answer": "DATA-39 jest w sprincie DATA Sprint 7."
+  },
+  {
+    "id": "test-148",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = DATA AND type = Bug AND assignee is EMPTY AND sprint in openSprints()",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Marek",
+          "project_key": "DATA"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "DATA-31",
+          "fields": "{\"assignee\": \"Marek Sobczak\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "DATA-14",
+          "fields": "{\"assignee\": \"Marek Sobczak\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "DATA-7",
+          "fields": "{\"assignee\": \"Marek Sobczak\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Markowi Sobczakowi: DATA-31, DATA-14, DATA-7."
+  },
+  {
+    "id": "test-149",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = DATA AND assignee = \"Edyta Wilk\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Igor",
+          "project_key": "DATA"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "DATA-40",
+          "fields": "{\"assignee\": \"Igor Kwiatkowski\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "DATA-30",
+          "fields": "{\"assignee\": \"Igor Kwiatkowski\"}"
+        }
+      }
+    ],
+    "answer": "Przepisano na Igora Kwiatkowskiego: DATA-40, DATA-30."
+  },
+  {
+    "id": "test-150",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = DATA AND labels = sales AND status in (Backlog, \"In Progress\", \"In review\")",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "DATA-34",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "DATA-34",
+          "fields": "{\"labels\": [\"sales\", \"board-review\"]}"
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "DATA-29",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "DATA-29",
+          "fields": "{\"labels\": [\"sales\", \"board-review\"]}"
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "DATA-22",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "DATA-22",
+          "fields": "{\"labels\": [\"sales\", \"data-quality\", \"board-review\"]}"
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "DATA-11",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "DATA-11",
+          "fields": "{\"labels\": [\"sales\", \"board-review\"]}"
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "DATA-7",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "DATA-7",
+          "fields": "{\"labels\": [\"data-quality\", \"sales\", \"board-review\"]}"
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "DATA-5",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "DATA-5",
+          "fields": "{\"labels\": [\"sales\", \"dashboard\", \"board-review\"]}"
+        }
+      }
+    ],
+    "answer": "Dodano label board-review do: DATA-34, DATA-29, DATA-22, DATA-11, DATA-7, DATA-5."
+  },
+  {
+    "id": "test-151",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = DATA AND type = Bug AND labels = dashboard AND status in (Backlog, \"In Progress\", \"In review\")",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "DATA-36",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "DATA-26",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "DATA-14",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Priorytet High mają teraz: DATA-36, DATA-26, DATA-14."
+  },
+  {
+    "id": "test-152",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "DATA-12"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "DATA-12",
+          "transition_id": "51"
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "DATA-12",
+          "time_spent": "1h"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "DATA-12",
+          "body": "dodany indeks na sku"
+        }
+      }
+    ],
+    "answer": "DATA-12 ma status Done, zalogowano 1h i dodano komentarz."
+  },
+  {
+    "id": "test-153",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = DATA AND summary ~ \"telefonów\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Łukasz",
+          "project_key": "DATA"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "DATA-19",
+          "fields": "{\"assignee\": \"Łukasz Ostrowski\"}"
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "DATA"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "14"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "72",
+          "issue_keys": "DATA-19"
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "DATA-19"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "DATA-19",
+          "transition_id": "21"
+        }
+      }
+    ],
+    "answer": "DATA-19 jest przypisane do Łukasza Ostrowskiego, w bieżącym sprincie, ze statusem In Progress."
+  },
+  {
+    "id": "test-154",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Priya",
+          "project_key": "DATA"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "DATA",
+          "summary": "Validate the churn dataset",
+          "issue_type": "Task",
+          "assignee": "Priya Raman"
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "DATA"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "14"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "73",
+          "issue_keys": "DATA-41"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "DATA-41",
+          "body": "Need access to the CRM export"
+        }
+      }
+    ],
+    "answer": "Założono DATA-41 dla Priyi Raman w sprincie DATA Sprint 7 i dodano komentarz."
+  },
+  {
+    "id": "test-155",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = DATA AND summary ~ \"ujemne\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Marek",
+          "project_key": "DATA"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "DATA-7",
+          "fields": "{\"assignee\": \"Marek Sobczak\", \"priority\": {\"name\": \"Highest\"}}"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "DATA-7",
+          "body": "Sprawdzić korekty po zwrotach."
+        }
+      }
+    ],
+    "answer": "DATA-7 jest przypisane do Marka Sobczaka z priorytetem Highest i ma nowy komentarz."
+  },
+  {
+    "id": "test-156",
+    "calls": [],
+    "answer": "ODMOWA: nie mam narzędzia do dodawania załączników."
+  },
+  {
+    "id": "test-157",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Edyta",
+          "project_key": "DATA"
+        }
+      }
+    ],
+    "answer": "ODMOWA: nie znalazłem w projekcie aktywnej osoby o imieniu Edyta."
+  },
+  {
+    "id": "test-158",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "DATA"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "14"
+        }
+      }
+    ],
+    "answer": "ODMOWA: na tablicy nie ma sprintu DATA Sprint 12."
+  },
+  {
+    "id": "test-159",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = DATA AND summary ~ \"zwrotów\"",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "ODMOWA: pasuje kilka zgłoszeń: DATA-40, DATA-26, DATA-17. Napiszcie, o które chodzi."
+  },
+  {
+    "id": "test-160",
+    "calls": [],
+    "answer": "ODMOWA: pomagam tylko w pracy z Jirą tego projektu."
+  },
+  {
+    "id": "test-161",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "OPS-12"
+        }
+      }
+    ],
+    "answer": "OPS-12 jest przypisane do Filipa Górskiego."
+  },
+  {
+    "id": "test-162",
+    "calls": [
+      {
+        "name": "jira_get_worklog",
+        "arguments": {
+          "issue_key": "OPS-5"
+        }
+      }
+    ],
+    "answer": "Na OPS-5 zalogowano łącznie 8h."
+  },
+  {
+    "id": "test-163",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "OPS-9",
+          "fields": "priority"
+        }
+      }
+    ],
+    "answer": "OPS-9 ma priorytet High."
+  },
+  {
+    "id": "test-164",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = OPS AND type = Bug AND labels = security AND status in (Backlog, \"In Progress\", \"In review\")",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "Otwarte są 3 bugi z labelem security."
+  },
+  {
+    "id": "test-165",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = OPS AND labels = monitoring AND sprint in openSprints() AND statusCategory != Done",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "Otwarte zgłoszenia z labelem monitoring w bieżącym sprincie: OPS-14, OPS-9."
+  },
+  {
+    "id": "test-166",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = OPS AND summary ~ \"analityczne\"",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "Zgłoszeniem OPS-29 zajmuje się Aleksandra Lewicka."
+  },
+  {
+    "id": "test-167",
+    "calls": [
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "OPS-7",
+          "fields": "{\"priority\": {\"name\": \"Highest\"}}"
+        }
+      }
+    ],
+    "answer": "OPS-7 ma priorytet Highest."
+  },
+  {
+    "id": "test-168",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "OPS-9"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "OPS-9",
+          "transition_id": "21"
+        }
+      }
+    ],
+    "answer": "OPS-9 ma status In Progress."
+  },
+  {
+    "id": "test-169",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Wojciech",
+          "project_key": "OPS"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "OPS-39",
+          "fields": "{\"assignee\": \"Wojciech Michalak\"}"
+        }
+      }
+    ],
+    "answer": "OPS-39 jest przypisane do Wojciecha Michalaka."
+  },
+  {
+    "id": "test-170",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = OPS AND summary ~ \"VPN\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Ethan",
+          "project_key": "OPS"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "OPS-19",
+          "fields": "{\"assignee\": \"Ethan Cole\"}"
+        }
+      }
+    ],
+    "answer": "OPS-19 jest przypisane do Ethana Cole'a."
+  },
+  {
+    "id": "test-171",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = OPS AND summary ~ \"ingress\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "OPS-12",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "OPS-12",
+          "fields": "{\"labels\": [\"kubernetes\", \"network\", \"black-week\"]}"
+        }
+      }
+    ],
+    "answer": "OPS-12 ma teraz label black-week."
+  },
+  {
+    "id": "test-172",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = OPS AND summary ~ \"routerów\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "OPS-25"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "OPS-25",
+          "transition_id": "21"
+        }
+      }
+    ],
+    "answer": "OPS-25 ma status In Progress."
+  },
+  {
+    "id": "test-173",
+    "calls": [
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "OPS-12",
+          "time_spent": "1h 15m",
+          "comment": "tuning ingress timeouts"
+        }
+      }
+    ],
+    "answer": "Zalogowano 1h 15m na OPS-12."
+  },
+  {
+    "id": "test-174",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "OPS-5",
+          "body": "Test obciążeniowy przesunięty na 21 listopada!"
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do OPS-5."
+  },
+  {
+    "id": "test-175",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "OPS-6",
+          "body": "Backup przyrostowy skraca czas do 2 godzin."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do OPS-6."
+  },
+  {
+    "id": "test-176",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = OPS AND summary ~ \"TLS\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "OPS-7",
+          "time_spent": "2h",
+          "comment": "odnowienie certyfikatu"
+        }
+      }
+    ],
+    "answer": "Zalogowano 2h na OPS-7."
+  },
+  {
+    "id": "test-177",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = OPS AND summary ~ \"losowo\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "OPS-36",
+          "time_spent": "45m"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "OPS-36",
+          "body": "retries hide the real problem"
+        }
+      }
+    ],
+    "answer": "Zalogowano 45 minut na OPS-36 i dodano komentarz."
+  },
+  {
+    "id": "test-178",
+    "calls": [
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "OPS",
+          "summary": "Sklep zwraca 503 przy 5000 użytkowników",
+          "issue_type": "Bug",
+          "additional_fields": "{\"priority\": {\"name\": \"Highest\"}}"
+        }
+      }
+    ],
+    "answer": "Założono bug OPS-41."
+  },
+  {
+    "id": "test-179",
+    "calls": [
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "OPS",
+          "summary": "Add synthetic checks for the checkout flow",
+          "issue_type": "Task",
+          "additional_fields": "{\"labels\": [\"monitoring\"]}"
+        }
+      }
+    ],
+    "answer": "Założono zadanie OPS-41."
+  },
+  {
+    "id": "test-180",
+    "calls": [
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "OPS",
+          "summary": "Przegląd uprawnień w chmurze za IV kwartał",
+          "issue_type": "Task"
+        }
+      }
+    ],
+    "answer": "Założono zadanie OPS-41."
+  },
+  {
+    "id": "test-181",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Filip",
+          "project_key": "OPS"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "OPS",
+          "summary": "Dyżur Black Week - lista kontaktów",
+          "issue_type": "Task",
+          "assignee": "Filip Górski"
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "OPS"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "15"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "82",
+          "issue_keys": "OPS-41"
+        }
+      }
+    ],
+    "answer": "Założono zadanie OPS-41 dla Filipa Górskiego w bieżącym sprincie."
+  },
+  {
+    "id": "test-182",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Filip",
+          "project_key": "OPS"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "OPS",
+          "summary": "Node exporter missing on new nodes",
+          "issue_type": "Bug",
+          "assignee": "Filip Górski",
+          "additional_fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Założono bug OPS-41 dla Filipa Górskiego."
+  },
+  {
+    "id": "test-183",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "OPS"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "15"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "82",
+          "issue_keys": "OPS-33"
+        }
+      }
+    ],
+    "answer": "OPS-33 jest w bieżącym sprincie."
+  },
+  {
+    "id": "test-184",
+    "calls": [
+      {
+        "name": "jira_move_issues_to_backlog",
+        "arguments": {
+          "issue_keys": "OPS-14"
+        }
+      }
+    ],
+    "answer": "OPS-14 jest w backlogu."
+  },
+  {
+    "id": "test-185",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = OPS AND labels = security AND sprint is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "OPS"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "15"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "82",
+          "issue_keys": "OPS-33,OPS-28,OPS-19"
+        }
+      }
+    ],
+    "answer": "Przeniesiono do bieżącego sprintu: OPS-33, OPS-28, OPS-19."
+  },
+  {
+    "id": "test-186",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = OPS AND summary ~ \"PostgreSQL\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "OPS"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "15"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "84",
+          "issue_keys": "OPS-17"
+        }
+      }
+    ],
+    "answer": "OPS-17 jest w sprincie OPS Sprint 33."
+  },
+  {
+    "id": "test-187",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = OPS AND labels = cost AND sprint is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "OPS"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "15"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "83",
+          "issue_keys": "OPS-23,OPS-21"
+        }
+      }
+    ],
+    "answer": "Przeniesiono do OPS Sprint 32: OPS-23, OPS-21."
+  },
+  {
+    "id": "test-188",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = OPS AND type = Bug AND assignee is EMPTY AND sprint in openSprints()",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Wojciech",
+          "project_key": "OPS"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "OPS-31",
+          "fields": "{\"assignee\": \"Wojciech Michalak\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "OPS-14",
+          "fields": "{\"assignee\": \"Wojciech Michalak\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "OPS-7",
+          "fields": "{\"assignee\": \"Wojciech Michalak\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Wojciechowi Michalakowi: OPS-31, OPS-14, OPS-7."
+  },
+  {
+    "id": "test-189",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = OPS AND assignee = \"Sebastian Kowal\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Ethan",
+          "project_key": "OPS"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "OPS-37",
+          "fields": "{\"assignee\": \"Ethan Cole\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "OPS-30",
+          "fields": "{\"assignee\": \"Ethan Cole\"}"
+        }
+      }
+    ],
+    "answer": "Przepisano na Ethana Cole'a: OPS-37, OPS-30."
+  },
+  {
+    "id": "test-190",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = OPS AND type = Bug AND labels = ci AND status in (Backlog, \"In Progress\", \"In review\")",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "OPS-36",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "OPS-18",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Priorytet High mają teraz: OPS-36, OPS-18."
+  },
+  {
+    "id": "test-191",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = OPS AND labels = kubernetes AND status in (Backlog, \"In Progress\", \"In review\")",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "OPS-34",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "OPS-34",
+          "fields": "{\"labels\": [\"kubernetes\", \"black-week\"]}"
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "OPS-24",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "OPS-24",
+          "fields": "{\"labels\": [\"kubernetes\", \"black-week\"]}"
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "OPS-12",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "OPS-12",
+          "fields": "{\"labels\": [\"kubernetes\", \"network\", \"black-week\"]}"
+        }
+      },
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "OPS-5",
+          "fields": "labels"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "OPS-5",
+          "fields": "{\"labels\": [\"kubernetes\", \"incident\", \"black-week\"]}"
+        }
+      }
+    ],
+    "answer": "Dodano label black-week do: OPS-34, OPS-24, OPS-12, OPS-5."
+  },
+  {
+    "id": "test-192",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "OPS-9"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "OPS-9",
+          "transition_id": "51"
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "OPS-9",
+          "time_spent": "30m"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "OPS-9",
+          "body": "dedup rule added in Alertmanager"
+        }
+      }
+    ],
+    "answer": "OPS-9 ma status Done, zalogowano 30m i dodano komentarz."
+  },
+  {
+    "id": "test-193",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = OPS AND summary ~ \"pamięcią\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Aleksandra",
+          "project_key": "OPS"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "OPS-24",
+          "fields": "{\"assignee\": \"Aleksandra Rutkowska\", \"priority\": {\"name\": \"Highest\"}}"
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "OPS"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "15"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "82",
+          "issue_keys": "OPS-24"
+        }
+      }
+    ],
+    "answer": "OPS-24 jest przypisane do Aleksandry Rutkowskiej, w bieżącym sprincie, z priorytetem Highest."
+  },
+  {
+    "id": "test-194",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Wojciech",
+          "project_key": "OPS"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "OPS",
+          "summary": "Przegląd planu odtwarzania po awarii",
+          "issue_type": "Task",
+          "assignee": "Wojciech Michalak"
+        }
+      },
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "OPS"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "15"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "83",
+          "issue_keys": "OPS-41"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "OPS-41",
+          "body": "Proszę o uwagi do piątku."
+        }
+      }
+    ],
+    "answer": "Założono OPS-41 dla Wojciecha Michalaka w sprincie OPS Sprint 32 i dodano komentarz."
+  },
+  {
+    "id": "test-195",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = OPS AND summary ~ \"ingress\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "OPS-12"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "OPS-12",
+          "transition_id": "31"
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "OPS-12",
+          "time_spent": "1h"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "OPS-12",
+          "body": "increased worker connections"
+        }
+      }
+    ],
+    "answer": "OPS-12 ma status In review, zalogowano 1h i dodano komentarz."
+  },
+  {
+    "id": "test-196",
+    "calls": [],
+    "answer": "ODMOWA: nie mam narzędzia do restartu klastra. Mogę założyć zgłoszenie w tej sprawie."
+  },
+  {
+    "id": "test-197",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Sebastian",
+          "project_key": "OPS"
+        }
+      }
+    ],
+    "answer": "ODMOWA: nie znalazłem w projekcie aktywnej osoby o imieniu Sebastian."
+  },
+  {
+    "id": "test-198",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Aleksandra",
+          "project_key": "OPS"
+        }
+      }
+    ],
+    "answer": "ODMOWA: w projekcie są dwie osoby o imieniu Aleksandra: Aleksandra Rutkowska i Aleksandra Lewicka. Proszę napisać, o którą chodzi."
+  },
+  {
+    "id": "test-199",
+    "calls": [
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = OPS AND summary ~ \"backup\"",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "ODMOWA: pasuje kilka zgłoszeń: OPS-38, OPS-6. Napisz, o które chodzi."
+  },
+  {
+    "id": "test-200",
+    "calls": [],
+    "answer": "ODMOWA: pomagam tylko w pracy z Jirą tego projektu."
+  }
+]

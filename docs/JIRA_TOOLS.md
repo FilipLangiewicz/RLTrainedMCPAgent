@@ -121,6 +121,14 @@ A translated name is now an error of the model. `status = "W toku"` returns an e
 ### Other facts
 
 - `jira_search` always returns `"total": -1`. The search API of Jira Cloud does not give the number of results.
+- `sprint in openSprints()` finds only issues in the active sprint. `sprint in futureSprints()` finds the issues in future sprints.
+- `summary ~` and `text ~` find whole words. Polish forms do not match: `summary ~ "zadania"` does not find "Zadanie 1".
+- Without `ORDER BY`, the search result starts with the highest key.
+- The status category of `Cancelled` on this site is `In Progress`. Thus `statusCategory != Done` also finds the `Cancelled` issues.
+- `assignee` in `jira_update_issue` works only with the full display name or the e-mail. The comparison ignores case and Polish letters: "rudolf igor" and "Robert Malysz" operate. A first name only ("Rudolf") gives the error "Could not find account ID for user". The server does a second search, but on Jira Cloud this search gets the error 400, because it does not give a project.
+- `jira_search_assignable_users` finds a person when a word of the display name starts with the query ("Rud" finds "Rudolf Igor").
+- The server puts the query of `jira_search_assignable_users` into the URL without encoding, so `+` is a space. The query "user+anna" found all six persons with "user" in the name. Thus one word of the query is sufficient for a match.
+- The results show the labels of an issue in alphabetical order.
 - A JQL without a condition (for example `ORDER BY created DESC`) gives the error "Unbounded JQL queries are not allowed here. Please add a search restriction to your query.".
 - `jira_create_issue` with an unknown `assignee` creates the issue without an assignee. The result shows no error.
 - `jira_add_worklog` with an incorrect `time_spent` (for example "półtorej godziny") logs `1m`. The result shows no error.
@@ -129,6 +137,25 @@ A translated name is now an error of the model. `status = "W toku"` returns an e
 - The server changes Markdown to the Jira format and back. The result of `jira_create_issue` and `jira_update_issue` shows the Jira wiki format (`*bold*`). `jira_get_issue` shows Markdown (`**bold**`). `jira_search` and `jira_add_comment` lose the format (bold text goes onto a separate line).
 - The dates in the results use the time zone of the computer that runs the server. On Windows with the Polish language, a date is `2026-11-02 23:55:34 Środkowoeuropejski czas stand.`. The dates of comments and worklogs have the ISO format (`2026-11-03 21:01:02.367000+01:00`).
 - The default value of `fields` in the schemas of `jira_search` and `jira_get_issue` has a different order of fields after each start of the server. The server makes it from a Python set.
+
+## Behavior of the simulator without a recording
+
+The recording does not show these cases. The simulator uses the rules in this table. A new recording can correct them.
+
+| Case | Rule of the simulator |
+|---|---|
+| Unknown issue in `jira_get_transitions`, `jira_get_worklog`, `jira_transition_issue` | The message of `jira_get_issue`: `Issue <key> not found. Verify the issue key and project access.` |
+| Unknown issue in `jira_add_worklog` | `Error adding worklog: Issue does not exist or you do not have permission to see it.` |
+| Closed sprint in `jira_add_issues_to_sprint` | `Sprint with id <id> is closed. Issues cannot be added to a closed sprint.` |
+| Unknown board in `jira_get_sprints_from_board` | `The requested board cannot be viewed because it either does not exist or you do not have permission to view it.` |
+| Argument that the schema does not allow | `Input validation error: <message of the schema check>` |
+| `null` value of an optional argument | The simulator ignores the argument. |
+| Number for a text argument, for example `transition_id: 51` | The simulator changes the number to a text. |
+| Unknown field in `fields` of `jira_update_issue` | The simulator ignores the field. |
+| `status` in `fields` of `jira_update_issue` | The simulator sets the status. The project uses `jira_transition_issue` for this operation. |
+| `comments` in `jira_get_issue` | The result has the first `comment_limit` comments, also when `fields` does not name them. |
+
+The contract test (`tests/test_tools.py`) runs the 43 recorded calls on a copy of the site. It has three exceptions, each with a reason in the test.
 
 ## Candidates for more tools
 
