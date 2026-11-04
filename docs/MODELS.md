@@ -40,3 +40,44 @@ The estimate is for local use with a Q4 quantization, a context of 32k tokens, a
 | Gemma 4 E4B | Native tool calls. Tau2 42.2. Official `transformers` and GGUF variations exist on Kaggle. |
 
 The benchmark values come from the model cards. Each family uses a different benchmark setup. Thus compare the values only in one family.
+
+## Config of a run
+
+The config of a run is the file `jobs/runs/<folder>/<codename>.yaml`. `metrics.json` records the full config, the model data (`backend`, `family`, `path`, `revision`, `thinking`) and the version and the SHA-256 of the system prompt.
+
+```yaml
+model:
+  backend: transformers   # transformers | openai | scripted
+  family: qwen3.5         # qwen3.5 | gemma4 | bielik
+  path: /kaggle/input/... # folder with the weights, or a Hugging Face id
+  revision: <commit>      # recorded; used with a Hugging Face id
+  thinking: false
+  dtype: bfloat16
+  max_new_tokens: 1024
+agent:
+  prompt: v2              # prompts/system-v2.md
+  max_steps: 25
+tasks:
+  split: test
+  limit: null
+```
+
+| Key | Default | Meaning |
+|---|---|---|
+| `model.backend` | (required) | `transformers` runs the weights. `openai` sends the messages to an OpenAI-compatible API. `scripted` gives fixed outputs for the tests. |
+| `model.family` | (required, except for `openai`) | The chat format and the tool-call parser. |
+| `model.path` | (required) | A folder loads with `local_files_only=True`, so a Kaggle job with attached weights needs no internet. For `openai`, the model name. |
+| `model.revision` | none | The commit of the weights on Hugging Face. |
+| `model.thinking` | `false` | The thinking mode. `bielik` has no thinking mode, so `true` stops the run. |
+| `model.dtype`, `model.max_new_tokens`, `model.device` | `bfloat16`, `1024`, auto | Settings of `transformers`. |
+| `model.base_url`, `model.api_key_env` | none, `OPENAI_API_KEY` | Settings of `openai`. The key comes only from the environment or `.env`. |
+| `agent.prompt` | `v2` | The version of `prompts/system-<version>.md`. |
+| `agent.max_steps` | `25` | The step limit of the agent loop. |
+
+An unknown backend, an unknown family, thinking for `bielik` or a missing prompt file stops the run before the first task.
+
+| Family | Tool-call format | Thinking |
+|---|---|---|
+| `qwen3.5` | `<tool_call><function=name><parameter=arg>value</parameter></function></tool_call>` (chat template) | `enable_thinking`; the text before `</think>` goes into the trajectory |
+| `gemma4` | `<\|tool_call>call:name{arg:value}<tool_call\|>` (chat template) | `enable_thinking`; the text in `<\|channel>thought ... <channel\|>` goes into the trajectory |
+| `bielik` | `<tool_call>{"name": ..., "arguments": {...}}</tool_call>`; `prompts/tools-bielik-v1.md` adds the tools to the system prompt | none |

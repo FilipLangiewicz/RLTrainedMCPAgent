@@ -198,3 +198,21 @@
 - The download of the weights and the runs of real models are out of scope of the change.
 - Add the design decisions D14 (model layer) and D15 (thinking in the config). Add the task groups "Model layer and prompts" and "Agent and evaluation".
 - `openspec validate e1-jira-tasks --strict` passes.
+
+### Implementation of the OpenSpec change `e1-jira-tasks`
+
+- `src/environment.py`: the board file in the Jira format, the fixed values of the Jira Cloud site, the operations with the fixed clock, the person rules and `diff()` in the format of `expected.json`.
+- `src/jql.py` (new): the JQL subset of design D8 with the semantics of the site.
+- `src/tools.py`: a low-level MCP server with the 14 tools of `data/mcp_atlassian_tools.json`. It has the result formats and the error messages of the real server. A failed call does not change the board.
+- `src/verifier.py`: the comparison with the expected changes as multisets, the grade of `query` tasks and the answer types. A person name in a Polish case form is correct ("Ewy Mazur").
+- `src/tasks.py`: the loader of the three task files and its checks. The old task generator is removed.
+- `src/models.py` (new): the model layer with the families `qwen3.5`, `gemma4` and `bielik`, and the backends `transformers`, `openai` and `scripted`. The parsers of Qwen3.5 and Gemma 4 agree with the chat templates of the models.
+- `prompts/system-v2.md` and `prompts/tools-bielik-v1.md` (new). The run records the version and the SHA-256 of the prompt.
+- `src/agent.py`: only the loop and the trajectory. The default step limit is 25. The thinking text goes into the trajectory.
+- `src/evaluate.py`: the new loader, the model layer and the prompt file. `metrics.json` records the model data and the prompt. Each line of `results.jsonl` has the author and the board.
+- All 200 reference solutions get `correct` or `correct_refusal` on the simulator. No data file changed.
+- The contract test runs the 43 recorded calls. It has three exceptions with reasons: the site issues have no priority, the site project has no type `Bug`, and the site has custom fields.
+- The recording showed two rules that are new in `docs/JIRA_TOOLS.md`: the user search accepts one word of the query, and the results show the labels in alphabetical order.
+- Decision: in a `missing_entity` refusal task, a read call of the reference solution can give an error (`test-078` reads `APP-140`). The spec of the change has this exception now.
+- `docs/MODELS.md` has the keys of the run config.
+- Tests: 197 pass, 1 is skipped (the checksum test, until the freeze of the test set).

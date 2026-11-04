@@ -24,11 +24,16 @@ The task files of a split SHALL be `data/tasks/<split>/queries.json`, `solutions
 - **THEN** the result is an empty list and there is no error
 
 ### Requirement: Expected changes from the reference solution
-A test SHALL apply the reference calls of each task to a new copy of its board with the simulator tools. For a change category, the difference of the board SHALL be equal to the expected changes. For `query` and `refusal`, the board SHALL not change. No reference call SHALL give an error.
+A test SHALL apply the reference calls of each task to a new copy of its board with the simulator tools. For a change category, the difference of the board SHALL be equal to the expected changes. For `query` and `refusal`, the board SHALL not change. No reference call SHALL give an error, with one exception. In a refusal task of the kind `missing_entity`, a read call can give an error, because the error shows that the entity does not exist.
 
 #### Scenario: Correct reference solution
 - **WHEN** the test applies the reference calls of a task and the verifier grades the result with the reference answer
 - **THEN** the grade is `correct` or `correct_refusal`
+
+#### Scenario: Read of an issue that does not exist
+- **WHEN** the reference calls of a `missing_entity` task read the issue `APP-140` and this issue does not exist
+- **THEN** the read call gives an error and the test accepts it
+- **AND** the board does not change
 
 ### Requirement: Mix of difficulties
 The test set SHALL have at least 150 tasks. At least 30% of them SHALL be `easy`, at least 40% SHALL be `multi_step`, and at least 10% SHALL be `refusal`. The refusal tasks SHALL include the four refusal kinds.

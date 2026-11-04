@@ -23,7 +23,7 @@ flowchart LR
     V --> G["correct / incorrect / correct_refusal"]
 ```
 
-The data comes first. The code of the simulator and of the verifier comes later, in a separate OpenSpec change. A test of that change runs each reference solution on the simulator and compares the result with `expected.json`. Thus the test checks the simulator and the data together.
+The data comes first. The OpenSpec change `e1-jira-tasks` added the code of the simulator and of the verifier. A test runs each reference solution on the simulator and compares the result with `expected.json`. Thus the test checks the simulator and the data together.
 
 ## Company
 
@@ -149,7 +149,7 @@ All files are in `data/tasks/test/`. The field `id` connects the files.
 | `expected.json` | `id`, `board`, `category`, `difficulty`, and the expected result | the verifier |
 | `personas.json` | the authors and their styles | the team |
 
-The old file `tasks.jsonl` belongs to the old simulator. The OpenSpec change of the new simulator removes it.
+`src/tasks.py` loads the three task files of a split and checks them. A missing file, an unknown board, an unknown author or a value that is not allowed stops the load with an error that names the task id. A split without task files (for example `train` now) loads as an empty list.
 
 ### Expected result
 
@@ -178,8 +178,8 @@ Types of an answer:
 |---|---|---|
 | `keys` | list of issue keys | The answer names exactly these keys. |
 | `number` | integer | The answer contains this number as digits. |
-| `person` | display name | The answer contains the display name, or the first name when no other person of the board has it. |
-| `time` | seconds | The answer contains a time with this value, for example "7h 30m" or "7,5 h". |
+| `person` | display name | The answer contains the display name, or the first name when no other person of the board has it. A Polish case form is correct, for example "Ewy Mazur" for Ewa Mazur. |
+| `time` | seconds | One time in the answer has this value. The verifier reads "7h 30m", "7,5 h", "8 godzin", "450 minut" and "7 godzin i 30 minut". |
 | `value` | text | The answer contains this value, for example a status or a priority. |
 
 ## Facts of real Jira in the data
@@ -192,6 +192,12 @@ We checked these facts on the Jira Cloud site:
 - `jira_create_issue` with an unknown assignee creates the issue without an assignee and reports success.
 
 Thus some reference solutions use `status in (Backlog, "In Progress", "In review")` for "otwarte", and not `statusCategory != Done`. The second form also finds the `Cancelled` issues.
+
+## Test of the reference solutions
+
+`tests/test_tasks.py` applies the reference calls of each task to a new copy of its board with the simulator. Then the verifier grades the result with the reference answer. Each of the 200 tasks gets `correct` or `correct_refusal`.
+
+No reference call gives an error, with one exception. In a refusal task of the kind `missing_entity`, a read call can give an error, because the error shows that the entity does not exist. Example: `test-078` reads `APP-140`, and this issue does not exist.
 
 ## Review
 
