@@ -165,3 +165,11 @@
 - `openspec validate e1-jira-tasks --strict` passes.
 - Check on the Jira Cloud site how the server finds a person. `assignee` needs the full name or the e-mail. Case and Polish letters do not matter. A first name only gives an error. Add this to `docs/JIRA_TOOLS.md`.
 - The team set the display names of the 6 invited accounts: Rudolf Igor, Katarzyna Wisniewska, John Pork, Robert Małysz, Daria Wasilewska and Barbara Liskov.
+
+## 2026-11-05
+
+### Removal of the old data
+
+- Remove the old boards (`data/environments/test-0*.json`, `train-*.json`) and the old task files (`data/tasks/*/tasks.jsonl`).
+- Remove `tests/test_tasks.py` and `tests/test_evaluate.py`. They read the old files. The OpenSpec change `e1-jira-tasks` writes new tests for the loader and the evaluation.
+- The old code in `src/` stays until the implementation of `e1-jira-tasks`. 81 tests pass.
