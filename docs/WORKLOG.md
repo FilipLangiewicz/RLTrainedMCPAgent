@@ -216,3 +216,9 @@
 - Decision: in a `missing_entity` refusal task, a read call of the reference solution can give an error (`test-078` reads `APP-140`). The spec of the change has this exception now.
 - `docs/MODELS.md` has the keys of the run config.
 - Tests: 197 pass, 1 is skipped (the checksum test, until the freeze of the test set).
+
+### Archive of the OpenSpec change `e1-jira-tasks`
+
+- Merge the delta specs into `openspec/specs/`. The new main spec `model-layer` has 6 requirements.
+- Move the change to `openspec/changes/archive/`.
+- The team did not review or freeze the test set yet. The checksum test stays skipped until the freeze.

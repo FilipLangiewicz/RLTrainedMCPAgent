@@ -7,42 +7,67 @@ The environment tools give the operations of one environment to a model through 
 ## Requirements
 
 ### Requirement: Tool list
-The MCP server SHALL give these seven tools for one board: `list_users`, `list_sprints`, `search_issues`, `get_issue`, `create_issue`, `update_issue`, `add_comment`. Each tool SHALL have a description and a JSON schema of its arguments.
+The MCP server SHALL give the 14 tools of `data/mcp_atlassian_tools.json` for one board. Each tool SHALL have the same name, description and argument schema as in this file, without a change. The server SHALL give no other tools.
 
 #### Scenario: List of tools
 - **WHEN** an MCP client asks the server for its tools
-- **THEN** the client gets the seven tools, each with a description and an argument schema
+- **THEN** the client gets 14 tools
+- **AND** the name, the description and the argument schema of each tool are equal to the values in `data/mcp_atlassian_tools.json`
 
 ### Requirement: Read tools
-`list_users` SHALL return the id and the display name of each person. `list_sprints` SHALL return the id, the name and the state of each sprint. `search_issues` SHALL take the filters of the environment search as optional arguments and return a short form of each found issue: key, title, type, status, priority, assignee, labels, sprint. `get_issue` SHALL return all fields of one issue, with its comments.
+The read tools SHALL return the keys and the formats of the real server in `data/jira_recorded_results.json`: the search, one issue with its comments, the assignable persons, the agile boards, the sprints of a board, the transitions of an issue and the worklogs of an issue. A read tool SHALL not change the board.
 
 #### Scenario: Search without filters
-- **WHEN** the model calls `search_issues` without arguments
-- **THEN** the tool returns the short form of all issues of the board
+- **WHEN** the model searches with `project = WEB` and a limit of 10
+- **THEN** the result has the keys `total`, `start_at`, `max_results` and `issues`
+- **AND** `total` is `-1` and `issues` has 10 issues
 
 #### Scenario: Full issue
-- **WHEN** the model calls `get_issue` with the key `WEB-7`
-- **THEN** the tool returns all fields and comments of `WEB-7`
+- **WHEN** the model reads the issue `WEB-6` with the argument `comment_limit`
+- **THEN** the result has the fields of the issue and its comments
+- **AND** an issue without an assignee has `"assignee": {"display_name": "Unassigned"}`
+
+#### Scenario: Transitions
+- **WHEN** the model asks for the transitions of an issue
+- **THEN** the result is a list of five objects with a number `id` and a `name`
+
+#### Scenario: Assignable persons
+- **WHEN** the model searches the assignable persons with the query `Ann`
+- **THEN** the result has each active person with a word of the display name that starts with "Ann"
 
 ### Requirement: Write tools
-`create_issue` SHALL take a title and a type, and optionally a description, a priority, an assignee, labels and a sprint. It SHALL return the key of the new issue. `update_issue` SHALL take a key and one or more of: title, description, type, status, priority, assignee, sprint, labels to add, labels to remove. `add_comment` SHALL take a key and a text. An assignee or a sprint argument SHALL accept the value `none` to clear the field.
+The write tools SHALL create an issue, change the fields of an issue (the `fields` argument is a JSON text), do a transition, add a comment, add a worklog, put issues into a sprint and move issues to the backlog. A list of keys SHALL be one text with commas. Each write tool SHALL return the message and the keys of the real server.
 
 #### Scenario: Two fields in one call
-- **WHEN** the model calls `update_issue` with the key `WEB-3`, the status `in_progress` and the assignee `u2`
-- **THEN** both fields of `WEB-3` change
-- **AND** the tool returns the updated short form of `WEB-3`
+- **WHEN** the model changes `WEB-7` with `{"assignee": "Ewa Mazur", "priority": {"name": "Highest"}}`
+- **THEN** both fields of `WEB-7` change
+- **AND** the result starts with the message "Issue updated successfully"
 
 #### Scenario: Move to backlog
-- **WHEN** the model calls `update_issue` with the key `WEB-3` and the sprint `none`
-- **THEN** `WEB-3` has no sprint
+- **WHEN** the model moves `"WEB-14"` to the backlog
+- **THEN** `WEB-14` has no sprint
+- **AND** the result is "Successfully moved 1 issue(s) to backlog"
+
+#### Scenario: Labels replace the old list
+- **WHEN** the model changes the issue `WEB-14` with `{"labels": ["frontend"]}` and `WEB-14` had the label `ui`
+- **THEN** `WEB-14` has only the label `frontend`
+
+#### Scenario: Two issues to a sprint
+- **WHEN** the model puts `"WEB-1,WEB-2"` into the sprint `42`
+- **THEN** both issues are in the sprint `42`
+- **AND** the result is "Successfully added 2 issue(s) to sprint"
 
 ### Requirement: Tool errors
-A tool call with a wrong argument SHALL return an MCP error result with a message that tells the model the cause. The error SHALL not stop the server. The board SHALL not change after a failed call.
+A tool call with a wrong argument SHALL return an MCP error result with the message of the real server. The error SHALL not stop the server. The board SHALL not change after a failed call.
 
 #### Scenario: Unknown key
-- **WHEN** the model calls `get_issue` with a key that does not exist
-- **THEN** the result is an error with a message that names the key
+- **WHEN** the model reads the issue `WEB-999` and it does not exist
+- **THEN** the result is the error "Issue WEB-999 not found. Verify the issue key and project access."
 - **AND** the next tool call operates normally
+
+#### Scenario: Search without a condition
+- **WHEN** the model searches with `ORDER BY created DESC`
+- **THEN** the result is the error "Unbounded JQL queries are not allowed here. Please add a search restriction to your query."
 
 ### Requirement: One board for each server
 Each server instance SHALL operate on one board that the caller gives. Two server instances SHALL not share a board.
@@ -57,3 +82,35 @@ The MCP server SHALL also start as a stand-alone process with the stdio transpor
 #### Scenario: Start from the command line
 - **WHEN** a user starts the server with a board file
 - **THEN** an external MCP client can connect over stdio and list the tools
+
+### Requirement: Person in a change
+A person in the `assignee` argument SHALL be a full display name, an e-mail or an account id. The comparison of a name or an e-mail SHALL ignore case and Polish letters. A first name only, a part of a name or a person who is not active SHALL give an error in the update tool.
+
+#### Scenario: Name without Polish letters
+- **WHEN** the model changes an issue with `{"assignee": "lukasz ostrowski"}` and the board has the person Łukasz Ostrowski
+- **THEN** the assignee of the issue is Łukasz Ostrowski
+
+#### Scenario: First name only
+- **WHEN** the model changes an issue with `{"assignee": "Ewa"}`
+- **THEN** the result is an error that contains "Could not find account ID for user: Ewa"
+- **AND** the board does not change
+
+### Requirement: Hidden errors of real Jira
+The tools SHALL copy the errors that the real server does not show. The create tool with an unknown assignee SHALL create the issue without an assignee and report success. The worklog tool with a time that it cannot read SHALL log one minute and report success.
+
+#### Scenario: Unknown assignee in a new issue
+- **WHEN** the model creates an issue with the assignee "Ewa"
+- **THEN** the result is "Issue created successfully"
+- **AND** the new issue has no assignee
+
+#### Scenario: Time in words
+- **WHEN** the model adds a worklog with the time "półtorej godziny"
+- **THEN** the result is "Worklog added successfully"
+- **AND** the worklog has 60 seconds
+
+### Requirement: Contract test
+A test SHALL run the calls of `data/jira_recorded_results.json` on a board with the content of the Jira Cloud site at the time of the recording. For each call, the error flag, the keys of the result and the messages SHALL be equal to the recorded values. The test SHALL ignore ids, dates, URLs, avatars and the order of keys.
+
+#### Scenario: Recorded call
+- **WHEN** the contract test runs the recorded call of the transition tool with the id `999`
+- **THEN** the simulator gives an error with the same message as the recorded result
