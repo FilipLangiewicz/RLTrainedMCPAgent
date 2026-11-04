@@ -17,7 +17,7 @@
   {
     "id": "test-004",
     "author": "Rudolf Igor",
-    "instruction": "Co z płatności jest jeszcze nieskończone w bieżącym sprincie? Wypisz mi to, bo na daily wszyscy patrzyli na mnie jak na kogoś, kto nie wie. A ja wiem. Prawie."
+    "instruction": "Co z płatności jest jeszcze nieskończone w bieżącym sprincie? Wypisz mi to, bo na daily wszyscy patrzyli na mnie jak na kogoś, kto nie wie, a raczej nie chcę, żeby tak myśleli."
   },
   {
     "id": "test-005",
@@ -27,7 +27,7 @@
   {
     "id": "test-006",
     "author": "Zofia Kaczmarek",
-    "instruction": "Klientka pyta, kiedy naprawimy zdjęcia butów, które są rozmyte na iPhonie. Kto się tym u nas zajmuje? Chciałabym jej coś konkretnego odpisać."
+    "instruction": "Klientka pyta, kiedy naprawimy zdjęcia butów, które są rozmyte na iPhonie. Kto się tym u nas zajmuje?"
   },
   {
     "id": "test-007",
@@ -52,7 +52,7 @@
   {
     "id": "test-011",
     "author": "Daniel Brooks",
-    "instruction": "ten bug z literówką w stopce - dorzuć label frontend, thx"
+    "instruction": "do tego buga z literówką w stopce dorzuć label frontend, thx"
   },
   {
     "id": "test-012",
@@ -72,7 +72,7 @@
   {
     "id": "test-015",
     "author": "Rudolf Igor",
-    "instruction": "Napiszcie w WEB-24 komentarz: Czekamy na odpowiedź operatora płatności. Ja bym do nich zadzwonił, ale ostatnio przez telefon słyszę jakieś echo i wolę nie ryzykować."
+    "instruction": "Napiszcie w WEB-24 komentarz: Czekamy na odpowiedź operatora płatności. Ogólnie to ja bym do nich zadzwonił, ale trochę się boję."
   },
   {
     "id": "test-016",
@@ -87,7 +87,7 @@
   {
     "id": "test-018",
     "author": "Ewa Mazur",
-    "instruction": "Proszę założyć bug: Kalkulator rat pokazuje złą kwotę dla koszyka powyżej 5000 zł. Priorytet High."
+    "instruction": "Proszę założyć nowe zgłoszenie typu bug: Kalkulator rat pokazuje złą kwotę dla koszyka powyżej 5000 zł. Priorytet High."
   },
   {
     "id": "test-019",
@@ -102,7 +102,7 @@
   {
     "id": "test-021",
     "author": "Rudolf Igor",
-    "instruction": "Załóżcie story: Program JayWalk Club - punkty za każdą parę butów. I od razu do następnego sprintu. Mówię to głośno, żeby nikt potem nie twierdził, że to był jego pomysł."
+    "instruction": "Załóż story: Program JayWalk Club - punkty za każdą parę butów. I od razu daj je do następnego sprintu."
   },
   {
     "id": "test-022",
@@ -132,7 +132,7 @@
   {
     "id": "test-027",
     "author": "Rudolf Igor",
-    "instruction": "To zadanie z dark mode dla panelu klienta wrzućcie do sprintu 17. Ciemny motyw lubię, bo w ciemności nikt mnie nie widzi przez okno."
+    "instruction": "To zadanie z dark mode dla panelu klienta wrzućcie do sprintu 17. Ciemny motyw lubię."
   },
   {
     "id": "test-028",
@@ -142,7 +142,7 @@
   {
     "id": "test-029",
     "author": "Rudolf Igor",
-    "instruction": "Wszystkie otwarte bugi z checkoutu dostają priorytet High. Mówię to spokojnie, choć w nocy śniło mi się, że koszyk się na mnie obraził."
+    "instruction": "Wszystkie otwarte bugi z checkoutu mają natychmiast dostać priorytet High. Jak najszybciej, szybko!"
   },
   {
     "id": "test-030",
@@ -197,12 +197,12 @@
   {
     "id": "test-040",
     "author": "Rudolf Igor",
-    "instruction": "Napisz mi przemówienie na urodziny prezesa. Krótkie, bo prezes ostatnio ziewa, kiedy mówię."
+    "instruction": "Napisz mi przemówienie na urodziny prezesa. Krótkie, bo ostatnio średnio go interesuje, co ja do niego mówię."
   },
   {
     "id": "test-041",
     "author": "Marta Pawlak",
-    "instruction": "Status APP-7? Potrzebuję przed release."
+    "instruction": "Jaki jest status APP-7? Potrzebuję przed release."
   },
   {
     "id": "test-042",
@@ -232,7 +232,7 @@
   {
     "id": "test-047",
     "author": "Marta Pawlak",
-    "instruction": "APP-24 na Highest."
+    "instruction": "Zmień APP-24 na Highest."
   },
   {
     "id": "test-048",
@@ -517,7 +517,7 @@
   {
     "id": "test-104",
     "author": "Tomasz Baran",
-    "instruction": "API-14 do backlogu. Literówki poczekają, mamy limity zapytań."
+    "instruction": "Przenieś API-14 do backlogu. Literówki poczekają, mamy limity zapytań."
   },
   {
     "id": "test-105",
@@ -542,12 +542,12 @@
   {
     "id": "test-109",
     "author": "Tomasz Baran",
-    "instruction": "Wszystkie otwarte bugi z labelem auth dostają priorytet Highest. To ryzyko bezpieczeństwa."
+    "instruction": "Wszystkie otwarte bugi z labelem auth dostają priorytet Highest. To zagrożenie dla bezpieczeństwa."
   },
   {
     "id": "test-110",
     "author": "Oliver Hayes",
-    "instruction": "all open webhook tickets - dodaj label partner-impact"
+    "instruction": "dodaj label partner-impact do wszystkich otwartych webhook tickets"
   },
   {
     "id": "test-111",
@@ -562,7 +562,7 @@
   {
     "id": "test-113",
     "author": "Oliver Hayes",
-    "instruction": "refresh token bug: przypisz go Tomkowi Baranowi, status In Progress i komentarz: please check the rotation flow"
+    "instruction": "przypisz Tomkowi Baranowi refresh token bug - status In Progress i komentarz: please check the rotation flow"
   },
   {
     "id": "test-114",
@@ -637,7 +637,7 @@
   {
     "id": "test-128",
     "author": "Igor Kwiatkowski",
-    "instruction": "DATA-24 highest"
+    "instruction": "Ustaw priorytet DATA-24 na highest"
   },
   {
     "id": "test-129",
@@ -652,7 +652,7 @@
   {
     "id": "test-131",
     "author": "Igor Kwiatkowski",
-    "instruction": "literówka w wykresie -> done"
+    "instruction": "literówka w wykresie -> zaznacz jako done"
   },
   {
     "id": "test-132",
@@ -662,7 +662,7 @@
   {
     "id": "test-133",
     "author": "Igor Kwiatkowski",
-    "instruction": "DATA-24 log 2h, opis: debug schedulera"
+    "instruction": "Zaloguj 2h do DATA-24, w opisie napisz: debug schedulera"
   },
   {
     "id": "test-134",
@@ -682,7 +682,7 @@
   {
     "id": "test-137",
     "author": "Priya Raman",
-    "instruction": "Czy możesz zalogować 1h 20m na bugu z walutą sprzedaży z marketplace'ów i dodać komentarz: exchange rates come from the wrong day? Thanks!"
+    "instruction": "Czy możesz zalogować 1h 20m na issue z bugiem z walutą sprzedaży z marketplace'ów i dodać komentarz: exchange rates come from the wrong day? Thanks!"
   },
   {
     "id": "test-138",
@@ -692,7 +692,7 @@
   {
     "id": "test-139",
     "author": "Igor Kwiatkowski",
-    "instruction": "nowy bug: Brak danych z kasy w sklepie w Poznaniu"
+    "instruction": "nowy bug: Brak danych z kasy w sklepie w Poznaniu - stwórz issue"
   },
   {
     "id": "test-140",
@@ -707,7 +707,7 @@
   {
     "id": "test-142",
     "author": "Igor Kwiatkowski",
-    "instruction": "bug: Job ETL zwrotów nie startuje po zmianie czasu, highest, dla Łukasza"
+    "instruction": "bug: Job ETL zwrotów nie startuje po zmianie czasu - stwórz issue, daj priorytet highest i przypisz Łukaszowi"
   },
   {
     "id": "test-143",
@@ -717,7 +717,7 @@
   {
     "id": "test-144",
     "author": "Igor Kwiatkowski",
-    "instruction": "DATA-14 do backlogu"
+    "instruction": "przenieś DATA-14 do backlogu"
   },
   {
     "id": "test-145",
@@ -732,7 +732,7 @@
   {
     "id": "test-147",
     "author": "Igor Kwiatkowski",
-    "instruction": "zadanie z partycjonowaniem fact_sales do sprintu 7"
+    "instruction": "przenieś zadanie z partycjonowaniem fact_sales do sprintu 7"
   },
   {
     "id": "test-148",
@@ -757,7 +757,7 @@
   {
     "id": "test-152",
     "author": "Igor Kwiatkowski",
-    "instruction": "DATA-12 gotowe: done, log 1h, koment: dodany indeks na sku"
+    "instruction": "DATA-12 gotowe: zmień status na done, zaloguj 1h, skomentuj: dodany indeks na sku"
   },
   {
     "id": "test-153",
@@ -812,7 +812,7 @@
   {
     "id": "test-163",
     "author": "Ethan Cole",
-    "instruction": "jaki priority ma OPS-9? chcę wiedzieć, czy to blocker na on-call"
+    "instruction": "jaki priority ma OPS-9? chcę wiedzieć, czy to blocker"
   },
   {
     "id": "test-164",
@@ -832,12 +832,12 @@
   {
     "id": "test-167",
     "author": "Karolina Bielecka",
-    "instruction": "OPS-7 na HIGHEST. Natychmiast!"
+    "instruction": "ustaw OPS-7 na HIGHEST. Natychmiast!"
   },
   {
     "id": "test-168",
     "author": "Ethan Cole",
-    "instruction": "OPS-9 z powrotem do in progress, robię fix"
+    "instruction": "ustaw OPS-9 z powrotem do in progress, robię fix"
   },
   {
     "id": "test-169",
@@ -852,7 +852,7 @@
   {
     "id": "test-171",
     "author": "Ethan Cole",
-    "instruction": "ten bug z podami ingress - add label black-week"
+    "instruction": "ten bug z podami ingress - dodaj label black-week"
   },
   {
     "id": "test-172",
@@ -887,7 +887,7 @@
   {
     "id": "test-178",
     "author": "Karolina Bielecka",
-    "instruction": "Bug: Sklep zwraca 503 przy 5000 użytkowników. Highest!"
+    "instruction": "Bug: Sklep zwraca 503 przy 5000 użytkowników. Stwórz issue z priority Highest!"
   },
   {
     "id": "test-179",
@@ -932,7 +932,7 @@
   {
     "id": "test-187",
     "author": "Ethan Cole",
-    "instruction": "all cost tickets bez sprintu -> next sprint"
+    "instruction": "all cost tickets bez sprintu -> przenosimy do next sprint"
   },
   {
     "id": "test-188",

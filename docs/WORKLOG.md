@@ -222,3 +222,14 @@
 - Merge the delta specs into `openspec/specs/`. The new main spec `model-layer` has 6 requirements.
 - Move the change to `openspec/changes/archive/`.
 - The team did not review or freeze the test set yet. The checksum test stays skipped until the freeze.
+
+## 2026-11-05
+
+### Review of the test set
+
+- The team wrote 31 corrections of instructions as comments on the commit `bb7bd91` (`data/tasks/test/queries.json`).
+- Apply 30 corrections to `queries.json`. The corrections make the requests clearer ("Zmień APP-24 na Highest.") or remove the strange remarks of the author Rudolf Igor. The expected result of each task does not change.
+- Do not apply the correction of `test-115`. The new text "Stwórz issue - ..." asks for a new issue, but the task changes the existing issue `API-24`. The team kept the old text.
+- `solutions.json` and `expected.json` do not change.
+- Check: the evaluation with the reference calls gives the score 1.0 on all 200 tasks. The only tool error is the intended read of `APP-140` in `test-078`.
+- The test set is not frozen yet.
