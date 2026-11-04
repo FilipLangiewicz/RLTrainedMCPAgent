@@ -2,7 +2,7 @@
 
 This file describes the task set: the boards, the tasks, the files and the rules for the review. The team uses it for the review of the data and for the report.
 
-Status on 2026-11-03: the test set (200 tasks) exists. It is not frozen yet. The train set does not exist yet.
+Status on 2026-11-05: the test set (200 tasks) is frozen. `tests/test_tasks.py` compares the task files and the 5 test boards with stored checksums. The train set does not exist yet.
 
 ## Flow
 

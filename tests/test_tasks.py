@@ -178,8 +178,17 @@ def test_reference_solutions(tasks):
 
 # Frozen test set
 
-# The checksums go here at the freeze of the test set (E1).
-FROZEN: dict[str, str] = {}
+# The test set was frozen on 2026-11-05. A change of these files needs a new run of all variants.
+FROZEN: dict[str, str] = {
+    "tasks/test/queries.json": "b93f77c47ee99eb77a0abbbc9d5fd947c546c8bdbf0f238d651a23a1c35a0ccd",
+    "tasks/test/solutions.json": "743ebc80477915d57a7592874aa10c882283670b915dff4089efbf06c089592f",
+    "tasks/test/expected.json": "d0850f62dafa8f24e169982cab448dcbc2c437a82a55de6a4e2cab10ca700b06",
+    "environments/test-web.json": "194bb74800847c21b1905de7d88ea466d4ce298ef4528b88bdbfa3f6837c4c2e",
+    "environments/test-app.json": "5bc82435043b2d4cfaf361b8736bdc87ddbf4d722fbb1c89784fffe51d2c648d",
+    "environments/test-api.json": "e4755a881b389e69cf43ee1661fe914e4e103c4ece698475e94f3dc9234a73be",
+    "environments/test-data.json": "c3ea7d8710c63d88ca38583aad4db68a8f1968867e0370e5235353d23c7e7253",
+    "environments/test-ops.json": "b0bad77e4ab86dba5afe3f274130ab2f9e249f653b6090feb60cfcdd60a8b891",
+}
 FROZEN_FILES = [f"tasks/test/{n}" for n in ("queries.json", "solutions.json", "expected.json")] + [
     f"environments/test-{b}.json" for b in ("web", "app", "api", "data", "ops")]
 

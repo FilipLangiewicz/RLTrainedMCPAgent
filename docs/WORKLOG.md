@@ -233,3 +233,8 @@
 - `solutions.json` and `expected.json` do not change.
 - Check: the evaluation with the reference calls gives the score 1.0 on all 200 tasks. The only tool error is the intended read of `APP-140` in `test-078`.
 - The test set is not frozen yet.
+
+### Freeze of the test set
+
+- Freeze the test set: `tests/test_tasks.py` has the SHA-256 checksums of `queries.json`, `solutions.json`, `expected.json` and the 5 test boards. The checksums ignore the line ends.
+- From now on, a change of these files needs a new run of all variants (see `AGENTS.md`).
