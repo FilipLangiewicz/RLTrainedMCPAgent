@@ -33,17 +33,24 @@
 - [ ] 5.3 Add the test of the reference solutions (D10). Verify: all 200 tasks give `correct` or `correct_refusal`, and no reference call gives an error. If a task fails because of the data, correct the data file and write the correction into `docs/WORKLOG.md`.
 - [ ] 5.4 Add the checksum test of the frozen test set for the three task files and the 5 boards. Skip it with the reason "test set not frozen yet" until the freeze. Verify: the test is skipped now, and a test with a changed copy shows that the comparison fails.
 
-## 6. Agent and evaluation
+## 6. Model layer and prompts
 
-- [ ] 6.1 Change `src/agent.py`: the prompt `v2` of D12 and the default step limit 25. Verify: the agent tests pass, and a run records the version `v2`.
-- [ ] 6.2 Change `src/evaluate.py` to the new loader and verifier. Add the author to each line of `results.jsonl`. Verify: a test runs the `scripted` backend with the reference calls of 10 test tasks and gets the grade of the reference for each task.
-- [ ] 6.3 Run a smoke test with `Qwen/Qwen3-0.6B` on the CPU for 2 test tasks. Verify: the run ends and writes the three result files. Record the time in `docs/WORKLOG.md`.
+- [ ] 6.1 Create `src/models.py` with the `Model` interface, `ModelOutput`, `make_model(config)` and the `ScriptedModel`. Move the backends out of `src/agent.py`. Verify: tests for `make_model` with each backend name, and errors for an unknown family and an unknown backend.
+- [ ] 6.2 Add the families `qwen3.5`, `gemma4` and `bielik` (render and parse, D14). Read the chat templates of the models for the exact tool-call formats. Verify: parser tests with example outputs of each family (one call, two calls, broken arguments, text without a call, thinking text); render tests run only when the tokenizer files exist.
+- [ ] 6.3 Add the `transformers` backend (local folder with `local_files_only=True`, or a Hugging Face id with a revision) and the `openai` backend. Verify: a test with a fake folder path checks the arguments of the load without a download; a test of the `openai` backend uses a fake client.
+- [ ] 6.4 Add the thinking switch of D15. Verify: tests for the default `false`, `true` for `qwen3.5`, and the error for `bielik` with `true`.
+- [ ] 6.5 Create `prompts/system-v2.md` (D12) and `prompts/tools-bielik-v1.md` (D14), and the load of a prompt by its version. Verify: tests for the default `v2`, the error for an unknown version, and the 14 tool names in the Bielik system prompt.
 
-## 7. Removal and documentation
+## 7. Agent and evaluation
 
-- [ ] 7.1 Remove the old boards (`data/environments/test-0*.json`, `train-*.json`), the old task files (`data/tasks/*/tasks.jsonl`) and the tests of the old simulator. Verify: `git ls-files data` shows only the new files and the two Jira files; all tests pass.
-- [ ] 7.2 Correct `docs/TASKS.md` and `docs/JIRA_TOOLS.md` where the implementation found a difference. Add an entry to `docs/WORKLOG.md` with the changes and the number of tests. Verify: the documents agree with the code (formats, errors, answer types).
+- [ ] 7.1 Change `src/agent.py`: only the loop and the trajectory, the model through the interface of `src/models.py`, the prompt from a file, the default step limit 25. Verify: the agent tests pass with the `scripted` model, and a run records the prompt version and its SHA-256.
+- [ ] 7.2 Change `src/evaluate.py` to the new loader, verifier and model layer. Record the family, the backend, the path, the revision and the thinking mode in `metrics.json`. Add the author to each line of `results.jsonl`. Verify: a new `tests/test_evaluate.py` runs the `scripted` model with the reference calls of 10 test tasks, gets the grade of the reference for each task, and checks the shards and the merge.
 
-## 8. Integration
+## 8. Removal and documentation
 
-- [ ] 8.1 Run all tests with `uv run --no-project python -m pytest` and `openspec validate e1-jira-tasks --strict`. Verify: all tests pass (the checksum test is skipped) and the change is valid.
+- [ ] 8.1 Remove the code of the old simulator and the old generator, and their tests. The old data is already removed. Verify: no test or module imports the old names (`list_users`, `generate_board`, `TEMPLATES`); all tests pass.
+- [ ] 8.2 Correct `docs/TASKS.md` and `docs/JIRA_TOOLS.md` where the implementation found a difference. Add the config keys of a run (D14) to `docs/MODELS.md`. Add an entry to `docs/WORKLOG.md` with the changes and the number of tests. Verify: the documents agree with the code (formats, errors, answer types, config keys).
+
+## 9. Integration
+
+- [ ] 9.1 Run all tests with `uv run --no-project python -m pytest` and `openspec validate e1-jira-tasks --strict`. Verify: all tests pass (the checksum test is skipped) and the change is valid.

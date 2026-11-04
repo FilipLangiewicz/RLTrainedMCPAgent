@@ -173,3 +173,28 @@
 - Remove the old boards (`data/environments/test-0*.json`, `train-*.json`) and the old task files (`data/tasks/*/tasks.jsonl`).
 - Remove `tests/test_tasks.py` and `tests/test_evaluate.py`. They read the old files. The OpenSpec change `e1-jira-tasks` writes new tests for the loader and the evaluation.
 - The old code in `src/` stays until the implementation of `e1-jira-tasks`. 81 tests pass.
+
+### Decisions about the models and the baseline
+
+- The team does not use the old baseline `baseline-v1`.
+- The candidate models are the six models of `docs/MODELS.md`.
+- The weights of all six models go into private Kaggle Models of the project account, one time. This also applies to Gemma 4, because the official Kaggle copy can go away.
+- Each model gets its own Kaggle notebook. A failure then affects only one model, and the output stays under the disk limit of Kaggle.
+- The jobs record the Hugging Face commit and the Kaggle Model version. Later jobs attach the frozen weights and need no internet.
+- The download of the weights and the new baseline are research work. They are not part of an OpenSpec change. `jobs/JOBS.md` records them.
+- The thinking mode comes from the config of a run (`model.thinking`), not from `.env`. Thus `metrics.json` records it.
+
+### Next steps
+
+1. Complete the OpenSpec change `e1-jira-tasks` (plan, then implementation in a new chat).
+2. After the change: make the Kaggle jobs for the weights of the six models.
+3. Then: run the new baseline with the frozen weights.
+
+### Revision of the OpenSpec change `e1-jira-tasks`
+
+- Add the capability `model-layer`: one interface for all models, the families `qwen3.5`, `gemma4` and `bielik`, the backends `transformers`, `openai` and `scripted`, and the thinking switch from the config of a run.
+- Bielik has no native tool calls. Its family puts the tool list and the tool-call format into the system prompt.
+- Move the system prompts into versioned files in `prompts/` (`system-v2.md`, `tools-bielik-v1.md`). The run records the version and the SHA-256 of the prompt file.
+- The download of the weights and the runs of real models are out of scope of the change.
+- Add the design decisions D14 (model layer) and D15 (thinking in the config). Add the task groups "Model layer and prompts" and "Agent and evaluation".
+- `openspec validate e1-jira-tasks --strict` passes.

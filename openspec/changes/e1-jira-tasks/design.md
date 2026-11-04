@@ -7,7 +7,9 @@ See `proposal.md` for the motivation. The facts that shape the design:
 - The test set exists already: 5 boards in `data/environments/test-{web,app,api,data,ops}.json` and 200 tasks in `data/tasks/test/`. `docs/TASKS.md` gives the formats. The code must read these files without a change of the data.
 - The tool contract is `data/mcp_atlassian_tools.json` (14 tools). The real results and errors are in `data/jira_recorded_results.json`. `docs/JIRA_TOOLS.md` lists the behavior of real Jira.
 - The `.venv` has `mcp` 2.3.0. The low-level `mcp.server.lowlevel.Server` takes `on_list_tools` and `on_call_tool` handlers. `mcp.Client(server)` connects to it in the same process. Thus the server can give the exact JSON schemas from the file.
-- The current code has 6 modules in `src/` for the old simulator. `src/agent.py` already has the loop, the backends and the trajectory. It changes only a little.
+- The current code has 6 modules in `src/` for the old simulator. `src/agent.py` has the loop, the trajectory, the system prompt `v1`, the parser of Qwen3 tool calls and the backends in one file.
+- The old boards, the old task files and their two test files were removed on 2026-11-05. The old code in `src/` and its other tests are still there.
+- The candidate models are in `docs/MODELS.md`: Qwen3.5 (2B, 4B), Bielik v3 (1.5B, 4.5B) and Gemma 4 (E2B, E4B). Separate Kaggle jobs store their weights as Kaggle Models after this change.
 
 ## Goals / Non-Goals
 
@@ -22,6 +24,7 @@ See `proposal.md` for the motivation. The facts that shape the design:
 - Copy the format conversion of the real server (Markdown to the Jira format and back). The simulator returns the text as it is stored. The contract test ignores the format of texts.
 - Copy each field that the real server can return. The simulator returns the fields that the 14 tools return with the arguments that the tasks use.
 - Speed. A board has about 40 issues.
+- Download or store model weights, or run a real model. The tests of this change use the `scripted` backend and fixed example outputs.
 
 ## Overview
 
@@ -39,9 +42,14 @@ flowchart LR
         TOOLS["tools.py<br/>MCP server, 14 tools"]
         TASKS["tasks.py<br/>loader and checks"]
         VER["verifier.py"]
-        AG["agent.py<br/>loop, prompt v2"]
+        AG["agent.py<br/>loop, trajectory"]
+        MOD["models.py<br/>families, backends"]
         EV["evaluate.py"]
     end
+    PR["prompts/<br/>system-v2.md, tools-bielik-v1.md"]
+    PR --> AG
+    PR --> MOD
+    MOD --> AG
     BF --> ENV
     JQL --> ENV
     SC --> TOOLS
@@ -93,10 +101,17 @@ The change does not generate boards or tasks. `src/tasks.py` only loads and chec
 | `src/tools.py` | Low-level MCP server, the 14 tools, the result formats, the errors | new content |
 | `src/tasks.py` | `Task` model, loader of the three files, checks | new content |
 | `src/verifier.py` | Comparison of the difference with `expected.json`, answer checks | new content |
-| `src/agent.py` | Prompt `v2`, default step limit 25 | small change |
-| `src/evaluate.py` | Uses the new loader and verifier | small change |
+| `src/models.py` | Model interface, families, backends, thinking switch (D14) | **new file** |
+| `src/agent.py` | Loop and trajectory only, prompt from a file, default step limit 25 | small change |
+| `src/evaluate.py` | Uses the new loader, verifier and model layer | small change |
+| `prompts/system-v2.md` | System prompt `v2` (D12) | **new file** |
+| `prompts/tools-bielik-v1.md` | Tool list format and tool-call format for Bielik (D14) | **new file** |
 
 `src/jql.py` is a new file because the JQL parser is about 200 lines and has its own tests. In `environment.py` it would make one long file with two different jobs.
+
+`src/models.py` is a new file because the agent loop must not know the models. Now the loop, the Qwen3 parser and the backends are in one file. With three families and three backends, this file would mix two jobs.
+
+`prompts/` is a new folder because a prompt is a variable of an experiment. A prompt in a file has its own version and its own history in git, and a person can read it without the code.
 
 ### D3. Board model
 
@@ -227,7 +242,9 @@ The test of the reference solutions applies each solution with the tools of `src
 
 The test builds a board in the test code with the content of the site at the time of the recording: the project `SCRUM`, the 4 issues `SCRUM-1` to `SCRUM-4`, the persons of the recording, the board 1 and the sprints 1 and 2. The issues that the recording made (`SCRUM-8` to `SCRUM-12`) get the same keys, because the test sets the next free number. For each recorded call, the test compares the error flag, the key structure and the messages. It ignores ids, dates, URLs, avatars and the order of keys. A call with a known difference (for example the Markdown format of a text) is in a short list of exceptions in the test, with the reason.
 
-### D12. Prompt `v2` and the step limit
+### D12. Prompt files and the step limit
+
+The agent reads `prompts/system-<version>.md`. The config gives `agent.prompt` (default `v2`). The run records the version and the SHA-256 of the file. A change of a prompt makes a new file, for example `system-v3.md`. The old files do not change, so an old run can be done again. The old prompt `v1` describes the old tools, so it does not get a file.
 
 The prompt `v2` tells the model:
 
@@ -238,9 +255,97 @@ The prompt `v2` tells the model:
 
 The default step limit changes from 15 to 25. A `bulk` task can need 2 calls for each of 6 issues and some reads.
 
-### D13. Removal of the old data and code
+### D13. Removal of the old code
 
-The old boards (`data/environments/test-0*.json`, `train-*.json`), the old task files (`data/tasks/*/tasks.jsonl`) and their tests go away. The old job `baseline-v1` keeps its results in `jobs/runs/`. Its code is in git history.
+The old data and its two test files were removed before this change. This change removes the code of the old simulator, the old generator and their tests. The old job `baseline-v1` keeps its results in `jobs/runs/`. Its code is in git history.
+
+### D14. Model layer
+
+```mermaid
+classDiagram
+    class Model {
+        <<interface>>
+        generate(messages, tools) ModelOutput
+        name, family, revision, thinking
+    }
+    class ModelOutput {
+        text
+        calls
+        parse_errors
+        thinking_text
+        input_tokens, output_tokens
+    }
+    class LocalModel {
+        backend: transformers
+        family: Family
+    }
+    class ApiModel {
+        backend: openai
+        base_url, model name
+    }
+    class ScriptedModel {
+        backend: scripted
+        fixed outputs
+    }
+    class Family {
+        <<interface>>
+        render(messages, tools, thinking) prompt
+        parse(text) text, calls, errors, thinking_text
+        has_thinking
+    }
+    Model <|.. LocalModel
+    Model <|.. ApiModel
+    Model <|.. ScriptedModel
+    LocalModel --> Family
+    Family <|.. Qwen35
+    Family <|.. Gemma4
+    Family <|.. Bielik
+    Model --> ModelOutput
+```
+
+- The agent loop calls only `Model.generate`. It gets the calls and the parse errors, and it gives a parse error to the model as a tool result (the requirement "Invalid tool calls").
+- A `LocalModel` has a backend (it loads and runs the weights) and a family (it makes the prompt and reads the output). The family uses the chat template of the tokenizer. It changes only what the template does not do: the thinking switch and the parse of the tool calls.
+- `qwen3.5` and `gemma4` have native tool calls in their chat templates. The family gives the tool list to the template and parses the tool-call format of the family.
+- `bielik` has no native tool calls. The family adds `prompts/tools-bielik-v1.md` and the tool list to the system prompt. The model writes `<tool_call>{"name": ..., "arguments": {...}}</tool_call>`. SFT must teach this format.
+- An `ApiModel` sends the messages and the tools to an OpenAI-compatible API. The server does the chat format and returns the tool calls as JSON. The reference API model and a local vLLM or Ollama server use this backend.
+- A `ScriptedModel` returns fixed texts. Its output goes through a family parser, so the tests also check the parsers.
+- `make_model(config)` builds the model from the config. It stops with an error for an unknown family, an unknown backend, or thinking for a family without it.
+
+The config of a run:
+
+```yaml
+model:
+  backend: transformers   # transformers | openai | scripted
+  family: qwen3.5         # qwen3.5 | gemma4 | bielik
+  path: /kaggle/input/... # folder with the weights, or a Hugging Face id
+  revision: <commit>      # recorded; used with a Hugging Face id
+  thinking: false
+  dtype: bfloat16
+  max_new_tokens: 1024
+agent:
+  prompt: v2
+  max_steps: 25
+```
+
+When `path` is a folder, the backend loads with `local_files_only=True`. Thus a Kaggle job with attached weights needs no internet.
+
+The exact tool-call formats of the three families come from their chat templates. The implementation reads the templates and writes the parsers. The tests use example outputs in the format of each family. A test that needs the tokenizer of a model runs only when the files exist, and it is skipped otherwise.
+
+### D15. Thinking mode in the config of a run
+
+| | `.env` | Config of a run |
+|---|---|---|
+| In `metrics.json` and in git | no | yes |
+| The same for each team member | no, the file is local | yes |
+| One change for each variant | no | yes: a variant with thinking differs in one line |
+
+The thinking mode changes the results, so it is a variable of an experiment. Thus it is in the config. `.env` keeps only secrets and local paths (`HF_TOKEN`, `JIRA_*`, API keys).
+
+| Family | Thinking |
+|---|---|
+| `qwen3.5` | `enable_thinking` of the chat template; the parser moves the text in `<think>...</think>` to `thinking_text` |
+| `gemma4` | the switch of the chat template of Gemma 4 (the implementation reads the template) |
+| `bielik` | none; `thinking: true` is an error |
 
 ## Risks / Trade-offs
 
@@ -249,6 +354,8 @@ The old boards (`data/environments/test-0*.json`, `train-*.json`), the old task 
 - [The answer check is too strict or too lenient, for example for a time in words] → The tests of the verifier use the reference answers of all 200 tasks and some wrong answers. The error analysis of the baseline shows the remaining cases.
 - [The exact comment match fails for a correct comment with other words] → The instructions give the comment text after a colon. If the baseline shows many such failures, a later change can make the match more lenient. That change must run all variants again.
 - [Polish letters in names in JQL, for example `assignee = "Lukasz Ostrowski"`] → Not checked on real Jira. The simulator ignores Polish letters, as the update tool does.
+- [A parser of a family does not agree with the real output of the model] → The tests use the formats of the chat templates. The first Kaggle smoke test after the change runs each family on some tasks and shows the real outputs. A correction is a small change of `src/models.py`.
+- [Bielik does not follow the tool-call format without SFT] → This is a result of the baseline, not an error of the code. The error analysis counts the parse errors.
 
 ## Migration Plan
 
@@ -256,7 +363,8 @@ The old boards (`data/environments/test-0*.json`, `train-*.json`), the old task 
 2. The test of the reference solutions passes for all 200 tasks.
 3. The team reviews the test set. The corrections go into the data files, and the tests run again.
 4. Freeze the test set: add the checksums to the test.
-5. Run the new baseline in a separate job.
+5. Outside this change: store the weights of the six models as Kaggle Models (one job for each model).
+6. Outside this change: run a smoke test of each family on Kaggle, then the new baseline.
 
 Rollback: the old system is on `main` until the merge of this branch.
 
