@@ -316,3 +316,10 @@
 - Version 9 of the smoke test runs only the two models that this rule changes: Qwen3.5-2B and Bielik 4.5B.
 - Result with the rule of 5 errors: Bielik 4.5B needs 159 s for the 4 tasks (before 980 s). The task `test-010` ends after 6 failed calls in 67 s (before 50 calls in 891 s). Qwen3.5-2B needs 335 s (before 496 s). The grades did not change.
 - `load_weights` disables the progress bar "Loading weights". The bar wrote hundreds of lines into the log.
+
+### Baseline jobs
+
+- Add six jobs `baseline-<model>` (folders 11 to 16), one for each model. Each job runs the 200 test tasks with the prompt `v3`, `float16`, `max_steps` 25, `loop_limit` 3 and `error_limit` 5. The config has `model.thinking: false`.
+- A model that fits on one GPU runs as two processes (one half of the tasks on each GPU). The job merges the halves. Gemma 4 E4B runs as one process on both GPUs.
+- Order of the queue, from the shortest job to the longest: Gemma E2B, Gemma E4B, Bielik 1.5B, Bielik 4.5B, Qwen3.5-2B, Qwen3.5-4B. Kaggle allows 2 sessions at the same time.
+- The tasks and the boards come from the clone of the branch. They are not in a Kaggle dataset.
