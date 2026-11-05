@@ -4,6 +4,7 @@ Write the commit and the SHA-256 of each file into manifest.json.
 """
 import hashlib
 import json
+import shutil
 from pathlib import Path
 
 from huggingface_hub import HfApi, snapshot_download
@@ -28,8 +29,11 @@ snapshot_download(
     ignore_patterns=["*.gguf", "*.bin", "*.pt", "*.h5", "*.msgpack", "original/*", ".cache/*"],
 )
 
+# The download cache has only lock files. Remove it, so it is not in the Kaggle Model.
+shutil.rmtree(OUTPUT / ".cache", ignore_errors=True)
+
 files = {}
-for path in sorted(p for p in OUTPUT.rglob("*") if p.is_file() and ".cache" not in p.parts):
+for path in sorted(p for p in OUTPUT.rglob("*") if p.is_file()):
     digest = hashlib.sha256()
     with open(path, "rb") as f:
         for chunk in iter(lambda: f.read(1 << 20), b""):
