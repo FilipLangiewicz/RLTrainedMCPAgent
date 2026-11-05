@@ -276,3 +276,11 @@
 - Add `flash-linear-attention` to `requirements.in`. The locks get 3 new packages: `einops`, `fla-core` and `flash-linear-attention`. They are pure Python and use the Triton of PyTorch.
 - Add `--no-warn-conflicts` to the `pip install` of the jobs. Thus the log has no warnings about the packages of Kaggle that the project does not use.
 - The package `causal_conv1d` needs a CUDA build. The project does not install it.
+
+### Result of the smoke test with all six models
+
+- Prompt `v3`, four tasks for each model. No model has a garbled output. All models call the tools.
+- `flash-linear-attention` did not make Qwen3.5 faster. Qwen3.5-4B ran out of GPU memory in all four tasks (it had no error before). Remove the package from `requirements.in` and from both locks.
+- The check for garbled output marked a stray Gemma token (`<|"|>`) as garbled. Now it checks only outputs of 8 or more characters.
+- Small models make the same failed call again and again (`jira_get_issue` with a made-up key, a JQL with `=` on `summary`). This is the behavior that SFT and RL must improve.
+- The run with `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True` and the two Qwen models checks the removal of the package.

@@ -1,13 +1,13 @@
 {
   "n": 4,
-  "score": 0.25,
-  "correct": 0.25,
+  "score": 0.0,
+  "correct": 0.0,
   "correct_refusal": 0.0,
   "by_difficulty": {
     "easy": {
       "n": 2,
-      "score": 0.5,
-      "correct": 0.5,
+      "score": 0.0,
+      "correct": 0.0,
       "correct_refusal": 0.0
     },
     "multi_step": {
@@ -26,8 +26,8 @@
   "by_category": {
     "query": {
       "n": 1,
-      "score": 1.0,
-      "correct": 1.0,
+      "score": 0.0,
+      "correct": 0.0,
       "correct_refusal": 0.0
     },
     "refusal": {
@@ -43,19 +43,19 @@
       "correct_refusal": 0.0
     }
   },
-  "mean_steps": 3.25,
-  "mean_invalid_calls": 0.0,
-  "mean_tool_errors": 0.0,
-  "mean_input_tokens": 17486.5,
-  "mean_output_tokens": 175.75,
-  "mean_time_s": 31.276,
-  "total_time_s": 125.102,
-  "errors": 0,
+  "mean_steps": 2.25,
+  "mean_invalid_calls": 0.25,
+  "mean_tool_errors": 0.25,
+  "mean_input_tokens": 11914.75,
+  "mean_output_tokens": 439.25,
+  "mean_time_s": 76.205,
+  "total_time_s": 304.819,
+  "errors": 4,
   "health": {
     "empty_answers": 0,
     "garbled_tasks": 0,
-    "no_tool_call_tasks": 1,
-    "invalid_call_tasks": 0,
+    "no_tool_call_tasks": 0,
+    "invalid_call_tasks": 1,
     "max_steps_tasks": 0
   },
   "run": {
@@ -63,7 +63,7 @@
     "config": {
       "agent": {
         "max_steps": 25,
-        "prompt": "v2"
+        "prompt": "v3"
       },
       "model": {
         "thinking": false,
@@ -92,15 +92,15 @@
       "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
       "thinking": false
     },
-    "prompt_version": "v2",
-    "prompt_sha256": "14b6973e3fb6a148f3bae852002f4c21b9148644face31e6e77dfe3328ff7020",
-    "git_commit": "33944b55fcb9dec5eeef040cf02d9a398d37d95a",
+    "prompt_version": "v3",
+    "prompt_sha256": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
+    "git_commit": "f097dc42ee565190ee6476283a8e9d7915404fbb",
     "python": "3.13.16",
     "torch": "2.11.0+cu130",
     "transformers": "5.22.1",
     "device": "Tesla T4",
-    "date": "2026-11-05T11:03:17+00:00",
-    "wall_time_s": 125.123,
+    "date": "2026-11-05T12:17:19+00:00",
+    "wall_time_s": 304.841,
     "shards": [
       "0/1"
     ]

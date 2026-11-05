@@ -43,19 +43,19 @@
       "correct_refusal": 0.0
     }
   },
-  "mean_steps": 0.0,
-  "mean_invalid_calls": 0.0,
-  "mean_tool_errors": 0.0,
-  "mean_input_tokens": 0.0,
-  "mean_output_tokens": 0.0,
-  "mean_time_s": 0.187,
-  "total_time_s": 0.749,
-  "errors": 4,
+  "mean_steps": 3.0,
+  "mean_invalid_calls": 0.25,
+  "mean_tool_errors": 3.25,
+  "mean_input_tokens": 13655.25,
+  "mean_output_tokens": 463.0,
+  "mean_time_s": 88.007,
+  "total_time_s": 352.03,
+  "errors": 1,
   "health": {
     "empty_answers": 0,
     "garbled_tasks": 0,
-    "no_tool_call_tasks": 4,
-    "invalid_call_tasks": 0,
+    "no_tool_call_tasks": 0,
+    "invalid_call_tasks": 1,
     "max_steps_tasks": 0
   },
   "run": {
@@ -63,7 +63,7 @@
     "config": {
       "agent": {
         "max_steps": 25,
-        "prompt": "v2"
+        "prompt": "v3"
       },
       "model": {
         "thinking": false,
@@ -92,15 +92,15 @@
       "revision": "4b1220a9d745bdd874c44347075ef25484ef322b",
       "thinking": false
     },
-    "prompt_version": "v2",
-    "prompt_sha256": "14b6973e3fb6a148f3bae852002f4c21b9148644face31e6e77dfe3328ff7020",
-    "git_commit": "33944b55fcb9dec5eeef040cf02d9a398d37d95a",
+    "prompt_version": "v3",
+    "prompt_sha256": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
+    "git_commit": "f097dc42ee565190ee6476283a8e9d7915404fbb",
     "python": "3.13.16",
     "torch": "2.11.0+cu130",
     "transformers": "5.22.1",
     "device": "Tesla T4",
-    "date": "2026-11-05T11:09:14+00:00",
-    "wall_time_s": 0.77,
+    "date": "2026-11-05T12:25:27+00:00",
+    "wall_time_s": 352.079,
     "shards": [
       "0/1"
     ]

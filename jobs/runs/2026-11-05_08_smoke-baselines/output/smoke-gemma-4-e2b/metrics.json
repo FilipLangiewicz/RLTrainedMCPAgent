@@ -45,15 +45,15 @@
   },
   "mean_steps": 1.75,
   "mean_invalid_calls": 0.0,
-  "mean_tool_errors": 0.5,
-  "mean_input_tokens": 7603.0,
-  "mean_output_tokens": 89.0,
-  "mean_time_s": 9.522,
-  "total_time_s": 38.087,
+  "mean_tool_errors": 0.25,
+  "mean_input_tokens": 7840.75,
+  "mean_output_tokens": 59.0,
+  "mean_time_s": 7.807,
+  "total_time_s": 31.229,
   "errors": 0,
   "health": {
     "empty_answers": 0,
-    "garbled_tasks": 0,
+    "garbled_tasks": 1,
     "no_tool_call_tasks": 1,
     "invalid_call_tasks": 0,
     "max_steps_tasks": 0
@@ -63,7 +63,7 @@
     "config": {
       "agent": {
         "max_steps": 25,
-        "prompt": "v2"
+        "prompt": "v3"
       },
       "model": {
         "thinking": false,
@@ -92,15 +92,15 @@
       "revision": "4adf15748de9e1a0097b6274cee9c15836c41c37",
       "thinking": false
     },
-    "prompt_version": "v2",
-    "prompt_sha256": "14b6973e3fb6a148f3bae852002f4c21b9148644face31e6e77dfe3328ff7020",
-    "git_commit": "33944b55fcb9dec5eeef040cf02d9a398d37d95a",
+    "prompt_version": "v3",
+    "prompt_sha256": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
+    "git_commit": "f097dc42ee565190ee6476283a8e9d7915404fbb",
     "python": "3.13.16",
     "torch": "2.11.0+cu130",
     "transformers": "5.22.1",
     "device": "Tesla T4",
-    "date": "2026-11-05T11:09:54+00:00",
-    "wall_time_s": 38.107,
+    "date": "2026-11-05T12:32:03+00:00",
+    "wall_time_s": 31.25,
     "shards": [
       "0/1"
     ]

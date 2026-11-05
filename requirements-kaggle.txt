@@ -68,24 +68,12 @@ dill==0.4.1
     #   -c requirements.txt
     #   datasets
     #   multiprocess
-einops==0.8.2
-    # via
-    #   -c requirements.txt
-    #   fla-core
 filelock==4.2.6
     # via
     #   -c requirements.txt
     #   datasets
     #   huggingface-hub
     #   torch
-fla-core==0.6.0
-    # via
-    #   -c requirements.txt
-    #   flash-linear-attention
-flash-linear-attention==0.6.0
-    # via
-    #   -c requirements.txt
-    #   -r requirements.in
 frozenlist==1.8.0
     # via
     #   -c requirements.txt
@@ -337,7 +325,6 @@ transformers==5.22.1
     # via
     #   -c requirements.txt
     #   -r requirements.in
-    #   flash-linear-attention
     #   peft
     #   trl
 trl==1.17.1

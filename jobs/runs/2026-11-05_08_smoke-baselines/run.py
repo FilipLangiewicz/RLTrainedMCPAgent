@@ -3,6 +3,7 @@
 A failed model does not stop the job, because a failed kernel loses its complete output.
 """
 import json
+import os
 import subprocess
 import sys
 import time
@@ -12,8 +13,7 @@ REPO = "https://github.com/FilipLangiewicz/RLTrainedMCPAgent.git"
 BRANCH = "06-e1-baselines"
 CLONE = "/tmp/repo"  # Not in the output folder, so the clone is not an output.
 JOB = "2026-11-05_08_smoke-baselines"
-CODENAMES = ["smoke-qwen3-5-2b", "smoke-qwen3-5-4b", "smoke-bielik-1-5b-v3", "smoke-bielik-4-5b-v3",
-             "smoke-gemma-4-e2b", "smoke-gemma-4-e4b"]
+CODENAMES = ["smoke-qwen3-5-2b", "smoke-qwen3-5-4b"]
 OUTPUT = Path("/kaggle/working")
 
 import torch
@@ -50,7 +50,8 @@ for codename in CODENAMES:
     resolved = Path("/tmp") / f"{codename}.yaml"
     resolved.write_text(yaml.safe_dump(cfg))
     start = time.time()
-    done = subprocess.run([sys.executable, "-m", "src.evaluate", str(resolved), "--output", str(OUTPUT / codename)], cwd=CLONE)
+    done = subprocess.run([sys.executable, "-m", "src.evaluate", str(resolved), "--output", str(OUTPUT / codename)], cwd=CLONE,
+                          env={**os.environ, "PYTORCH_CUDA_ALLOC_CONF": "expandable_segments:True"})
     status[codename] = f"exit {done.returncode}, {time.time() - start:.0f} s"
     print(codename, status[codename], flush=True)
     torch.cuda.empty_cache()

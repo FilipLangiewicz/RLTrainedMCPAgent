@@ -146,7 +146,7 @@ def test_report_after_merge(ten_tasks, data_dir, tmp_path):
 def test_is_garbled():
     from src.evaluate import is_garbled
     assert is_garbled("!!!!!!!!") and is_garbled("ab �")
-    assert not is_garbled("") and not is_garbled("Zmieniono APP-24 na Highest.")
+    assert not is_garbled("") and not is_garbled("Zmieniono APP-24 na Highest.") and not is_garbled('<|"|>')
 
 
 def test_select_task_ids(ten_tasks, data_dir, tmp_path):

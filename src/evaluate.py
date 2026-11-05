@@ -26,9 +26,10 @@ GOOD = ("correct", "correct_refusal")
 def is_garbled(text: str) -> bool:
     """True if a model output looks like the output of a broken model (NaN logits give a row of '!')."""
     chars = [c for c in text if not c.isspace()]
-    if not chars:
-        return False
-    return "\ufffd" in text or sum(c.isalpha() for c in chars) < 0.3 * len(chars)
+    if "\ufffd" in text:
+        return True
+    # A short rest of a special token, for example '<|"|>', is not a broken output.
+    return len(chars) >= 8 and sum(c.isalpha() for c in chars) < 0.3 * len(chars)
 
 
 def load_config(codename: str, runs_dir: Path = RUNS_DIR) -> dict:

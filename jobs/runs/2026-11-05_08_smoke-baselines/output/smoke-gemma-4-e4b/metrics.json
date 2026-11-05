@@ -1,13 +1,13 @@
 {
   "n": 4,
-  "score": 0.25,
-  "correct": 0.0,
+  "score": 0.5,
+  "correct": 0.25,
   "correct_refusal": 0.25,
   "by_difficulty": {
     "easy": {
       "n": 2,
-      "score": 0.0,
-      "correct": 0.0,
+      "score": 0.5,
+      "correct": 0.5,
       "correct_refusal": 0.0
     },
     "multi_step": {
@@ -26,8 +26,8 @@
   "by_category": {
     "query": {
       "n": 1,
-      "score": 0.0,
-      "correct": 0.0,
+      "score": 1.0,
+      "correct": 1.0,
       "correct_refusal": 0.0
     },
     "refusal": {
@@ -46,10 +46,10 @@
   "mean_steps": 1.25,
   "mean_invalid_calls": 0.0,
   "mean_tool_errors": 0.0,
-  "mean_input_tokens": 5381.5,
-  "mean_output_tokens": 44.25,
-  "mean_time_s": 9.497,
-  "total_time_s": 37.987,
+  "mean_input_tokens": 5698.0,
+  "mean_output_tokens": 37.0,
+  "mean_time_s": 9.219,
+  "total_time_s": 36.876,
   "errors": 0,
   "health": {
     "empty_answers": 0,
@@ -63,7 +63,7 @@
     "config": {
       "agent": {
         "max_steps": 25,
-        "prompt": "v2"
+        "prompt": "v3"
       },
       "model": {
         "thinking": false,
@@ -93,15 +93,15 @@
       "revision": "4ecc2ba63bcac23ba4a767fc87025b1450f84c9c",
       "thinking": false
     },
-    "prompt_version": "v2",
-    "prompt_sha256": "14b6973e3fb6a148f3bae852002f4c21b9148644face31e6e77dfe3328ff7020",
-    "git_commit": "33944b55fcb9dec5eeef040cf02d9a398d37d95a",
+    "prompt_version": "v3",
+    "prompt_sha256": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
+    "git_commit": "f097dc42ee565190ee6476283a8e9d7915404fbb",
     "python": "3.13.16",
     "torch": "2.11.0+cu130",
     "transformers": "5.22.1",
     "device": "Tesla T4",
-    "date": "2026-11-05T11:11:16+00:00",
-    "wall_time_s": 38.009,
+    "date": "2026-11-05T12:33:27+00:00",
+    "wall_time_s": 36.903,
     "shards": [
       "0/1"
     ]
