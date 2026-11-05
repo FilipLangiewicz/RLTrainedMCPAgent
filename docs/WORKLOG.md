@@ -297,3 +297,4 @@
 - Fix: `avoid_gqa_in_sdpa()` in `src/models.py`. On a GPU older than Ampere, `transformers` repeats the key and value heads, and PyTorch uses the memory-efficient kernel. The peak memory of Qwen3.5-2B at 10000 tokens falls from 12.1 GB to 5.1 GB.
 - Run the models that ran out of memory again: Qwen3.5 2B and 4B, and Bielik 4.5B. The other models work, and the baseline run covers them.
 - `flash-linear-attention` works on the T4 but does not make the model faster (Triton compiles again for each new length). Do not install it. `causal_conv1d` has no wheel for this version of PyTorch and gives a very small gain.
+- Result of the run with the fix: Qwen3.5 2B and 4B and Bielik 4.5B have no memory errors. Qwen3.5-4B makes 2 of 4 tasks correct, among them a task with 38 tool calls. One task of Bielik 4.5B stops at the step limit after 50 failed calls (872 s).
