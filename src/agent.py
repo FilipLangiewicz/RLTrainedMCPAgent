@@ -112,12 +112,9 @@ async def run_task_async(model: Model, server, instruction: str, prompt: Prompt 
                     traj.final_answer, traj.stop_reason = out.text, "answer"
                     break
                 for call in out.calls:
-                    bad_arguments = call.error is None and not isinstance(call.arguments, dict)
-                    invalid = call.error is not None or call.name not in names or bad_arguments
+                    invalid = call.error is not None or call.name not in names
                     if call.error is not None:
                         result, is_error = f"Error: {call.error}", True
-                    elif bad_arguments:
-                        result, is_error = "Error: the arguments of a tool call must be a JSON object.", True
                     elif call.name not in names:
                         result, is_error = f"Error: unknown tool '{call.name}'. Available tools: {', '.join(names)}.", True
                     else:

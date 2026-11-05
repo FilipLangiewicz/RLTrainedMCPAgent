@@ -282,3 +282,18 @@ def test_frozen_prompt(name):
     """The baseline and all later variants use these prompts. A change needs a new version and new runs of all variants."""
     data = (ROOT / "src" / "prompts" / name).read_bytes().replace(b"\r\n", b"\n")
     assert hashlib.sha256(data).hexdigest() == FROZEN_PROMPTS[name]
+
+
+def test_template_gets_mapping_arguments():
+    seen = []
+
+    class Tokenizer:
+        def apply_chat_template(self, messages, **kwargs):
+            seen.append(messages)
+            return "prompt"
+
+    broken = {"role": "assistant", "content": "", "tool_calls": [
+        {"id": "1", "type": "function", "function": {"name": "jira_get_issue", "arguments": "bad text"}}]}
+    FAMILIES["qwen3.5"].render(Tokenizer(), [broken], [], False)
+    assert seen[0][0]["tool_calls"][0]["function"]["arguments"] == {}
+    assert broken["tool_calls"][0]["function"]["arguments"] == "bad text"

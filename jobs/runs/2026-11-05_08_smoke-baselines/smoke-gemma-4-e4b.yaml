@@ -7,7 +7,7 @@ model:
   max_new_tokens: 1024
   device: auto
 agent:
-  prompt: v2
+  prompt: v3
   max_steps: 25
 tasks:
   split: test

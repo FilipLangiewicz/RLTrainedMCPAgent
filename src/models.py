@@ -97,8 +97,21 @@ class Family:
     def template_args(self, thinking: bool) -> dict:
         return {"enable_thinking": thinking} if self.has_thinking else {}
 
+    @staticmethod
+    def _with_mapping_arguments(messages: list[dict]) -> list[dict]:
+        """The chat templates read the arguments of a call as a mapping. The text of a broken call would stop them."""
+        result = []
+        for m in messages:
+            if m.get("tool_calls"):
+                calls = [{**c, "function": {**c["function"], "arguments": c["function"]["arguments"]
+                                            if isinstance(c["function"]["arguments"], dict) else {}}}
+                         for c in m["tool_calls"]]
+                m = {**m, "tool_calls": calls}
+            result.append(m)
+        return result
+
     def render(self, tokenizer, messages: list[dict], tools: list[dict], thinking: bool) -> str:
-        messages, tools = self.prepare(messages, tools)
+        messages, tools = self.prepare(self._with_mapping_arguments(messages), tools)
         return tokenizer.apply_chat_template(messages, tools=tools, add_generation_prompt=True, tokenize=False,
                                              **self.template_args(thinking))
 
