@@ -338,3 +338,9 @@
 - The team treats the project search as a skill that the model does not have. The instruction and the prompt `v3` do not name the project, but the model can find it with a tool. The prompt does not change.
 - The reference solutions do not show the step that finds the project. The training examples must have this step.
 - In 6 of 22 correct refusals, the reason of the model is wrong. The verifier checks only the prefix `ODMOWA:`.
+
+### Baseline and error analysis of Gemma 4 E4B
+
+- Job `baseline-gemma-4-e4b`: score 0.325 on 200 test tasks (correct 0.25, correct refusal 0.075). `easy` 0.556, `multi_step` 0.097, `refusal` 0.600. 73 tasks have no tool call. The job needs 2992 s.
+- In 7 of 10 incorrect refusal tasks, the meaning is a correct refusal, but the answer does not start with `ODMOWA:`.
+- The report is in `data/results/baseline/report-baseline-gemma-4-e4b.md`, with the column `Why` and the section "Error analysis".
