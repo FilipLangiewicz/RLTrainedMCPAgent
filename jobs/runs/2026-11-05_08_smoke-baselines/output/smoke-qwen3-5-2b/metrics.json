@@ -43,14 +43,14 @@
       "correct_refusal": 0.0
     }
   },
-  "mean_steps": 2.5,
+  "mean_steps": 3.0,
   "mean_invalid_calls": 0.0,
-  "mean_tool_errors": 6.5,
-  "mean_input_tokens": 16486.75,
-  "mean_output_tokens": 1533.5,
-  "mean_time_s": 113.914,
-  "total_time_s": 455.656,
-  "errors": 0,
+  "mean_tool_errors": 10.0,
+  "mean_input_tokens": 21969.75,
+  "mean_output_tokens": 2340.75,
+  "mean_time_s": 136.644,
+  "total_time_s": 546.576,
+  "errors": 1,
   "health": {
     "empty_answers": 0,
     "garbled_tasks": 0,
@@ -94,13 +94,13 @@
     },
     "prompt_version": "v3",
     "prompt_sha256": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
-    "git_commit": "f097dc42ee565190ee6476283a8e9d7915404fbb",
+    "git_commit": "fa5e2c09db67b1b10ada3314e2b70d9248efd280",
     "python": "3.13.16",
     "torch": "2.11.0+cu130",
     "transformers": "5.22.1",
     "device": "Tesla T4",
-    "date": "2026-11-05T12:09:01+00:00",
-    "wall_time_s": 455.681,
+    "date": "2026-11-05T12:48:05+00:00",
+    "wall_time_s": 546.6,
     "shards": [
       "0/1"
     ]

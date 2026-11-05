@@ -1,13 +1,13 @@
 {
   "n": 4,
-  "score": 0.0,
-  "correct": 0.0,
+  "score": 0.25,
+  "correct": 0.25,
   "correct_refusal": 0.0,
   "by_difficulty": {
     "easy": {
       "n": 2,
-      "score": 0.0,
-      "correct": 0.0,
+      "score": 0.5,
+      "correct": 0.5,
       "correct_refusal": 0.0
     },
     "multi_step": {
@@ -26,8 +26,8 @@
   "by_category": {
     "query": {
       "n": 1,
-      "score": 0.0,
-      "correct": 0.0,
+      "score": 1.0,
+      "correct": 1.0,
       "correct_refusal": 0.0
     },
     "refusal": {
@@ -43,14 +43,14 @@
       "correct_refusal": 0.0
     }
   },
-  "mean_steps": 2.25,
+  "mean_steps": 3.5,
   "mean_invalid_calls": 0.25,
-  "mean_tool_errors": 0.25,
-  "mean_input_tokens": 11914.75,
-  "mean_output_tokens": 439.25,
-  "mean_time_s": 76.205,
-  "total_time_s": 304.819,
-  "errors": 4,
+  "mean_tool_errors": 0.5,
+  "mean_input_tokens": 19324.0,
+  "mean_output_tokens": 770.5,
+  "mean_time_s": 82.79,
+  "total_time_s": 331.162,
+  "errors": 2,
   "health": {
     "empty_answers": 0,
     "garbled_tasks": 0,
@@ -94,13 +94,13 @@
     },
     "prompt_version": "v3",
     "prompt_sha256": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
-    "git_commit": "f097dc42ee565190ee6476283a8e9d7915404fbb",
+    "git_commit": "fa5e2c09db67b1b10ada3314e2b70d9248efd280",
     "python": "3.13.16",
     "torch": "2.11.0+cu130",
     "transformers": "5.22.1",
     "device": "Tesla T4",
-    "date": "2026-11-05T12:17:19+00:00",
-    "wall_time_s": 304.841,
+    "date": "2026-11-05T12:57:43+00:00",
+    "wall_time_s": 331.184,
     "shards": [
       "0/1"
     ]

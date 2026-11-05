@@ -284,3 +284,8 @@
 - The check for garbled output marked a stray Gemma token (`<|"|>`) as garbled. Now it checks only outputs of 8 or more characters.
 - Small models make the same failed call again and again (`jira_get_issue` with a made-up key, a JQL with `=` on `summary`). This is the behavior that SFT and RL must improve.
 - The run with `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True` and the two Qwen models checks the removal of the package.
+
+### Correction about flash-linear-attention
+
+- Version 6 of the smoke test ran the two Qwen models without `flash-linear-attention`. Qwen3.5-4B still ran out of GPU memory in 2 of 4 tasks. One request was 8.86 GiB, the same as with the package. Thus the package was not the cause.
+- The size of the request fits the logits of the whole prompt in `float32`: about 9600 tokens, a vocabulary of about 248000 and 4 bytes for each value. The check of this cause is open.
