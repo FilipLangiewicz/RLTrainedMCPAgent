@@ -11,6 +11,8 @@ from pydantic import BaseModel, Field
 from src.models import Model, ModelOutput, Prompt, load_prompt
 
 DEFAULT_PROMPT = "v3"
+# The same call this many times in a row ends the task. A greedy model does not leave such a loop.
+DEFAULT_LOOP_LIMIT = 3
 DEFAULT_MAX_STEPS = 25
 
 
@@ -32,7 +34,7 @@ class Trajectory(BaseModel):
     tool_calls: list[ToolRecord] = Field(default_factory=list)
     thinking: list[str] = Field(default_factory=list)
     final_answer: str = ""
-    stop_reason: Literal["answer", "max_steps", "error"] = "answer"
+    stop_reason: Literal["answer", "max_steps", "loop", "error"] = "answer"
     steps: int = 0
     invalid_calls: int = 0
     tool_errors: int = 0
@@ -88,7 +90,8 @@ def _assistant_message(out: ModelOutput) -> dict:
 
 
 async def run_task_async(model: Model, server, instruction: str, prompt: Prompt | None = None,
-                         max_steps: int = DEFAULT_MAX_STEPS, task_id: str = "") -> Trajectory:
+                         max_steps: int = DEFAULT_MAX_STEPS, task_id: str = "",
+                         loop_limit: int | None = DEFAULT_LOOP_LIMIT) -> Trajectory:
     start = time.perf_counter()
     prompt = prompt or load_prompt("system", DEFAULT_PROMPT)
     traj = Trajectory(task_id=task_id, instruction=instruction, prompt_version=prompt.version,
@@ -100,6 +103,7 @@ async def run_task_async(model: Model, server, instruction: str, prompt: Prompt 
             tools = [tool_schema(t) for t in listed]
             names = sorted(t.name for t in listed)
             traj.stop_reason = "max_steps"
+            streak, last = 0, None
             for step in range(1, max_steps + 1):
                 out = model.generate(traj.messages, tools)
                 traj.steps = step
@@ -126,6 +130,12 @@ async def run_task_async(model: Model, server, instruction: str, prompt: Prompt 
                                                       invalid=invalid,
                                                       arguments=call.arguments if call.arguments is not None else call.raw))
                     traj.messages.append({"role": "tool", "tool_call_id": call.id, "name": call.name, "content": result})
+                    key = (call.name, json.dumps(call.arguments, sort_keys=True) if call.arguments is not None else call.raw)
+                    streak = streak + 1 if key == last else 1
+                    last = key
+                if loop_limit and streak >= loop_limit:
+                    traj.stop_reason = "loop"
+                    break
     except Exception as e:  # noqa: BLE001  The evaluation grades this task as incorrect and continues.
         while isinstance(e, BaseExceptionGroup) and len(e.exceptions) == 1:  # The MCP client adds a group.
             e = e.exceptions[0]
@@ -135,5 +145,6 @@ async def run_task_async(model: Model, server, instruction: str, prompt: Prompt 
 
 
 def run_task(model: Model, server, instruction: str, prompt: Prompt | None = None,
-             max_steps: int = DEFAULT_MAX_STEPS, task_id: str = "") -> Trajectory:
-    return asyncio.run(run_task_async(model, server, instruction, prompt, max_steps, task_id))
+             max_steps: int = DEFAULT_MAX_STEPS, task_id: str = "",
+             loop_limit: int | None = DEFAULT_LOOP_LIMIT) -> Trajectory:
+    return asyncio.run(run_task_async(model, server, instruction, prompt, max_steps, task_id, loop_limit))

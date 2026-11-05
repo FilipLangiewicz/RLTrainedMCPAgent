@@ -11,7 +11,7 @@ from pathlib import Path
 
 import yaml
 
-from src.agent import DEFAULT_MAX_STEPS, DEFAULT_PROMPT, Trajectory, run_task
+from src.agent import DEFAULT_LOOP_LIMIT, DEFAULT_MAX_STEPS, DEFAULT_PROMPT, Trajectory, run_task
 from src.environment import load_board
 from src.models import Prompt, check_config, load_prompt, make_model
 from src.tasks import DATA_DIR, board_path, load_tasks
@@ -82,12 +82,13 @@ def _versions() -> dict:
     return versions
 
 
-def evaluate_task(task, model, prompt: Prompt, max_steps: int, data_dir: Path = DATA_DIR) -> tuple[dict, dict]:
+def evaluate_task(task, model, prompt: Prompt, max_steps: int, loop_limit: int | None = DEFAULT_LOOP_LIMIT,
+                  data_dir: Path = DATA_DIR) -> tuple[dict, dict]:
     """Do one task on a new copy of its board. Return the result line and the trajectory."""
     initial = load_board(board_path(task.board, data_dir))
     board = initial.copy_board()
     try:
-        traj = run_task(model, build_server(board), task.instruction, prompt, max_steps, task.id)
+        traj = run_task(model, build_server(board), task.instruction, prompt, max_steps, task.id, loop_limit)
     except Exception as e:  # noqa: BLE001  A failure of one task must not stop the run.
         traj = Trajectory(task_id=task.id, instruction=task.instruction, stop_reason="error", error=f"{type(e).__name__}: {e}")
     if traj.stop_reason == "error":
@@ -145,6 +146,7 @@ def compute_metrics(results: list[dict]) -> dict:
             "no_tool_call_tasks": sum(r["tool_calls"] == 0 for r in results),
             "invalid_call_tasks": sum(r["invalid_calls"] > 0 for r in results),
             "max_steps_tasks": sum(r["stop_reason"] == "max_steps" for r in results),
+            "loop_tasks": sum(r["stop_reason"] == "loop" for r in results),
         },
     }
 
@@ -198,6 +200,7 @@ def run_evaluation(cfg: dict, output_dir: Path, shard: tuple[int, int] = (0, 1),
     cfg["model"] = check_config(cfg["model"])
     prompt = load_prompt("system", agent_cfg.get("prompt", DEFAULT_PROMPT))
     max_steps = agent_cfg.get("max_steps", DEFAULT_MAX_STEPS)
+    loop_limit = agent_cfg.get("loop_limit", DEFAULT_LOOP_LIMIT)
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     tasks = load_tasks(cfg["tasks"]["split"], data_dir)
@@ -213,7 +216,7 @@ def run_evaluation(cfg: dict, output_dir: Path, shard: tuple[int, int] = (0, 1),
     with open(output_dir / "results.jsonl", "w", encoding="utf-8", newline="\n") as fr, \
             open(output_dir / "trajectories.jsonl", "w", encoding="utf-8", newline="\n") as ft:
         for task in tasks:
-            result, traj = evaluate_task(task, model, prompt, max_steps, data_dir)
+            result, traj = evaluate_task(task, model, prompt, max_steps, loop_limit, data_dir)
             results.append(result)
             # Write each line at once, so that a stopped run keeps its results.
             fr.write(json.dumps(result, ensure_ascii=False) + "\n")

@@ -57,6 +57,7 @@ model:
 agent:
   prompt: v3              # src/prompts/system-v3.md
   max_steps: 25
+  loop_limit: 3           # the same call 3 times in a row ends the task
 tasks:
   split: test
   limit: null
@@ -73,6 +74,7 @@ tasks:
 | `model.base_url`, `model.api_key_env` | none, `OPENAI_API_KEY` | Settings of `openai`. The key comes only from the environment or `.env`. |
 | `agent.prompt` | `v3` | The version of `src/prompts/system-<version>.md`. |
 | `agent.max_steps` | `25` | The step limit of the agent loop. |
+| `agent.loop_limit` | `3` | The same tool call (name and arguments) this many times in a row ends the task with the stop reason `loop`. `null` turns the rule off. |
 
 An unknown backend, an unknown family, thinking for `bielik` or a missing prompt file stops the run before the first task.
 

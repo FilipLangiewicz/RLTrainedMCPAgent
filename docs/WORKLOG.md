@@ -298,3 +298,11 @@
 - Run the models that ran out of memory again: Qwen3.5 2B and 4B, and Bielik 4.5B. The other models work, and the baseline run covers them.
 - `flash-linear-attention` works on the T4 but does not make the model faster (Triton compiles again for each new length). Do not install it. `causal_conv1d` has no wheel for this version of PyTorch and gives a very small gain.
 - Result of the run with the fix: Qwen3.5 2B and 4B and Bielik 4.5B have no memory errors. Qwen3.5-4B makes 2 of 4 tasks correct, among them a task with 38 tool calls. One task of Bielik 4.5B stops at the step limit after 50 failed calls (872 s).
+
+### Rule that ends a loop
+
+- Loops use most of the time of a run. In the smoke test of Bielik 4.5B, one task took 872 s of 958 s.
+- Add `agent.loop_limit` (default 3). The same tool call, with the same name and arguments, 3 times in a row ends the task with the stop reason `loop`. The grade comes from the state of the board, as for the step limit.
+- The value is in the config of a run and not in `.env`, so `metrics.json` records it. `metrics.json` has the new count `loop_tasks`.
+- The rule is part of the protocol. The baseline, SFT and RL use the same value.
+- Version 8 of the smoke test runs all six models. The fix of the attention kernel and the loop rule change the code path of all models.

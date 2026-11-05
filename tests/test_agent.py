@@ -36,7 +36,8 @@ def test_final_answer(board):
 
 
 def test_step_limit(board):
-    traj = run_task(ScriptedModel([tc("jira_get_transitions", issue_key="WEB-1")]), build_server(board), "x")
+    traj = run_task(ScriptedModel([tc("jira_get_transitions", issue_key="WEB-1")]), build_server(board), "x",
+                    loop_limit=None)
     assert DEFAULT_MAX_STEPS == 25
     assert traj.stop_reason == "max_steps" and traj.steps == 25
     assert len(traj.tool_calls) == 25 and traj.final_answer == ""
@@ -173,3 +174,16 @@ def test_openai_key_from_environment(monkeypatch):
 
 def test_trajectory_fields():
     assert {"prompt_version", "prompt_sha256", "thinking", "messages", "tool_calls"} <= set(Trajectory.model_fields)
+
+
+def test_loop_ends_the_task(board):
+    call = tc("jira_get_issue", issue_key="WEB-1")
+    traj = run_task(ScriptedModel([call]), build_server(board), "x")
+    assert traj.stop_reason == "loop" and traj.steps == 3 and len(traj.tool_calls) == 3
+
+
+def test_different_calls_are_not_a_loop(board):
+    outputs = [tc("jira_get_issue", issue_key="WEB-1"), tc("jira_get_issue", issue_key="WEB-2"),
+               tc("jira_get_issue", issue_key="WEB-1"), tc("jira_get_issue", issue_key="WEB-1"), "Koniec."]
+    traj = run_task(ScriptedModel(outputs), build_server(board), "x")
+    assert traj.stop_reason == "answer" and len(traj.tool_calls) == 4

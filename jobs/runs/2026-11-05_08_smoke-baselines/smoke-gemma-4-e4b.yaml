@@ -9,6 +9,7 @@ model:
 agent:
   prompt: v3
   max_steps: 25
+  loop_limit: 3
 tasks:
   split: test
   limit: null

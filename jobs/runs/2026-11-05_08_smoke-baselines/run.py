@@ -13,7 +13,7 @@ REPO = "https://github.com/FilipLangiewicz/RLTrainedMCPAgent.git"
 BRANCH = "06-e1-baselines"
 CLONE = "/tmp/repo"  # Not in the output folder, so the clone is not an output.
 JOB = "2026-11-05_08_smoke-baselines"
-CODENAMES = ["smoke-qwen3-5-2b", "smoke-qwen3-5-4b", "smoke-bielik-4-5b-v3"]
+CODENAMES = ["smoke-gemma-4-e2b", "smoke-gemma-4-e4b", "smoke-bielik-1-5b-v3", "smoke-qwen3-5-2b", "smoke-qwen3-5-4b", "smoke-bielik-4-5b-v3"]
 OUTPUT = Path("/kaggle/working")
 
 import torch
