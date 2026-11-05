@@ -345,15 +345,15 @@
 - In 7 of 10 incorrect refusal tasks, the meaning is a correct refusal, but the answer does not start with `ODMOWA:`.
 - The report is in `data/results/baseline/report-baseline-gemma-4-e4b.md`, with the column `Why` and the section "Error analysis".
 
-### Baselines of Gemma 4 E4B and Bielik 1.5B
+### Baseline of Bielik 1.5B
 
-- Gemma 4 E4B: score 0.325 (correct 0.250, correct refusal 0.075). `easy` 0.556, `multi_step` 0.097, `refusal` 0.600. 73 tasks without a tool call. The job needs 2993 s, because it runs as one process on two GPUs.
 - Bielik 1.5B: score 0.050 (all correct, no correct refusal). `easy` 0.139, `multi_step` 0.000, `refusal` 0.000. 53 tasks have an invalid call, 32 tasks end by the loop rules and 7 by the step limit. The job needs 2541 s.
-- The reports are in `data/results/baseline/`.
+- The report is in `data/results/baseline/report-baseline-bielik-1-5b-v3.md`.
 
 ### Error analysis of Bielik 1.5B
 
 - Add the column `Why` and the section "Error analysis" to `data/results/baseline/report-baseline-bielik-1-5b-v3.md`. All grades stay as they are.
 - The parser is correct. The broken calls are real output of the model.
-- The generation of Bielik does not stop at `</tool_call>`. In 160 of 200 tasks, the model writes more than one call in one output. Gemma 4 E2B does this in 4 tasks and E4B in 6 tasks. The effect on the score is not known. The team must decide about this gap.
+- The generation of Bielik does not stop at `</tool_call>`. In 160 of 200 tasks, the model writes more than one call in one output. Gemma 4 E2B does this in 4 tasks and E4B in 6 tasks. The effect on the score is not known.
+- The team does not add a stop rule. The training must teach the model to stop after a call.
 - The model copies examples from the tool descriptions, for example `PROJ-123`.
