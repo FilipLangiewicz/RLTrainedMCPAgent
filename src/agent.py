@@ -10,7 +10,7 @@ from pydantic import BaseModel, Field
 
 from src.models import Model, ModelOutput, Prompt, load_prompt
 
-DEFAULT_PROMPT = "v2"
+DEFAULT_PROMPT = "v3"
 DEFAULT_MAX_STEPS = 25
 
 

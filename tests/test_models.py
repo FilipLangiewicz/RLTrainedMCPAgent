@@ -1,4 +1,6 @@
+import hashlib
 import json
+from pathlib import Path
 from types import SimpleNamespace
 
 import pytest
@@ -266,3 +268,17 @@ def test_bielik_tool_list_is_compact():
     assert text.splitlines()[0] == "- jira_get_issue(issue_key, limit?): Get an issue."
     assert "    issue_key (string): The key." in text and "Long text" not in text
     assert "{tools}" in load_prompt("tools-bielik", "v2").text
+
+
+ROOT = Path(__file__).resolve().parents[1]
+FROZEN_PROMPTS = {
+    "system-v3.md": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
+    "tools-bielik-v2.md": "b1f63676bde2c7ac313e74f23059f5df87c6eab013a7333eb46065fdb9ad2e10",
+}
+
+
+@pytest.mark.parametrize("name", FROZEN_PROMPTS)
+def test_frozen_prompt(name):
+    """The baseline and all later variants use these prompts. A change needs a new version and new runs of all variants."""
+    data = (ROOT / "src" / "prompts" / name).read_bytes().replace(b"\r\n", b"\n")
+    assert hashlib.sha256(data).hexdigest() == FROZEN_PROMPTS[name]

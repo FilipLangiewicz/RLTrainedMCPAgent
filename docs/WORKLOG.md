@@ -260,3 +260,12 @@
 - Bielik 1.5B and 4.5B run out of GPU memory for a long prompt. Qwen3.5-2B loops and makes up to 83 calls in one task.
 - Gemma 4 and Qwen3.5-4B often refuse a possible task ("no issue key"), also when the key is in the instruction.
 - Fix `src/agent.py`: tool arguments that are not an object are an invalid call. Before, they stopped the task with a TypeError.
+
+### Freeze of the system prompt
+
+- Add `src/prompts/system-v3.md`. It is the prompt of the baseline and of all later variants. The project measures only the effect of LoRA and RL, so the prompt does not change.
+- The prompt is in English. The answer to the user is in Polish. All six models get the same text.
+- Bielik has no native tool calls. Its tool list goes into the same system message after the text of the prompt (`src/prompts/tools-bielik-v2.md`). The list is compact, because the full JSON schemas need more than 7000 tokens with the Bielik tokenizer. The context of Bielik does not change.
+- `DEFAULT_PROMPT` is `v3`. `tests/test_models.py` has the SHA-256 of `system-v3.md` and `tools-bielik-v2.md`.
+- A change of these files needs a new version and a new run of all variants.
+- The prompt was not tuned on the test set. A validation set does not exist yet.

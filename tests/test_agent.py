@@ -45,11 +45,11 @@ def test_step_limit(board):
 def test_trajectory_record(board):
     traj = run_task(ScriptedModel([tc("jira_get_issue", issue_key="WEB-2"), "OK"]), build_server(board),
                     "Pokaż WEB-2.", task_id="t9")
-    prompt_file = ROOT / "src" / "prompts" / "system-v2.md"
-    assert traj.task_id == "t9" and traj.prompt_version == "v2"
+    prompt_file = ROOT / "src" / "prompts" / "system-v3.md"
+    assert traj.task_id == "t9" and traj.prompt_version == "v3"
     assert traj.prompt_sha256 == hashlib.sha256(prompt_file.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
     assert [m["role"] for m in traj.messages] == ["system", "user", "assistant", "tool", "assistant"]
-    assert traj.messages[0]["content"] == load_prompt("system", "v2").text
+    assert traj.messages[0]["content"] == load_prompt("system", "v3").text
     record = traj.tool_calls[0]
     assert record.name == "jira_get_issue" and record.arguments == {"issue_key": "WEB-2"}
     assert json.loads(record.result)["key"] == "WEB-2"
