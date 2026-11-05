@@ -315,6 +315,25 @@ class Gemma4(Family):
         return "".join(f"<|tool_call>call:{c['name']}{self._format(c['arguments'])}<tool_call|>" for c in calls)
 
 
+def _first_sentence(text: str, limit: int) -> str:
+    """The first line or sentence of a description, cut to `limit` characters."""
+    text = (text or "").strip().split("\n")[0]
+    text = re.split(r"(?<=\.)\s(?=[A-Z])", text)[0]
+    return text if len(text) <= limit else text[: limit - 1].rstrip() + "…"
+
+
+def compact_tool(tool: dict) -> str:
+    """One tool as short text: the signature, the description and one line for each argument."""
+    properties = tool.get("parameters", {}).get("properties", {})
+    required = set(tool.get("parameters", {}).get("required", []))
+    signature = ", ".join(k if k in required else f"{k}?" for k in properties)
+    lines = [f"- {tool['name']}({signature}): {_first_sentence(tool.get('description', ''), 200)}"]
+    for key, spec in properties.items():
+        kind = "|".join(map(str, spec["enum"])) if "enum" in spec else spec.get("type", "any")
+        lines.append(f"    {key} ({kind}): {_first_sentence(spec.get('description', ''), 160)}")
+    return "\n".join(lines)
+
+
 class Bielik(Family):
     """Bielik has no native tool calls. The system prompt gives the tools and the format <tool_call>{json}</tool_call>."""
 
@@ -322,10 +341,11 @@ class Bielik(Family):
     has_thinking = False
     end_markers = ("<|im_end|>", "</s>")
     CALL_RE = re.compile(r"<tool_call>(.*?)(?:</tool_call>|$)", re.DOTALL)
-    TOOLS_PROMPT = "v1"
+    TOOLS_PROMPT = "v2"
 
     def tools_prompt(self, tools: list[dict]) -> str:
-        listed = "\n".join(json.dumps(t.get("function", t), ensure_ascii=False) for t in tools)
+        # The full JSON schemas of the 14 tools need more than 7000 tokens with the Bielik tokenizer.
+        listed = "\n".join(compact_tool(t.get("function", t)) for t in tools)
         return load_prompt("tools-bielik", self.TOOLS_PROMPT).text.replace("{tools}", listed)
 
     def prepare(self, messages, tools):

@@ -253,3 +253,16 @@ def test_prompt_files():
 
 def test_example_outputs_are_json_safe():
     assert json.dumps(EXAMPLES)
+
+
+def test_bielik_tool_list_is_compact():
+    from src.models import compact_tool
+
+    tool = {"name": "jira_get_issue", "description": "Get an issue. More text.",
+            "parameters": {"properties": {"issue_key": {"type": "string", "description": "The key.\nLong text."},
+                                          "limit": {"type": "integer", "description": "How many."}},
+                           "required": ["issue_key"]}}
+    text = compact_tool(tool)
+    assert text.splitlines()[0] == "- jira_get_issue(issue_key, limit?): Get an issue."
+    assert "    issue_key (string): The key." in text and "Long text" not in text
+    assert "{tools}" in load_prompt("tools-bielik", "v2").text

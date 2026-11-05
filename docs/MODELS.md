@@ -80,4 +80,4 @@ An unknown backend, an unknown family, thinking for `bielik` or a missing prompt
 |---|---|---|
 | `qwen3.5` | `<tool_call><function=name><parameter=arg>value</parameter></function></tool_call>` (chat template) | `enable_thinking`; the text before `</think>` goes into the trajectory |
 | `gemma4` | `<\|tool_call>call:name{arg:value}<tool_call\|>` (chat template) | `enable_thinking`; the text in `<\|channel>thought ... <channel\|>` goes into the trajectory |
-| `bielik` | `<tool_call>{"name": ..., "arguments": {...}}</tool_call>`; `src/prompts/tools-bielik-v1.md` adds the tools to the system prompt | none |
+| `bielik` | `<tool_call>{"name": ..., "arguments": {...}}</tool_call>`; `src/prompts/tools-bielik-v2.md` adds a compact list of the tools to the system prompt | none |
