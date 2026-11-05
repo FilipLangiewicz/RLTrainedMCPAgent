@@ -329,3 +329,11 @@
 - Job `baseline-gemma-4-e2b`: score 0.305 on 200 test tasks (correct 0.195, correct refusal 0.110). `easy` 0.458, `multi_step` 0.058, `refusal` 0.880.
 - The model calls no tool in 75 of 200 tasks. No output is garbled, one task ends with the stop reason `loop`. The job needs 870 s.
 - The report is in `data/results/baseline/report-baseline-gemma-4-e2b.md`.
+
+### Error analysis of Gemma 4 E2B
+
+- Add the job `calls-digest`. This CPU job reads `trajectories.jsonl` on Kaggle and writes a small file with the tool calls. Thus `trajectories.jsonl` stays on Kaggle.
+- Add the column `Why` and the section "Error analysis" to `data/results/baseline/report-baseline-gemma-4-e2b.md`. All grades stay as they are.
+- The model does not need an issue key: in 44 incorrect tasks, the search of the reference solution finds exactly one issue. Task `test-159` has 3 matches.
+- The project key is a gap in the protocol: the instruction and the prompt `v3` do not name the project, and the reference solutions do not show a step that finds it. The model can find it with a tool.
+- In 6 of 22 correct refusals, the reason of the model is wrong. The verifier checks only the prefix `ODMOWA:`.

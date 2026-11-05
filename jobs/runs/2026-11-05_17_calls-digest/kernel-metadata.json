@@ -1,0 +1,16 @@
+{
+  "id": "combainsidm/rltrainedmcpagent-calls-digest",
+  "title": "rltrainedmcpagent-calls-digest",
+  "code_file": "run.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": false,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [
+    "combainsidm/rltrainedmcpagent-baseline-gemma-4-e2b"
+  ],
+  "model_sources": []
+}
