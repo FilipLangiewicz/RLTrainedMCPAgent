@@ -27,14 +27,20 @@ subprocess.run([sys.executable, "-m", "pip", "install", "-q", "-r", f"{CLONE}/re
 
 import yaml
 
+# The log shows where Kaggle mounts the models.
+for folder in sorted(Path("/kaggle/input").rglob("*")):
+    if folder.is_dir() and len(folder.parts) <= 8:
+        print("input", folder, flush=True)
+
 status = {}
 for codename in CODENAMES:
     cfg = yaml.safe_load(Path(f"{CLONE}/jobs/runs/{JOB}/{codename}.yaml").read_text())
-    # The folder inside the Kaggle Model can change, so find the weights by config.json.
-    configs = sorted(Path(cfg["model"]["path"]).rglob("config.json"))
+    # The mount path of a Kaggle Model can change, so find the weights by the slug and config.json.
+    slug = Path(cfg["model"]["path"]).parts[3]
+    configs = sorted(p for p in Path("/kaggle/input").rglob("config.json") if slug in p.parts)
     if not configs:
         status[codename] = "no weights"
-        print(codename, "no weights under", cfg["model"]["path"], flush=True)
+        print(codename, "no weights for", slug, flush=True)
         continue
     weights = configs[0].parent
     cfg["model"]["path"] = str(weights)
