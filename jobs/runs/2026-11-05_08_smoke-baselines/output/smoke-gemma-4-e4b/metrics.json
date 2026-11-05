@@ -48,20 +48,22 @@
   "mean_tool_errors": 0.0,
   "mean_input_tokens": 5698.0,
   "mean_output_tokens": 37.0,
-  "mean_time_s": 9.219,
-  "total_time_s": 36.876,
+  "mean_time_s": 8.589,
+  "total_time_s": 34.358,
   "errors": 0,
   "health": {
     "empty_answers": 0,
     "garbled_tasks": 0,
     "no_tool_call_tasks": 3,
     "invalid_call_tasks": 0,
-    "max_steps_tasks": 0
+    "max_steps_tasks": 0,
+    "loop_tasks": 0
   },
   "run": {
     "codename": "smoke-gemma-4-e4b",
     "config": {
       "agent": {
+        "loop_limit": 3,
         "max_steps": 25,
         "prompt": "v3"
       },
@@ -95,13 +97,13 @@
     },
     "prompt_version": "v3",
     "prompt_sha256": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
-    "git_commit": "f097dc42ee565190ee6476283a8e9d7915404fbb",
+    "git_commit": "face123aec0cd2d5808bbcb15c956fb4b1adce31",
     "python": "3.13.16",
     "torch": "2.11.0+cu130",
     "transformers": "5.22.1",
     "device": "Tesla T4",
-    "date": "2026-11-05T12:33:27+00:00",
-    "wall_time_s": 36.903,
+    "date": "2026-11-05T14:42:40+00:00",
+    "wall_time_s": 34.381,
     "shards": [
       "0/1"
     ]

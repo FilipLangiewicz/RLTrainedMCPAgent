@@ -306,3 +306,4 @@
 - The value is in the config of a run and not in `.env`, so `metrics.json` records it. `metrics.json` has the new count `loop_tasks`.
 - The rule is part of the protocol. The baseline, SFT and RL use the same value.
 - Version 8 of the smoke test runs all six models. The fix of the attention kernel and the loop rule change the code path of all models.
+- Result of the smoke test with the rule: all six models run on the final code. The rule ends 3 tasks of Qwen3.5-2B and 1 task of Qwen3.5-4B, but it saves little time. The calls of a loop often differ (Bielik 4.5B: 50 failed calls in one task, 891 s).

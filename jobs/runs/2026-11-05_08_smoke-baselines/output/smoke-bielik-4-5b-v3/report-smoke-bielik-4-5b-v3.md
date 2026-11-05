@@ -2,7 +2,7 @@
 
 Model: `/kaggle/input/models/combainsidm/idm-pro-bielik-4-5b-v3/transformers/base/1/bielik-4.5b`. Score: 0.0 (0.0 correct, 0.0 correct refusal), 4 tasks.
 
-Health: empty_answers 0, garbled_tasks 0, no_tool_call_tasks 0, invalid_call_tasks 1, max_steps_tasks 1.
+Health: empty_answers 0, garbled_tasks 0, no_tool_call_tasks 0, invalid_call_tasks 1, max_steps_tasks 1, loop_tasks 0.
 
 Points: 1 for `correct` and `correct_refusal`, 0 for `incorrect`.
 

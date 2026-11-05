@@ -2,7 +2,7 @@
 
 Model: `/kaggle/input/models/combainsidm/idm-pro-gemma-4-e2b/transformers/base/1/gemma-4-e2b`. Score: 0.25 (0.0 correct, 0.25 correct refusal), 4 tasks.
 
-Health: empty_answers 0, garbled_tasks 1, no_tool_call_tasks 1, invalid_call_tasks 0, max_steps_tasks 0.
+Health: empty_answers 0, garbled_tasks 0, no_tool_call_tasks 1, invalid_call_tasks 0, max_steps_tasks 0, loop_tasks 0.
 
 Points: 1 for `correct` and `correct_refusal`, 0 for `incorrect`.
 
