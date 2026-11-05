@@ -323,3 +323,9 @@
 - A model that fits on one GPU runs as two processes (one half of the tasks on each GPU). The job merges the halves. Gemma 4 E4B runs as one process on both GPUs.
 - Order of the queue, from the shortest job to the longest: Gemma E2B, Gemma E4B, Bielik 1.5B, Bielik 4.5B, Qwen3.5-2B, Qwen3.5-4B. Kaggle allows 2 sessions at the same time.
 - The tasks and the boards come from the clone of the branch. They are not in a Kaggle dataset.
+
+### Baseline of Gemma 4 E2B
+
+- Job `baseline-gemma-4-e2b`: score 0.305 on 200 test tasks (correct 0.195, correct refusal 0.110). `easy` 0.458, `multi_step` 0.058, `refusal` 0.880.
+- The model calls no tool in 75 of 200 tasks. No output is garbled, one task ends with the stop reason `loop`. The job needs 870 s.
+- The report is in `data/results/baseline/report-baseline-gemma-4-e2b.md`.
