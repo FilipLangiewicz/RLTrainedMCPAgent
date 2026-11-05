@@ -1,0 +1,108 @@
+{
+  "n": 4,
+  "score": 0.0,
+  "correct": 0.0,
+  "correct_refusal": 0.0,
+  "by_difficulty": {
+    "easy": {
+      "n": 2,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "multi_step": {
+      "n": 1,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "refusal": {
+      "n": 1,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    }
+  },
+  "by_category": {
+    "query": {
+      "n": 1,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "refusal": {
+      "n": 1,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "update": {
+      "n": 2,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    }
+  },
+  "mean_steps": 2.0,
+  "mean_invalid_calls": 0.0,
+  "mean_tool_errors": 1.0,
+  "mean_input_tokens": 16916.25,
+  "mean_output_tokens": 252.5,
+  "mean_time_s": 46.32,
+  "total_time_s": 185.281,
+  "errors": 2,
+  "health": {
+    "empty_answers": 0,
+    "garbled_tasks": 0,
+    "no_tool_call_tasks": 0,
+    "invalid_call_tasks": 0,
+    "max_steps_tasks": 0
+  },
+  "run": {
+    "codename": "smoke-bielik-1-5b-v3",
+    "config": {
+      "agent": {
+        "max_steps": 25,
+        "prompt": "v2"
+      },
+      "model": {
+        "thinking": false,
+        "backend": "transformers",
+        "dtype": "float16",
+        "family": "bielik",
+        "max_new_tokens": 1024,
+        "path": "/kaggle/input/models/combainsidm/idm-pro-bielik-1-5b-v3/transformers/base/1/bielik-1.5b",
+        "revision": "1907cec498b762e8223b7cffc2b8f279c417a44d"
+      },
+      "tasks": {
+        "ids": [
+          "test-001",
+          "test-007",
+          "test-010",
+          "test-036"
+        ],
+        "limit": null,
+        "split": "test"
+      }
+    },
+    "model": {
+      "backend": "transformers",
+      "family": "bielik",
+      "path": "/kaggle/input/models/combainsidm/idm-pro-bielik-1-5b-v3/transformers/base/1/bielik-1.5b",
+      "revision": "1907cec498b762e8223b7cffc2b8f279c417a44d",
+      "thinking": false
+    },
+    "prompt_version": "v2",
+    "prompt_sha256": "14b6973e3fb6a148f3bae852002f4c21b9148644face31e6e77dfe3328ff7020",
+    "git_commit": "33944b55fcb9dec5eeef040cf02d9a398d37d95a",
+    "python": "3.13.16",
+    "torch": "2.11.0+cu130",
+    "transformers": "5.22.1",
+    "device": "Tesla T4",
+    "date": "2026-11-05T11:05:40+00:00",
+    "wall_time_s": 185.3,
+    "shards": [
+      "0/1"
+    ]
+  }
+}

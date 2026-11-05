@@ -1,0 +1,8 @@
+{
+  "smoke-qwen3-5-2b": "exit 0, 602 s",
+  "smoke-qwen3-5-4b": "exit 0, 152 s",
+  "smoke-bielik-1-5b-v3": "exit 0, 203 s",
+  "smoke-bielik-4-5b-v3": "exit 0, 29 s",
+  "smoke-gemma-4-e2b": "exit 0, 78 s",
+  "smoke-gemma-4-e4b": "exit 0, 81 s"
+}

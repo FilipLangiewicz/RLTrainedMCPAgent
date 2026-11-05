@@ -1,0 +1,108 @@
+{
+  "n": 4,
+  "score": 0.25,
+  "correct": 0.0,
+  "correct_refusal": 0.25,
+  "by_difficulty": {
+    "easy": {
+      "n": 2,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "multi_step": {
+      "n": 1,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "refusal": {
+      "n": 1,
+      "score": 1.0,
+      "correct": 0.0,
+      "correct_refusal": 1.0
+    }
+  },
+  "by_category": {
+    "query": {
+      "n": 1,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "refusal": {
+      "n": 1,
+      "score": 1.0,
+      "correct": 0.0,
+      "correct_refusal": 1.0
+    },
+    "update": {
+      "n": 2,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    }
+  },
+  "mean_steps": 1.75,
+  "mean_invalid_calls": 0.0,
+  "mean_tool_errors": 0.5,
+  "mean_input_tokens": 7603.0,
+  "mean_output_tokens": 89.0,
+  "mean_time_s": 9.522,
+  "total_time_s": 38.087,
+  "errors": 0,
+  "health": {
+    "empty_answers": 0,
+    "garbled_tasks": 0,
+    "no_tool_call_tasks": 1,
+    "invalid_call_tasks": 0,
+    "max_steps_tasks": 0
+  },
+  "run": {
+    "codename": "smoke-gemma-4-e2b",
+    "config": {
+      "agent": {
+        "max_steps": 25,
+        "prompt": "v2"
+      },
+      "model": {
+        "thinking": false,
+        "backend": "transformers",
+        "dtype": "float16",
+        "family": "gemma4",
+        "max_new_tokens": 1024,
+        "path": "/kaggle/input/models/combainsidm/idm-pro-gemma-4-e2b/transformers/base/1/gemma-4-e2b",
+        "revision": "4adf15748de9e1a0097b6274cee9c15836c41c37"
+      },
+      "tasks": {
+        "ids": [
+          "test-001",
+          "test-007",
+          "test-010",
+          "test-036"
+        ],
+        "limit": null,
+        "split": "test"
+      }
+    },
+    "model": {
+      "backend": "transformers",
+      "family": "gemma4",
+      "path": "/kaggle/input/models/combainsidm/idm-pro-gemma-4-e2b/transformers/base/1/gemma-4-e2b",
+      "revision": "4adf15748de9e1a0097b6274cee9c15836c41c37",
+      "thinking": false
+    },
+    "prompt_version": "v2",
+    "prompt_sha256": "14b6973e3fb6a148f3bae852002f4c21b9148644face31e6e77dfe3328ff7020",
+    "git_commit": "33944b55fcb9dec5eeef040cf02d9a398d37d95a",
+    "python": "3.13.16",
+    "torch": "2.11.0+cu130",
+    "transformers": "5.22.1",
+    "device": "Tesla T4",
+    "date": "2026-11-05T11:09:54+00:00",
+    "wall_time_s": 38.107,
+    "shards": [
+      "0/1"
+    ]
+  }
+}

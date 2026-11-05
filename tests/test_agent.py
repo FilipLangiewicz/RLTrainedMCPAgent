@@ -173,3 +173,11 @@ def test_openai_key_from_environment(monkeypatch):
 
 def test_trajectory_fields():
     assert {"prompt_version", "prompt_sha256", "thinking", "messages", "tool_calls"} <= set(Trajectory.model_fields)
+
+
+def test_arguments_that_are_not_an_object(board):
+    call = '<tool_call>{"name": "jira_get_issue", "arguments": ["WEB-1"]}</tool_call>'
+    model = ScriptedModel([call, "ODMOWA: nie."], family="bielik")
+    traj = run_task(model, build_server(board), "x")
+    assert traj.stop_reason == "answer" and traj.invalid_calls == 1
+    assert "must be a JSON object" in traj.tool_calls[0].result

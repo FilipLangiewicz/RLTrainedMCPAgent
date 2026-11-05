@@ -252,3 +252,11 @@
 - Rename the report to `report-<codename>.md`, so the file name shows the model.
 - `AGENTS.md`: a job keeps its small output files in its own folder. Only `report-<codename>.md` of a baseline goes to `data/results/baseline/`. `trajectories.jsonl` stays on Kaggle.
 - Move `prompts/` to `src/prompts/`. A prompt is a part of the code. Old entries of this worklog keep the old path.
+
+### Smoke test of the six models
+
+- Add the job `smoke-baselines`: four test tasks for each model, prompt `v2`, `float16`. The weights of all six models are in private Kaggle Models (`idm-pro-<model>`, variation `base`).
+- Result: all six models make tool calls, the parsers work, and no output is garbled. Gemma 4 E4B runs on two GPUs with `device: auto`.
+- Bielik 1.5B and 4.5B run out of GPU memory for a long prompt. Qwen3.5-2B loops and makes up to 83 calls in one task.
+- Gemma 4 and Qwen3.5-4B often refuse a possible task ("no issue key"), also when the key is in the instruction.
+- Fix `src/agent.py`: tool arguments that are not an object are an invalid call. Before, they stopped the task with a TypeError.
