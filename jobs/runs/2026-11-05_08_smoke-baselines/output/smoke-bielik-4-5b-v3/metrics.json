@@ -43,26 +43,27 @@
       "correct_refusal": 0.0
     }
   },
-  "mean_steps": 8.0,
+  "mean_steps": 2.5,
   "mean_invalid_calls": 0.25,
-  "mean_tool_errors": 13.25,
-  "mean_input_tokens": 61877.75,
-  "mean_output_tokens": 1528.0,
-  "mean_time_s": 244.879,
-  "total_time_s": 979.515,
+  "mean_tool_errors": 2.25,
+  "mean_input_tokens": 10961.5,
+  "mean_output_tokens": 356.5,
+  "mean_time_s": 39.847,
+  "total_time_s": 159.389,
   "errors": 0,
   "health": {
     "empty_answers": 0,
     "garbled_tasks": 0,
     "no_tool_call_tasks": 0,
     "invalid_call_tasks": 1,
-    "max_steps_tasks": 1,
-    "loop_tasks": 0
+    "max_steps_tasks": 0,
+    "loop_tasks": 1
   },
   "run": {
     "codename": "smoke-bielik-4-5b-v3",
     "config": {
       "agent": {
+        "error_limit": 5,
         "loop_limit": 3,
         "max_steps": 25,
         "prompt": "v3"
@@ -96,13 +97,13 @@
     },
     "prompt_version": "v3",
     "prompt_sha256": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
-    "git_commit": "face123aec0cd2d5808bbcb15c956fb4b1adce31",
+    "git_commit": "c165312914887cb71d64e8ad7f95fd5252dadfd7",
     "python": "3.13.16",
     "torch": "2.11.0+cu130",
     "transformers": "5.22.1",
     "device": "Tesla T4",
-    "date": "2026-11-05T15:01:39+00:00",
-    "wall_time_s": 979.541,
+    "date": "2026-11-05T15:30:57+00:00",
+    "wall_time_s": 159.41,
     "shards": [
       "0/1"
     ]

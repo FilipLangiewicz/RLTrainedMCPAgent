@@ -448,6 +448,8 @@ def load_weights(path: str, revision: str | None, dtype: str, device_map: str | 
     import torch
     import transformers
 
+    # The bar "Loading weights" writes hundreds of lines into the log of a job.
+    transformers.utils.logging.disable_progress_bar()
     local = Path(path).is_dir()
     kwargs = {"local_files_only": True} if local else {"revision": revision}
     if device_map:

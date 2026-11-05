@@ -43,13 +43,13 @@
       "correct_refusal": 0.0
     }
   },
-  "mean_steps": 2.5,
+  "mean_steps": 1.75,
   "mean_invalid_calls": 0.0,
-  "mean_tool_errors": 10.0,
-  "mean_input_tokens": 17800.25,
-  "mean_output_tokens": 2312.5,
-  "mean_time_s": 123.99,
-  "total_time_s": 495.959,
+  "mean_tool_errors": 9.75,
+  "mean_input_tokens": 10379.0,
+  "mean_output_tokens": 1544.5,
+  "mean_time_s": 83.847,
+  "total_time_s": 335.387,
   "errors": 0,
   "health": {
     "empty_answers": 0,
@@ -63,6 +63,7 @@
     "codename": "smoke-qwen3-5-2b",
     "config": {
       "agent": {
+        "error_limit": 5,
         "loop_limit": 3,
         "max_steps": 25,
         "prompt": "v3"
@@ -96,13 +97,13 @@
     },
     "prompt_version": "v3",
     "prompt_sha256": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
-    "git_commit": "face123aec0cd2d5808bbcb15c956fb4b1adce31",
+    "git_commit": "c165312914887cb71d64e8ad7f95fd5252dadfd7",
     "python": "3.13.16",
     "torch": "2.11.0+cu130",
     "transformers": "5.22.1",
     "device": "Tesla T4",
-    "date": "2026-11-05T14:45:17+00:00",
-    "wall_time_s": 495.985,
+    "date": "2026-11-05T15:24:47+00:00",
+    "wall_time_s": 335.41,
     "shards": [
       "0/1"
     ]

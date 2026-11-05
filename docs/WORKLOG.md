@@ -314,3 +314,5 @@
 - The cause: Bielik 4.5B made 50 different calls and each one failed. The rule of equal calls did not stop it.
 - The value is in the config of a run. The baseline, SFT and RL use the same value. A trained model must make fewer errors in a row than the limit.
 - Version 9 of the smoke test runs only the two models that this rule changes: Qwen3.5-2B and Bielik 4.5B.
+- Result with the rule of 5 errors: Bielik 4.5B needs 159 s for the 4 tasks (before 980 s). The task `test-010` ends after 6 failed calls in 67 s (before 50 calls in 891 s). Qwen3.5-2B needs 335 s (before 496 s). The grades did not change.
+- `load_weights` disables the progress bar "Loading weights". The bar wrote hundreds of lines into the log.
