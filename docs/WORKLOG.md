@@ -344,3 +344,9 @@
 - Job `baseline-gemma-4-e4b`: score 0.325 on 200 test tasks (correct 0.25, correct refusal 0.075). `easy` 0.556, `multi_step` 0.097, `refusal` 0.600. 73 tasks have no tool call. The job needs 2992 s.
 - In 7 of 10 incorrect refusal tasks, the meaning is a correct refusal, but the answer does not start with `ODMOWA:`.
 - The report is in `data/results/baseline/report-baseline-gemma-4-e4b.md`, with the column `Why` and the section "Error analysis".
+
+### Baselines of Gemma 4 E4B and Bielik 1.5B
+
+- Gemma 4 E4B: score 0.325 (correct 0.250, correct refusal 0.075). `easy` 0.556, `multi_step` 0.097, `refusal` 0.600. 73 tasks without a tool call. The job needs 2993 s, because it runs as one process on two GPUs.
+- Bielik 1.5B: score 0.050 (all correct, no correct refusal). `easy` 0.139, `multi_step` 0.000, `refusal` 0.000. 53 tasks have an invalid call, 32 tasks end by the loop rules and 7 by the step limit. The job needs 2541 s.
+- The reports are in `data/results/baseline/`.
