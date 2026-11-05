@@ -1,0 +1,46 @@
+{
+  "model": "speakleash/Bielik-4.5B-v3.0-Instruct",
+  "commit": "4b1220a9d745bdd874c44347075ef25484ef322b",
+  "files": {
+    ".gitattributes": {
+      "bytes": 1519,
+      "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+    },
+    "README.md": {
+      "bytes": 9762,
+      "sha256": "83a3491d59feaf83133eba3f68f0121583a4c2e99b3a971ab4be97da7f110410"
+    },
+    "config.json": {
+      "bytes": 704,
+      "sha256": "0401e0afc6d5fb3252910e301b5e694a395a2f24063874d3b950115668db6af0"
+    },
+    "generation_config.json": {
+      "bytes": 139,
+      "sha256": "c593f6affe2a1e077e59db8d4858e9ddcdbe8272714c19d3d788eadffaf3bd4c"
+    },
+    "model-00001-of-00002.safetensors": {
+      "bytes": 4997903184,
+      "sha256": "bae33275facc20ad42fbaef05d963a519465018622a74b4d1d9f9b7d9838c1a6"
+    },
+    "model-00002-of-00002.safetensors": {
+      "bytes": 4516726120,
+      "sha256": "e66d692a9f3a802ee7d2d50d337225daec217568e3ecec9000feaffe3f18c3f8"
+    },
+    "model.safetensors.index.json": {
+      "bytes": 78043,
+      "sha256": "3b7a50a3cdc13aa0485a49933f1b2291ec3da6cc9299360f2041b1e8d3ea6f3f"
+    },
+    "special_tokens_map.json": {
+      "bytes": 671,
+      "sha256": "6651158389d4e507d71d4b4eb2f8aa2e53a619f26fe10a490aaf347dfd956adb"
+    },
+    "tokenizer.json": {
+      "bytes": 3705401,
+      "sha256": "536b4dffbed89b3741d008a06c4308a42b3e3e969b92c7e3c6fd0ca1f40d04b1"
+    },
+    "tokenizer_config.json": {
+      "bytes": 2040,
+      "sha256": "37488ceb848a2f19eec5f4d32c7c1c3a5e5d5ba497c52d406c88809868fdfd10"
+    }
+  }
+}

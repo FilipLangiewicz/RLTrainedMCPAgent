@@ -1,0 +1,38 @@
+{
+  "model": "speakleash/Bielik-1.5B-v3.0-Instruct",
+  "commit": "1907cec498b762e8223b7cffc2b8f279c417a44d",
+  "files": {
+    ".gitattributes": {
+      "bytes": 1519,
+      "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+    },
+    "README.md": {
+      "bytes": 10048,
+      "sha256": "cc95c7db10f0f18b2cc8b3d94add37d9cbcc048348ce6ba6a5ca14162a05f29f"
+    },
+    "config.json": {
+      "bytes": 702,
+      "sha256": "91373941a015663cf0bc6415c782807819e3cfd1b82adc362839c6cf2d06f7d5"
+    },
+    "generation_config.json": {
+      "bytes": 139,
+      "sha256": "be8daf6494b4243675989eb468303fe74dcf283a29e22506c2747a3dd2ea054e"
+    },
+    "model.safetensors": {
+      "bytes": 3193073112,
+      "sha256": "3c337d1d0d3f8cafb27f617b97a9a0cf70a2067648cb3946311e2fe370c28978"
+    },
+    "special_tokens_map.json": {
+      "bytes": 671,
+      "sha256": "6651158389d4e507d71d4b4eb2f8aa2e53a619f26fe10a490aaf347dfd956adb"
+    },
+    "tokenizer.json": {
+      "bytes": 1976682,
+      "sha256": "04d51130a7b0d9413e7f12a4ebcaa56d687c0e09fdea2d9cd5bffa50375e4187"
+    },
+    "tokenizer_config.json": {
+      "bytes": 2010,
+      "sha256": "f5379a9a7d1eb9ea16f1d2bca96ce84c1eda13676c096835546f4105dc22f04f"
+    }
+  }
+}
