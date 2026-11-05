@@ -10,6 +10,7 @@ agent:
   prompt: v3
   max_steps: 25
   loop_limit: 3
+  error_limit: 5
 tasks:
   split: test
   limit: null

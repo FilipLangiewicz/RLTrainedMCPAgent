@@ -13,6 +13,8 @@ from src.models import Model, ModelOutput, Prompt, load_prompt
 DEFAULT_PROMPT = "v3"
 # The same call this many times in a row ends the task. A greedy model does not leave such a loop.
 DEFAULT_LOOP_LIMIT = 3
+# This many tool errors in a row end the task. A model that fails so often does not recover.
+DEFAULT_ERROR_LIMIT = 5
 DEFAULT_MAX_STEPS = 25
 
 
@@ -91,7 +93,8 @@ def _assistant_message(out: ModelOutput) -> dict:
 
 async def run_task_async(model: Model, server, instruction: str, prompt: Prompt | None = None,
                          max_steps: int = DEFAULT_MAX_STEPS, task_id: str = "",
-                         loop_limit: int | None = DEFAULT_LOOP_LIMIT) -> Trajectory:
+                         loop_limit: int | None = DEFAULT_LOOP_LIMIT,
+                         error_limit: int | None = DEFAULT_ERROR_LIMIT) -> Trajectory:
     start = time.perf_counter()
     prompt = prompt or load_prompt("system", DEFAULT_PROMPT)
     traj = Trajectory(task_id=task_id, instruction=instruction, prompt_version=prompt.version,
@@ -103,7 +106,7 @@ async def run_task_async(model: Model, server, instruction: str, prompt: Prompt 
             tools = [tool_schema(t) for t in listed]
             names = sorted(t.name for t in listed)
             traj.stop_reason = "max_steps"
-            streak, last = 0, None
+            streak, last, errors = 0, None, 0
             for step in range(1, max_steps + 1):
                 out = model.generate(traj.messages, tools)
                 traj.steps = step
@@ -133,7 +136,8 @@ async def run_task_async(model: Model, server, instruction: str, prompt: Prompt 
                     key = (call.name, json.dumps(call.arguments, sort_keys=True) if call.arguments is not None else call.raw)
                     streak = streak + 1 if key == last else 1
                     last = key
-                if loop_limit and streak >= loop_limit:
+                    errors = errors + 1 if is_error else 0
+                if (loop_limit and streak >= loop_limit) or (error_limit and errors >= error_limit):
                     traj.stop_reason = "loop"
                     break
     except Exception as e:  # noqa: BLE001  The evaluation grades this task as incorrect and continues.
@@ -146,5 +150,5 @@ async def run_task_async(model: Model, server, instruction: str, prompt: Prompt 
 
 def run_task(model: Model, server, instruction: str, prompt: Prompt | None = None,
              max_steps: int = DEFAULT_MAX_STEPS, task_id: str = "",
-             loop_limit: int | None = DEFAULT_LOOP_LIMIT) -> Trajectory:
-    return asyncio.run(run_task_async(model, server, instruction, prompt, max_steps, task_id, loop_limit))
+             loop_limit: int | None = DEFAULT_LOOP_LIMIT, error_limit: int | None = DEFAULT_ERROR_LIMIT) -> Trajectory:
+    return asyncio.run(run_task_async(model, server, instruction, prompt, max_steps, task_id, loop_limit, error_limit))

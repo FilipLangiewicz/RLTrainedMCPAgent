@@ -307,3 +307,10 @@
 - The rule is part of the protocol. The baseline, SFT and RL use the same value.
 - Version 8 of the smoke test runs all six models. The fix of the attention kernel and the loop rule change the code path of all models.
 - Result of the smoke test with the rule: all six models run on the final code. The rule ends 3 tasks of Qwen3.5-2B and 1 task of Qwen3.5-4B, but it saves little time. The calls of a loop often differ (Bielik 4.5B: 50 failed calls in one task, 891 s).
+
+### Rule of tool errors in a row
+
+- Add `agent.error_limit` (default 5). Five tool errors in a row end the task with the stop reason `loop`. A call that works resets the count.
+- The cause: Bielik 4.5B made 50 different calls and each one failed. The rule of equal calls did not stop it.
+- The value is in the config of a run. The baseline, SFT and RL use the same value. A trained model must make fewer errors in a row than the limit.
+- Version 9 of the smoke test runs only the two models that this rule changes: Qwen3.5-2B and Bielik 4.5B.

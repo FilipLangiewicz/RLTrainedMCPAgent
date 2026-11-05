@@ -187,3 +187,17 @@ def test_different_calls_are_not_a_loop(board):
                tc("jira_get_issue", issue_key="WEB-1"), tc("jira_get_issue", issue_key="WEB-1"), "Koniec."]
     traj = run_task(ScriptedModel(outputs), build_server(board), "x")
     assert traj.stop_reason == "answer" and len(traj.tool_calls) == 4
+
+
+def test_errors_in_a_row_end_the_task(board):
+    outputs = [tc("jira_get_issue", issue_key=f"WEB-{900 + i}") for i in range(10)]
+    traj = run_task(ScriptedModel(outputs), build_server(board), "x")
+    assert traj.stop_reason == "loop" and len(traj.tool_calls) == 5
+    assert all(c.is_error for c in traj.tool_calls)
+
+
+def test_success_resets_the_error_count(board):
+    bad = [tc("jira_get_issue", issue_key=f"WEB-{900 + i}") for i in range(4)]
+    outputs = bad + [tc("jira_get_issue", issue_key="WEB-1")] + bad + ["Koniec."]
+    traj = run_task(ScriptedModel(outputs), build_server(board), "x")
+    assert traj.stop_reason == "answer" and len(traj.tool_calls) == 9

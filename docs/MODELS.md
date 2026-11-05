@@ -58,6 +58,7 @@ agent:
   prompt: v3              # src/prompts/system-v3.md
   max_steps: 25
   loop_limit: 3           # the same call 3 times in a row ends the task
+  error_limit: 5          # 5 tool errors in a row end the task
 tasks:
   split: test
   limit: null
@@ -75,6 +76,7 @@ tasks:
 | `agent.prompt` | `v3` | The version of `src/prompts/system-<version>.md`. |
 | `agent.max_steps` | `25` | The step limit of the agent loop. |
 | `agent.loop_limit` | `3` | The same tool call (name and arguments) this many times in a row ends the task with the stop reason `loop`. `null` turns the rule off. |
+| `agent.error_limit` | `5` | This many tool errors in a row end the task with the stop reason `loop`. A call that works resets the count. `null` turns the rule off. |
 
 An unknown backend, an unknown family, thinking for `bielik` or a missing prompt file stops the run before the first task.
 
