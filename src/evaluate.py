@@ -202,6 +202,8 @@ def run_evaluation(cfg: dict, output_dir: Path, shard: tuple[int, int] = (0, 1),
     tasks = load_tasks(cfg["tasks"]["split"], data_dir)
     if cfg["tasks"].get("limit"):
         tasks = tasks[: cfg["tasks"]["limit"]]
+    if cfg["tasks"].get("ids"):
+        tasks = [t for t in tasks if t.id in cfg["tasks"]["ids"]]
     tasks = [t for pos, t in enumerate(tasks) if pos % n == i]
     model = model or make_model(cfg["model"])
 

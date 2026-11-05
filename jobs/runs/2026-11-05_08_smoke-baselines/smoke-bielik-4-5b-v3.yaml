@@ -1,0 +1,14 @@
+model:
+  backend: transformers
+  family: bielik
+  path: /kaggle/input/idm-pro-bielik-4-5b-v3/transformers/base/1
+  thinking: false
+  dtype: float16
+  max_new_tokens: 1024
+agent:
+  prompt: v2
+  max_steps: 25
+tasks:
+  split: test
+  limit: null
+  ids: [test-001, test-007, test-010, test-036]

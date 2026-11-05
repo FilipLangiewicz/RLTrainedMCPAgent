@@ -147,3 +147,11 @@ def test_is_garbled():
     from src.evaluate import is_garbled
     assert is_garbled("!!!!!!!!") and is_garbled("ab �")
     assert not is_garbled("") and not is_garbled("Zmieniono APP-24 na Highest.")
+
+
+def test_select_task_ids(ten_tasks, data_dir, tmp_path):
+    ids = [ten_tasks[1].id, ten_tasks[4].id]
+    cfg = {**config(), "tasks": {"split": "test", "limit": None, "ids": ids}}
+    metrics = run_evaluation(cfg, tmp_path / "out", model=reference_model(ten_tasks), data_dir=data_dir)
+    assert metrics["n"] == 2
+    assert [r["task_id"] for r in read_jsonl(tmp_path / "out" / "results.jsonl")] == ids

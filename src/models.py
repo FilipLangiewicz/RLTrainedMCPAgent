@@ -410,13 +410,15 @@ class ScriptedModel(Model):
                            output_tokens=len(text.split()))
 
 
-def load_weights(path: str, revision: str | None, dtype: str):
+def load_weights(path: str, revision: str | None, dtype: str, device_map: str | None = None):
     """Load the tokenizer and the model. A local folder loads without the internet."""
     import torch
     import transformers
 
     local = Path(path).is_dir()
     kwargs = {"local_files_only": True} if local else {"revision": revision}
+    if device_map:
+        kwargs["device_map"] = device_map
     tokenizer = transformers.AutoTokenizer.from_pretrained(path, **kwargs)
     try:
         model = transformers.AutoModelForCausalLM.from_pretrained(path, dtype=getattr(torch, dtype), **kwargs)
@@ -435,9 +437,14 @@ class LocalModel(Model):
 
         super().__init__(get_family(family), path, revision, thinking)
         self.torch, self.max_new_tokens = torch, max_new_tokens
+        # The device "auto" splits a model that is too large for one GPU over all GPUs.
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
-        self.tokenizer, self.model = load_weights(path, revision, dtype)
-        self.model.to(self.device).eval()
+        self.tokenizer, self.model = load_weights(path, revision, dtype, "auto" if self.device == "auto" else None)
+        if self.device == "auto":
+            self.device = self.model.device
+        else:
+            self.model.to(self.device)
+        self.model.eval()
         self.revision = revision or getattr(self.model.config, "_commit_hash", None)
 
     def generate(self, messages, tools):
