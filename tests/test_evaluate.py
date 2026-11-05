@@ -124,3 +124,26 @@ def test_load_config(tmp_path):
     assert load_config("x", tmp_path)["codename"] == "x"
     with pytest.raises(FileNotFoundError):
         load_config("y", tmp_path)
+
+
+def test_health_and_report(ten_tasks, data_dir, tmp_path):
+    metrics = run_evaluation(config(), tmp_path / "out", model=ScriptedModel(["!!!!!!!!!!!!"] * 10), data_dir=data_dir)
+    health = metrics["health"]
+    assert health["garbled_tasks"] == 10 and health["no_tool_call_tasks"] == 10 and health["empty_answers"] == 0
+    report = (tmp_path / "out" / "report-smoke.md").read_text(encoding="utf-8")
+    assert "| Task | Category | Instruction |" in report and report.count("\n| test-") == 10
+
+
+def test_report_after_merge(ten_tasks, data_dir, tmp_path):
+    for i in range(2):
+        run_evaluation(config(), tmp_path / f"s{i}", shard=(i, 2), model=reference_model(ten_tasks), data_dir=data_dir)
+    merge([tmp_path / "s0", tmp_path / "s1"], tmp_path / "all")
+    report = (tmp_path / "all" / "report-smoke.md").read_text(encoding="utf-8")
+    assert report.count("\n| test-") == 10 and report.count("| 1 |\n") == 10
+    assert not any("�" in line for line in report.splitlines())
+
+
+def test_is_garbled():
+    from src.evaluate import is_garbled
+    assert is_garbled("!!!!!!!!") and is_garbled("ab �")
+    assert not is_garbled("") and not is_garbled("Zmieniono APP-24 na Highest.")

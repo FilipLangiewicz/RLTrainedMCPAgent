@@ -23,6 +23,14 @@ RUNS_DIR = ROOT / "jobs" / "runs"
 GOOD = ("correct", "correct_refusal")
 
 
+def is_garbled(text: str) -> bool:
+    """True if a model output looks like the output of a broken model (NaN logits give a row of '!')."""
+    chars = [c for c in text if not c.isspace()]
+    if not chars:
+        return False
+    return "\ufffd" in text or sum(c.isalpha() for c in chars) < 0.3 * len(chars)
+
+
 def load_config(codename: str, runs_dir: Path = RUNS_DIR) -> dict:
     """Find `<codename>.yaml` in a job folder. A path to a YAML file also works (for a smoke test)."""
     path = Path(codename)
@@ -86,11 +94,15 @@ def evaluate_task(task, model, prompt: Prompt, max_steps: int, data_dir: Path = 
     else:
         g = grade(task, initial, board, traj.final_answer)
         result_grade, reason = g.grade, g.reason
+    outputs = [m["content"] for m in traj.messages if m["role"] == "assistant" and isinstance(m.get("content"), str)]
     result = {
         "task_id": task.id, "author": task.author, "board": task.board,
         "difficulty": task.difficulty, "category": task.category,
         "grade": result_grade, "reason": reason, "stop_reason": traj.stop_reason,
-        "steps": traj.steps, "invalid_calls": traj.invalid_calls, "tool_errors": traj.tool_errors,
+        "steps": traj.steps, "tool_calls": len(traj.tool_calls),
+        "invalid_calls": traj.invalid_calls, "tool_errors": traj.tool_errors,
+        "empty_answer": traj.stop_reason == "answer" and not traj.final_answer.strip(),
+        "garbled": any(is_garbled(text) for text in outputs),
         "input_tokens": traj.input_tokens, "output_tokens": traj.output_tokens, "time_s": traj.time_s,
         "error": traj.error,
     }
@@ -126,12 +138,51 @@ def compute_metrics(results: list[dict]) -> dict:
         "mean_time_s": mean("time_s"),
         "total_time_s": round(sum(r["time_s"] for r in results), 3),
         "errors": sum(r["error"] is not None for r in results),
+        "health": {
+            "empty_answers": sum(r["empty_answer"] for r in results),
+            "garbled_tasks": sum(r["garbled"] for r in results),
+            "no_tool_call_tasks": sum(r["tool_calls"] == 0 for r in results),
+            "invalid_call_tasks": sum(r["invalid_calls"] > 0 for r in results),
+            "max_steps_tasks": sum(r["stop_reason"] == "max_steps" for r in results),
+        },
     }
+
+
+def _cell(text: str, limit: int = 300) -> str:
+    text = " ".join((text or "").split()).replace("|", "\\|")
+    return text if len(text) <= limit else text[: limit - 1] + "…"
+
+
+def write_report(output_dir: Path) -> None:
+    """Write report-<codename>.md: one table row for each task, with the answer of the model and the points."""
+    output_dir = Path(output_dir)
+    results = _read_jsonl(output_dir / "results.jsonl")
+    trajectories = {t["task_id"]: t for t in _read_jsonl(output_dir / "trajectories.jsonl")}
+    metrics = json.loads((output_dir / "metrics.json").read_text(encoding="utf-8"))
+    lines = [
+        f"# Report of {metrics['run']['codename']}", "",
+        f"Model: `{metrics['run']['model']['path']}`. Score: {metrics['score']} "
+        f"({metrics['correct']} correct, {metrics['correct_refusal']} correct refusal), {metrics['n']} tasks.", "",
+        "Health: " + ", ".join(f"{k} {v}" for k, v in metrics["health"].items()) + ".", "",
+        "Points: 1 for `correct` and `correct_refusal`, 0 for `incorrect`.", "",
+        "| Category | Tasks | Score |", "|---|---|---|",
+        *[f"| {k} | {v['n']} | {v['score']} |" for k, v in metrics["by_category"].items()], "",
+        "| Task | Category | Instruction | Calls | Answer of the model | Reason | Points |", "|---|---|---|---|---|---|---|",
+    ]
+    for r in results:
+        t = trajectories.get(r["task_id"], {})
+        answer = t.get("final_answer") or (f"(no answer: {r['stop_reason']})")
+        points = int(r["grade"] in GOOD)
+        lines.append(f"| {r['task_id']} | {r['category']} | {_cell(t.get('instruction', ''))} | {r['tool_calls']} "
+                     f"| {_cell(answer)} | {_cell(r['reason'])} | {points} |")
+    (output_dir / f"report-{metrics['run']['codename']}.md").write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
 
 
 def _write_metrics(output_dir: Path, results: list[dict], run: dict) -> dict:
     metrics = {**compute_metrics(results), "run": run}
     (output_dir / "metrics.json").write_text(json.dumps(metrics, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    if (output_dir / "trajectories.jsonl").exists():
+        write_report(output_dir)
     return metrics
 
 

@@ -238,3 +238,16 @@
 
 - Freeze the test set: `tests/test_tasks.py` has the SHA-256 checksums of `queries.json`, `solutions.json`, `expected.json` and the 5 test boards. The checksums ignore the line ends.
 - From now on, a change of these files needs a new run of all variants (see `AGENTS.md`).
+
+## 2026-11-05
+
+### Branch names, health indicators and report
+
+- Branch `06-e1-baselines` starts the work on the weights and the baselines of the six models.
+- `AGENTS.md`: name each branch `NN-<topic>`. NN is the next number of a branch. Old branches keep their names.
+- `src/evaluate.py`: each result line has the fields `tool_calls`, `empty_answer` and `garbled`. A model output is garbled if it has the character U+FFFD or fewer than 30% letters. NaN logits give a row of `!`.
+- `metrics.json` has the new group `health`: empty answers, garbled tasks, tasks without a tool call, tasks with an invalid call and tasks that stop at the step limit.
+- `src/evaluate.py` writes `report-<codename>.md` in the output folder: a table with one row for each task (instruction, calls, answer of the model, reason, points).
+- 199 tests pass and 2 are skipped.
+- Rename the report to `report-<codename>.md`, so the file name shows the model.
+- `AGENTS.md`: a job keeps its small output files in its own folder. Only `report-<codename>.md` of a baseline goes to `data/results/baseline/`. `trajectories.jsonl` stays on Kaggle.

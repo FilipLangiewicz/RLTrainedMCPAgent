@@ -42,6 +42,8 @@ This rule does not apply to an API model that the project uses as a reference in
 
 - `main` has only work that operates.
 - Do each task on a branch from `main`, for example `e1-simulator`.
+- Name each branch `NN-<topic>`, for example `06-e1-baselines`. NN is the next number of a branch in the project (01, 02, 03, ...). It does not start again. Thus the list of branches on GitHub shows the order of the tasks.
+- Use lowercase letters, digits and hyphens in a branch name. Old branches keep their names.
 - Do not merge a branch into `main` directly. Open a pull request on GitHub when the task is complete.
 - Merge each pull request with "Squash and merge". Then `main` gets one commit for each task, and this commit shows the full change.
 - Write the subject of a commit message in the imperative, for example "Add task verifier".
@@ -201,6 +203,8 @@ The course grades a before/after measurement on the same test set. These rules k
 - Change one thing in each variant. Keep the test set and all other settings the same.
 - Record the config, the model version, the commit hash and the results of each run.
 - Report the time and the cost of a task next to its quality.
+- Keep all small output files of a job in `jobs/runs/<job folder>/output/<codename>/`, as `KAGGLE.md` tells. Never download `trajectories.jsonl` to a local machine.
+- Copy only `report-<codename>.md` of a baseline run to `data/results/baseline/`. Thus the reports of all baselines are in one place.
 - The size of the model is not a variable in the grade. An improvement must come from the method, not from a larger model.
 
 ## Compute
