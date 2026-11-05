@@ -289,3 +289,11 @@
 
 - Version 6 of the smoke test ran the two Qwen models without `flash-linear-attention`. Qwen3.5-4B still ran out of GPU memory in 2 of 4 tasks. One request was 8.86 GiB, the same as with the package. Thus the package was not the cause.
 - The size of the request fits the logits of the whole prompt in `float32`: about 9600 tokens, a vocabulary of about 248000 and 4 bytes for each value. The check of this cause is open.
+
+### Cause of the out-of-memory errors on the T4
+
+- The real cause is the attention of the full layers, not the logits and not `flash-linear-attention`. On a T4, PyTorch has no flash kernel for grouped-query attention. It uses the math kernel, which builds a full attention matrix in `float32`.
+- Measured for Qwen3.5-4B with a prompt of 10000 tokens: a request of 5.96 GiB, which is 16 heads × 10000² × 4 bytes. The measurement is in `jobs/runs/2026-11-05_10_bench-sdpa/`.
+- Fix: `avoid_gqa_in_sdpa()` in `src/models.py`. On a GPU older than Ampere, `transformers` repeats the key and value heads, and PyTorch uses the memory-efficient kernel. The peak memory of Qwen3.5-2B at 10000 tokens falls from 12.1 GB to 5.1 GB.
+- Run the models that ran out of memory again: Qwen3.5 2B and 4B, and Bielik 4.5B. The other models work, and the baseline run covers them.
+- `flash-linear-attention` works on the T4 but does not make the model faster (Triton compiles again for each new length). Do not install it. `causal_conv1d` has no wheel for this version of PyTorch and gives a very small gain.

@@ -297,3 +297,20 @@ def test_template_gets_mapping_arguments():
     FAMILIES["qwen3.5"].render(Tokenizer(), [broken], [], False)
     assert seen[0][0]["tool_calls"][0]["function"]["arguments"] == {}
     assert broken["tool_calls"][0]["function"]["arguments"] == "bad text"
+
+
+def test_gqa_patch_only_for_old_gpus(monkeypatch):
+    import torch
+    import transformers.integrations.sdpa_attention as sdpa
+
+    from src.models import avoid_gqa_in_sdpa
+
+    original = sdpa.use_gqa_in_sdpa
+    monkeypatch.setattr(sdpa, "use_gqa_in_sdpa", original)
+    monkeypatch.setattr(torch.cuda, "is_available", lambda: True)
+    monkeypatch.setattr(torch.cuda, "get_device_capability", lambda *a: (8, 0))
+    avoid_gqa_in_sdpa()
+    assert sdpa.use_gqa_in_sdpa is original
+    monkeypatch.setattr(torch.cuda, "get_device_capability", lambda *a: (7, 5))
+    avoid_gqa_in_sdpa()
+    assert sdpa.use_gqa_in_sdpa(None, None, None) is False

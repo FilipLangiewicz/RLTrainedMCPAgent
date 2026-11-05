@@ -461,6 +461,20 @@ def load_weights(path: str, revision: str | None, dtype: str, device_map: str | 
     return tokenizer, model
 
 
+def avoid_gqa_in_sdpa() -> None:
+    """On a GPU older than Ampere (for example a T4), repeat the key and value heads before the attention.
+
+    Without it, PyTorch uses the math kernel for grouped-query attention. This kernel builds a full
+    attention matrix in float32 and runs out of GPU memory for a prompt of 10000 tokens.
+    """
+    import torch
+
+    if torch.cuda.is_available() and torch.cuda.get_device_capability()[0] < 8:
+        import transformers.integrations.sdpa_attention as sdpa
+
+        sdpa.use_gqa_in_sdpa = lambda *args, **kwargs: False
+
+
 class LocalModel(Model):
     backend = "transformers"
 
@@ -472,6 +486,7 @@ class LocalModel(Model):
         self.torch, self.max_new_tokens = torch, max_new_tokens
         # The device "auto" splits a model that is too large for one GPU over all GPUs.
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
+        avoid_gqa_in_sdpa()
         self.tokenizer, self.model = load_weights(path, revision, dtype, "auto" if self.device == "auto" else None)
         if self.device == "auto":
             self.device = self.model.device
