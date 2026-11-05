@@ -55,7 +55,7 @@ model:
   dtype: bfloat16
   max_new_tokens: 1024
 agent:
-  prompt: v2              # prompts/system-v2.md
+  prompt: v2              # src/prompts/system-v2.md
   max_steps: 25
 tasks:
   split: test
@@ -71,7 +71,7 @@ tasks:
 | `model.thinking` | `false` | The thinking mode. `bielik` has no thinking mode, so `true` stops the run. |
 | `model.dtype`, `model.max_new_tokens`, `model.device` | `bfloat16`, `1024`, auto | Settings of `transformers`. |
 | `model.base_url`, `model.api_key_env` | none, `OPENAI_API_KEY` | Settings of `openai`. The key comes only from the environment or `.env`. |
-| `agent.prompt` | `v2` | The version of `prompts/system-<version>.md`. |
+| `agent.prompt` | `v2` | The version of `src/prompts/system-<version>.md`. |
 | `agent.max_steps` | `25` | The step limit of the agent loop. |
 
 An unknown backend, an unknown family, thinking for `bielik` or a missing prompt file stops the run before the first task.
@@ -80,4 +80,4 @@ An unknown backend, an unknown family, thinking for `bielik` or a missing prompt
 |---|---|---|
 | `qwen3.5` | `<tool_call><function=name><parameter=arg>value</parameter></function></tool_call>` (chat template) | `enable_thinking`; the text before `</think>` goes into the trajectory |
 | `gemma4` | `<\|tool_call>call:name{arg:value}<tool_call\|>` (chat template) | `enable_thinking`; the text in `<\|channel>thought ... <channel\|>` goes into the trajectory |
-| `bielik` | `<tool_call>{"name": ..., "arguments": {...}}</tool_call>`; `prompts/tools-bielik-v1.md` adds the tools to the system prompt | none |
+| `bielik` | `<tool_call>{"name": ..., "arguments": {...}}</tool_call>`; `src/prompts/tools-bielik-v1.md` adds the tools to the system prompt | none |

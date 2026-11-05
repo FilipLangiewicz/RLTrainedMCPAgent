@@ -13,7 +13,7 @@ from pathlib import Path
 from pydantic import BaseModel, Field
 
 ROOT = Path(__file__).resolve().parents[1]
-PROMPTS_DIR = ROOT / "prompts"
+PROMPTS_DIR = ROOT / "src" / "prompts"
 BACKENDS = ("transformers", "openai", "scripted")
 
 
@@ -44,7 +44,7 @@ class Prompt(BaseModel):
 
 
 def load_prompt(kind: str, version: str) -> Prompt:
-    """Read `prompts/<kind>-<version>.md`. An unknown version stops with an error that names the file."""
+    """Read `src/prompts/<kind>-<version>.md`. An unknown version stops with an error that names the file."""
     path = PROMPTS_DIR / f"{kind}-{version}.md"
     if not path.is_file():
         raise FileNotFoundError(f"prompt file {path} does not exist")

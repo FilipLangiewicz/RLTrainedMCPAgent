@@ -18,7 +18,7 @@ The agent SHALL give the model a system prompt, the task instruction and the too
 - **THEN** the loop stops after step 15 with the stop reason `max_steps`
 
 ### Requirement: System prompt
-The system prompt SHALL come from a file `prompts/system-<version>.md`. The config of a run SHALL give the version, and the run SHALL record it. A changed prompt SHALL get a new file and a new version. The prompt `v2` SHALL tell the model to use the tools, to answer in Polish, that the names of statuses, issue types and priorities are in English, that numbers are digits, and to start the answer with `ODMOWA:` when the task is not possible or not clear.
+The system prompt SHALL come from a file `src/prompts/system-<version>.md`. The config of a run SHALL give the version, and the run SHALL record it. A changed prompt SHALL get a new file and a new version. The prompt `v2` SHALL tell the model to use the tools, to answer in Polish, that the names of statuses, issue types and priorities are in English, that numbers are digits, and to start the answer with `ODMOWA:` when the task is not possible or not clear.
 
 #### Scenario: Recorded prompt
 - **WHEN** a run ends
@@ -26,10 +26,10 @@ The system prompt SHALL come from a file `prompts/system-<version>.md`. The conf
 
 #### Scenario: Version of the new prompt
 - **WHEN** the config of a run does not give a prompt version
-- **THEN** the agent uses `prompts/system-v2.md` and records the version `v2`
+- **THEN** the agent uses `src/prompts/system-v2.md` and records the version `v2`
 
 #### Scenario: Unknown version
-- **WHEN** the config gives the prompt version `v9` and the file `prompts/system-v9.md` does not exist
+- **WHEN** the config gives the prompt version `v9` and the file `src/prompts/system-v9.md` does not exist
 - **THEN** the run stops before the first task with an error that names the file
 
 ### Requirement: Invalid tool calls

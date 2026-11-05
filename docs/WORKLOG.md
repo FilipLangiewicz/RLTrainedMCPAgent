@@ -251,3 +251,4 @@
 - 199 tests pass and 2 are skipped.
 - Rename the report to `report-<codename>.md`, so the file name shows the model.
 - `AGENTS.md`: a job keeps its small output files in its own folder. Only `report-<codename>.md` of a baseline goes to `data/results/baseline/`. `trajectories.jsonl` stays on Kaggle.
+- Move `prompts/` to `src/prompts/`. A prompt is a part of the code. Old entries of this worklog keep the old path.
