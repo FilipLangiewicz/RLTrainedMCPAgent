@@ -18,3 +18,5 @@ peft>=0.14
 trl>=0.20
 datasets>=3.0
 accelerate>=1.2
+# The fast kernels of Qwen3.5 (pure Python, they use the Triton of PyTorch).
+flash-linear-attention>=0.3

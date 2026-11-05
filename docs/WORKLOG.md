@@ -269,3 +269,10 @@
 - `DEFAULT_PROMPT` is `v3`. `tests/test_models.py` has the SHA-256 of `system-v3.md` and `tools-bielik-v2.md`.
 - A change of these files needs a new version and a new run of all variants.
 - The prompt was not tuned on the test set. A validation set does not exist yet.
+
+### Fast kernels of Qwen3.5
+
+- Qwen3.5 used the slow reference code of PyTorch for its linear attention. The log of Kaggle said that `flash-linear-attention` is not installed.
+- Add `flash-linear-attention` to `requirements.in`. The locks get 3 new packages: `einops`, `fla-core` and `flash-linear-attention`. They are pure Python and use the Triton of PyTorch.
+- Add `--no-warn-conflicts` to the `pip install` of the jobs. Thus the log has no warnings about the packages of Kaggle that the project does not use.
+- The package `causal_conv1d` needs a CUDA build. The project does not install it.
