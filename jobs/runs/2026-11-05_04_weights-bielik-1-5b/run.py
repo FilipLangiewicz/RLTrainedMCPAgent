@@ -18,9 +18,11 @@ try:
     from kaggle_secrets import UserSecretsClient
 
     token = UserSecretsClient().get_secret("HF_TOKEN")
-except Exception:  # noqa: BLE001  No secret is attached.
+except Exception as e:  # noqa: BLE001  No secret is attached.
+    print("no HF_TOKEN secret:", type(e).__name__, e, flush=True)
     token = None
 
+print("HF token is set:", token is not None, flush=True)
 # Resolve the commit first. Then the manifest and the files have the same revision.
 commit = HfApi().model_info(MODEL, token=token).sha
 print("model", MODEL, "commit", commit, flush=True)
