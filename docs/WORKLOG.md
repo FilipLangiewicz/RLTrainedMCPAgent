@@ -335,5 +335,6 @@
 - Add the job `calls-digest`. This CPU job reads `trajectories.jsonl` on Kaggle and writes a small file with the tool calls. Thus `trajectories.jsonl` stays on Kaggle.
 - Add the column `Why` and the section "Error analysis" to `data/results/baseline/report-baseline-gemma-4-e2b.md`. All grades stay as they are.
 - The model does not need an issue key: in 44 incorrect tasks, the search of the reference solution finds exactly one issue. Task `test-159` has 3 matches.
-- The project key is a gap in the protocol: the instruction and the prompt `v3` do not name the project, and the reference solutions do not show a step that finds it. The model can find it with a tool.
+- The team treats the project search as a skill that the model does not have. The instruction and the prompt `v3` do not name the project, but the model can find it with a tool. The prompt does not change.
+- The reference solutions do not show the step that finds the project. The training examples must have this step.
 - In 6 of 22 correct refusals, the reason of the model is wrong. The verifier checks only the prefix `ODMOWA:`.

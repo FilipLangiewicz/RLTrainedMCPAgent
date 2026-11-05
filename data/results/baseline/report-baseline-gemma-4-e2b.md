@@ -45,7 +45,8 @@ The main types of the 139 incorrect tasks:
 - Neither the instruction nor the prompt `v3` names the project. `jira_create_issue` needs `project_key`.
 - The model can find the key: `jira_get_agile_boards` without arguments gives "WEB board", and a search without a project gives keys such as `WEB-38`. The model did not do this in any `create` task.
 - The reference solutions use `project_key` directly, without a step that finds it. Thus they do not show how to get this value.
-- Thus the score 0.0 of `create` comes partly from a gap in the protocol. This type has 21 tasks that must create an issue.
+- The team treats this as a skill that the model does not have. The model must find the project with a tool, and training must teach this step.
+- This type has 21 tasks that must create an issue.
 - The other 8 tasks of this type do not need the project: a search works without it, or the instruction has the key (`test-026`, `test-029`, `test-045`, `test-067`, `test-106`, `test-133`, `test-185`, `test-192`).
 
 ### Grades that are close
