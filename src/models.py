@@ -615,7 +615,7 @@ class ApiModel(Model):
             except Exception as e:  # The next lines select the failures of the service.
                 response = getattr(e, "response", None)
                 status = getattr(response, "status_code", None)
-                if status in (402, 403):
+                if status in (401, 402, 403):
                     raise ModelStopped(f"no budget or no access, status {status}: {str(e)[:300]}") from e
                 if status is not None and status != 429 and status < 500:
                     raise

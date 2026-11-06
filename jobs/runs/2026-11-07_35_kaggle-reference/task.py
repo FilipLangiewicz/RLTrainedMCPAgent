@@ -9,7 +9,7 @@ import kaggle_benchmarks as kbench
 REPO = "https://github.com/FilipLangiewicz/RLTrainedMCPAgent.git"
 BRANCH = "06-e1-baselines"
 CLONE = "/tmp/repo"
-LIMIT = 5
+LIMIT = None
 EFFORT = "medium"
 # The push of a task also runs the default model. This list keeps that run free.
 MODELS = {
