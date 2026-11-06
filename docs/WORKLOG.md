@@ -419,3 +419,19 @@
 ### One short form for all reports of a run
 
 - `AGENTS.md`: add the section "Reports of a run". The reports of the baseline, SFT and RL have the same short form.
+
+### Results of the new baseline runs
+
+All six models completed 200 tasks with the hard limits. No task has more than 25 calls.
+
+| Model | Score | `easy` | `multi_step` | `refusal` | Time (s) |
+|---|---|---|---|---|---|
+| Gemma 4 E4B | 0.325 | 0.556 | 0.097 | 0.600 | 2999 |
+| Gemma 4 E2B | 0.305 | 0.458 | 0.058 | 0.880 | 936 |
+| Qwen3.5-4B | 0.265 | 0.472 | 0.107 | 0.320 | 5439 |
+| Bielik 4.5B | 0.120 | 0.319 | 0.010 | 0.000 | 6647 |
+| Qwen3.5-2B | 0.120 | 0.264 | 0.019 | 0.120 | 6320 |
+| Bielik 1.5B | 0.050 | 0.139 | 0.000 | 0.000 | 1882 |
+
+- Add the reports of the six runs to `data/results/baseline/`. Each `Why` cell comes from a reading of the calls of the task.
+- In Bielik 4.5B, `test-028` stopped with a GPU memory error after 14 calls. The other tasks of this run completed.

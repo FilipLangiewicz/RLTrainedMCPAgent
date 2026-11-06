@@ -1,0 +1,141 @@
+{
+  "n": 200,
+  "score": 0.265,
+  "correct": 0.225,
+  "correct_refusal": 0.04,
+  "by_difficulty": {
+    "easy": {
+      "n": 72,
+      "score": 0.4722,
+      "correct": 0.4722,
+      "correct_refusal": 0.0
+    },
+    "multi_step": {
+      "n": 103,
+      "score": 0.1068,
+      "correct": 0.1068,
+      "correct_refusal": 0.0
+    },
+    "refusal": {
+      "n": 25,
+      "score": 0.32,
+      "correct": 0.0,
+      "correct_refusal": 0.32
+    }
+  },
+  "by_category": {
+    "bulk": {
+      "n": 20,
+      "score": 0.05,
+      "correct": 0.05,
+      "correct_refusal": 0.0
+    },
+    "create": {
+      "n": 25,
+      "score": 0.08,
+      "correct": 0.08,
+      "correct_refusal": 0.0
+    },
+    "log": {
+      "n": 25,
+      "score": 0.36,
+      "correct": 0.36,
+      "correct_refusal": 0.0
+    },
+    "query": {
+      "n": 30,
+      "score": 0.3333,
+      "correct": 0.3333,
+      "correct_refusal": 0.0
+    },
+    "refusal": {
+      "n": 25,
+      "score": 0.32,
+      "correct": 0.0,
+      "correct_refusal": 0.32
+    },
+    "sprint": {
+      "n": 25,
+      "score": 0.36,
+      "correct": 0.36,
+      "correct_refusal": 0.0
+    },
+    "update": {
+      "n": 30,
+      "score": 0.4,
+      "correct": 0.4,
+      "correct_refusal": 0.0
+    },
+    "workflow": {
+      "n": 20,
+      "score": 0.1,
+      "correct": 0.1,
+      "correct_refusal": 0.0
+    }
+  },
+  "mean_steps": 3.425,
+  "mean_invalid_calls": 0.0,
+  "mean_tool_errors": 0.76,
+  "mean_input_tokens": 19062.615,
+  "mean_output_tokens": 526.795,
+  "mean_time_s": 52.156,
+  "total_time_s": 10431.182,
+  "errors": 0,
+  "health": {
+    "empty_answers": 0,
+    "garbled_tasks": 0,
+    "no_tool_call_tasks": 25,
+    "invalid_call_tasks": 0,
+    "max_steps_tasks": 1,
+    "loop_same_tasks": 67,
+    "loop_errors_tasks": 4
+  },
+  "run": {
+    "codename": "baseline-qwen3-5-4b-v3",
+    "config": {
+      "agent": {
+        "error_limit": 5,
+        "loop_limit": 3,
+        "max_steps": 25,
+        "prompt": "v3"
+      },
+      "model": {
+        "thinking": false,
+        "backend": "transformers",
+        "dtype": "float16",
+        "family": "qwen3.5",
+        "max_new_tokens": 1024,
+        "path": "/kaggle/input/models/combainsidm/idm-pro-qwen3-5-4b/transformers/base/1/qwen3.5-4b",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+      },
+      "tasks": {
+        "limit": null,
+        "split": "test"
+      }
+    },
+    "model": {
+      "backend": "transformers",
+      "family": "qwen3.5",
+      "path": "/kaggle/input/models/combainsidm/idm-pro-qwen3-5-4b/transformers/base/1/qwen3.5-4b",
+      "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "thinking": false
+    },
+    "prompt_version": "v3",
+    "prompt_sha256": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
+    "git_commit": "ce8fc460445dbd1a10c4a49a931b4bdfd3fe42dc",
+    "python": "3.13.16",
+    "torch": "2.11.0+cu130",
+    "transformers": "5.22.1",
+    "device": "Tesla T4",
+    "date": "2026-11-06T12:03:53+00:00",
+    "wall_time_s": 5439.173,
+    "shards": [
+      "0/2",
+      "1/2"
+    ],
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  }
+}

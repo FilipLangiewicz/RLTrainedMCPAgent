@@ -10,7 +10,7 @@
   "dataset_sources": [],
   "competition_sources": [],
   "kernel_sources": [
-    "combainsidm/rltrainedmcpagent-baseline-gemma-4-e2b-v2"
+    "combainsidm/rltrainedmcpagent-baseline-qwen3-5-4b-v3"
   ],
   "model_sources": []
 }
