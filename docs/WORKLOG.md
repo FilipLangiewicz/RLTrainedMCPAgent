@@ -357,3 +357,21 @@
 - The generation of Bielik does not stop at `</tool_call>`. In 160 of 200 tasks, the model writes more than one call in one output. Gemma 4 E2B does this in 4 tasks and E4B in 6 tasks. The effect on the score is not known.
 - The team does not add a stop rule. The training must teach the model to stop after a call.
 - The model copies examples from the tool descriptions, for example `PROJ-123`.
+
+### Baselines and error analysis of Bielik 4.5B, Qwen3.5-2B and Qwen3.5-4B
+
+- Bielik 4.5B: score 0.120 (all correct, no correct refusal). `easy` 0.319, `multi_step` 0.010, `refusal` 0.000. The job needs 14252 s.
+- Qwen3.5-2B: score 0.120 (correct 0.105, correct refusal 0.015). `easy` 0.264, `multi_step` 0.019, `refusal` 0.120. The job needs 10886 s.
+- Qwen3.5-4B: score 0.155 (correct 0.120, correct refusal 0.035). `easy` 0.222, `multi_step` 0.078, `refusal` 0.280. The job needs 9666 s.
+- Copy the three reports to `data/results/baseline/`. Add the column `Why` and the section "Error analysis" to each report. All grades stay as they are.
+- Version 4 of `calls-digest` gives the tool calls of these three baselines. `trajectories.jsonl` stays on Kaggle.
+- The projects `PROJ`, `ACV2`, `DEV` and `DT` that the models use are examples in the tool descriptions.
+
+### Open problem: the score of Qwen3.5-4B is too low
+
+- `test-031` stops with a GPU memory error. After it, the first process cannot get GPU memory. The 84 odd tasks from `test-033` to `test-199` fail with no call.
+- `test-148` stops with the same error, and `test-150` of the second process fails with no call. Then the second process continues normally.
+- These 85 tasks have 0 points, but the model did not run on them. On the 115 tasks that ran, the score is 0.270 (31 of 115). These tasks are not a random sample.
+- The exact cause is not confirmed. The code does not free the GPU memory after this error.
+- Bielik 4.5B has this error in 2 tasks, and its next tasks run normally. The other four baselines have no such error.
+- The team must decide about a fix and a new run. A new run changes the Why cells of the 85 tasks.

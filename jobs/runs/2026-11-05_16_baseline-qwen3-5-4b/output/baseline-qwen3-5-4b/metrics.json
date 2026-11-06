@@ -1,0 +1,140 @@
+{
+  "n": 200,
+  "score": 0.155,
+  "correct": 0.12,
+  "correct_refusal": 0.035,
+  "by_difficulty": {
+    "easy": {
+      "n": 72,
+      "score": 0.2222,
+      "correct": 0.2222,
+      "correct_refusal": 0.0
+    },
+    "multi_step": {
+      "n": 103,
+      "score": 0.0777,
+      "correct": 0.0777,
+      "correct_refusal": 0.0
+    },
+    "refusal": {
+      "n": 25,
+      "score": 0.28,
+      "correct": 0.0,
+      "correct_refusal": 0.28
+    }
+  },
+  "by_category": {
+    "bulk": {
+      "n": 20,
+      "score": 0.05,
+      "correct": 0.05,
+      "correct_refusal": 0.0
+    },
+    "create": {
+      "n": 25,
+      "score": 0.08,
+      "correct": 0.08,
+      "correct_refusal": 0.0
+    },
+    "log": {
+      "n": 25,
+      "score": 0.2,
+      "correct": 0.2,
+      "correct_refusal": 0.0
+    },
+    "query": {
+      "n": 30,
+      "score": 0.1,
+      "correct": 0.1,
+      "correct_refusal": 0.0
+    },
+    "refusal": {
+      "n": 25,
+      "score": 0.28,
+      "correct": 0.0,
+      "correct_refusal": 0.28
+    },
+    "sprint": {
+      "n": 25,
+      "score": 0.24,
+      "correct": 0.24,
+      "correct_refusal": 0.0
+    },
+    "update": {
+      "n": 30,
+      "score": 0.2,
+      "correct": 0.2,
+      "correct_refusal": 0.0
+    },
+    "workflow": {
+      "n": 20,
+      "score": 0.05,
+      "correct": 0.05,
+      "correct_refusal": 0.0
+    }
+  },
+  "mean_steps": 2.205,
+  "mean_invalid_calls": 0.13,
+  "mean_tool_errors": 0.595,
+  "mean_input_tokens": 14586.345,
+  "mean_output_tokens": 626.555,
+  "mean_time_s": 58.645,
+  "total_time_s": 11729.064,
+  "errors": 87,
+  "health": {
+    "empty_answers": 0,
+    "garbled_tasks": 0,
+    "no_tool_call_tasks": 104,
+    "invalid_call_tasks": 9,
+    "max_steps_tasks": 1,
+    "loop_tasks": 35
+  },
+  "run": {
+    "codename": "baseline-qwen3-5-4b",
+    "config": {
+      "agent": {
+        "error_limit": 5,
+        "loop_limit": 3,
+        "max_steps": 25,
+        "prompt": "v3"
+      },
+      "model": {
+        "thinking": false,
+        "backend": "transformers",
+        "dtype": "float16",
+        "family": "qwen3.5",
+        "max_new_tokens": 1024,
+        "path": "/kaggle/input/models/combainsidm/idm-pro-qwen3-5-4b/transformers/base/1/qwen3.5-4b",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+      },
+      "tasks": {
+        "limit": null,
+        "split": "test"
+      }
+    },
+    "model": {
+      "backend": "transformers",
+      "family": "qwen3.5",
+      "path": "/kaggle/input/models/combainsidm/idm-pro-qwen3-5-4b/transformers/base/1/qwen3.5-4b",
+      "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "thinking": false
+    },
+    "prompt_version": "v3",
+    "prompt_sha256": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
+    "git_commit": "4eeaf50a62527fd70ebb171649c8b1e79595f9f6",
+    "python": "3.13.16",
+    "torch": "2.11.0+cu130",
+    "transformers": "5.22.1",
+    "device": "Tesla T4",
+    "date": "2026-11-05T21:06:56+00:00",
+    "wall_time_s": 9665.626,
+    "shards": [
+      "0/2",
+      "1/2"
+    ],
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  }
+}
