@@ -3,6 +3,7 @@
 import argparse
 import json
 import platform
+import re
 import subprocess
 import sys
 from collections import defaultdict
@@ -21,6 +22,7 @@ from src.verifier import grade
 ROOT = Path(__file__).resolve().parents[1]
 RUNS_DIR = ROOT / "jobs" / "runs"
 GOOD = ("correct", "correct_refusal")
+COMMENT_PLACEHOLDER = "Write this section by hand: at most 6 short lines."
 
 
 def is_garbled(text: str) -> bool:
@@ -176,7 +178,7 @@ def write_report(output_dir: Path) -> None:
         *[f"| {k} | {v['n']} | {v['score']:.3f} |" for k, v in sorted(metrics["by_category"].items())], "",
         "Health: " + ", ".join(f"{k} {v}" for k, v in metrics["health"].items()) + ".", "",
         "## What SFT and RL must teach", "",
-        "Write this section by hand: at most 6 short lines.", "",
+        COMMENT_PLACEHOLDER, "",
         "## Tasks", "",
         "Points: 1 for `correct` and `correct_refusal`, 0 for `incorrect`.", "",
         "| Task | Category | Instruction | Calls | Answer of the model | Reason | Why | Points |",
@@ -194,6 +196,43 @@ def write_report(output_dir: Path) -> None:
 def _type_order(item: tuple[str, dict]) -> int:
     order = ("easy", "multi_step", "refusal")
     return order.index(item[0]) if item[0] in order else len(order)
+
+
+def fill_report(report: Path, why: Path, comment: Path, output: Path) -> None:
+    """Put the hand-written comment and Why cells into a report of write_report. Write nothing if a check fails.
+
+    The file `why` has one line for each task: `test-NNN text`. The file `comment` has the lines of the comment.
+    """
+    text = Path(report).read_text(encoding="utf-8")
+    cells = dict(line.split(" ", 1) if " " in line else (line, "")
+                 for line in Path(why).read_text(encoding="utf-8").splitlines() if line.strip())
+    cells = {task: cell.strip() for task, cell in cells.items()}
+    items = [line for line in Path(comment).read_text(encoding="utf-8").splitlines() if line.strip()]
+    rows = re.findall(r"^\| (test-\d+) \|.*\|  \| [01] \|$", text, flags=re.M)
+    problems = []
+    if COMMENT_PLACEHOLDER not in text or not rows or text.count("\n| test-") != len(rows):
+        problems.append("the report is not an unfilled report of write_report")
+    if set(cells) != set(rows):
+        problems.append(f"the tasks of the Why file differ from the report: {sorted(set(cells) ^ set(rows))[:9]}")
+    for task, cell in cells.items():
+        if not cell or "|" in cell:
+            problems.append(f"{task}: the Why cell is empty or has |")
+        problems += [f"{task}: a sentence has more than 25 words: {s[:50]}"
+                     for s in re.split(r"(?<=[.!?:]) ", cell) if len(s.split()) > 25]
+    # Different tasks have different calls, so many equal cells show a template.
+    if len(set(cells.values())) < len(cells) / 2:
+        problems.append("too many equal Why cells")
+    if not items or len(items) > 6 or not all(line.startswith("- ") for line in items):
+        problems.append('the comment must have 1 to 6 lines, and each line starts with "- "')
+    problems += [f"a comment line has more than 40 words: {line[:50]}" for line in items if len(line.split()) > 40]
+    if len(re.findall(r"test-\d{3}", "\n".join(items))) > 3:
+        problems.append("the comment has more than 3 task ids")
+    if problems:
+        raise ValueError("\n".join(problems))
+    text = text.replace(COMMENT_PLACEHOLDER, "\n".join(items), 1)
+    text = re.sub(r"^(\| (test-\d+) \|.*\|)  (\| [01] \|)$", lambda m: f"{m[1]} {cells[m[2]]} {m[3]}", text, flags=re.M)
+    Path(output).parent.mkdir(parents=True, exist_ok=True)
+    Path(output).write_text(text, encoding="utf-8", newline="\n")
 
 
 def _write_metrics(output_dir: Path, results: list[dict], run: dict) -> dict:
@@ -290,10 +329,21 @@ def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description="Run the evaluation, or merge the results of shards.")
     parser.add_argument("codename", nargs="?", help="codename of a config in jobs/runs/, or a path to a YAML file")
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--fill", type=Path, metavar="REPORT", help="put the hand-written parts into this report")
+    parser.add_argument("--why", type=Path, help="with --fill: the file with the Why cells")
+    parser.add_argument("--comment", type=Path, help="with --fill: the file with the comment")
     parser.add_argument("--shard", type=_shard, default=(0, 1), help="i/n, for example 0/2")
     parser.add_argument("--limit", type=int, help="use only the first N tasks")
     parser.add_argument("--merge", type=Path, nargs="+", metavar="FOLDER", help="merge these shard folders")
     args = parser.parse_args(argv)
+    if args.fill:
+        if not (args.why and args.comment):
+            parser.error("--fill needs --why and --comment")
+        try:
+            fill_report(args.fill, args.why, args.comment, args.output)
+        except ValueError as e:
+            sys.exit(str(e))
+        return
     if args.merge:
         metrics = merge(args.merge, args.output)
     elif args.codename:

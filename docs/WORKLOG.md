@@ -441,3 +441,6 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - `write_report` now writes the short form of `AGENTS.md`. It leaves the comment and the `Why` cells for a person.
 - A test run on the results of all six baselines gives the same tables and task rows as the reports in `data/results/baseline/`.
 - This change does not affect the baseline results. The six reports stay as they are.
+- Add `fill_report` and the option `--fill` to `src/evaluate.py`. This step checks the hand-written comment and `Why` cells and puts them into the report.
+- The new code gives the same six baseline reports, byte for byte, from their results and hand-written parts.
+- Job 26 tests the report form on the GPU.

@@ -1,10 +1,11 @@
 import json
+import re
 import shutil
 from pathlib import Path
 
 import pytest
 
-from src.evaluate import load_config, merge, run_evaluation
+from src.evaluate import COMMENT_PLACEHOLDER, fill_report, load_config, main, merge, run_evaluation
 from src.models import FAMILIES, ScriptedModel
 from src.tasks import load_tasks, split_dir
 
@@ -227,3 +228,59 @@ def test_report_writes_only_the_task_types_of_the_run(ten_tasks, data_dir, tmp_p
     report = (tmp_path / "out" / "report-smoke.md").read_text(encoding="utf-8")
     types = [line.split("`")[1] for line in report.splitlines() if line.startswith("| `")]
     assert types == [k for k in ("easy", "multi_step", "refusal") if k in metrics["by_difficulty"]]
+
+
+def _unfilled_report(tasks, data_dir, tmp_path):
+    run_evaluation(config(), tmp_path / "out", model=reference_model(tasks), data_dir=data_dir)
+    (tmp_path / "why.txt").write_text("".join(f"{t.id} Did the step {i}.\n" for i, t in enumerate(tasks)), encoding="utf-8")
+    (tmp_path / "comment.md").write_text("- Teach the correct key.\n- Teach the refusal.\n", encoding="utf-8")
+    return tmp_path / "out" / "report-smoke.md", tmp_path / "why.txt", tmp_path / "comment.md", tmp_path / "final" / "report.md"
+
+
+def test_fill_report_puts_the_cells_into_the_rows(ten_tasks, data_dir, tmp_path):
+    paths = _unfilled_report(ten_tasks, data_dir, tmp_path)
+    fill_report(*paths)
+    report = paths[3].read_text(encoding="utf-8")
+    assert "- Teach the correct key.\n- Teach the refusal.\n\n## Tasks" in report and COMMENT_PLACEHOLDER not in report
+    for i, t in enumerate(ten_tasks):
+        row = next(line for line in report.splitlines() if line.startswith(f"| {t.id} |"))
+        assert row.endswith(f"| Did the step {i}. | 1 |")
+
+
+@pytest.mark.parametrize("why, comment, problem", [
+    (lambda w: w.rsplit("\n", 2)[0] + "\n", None, "differ from the report"),
+    (lambda w: w + "test-999 Extra task.\n", None, "differ from the report"),
+    (lambda w: w.replace("Did", "Did |", 1), None, "has |"),
+    (lambda w: w.replace("Did the step 0.", ""), None, "empty"),
+    (lambda w: w.replace("Did the step 0.", "word " * 26), None, "more than 25 words"),
+    (lambda w: re.sub(r"step \d", "step", w), None, "equal Why cells"),
+    (None, "- line\n" * 7, "1 to 6 lines"),
+    (None, "no dash\n", "1 to 6 lines"),
+    (None, "", "1 to 6 lines"),
+    (None, "- " + "word " * 41, "more than 40 words"),
+    (None, "- test-001 test-002 test-003 test-004\n", "more than 3 task ids"),
+])
+def test_fill_report_stops_on_each_problem(ten_tasks, data_dir, tmp_path, why, comment, problem):
+    paths = _unfilled_report(ten_tasks, data_dir, tmp_path)
+    if why:
+        paths[1].write_text(why(paths[1].read_text(encoding="utf-8")), encoding="utf-8")
+    if comment is not None:
+        paths[2].write_text(comment, encoding="utf-8")
+    with pytest.raises(ValueError, match=problem):
+        fill_report(*paths)
+    assert not paths[3].exists()
+
+
+def test_fill_report_does_not_fill_a_report_two_times(ten_tasks, data_dir, tmp_path):
+    report, why, comment, output = _unfilled_report(ten_tasks, data_dir, tmp_path)
+    fill_report(report, why, comment, output)
+    with pytest.raises(ValueError, match="not an unfilled report"):
+        fill_report(output, why, comment, tmp_path / "again.md")
+
+
+def test_fill_from_the_command_line(ten_tasks, data_dir, tmp_path):
+    report, why, comment, output = _unfilled_report(ten_tasks, data_dir, tmp_path)
+    main(["--fill", str(report), "--why", str(why), "--comment", str(comment), "--output", str(output)])
+    assert output.exists()
+    with pytest.raises(SystemExit):
+        main(["--fill", str(report), "--output", str(output)])
