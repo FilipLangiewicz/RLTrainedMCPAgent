@@ -444,3 +444,8 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - Add `fill_report` and the option `--fill` to `src/evaluate.py`. This step checks the hand-written comment and `Why` cells and puts them into the report.
 - The new code gives the same six baseline reports, byte for byte, from their results and hand-written parts.
 - Job 26 tests the report form on the GPU.
+- Job 26 is complete with no error. The report has the new form, and `--fill` works on it.
+
+### Summary of the baselines
+
+- Add `data/results/baseline/summary-baseline.md` with the comparison of the six models. The report of each model stays about this model only.

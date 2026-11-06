@@ -1,0 +1,123 @@
+{
+  "n": 4,
+  "score": 0.5,
+  "correct": 0.25,
+  "correct_refusal": 0.25,
+  "by_difficulty": {
+    "easy": {
+      "n": 1,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "multi_step": {
+      "n": 2,
+      "score": 0.5,
+      "correct": 0.5,
+      "correct_refusal": 0.0
+    },
+    "refusal": {
+      "n": 1,
+      "score": 1.0,
+      "correct": 0.0,
+      "correct_refusal": 1.0
+    }
+  },
+  "by_category": {
+    "query": {
+      "n": 1,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "refusal": {
+      "n": 1,
+      "score": 1.0,
+      "correct": 0.0,
+      "correct_refusal": 1.0
+    },
+    "update": {
+      "n": 1,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "workflow": {
+      "n": 1,
+      "score": 1.0,
+      "correct": 1.0,
+      "correct_refusal": 0.0
+    }
+  },
+  "mean_steps": 2.75,
+  "mean_invalid_calls": 0.0,
+  "mean_tool_errors": 0.5,
+  "mean_input_tokens": 12699.0,
+  "mean_output_tokens": 89.0,
+  "mean_time_s": 13.091,
+  "total_time_s": 52.366,
+  "errors": 0,
+  "health": {
+    "empty_answers": 0,
+    "garbled_tasks": 0,
+    "no_tool_call_tasks": 0,
+    "invalid_call_tasks": 0,
+    "max_steps_tasks": 0,
+    "loop_same_tasks": 0,
+    "loop_errors_tasks": 0
+  },
+  "run": {
+    "codename": "smoke-report",
+    "config": {
+      "agent": {
+        "error_limit": 5,
+        "loop_limit": 3,
+        "max_steps": 25,
+        "prompt": "v3"
+      },
+      "model": {
+        "thinking": false,
+        "backend": "transformers",
+        "dtype": "float16",
+        "family": "gemma4",
+        "max_new_tokens": 1024,
+        "path": "/kaggle/input/models/combainsidm/idm-pro-gemma-4-e2b/transformers/base/1/gemma-4-e2b",
+        "revision": "4adf15748de9e1a0097b6274cee9c15836c41c37"
+      },
+      "tasks": {
+        "ids": [
+          "test-001",
+          "test-010",
+          "test-039",
+          "test-112"
+        ],
+        "limit": null,
+        "split": "test"
+      }
+    },
+    "model": {
+      "backend": "transformers",
+      "family": "gemma4",
+      "path": "/kaggle/input/models/combainsidm/idm-pro-gemma-4-e2b/transformers/base/1/gemma-4-e2b",
+      "revision": "4adf15748de9e1a0097b6274cee9c15836c41c37",
+      "thinking": false
+    },
+    "prompt_version": "v3",
+    "prompt_sha256": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
+    "git_commit": "f8279cedc9d06c1673ac4460fce161baaeaeb006",
+    "python": "3.13.16",
+    "torch": "2.11.0+cu130",
+    "transformers": "5.22.1",
+    "device": "Tesla T4",
+    "date": "2026-11-06T14:44:34+00:00",
+    "wall_time_s": 35.309,
+    "shards": [
+      "0/2",
+      "1/2"
+    ],
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  }
+}
