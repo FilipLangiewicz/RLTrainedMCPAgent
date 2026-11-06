@@ -14,7 +14,7 @@ import yaml
 
 from src.agent import DEFAULT_ERROR_LIMIT, DEFAULT_LOOP_LIMIT, DEFAULT_MAX_STEPS, DEFAULT_PROMPT, Trajectory, run_task
 from src.environment import load_board
-from src.models import Prompt, check_config, load_prompt, make_model
+from src.models import ModelStopped, Prompt, check_config, load_prompt, make_model
 from src.tasks import DATA_DIR, board_path, load_tasks
 from src.tools import build_server
 from src.verifier import grade
@@ -91,6 +91,8 @@ def evaluate_task(task, model, prompt: Prompt, max_steps: int, loop_limit: int |
     board = initial.copy_board()
     try:
         traj = run_task(model, build_server(board), task.instruction, prompt, max_steps, task.id, loop_limit, error_limit)
+    except ModelStopped:
+        raise
     except Exception as e:  # noqa: BLE001  A failure of one task must not stop the run.
         traj = Trajectory(task_id=task.id, instruction=task.instruction, stop_reason="error", error=f"{type(e).__name__}: {e}")
     if traj.stop_reason == "error":
@@ -244,10 +246,11 @@ def _write_metrics(output_dir: Path, results: list[dict], run: dict) -> dict:
 
 
 def run_evaluation(cfg: dict, output_dir: Path, shard: tuple[int, int] = (0, 1), model=None,
-                   data_dir: Path = DATA_DIR) -> dict:
+                   data_dir: Path = DATA_DIR, resume: bool = False) -> dict:
     """Run the agent on the tasks of shard `i` of `n`. Write results.jsonl, trajectories.jsonl and metrics.json.
 
     The checks of the model config and of the prompt file stop the run before the first task.
+    With `resume`, the run keeps the results in the folder and does only the other tasks.
     """
     i, n = shard
     agent_cfg = cfg.get("agent") or {}
@@ -267,10 +270,12 @@ def run_evaluation(cfg: dict, output_dir: Path, shard: tuple[int, int] = (0, 1),
     model = model or make_model(cfg["model"])
 
     started = datetime.now(UTC)
-    results = []
-    with open(output_dir / "results.jsonl", "w", encoding="utf-8", newline="\n") as fr, \
-            open(output_dir / "trajectories.jsonl", "w", encoding="utf-8", newline="\n") as ft:
-        for task in tasks:
+    results = _read_jsonl(output_dir / "results.jsonl") if resume and (output_dir / "results.jsonl").exists() else []
+    complete = {r["task_id"] for r in results}
+    mode = "a" if resume else "w"
+    with open(output_dir / "results.jsonl", mode, encoding="utf-8", newline="\n") as fr, \
+            open(output_dir / "trajectories.jsonl", mode, encoding="utf-8", newline="\n") as ft:
+        for task in (t for t in tasks if t.id not in complete):
             result, traj = evaluate_task(task, model, prompt, max_steps, loop_limit, error_limit, data_dir)
             results.append(result)
             # Write each line at once, so that a stopped run keeps its results.
@@ -334,6 +339,7 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--comment", type=Path, help="with --fill: the file with the comment")
     parser.add_argument("--shard", type=_shard, default=(0, 1), help="i/n, for example 0/2")
     parser.add_argument("--limit", type=int, help="use only the first N tasks")
+    parser.add_argument("--resume", action="store_true", help="keep the results in --output and do the other tasks")
     parser.add_argument("--merge", type=Path, nargs="+", metavar="FOLDER", help="merge these shard folders")
     args = parser.parse_args(argv)
     if args.fill:
@@ -350,7 +356,10 @@ def main(argv: list[str] | None = None) -> None:
         cfg = load_config(args.codename)
         if args.limit:
             cfg["tasks"]["limit"] = args.limit
-        metrics = run_evaluation(cfg, args.output, args.shard)
+        try:
+            metrics = run_evaluation(cfg, args.output, args.shard, resume=args.resume)
+        except ModelStopped as e:
+            sys.exit(f"The run stopped: {e}\nThe complete tasks are in {args.output}. To continue, use --resume.")
     else:
         parser.error("give a codename or --merge")
     summary = {k: metrics[k] for k in ("n", "score", "correct", "correct_refusal")}

@@ -1,7 +1,7 @@
 """Model layer: one interface for all models (design D14, D15).
 
 A family makes the prompt with the chat template and finds the tool calls in the output text.
-A backend runs the model: `transformers`, an OpenAI-compatible API, or fixed outputs for the tests.
+A backend runs the model: `transformers`, an OpenAI-compatible API, the `claude` command, or fixed outputs for the tests.
 """
 
 import gc
@@ -9,13 +9,15 @@ import hashlib
 import json
 import os
 import re
+import subprocess
+import tempfile
 from pathlib import Path
 
 from pydantic import BaseModel, Field
 
 ROOT = Path(__file__).resolve().parents[1]
 PROMPTS_DIR = ROOT / "src" / "prompts"
-BACKENDS = ("transformers", "openai", "scripted")
+BACKENDS = ("transformers", "openai", "claude_cli", "scripted")
 
 
 class Call(BaseModel):
@@ -587,12 +589,90 @@ class ApiModel(Model):
                            output_tokens=usage.completion_tokens if usage else 0)
 
 
+class ModelStopped(Exception):
+    """The model cannot continue. The run must stop, because the next tasks would get false grades."""
+
+
+class ClaudeCliModel(Model):
+    """A reference model behind the `claude` command. The command uses the limits of the plan of the logged-in user.
+
+    Each step is a new process without tools, with the full conversation as text. The agent loop runs the tools.
+    """
+
+    backend = "claude_cli"
+    TOOLS_PROMPT = "v1"
+    # An API key in the environment would make the command use a paid account.
+    REMOVED_ENV_PREFIXES = ("ANTHROPIC_", "CLAUDE_CODE_USE_", "CLAUDECODE")
+    # The rules and the memory of the user must not change the prompt of the test.
+    ADDED_ENV = (("CLAUDE_CODE_DISABLE_CLAUDE_MDS", "1"), ("CLAUDE_CODE_DISABLE_AUTO_MEMORY", "1"))
+
+    def __init__(self, path: str, effort: str = "medium", command: str = "claude", timeout_s: int = 900):
+        self.command, self.effort, self.timeout_s = command, effort, timeout_s
+        self.parser = get_family("bielik")
+        super().__init__(None, path, self._version(), False)
+        self.workdir = tempfile.mkdtemp(prefix="claude-cli-")
+
+    def _version(self) -> str:
+        try:
+            return subprocess.run([self.command, "--version"], capture_output=True, text=True, check=True).stdout.strip()
+        except (OSError, subprocess.CalledProcessError) as e:
+            raise ModelStopped(f"the command '{self.command}' does not operate: {e}") from e
+
+    def describe(self) -> dict:
+        tools_prompt = load_prompt("tools-cli", self.TOOLS_PROMPT)
+        return {**super().describe(), "effort": self.effort, "tools_prompt": tools_prompt.version,
+                "tools_prompt_sha256": tools_prompt.sha256}
+
+    def render(self, messages: list[dict], tools: list[dict]) -> tuple[str, str]:
+        """Return the system prompt and the conversation as text."""
+        listed = json.dumps(tools, ensure_ascii=False, indent=1)
+        system = messages[0]["content"] + "\n\n" + load_prompt("tools-cli", self.TOOLS_PROMPT).text.replace("{tools}", listed)
+        turns, _ = self.parser.prepare(messages[1:], tools)
+        return system, "\n\n".join(f"<{m['role']}>\n{m['content']}\n</{m['role']}>" for m in turns)
+
+    def arguments(self, system: str) -> list[str]:
+        return [self.command, "-p", "--model", self.path, "--effort", self.effort, "--output-format", "json",
+                "--system-prompt", system, "--tools", "", "--setting-sources", "", "--strict-mcp-config",
+                "--disable-slash-commands", "--no-session-persistence"]
+
+    def environment(self) -> dict:
+        kept = {k: v for k, v in os.environ.items() if not k.startswith(self.REMOVED_ENV_PREFIXES)}
+        return {**kept, **dict(self.ADDED_ENV)}
+
+    def generate(self, messages, tools):
+        self.steps += 1
+        system, conversation = self.render(messages, tools)
+        try:
+            done = subprocess.run(self.arguments(system), input=conversation, capture_output=True, text=True,
+                                  encoding="utf-8", cwd=self.workdir, env=self.environment(), timeout=self.timeout_s, check=False)
+        except (OSError, subprocess.TimeoutExpired) as e:
+            raise ModelStopped(f"the command failed: {e}") from e
+        try:
+            data = json.loads(done.stdout)
+        except json.JSONDecodeError as e:
+            raise ModelStopped(f"exit code {done.returncode}: {(done.stdout + done.stderr)[:500]}") from e
+        if done.returncode != 0 or data.get("is_error"):
+            raise ModelStopped(f"exit code {done.returncode}: {str(data.get('result'))[:500]}")
+        used = data.get("modelUsage") or {}
+        if used and not any(name.startswith(self.path) for name in used):
+            raise ModelStopped(f"the answer came from {sorted(used)}, not from {self.path}")
+        # No stop sequence exists here. Thus the model can write a false tool result after its call.
+        text = re.split(r"<tool_response>|<user>", data.get("result") or "", maxsplit=1)[0]
+        text = re.sub(r"</?assistant>", "", text)
+        answer, calls, _ = self.parser.parse(text, tools, self.steps)
+        usage = data.get("usage") or {}
+        return ModelOutput(text=answer, calls=calls,
+                           input_tokens=sum(usage.get(k, 0) for k in ("input_tokens", "cache_creation_input_tokens",
+                                                                      "cache_read_input_tokens")),
+                           output_tokens=usage.get("output_tokens", 0))
+
+
 def check_config(cfg: dict) -> dict:
     """Check the `model` section of a run config before the first task. Return it with the defaults."""
     cfg = {"thinking": False, **cfg}
     if cfg.get("backend") not in BACKENDS:
         raise ValueError(f"Unknown backend '{cfg.get('backend')}'. Use {', '.join(BACKENDS)}.")
-    if cfg.get("family") is not None or cfg["backend"] != "openai":
+    if cfg.get("family") is not None or cfg["backend"] not in ("openai", "claude_cli"):
         family = get_family(cfg.get("family"))
         if cfg["thinking"] and not family.has_thinking:
             raise ValueError(f"The model family '{family.name}' has no thinking mode. Set model.thinking to false.")
@@ -609,5 +689,7 @@ def make_model(cfg: dict, outputs=None) -> Model:
         return LocalModel(cfg["family"], cfg["path"], revision=cfg.get("revision"), thinking=cfg["thinking"],
                           dtype=cfg.get("dtype", "bfloat16"), max_new_tokens=cfg.get("max_new_tokens", 1024),
                           device=cfg.get("device"))
+    if backend == "claude_cli":
+        return ClaudeCliModel(cfg["path"], effort=cfg.get("effort", "medium"))
     return ApiModel(cfg["path"], base_url=cfg.get("base_url"), api_key_env=cfg.get("api_key_env", "OPENAI_API_KEY"),
                     family=cfg.get("family"), thinking=cfg["thinking"], revision=cfg.get("revision"))

@@ -8,7 +8,7 @@ from typing import Literal
 import mcp
 from pydantic import BaseModel, Field
 
-from src.models import Model, ModelOutput, Prompt, load_prompt
+from src.models import Model, ModelOutput, ModelStopped, Prompt, load_prompt
 
 DEFAULT_PROMPT = "v3"
 # The same call this many times in a row ends the task. A greedy model does not leave such a loop.
@@ -149,9 +149,11 @@ async def run_task_async(model: Model, server, instruction: str, prompt: Prompt 
                         break
                 if stop:
                     break
-    except Exception as e:  # noqa: BLE001  The evaluation grades this task as incorrect and continues.
+    except Exception as e:  # The evaluation grades this task as incorrect and continues.
         while isinstance(e, BaseExceptionGroup) and len(e.exceptions) == 1:  # The MCP client adds a group.
             e = e.exceptions[0]
+        if isinstance(e, ModelStopped):
+            raise e  # noqa: TRY201  The MCP client wraps the exception. The caller needs the exception itself.
         traj.stop_reason, traj.error = "error", f"{type(e).__name__}: {e}"
     traj.time_s = round(time.perf_counter() - start, 3)
     return traj

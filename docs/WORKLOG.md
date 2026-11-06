@@ -449,3 +449,18 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 ### Summary of the baselines
 
 - Add `data/results/baseline/summary-baseline.md` with the comparison of the six models. The report of each model stays about this model only.
+
+### Preparation of the reference models behind a command
+
+- Close the issues `idm-pro-019` to `idm-pro-024`. Each issue has a comment with the path of its report.
+- Add the backend `claude_cli` to `src/models.py`. Each step starts a new process with no tools. The agent loop runs the tools and applies the same limits.
+- Add `src/prompts/tools-cli-v1.md`: the full tool schemas and the text format of a call.
+- If the command fails, the run stops. Thus a reached limit does not give false grades to the next tasks.
+- Add the option `--resume` to `src/evaluate.py`. It keeps the complete tasks and does the other tasks.
+- Add the configs of jobs 27 and 29. No job has started.
+- Git ignores `trajectories.jsonl` of new jobs. A local run makes this file.
+- A test of the real command used a local stand-in for the API. It used no plan limits. It showed these differences from the local models:
+  - The command adds a short identity line and a short block with environment data.
+  - The command does not set the temperature to 0. It uses adaptive thinking.
+  - The model writes a tool call as text, not with native tool use.
+- A test with the status 429 from the stand-in stopped the run, and `--resume` completed the tasks.

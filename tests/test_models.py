@@ -314,3 +314,60 @@ def test_gqa_patch_only_for_old_gpus(monkeypatch):
     monkeypatch.setattr(torch.cuda, "get_device_capability", lambda *a: (7, 5))
     avoid_gqa_in_sdpa()
     assert sdpa.use_gqa_in_sdpa(None, None, None) is False
+
+
+# The `claude` command. A fake command in these tests: they use no limits of a plan.
+
+def fake_claude(tmp_path, reply: dict, code: int = 0) -> str:
+    log = tmp_path / "log.json"
+    path = tmp_path / "claude"
+    path.write_text(
+        "#!/usr/bin/env python3\nimport json, os, sys\n"
+        "if '--version' in sys.argv:\n    print('1.0 (fake)')\n    sys.exit(0)\n"
+        f"json.dump({{'argv': sys.argv[1:], 'stdin': sys.stdin.read(), 'env': dict(os.environ)}}, open({str(log)!r}, 'w'))\n"
+        f"print({json.dumps(json.dumps(reply))})\nsys.exit({code})\n", encoding="utf-8")
+    path.chmod(0o755)
+    return str(path)
+
+
+CLI_MESSAGES = [{"role": "system", "content": "RULES"}, {"role": "user", "content": "Do it"},
+                {"role": "assistant", "content": "", "tool_calls": [
+                    {"id": "c", "type": "function", "function": {"name": "jira_get_issue", "arguments": {"issue_key": "A-1"}}}]},
+                {"role": "tool", "tool_call_id": "c", "name": "jira_get_issue", "content": "RESULT"}]
+
+
+def test_claude_cli_prompt_and_call(tmp_path, monkeypatch):
+    from src.models import ClaudeCliModel
+
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "paid")
+    text = '<tool_call>{"name": "jira_get_issue", "arguments": {"issue_key": "A-2"}}</tool_call>\n<tool_response>false</tool_response>'
+    reply = {"is_error": False, "result": text, "modelUsage": {"claude-haiku-5-5": {}},
+             "usage": {"input_tokens": 1, "cache_read_input_tokens": 5, "cache_creation_input_tokens": 4, "output_tokens": 3}}
+    model = ClaudeCliModel("claude-haiku-5-5", command=fake_claude(tmp_path, reply))
+    out = model.generate(CLI_MESSAGES, TOOLS)
+    seen = json.loads((tmp_path / "log.json").read_text(encoding="utf-8"))
+    assert len(out.calls) == 1 and out.calls[0].arguments == {"issue_key": "A-2"} and "false" not in out.text
+    assert (out.input_tokens, out.output_tokens) == (10, 3)
+    system = seen["argv"][seen["argv"].index("--system-prompt") + 1]
+    assert system.startswith("RULES") and "jira_get_issue" in system and "{tools}" not in system
+    assert seen["argv"][seen["argv"].index("--tools") + 1] == "" and "--effort" in seen["argv"]
+    assert '{"name": "jira_get_issue", "arguments": {"issue_key": "A-1"}}' in seen["stdin"] and "RESULT" in seen["stdin"]
+    assert "ANTHROPIC_API_KEY" not in seen["env"] and seen["env"]["CLAUDE_CODE_DISABLE_CLAUDE_MDS"] == "1"
+    assert model.describe()["effort"] == "medium" and model.describe()["revision"] == "1.0 (fake)"
+
+
+@pytest.mark.parametrize(("reply", "code"), [
+    ({"is_error": True, "result": "limit reached"}, 1),
+    ({"is_error": True, "result": "limit reached"}, 0),
+    ({"is_error": False, "result": "x", "modelUsage": {"claude-sonnet-5-5": {}}}, 0),
+])
+def test_claude_cli_failure_stops_the_run(tmp_path, reply, code):
+    from src.models import ClaudeCliModel, ModelStopped
+
+    model = ClaudeCliModel("claude-haiku-5-5", command=fake_claude(tmp_path, reply, code))
+    with pytest.raises(ModelStopped):
+        model.generate(CLI_MESSAGES, TOOLS)
+
+
+def test_claude_cli_config_needs_no_family():
+    assert check_config({"backend": "claude_cli", "path": "claude-haiku-5-5"})["thinking"] is False

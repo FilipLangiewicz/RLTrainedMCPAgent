@@ -6,7 +6,7 @@ from pathlib import Path
 import pytest
 
 from src.evaluate import COMMENT_PLACEHOLDER, fill_report, load_config, main, merge, run_evaluation
-from src.models import FAMILIES, ScriptedModel
+from src.models import FAMILIES, ModelStopped, ScriptedModel
 from src.tasks import load_tasks, split_dir
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -284,3 +284,25 @@ def test_fill_from_the_command_line(ten_tasks, data_dir, tmp_path):
     assert output.exists()
     with pytest.raises(SystemExit):
         main(["--fill", str(report), "--output", str(output)])
+
+
+def test_stopped_model_keeps_results_and_resume_does_the_rest(ten_tasks, data_dir, tmp_path):
+    good = reference_model(ten_tasks)
+    answers = {"count": 0}
+
+    def stops_after_three_tasks(messages, step):
+        if messages[-1]["role"] == "user":
+            answers["count"] += 1
+        if answers["count"] > 3:
+            raise ModelStopped("limit")
+        return good.outputs(messages, step)
+
+    with pytest.raises(ModelStopped):
+        run_evaluation(config(), tmp_path / "out", model=ScriptedModel(stops_after_three_tasks), data_dir=data_dir)
+    assert len(read_jsonl(tmp_path / "out" / "results.jsonl")) == 3
+
+    metrics = run_evaluation(config(), tmp_path / "out", model=reference_model(ten_tasks), data_dir=data_dir, resume=True)
+    results = read_jsonl(tmp_path / "out" / "results.jsonl")
+    assert metrics["n"] == len(ten_tasks) == len(results)
+    assert len({r["task_id"] for r in results}) == len(results)
+    assert len(read_jsonl(tmp_path / "out" / "trajectories.jsonl")) == len(results)
