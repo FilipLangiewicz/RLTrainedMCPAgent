@@ -454,7 +454,7 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 
 - Close the issues `idm-pro-019` to `idm-pro-024`. Each issue has a comment with the path of its report.
 - Add the backend `claude_cli` to `src/models.py`. Each step starts a new process with no tools. The agent loop runs the tools and applies the same limits.
-- Add `src/prompts/tools-cli-v1.md`: the full tool schemas and the text format of a call.
+- The backend uses the system prompt `v3` and the tool text of Bielik (`tools-bielik-v2.md`). It adds no new prompt.
 - If the command fails, the run stops. Thus a reached limit does not give false grades to the next tasks.
 - Add the option `--resume` to `src/evaluate.py`. It keeps the complete tasks and does the other tasks.
 - Add the configs of jobs 27 and 29. No job has started.

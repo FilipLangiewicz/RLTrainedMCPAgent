@@ -597,10 +597,10 @@ class ClaudeCliModel(Model):
     """A reference model behind the `claude` command. The command uses the limits of the plan of the logged-in user.
 
     Each step is a new process without tools, with the full conversation as text. The agent loop runs the tools.
+    The tools and the format of a call are the same as for Bielik. Thus this model gets no new prompt.
     """
 
     backend = "claude_cli"
-    TOOLS_PROMPT = "v1"
     # An API key in the environment would make the command use a paid account.
     REMOVED_ENV_PREFIXES = ("ANTHROPIC_", "CLAUDE_CODE_USE_", "CLAUDECODE")
     # The rules and the memory of the user must not change the prompt of the test.
@@ -619,16 +619,14 @@ class ClaudeCliModel(Model):
             raise ModelStopped(f"the command '{self.command}' does not operate: {e}") from e
 
     def describe(self) -> dict:
-        tools_prompt = load_prompt("tools-cli", self.TOOLS_PROMPT)
+        tools_prompt = load_prompt("tools-bielik", self.parser.TOOLS_PROMPT)
         return {**super().describe(), "effort": self.effort, "tools_prompt": tools_prompt.version,
                 "tools_prompt_sha256": tools_prompt.sha256}
 
     def render(self, messages: list[dict], tools: list[dict]) -> tuple[str, str]:
         """Return the system prompt and the conversation as text."""
-        listed = json.dumps(tools, ensure_ascii=False, indent=1)
-        system = messages[0]["content"] + "\n\n" + load_prompt("tools-cli", self.TOOLS_PROMPT).text.replace("{tools}", listed)
-        turns, _ = self.parser.prepare(messages[1:], tools)
-        return system, "\n\n".join(f"<{m['role']}>\n{m['content']}\n</{m['role']}>" for m in turns)
+        turns, _ = self.parser.prepare(messages, tools)
+        return turns[0]["content"], "\n\n".join(f"<{m['role']}>\n{m['content']}\n</{m['role']}>" for m in turns[1:])
 
     def arguments(self, system: str) -> list[str]:
         return [self.command, "-p", "--model", self.path, "--effort", self.effort, "--output-format", "json",
