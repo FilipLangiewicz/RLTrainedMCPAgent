@@ -159,28 +159,41 @@ def _cell(text: str, limit: int = 300) -> str:
 
 
 def write_report(output_dir: Path) -> None:
-    """Write report-<codename>.md: one table row for each task, with the answer of the model and the points."""
+    """Write report-<codename>.md in the form of AGENTS.md. A person writes the comment and the Why cells later."""
     output_dir = Path(output_dir)
     results = _read_jsonl(output_dir / "results.jsonl")
     trajectories = {t["task_id"]: t for t in _read_jsonl(output_dir / "trajectories.jsonl")}
     metrics = json.loads((output_dir / "metrics.json").read_text(encoding="utf-8"))
+    run = metrics["run"]
     lines = [
-        f"# Report of {metrics['run']['codename']}", "",
-        f"Model: `{metrics['run']['model']['path']}`. Score: {metrics['score']} "
-        f"({metrics['correct']} correct, {metrics['correct_refusal']} correct refusal), {metrics['n']} tasks.", "",
-        "Health: " + ", ".join(f"{k} {v}" for k, v in metrics["health"].items()) + ".", "",
-        "Points: 1 for `correct` and `correct_refusal`, 0 for `incorrect`.", "",
+        f"# Report of {run['codename']}", "",
+        f"Model: `{Path(run['model']['path']).name}`. Time of the job: {run['wall_time_s']:.0f} s.", "",
+        "| Task type | Tasks | Score |", "|---|---|---|",
+        f"| All | {metrics['n']} | {metrics['score']:.3f} |",
+        # A short run can have no task of a type.
+        *[f"| `{k}` | {v['n']} | {v['score']:.3f} |" for k, v in sorted(metrics["by_difficulty"].items(), key=_type_order)], "",
         "| Category | Tasks | Score |", "|---|---|---|",
-        *[f"| {k} | {v['n']} | {v['score']} |" for k, v in metrics["by_category"].items()], "",
-        "| Task | Category | Instruction | Calls | Answer of the model | Reason | Points |", "|---|---|---|---|---|---|---|",
+        *[f"| {k} | {v['n']} | {v['score']:.3f} |" for k, v in sorted(metrics["by_category"].items())], "",
+        "Health: " + ", ".join(f"{k} {v}" for k, v in metrics["health"].items()) + ".", "",
+        "## What SFT and RL must teach", "",
+        "Write this section by hand: at most 6 short lines.", "",
+        "## Tasks", "",
+        "Points: 1 for `correct` and `correct_refusal`, 0 for `incorrect`.", "",
+        "| Task | Category | Instruction | Calls | Answer of the model | Reason | Why | Points |",
+        "|---|---|---|---|---|---|---|---|",
     ]
     for r in results:
         t = trajectories.get(r["task_id"], {})
         answer = t.get("final_answer") or (f"(no answer: {r['stop_reason']})")
         points = int(r["grade"] in GOOD)
         lines.append(f"| {r['task_id']} | {r['category']} | {_cell(t.get('instruction', ''))} | {r['tool_calls']} "
-                     f"| {_cell(answer)} | {_cell(r['reason'])} | {points} |")
-    (output_dir / f"report-{metrics['run']['codename']}.md").write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
+                     f"| {_cell(answer)} | {_cell(r['reason'])} |  | {points} |")
+    (output_dir / f"report-{run['codename']}.md").write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
+
+
+def _type_order(item: tuple[str, dict]) -> int:
+    order = ("easy", "multi_step", "refusal")
+    return order.index(item[0]) if item[0] in order else len(order)
 
 
 def _write_metrics(output_dir: Path, results: list[dict], run: dict) -> dict:

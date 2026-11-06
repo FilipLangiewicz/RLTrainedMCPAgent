@@ -222,6 +222,7 @@ The report has only these parts, in this order:
 
 Obey these rules:
 
+- `write_report` in `src/evaluate.py` writes this form. It leaves the section of part 5 and the `Why` cells for you.
 - Write each `Why` cell by hand, after you read the calls of this task. Do not use a rule or a template to make a cell.
 - Do not add a comparison with other models. A report is about one model.
 - Do not add other sections, a table of error types or lists of tasks in the text.

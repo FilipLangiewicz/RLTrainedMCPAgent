@@ -435,3 +435,9 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 
 - Add the reports of the six runs to `data/results/baseline/`. Each `Why` cell comes from a reading of the calls of the task.
 - In Bielik 4.5B, `test-028` stopped with a GPU memory error after 14 calls. The other tasks of this run completed.
+
+### The report form in the code
+
+- `write_report` now writes the short form of `AGENTS.md`. It leaves the comment and the `Why` cells for a person.
+- A test run on the results of all six baselines gives the same tables and task rows as the reports in `data/results/baseline/`.
+- This change does not affect the baseline results. The six reports stay as they are.

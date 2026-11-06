@@ -208,3 +208,22 @@ def test_metrics_count_each_kind_of_loop(ten_tasks, data_dir, tmp_path):
     metrics = run_evaluation(config(), tmp_path / "out", model=ScriptedModel([many_calls(*bad)]), data_dir=data_dir)
     assert metrics["health"]["loop_errors_tasks"] == 10 and metrics["health"]["loop_same_tasks"] == 0
     assert all(r["stop_reason"] == "loop_errors" for r in read_jsonl(tmp_path / "out" / "results.jsonl"))
+
+
+def test_report_has_the_form_of_agents_md(ten_tasks, data_dir, tmp_path):
+    metrics = run_evaluation(config(), tmp_path / "out", model=reference_model(ten_tasks), data_dir=data_dir)
+    report = (tmp_path / "out" / "report-smoke.md").read_text(encoding="utf-8")
+    parts = ["# Report of smoke", "Time of the job:", "| Task type | Tasks | Score |", f"| All | 10 | {metrics['score']:.3f} |",
+             "| Category | Tasks | Score |", "Health: ", "## What SFT and RL must teach", "## Tasks",
+             "| Task | Category | Instruction | Calls | Answer of the model | Reason | Why | Points |"]
+    positions = [report.index(part) for part in parts]
+    assert positions == sorted(positions)
+    rows = [line for line in report.splitlines() if line.startswith("| test-")]
+    assert len(rows) == 10 and all(row.endswith("|  | 1 |") for row in rows)
+
+
+def test_report_writes_only_the_task_types_of_the_run(ten_tasks, data_dir, tmp_path):
+    metrics = run_evaluation(config(), tmp_path / "out", model=reference_model(ten_tasks), data_dir=data_dir)
+    report = (tmp_path / "out" / "report-smoke.md").read_text(encoding="utf-8")
+    types = [line.split("`")[1] for line in report.splitlines() if line.startswith("| `")]
+    assert types == [k for k in ("easy", "multi_step", "refusal") if k in metrics["by_difficulty"]]
