@@ -207,6 +207,27 @@ The course grades a before/after measurement on the same test set. These rules k
 - Copy only `report-<codename>.md` of a baseline run to `data/results/baseline/`. Thus the reports of all baselines are in one place.
 - The size of the model is not a variable in the grade. An improvement must come from the method, not from a larger model.
 
+## Reports of a run
+
+Each evaluation of a model has one short report: the baseline, after SFT and after RL. All reports have the same form, so a reader can compare them quickly.
+
+The report has only these parts, in this order:
+
+1. The title, the model and the time of the job.
+2. A table of the score by task type: all tasks, `easy`, `multi_step`, `refusal`.
+3. A table of the score by category.
+4. One line with the health values.
+5. The section "What SFT and RL must teach": at most 6 short lines, with at most 3 task ids.
+6. The table of all tasks, with the column `Why`.
+
+Obey these rules:
+
+- Write each `Why` cell by hand, after you read the calls of this task. Do not use a rule or a template to make a cell.
+- Do not add a comparison with other models. A report is about one model.
+- Do not add other sections, a table of error types or lists of tasks in the text.
+- Use `data/results/baseline/report-baseline-gemma-4-e2b-v2.md` as the example of the form.
+- Put a report of SFT or RL in `data/results/sft/` or `data/results/rl/`.
+
 ## Compute
 
 - The local machines have no GPU.

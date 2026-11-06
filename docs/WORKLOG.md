@@ -415,3 +415,7 @@
 - Run all six baselines again (jobs 20 to 25). The team does not use the results of the earlier baseline runs.
 - Remove the six reports from `data/results/baseline/`. The new reports do not use the earlier reports.
 - Job 19 tested the limits on the GPU with three tasks for each model. All models completed, with no memory error.
+
+### One short form for all reports of a run
+
+- `AGENTS.md`: add the section "Reports of a run". The reports of the baseline, SFT and RL have the same short form.
