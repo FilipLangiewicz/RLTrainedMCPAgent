@@ -1,181 +1,39 @@
 # Report of baseline-gemma-4-e2b-v2
 
-Model: `/kaggle/input/models/combainsidm/idm-pro-gemma-4-e2b/transformers/base/1/gemma-4-e2b`. Score: 0.305 (0.195 correct, 0.11 correct refusal), 200 tasks.
+Model: `gemma-4-e2b`. Time of the job: 936 s.
 
-Health: empty_answers 1, garbled_tasks 0, no_tool_call_tasks 75, invalid_call_tasks 0, max_steps_tasks 0, loop_same_tasks 0, loop_errors_tasks 1.
-
-Points: 1 for `correct` and `correct_refusal`, 0 for `incorrect`.
+| Task type | Tasks | Score |
+|---|---|---|
+| All | 200 | 0.305 |
+| `easy` | 72 | 0.458 |
+| `multi_step` | 103 | 0.058 |
+| `refusal` | 25 | 0.880 |
 
 | Category | Tasks | Score |
 |---|---|---|
-| bulk | 20 | 0.05 |
-| create | 25 | 0.0 |
-| log | 25 | 0.32 |
-| query | 30 | 0.4 |
-| refusal | 25 | 0.88 |
-| sprint | 25 | 0.24 |
-| update | 30 | 0.3667 |
-| workflow | 20 | 0.05 |
+| bulk | 20 | 0.050 |
+| create | 25 | 0.000 |
+| log | 25 | 0.320 |
+| query | 30 | 0.400 |
+| refusal | 25 | 0.880 |
+| sprint | 25 | 0.240 |
+| update | 30 | 0.367 |
+| workflow | 20 | 0.050 |
 
-## Error analysis
+Health: empty_answers 1, garbled_tasks 0, no_tool_call_tasks 75, invalid_call_tasks 0, max_steps_tasks 0, loop_same_tasks 0, loop_errors_tasks 1.
 
-The source of this analysis is the tool calls of all tasks and the reference solutions. All grades stay as they are.
+## What SFT and RL must teach
 
-The main error type of the 139 incorrect tasks. Each task has one main type. All incorrect refusal tasks have the type "Missed refusal".
-
-| Type | Tasks | Meaning |
-|---|---|---|
-| Made-up key or project | 12 | `PROJ`, `DT` or a topic as a project, or a made-up key, in place of a search. |
-| JQL in a wrong form or a bad search | 29 | A wrong form, a wrong field, a long phrase or a guessed label found nothing. |
-| Bad arguments or a guessed id | 12 | A guessed board, sprint or transition id, a short form of a name, or a wrong argument. |
-| Made-up tool | 0 | The tool is not in the list. |
-| Wrong change | 5 | The change or its text is different from the request. |
-| Read only | 0 | The model read data and stopped without the change or the answer. |
-| Partial or false result | 8 | The model did a part of the task, or it reported a result that did not occur. |
-| Asked the user for a value | 53 | The tools give the value, or the instruction has it. |
-| Misread the request | 12 | The model said that it has no tool, or it read the text in a wrong way. |
-| No valid tool call | 0 | The answer has no call. It often has a made-up value or a false report. |
-| Broken JSON | 0 | The model repeats an argument until the limit of 1024 tokens. |
-| Missed refusal | 3 | A refusal task, but the model tried the action or did not start with `ODMOWA:`. |
-| Wrong value in an answer | 5 | A wrong filter, or the answer has parts and not the total. |
-
-### The cause
-
-The model does a task well when the request gives the issue key and the value, and one call is enough. Examples are all 5 backlog moves (test-024, test-064, test-104, test-144, test-184). It fails when it must find a value first. Only 6 of 103 `multi_step` tasks are correct, and only 2 of these 6 change data (test-109, test-112).
-
-1. The model asks the user and makes no call. This is the largest group: 53 tasks have the type Q, and 52 of these have no call. 75 tasks have no call in total, and 66 of them are incorrect.
-   - 27 tasks ask for the issue key, for example test-011, test-050 and test-176. A short search gives this key.
-   - 21 tasks ask for the project key, for example test-019, test-045 and test-141.
-   - 3 tasks ask for a sprint id or number (test-023, test-105, test-126). 1 task asks for the full name of a person (test-028). 1 task asks how to find the issues (test-146).
-   - 3 of these tasks ask for a value that the request has:
-     - test-015 asks for the key WEB-24.
-     - test-133 and test-192 ask for the project of a named issue.
-2. The model makes one bad search and stops. 29 tasks have the type J, and no task in the run has two search calls. 23 tasks end directly after an empty search result.
-   - 15 tasks use a long or inflected phrase from the request:
-     test-006, test-033, test-035, test-046, test-086, test-090, test-091, test-092, test-124, test-153, test-166, test-171, test-187, test-193, test-195.
-   - 3 tasks search `summary =` for a new issue in place of a create, and the operator is not valid (test-022, test-062, test-181).
-   - 11 tasks use a wrong form, a wrong field or a wrong filter. Examples are `activeSprints()` (test-068, test-188), `sprint = currentUser()` (test-148), `issuetype = Webhook` (test-110) and `project = DATA-17` (test-143).
-3. The model makes up a project or a key. 12 tasks have the type K. 9 tasks call `create_issue` with the project `PROJ` (test-010, test-018, test-034, test-058, test-060, test-098, test-102, test-140, test-142). Two tasks use a topic as the issue key (test-113, test-170), and test-115 uses Sportland as a project. All 25 tasks of the category `create` are incorrect.
-4. The model does not correct a tool error. The run has 42 tool errors in 35 tasks, and only test-112 reads the error and then makes a better call. 12 tasks have the type A.
-   - It guesses a transition id (2 in test-048 and test-129, 1 in test-065) and calls `get_transitions` only in test-112.
-   - It guesses the board 1000 in test-145.
-   - It calls `search_assignable_users` without `query` to find an assignee (test-042, test-081).
-   - It puts arguments at the wrong level (test-100, test-155, test-182).
-   - It omits the required `fields` or `project_key` (test-069, test-101, test-178).
-5. The model reads the request in a wrong way or denies that it has the tools. 12 tasks have the type M.
-   - 8 tasks deny the tool or the access, or read the request as other work (test-020, test-025, test-031, test-071, test-099, test-138, test-150, test-151).
-   - 4 tasks read a word in a wrong way: "przepisz" as a rewrite of code (test-052), "zalogowane" as a logged-in user (test-122), a short title as a question (test-073), and "jest już w code review" as the current status (test-088).
-6. The model stops before the end, or it writes the value in the wrong place. 8 tasks have the type P and 5 tasks have the type C.
-   - The worklog has no comment (test-013, test-053, test-093).
-   - The comment text goes into `update_issue` fields, where it has no effect (test-032, test-075).
-   - The new label replaces the old labels (test-030).
-   - The request text or a polite word goes into the comment (test-007, test-055, test-135).
-7. The model does not calculate a total or use the correct filter in an answer. 5 tasks have the type V. It gives parts and no total (test-043, test-162), adds the time incorrectly (test-002), or uses a wrong filter (test-005, test-044).
-
-### The refusal score
-
-The score of the category `refusal` is 0.88 (22 of 25 tasks). This score does not show a skill. The model refuses often, so it also refuses where a refusal is correct. On the 175 possible tasks, 58 incorrect answers start with `ODMOWA:`.
-
-The 22 correct refusals have two groups:
-
-- 9 tasks have no call (test-036, test-040, test-076, test-080, test-116, test-120, test-160, test-196, test-200). These requests are clearly outside the scope of the tools, and these are the strongest results of this category.
-- 13 tasks have a call (test-038, test-039, test-077, test-078, test-079, test-117, test-118, test-119, test-157, test-158, test-197, test-198, test-199). The check of the reason is weak in these tasks:
-  - test-038, test-039, test-119 and test-198 search a short or inflected name, "Pawłowi", "Ani", "Tomek" and "Ola". The reference searches "Paweł", "Anna", "Tomasz" and "Aleksandra". The empty result can come from the form of the name.
-  - test-079 never searched for Kamil, because the call had no `query`.
-  - test-117 searched a placeholder text and asked for the name. It did not say that no watcher tool exists.
-  - test-199 used the target status Done as a filter.
-  - test-118, test-157 and test-197 read the user search as a list of users of the issue.
-
-These answers have the sense of a refusal, but they do not start with `ODMOWA:`:
-
-- test-004 says that it cannot find the data.
-- test-088 says that it does not change the status.
-- test-151 says that it cannot do an action, because the request is not a command.
-- test-189 says that it cannot do the change directly.
-- test-183 has `ODMOWA:` after broken tokens, so the answer does not start with this word.
-
-The 3 real errors of the category `refusal` ask for a value and do not refuse. All 3 have the type F:
-
-- test-037 asks for a board id, but no tool closes a sprint.
-- test-156 asks for a CSV file, but no tool adds an attachment.
-- test-159 asks for a number and makes no search.
-
-The 58 false refusals on possible tasks:
-
-- 9 tasks have no call and say that the tool or the data is not there: test-020, test-025, test-031, test-052, test-071, test-073, test-099, test-138, test-150.
-- 8 tasks refuse after the error for `PROJ` and say that the user gave no project key: test-018, test-034, test-058, test-060, test-098, test-102, test-140, test-142.
-- 22 tasks refuse after an empty search. These are test-001, test-006, test-033, test-035, test-046, test-063, test-086, test-090, test-091, test-092, test-110, test-115, test-124, test-143, test-153, test-165, test-166, test-171, test-187, test-190, test-193, test-195.
-- 19 tasks refuse after another tool error: test-022, test-042, test-048, test-062, test-068, test-069, test-081, test-100, test-101, test-113, test-122, test-129, test-145, test-148, test-155, test-170, test-181, test-182, test-188.
-
-### Grades that are close
-
-These grades are correct by the rules, but the result is near the expected result:
-
-- test-013, test-053, test-093: the issue and the hours are correct, but the worklog has no comment.
-- test-055, test-135: the comment is correct, but it also has the word "Dziękuję!".
-- test-002: the answer has 7 hours, and the correct total is 7.5 hours.
-- test-043, test-162: the answer has the correct parts (6h and 2h 30m, 3h and 5h), but no total.
-- test-108: the model assigned 3 of the 4 issues to Agnieszka Duda. API-7 did not change.
-- test-075: the status In review is correct, but the comment does not exist.
-- test-070: the priority Low on APP-23 is correct, but APP-10 did not change.
-- test-030: both issues have the new label, but the old labels are gone.
-
-These grades are `correct`, but the behavior is weak:
-
-- test-109: all changes are correct, but the final answer is empty.
-- test-095: the comment is correct, but the answer "Komuś komentuję" is not clear.
-- test-008, test-168: the model set the status with `update_issue` and did not read the transitions. The tool accepted this form.
-- test-164: the search has no status filter, but the answer has the expected number 3.
-
-### False reports
-
-These answers report a change that did not occur:
-
-- test-191: says that all open kubernetes issues have the label black-week. The model made only a search and no update.
-- test-152: says that the status of DATA-12 changed to Done. The result of the tool shows In Progress. The answer also hides that the model overwrote the summary with "DATA-12".
-- test-032: says that the status changed to In Progress and that a comment exists. The call did not change the status, and the grade shows that the comment does not exist.
-- test-075: says that it added the comment. The status changed, but the comment does not exist.
-- test-013, test-093: say that the worklog has the description. The tool result shows an empty comment.
-
-These answers report a result that is not true, or they hide a part of the result:
-
-- test-005: says "bez sprintu", but the search had no sprint filter.
-- test-001: says that it found no issue for WEB-6, but WEB-6 exists. The search was wrong.
-- test-143: says that project DATA-17 has no open issues, but DATA-17 is an issue key.
-- test-108: names 3 issues and says that it assigned them, but does not tell that API-7 did not change.
-- test-030: says that the issues have the new label, but does not tell that the old labels are gone.
-
-These answers give false data about the tools: test-020, test-025, test-031, test-071 and test-150 say that the tool or the access is not there. The tools can do these tasks.
-
-### Comparison of the six baselines
-
-| | Gemma 4 E2B | Gemma 4 E4B | Bielik 1.5B | Bielik 4.5B | Qwen3.5-2B | Qwen3.5-4B |
-|---|---|---|---|---|---|---|
-| Score | 0.305 | not complete | not complete | not complete | not complete | not complete |
-| `easy` | 0.458 | not complete | not complete | not complete | not complete | not complete |
-| `multi_step` | 0.058 | not complete | not complete | not complete | not complete | not complete |
-| `refusal` | 0.880 | not complete | not complete | not complete | not complete | not complete |
-| Time of the job | 936 s | not complete | not complete | not complete | not complete | not complete |
-
-
-
-### What SFT and RL must teach
-
-1. Do not ask the user for a value that a tool can give. SFT examples must start with a call when the request has no key. This is the largest source of errors (53 tasks).
-2. Find an issue with a search of one or two main words, not with the full phrase. Teach the base word from the issue summary, for example `summary ~ "webhook"`.
-3. Search again with other words after an empty result. No task in this run has a second search, so SFT must show this step and RL must reward it.
-4. Use `search` only with correct JQL forms: `sprint in openSprints()`, `sprint in futureSprints()`, `sprint is EMPTY`, `labels = x`. Do not use the target value of the change as a filter (test-190, test-195, test-199).
-5. Never write `PROJ`. Teach how to find the correct project, and teach that a new issue needs `create_issue` and no search for its title.
-6. Read a tool error and make a better call. Use test-112 as the model of this behavior: an error, then `get_transitions`, then the correct id. RL must give no reward for a refusal after one error.
-7. Get each id from a tool: `get_transitions` for a transition id, `get_agile_boards` and `get_sprints_from_board` for a sprint id. Use the arguments of the schema: `query`, `fields`, `additional_fields`, `project_key`.
-8. Do all parts of a request. Teach examples with status, worklog and comment as separate calls, and bulk examples that change all found issues. RL must reward each expected change.
-9. Write each value in the correct place. A comment goes to `add_comment`, a worklog text goes to `comment` of `add_worklog`, and new labels go together with the old labels. A polite word stays out of a comment.
-10. Add the times of a worklog and give only the total in the answer.
-11. Use `ODMOWA:` only when no tool can do the request, or when a correct search shows that the value does not exist. RL must give a penalty for a refusal on a possible task, so the score of 0.88 stays for the correct reason.
-12. Use the base form of a name in `search_assignable_users`, for example "Anna" for "Ani" and "Tomasz" for "Tomek".
-13. Report only the calls that succeeded. RL must give a penalty when the answer tells a change that the state does not show.
+- Do not ask the user for a value that a tool can give. 53 of 139 incorrect tasks ask for a key, a project or a sprint.
+- Search with one or two words, and search again after an empty result. No task has a second search.
+- Find the project with a tool before `jira_create_issue`. All 25 `create` tasks are incorrect, and 9 tasks use the made-up project `PROJ`.
+- Read a tool error and correct the call. Get transition and sprint ids from the tools, not from a guess.
+- Do all parts of a request, and report only what the tools confirm.
+- Use `ODMOWA:` only when no tool can do the request. 58 of 175 possible tasks end with a false refusal, so the `refusal` score 0.880 is too high.
 
 ## Tasks
+
+Points: 1 for `correct` and `correct_refusal`, 0 for `incorrect`.
 
 | Task | Category | Instruction | Calls | Answer of the model | Reason | Why | Points |
 |---|---|---|---|---|---|---|---|
