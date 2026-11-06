@@ -409,3 +409,9 @@
 - The stop reason `loop` becomes `loop_same` (3 equal calls in a row) or `loop_errors` (5 errors in a row). The metrics have `loop_same_tasks` and `loop_errors_tasks`.
 - Add tests with a mock model for each limit, each family and random outputs. A test run with each limit broken on purpose gives failed tests in all 11 cases.
 - The results of the earlier baselines used the old rules. No baseline has run with these limits yet.
+
+### New baseline runs with the hard limits
+
+- Run all six baselines again (jobs 20 to 25). The team does not use the results of the earlier baseline runs.
+- Remove the six reports from `data/results/baseline/`. The new reports do not use the earlier reports.
+- Job 19 tested the limits on the GPU with three tasks for each model. All models completed, with no memory error.
