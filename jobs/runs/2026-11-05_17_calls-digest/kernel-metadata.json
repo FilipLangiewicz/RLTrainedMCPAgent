@@ -10,9 +10,7 @@
   "dataset_sources": [],
   "competition_sources": [],
   "kernel_sources": [
-    "combainsidm/rltrainedmcpagent-baseline-bielik-4-5b-v3",
-    "combainsidm/rltrainedmcpagent-baseline-qwen3-5-2b",
-    "combainsidm/rltrainedmcpagent-baseline-qwen3-5-4b"
+    "combainsidm/rltrainedmcpagent-baseline-qwen3-5-4b-v2"
   ],
   "model_sources": []
 }

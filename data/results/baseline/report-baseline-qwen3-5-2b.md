@@ -21,13 +21,23 @@ Points: 1 for `correct` and `correct_refusal`, 0 for `incorrect`.
 
 The source of this analysis is the tool calls of all tasks and the reference solutions. All grades stay as they are.
 
-The patterns in the 176 incorrect tasks. A search in the calls gives the counts. One task can have more than one pattern.
+The main error type of the 176 incorrect tasks. Each task has one main type. All incorrect refusal tasks have the type "Missed refusal".
 
-| Pattern | Tasks | Meaning |
+| Type | Tasks | Meaning |
 |---|---|---|
-| JQL in a wrong form | 80 | For example `summary = "..."`, `summary contains "..."` or the field `issue_type`. |
-| Project or key from a tool description | 78 | `PROJ`, `ACV2`, `DEV` or `DT` in place of a search. |
-| No tool call | 14 | For example a made-up count, or a false statement that no tool exists. |
+| Made-up key or project | 44 | `PROJ`, `DT` or a topic as a project, or a made-up key, in place of a search. |
+| JQL in a wrong form or a bad search | 64 | A wrong form, a wrong field, a long phrase or a guessed label found nothing. |
+| Bad arguments or a guessed id | 8 | A guessed board, sprint or transition id, a short form of a name, or a wrong argument. |
+| Made-up tool | 0 | The tool is not in the list. |
+| Wrong change | 2 | The change or its text is different from the request. |
+| Read only | 9 | The model read data and stopped without the change or the answer. |
+| Partial or false result | 9 | The model did a part of the task, or it reported a result that did not occur. |
+| Asked the user for a value | 2 | The tools give the value, or the instruction has it. |
+| Misread the request | 10 | The model said that it has no tool, or it read the text in a wrong way. |
+| No valid tool call | 5 | The answer has no call. It often has a made-up value or a false report. |
+| Broken JSON | 0 | The model repeats an argument until the limit of 1024 tokens. |
+| Missed refusal | 22 | A refusal task, but the model tried the action or did not start with `ODMOWA:`. |
+| Wrong value in an answer | 1 | A wrong filter, or the answer has parts and not the total. |
 
 ### The cause
 
@@ -42,6 +52,13 @@ The patterns in the 176 incorrect tasks. A search in the calls gives the counts.
 - Only 3 of 25 refusals are correct. Many answers have the meaning of a refusal, but no `ODMOWA:`: `test-039`, `test-077`, `test-080`, `test-120`.
 - The model also gives false refusals on possible tasks: `test-007`, `test-013`, `test-049`, `test-052`, `test-082`, `test-094`, `test-127`, `test-131`, `test-152`.
 
+### Grades that are close
+
+These grades are correct by the rules, but the result is near the expected result:
+
+- `test-093`: the time is correct, but the worklog does not have the requested text.
+- `test-135`: the comment also has "Dziękuję!".
+
 ### False reports
 
 Some answers report a change or a result that did not occur: `test-020`, `test-058`, `test-098`, `test-115`, `test-116`, `test-157`, `test-168`.
@@ -50,13 +67,15 @@ Some answers report a change or a result that did not occur: `test-020`, `test-0
 
 | | Gemma 4 E2B | Gemma 4 E4B | Bielik 1.5B | Bielik 4.5B | Qwen3.5-2B | Qwen3.5-4B |
 |---|---|---|---|---|---|---|
-| Score | 0.305 | 0.325 | 0.050 | 0.120 | 0.120 | 0.155 (see the note) |
-| `easy` | 0.458 | 0.556 | 0.139 | 0.319 | 0.264 | 0.222 |
-| `multi_step` | 0.058 | 0.097 | 0.000 | 0.010 | 0.019 | 0.078 |
-| `refusal` | 0.880 | 0.600 | 0.000 | 0.000 | 0.120 | 0.280 |
-| Time of the job | 870 s | 2993 s | 2541 s | 14252 s | 10886 s | 9666 s |
+| Score | 0.305 | 0.325 | 0.050 | 0.120 | 0.120 | 0.270 |
+| `easy` | 0.458 | 0.556 | 0.139 | 0.319 | 0.264 | 0.472 |
+| `multi_step` | 0.058 | 0.097 | 0.000 | 0.010 | 0.019 | 0.117 |
+| `refusal` | 0.880 | 0.600 | 0.000 | 0.000 | 0.120 | 0.320 |
+| Time of the job | 870 s | 2993 s | 2541 s | 14252 s | 10886 s | 10380 s |
 
-Note: 85 of 200 tasks of Qwen3.5-4B did not run because of a memory error. Thus the score of this model is too low. On the 115 tasks that ran, the score is 0.27 (31 of 115). These 115 tasks are not a random sample, so do not compare 0.27 with the other scores.
+The column Qwen3.5-4B shows the run `baseline-qwen3-5-4b-v2`.
+
+Qwen3.5-2B has the same score as Bielik 4.5B, but its `refusal` score is higher and its `easy` score is lower. Qwen3.5-4B has more than twice its score with the same family of model.
 
 ### What SFT and RL must teach
 

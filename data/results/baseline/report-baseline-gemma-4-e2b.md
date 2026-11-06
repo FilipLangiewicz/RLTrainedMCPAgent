@@ -21,33 +21,41 @@ Points: 1 for `correct` and `correct_refusal`, 0 for `incorrect`.
 
 The source of this analysis is the tool calls of all tasks, the reference solutions and a replay of searches on the test boards. All grades stay as they are.
 
-The main types of the 139 incorrect tasks:
+The main error type of the 139 incorrect tasks. Each task has one main type. All incorrect refusal tasks have the type "Missed refusal".
 
 | Type | Tasks | Meaning |
 |---|---|---|
-| Asked the user for a value | 33 | The tools give the value, or the instruction has it. Most of these tasks have no tool call. |
-| Asked for the project | 29 | See "The project key". |
-| Bad search | 26 | A long phrase or a wrong field found nothing, and the model did not try again. |
-| Bad tool call | 17 | A wrong tool, a guessed id or a bad argument gave an error, and the model did not correct it. |
-| Partial or false result | 14 | The model did a part of the task, and it often reported success. |
-| Misread the request | 12 | The model said that it has no tool, or it read the text in a wrong way. |
-| Wrong value in an answer | 5 | A wrong filter, or parts and not the total. |
-| Missed refusal | 3 | The answer did not start with `ODMOWA:`. |
+| Made-up key or project | 7 | `PROJ`, `DT` or a topic as a project, or a made-up key, in place of a search. |
+| JQL in a wrong form or a bad search | 28 | A wrong form, a wrong field, a long phrase or a guessed label found nothing. |
+| Bad arguments or a guessed id | 14 | A guessed board, sprint or transition id, a short form of a name, or a wrong argument. |
+| Made-up tool | 0 | The tool is not in the list. |
+| Wrong change | 3 | The change or its text is different from the request. |
+| Read only | 0 | The model read data and stopped without the change or the answer. |
+| Partial or false result | 12 | The model did a part of the task, or it reported a result that did not occur. |
+| Asked the user for a value | 52 | The tools give the value, or the instruction has it. |
+| Misread the request | 15 | The model said that it has no tool, or it read the text in a wrong way. |
+| No valid tool call | 0 | The answer has no call. It often has a made-up value or a false report. |
+| Broken JSON | 0 | The model repeats an argument until the limit of 1024 tokens. |
+| Missed refusal | 3 | A refusal task, but the model tried the action or did not start with `ODMOWA:`. |
+| Wrong value in an answer | 5 | A wrong filter, or the answer has parts and not the total. |
 
-### Is the model correct when it asks for a key?
+### The cause
 
-- Issue key: no. In all 44 incorrect tasks with a text search in the reference solution, this search finds exactly one issue. Thus the key is not necessary.
-- Task `test-159` is different: 3 issues match. The request for a key is sensible, but the expected answer is a refusal after a search.
-- Three searches are hard, because `~` finds only whole words and the instruction has another form or a synonym: `test-046`, `test-057` and `test-177`.
+1. The model asks for a value in place of a tool call. In 29 tasks it asks for the project, and 21 of these tasks must create an issue.
+2. The model does not need the issue key. In all 44 incorrect tasks with a text search in the reference solution, this search finds exactly one issue.
+3. Three searches are hard, because `~` finds only whole words and the instruction has another form or a synonym: `test-046`, `test-057` and `test-177`.
+4. Neither the instruction nor the prompt `v3` names the project, and `jira_create_issue` needs `project_key`. The team treats this as a skill that the model does not have.
+5. The model can find the key: `jira_get_agile_boards` without arguments gives "WEB board", and a search without a project gives keys such as `WEB-38`. The model did not do this in any `create` task.
+6. The reference solutions use `project_key` directly. Thus they do not show how to get this value, and the training examples must add this step.
+7. The other 8 tasks that ask for the project do not need it: `test-026`, `test-029`, `test-045`, `test-067`, `test-106`, `test-133`, `test-185`, `test-192`.
+8. Stray tokens occur in `test-010`, `test-178` and `test-183`. The check for garbled output does not mark them.
+9. `test-008` and `test-168` change the status with `jira_update_issue`. `docs/JIRA_TOOLS.md` lists this as a behavior of the simulator. Check this path on real Jira at E3.
 
-### The project key
+### The refusal score
 
-- Neither the instruction nor the prompt `v3` names the project. `jira_create_issue` needs `project_key`.
-- The model can find the key: `jira_get_agile_boards` without arguments gives "WEB board", and a search without a project gives keys such as `WEB-38`. The model did not do this in any `create` task.
-- The reference solutions use `project_key` directly, without a step that finds it. Thus they do not show how to get this value.
-- The team treats this as a skill that the model does not have. The model must find the project with a tool, and training must teach this step.
-- This type has 21 tasks that must create an issue.
-- The other 8 tasks of this type do not need the project: a search works without it, or the instruction has the key (`test-026`, `test-029`, `test-045`, `test-067`, `test-106`, `test-133`, `test-185`, `test-192`).
+- The verifier checks only the prefix `ODMOWA:` of a refusal. In 6 of 22 correct refusals the reason of the model is wrong: `test-039`, `test-079`, `test-117`, `test-119`, `test-198`, `test-199`.
+- Thus the score 0.88 of `refusal` is too high as a measure of the behavior. The model refuses often without a check, and this also gives points for refusal tasks.
+- `test-159` is different from the other tasks where the model asks for a key: 3 issues match, so the request is sensible. The expected answer is a refusal after a search.
 
 ### Grades that are close
 
@@ -55,16 +63,27 @@ These grades are correct by the rules, but the result is near the expected resul
 
 - `test-055`, `test-135`: the comment also has "Dziękuję!".
 - `test-043`, `test-162`: the answer has the correct parts, but not the total.
-- `test-159`: see above.
+- `test-159`: see "The refusal score".
 
-### Limits of the score
+### False reports
 
-- The verifier checks only the prefix `ODMOWA:` of a refusal. In 6 of 22 correct refusals the reason of the model is wrong: `test-039`, `test-079`, `test-117`, `test-119`, `test-198`, `test-199`. Thus the score 0.88 of `refusal` is too high as a measure of the behavior.
-- The model refuses often without a check. This also gives points for refusal tasks.
-- The grade uses the board, not the text of the answer. `test-095` has a garbled answer and `test-109` has an empty answer, and both get a point. False reports of success occur in `test-032`, `test-075`, `test-152` and `test-191`.
-- Stray tokens occur in `test-010`, `test-178` and `test-183`. The check for garbled output does not mark them.
+- The answer reports success, but the change did not occur: `test-032`, `test-075`, `test-152`, `test-191`.
 - `jira_update_issue` accepts a comment in `fields` and reports success, but no comment is added (`test-032`, `test-075`). This misleads the model.
-- `test-008` and `test-168` change the status with `jira_update_issue`. `docs/JIRA_TOOLS.md` lists this as a behavior of the simulator. Check this path on real Jira at E3.
+- The grade uses the board, not the text of the answer. `test-095` has a garbled answer and `test-109` has an empty answer, and both get a point.
+
+### Comparison of the six baselines
+
+| | Gemma 4 E2B | Gemma 4 E4B | Bielik 1.5B | Bielik 4.5B | Qwen3.5-2B | Qwen3.5-4B |
+|---|---|---|---|---|---|---|
+| Score | 0.305 | 0.325 | 0.050 | 0.120 | 0.120 | 0.270 |
+| `easy` | 0.458 | 0.556 | 0.139 | 0.319 | 0.264 | 0.472 |
+| `multi_step` | 0.058 | 0.097 | 0.000 | 0.010 | 0.019 | 0.117 |
+| `refusal` | 0.880 | 0.600 | 0.000 | 0.000 | 0.120 | 0.320 |
+| Time of the job | 870 s | 2993 s | 2541 s | 14252 s | 10886 s | 10380 s |
+
+The column Qwen3.5-4B shows the run `baseline-qwen3-5-4b-v2`.
+
+E2B has the highest `refusal` score, but this hides a lower score on possible tasks. See "The refusal score".
 
 ### What SFT and RL must teach
 

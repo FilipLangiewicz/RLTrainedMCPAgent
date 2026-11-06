@@ -21,38 +21,40 @@ Points: 1 for `correct` and `correct_refusal`, 0 for `incorrect`.
 
 The source of this analysis is the tool calls of all tasks, the reference solutions and a replay of searches on the test boards. All grades stay as they are.
 
-The main types of the 135 incorrect tasks:
+The main error type of the 135 incorrect tasks. Each task has one main type. All incorrect refusal tasks have the type "Missed refusal".
 
 | Type | Tasks | Meaning |
 |---|---|---|
-| Bad search | 32 | A long phrase, a wrong field or a made-up value found nothing, and the model did not try again. |
-| Asked for the project | 33 | See "The project key". |
-| Asked the user for a value | 20 | The tools give the value, or the instruction has it. These tasks have no tool call. |
-| Bad tool call | 12 | A wrong tool, a guessed id or a bad argument gave an error, and the model did not correct it. |
-| Partial or false result | 14 | The model did a part of the task, and it often reported success. |
-| Misread the request | 12 | The model said that it cannot do a possible task, or it read the text in a wrong way. |
-| Missed refusal | 10 | See "The refusal score". |
-| Wrong value in an answer | 2 | A filter is absent, or the answer has parts and not the total. |
+| Made-up key or project | 4 | `PROJ`, `DT` or a topic as a project, or a made-up key, in place of a search. |
+| JQL in a wrong form or a bad search | 32 | A wrong form, a wrong field, a long phrase or a guessed label found nothing. |
+| Bad arguments or a guessed id | 7 | A guessed board, sprint or transition id, a short form of a name, or a wrong argument. |
+| Made-up tool | 0 | The tool is not in the list. |
+| Wrong change | 4 | The change or its text is different from the request. |
+| Read only | 0 | The model read data and stopped without the change or the answer. |
+| Partial or false result | 13 | The model did a part of the task, or it reported a result that did not occur. |
+| Asked the user for a value | 48 | The tools give the value, or the instruction has it. |
+| Misread the request | 15 | The model said that it has no tool, or it read the text in a wrong way. |
+| No valid tool call | 0 | The answer has no call. It often has a made-up value or a false report. |
+| Broken JSON | 0 | The model repeats an argument until the limit of 1024 tokens. |
+| Missed refusal | 10 | A refusal task, but the model tried the action or did not start with `ODMOWA:`. |
+| Wrong value in an answer | 2 | A wrong filter, or the answer has parts and not the total. |
 
-### Is the model correct when it asks for a key?
+### The cause
 
-- Issue key: no. In 42 incorrect tasks with a text search in the reference solution, this search finds exactly one issue. Thus the key is not necessary.
-- Task `test-199` is different: 2 issues match. The expected answer is a refusal after a search.
-- Three searches are hard, because `~` finds only whole words and the instruction has another form or a synonym: `test-046`, `test-057` and `test-177`.
-
-### The project key
-
-- The team treats this as a skill that the model does not have. The model must find the project with a tool, and training must teach this step.
-- 28 tasks must create an issue. The model did not find the project in any of them. `test-034`, `test-101` and `test-142` used the made-up project PROJ.
-- The model called `jira_create_issue` only 1 time in all 200 tasks (`test-142`).
-- The model can use the tool: in `test-084` it called `jira_get_agile_boards` without arguments and used the result.
-- The other 5 tasks of this type do not need the project, because a search works without it: `test-010`, `test-045`, `test-106`, `test-110`, `test-165`.
+1. The model asks for a value in place of a tool call. In 33 tasks it asks for the project, and 28 of these tasks must create an issue.
+2. The model did not find the project in any of these 28 tasks. `test-034`, `test-101` and `test-142` used the made-up project PROJ.
+3. The model called `jira_create_issue` only 1 time in all 200 tasks (`test-142`).
+4. The model can use the tool: in `test-084` it called `jira_get_agile_boards` without arguments and used the result. The team treats the project as a skill that training must teach.
+5. The other 5 tasks that ask for the project do not need it, because a search works without it: `test-010`, `test-045`, `test-106`, `test-110`, `test-165`.
+6. The model does not need the issue key. In 42 incorrect tasks with a text search in the reference solution, this search finds exactly one issue.
+7. Three searches are hard, because `~` finds only whole words and the instruction has another form or a synonym: `test-046`, `test-057` and `test-177`.
 
 ### The refusal score
 
 - The score 0.6 of `refusal` is too low as a measure of the meaning. In 7 tasks the model refused correctly in words, but the answer does not start with `ODMOWA:`: `test-040`, `test-076`, `test-080`, `test-120`, `test-160`, `test-196`, `test-200`.
 - In 5 of 15 correct refusals the reason of the model is wrong: `test-039`, `test-117`, `test-119`, `test-159`, `test-198`.
 - `test-079` is a real error: the search gave 2 persons, and the model selected one and changed the board.
+- `test-199` is different from the other tasks where the model asks for a key: 2 issues match. The expected answer is a refusal after a search.
 - Training must teach this prefix. The format of the answer is a part of the task, so the grades stay.
 
 ### Grades that are close
@@ -63,19 +65,27 @@ These grades are correct by the rules, but the result is near the expected resul
 - `test-055`, `test-135`: the comment also has "Dziękuję!".
 - `test-043`: the answer has the correct parts, but not the total.
 
-### Comparison with Gemma 4 E2B
+### False reports
 
-| | E2B | E4B |
-|---|---|---|
-| Score | 0.305 | 0.325 |
-| `easy` | 0.458 | 0.556 |
-| `multi_step` | 0.058 | 0.097 |
-| `refusal` | 0.880 | 0.600 |
-| Time of the job | 870 s | 2992 s |
+- `test-013`, `test-053`, `test-093`, `test-133`, `test-173`: the model logged the time without the comment, but it reported the comment.
+- `test-108`: the search gave 4 issues and the model changed 3, but it reported success.
+- `test-032`, `test-072`, `test-152` are different: the transition failed, and the model reported this failure.
 
-- E4B uses the tools better: it uses `jira_get_issue`, `jira_get_transitions` and the sprint tools more often. It also calculates the total of a worklog more often.
-- The difference of 0.02 is small: it is 4 tasks of 200. The higher `refusal` score of E2B also hides a lower score on possible tasks.
-- E4B has the same main weaknesses: a long phrase in a search, and questions in place of tool calls.
+### Comparison of the six baselines
+
+| | Gemma 4 E2B | Gemma 4 E4B | Bielik 1.5B | Bielik 4.5B | Qwen3.5-2B | Qwen3.5-4B |
+|---|---|---|---|---|---|---|
+| Score | 0.305 | 0.325 | 0.050 | 0.120 | 0.120 | 0.270 |
+| `easy` | 0.458 | 0.556 | 0.139 | 0.319 | 0.264 | 0.472 |
+| `multi_step` | 0.058 | 0.097 | 0.000 | 0.010 | 0.019 | 0.117 |
+| `refusal` | 0.880 | 0.600 | 0.000 | 0.000 | 0.120 | 0.320 |
+| Time of the job | 870 s | 2993 s | 2541 s | 14252 s | 10886 s | 10380 s |
+
+The column Qwen3.5-4B shows the run `baseline-qwen3-5-4b-v2`.
+
+- E4B uses the tools better than E2B: it uses `jira_get_issue`, `jira_get_transitions` and the sprint tools more often. It also calculates the total of a worklog more often.
+- The difference of 0.02 from E2B is small: it is 4 tasks of 200. The higher `refusal` score of E2B also hides a lower score on possible tasks.
+- E4B has the same main weaknesses as E2B: a long phrase in a search, and questions in place of tool calls.
 
 ### What SFT and RL must teach
 

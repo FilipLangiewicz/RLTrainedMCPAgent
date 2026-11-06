@@ -21,19 +21,23 @@ Points: 1 for `correct` and `correct_refusal`, 0 for `incorrect`.
 
 The source of this analysis is the tool calls of all tasks and the code of the agent loop. All grades stay as they are.
 
-The main error type of the 190 incorrect tasks:
+The main error type of the 190 incorrect tasks. Each task has one main type. All incorrect refusal tasks have the type "Missed refusal".
 
 | Type | Tasks | Meaning |
 |---|---|---|
-| Made-up key or project | 41 | For example `PROJ-123`, without a search. |
-| JQL in a wrong form | 40 | For example `fields.title contains '...'`. |
-| Bad arguments or a guessed id | 33 | For example `board_name` for `jira_get_sprints_from_board`. |
-| Made-up tool | 33 | For example `jira_get_issues`, `jira_add_label` or `login_to_app`. |
-| Wrong change | 18 | A comment, a worklog or a new issue in place of the requested change. |
-| Read only | 11 | The model read data and stopped without the change. |
-| Broken JSON | 8 | The model repeats an argument until the limit of 1024 tokens. |
-| No tool call | 4 | The model wrote text, for example a story. |
-| Wrong value in an answer | 2 | The answer has a wrong total. |
+| Made-up key or project | 42 | `PROJ`, `DT` or a topic as a project, or a made-up key, in place of a search. |
+| JQL in a wrong form or a bad search | 30 | A wrong form, a wrong field, a long phrase or a guessed label found nothing. |
+| Bad arguments or a guessed id | 31 | A guessed board, sprint or transition id, a short form of a name, or a wrong argument. |
+| Made-up tool | 30 | The tool is not in the list. |
+| Wrong change | 6 | The change or its text is different from the request. |
+| Read only | 13 | The model read data and stopped without the change or the answer. |
+| Partial or false result | 5 | The model did a part of the task, or it reported a result that did not occur. |
+| Asked the user for a value | 0 | The tools give the value, or the instruction has it. |
+| Misread the request | 0 | The model said that it has no tool, or it read the text in a wrong way. |
+| No valid tool call | 2 | The answer has no call. It often has a made-up value or a false report. |
+| Broken JSON | 4 | The model repeats an argument until the limit of 1024 tokens. |
+| Missed refusal | 25 | A refusal task, but the model tried the action or did not start with `ODMOWA:`. |
+| Wrong value in an answer | 2 | A wrong filter, or the answer has parts and not the total. |
 
 ### The cause
 
@@ -48,21 +52,30 @@ The parser is correct: the broken calls are real output of the model. The team t
 ### The refusal score
 
 - The score 0.0 of `refusal` is correct in most tasks. The model tries a made-up tool, or it changes the board (`test-037`, `test-038`, `test-077`, `test-119`, `test-157`).
-- Three grades are close: `test-078`, `test-158`, `test-159`.
 - Answers with ODMOWA often have the wrong reason: 17 answers start with this word in other tasks, for example after a JQL error.
+
+### Grades that are close
+
+These grades are correct by the rules, but the result is near the expected result:
+
+- `test-078`, `test-158`: the tool did not find the issue or the sprint, and the model reported a failure, but not with `ODMOWA:`.
+- `test-159`: the answer has `Odpowiedź:` before `ODMOWA:`. The model also used the made-up key `DT-123` and did no search.
 
 ### False reports
 
 Some answers report success when the change did not occur: `test-072`, `test-089`, `test-105`, `test-112`, `test-118`, `test-152`, `test-192`, `test-197`, `test-198`.
 
-### Comparison
+### Comparison of the six baselines
 
-| | Gemma 4 E2B | Gemma 4 E4B | Bielik 1.5B |
-|---|---|---|---|
-| Score | 0.305 | 0.325 | 0.050 |
-| `easy` | 0.458 | 0.556 | 0.139 |
-| `multi_step` | 0.058 | 0.097 | 0.000 |
-| `refusal` | 0.880 | 0.600 | 0.000 |
+| | Gemma 4 E2B | Gemma 4 E4B | Bielik 1.5B | Bielik 4.5B | Qwen3.5-2B | Qwen3.5-4B |
+|---|---|---|---|---|---|---|
+| Score | 0.305 | 0.325 | 0.050 | 0.120 | 0.120 | 0.270 |
+| `easy` | 0.458 | 0.556 | 0.139 | 0.319 | 0.264 | 0.472 |
+| `multi_step` | 0.058 | 0.097 | 0.000 | 0.010 | 0.019 | 0.117 |
+| `refusal` | 0.880 | 0.600 | 0.000 | 0.000 | 0.120 | 0.320 |
+| Time of the job | 870 s | 2993 s | 2541 s | 14252 s | 10886 s | 10380 s |
+
+The column Qwen3.5-4B shows the run `baseline-qwen3-5-4b-v2`.
 
 Bielik has no native tool calls, so it must learn the format and the tools. Its main problems are different from the problems of Gemma: Gemma often makes no call, and Bielik makes calls that have no sense for the task.
 

@@ -21,28 +21,44 @@ Points: 1 for `correct` and `correct_refusal`, 0 for `incorrect`.
 
 The source of this analysis is the tool calls of all tasks and the reference solutions. All grades stay as they are.
 
-The patterns in the 176 incorrect tasks. A search in the calls gives the counts. One task can have more than one pattern.
+The main error type of the 176 incorrect tasks. Each task has one main type. All incorrect refusal tasks have the type "Missed refusal".
 
-| Pattern | Tasks | Meaning |
+| Type | Tasks | Meaning |
 |---|---|---|
-| Project or key from a tool description | 70 | `PROJ`, `ACV2`, `DEV` or `DT` in place of a search. |
-| JQL in a wrong form | 46 | For example `Issue Type = 'Bug'`, `IssueStatus` or `Summary contains`. |
-| Literal placeholder | 29 | For example `<issue_keys>`, `{issue_keys}` or `next-sprint-id` as a value. |
-| No valid tool call | 16 | The answer is a written plan with the calls as text. |
-| Made-up tool | 9 | For example `jira_add_labels` or `jira_delete_issue`. |
+| Made-up key or project | 45 | `PROJ`, `DT` or a topic as a project, or a made-up key, in place of a search. |
+| JQL in a wrong form or a bad search | 38 | A wrong form, a wrong field, a long phrase or a guessed label found nothing. |
+| Bad arguments or a guessed id | 32 | A guessed board, sprint or transition id, a short form of a name, or a wrong argument. |
+| Made-up tool | 6 | The tool is not in the list. |
+| Wrong change | 8 | The change or its text is different from the request. |
+| Read only | 0 | The model read data and stopped without the change or the answer. |
+| Partial or false result | 7 | The model did a part of the task, or it reported a result that did not occur. |
+| Asked the user for a value | 0 | The tools give the value, or the instruction has it. |
+| Misread the request | 0 | The model said that it has no tool, or it read the text in a wrong way. |
+| No valid tool call | 11 | The answer has no call. It often has a made-up value or a false report. |
+| Broken JSON | 3 | The model repeats an argument until the limit of 1024 tokens. |
+| Missed refusal | 25 | A refusal task, but the model tried the action or did not start with `ODMOWA:`. |
+| Wrong value in an answer | 1 | A wrong filter, or the answer has parts and not the total. |
 
 ### The cause
 
 1. The model writes more than one call in one output in 96 of 200 tasks. The later calls cannot use the results of the earlier calls. Thus the model writes a placeholder such as `<issue_keys>` in place of a key.
 2. The model does not read a result before the next call. For example, in `test-049` and `test-089` it finds the person, but it sends `user@example.com` from the tool description.
 3. The rules for loops end 85 tasks, and the step limit ends 9 tasks. These tasks use most of the time: the job needs 14252 s.
-4. Two tasks stop with a GPU memory error after long loops: `test-028` (14 calls) and `test-040` (263 calls). The next tasks of this process run normally.
+4. Two tasks stop with a GPU memory error after long loops: `test-028` (14 calls) and `test-040` (263 calls). The next tasks of this process run normally, so this run lost no other tasks.
 5. As with Bielik 1.5B, the team treats the absent stop at `</tool_call>` as a skill that the training must teach.
 
 ### The refusal score
 
 - The score 0.0 is correct in most tasks, because the model tries the action with a tool or a made-up tool.
 - The meaning of some answers is a refusal, but the answer does not start with `ODMOWA:`: `test-077`, `test-080`, `test-117`, `test-118`, `test-156`, `test-157`, `test-158`, `test-198`.
+
+### Grades that are close
+
+These grades are correct by the rules, but the result is near the expected result:
+
+- `test-053`: the worklog is correct, but the model changed the requested text to `Debugowanie kamery`.
+- `test-055`, `test-135`: the comment also has "Dziękuję!".
+- `test-122`: the answer has the correct parts, but not the total.
 
 ### False reports
 
@@ -52,13 +68,15 @@ Some answers report a change that did not occur: `test-047`, `test-192`. In `tes
 
 | | Gemma 4 E2B | Gemma 4 E4B | Bielik 1.5B | Bielik 4.5B | Qwen3.5-2B | Qwen3.5-4B |
 |---|---|---|---|---|---|---|
-| Score | 0.305 | 0.325 | 0.050 | 0.120 | 0.120 | 0.155 (see the note) |
-| `easy` | 0.458 | 0.556 | 0.139 | 0.319 | 0.264 | 0.222 |
-| `multi_step` | 0.058 | 0.097 | 0.000 | 0.010 | 0.019 | 0.078 |
-| `refusal` | 0.880 | 0.600 | 0.000 | 0.000 | 0.120 | 0.280 |
-| Time of the job | 870 s | 2993 s | 2541 s | 14252 s | 10886 s | 9666 s |
+| Score | 0.305 | 0.325 | 0.050 | 0.120 | 0.120 | 0.270 |
+| `easy` | 0.458 | 0.556 | 0.139 | 0.319 | 0.264 | 0.472 |
+| `multi_step` | 0.058 | 0.097 | 0.000 | 0.010 | 0.019 | 0.117 |
+| `refusal` | 0.880 | 0.600 | 0.000 | 0.000 | 0.120 | 0.320 |
+| Time of the job | 870 s | 2993 s | 2541 s | 14252 s | 10886 s | 10380 s |
 
-Note: 85 of 200 tasks of Qwen3.5-4B did not run because of a memory error. Thus the score of this model is too low. On the 115 tasks that ran, the score is 0.27 (31 of 115). These 115 tasks are not a random sample, so do not compare 0.27 with the other scores.
+The column Qwen3.5-4B shows the run `baseline-qwen3-5-4b-v2`.
+
+Bielik 4.5B is better than Bielik 1.5B on `easy` tasks, but it needs 5.6 times more time. Its loops use most of this time.
 
 ### What SFT and RL must teach
 
@@ -99,7 +117,7 @@ Note: 85 of 200 tasks of Qwen3.5-4B did not run because of a memory error. Thus 
 | test-023 | sprint | Proszę przenieść WEB-10 do następnego sprintu. | 11 | Issue WEB-10 zostało pomyślnie przeniesione do backlogu. | missing: {"field": "sprint", "issue": "WEB-10", "value": "WEB Sprint 16"}; additional: {"field": "sprint", "issue": "WEB-10", "value": null} | Used made-up board ids, then moved WEB-10 to the backlog, not to the next sprint. Wrong change. | 0 |
 | test-024 | sprint | WEB-14 do backlogu, nie zdążymy w tym sprincie | 7 | Issue WEB-14 zostało pomyślnie przeniesione do backlogu. | all 1 expected changes | Used bad JQL and a made-up tool, but then moved the issue to the backlog with the correct tool. | 1 |
 | test-025 | sprint | WEB-19 natychmiast do bieżącego sprintu. Bezpieczeństwo przede wszystkim, sam od tygodnia zakładam słuchawki, kiedy ktoś przechodzi koło mojego biurka. | 4 | Nie udało się znaleźć problemu o numerze WEB-19 w Backlogu. Sprawdź, czy wpisałeś poprawny klucz problemu. Jeśli problem istnieje, ale nie jest w Backlogu, spróbuj ponownie lub podaj więcej szczegółów. | missing: {"field": "sprint", "issue": "WEB-19", "value": "WEB Sprint 15"}; additional: {"comment": "WEB-19 natychmiast do bieżącego sprintu. Bezpieczeństwo przede wszystkim, sam od tygodnia zakładam słuchawki, kiedy ktoś przechodzi koło mojego biurka.", "issue": "WEB-19"}, {"issue": "WEB-19", "work… | Did not add the issue to the sprint. Added a comment and a false 1h worklog on WEB-19, then said that it is not found. | 0 |
-| test-026 | sprint | Wszystkie bugi z bieżącego sprintu, które nadal mają status Backlog, proszę przesunąć do następnego sprintu. | 50 | (no answer: max_steps) | missing: {"field": "sprint", "issue": "WEB-7", "value": "WEB Sprint 16"}, {"field": "sprint", "issue": "WEB-14", "value": "WEB Sprint 16"}, {"field": "sprint", "issue": "WEB-31", "value": "WEB Sprint 16"} | Found bugs, but used the made-up sprint id `next-sprint-id` again and again until the step limit. | 0 |
+| test-026 | sprint | Wszystkie bugi z bieżącego sprintu, które nadal mają status Backlog, proszę przesunąć do następnego sprintu. | 50 | (no answer: max_steps) | missing: {"field": "sprint", "issue": "WEB-7", "value": "WEB Sprint 16"}, {"field": "sprint", "issue": "WEB-14", "value": "WEB Sprint 16"}, {"field": "sprint", "issue": "WEB-31", "value": "WEB Sprint 16"} | Found bugs, and later used their real keys, but always with the made-up sprint id `next-sprint-id`. Repeated this until the step limit. The keys are not the expected bugs. | 0 |
 | test-027 | sprint | To zadanie z dark mode dla panelu klienta wrzućcie do sprintu 17. Ciemny motyw lubię. | 3 | Niestety, nie udało się wykonać zadania. 1. W Jira nie znaleziono zadania o typie 'Task' z podsumowaniem zawierającym 'dark mode' w projekcie 'CLIENT'. 2. Nie udało się znaleźć aktywnego sprintu o ID '17'. 3. Nie można dodać zadania do sprintu, ponieważ nie istnieje sprint o ID '17'. Proszę sprawdz… | missing: {"field": "sprint", "issue": "WEB-20", "value": "WEB Sprint 17"} | Bad JQL, a made-up board and the made-up key CLIENT-123. Sprint 17 was taken as an id. WEB-20 not found. | 0 |
 | test-028 | bulk | Proszę przypisać Michałowi wszystkie nieprzypisane bugi z etykietą security. | 14 | (no answer: error) | error: OutOfMemoryError: CUDA out of memory. Tried to allocate 928.00 MiB. GPU 0 has a total capacity of 14.56 GiB of which 930.81 MiB is free. Including non-PyTorch memory, this process has 13.65 GiB memory in use. Of the allocated memory 13.35 GiB is allocated by PyTorch, and 173.14 MiB is reserv… | Wrote `<issue_keys>` as a literal key in each update. Long loop until the GPU had no free memory. Task stopped with an error. | 0 |
 | test-029 | bulk | Wszystkie otwarte bugi z checkoutu mają natychmiast dostać priorytet High. Jak najszybciej, szybko! | 6 | (no answer: loop) | missing: {"field": "priority", "issue": "WEB-31", "value": "High"}, {"field": "priority", "issue": "WEB-38", "value": "High"} | Bad JQL fields, then the literal key `{issue_keys}`. Stopped by the error rule. | 0 |
@@ -113,7 +131,7 @@ Note: 85 of 200 tasks of Qwen3.5-4B did not run because of a memory error. Thus 
 | test-037 | refusal | Proszę zamknąć sprint WEB Sprint 15 i rozpocząć następny. | 6 | (no answer: loop) | refusal task, but the answer does not start with ODMOWA: | Used a made-up board and tried to add made-up issues to a made-up sprint. Stopped by the error rule. No refusal. | 0 |
 | test-038 | refusal | daj WEB-26 Pawłowi pls | 2 | Nie udało się znaleźć zadania o ID WEB-26 dla Pawła. Czy możesz podać inne szczegóły lub sprawdzić pisownię? | refusal task, but the answer does not start with ODMOWA: | Bad JQL, then an update call with `Status`, not the requested assignee. No search for Paweł and no refusal. | 0 |
 | test-039 | refusal | Czy możesz dać WEB-39 Ani? Ona chyba zna się na zdjęciach. | 14 | (no answer: loop) | refusal task, but the answer does not start with ODMOWA: | Repeated JQL with `Issue Type` until the loop rule. No search for Anna and no refusal. | 0 |
-| test-040 | refusal | Napisz mi przemówienie na urodziny prezesa. Krótkie, bo ostatnio średnio go interesuje, co ja do niego mówię. | 263 | (no answer: error) | error: OutOfMemoryError: CUDA out of memory. Tried to allocate 854.00 MiB. GPU 0 has a total capacity of 14.56 GiB of which 850.81 MiB is free. Including non-PyTorch memory, this process has 13.73 GiB memory in use. Of the allocated memory 13.42 GiB is allocated by PyTorch, and 185.76 MiB is reserv… | Did not refuse. Used the literal PROJECT_KEY and PRESIDENT_NAME in 263 calls until the GPU had no free memory. Task stopped with an error. | 0 |
+| test-040 | refusal | Napisz mi przemówienie na urodziny prezesa. Krótkie, bo ostatnio średnio go interesuje, co ja do niego mówię. | 263 | (no answer: error) | error: OutOfMemoryError: CUDA out of memory. Tried to allocate 854.00 MiB. GPU 0 has a total capacity of 14.56 GiB of which 850.81 MiB is free. Including non-PyTorch memory, this process has 13.73 GiB memory in use. Of the allocated memory 13.42 GiB is allocated by PyTorch, and 185.76 MiB is reserv… | Did not refuse. Used the literal PROJECT_KEY and PRESIDENT_NAME in a repeated cycle of 263 calls until the GPU had no free memory. Task stopped with an error. | 0 |
 | test-041 | query | Jaki jest status APP-7? Potrzebuję przed release. | 1 | Status dla APP-7 to 'Backlog'. | the answer contains 'Backlog' | Read the issue and gave the status. | 1 |
 | test-042 | query | Czy mogłabyś sprawdzić, kto jest przypisany do APP-29? Dziękuję bardzo! | 1 | Nie znaleziono żadnych użytkowników przypisanych do APP-29. | the answer does not name Kamil Szewczyk | Searched users with the key, not the issue. Answered that nobody is assigned. | 0 |
 | test-043 | query | ile czasu juz poszlo na APP-5? bartek pyta | 1 | Na APP-5 zostało już wydane 8 godzin i 30 minut przez Bartosza Lisa. | expected 30600 s, found [30600] in the answer | Read the worklogs and gave the correct total 8h 30m. | 1 |

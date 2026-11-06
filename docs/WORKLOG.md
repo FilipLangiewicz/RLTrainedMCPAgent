@@ -384,3 +384,18 @@
 - Add `Model.free_memory`. After a failed task, `evaluate_task` calls it. `LocalModel` runs `gc.collect()` and `empty_cache()`, and writes the memory values into the log.
 - The fix does not change a task without an error. Thus the other baselines do not need a new run.
 - Add the job `baseline-qwen3-5-4b-v2` (folder 18). Job 16 and its kernel stay as they are.
+
+### Result of the job for Qwen3.5-4B after the fix
+
+- `baseline-qwen3-5-4b-v2`: score 0.270 (correct 0.230, correct refusal 0.040). `easy` 0.472, `multi_step` 0.117, `refusal` 0.320. The job needs 10380 s.
+- The log confirms the fix. After each memory error, the allocated memory falls from about 14.8 GB to 8.4 GB, and the next tasks run normally.
+- Four tasks have a real memory error after long outputs: `test-031`, `test-065`, `test-148`, `test-159`.
+- The 115 tasks of job 16 that ran have the same calls and grades in this job. Thus the fix changes only the 85 lost tasks.
+- Version 5 of `calls-digest` gives the tool calls of this job.
+
+### The same form for all baseline reports
+
+- All six reports now have the same sections and the same table of 13 error types. The earlier reports had different sections and different types, and some counts came from a search for patterns.
+- Each incorrect task has one main type, from a reading of its calls. The grades and the old rows of the tasks stay as they are.
+- Correct some `Why` cells of Bielik 4.5B after a reading of the full call sequences.
+- Add `report-baseline-qwen3-5-4b-v2.md` with a `Why` cell for each task. Remove `report-baseline-qwen3-5-4b.md` from `data/results/baseline/`, because its score is not valid. Job 16 keeps its output.
