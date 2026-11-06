@@ -371,3 +371,44 @@ def test_claude_cli_failure_stops_the_run(tmp_path, reply, code):
 
 def test_claude_cli_config_needs_no_family():
     assert check_config({"backend": "claude_cli", "path": "claude-haiku-5-5"})["thinking"] is False
+
+
+# Limits of an API: no task gets a false grade.
+
+def _api_failure(status: int, retry_after: str | None = None) -> Exception:
+    error = Exception("limit")
+    error.response = SimpleNamespace(status_code=status, headers={"retry-after": retry_after} if retry_after else {})
+    return error
+
+
+def _api_model(failures: list, monkeypatch) -> ApiModel:
+    monkeypatch.setattr("src.models.time.sleep", lambda s: None)
+    usage = SimpleNamespace(prompt_tokens=100, completion_tokens=10, prompt_tokens_details=SimpleNamespace(cached_tokens=40))
+    message = SimpleNamespace(content="done", tool_calls=None)
+
+    def create(**kwargs):
+        if failures:
+            raise failures.pop(0)
+        return SimpleNamespace(choices=[SimpleNamespace(message=message)], usage=usage)
+
+    client = SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(create=create)))
+    return ApiModel("m", client=client, prices={"input": 1.0, "cached_input": 0.5, "output": 2.0})
+
+
+def test_api_short_limit_waits_and_cost(monkeypatch):
+    out = _api_model([_api_failure(429, "3"), _api_failure(503)], monkeypatch).generate([{"role": "user", "content": "x"}], TOOLS)
+    assert out.text == "done" and out.cached_input_tokens == 40
+    assert out.cost_usd == pytest.approx((60 * 1.0 + 40 * 0.5 + 10 * 2.0) / 1_000_000)
+
+
+def test_api_long_limit_stops_the_run(monkeypatch):
+    from src.models import ModelStopped
+
+    with pytest.raises(ModelStopped):
+        _api_model([_api_failure(429, "3600")], monkeypatch).generate([{"role": "user", "content": "x"}], TOOLS)
+
+
+def test_api_other_error_is_an_error_of_the_task(monkeypatch):
+    with pytest.raises(Exception, match="limit") as caught:
+        _api_model([_api_failure(400)], monkeypatch).generate([{"role": "user", "content": "x"}], TOOLS)
+    assert type(caught.value) is Exception

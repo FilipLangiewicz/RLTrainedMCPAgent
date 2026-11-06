@@ -11,6 +11,7 @@ import os
 import re
 import subprocess
 import tempfile
+import time
 from pathlib import Path
 
 from pydantic import BaseModel, Field
@@ -34,6 +35,8 @@ class ModelOutput(BaseModel):
     thinking_text: str = ""
     input_tokens: int = 0
     output_tokens: int = 0
+    cached_input_tokens: int = 0
+    cost_usd: float = 0.0
 
     @property
     def parse_errors(self) -> list[str]:
@@ -551,23 +554,28 @@ class ApiModel(Model):
 
     backend = "openai"
 
+    MAX_WAIT_S = 120  # A longer wait means a daily limit. The run stops, and --resume continues it later.
+    MAX_ATTEMPTS = 8
+
     def __init__(self, path: str, base_url: str | None = None, api_key_env: str = "OPENAI_API_KEY",
-                 family: str | None = None, thinking: bool = False, revision: str | None = None, client=None):
+                 family: str | None = None, thinking: bool = False, revision: str | None = None, client=None,
+                 prices: dict | None = None):
         super().__init__(get_family(family) if family else None, path, revision or path, thinking)
+        self.prices = prices or {}
         if client is None:
             from dotenv import load_dotenv
             from openai import OpenAI
 
             load_dotenv(ROOT / ".env")
             # A local server (for example Ollama) does not need a key, but the client needs a value.
-            client = OpenAI(base_url=base_url, api_key=os.environ.get(api_key_env) or "none")
+            # This class does its own retries, so that a limit never gives a false grade.
+            client = OpenAI(base_url=base_url, api_key=os.environ.get(api_key_env) or "none", max_retries=0)
         self.client = client
 
     def generate(self, messages, tools):
         self.steps += 1
         extra = {"extra_body": {"chat_template_kwargs": {"enable_thinking": True}}} if self.thinking else {}
-        response = self.client.chat.completions.create(
-            model=self.path, messages=to_openai_messages(messages), tools=tools, temperature=0, **extra)
+        response = self._create(model=self.path, messages=to_openai_messages(messages), tools=tools, temperature=0, **extra)
         message = response.choices[0].message
         calls = []
         for tc in message.tool_calls or []:
@@ -583,10 +591,34 @@ class ApiModel(Model):
                 call.error = f"The arguments of the tool call are not valid JSON ({e.msg})."
             calls.append(call)
         usage = response.usage
+        tokens_in = usage.prompt_tokens if usage else 0
+        tokens_out = usage.completion_tokens if usage else 0
+        details = getattr(usage, "prompt_tokens_details", None)
+        cached = getattr(details, "cached_tokens", 0) or 0
+        cost = ((tokens_in - cached) * self.prices.get("input", 0) + cached * self.prices.get("cached_input", 0)
+                + tokens_out * self.prices.get("output", 0)) / 1_000_000
         return ModelOutput(text=message.content or "", calls=calls,
                            thinking_text=getattr(message, "reasoning_content", None) or "",
-                           input_tokens=usage.prompt_tokens if usage else 0,
-                           output_tokens=usage.completion_tokens if usage else 0)
+                           input_tokens=tokens_in, output_tokens=tokens_out, cached_input_tokens=cached, cost_usd=cost)
+
+    def _create(self, **request):
+        """Wait for a short limit. Stop the run at a long limit or a server failure, so that no task gets a false grade."""
+        for attempt in range(self.MAX_ATTEMPTS):
+            try:
+                return self.client.chat.completions.create(**request)
+            except Exception as e:  # The next lines select the failures of the service.
+                response = getattr(e, "response", None)
+                status = getattr(response, "status_code", None)
+                if status is not None and status != 429 and status < 500:
+                    raise
+                if status is None and type(e).__name__ not in ("APIConnectionError", "APITimeoutError"):
+                    raise
+                wait = float((response.headers.get("retry-after") if response is not None else None) or 2 ** attempt)
+                if wait > self.MAX_WAIT_S:
+                    raise ModelStopped(f"limit of the service, wait {wait:.0f} s: {str(e)[:300]}") from e
+                print(f"status {status}: wait {wait:.0f} s", flush=True)
+                time.sleep(wait)
+        raise ModelStopped(f"the service failed {self.MAX_ATTEMPTS} times")
 
 
 class ModelStopped(Exception):
@@ -659,10 +691,12 @@ class ClaudeCliModel(Model):
         text = re.sub(r"</?assistant>", "", text)
         answer, calls, _ = self.parser.parse(text, tools, self.steps)
         usage = data.get("usage") or {}
+        # On a plan, this cost is the price of the same tokens on the API. The plan does not bill it.
         return ModelOutput(text=answer, calls=calls,
                            input_tokens=sum(usage.get(k, 0) for k in ("input_tokens", "cache_creation_input_tokens",
                                                                       "cache_read_input_tokens")),
-                           output_tokens=usage.get("output_tokens", 0))
+                           cached_input_tokens=usage.get("cache_read_input_tokens", 0),
+                           output_tokens=usage.get("output_tokens", 0), cost_usd=data.get("total_cost_usd") or 0.0)
 
 
 def check_config(cfg: dict) -> dict:
@@ -690,4 +724,5 @@ def make_model(cfg: dict, outputs=None) -> Model:
     if backend == "claude_cli":
         return ClaudeCliModel(cfg["path"], effort=cfg.get("effort", "medium"))
     return ApiModel(cfg["path"], base_url=cfg.get("base_url"), api_key_env=cfg.get("api_key_env", "OPENAI_API_KEY"),
-                    family=cfg.get("family"), thinking=cfg["thinking"], revision=cfg.get("revision"))
+                    family=cfg.get("family"), thinking=cfg["thinking"], revision=cfg.get("revision"),
+                    prices=cfg.get("prices"))

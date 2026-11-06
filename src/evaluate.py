@@ -111,6 +111,7 @@ def evaluate_task(task, model, prompt: Prompt, max_steps: int, loop_limit: int |
         "empty_answer": traj.stop_reason == "answer" and not traj.final_answer.strip(),
         "garbled": any(is_garbled(text) for text in outputs),
         "input_tokens": traj.input_tokens, "output_tokens": traj.output_tokens, "time_s": traj.time_s,
+        "cached_input_tokens": traj.cached_input_tokens, "cost_usd": round(traj.cost_usd, 6),
         "error": traj.error,
     }
     return result, traj.model_dump()
@@ -144,6 +145,10 @@ def compute_metrics(results: list[dict]) -> dict:
         "mean_output_tokens": mean("output_tokens"),
         "mean_time_s": mean("time_s"),
         "total_time_s": round(sum(r["time_s"] for r in results), 3),
+        "total_input_tokens": sum(r["input_tokens"] for r in results),
+        "total_cached_input_tokens": sum(r.get("cached_input_tokens", 0) for r in results),
+        "total_output_tokens": sum(r["output_tokens"] for r in results),
+        "total_cost_usd": round(sum(r.get("cost_usd", 0.0) for r in results), 6),
         "errors": sum(r["error"] is not None for r in results),
         "health": {
             "empty_answers": sum(r["empty_answer"] for r in results),

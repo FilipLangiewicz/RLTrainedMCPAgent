@@ -1,0 +1,13 @@
+model:
+  backend: openai
+  path: openai/gpt-oss-120b
+  base_url: https://api.groq.com/openai/v1
+  api_key_env: GROQ_API_KEY
+agent:
+  prompt: v3
+  max_steps: 25
+  loop_limit: 3
+  error_limit: 5
+tasks:
+  split: test
+  limit: null

@@ -43,6 +43,8 @@ class Trajectory(BaseModel):
     tool_errors: int = 0
     input_tokens: int = 0
     output_tokens: int = 0
+    cached_input_tokens: int = 0
+    cost_usd: float = 0.0
     time_s: float = 0.0
     error: str | None = None
 
@@ -113,6 +115,8 @@ async def run_task_async(model: Model, server, instruction: str, prompt: Prompt 
                 traj.steps = step
                 traj.input_tokens += out.input_tokens
                 traj.output_tokens += out.output_tokens
+                traj.cached_input_tokens += out.cached_input_tokens
+                traj.cost_usd += out.cost_usd
                 if out.thinking_text:
                     traj.thinking.append(out.thinking_text)
                 traj.messages.append(_assistant_message(out))
