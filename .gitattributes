@@ -1,0 +1,3 @@
+# Both persons add lines at the end of these files. Git keeps the lines of both.
+docs/WORKLOG.md merge=union
+jobs/JOBS.md merge=union

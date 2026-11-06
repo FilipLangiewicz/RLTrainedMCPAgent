@@ -44,10 +44,31 @@ This rule does not apply to an API model that the project uses as a reference in
 - Do each task on a branch from `main`, for example `e1-simulator`.
 - Name each branch `NN-<topic>`, for example `06-e1-baselines`. NN is the next number of a branch in the project (01, 02, 03, ...). It does not start again. Thus the list of branches on GitHub shows the order of the tasks.
 - Use lowercase letters, digits and hyphens in a branch name. Old branches keep their names.
+- Two persons work in parallel. `FilipLangiewicz` uses odd numbers (07, 09, ...) for branches and jobs. `MikolajRowicki` uses even numbers (08, 10, ...). Thus two persons never use the same number.
+- Take the next number of your parity that is higher than all numbers in use. This rule applies to the numbers of branches (`NN-<topic>`) and to the numbers of jobs (`YYYY-MM-DD_NN_<job>`). Old names keep their numbers.
 - Do not merge a branch into `main` directly. Open a pull request on GitHub when the task is complete.
 - Merge each pull request with "Squash and merge". Then `main` gets one commit for each task, and this commit shows the full change.
 - Write the subject of a commit message in the imperative, for example "Add task verifier".
 - Run the tests before each merge: `uv run --no-project python -m pytest`.
+
+## Find the next task
+
+The tasks are GitHub issues. The titles start with `idm-pro-NNN`. Use `gh` to read them.
+
+To install `gh` and log in, do these steps:
+
+1. Install `gh`: https://cli.github.com/
+2. Log in: `gh auth login`
+3. Check the login: `gh issue list --limit 5`
+
+To find the next task, do these steps:
+
+1. List the open issues: `gh issue list --limit 100`
+2. Skip the issues with the label `epic` or `info`. They are not tasks.
+3. Read the field "Blocked by" of the issue: `gh issue view <number>`. Skip an issue if a blocking issue is open.
+4. Take the open issue with the earliest date in its section "Due date", then with the lowest number.
+5. Move the issue to "In Progress" on the project board when the work starts.
+6. Close the issue when the work is complete. The board then shows "Done".
 
 ## Files
 
