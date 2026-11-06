@@ -92,6 +92,7 @@ def evaluate_task(task, model, prompt: Prompt, max_steps: int, loop_limit: int |
     except Exception as e:  # noqa: BLE001  A failure of one task must not stop the run.
         traj = Trajectory(task_id=task.id, instruction=task.instruction, stop_reason="error", error=f"{type(e).__name__}: {e}")
     if traj.stop_reason == "error":
+        model.free_memory()
         result_grade, reason = "incorrect", f"error: {traj.error}"
     else:
         g = grade(task, initial, board, traj.final_answer)

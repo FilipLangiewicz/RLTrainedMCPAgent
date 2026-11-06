@@ -375,3 +375,12 @@
 - The exact cause is not confirmed. The code does not free the GPU memory after this error.
 - Bielik 4.5B has this error in 2 tasks, and its next tasks run normally. The other four baselines have no such error.
 - The team must decide about a fix and a new run. A new run changes the Why cells of the 85 tasks.
+
+### Cause and fix of the lost tasks of Qwen3.5-4B
+
+- The cause: the traceback of the memory error keeps the frames of `generate`, so the cache of the model stays in reference cycles. Only the garbage collector can free it.
+- A long generation moves these objects to the oldest generation. A full collection is rare, so the tensors stay alive. A local test with a simulated error shows this: the tensors stay alive through 84 next failures, with 0 full collections.
+- `torch.cuda.empty_cache()` alone does not help, because these tensors are live. This agrees with the 14.1 GiB "allocated" in the errors of job 16.
+- Add `Model.free_memory`. After a failed task, `evaluate_task` calls it. `LocalModel` runs `gc.collect()` and `empty_cache()`, and writes the memory values into the log.
+- The fix does not change a task without an error. Thus the other baselines do not need a new run.
+- Add the job `baseline-qwen3-5-4b-v2` (folder 18). Job 16 and its kernel stay as they are.

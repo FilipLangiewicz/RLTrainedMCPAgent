@@ -155,3 +155,17 @@ def test_select_task_ids(ten_tasks, data_dir, tmp_path):
     metrics = run_evaluation(cfg, tmp_path / "out", model=reference_model(ten_tasks), data_dir=data_dir)
     assert metrics["n"] == 2
     assert [r["task_id"] for r in read_jsonl(tmp_path / "out" / "results.jsonl")] == ids
+
+
+def test_failed_task_frees_the_memory_of_the_model(data_dir, tmp_path):
+    class FailingModel(ScriptedModel):
+        freed = 0
+
+        def generate(self, messages, tools):
+            raise RuntimeError("out of memory")
+
+        def free_memory(self):
+            FailingModel.freed += 1
+
+    metrics = run_evaluation(config(), tmp_path / "out", model=FailingModel([]), data_dir=data_dir)
+    assert metrics["errors"] == metrics["n"] == FailingModel.freed

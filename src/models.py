@@ -4,6 +4,7 @@ A family makes the prompt with the chat template and finds the tool calls in the
 A backend runs the model: `transformers`, an OpenAI-compatible API, or fixed outputs for the tests.
 """
 
+import gc
 import hashlib
 import json
 import os
@@ -418,6 +419,9 @@ class Model:
     def generate(self, messages: list[dict], tools: list[dict]) -> ModelOutput:
         raise NotImplementedError
 
+    def free_memory(self) -> None:
+        """Free the memory of a failed task. Only a local model needs this."""
+
 
 class ScriptedModel(Model):
     """Fixed outputs for the tests. `outputs` is a list of texts (the last text repeats) or a function
@@ -512,6 +516,15 @@ class LocalModel(Model):
         content, calls, thinking = self.family.parse(self.family.clean(text), tools, self.steps)
         return ModelOutput(text=content, calls=calls, thinking_text=thinking,
                            input_tokens=inputs["input_ids"].shape[1], output_tokens=len(new))
+
+    def free_memory(self):
+        # The traceback of an error keeps the tensors of `generate` in reference cycles. The automatic
+        # collection can leave them alive for many tasks, and then each next task runs out of memory.
+        allocated = self.torch.cuda.memory_allocated() if self.torch.cuda.is_available() else 0
+        gc.collect()
+        if self.torch.cuda.is_available():
+            self.torch.cuda.empty_cache()
+            print(f"free_memory: allocated {allocated} -> {self.torch.cuda.memory_allocated()} bytes", flush=True)
 
 
 def to_openai_messages(messages: list[dict]) -> list[dict]:
