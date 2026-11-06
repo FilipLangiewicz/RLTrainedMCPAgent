@@ -464,3 +464,14 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
   - The command does not set the temperature to 0. It uses adaptive thinking.
   - The model writes a tool call as text, not with native tool use.
 - A test with the status 429 from the stand-in stopped the run, and `--resume` completed the tasks.
+
+### First runs of the reference models
+
+- Record the cached tokens and the cost in each result and in `metrics.json`.
+- `ApiModel` waits at a short limit. It stops the run at a long limit.
+- `claude_cli` starts a step again if the command gives no answer in 120 s. The stream of an answer sometimes stops.
+- Haiku 5.5, 20 test tasks: score 0.700, 243236 input tokens, 14368 output tokens, API price 0.0208 USD.
+- gpt-oss-120b, 5 test tasks: score 0.800, 60460 input tokens, 2333 output tokens.
+- In some Haiku tasks, the model wrote a tool call in a format that the parser does not read. These tasks are incorrect.
+- Kaggle has a quota of 10 USD each day and 100 USD each month for models. A script job has no access to the proxy.
+

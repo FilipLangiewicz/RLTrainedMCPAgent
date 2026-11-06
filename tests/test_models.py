@@ -412,3 +412,23 @@ def test_api_other_error_is_an_error_of_the_task(monkeypatch):
     with pytest.raises(Exception, match="limit") as caught:
         _api_model([_api_failure(400)], monkeypatch).generate([{"role": "user", "content": "x"}], TOOLS)
     assert type(caught.value) is Exception
+
+
+def test_claude_cli_timeout_gets_a_new_attempt_then_stops(tmp_path):
+    from src.models import ClaudeCliModel, ModelStopped
+
+    marker = tmp_path / "second"
+    path = tmp_path / "slow"
+    reply = json.dumps({"is_error": False, "result": "done"})
+    path.write_text(
+        "#!/usr/bin/env python3\nimport pathlib, sys, time\n"
+        "if '--version' in sys.argv:\n    print('1')\n    sys.exit(0)\n"
+        f"m = pathlib.Path({str(marker)!r})\n"
+        "if not m.exists():\n    m.write_text('x')\n    time.sleep(30)\n"
+        f"print({reply!r})\n", encoding="utf-8")
+    path.chmod(0o755)
+    assert ClaudeCliModel("m", command=str(path), timeout_s=2).generate(CLI_MESSAGES, TOOLS).text == "done"
+
+    marker.unlink()
+    with pytest.raises(ModelStopped, match="no answer"):
+        ClaudeCliModel("m", command=str(path), timeout_s=2, attempts=1).generate(CLI_MESSAGES, TOOLS)

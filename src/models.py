@@ -638,8 +638,8 @@ class ClaudeCliModel(Model):
     # The rules and the memory of the user must not change the prompt of the test.
     ADDED_ENV = (("CLAUDE_CODE_DISABLE_CLAUDE_MDS", "1"), ("CLAUDE_CODE_DISABLE_AUTO_MEMORY", "1"))
 
-    def __init__(self, path: str, effort: str = "medium", command: str = "claude", timeout_s: int = 900):
-        self.command, self.effort, self.timeout_s = command, effort, timeout_s
+    def __init__(self, path: str, effort: str = "medium", command: str = "claude", timeout_s: int = 120, attempts: int = 3):
+        self.command, self.effort, self.timeout_s, self.attempts = command, effort, timeout_s, attempts
         self.parser = get_family("bielik")
         super().__init__(None, path, self._version(), False)
         self.workdir = tempfile.mkdtemp(prefix="claude-cli-")
@@ -669,14 +669,23 @@ class ClaudeCliModel(Model):
         kept = {k: v for k, v in os.environ.items() if not k.startswith(self.REMOVED_ENV_PREFIXES)}
         return {**kept, **dict(self.ADDED_ENV)}
 
+    def _run(self, system: str, conversation: str):
+        # The stream of an answer can stop and the process then waits forever. A new attempt of the step is safe.
+        for attempt in range(1, self.attempts + 1):
+            try:
+                return subprocess.run(self.arguments(system), input=conversation, capture_output=True, text=True,
+                                      encoding="utf-8", cwd=self.workdir, env=self.environment(),
+                                      timeout=self.timeout_s, check=False)
+            except subprocess.TimeoutExpired:
+                print(f"no answer in {self.timeout_s} s, attempt {attempt} of {self.attempts}", flush=True)
+            except OSError as e:
+                raise ModelStopped(f"the command failed: {e}") from e
+        raise ModelStopped(f"no answer after {self.attempts} attempts")
+
     def generate(self, messages, tools):
         self.steps += 1
         system, conversation = self.render(messages, tools)
-        try:
-            done = subprocess.run(self.arguments(system), input=conversation, capture_output=True, text=True,
-                                  encoding="utf-8", cwd=self.workdir, env=self.environment(), timeout=self.timeout_s, check=False)
-        except (OSError, subprocess.TimeoutExpired) as e:
-            raise ModelStopped(f"the command failed: {e}") from e
+        done = self._run(system, conversation)
         try:
             data = json.loads(done.stdout)
         except json.JSONDecodeError as e:
