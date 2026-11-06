@@ -1,4 +1,4 @@
-"""Smoke test of the hard limits with the six baseline models: four test tasks for each model, one model after another.
+"""Smoke test of the hard limits with the six baseline models: three test tasks for each model, one model after another.
 
 A failed model does not stop the job, because a failed kernel loses its complete output.
 """
