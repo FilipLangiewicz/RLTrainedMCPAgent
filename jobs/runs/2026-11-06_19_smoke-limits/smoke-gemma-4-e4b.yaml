@@ -1,0 +1,23 @@
+model:
+  backend: transformers
+  family: gemma4
+  path: /kaggle/input/idm-pro-gemma-4-e4b/transformers/base/1
+  thinking: false
+  dtype: float16
+  max_new_tokens: 1024
+  device: auto
+agent:
+  prompt: v3
+  max_steps: 25
+  loop_limit: 3
+  error_limit: 5
+tasks:
+  split: test
+  limit: null
+  ids:
+  - test-010
+  - test-031
+  - test-065
+  - test-104
+  - test-112
+  - test-159
