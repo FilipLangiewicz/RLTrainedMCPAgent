@@ -14,9 +14,7 @@ tasks:
   split: test
   limit: null
   ids:
-  - test-010
   - test-031
   - test-065
-  - test-104
-  - test-112
   - test-159
+  - test-112
