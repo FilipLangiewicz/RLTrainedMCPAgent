@@ -15,6 +15,7 @@ DEFAULT_PROMPT = "v3"
 DEFAULT_LOOP_LIMIT = 3
 # This many tool errors in a row end the task. A model that fails so often does not recover.
 DEFAULT_ERROR_LIMIT = 5
+# The hard limit of tool calls in one task. A valid or a broken call counts as one step.
 DEFAULT_MAX_STEPS = 25
 
 
@@ -36,7 +37,7 @@ class Trajectory(BaseModel):
     tool_calls: list[ToolRecord] = Field(default_factory=list)
     thinking: list[str] = Field(default_factory=list)
     final_answer: str = ""
-    stop_reason: Literal["answer", "max_steps", "loop", "error"] = "answer"
+    stop_reason: Literal["answer", "max_steps", "loop_same", "loop_errors", "error"] = "answer"
     steps: int = 0
     invalid_calls: int = 0
     tool_errors: int = 0
@@ -106,7 +107,7 @@ async def run_task_async(model: Model, server, instruction: str, prompt: Prompt 
             tools = [tool_schema(t) for t in listed]
             names = sorted(t.name for t in listed)
             traj.stop_reason = "max_steps"
-            streak, last, errors = 0, None, 0
+            streak, last, errors, stop = 0, None, 0, False
             for step in range(1, max_steps + 1):
                 out = model.generate(traj.messages, tools)
                 traj.steps = step
@@ -137,8 +138,16 @@ async def run_task_async(model: Model, server, instruction: str, prompt: Prompt 
                     streak = streak + 1 if key == last else 1
                     last = key
                     errors = errors + 1 if is_error else 0
-                if (loop_limit and streak >= loop_limit) or (error_limit and errors >= error_limit):
-                    traj.stop_reason = "loop"
+                    # Check after each call. One output can have many calls, and its last call can reset the counts.
+                    if loop_limit and streak >= loop_limit:
+                        traj.stop_reason, stop = "loop_same", True
+                    elif error_limit and errors >= error_limit:
+                        traj.stop_reason, stop = "loop_errors", True
+                    elif len(traj.tool_calls) >= max_steps:
+                        stop = True
+                    if stop:
+                        break
+                if stop:
                     break
     except Exception as e:  # noqa: BLE001  The evaluation grades this task as incorrect and continues.
         while isinstance(e, BaseExceptionGroup) and len(e.exceptions) == 1:  # The MCP client adds a group.

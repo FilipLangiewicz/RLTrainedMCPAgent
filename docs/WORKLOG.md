@@ -399,3 +399,13 @@
 - Each incorrect task has one main type, from a reading of its calls. The grades and the old rows of the tasks stay as they are.
 - Correct some `Why` cells of Bielik 4.5B after a reading of the full call sequences.
 - Add `report-baseline-qwen3-5-4b-v2.md` with a `Why` cell for each task. Remove `report-baseline-qwen3-5-4b.md` from `data/results/baseline/`, because its score is not valid. Job 16 keeps its output.
+
+### Hard limits in the agent loop
+
+- The cause: `max_steps` counted the outputs of the model, not the tool calls. One output can have up to 34 calls, and the agent ran all of them.
+- The rules for loops ran only at the end of an output. A different last call, often a truncated call, reset the counts. In Qwen3.5-2B and Qwen3.5-4B, 21 and 26 tasks continued after a limit.
+- `max_steps` is now a hard limit of tool calls in one task. Each call counts, also a broken call and a call to an unknown tool.
+- The agent checks all limits after each call. The next call does not start.
+- The stop reason `loop` becomes `loop_same` (3 equal calls in a row) or `loop_errors` (5 errors in a row). The metrics have `loop_same_tasks` and `loop_errors_tasks`.
+- Add tests with a mock model for each limit, each family and random outputs. A test run with each limit broken on purpose gives failed tests in all 11 cases.
+- The results of the earlier baselines used the old rules. No baseline has run with these limits yet.

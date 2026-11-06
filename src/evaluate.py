@@ -147,7 +147,8 @@ def compute_metrics(results: list[dict]) -> dict:
             "no_tool_call_tasks": sum(r["tool_calls"] == 0 for r in results),
             "invalid_call_tasks": sum(r["invalid_calls"] > 0 for r in results),
             "max_steps_tasks": sum(r["stop_reason"] == "max_steps" for r in results),
-            "loop_tasks": sum(r["stop_reason"] == "loop" for r in results),
+            "loop_same_tasks": sum(r["stop_reason"] == "loop_same" for r in results),
+            "loop_errors_tasks": sum(r["stop_reason"] == "loop_errors" for r in results),
         },
     }
 

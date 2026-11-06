@@ -169,3 +169,42 @@ def test_failed_task_frees_the_memory_of_the_model(data_dir, tmp_path):
 
     metrics = run_evaluation(config(), tmp_path / "out", model=FailingModel([]), data_dir=data_dir)
     assert metrics["errors"] == metrics["n"] == FailingModel.freed
+
+
+def many_calls(*calls):
+    return QWEN.format_calls([{"name": name, "arguments": arguments} for name, arguments in calls])
+
+
+@pytest.mark.parametrize("agent, count, reason", [
+    ({"max_steps": 4, "loop_limit": None, "error_limit": None}, 4, "max_steps"),
+    ({"max_steps": 25, "loop_limit": 2, "error_limit": None}, 2, "loop_same"),
+    ({"max_steps": 25, "loop_limit": 3}, 3, "loop_same"),
+    ({}, 3, "loop_same"),
+])
+def test_limits_of_the_config_reach_the_agent(ten_tasks, data_dir, tmp_path, agent, count, reason):
+    same = ("jira_search", {"jql": "project = WEB", "limit": 1})
+    cfg = {**config(), "agent": {"prompt": "v2", **agent}}
+    metrics = run_evaluation(cfg, tmp_path / "out", model=ScriptedModel([many_calls(*[same] * 40)]), data_dir=data_dir)
+    results = read_jsonl(tmp_path / "out" / "results.jsonl")
+    assert len(results) == 10
+    assert all(r["tool_calls"] == count and r["stop_reason"] == reason for r in results)
+    assert metrics["health"]["max_steps_tasks"] == (10 if reason == "max_steps" else 0)
+    assert metrics["health"]["loop_same_tasks"] == (10 if reason == "loop_same" else 0)
+    assert metrics["health"]["loop_errors_tasks"] == 0
+    trajectories = read_jsonl(tmp_path / "out" / "trajectories.jsonl")
+    assert all(len(t["tool_calls"]) == count for t in trajectories)
+
+
+def test_default_max_steps_of_the_config_is_25(ten_tasks, data_dir, tmp_path):
+    calls = [("jira_search", {"jql": f"project = WEB AND summary ~ w{i}", "limit": 1}) for i in range(40)]
+    cfg = {**config(), "agent": {"prompt": "v2", "loop_limit": None, "error_limit": None}}
+    run_evaluation(cfg, tmp_path / "out", model=ScriptedModel([many_calls(*calls)]), data_dir=data_dir)
+    assert all(r["tool_calls"] == 25 and r["stop_reason"] == "max_steps"
+               for r in read_jsonl(tmp_path / "out" / "results.jsonl"))
+
+
+def test_metrics_count_each_kind_of_loop(ten_tasks, data_dir, tmp_path):
+    bad = [("jira_get_issue", {"issue_key": f"WEB-{900 + i}"}) for i in range(8)]
+    metrics = run_evaluation(config(), tmp_path / "out", model=ScriptedModel([many_calls(*bad)]), data_dir=data_dir)
+    assert metrics["health"]["loop_errors_tasks"] == 10 and metrics["health"]["loop_same_tasks"] == 0
+    assert all(r["stop_reason"] == "loop_errors" for r in read_jsonl(tmp_path / "out" / "results.jsonl"))
