@@ -559,9 +559,10 @@ class ApiModel(Model):
 
     def __init__(self, path: str, base_url: str | None = None, api_key_env: str = "OPENAI_API_KEY",
                  family: str | None = None, thinking: bool = False, revision: str | None = None, client=None,
-                 prices: dict | None = None):
+                 prices: dict | None = None, temperature: float | None = 0, reasoning_effort: str | None = None):
         super().__init__(get_family(family) if family else None, path, revision or path, thinking)
         self.prices = prices or {}
+        self.options = {"temperature": temperature, "reasoning_effort": reasoning_effort}
         if client is None:
             from dotenv import load_dotenv
             from openai import OpenAI
@@ -575,7 +576,8 @@ class ApiModel(Model):
     def generate(self, messages, tools):
         self.steps += 1
         extra = {"extra_body": {"chat_template_kwargs": {"enable_thinking": True}}} if self.thinking else {}
-        response = self._create(model=self.path, messages=to_openai_messages(messages), tools=tools, temperature=0, **extra)
+        options = {k: v for k, v in self.options.items() if v is not None}
+        response = self._create(model=self.path, messages=to_openai_messages(messages), tools=tools, **options, **extra)
         message = response.choices[0].message
         calls = []
         for tc in message.tool_calls or []:
@@ -597,6 +599,10 @@ class ApiModel(Model):
         cached = getattr(details, "cached_tokens", 0) or 0
         cost = ((tokens_in - cached) * self.prices.get("input", 0) + cached * self.prices.get("cached_input", 0)
                 + tokens_out * self.prices.get("output", 0)) / 1_000_000
+        # A proxy can give the real cost of the call. This value is better than a price in a config.
+        billed = getattr(usage, "cost", None) or {}
+        if billed:
+            cost = sum(billed.get(f"{k}_tokens_cost_nanodollars") or 0 for k in ("input", "output")) / 1e9
         return ModelOutput(text=message.content or "", calls=calls,
                            thinking_text=getattr(message, "reasoning_content", None) or "",
                            input_tokens=tokens_in, output_tokens=tokens_out, cached_input_tokens=cached, cost_usd=cost)
@@ -609,6 +615,8 @@ class ApiModel(Model):
             except Exception as e:  # The next lines select the failures of the service.
                 response = getattr(e, "response", None)
                 status = getattr(response, "status_code", None)
+                if status in (402, 403):
+                    raise ModelStopped(f"no budget or no access, status {status}: {str(e)[:300]}") from e
                 if status is not None and status != 429 and status < 500:
                     raise
                 if status is None and type(e).__name__ not in ("APIConnectionError", "APITimeoutError"):
@@ -734,4 +742,5 @@ def make_model(cfg: dict, outputs=None) -> Model:
         return ClaudeCliModel(cfg["path"], effort=cfg.get("effort", "medium"))
     return ApiModel(cfg["path"], base_url=cfg.get("base_url"), api_key_env=cfg.get("api_key_env", "OPENAI_API_KEY"),
                     family=cfg.get("family"), thinking=cfg["thinking"], revision=cfg.get("revision"),
-                    prices=cfg.get("prices"))
+                    prices=cfg.get("prices"), temperature=cfg.get("temperature", 0),
+                    reasoning_effort=cfg.get("reasoning_effort"))
