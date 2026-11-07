@@ -7,8 +7,8 @@
   "is_private": true,
   "enable_gpu": false,
   "enable_internet": false,
-  "dataset_sources": [],
+  "dataset_sources": ["gpla77/idm-pro-argon-run-1"],
   "competition_sources": [],
-  "kernel_sources": ["gpla77/new-benchmark-task-cde75"],
+  "kernel_sources": [],
   "model_sources": []
 }

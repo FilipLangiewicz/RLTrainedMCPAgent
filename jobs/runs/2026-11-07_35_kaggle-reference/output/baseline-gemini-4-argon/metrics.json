@@ -132,9 +132,10 @@
     "transformers": null,
     "device": "cpu",
     "date": "2026-11-07T10:04:40+00:00",
-    "wall_time_s": 1047.992,
+    "wall_time_s": 11822.992,
     "shards": [
       "0/1"
-    ]
+    ],
+    "note": "Two runs. Run 1 (commit 455a8ba, account gpla77, 10775 s from the Kaggle status) stopped at the quota after 182 tasks. Run 2 (this commit, account nataliachoszczyk) did test-073 again and test-183 to test-200 with --resume."
   }
 }

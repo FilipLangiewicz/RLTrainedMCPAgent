@@ -496,3 +496,5 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - Do not use `kaggle benchmarks tasks download`. It downloads all files of a run, also the trajectories. Use `kernels output --file-pattern` on the kernel of the run.
 - The account `nataliachoszczyk` ran the other 19 Argon tasks and Opus 5.5 (job 35).
 - `jobs/JOBS.md` now has a table of the status values. Jobs 27, 29 and 31 have the status `cancelled`.
+- The report of Argon uses the answers of two runs. Job 37 gives the answers of the first run. The table of the Kaggle report of the second run gives the answers of its 19 tasks.
+- `metrics.json` of Argon has the time of both runs and a note about the two commits.
