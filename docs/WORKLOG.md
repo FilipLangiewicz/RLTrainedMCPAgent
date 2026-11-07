@@ -498,3 +498,15 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - `jobs/JOBS.md` now has a table of the status values. Jobs 27, 29 and 31 have the status `cancelled`.
 - The report of Argon uses the answers of two runs. Job 37 gives the answers of the first run. The table of the Kaggle report of the second run gives the answers of its 19 tasks.
 - `metrics.json` of Argon has the time of both runs and a note about the two commits.
+
+### Comparison of all baselines
+
+- Add `data/results/baseline/results_baseline.csv`. It has one row for each of the ten models. It is the one source for all later numbers.
+- Add `src/results_table.py`. It reads `results.jsonl` of each run and writes the CSV. It stops if a number differs from `metrics.json` or from the report of the run.
+- The columns have the score for all tasks, for each type and for each category. They also have the times, the failure counts, the tokens and the cost.
+- The local models have the counts of tokens from `results.jsonl`. They have no cost and no cached tokens.
+- Add `data/results/baseline/report-all-baseline-comparison.md`. It compares the six local models and the four external models. It has a short explanation of the score, the types and the categories.
+- Remove `summary-baseline.md`. The new report replaces it.
+- Add `src/plot_baselines.py`. It reads the CSV and writes six figures to `data/results/baseline/figures/`.
+- Add `matplotlib` to `requirements-dev.in`. The lock `requirements.txt` has three new packages. `requirements-kaggle.txt` does not change.
+- Tell the team to do step 3 of "Make the local environment" again after the next `git pull`.

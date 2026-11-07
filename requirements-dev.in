@@ -5,3 +5,4 @@ ruff>=0.8
 ipykernel>=6.29
 # kaggle imports six, but it does not declare it.
 six>=1.16
+matplotlib
