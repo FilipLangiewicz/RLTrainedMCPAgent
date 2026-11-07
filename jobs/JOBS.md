@@ -2,9 +2,23 @@
 
 All Kaggle jobs of the project. The full rules are in `KAGGLE.md`.
 
-## Table
+## Status values
 
-Status values: to run, waiting for another job, queued, running, complete, failed, cancelled. The status cell has only one of these values, because `wait.sh` changes it. Put results into the comment.
+Use only these values in the column Status. `wait.sh` changes the status cell, so the cell has one value and no other text.
+
+| Status | Meaning |
+|---|---|
+| `to run` | The job is ready, but it did not start. |
+| `waiting for another job` | The job starts after the end of a different job. |
+| `queued` | Kaggle has the job, but it did not start. |
+| `running` | The job runs. |
+| `complete` | The job ended without an error. |
+| `failed` | The job ended with an error. |
+| `cancelled` | A person stopped the job, or the team does not run it. The comment gives the reason and the partial results. |
+
+Put the results and the notes into the column Comment.
+
+## Table
 
 | Date | Job | Folder | Link | Comment | Status |
 |---|---|---|---|---|---|
@@ -34,8 +48,10 @@ Status values: to run, waiting for another job, queued, running, complete, faile
 | 2026-11-06 | baseline-qwen3-5-2b-v2 | `2026-11-06_24_baseline-qwen3-5-2b-v2` | [rltrainedmcpagent-baseline-qwen3-5-2b-v2](https://www.kaggle.com/code/combainsidm/rltrainedmcpagent-baseline-qwen3-5-2b-v2) | Baseline for E1 with the hard limits: 25 calls in a task, 3 equal calls in a row, 5 errors in a row. 200 test tasks, prompt `v3`, `float16`. Result: score 0.120 (`easy` 0.264, `multi_step` 0.019, `refusal` 0.120), 6320 s, at most 25 calls in a task. | complete |
 | 2026-11-06 | baseline-qwen3-5-4b-v3 | `2026-11-06_25_baseline-qwen3-5-4b-v3` | [rltrainedmcpagent-baseline-qwen3-5-4b-v3](https://www.kaggle.com/code/combainsidm/rltrainedmcpagent-baseline-qwen3-5-4b-v3) | Baseline for E1 with the hard limits: 25 calls in a task, 3 equal calls in a row, 5 errors in a row. 200 test tasks, prompt `v3`, `float16`. Result: score 0.265 (`easy` 0.472, `multi_step` 0.107, `refusal` 0.320), 5439 s, at most 25 calls in a task. | complete |
 | 2026-11-06 | smoke-report | `2026-11-06_26_smoke-report` | [rltrainedmcpagent-smoke-report](https://www.kaggle.com/code/combainsidm/rltrainedmcpagent-smoke-report) | Short test of the new report form on the GPU. Gemma 4 E2B, two processes and a merge, four test tasks: one task of `easy`, two of `multi_step` and one of `refusal`. Result: complete in 153 s, with no error. The report has the new form, and `--fill` works on it. | complete |
-| 2026-11-06 | baseline-claude-haiku-5-5 | `2026-11-06_27_baseline-claude-haiku-5-5` | local machine | Reference for E1: `claude-haiku-5-5`, effort `medium`, backend `claude_cli`, prompt `v3`, the same hard limits. The run uses the limits of a paid plan, not an API key. First run: 20 test tasks, score 0.700, 243236 input tokens, 14368 output tokens, API price 0.0208 USD. Later tasks wait for a decision. | partial |
-| 2026-11-06 | baseline-claude-opus-5-5 | `2026-11-06_29_baseline-claude-opus-5-5` | local machine | Reference for E1: `claude-opus-5-5`, effort `medium`, backend `claude_cli`, prompt `v3`, the same hard limits. The run uses the limits of a paid plan, not an API key. The team decides about this run after the first run of job 27. | not started |
-| 2026-11-06 | baseline-gpt-oss-120b | `2026-11-06_31_baseline-gpt-oss-120b` | local machine | Reference for E1: `openai/gpt-oss-120b` on Groq, native tool calls, prompt `v3`, the same hard limits. First run: 5 test tasks, score 0.800, 60460 input tokens, 2333 output tokens. A full run on the free plan needs approximately 10 days. | partial |
+| 2026-11-06 | baseline-claude-haiku-5-5 | `2026-11-06_27_baseline-claude-haiku-5-5` | local machine | Reference for E1: `claude-haiku-5-5`, effort `medium`, backend `claude_cli`, prompt `v3`, the same hard limits. The run uses the limits of a paid plan, not an API key. First run: 20 test tasks, score 0.700, 243236 input tokens, 14368 output tokens, API price 0.0208 USD. The team stopped this run. Job 35 runs this model on Kaggle. | cancelled |
+| 2026-11-06 | baseline-claude-opus-5-5 | `2026-11-06_29_baseline-claude-opus-5-5` | local machine | Reference for E1: `claude-opus-5-5`, effort `medium`, backend `claude_cli`, prompt `v3`, the same hard limits. The run uses the limits of a paid plan, not an API key. The team does not run it. Job 35 runs this model on Kaggle. | cancelled |
+| 2026-11-06 | baseline-gpt-oss-120b | `2026-11-06_31_baseline-gpt-oss-120b` | local machine | Reference for E1: `openai/gpt-oss-120b` on Groq, native tool calls, prompt `v3`, the same hard limits. First run: 5 test tasks, score 0.800, 60460 input tokens, 2333 output tokens. A full run on the free plan needs approximately 10 days, so the team stopped it. | cancelled |
 | 2026-11-06 | check-model-proxy | `2026-11-06_33_check-model-proxy` | [rltrainedmcpagent-check-model-proxy](https://www.kaggle.com/code/combainsidm/rltrainedmcpagent-check-model-proxy) | CPU job. It checks the variables of the model proxy in a script job. Result: the variables do not exist in a script job. The command `kaggle benchmarks tasks push` needs a verification of the account. | complete |
-| 2026-11-07 | kaggle-reference | `2026-11-07_35_kaggle-reference` | [kaggle-reference](https://www.kaggle.com/benchmarks/tasks/gpla77/kaggle-reference) | Reference models in a benchmark task of Kaggle: native tool calls, effort `medium`, prompt `v3`, the same hard limits, 200 test tasks. Result: Haiku 5.5 score 0.785, 0.16 USD. Sonnet 5.5 score 0.945, 3.02 USD. The quota stopped Argon after 182 tasks, at 5.09 USD. The rest of Argon and Opus 5.5 run after the refill of the quota. | running |
+| 2026-11-07 | kaggle-reference | `2026-11-07_35_kaggle-reference` | [kaggle-reference](https://www.kaggle.com/benchmarks/tasks/gpla77/kaggle-reference) | Reference models in a benchmark task of Kaggle: native tool calls, effort `medium`, prompt `v3`, the same hard limits, 200 test tasks. Result: Haiku 5.5 score 0.785, 0.16 USD. Sonnet 5.5 score 0.945, 3.02 USD. The quota of `gpla77` stopped Argon after 182 tasks, at 5.09 USD. The account `nataliachoszczyk` ran the other 19 Argon tasks with `--resume`, and Opus 5.5. Argon score 0.980, 5.60 USD, 11276 s. Opus 5.5 score 0.980, 4.93 USD, 1219 s. The report of Argon needs the answers of the first 181 tasks. | complete |
+| 2026-11-07 | answers-argon | `2026-11-07_37_answers-argon` | [rltrainedmcpagent-answers-argon](https://www.kaggle.com/code/gpla77/rltrainedmcpagent-answers-argon) | CPU job. It reads the trajectories of a reference run on Kaggle and writes a small file of the answers for the report. Version 1: the source kernel has the Sonnet 5.5 run, not the first Argon run. The CLI does not show the kernel of the Argon run. | complete |
+| 2026-11-07 | answers-opus | `2026-11-07_39_answers-opus` | [rltrainedmcpagent-answers-opus](https://www.kaggle.com/code/nataliachoszczyk/rltrainedmcpagent-answers-opus) | CPU job. It writes the answers of the Opus 5.5 run of job 35 into a small file. Result: 200 tasks, 67 KB. | complete |

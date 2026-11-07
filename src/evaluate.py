@@ -170,11 +170,16 @@ def _cell(text: str, limit: int = 300) -> str:
 def write_report(output_dir: Path, reference: bool = False) -> None:
     """Write report-<codename>.md in the form of AGENTS.md. A person writes the comment and the Why cells later.
 
-    A reference model gets no SFT or RL. Thus its report has no comment and no Why cells, but has the tokens and the cost.
+    A reference model gets no SFT or RL. Thus its report report-out-<codename>.md has no comment and no Why cells,
+    but has the tokens and the cost.
     """
     output_dir = Path(output_dir)
     results = _read_jsonl(output_dir / "results.jsonl")
-    trajectories = {t["task_id"]: t for t in _read_jsonl(output_dir / "trajectories.jsonl")}
+    # The trajectories of a reference model stay on Kaggle. A small file of the answers replaces them.
+    source = output_dir / "trajectories.jsonl"
+    if not source.exists() and reference:
+        source = output_dir / "answers.jsonl"
+    trajectories = {t["task_id"]: t for t in _read_jsonl(source)}
     metrics = json.loads((output_dir / "metrics.json").read_text(encoding="utf-8"))
     run = metrics["run"]
     lines = [
@@ -213,7 +218,8 @@ def write_report(output_dir: Path, reference: bool = False) -> None:
         points = int(r["grade"] in GOOD)
         lines.append(f"| {r['task_id']} | {r['category']} | {_cell(t.get('instruction', ''))} | {r['tool_calls']} "
                      f"| {_cell(answer)} | {_cell(r['reason'])} |{'' if reference else '  |'} {points} |")
-    (output_dir / f"report-{run['codename']}.md").write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
+    # "out" marks the report of an external model.
+    (output_dir / f"report-{'out-' if reference else ''}{run['codename']}.md").write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
 
 
 def _type_order(item: tuple[str, dict]) -> int:

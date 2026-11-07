@@ -311,6 +311,20 @@ def test_stopped_model_keeps_results_and_resume_does_the_rest(ten_tasks, data_di
 def test_reference_report_has_no_why_and_has_cost(ten_tasks, data_dir, tmp_path):
     run_evaluation(config(), tmp_path / "out", model=reference_model(ten_tasks), data_dir=data_dir)
     main(["--reference-report", str(tmp_path / "out")])
-    text = (tmp_path / "out" / "report-smoke.md").read_text(encoding="utf-8")
+    text = (tmp_path / "out" / "report-out-smoke.md").read_text(encoding="utf-8")
     assert "Why" not in text and "What SFT and RL" not in text and "Cost: 0.00 USD" in text
     assert "| Reason | Points |" in text and "Effort: default of the service." in text
+
+
+def test_reference_report_from_answers_without_trajectories(ten_tasks, data_dir, tmp_path):
+    out = tmp_path / "out"
+    run_evaluation(config(), out, model=reference_model(ten_tasks), data_dir=data_dir)
+    main(["--reference-report", str(out)])
+    expected = (out / "report-out-smoke.md").read_text(encoding="utf-8")
+    trajectories = read_jsonl(out / "trajectories.jsonl")
+    (out / "trajectories.jsonl").unlink()
+    (out / "answers.jsonl").write_text("".join(json.dumps(
+        {"task_id": t["task_id"], "instruction": t["instruction"], "final_answer": t["final_answer"],
+         "thinking": bool(t["thinking"])}) + "\n" for t in trajectories), encoding="utf-8")
+    main(["--reference-report", str(out)])
+    assert (out / "report-out-smoke.md").read_text(encoding="utf-8") == expected

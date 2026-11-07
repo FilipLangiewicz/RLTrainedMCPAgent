@@ -488,3 +488,11 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - The service gave a response without a message in `test-073`. `ApiModel` now tries this call again, so that this failure gives no false grade.
 - The partial results do not have the failed attempt of `test-073`. The next run does this task again. The failed attempt used 16504 input tokens, 554 output tokens and 0.027 USD.
 - `task.py` now continues a run from the partial results in the repository.
+
+### Reports of the external models from small files
+
+- The reports of the external models have the name `report-out-<codename>.md`.
+- A reference report reads `answers.jsonl` if the folder has no `trajectories.jsonl`. A CPU job on Kaggle writes this small file, so the trajectories stay on Kaggle.
+- Do not use `kaggle benchmarks tasks download`. It downloads all files of a run, also the trajectories. Use `kernels output --file-pattern` on the kernel of the run.
+- The account `nataliachoszczyk` ran the other 19 Argon tasks and Opus 5.5 (job 35).
+- `jobs/JOBS.md` now has a table of the status values. Jobs 27, 29 and 31 have the status `cancelled`.
