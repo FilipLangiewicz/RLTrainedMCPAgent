@@ -1,0 +1,110 @@
+{
+  "n": 4,
+  "score": 0.0,
+  "correct": 0.0,
+  "correct_refusal": 0.0,
+  "by_difficulty": {
+    "easy": {
+      "n": 2,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "multi_step": {
+      "n": 1,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "refusal": {
+      "n": 1,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    }
+  },
+  "by_category": {
+    "query": {
+      "n": 1,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "refusal": {
+      "n": 1,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "update": {
+      "n": 2,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    }
+  },
+  "mean_steps": 2.25,
+  "mean_invalid_calls": 0.0,
+  "mean_tool_errors": 1.5,
+  "mean_input_tokens": 9695.5,
+  "mean_output_tokens": 472.5,
+  "mean_time_s": 20.147,
+  "total_time_s": 80.588,
+  "errors": 0,
+  "health": {
+    "empty_answers": 0,
+    "garbled_tasks": 0,
+    "no_tool_call_tasks": 0,
+    "invalid_call_tasks": 0,
+    "max_steps_tasks": 0,
+    "loop_tasks": 0
+  },
+  "run": {
+    "codename": "smoke-bielik-1-5b-v3",
+    "config": {
+      "agent": {
+        "loop_limit": 3,
+        "max_steps": 25,
+        "prompt": "v3"
+      },
+      "model": {
+        "thinking": false,
+        "backend": "transformers",
+        "dtype": "float16",
+        "family": "bielik",
+        "max_new_tokens": 1024,
+        "path": "/kaggle/input/models/combainsidm/idm-pro-bielik-1-5b-v3/transformers/base/1/bielik-1.5b",
+        "revision": "1907cec498b762e8223b7cffc2b8f279c417a44d"
+      },
+      "tasks": {
+        "ids": [
+          "test-001",
+          "test-007",
+          "test-010",
+          "test-036"
+        ],
+        "limit": null,
+        "split": "test"
+      }
+    },
+    "model": {
+      "backend": "transformers",
+      "family": "bielik",
+      "path": "/kaggle/input/models/combainsidm/idm-pro-bielik-1-5b-v3/transformers/base/1/bielik-1.5b",
+      "revision": "1907cec498b762e8223b7cffc2b8f279c417a44d",
+      "thinking": false
+    },
+    "prompt_version": "v3",
+    "prompt_sha256": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
+    "git_commit": "face123aec0cd2d5808bbcb15c956fb4b1adce31",
+    "python": "3.13.16",
+    "torch": "2.11.0+cu130",
+    "transformers": "5.22.1",
+    "device": "Tesla T4",
+    "date": "2026-11-05T14:43:34+00:00",
+    "wall_time_s": 80.608,
+    "shards": [
+      "0/1"
+    ]
+  }
+}

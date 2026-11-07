@@ -1,0 +1,141 @@
+{
+  "n": 200,
+  "score": 0.05,
+  "correct": 0.05,
+  "correct_refusal": 0.0,
+  "by_difficulty": {
+    "easy": {
+      "n": 72,
+      "score": 0.1389,
+      "correct": 0.1389,
+      "correct_refusal": 0.0
+    },
+    "multi_step": {
+      "n": 103,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "refusal": {
+      "n": 25,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    }
+  },
+  "by_category": {
+    "bulk": {
+      "n": 20,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "create": {
+      "n": 25,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "log": {
+      "n": 25,
+      "score": 0.08,
+      "correct": 0.08,
+      "correct_refusal": 0.0
+    },
+    "query": {
+      "n": 30,
+      "score": 0.2,
+      "correct": 0.2,
+      "correct_refusal": 0.0
+    },
+    "refusal": {
+      "n": 25,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "sprint": {
+      "n": 25,
+      "score": 0.08,
+      "correct": 0.08,
+      "correct_refusal": 0.0
+    },
+    "update": {
+      "n": 30,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "workflow": {
+      "n": 20,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    }
+  },
+  "mean_steps": 2.43,
+  "mean_invalid_calls": 0.57,
+  "mean_tool_errors": 1.625,
+  "mean_input_tokens": 11428.05,
+  "mean_output_tokens": 397.23,
+  "mean_time_s": 18.088,
+  "total_time_s": 3617.583,
+  "errors": 0,
+  "health": {
+    "empty_answers": 0,
+    "garbled_tasks": 0,
+    "no_tool_call_tasks": 4,
+    "invalid_call_tasks": 46,
+    "max_steps_tasks": 7,
+    "loop_same_tasks": 15,
+    "loop_errors_tasks": 17
+  },
+  "run": {
+    "codename": "baseline-bielik-1-5b-v3-v2",
+    "config": {
+      "agent": {
+        "error_limit": 5,
+        "loop_limit": 3,
+        "max_steps": 25,
+        "prompt": "v3"
+      },
+      "model": {
+        "thinking": false,
+        "backend": "transformers",
+        "dtype": "float16",
+        "family": "bielik",
+        "max_new_tokens": 1024,
+        "path": "/kaggle/input/models/combainsidm/idm-pro-bielik-1-5b-v3/transformers/base/1/bielik-1.5b",
+        "revision": "1907cec498b762e8223b7cffc2b8f279c417a44d"
+      },
+      "tasks": {
+        "limit": null,
+        "split": "test"
+      }
+    },
+    "model": {
+      "backend": "transformers",
+      "family": "bielik",
+      "path": "/kaggle/input/models/combainsidm/idm-pro-bielik-1-5b-v3/transformers/base/1/bielik-1.5b",
+      "revision": "1907cec498b762e8223b7cffc2b8f279c417a44d",
+      "thinking": false
+    },
+    "prompt_version": "v3",
+    "prompt_sha256": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
+    "git_commit": "9485ca3dcee08b4acc666574701a4899e2e65506",
+    "python": "3.13.16",
+    "torch": "2.11.0+cu130",
+    "transformers": "5.22.1",
+    "device": "Tesla T4",
+    "date": "2026-11-06T09:40:48+00:00",
+    "wall_time_s": 1881.758,
+    "shards": [
+      "0/2",
+      "1/2"
+    ],
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  }
+}

@@ -1,4 +1,6 @@
+import hashlib
 import json
+from pathlib import Path
 from types import SimpleNamespace
 
 import pytest
@@ -253,3 +255,188 @@ def test_prompt_files():
 
 def test_example_outputs_are_json_safe():
     assert json.dumps(EXAMPLES)
+
+
+def test_bielik_tool_list_is_compact():
+    from src.models import compact_tool
+
+    tool = {"name": "jira_get_issue", "description": "Get an issue. More text.",
+            "parameters": {"properties": {"issue_key": {"type": "string", "description": "The key.\nLong text."},
+                                          "limit": {"type": "integer", "description": "How many."}},
+                           "required": ["issue_key"]}}
+    text = compact_tool(tool)
+    assert text.splitlines()[0] == "- jira_get_issue(issue_key, limit?): Get an issue."
+    assert "    issue_key (string): The key." in text and "Long text" not in text
+    assert "{tools}" in load_prompt("tools-bielik", "v2").text
+
+
+ROOT = Path(__file__).resolve().parents[1]
+FROZEN_PROMPTS = {
+    "system-v3.md": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
+    "tools-bielik-v2.md": "b1f63676bde2c7ac313e74f23059f5df87c6eab013a7333eb46065fdb9ad2e10",
+}
+
+
+@pytest.mark.parametrize("name", FROZEN_PROMPTS)
+def test_frozen_prompt(name):
+    """The baseline and all later variants use these prompts. A change needs a new version and new runs of all variants."""
+    data = (ROOT / "src" / "prompts" / name).read_bytes().replace(b"\r\n", b"\n")
+    assert hashlib.sha256(data).hexdigest() == FROZEN_PROMPTS[name]
+
+
+def test_template_gets_mapping_arguments():
+    seen = []
+
+    class Tokenizer:
+        def apply_chat_template(self, messages, **kwargs):
+            seen.append(messages)
+            return "prompt"
+
+    broken = {"role": "assistant", "content": "", "tool_calls": [
+        {"id": "1", "type": "function", "function": {"name": "jira_get_issue", "arguments": "bad text"}}]}
+    FAMILIES["qwen3.5"].render(Tokenizer(), [broken], [], False)
+    assert seen[0][0]["tool_calls"][0]["function"]["arguments"] == {}
+    assert broken["tool_calls"][0]["function"]["arguments"] == "bad text"
+
+
+def test_gqa_patch_only_for_old_gpus(monkeypatch):
+    import torch
+    import transformers.integrations.sdpa_attention as sdpa
+
+    from src.models import avoid_gqa_in_sdpa
+
+    original = sdpa.use_gqa_in_sdpa
+    monkeypatch.setattr(sdpa, "use_gqa_in_sdpa", original)
+    monkeypatch.setattr(torch.cuda, "is_available", lambda: True)
+    monkeypatch.setattr(torch.cuda, "get_device_capability", lambda *a: (8, 0))
+    avoid_gqa_in_sdpa()
+    assert sdpa.use_gqa_in_sdpa is original
+    monkeypatch.setattr(torch.cuda, "get_device_capability", lambda *a: (7, 5))
+    avoid_gqa_in_sdpa()
+    assert sdpa.use_gqa_in_sdpa(None, None, None) is False
+
+
+# The `claude` command. A fake command in these tests: they use no limits of a plan.
+
+def fake_claude(tmp_path, reply: dict, code: int = 0) -> str:
+    log = tmp_path / "log.json"
+    path = tmp_path / "claude"
+    path.write_text(
+        "#!/usr/bin/env python3\nimport json, os, sys\n"
+        "if '--version' in sys.argv:\n    print('1.0 (fake)')\n    sys.exit(0)\n"
+        f"json.dump({{'argv': sys.argv[1:], 'stdin': sys.stdin.read(), 'env': dict(os.environ)}}, open({str(log)!r}, 'w'))\n"
+        f"print({json.dumps(json.dumps(reply))})\nsys.exit({code})\n", encoding="utf-8")
+    path.chmod(0o755)
+    return str(path)
+
+
+CLI_MESSAGES = [{"role": "system", "content": "RULES"}, {"role": "user", "content": "Do it"},
+                {"role": "assistant", "content": "", "tool_calls": [
+                    {"id": "c", "type": "function", "function": {"name": "jira_get_issue", "arguments": {"issue_key": "A-1"}}}]},
+                {"role": "tool", "tool_call_id": "c", "name": "jira_get_issue", "content": "RESULT"}]
+
+
+def test_claude_cli_prompt_and_call(tmp_path, monkeypatch):
+    from src.models import ClaudeCliModel
+
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "paid")
+    text = '<tool_call>{"name": "jira_get_issue", "arguments": {"issue_key": "A-2"}}</tool_call>\n<tool_response>false</tool_response>'
+    reply = {"is_error": False, "result": text, "modelUsage": {"claude-haiku-5-5": {}},
+             "usage": {"input_tokens": 1, "cache_read_input_tokens": 5, "cache_creation_input_tokens": 4, "output_tokens": 3}}
+    model = ClaudeCliModel("claude-haiku-5-5", command=fake_claude(tmp_path, reply))
+    out = model.generate(CLI_MESSAGES, TOOLS)
+    seen = json.loads((tmp_path / "log.json").read_text(encoding="utf-8"))
+    assert len(out.calls) == 1 and out.calls[0].arguments == {"issue_key": "A-2"} and "false" not in out.text
+    assert (out.input_tokens, out.output_tokens) == (10, 3)
+    system = seen["argv"][seen["argv"].index("--system-prompt") + 1]
+    assert system.startswith("RULES") and "jira_get_issue" in system and "{tools}" not in system
+    assert seen["argv"][seen["argv"].index("--tools") + 1] == "" and "--effort" in seen["argv"]
+    assert '{"name": "jira_get_issue", "arguments": {"issue_key": "A-1"}}' in seen["stdin"] and "RESULT" in seen["stdin"]
+    assert "ANTHROPIC_API_KEY" not in seen["env"] and seen["env"]["CLAUDE_CODE_DISABLE_CLAUDE_MDS"] == "1"
+    assert model.describe()["effort"] == "medium" and model.describe()["revision"] == "1.0 (fake)"
+
+
+@pytest.mark.parametrize(("reply", "code"), [
+    ({"is_error": True, "result": "limit reached"}, 1),
+    ({"is_error": True, "result": "limit reached"}, 0),
+    ({"is_error": False, "result": "x", "modelUsage": {"claude-sonnet-5-5": {}}}, 0),
+])
+def test_claude_cli_failure_stops_the_run(tmp_path, reply, code):
+    from src.models import ClaudeCliModel, ModelStopped
+
+    model = ClaudeCliModel("claude-haiku-5-5", command=fake_claude(tmp_path, reply, code))
+    with pytest.raises(ModelStopped):
+        model.generate(CLI_MESSAGES, TOOLS)
+
+
+def test_claude_cli_config_needs_no_family():
+    assert check_config({"backend": "claude_cli", "path": "claude-haiku-5-5"})["thinking"] is False
+
+
+# Limits of an API: no task gets a false grade.
+
+def _api_failure(status: int, retry_after: str | None = None) -> Exception:
+    error = Exception("limit")
+    error.response = SimpleNamespace(status_code=status, headers={"retry-after": retry_after} if retry_after else {})
+    return error
+
+
+def _api_model(failures: list, monkeypatch) -> ApiModel:
+    monkeypatch.setattr("src.models.time.sleep", lambda s: None)
+    usage = SimpleNamespace(prompt_tokens=100, completion_tokens=10, prompt_tokens_details=SimpleNamespace(cached_tokens=40))
+    message = SimpleNamespace(content="done", tool_calls=None)
+
+    def create(**kwargs):
+        if failures:
+            raise failures.pop(0)
+        return SimpleNamespace(choices=[SimpleNamespace(message=message)], usage=usage)
+
+    client = SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(create=create)))
+    return ApiModel("m", client=client, prices={"input": 1.0, "cached_input": 0.5, "output": 2.0})
+
+
+def test_api_short_limit_waits_and_cost(monkeypatch):
+    out = _api_model([_api_failure(429, "3"), _api_failure(503)], monkeypatch).generate([{"role": "user", "content": "x"}], TOOLS)
+    assert out.text == "done" and out.cached_input_tokens == 40
+    assert out.cost_usd == pytest.approx((60 * 1.0 + 40 * 0.5 + 10 * 2.0) / 1_000_000)
+
+
+def test_api_long_limit_stops_the_run(monkeypatch):
+    from src.models import ModelStopped
+
+    with pytest.raises(ModelStopped):
+        _api_model([_api_failure(429, "3600")], monkeypatch).generate([{"role": "user", "content": "x"}], TOOLS)
+
+
+def test_api_response_without_a_message_gets_a_new_attempt(monkeypatch):
+    model = _api_model([], monkeypatch)
+    good = model.client.chat.completions.create
+    replies = [SimpleNamespace(choices=[SimpleNamespace(message=None)], usage=None), SimpleNamespace(choices=None, usage=None)]
+    model.client.chat.completions.create = lambda **kwargs: replies.pop(0) if replies else good(**kwargs)
+    assert model.generate([{"role": "user", "content": "x"}], TOOLS).text == "done"
+
+
+def test_api_other_error_is_an_error_of_the_task(monkeypatch):
+    with pytest.raises(Exception, match="limit") as caught:
+        _api_model([_api_failure(400)], monkeypatch).generate([{"role": "user", "content": "x"}], TOOLS)
+    assert type(caught.value) is Exception
+
+
+def test_claude_cli_timeout_gets_a_new_attempt_then_stops(tmp_path):
+    from src.models import ClaudeCliModel, ModelStopped
+
+    marker = tmp_path / "second"
+    path = tmp_path / "slow"
+    reply = json.dumps({"is_error": False, "result": "done"})
+    path.write_text(
+        "#!/usr/bin/env python3\nimport pathlib, sys, time\n"
+        "if '--version' in sys.argv:\n    print('1')\n    sys.exit(0)\n"
+        f"m = pathlib.Path({str(marker)!r})\n"
+        "if not m.exists():\n    m.write_text('x')\n    time.sleep(30)\n"
+        f"print({reply!r})\n", encoding="utf-8")
+    path.chmod(0o755)
+    assert ClaudeCliModel("m", command=str(path), timeout_s=2).generate(CLI_MESSAGES, TOOLS).text == "done"
+
+    marker.unlink()
+    with pytest.raises(ModelStopped, match="no answer"):
+        ClaudeCliModel("m", command=str(path), timeout_s=2, attempts=1).generate(CLI_MESSAGES, TOOLS)

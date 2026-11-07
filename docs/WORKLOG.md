@@ -238,3 +238,280 @@
 
 - Freeze the test set: `tests/test_tasks.py` has the SHA-256 checksums of `queries.json`, `solutions.json`, `expected.json` and the 5 test boards. The checksums ignore the line ends.
 - From now on, a change of these files needs a new run of all variants (see `AGENTS.md`).
+
+## 2026-11-05
+
+### Branch names, health indicators and report
+
+- Branch `06-e1-baselines` starts the work on the weights and the baselines of the six models.
+- `AGENTS.md`: name each branch `NN-<topic>`. NN is the next number of a branch. Old branches keep their names.
+- `src/evaluate.py`: each result line has the fields `tool_calls`, `empty_answer` and `garbled`. A model output is garbled if it has the character U+FFFD or fewer than 30% letters. NaN logits give a row of `!`.
+- `metrics.json` has the new group `health`: empty answers, garbled tasks, tasks without a tool call, tasks with an invalid call and tasks that stop at the step limit.
+- `src/evaluate.py` writes `report-<codename>.md` in the output folder: a table with one row for each task (instruction, calls, answer of the model, reason, points).
+- 199 tests pass and 2 are skipped.
+- Rename the report to `report-<codename>.md`, so the file name shows the model.
+- `AGENTS.md`: a job keeps its small output files in its own folder. Only `report-<codename>.md` of a baseline goes to `data/results/baseline/`. `trajectories.jsonl` stays on Kaggle.
+- Move `prompts/` to `src/prompts/`. A prompt is a part of the code. Old entries of this worklog keep the old path.
+
+### Smoke test of the six models
+
+- Add the job `smoke-baselines`: four test tasks for each model, prompt `v2`, `float16`. The weights of all six models are in private Kaggle Models (`idm-pro-<model>`, variation `base`).
+- Result: all six models make tool calls, the parsers work, and no output is garbled. Gemma 4 E4B runs on two GPUs with `device: auto`.
+- Bielik 1.5B and 4.5B run out of GPU memory for a long prompt. Qwen3.5-2B loops and makes up to 83 calls in one task.
+- Gemma 4 and Qwen3.5-4B often refuse a possible task ("no issue key"), also when the key is in the instruction.
+- Fix `src/agent.py`: tool arguments that are not an object are an invalid call. Before, they stopped the task with a TypeError.
+
+### Freeze of the system prompt
+
+- Add `src/prompts/system-v3.md`. It is the prompt of the baseline and of all later variants. The project measures only the effect of LoRA and RL, so the prompt does not change.
+- The prompt is in English. The answer to the user is in Polish. All six models get the same text.
+- Bielik has no native tool calls. Its tool list goes into the same system message after the text of the prompt (`src/prompts/tools-bielik-v2.md`). The list is compact, because the full JSON schemas need more than 7000 tokens with the Bielik tokenizer. The context of Bielik does not change.
+- `DEFAULT_PROMPT` is `v3`. `tests/test_models.py` has the SHA-256 of `system-v3.md` and `tools-bielik-v2.md`.
+- A change of these files needs a new version and a new run of all variants.
+- The prompt was not tuned on the test set. A validation set does not exist yet.
+
+### Fast kernels of Qwen3.5
+
+- Qwen3.5 used the slow reference code of PyTorch for its linear attention. The log of Kaggle said that `flash-linear-attention` is not installed.
+- Add `flash-linear-attention` to `requirements.in`. The locks get 3 new packages: `einops`, `fla-core` and `flash-linear-attention`. They are pure Python and use the Triton of PyTorch.
+- Add `--no-warn-conflicts` to the `pip install` of the jobs. Thus the log has no warnings about the packages of Kaggle that the project does not use.
+- The package `causal_conv1d` needs a CUDA build. The project does not install it.
+
+### Result of the smoke test with all six models
+
+- Prompt `v3`, four tasks for each model. No model has a garbled output. All models call the tools.
+- `flash-linear-attention` did not make Qwen3.5 faster. Qwen3.5-4B ran out of GPU memory in all four tasks (it had no error before). Remove the package from `requirements.in` and from both locks.
+- The check for garbled output marked a stray Gemma token (`<|"|>`) as garbled. Now it checks only outputs of 8 or more characters.
+- Small models make the same failed call again and again (`jira_get_issue` with a made-up key, a JQL with `=` on `summary`). This is the behavior that SFT and RL must improve.
+- The run with `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True` and the two Qwen models checks the removal of the package.
+
+### Correction about flash-linear-attention
+
+- Version 6 of the smoke test ran the two Qwen models without `flash-linear-attention`. Qwen3.5-4B still ran out of GPU memory in 2 of 4 tasks. One request was 8.86 GiB, the same as with the package. Thus the package was not the cause.
+- The size of the request fits the logits of the whole prompt in `float32`: about 9600 tokens, a vocabulary of about 248000 and 4 bytes for each value. The check of this cause is open.
+
+### Cause of the out-of-memory errors on the T4
+
+- The real cause is the attention of the full layers, not the logits and not `flash-linear-attention`. On a T4, PyTorch has no flash kernel for grouped-query attention. It uses the math kernel, which builds a full attention matrix in `float32`.
+- Measured for Qwen3.5-4B with a prompt of 10000 tokens: a request of 5.96 GiB, which is 16 heads × 10000² × 4 bytes. The measurement is in `jobs/runs/2026-11-05_10_bench-sdpa/`.
+- Fix: `avoid_gqa_in_sdpa()` in `src/models.py`. On a GPU older than Ampere, `transformers` repeats the key and value heads, and PyTorch uses the memory-efficient kernel. The peak memory of Qwen3.5-2B at 10000 tokens falls from 12.1 GB to 5.1 GB.
+- Run the models that ran out of memory again: Qwen3.5 2B and 4B, and Bielik 4.5B. The other models work, and the baseline run covers them.
+- `flash-linear-attention` works on the T4 but does not make the model faster (Triton compiles again for each new length). Do not install it. `causal_conv1d` has no wheel for this version of PyTorch and gives a very small gain.
+- Result of the run with the fix: Qwen3.5 2B and 4B and Bielik 4.5B have no memory errors. Qwen3.5-4B makes 2 of 4 tasks correct, among them a task with 38 tool calls. One task of Bielik 4.5B stops at the step limit after 50 failed calls (872 s).
+
+### Rule that ends a loop
+
+- Loops use most of the time of a run. In the smoke test of Bielik 4.5B, one task took 872 s of 958 s.
+- Add `agent.loop_limit` (default 3). The same tool call, with the same name and arguments, 3 times in a row ends the task with the stop reason `loop`. The grade comes from the state of the board, as for the step limit.
+- The value is in the config of a run and not in `.env`, so `metrics.json` records it. `metrics.json` has the new count `loop_tasks`.
+- The rule is part of the protocol. The baseline, SFT and RL use the same value.
+- Version 8 of the smoke test runs all six models. The fix of the attention kernel and the loop rule change the code path of all models.
+- Result of the smoke test with the rule: all six models run on the final code. The rule ends 3 tasks of Qwen3.5-2B and 1 task of Qwen3.5-4B, but it saves little time. The calls of a loop often differ (Bielik 4.5B: 50 failed calls in one task, 891 s).
+
+### Rule of tool errors in a row
+
+- Add `agent.error_limit` (default 5). Five tool errors in a row end the task with the stop reason `loop`. A call that works resets the count.
+- The cause: Bielik 4.5B made 50 different calls and each one failed. The rule of equal calls did not stop it.
+- The value is in the config of a run. The baseline, SFT and RL use the same value. A trained model must make fewer errors in a row than the limit.
+- Version 9 of the smoke test runs only the two models that this rule changes: Qwen3.5-2B and Bielik 4.5B.
+- Result with the rule of 5 errors: Bielik 4.5B needs 159 s for the 4 tasks (before 980 s). The task `test-010` ends after 6 failed calls in 67 s (before 50 calls in 891 s). Qwen3.5-2B needs 335 s (before 496 s). The grades did not change.
+- `load_weights` disables the progress bar "Loading weights". The bar wrote hundreds of lines into the log.
+
+### Baseline jobs
+
+- Add six jobs `baseline-<model>` (folders 11 to 16), one for each model. Each job runs the 200 test tasks with the prompt `v3`, `float16`, `max_steps` 25, `loop_limit` 3 and `error_limit` 5. The config has `model.thinking: false`.
+- A model that fits on one GPU runs as two processes (one half of the tasks on each GPU). The job merges the halves. Gemma 4 E4B runs as one process on both GPUs.
+- Order of the queue, from the shortest job to the longest: Gemma E2B, Gemma E4B, Bielik 1.5B, Bielik 4.5B, Qwen3.5-2B, Qwen3.5-4B. Kaggle allows 2 sessions at the same time.
+- The tasks and the boards come from the clone of the branch. They are not in a Kaggle dataset.
+
+### Baseline of Gemma 4 E2B
+
+- Job `baseline-gemma-4-e2b`: score 0.305 on 200 test tasks (correct 0.195, correct refusal 0.110). `easy` 0.458, `multi_step` 0.058, `refusal` 0.880.
+- The model calls no tool in 75 of 200 tasks. No output is garbled, one task ends with the stop reason `loop`. The job needs 870 s.
+- The report is in `data/results/baseline/report-baseline-gemma-4-e2b.md`.
+
+### Error analysis of Gemma 4 E2B
+
+- Add the job `calls-digest`. This CPU job reads `trajectories.jsonl` on Kaggle and writes a small file with the tool calls. Thus `trajectories.jsonl` stays on Kaggle.
+- Add the column `Why` and the section "Error analysis" to `data/results/baseline/report-baseline-gemma-4-e2b.md`. All grades stay as they are.
+- The model does not need an issue key: in 44 incorrect tasks, the search of the reference solution finds exactly one issue. Task `test-159` has 3 matches.
+- The team treats the project search as a skill that the model does not have. The instruction and the prompt `v3` do not name the project, but the model can find it with a tool. The prompt does not change.
+- The reference solutions do not show the step that finds the project. The training examples must have this step.
+- In 6 of 22 correct refusals, the reason of the model is wrong. The verifier checks only the prefix `ODMOWA:`.
+
+### Baseline and error analysis of Gemma 4 E4B
+
+- Job `baseline-gemma-4-e4b`: score 0.325 on 200 test tasks (correct 0.25, correct refusal 0.075). `easy` 0.556, `multi_step` 0.097, `refusal` 0.600. 73 tasks have no tool call. The job needs 2992 s.
+- In 7 of 10 incorrect refusal tasks, the meaning is a correct refusal, but the answer does not start with `ODMOWA:`.
+- The report is in `data/results/baseline/report-baseline-gemma-4-e4b.md`, with the column `Why` and the section "Error analysis".
+
+### Baseline of Bielik 1.5B
+
+- Bielik 1.5B: score 0.050 (all correct, no correct refusal). `easy` 0.139, `multi_step` 0.000, `refusal` 0.000. 53 tasks have an invalid call, 32 tasks end by the loop rules and 7 by the step limit. The job needs 2541 s.
+- The report is in `data/results/baseline/report-baseline-bielik-1-5b-v3.md`.
+
+### Error analysis of Bielik 1.5B
+
+- Add the column `Why` and the section "Error analysis" to `data/results/baseline/report-baseline-bielik-1-5b-v3.md`. All grades stay as they are.
+- The parser is correct. The broken calls are real output of the model.
+- The generation of Bielik does not stop at `</tool_call>`. In 160 of 200 tasks, the model writes more than one call in one output. Gemma 4 E2B does this in 4 tasks and E4B in 6 tasks. The effect on the score is not known.
+- The team does not add a stop rule. The training must teach the model to stop after a call.
+- The model copies examples from the tool descriptions, for example `PROJ-123`.
+
+### Baselines and error analysis of Bielik 4.5B, Qwen3.5-2B and Qwen3.5-4B
+
+- Bielik 4.5B: score 0.120 (all correct, no correct refusal). `easy` 0.319, `multi_step` 0.010, `refusal` 0.000. The job needs 14252 s.
+- Qwen3.5-2B: score 0.120 (correct 0.105, correct refusal 0.015). `easy` 0.264, `multi_step` 0.019, `refusal` 0.120. The job needs 10886 s.
+- Qwen3.5-4B: score 0.155 (correct 0.120, correct refusal 0.035). `easy` 0.222, `multi_step` 0.078, `refusal` 0.280. The job needs 9666 s.
+- Copy the three reports to `data/results/baseline/`. Add the column `Why` and the section "Error analysis" to each report. All grades stay as they are.
+- Version 4 of `calls-digest` gives the tool calls of these three baselines. `trajectories.jsonl` stays on Kaggle.
+- The projects `PROJ`, `ACV2`, `DEV` and `DT` that the models use are examples in the tool descriptions.
+
+### Open problem: the score of Qwen3.5-4B is too low
+
+- `test-031` stops with a GPU memory error. After it, the first process cannot get GPU memory. The 84 odd tasks from `test-033` to `test-199` fail with no call.
+- `test-148` stops with the same error, and `test-150` of the second process fails with no call. Then the second process continues normally.
+- These 85 tasks have 0 points, but the model did not run on them. On the 115 tasks that ran, the score is 0.270 (31 of 115). These tasks are not a random sample.
+- The exact cause is not confirmed. The code does not free the GPU memory after this error.
+- Bielik 4.5B has this error in 2 tasks, and its next tasks run normally. The other four baselines have no such error.
+- The team must decide about a fix and a new run. A new run changes the Why cells of the 85 tasks.
+
+### Cause and fix of the lost tasks of Qwen3.5-4B
+
+- The cause: the traceback of the memory error keeps the frames of `generate`, so the cache of the model stays in reference cycles. Only the garbage collector can free it.
+- A long generation moves these objects to the oldest generation. A full collection is rare, so the tensors stay alive. A local test with a simulated error shows this: the tensors stay alive through 84 next failures, with 0 full collections.
+- `torch.cuda.empty_cache()` alone does not help, because these tensors are live. This agrees with the 14.1 GiB "allocated" in the errors of job 16.
+- Add `Model.free_memory`. After a failed task, `evaluate_task` calls it. `LocalModel` runs `gc.collect()` and `empty_cache()`, and writes the memory values into the log.
+- The fix does not change a task without an error. Thus the other baselines do not need a new run.
+- Add the job `baseline-qwen3-5-4b-v2` (folder 18). Job 16 and its kernel stay as they are.
+
+### Result of the job for Qwen3.5-4B after the fix
+
+- `baseline-qwen3-5-4b-v2`: score 0.270 (correct 0.230, correct refusal 0.040). `easy` 0.472, `multi_step` 0.117, `refusal` 0.320. The job needs 10380 s.
+- The log confirms the fix. After each memory error, the allocated memory falls from about 14.8 GB to 8.4 GB, and the next tasks run normally.
+- Four tasks have a real memory error after long outputs: `test-031`, `test-065`, `test-148`, `test-159`.
+- The 115 tasks of job 16 that ran have the same calls and grades in this job. Thus the fix changes only the 85 lost tasks.
+- Version 5 of `calls-digest` gives the tool calls of this job.
+
+### The same form for all baseline reports
+
+- All six reports now have the same sections and the same table of 13 error types. The earlier reports had different sections and different types, and some counts came from a search for patterns.
+- Each incorrect task has one main type, from a reading of its calls. The grades and the old rows of the tasks stay as they are.
+- Correct some `Why` cells of Bielik 4.5B after a reading of the full call sequences.
+- Add `report-baseline-qwen3-5-4b-v2.md` with a `Why` cell for each task. Remove `report-baseline-qwen3-5-4b.md` from `data/results/baseline/`, because its score is not valid. Job 16 keeps its output.
+
+### Hard limits in the agent loop
+
+- The cause: `max_steps` counted the outputs of the model, not the tool calls. One output can have up to 34 calls, and the agent ran all of them.
+- The rules for loops ran only at the end of an output. A different last call, often a truncated call, reset the counts. In Qwen3.5-2B and Qwen3.5-4B, 21 and 26 tasks continued after a limit.
+- `max_steps` is now a hard limit of tool calls in one task. Each call counts, also a broken call and a call to an unknown tool.
+- The agent checks all limits after each call. The next call does not start.
+- The stop reason `loop` becomes `loop_same` (3 equal calls in a row) or `loop_errors` (5 errors in a row). The metrics have `loop_same_tasks` and `loop_errors_tasks`.
+- Add tests with a mock model for each limit, each family and random outputs. A test run with each limit broken on purpose gives failed tests in all 11 cases.
+- The results of the earlier baselines used the old rules. No baseline has run with these limits yet.
+
+### New baseline runs with the hard limits
+
+- Run all six baselines again (jobs 20 to 25). The team does not use the results of the earlier baseline runs.
+- Remove the six reports from `data/results/baseline/`. The new reports do not use the earlier reports.
+- Job 19 tested the limits on the GPU with three tasks for each model. All models completed, with no memory error.
+
+### One short form for all reports of a run
+
+- `AGENTS.md`: add the section "Reports of a run". The reports of the baseline, SFT and RL have the same short form.
+
+### Results of the new baseline runs
+
+All six models completed 200 tasks with the hard limits. No task has more than 25 calls.
+
+| Model | Score | `easy` | `multi_step` | `refusal` | Time (s) |
+|---|---|---|---|---|---|
+| Gemma 4 E4B | 0.325 | 0.556 | 0.097 | 0.600 | 2999 |
+| Gemma 4 E2B | 0.305 | 0.458 | 0.058 | 0.880 | 936 |
+| Qwen3.5-4B | 0.265 | 0.472 | 0.107 | 0.320 | 5439 |
+| Bielik 4.5B | 0.120 | 0.319 | 0.010 | 0.000 | 6647 |
+| Qwen3.5-2B | 0.120 | 0.264 | 0.019 | 0.120 | 6320 |
+| Bielik 1.5B | 0.050 | 0.139 | 0.000 | 0.000 | 1882 |
+
+- Add the reports of the six runs to `data/results/baseline/`. Each `Why` cell comes from a reading of the calls of the task.
+- In Bielik 4.5B, `test-028` stopped with a GPU memory error after 14 calls. The other tasks of this run completed.
+
+### The report form in the code
+
+- `write_report` now writes the short form of `AGENTS.md`. It leaves the comment and the `Why` cells for a person.
+- A test run on the results of all six baselines gives the same tables and task rows as the reports in `data/results/baseline/`.
+- This change does not affect the baseline results. The six reports stay as they are.
+- Add `fill_report` and the option `--fill` to `src/evaluate.py`. This step checks the hand-written comment and `Why` cells and puts them into the report.
+- The new code gives the same six baseline reports, byte for byte, from their results and hand-written parts.
+- Job 26 tests the report form on the GPU.
+- Job 26 is complete with no error. The report has the new form, and `--fill` works on it.
+
+### Summary of the baselines
+
+- Add `data/results/baseline/summary-baseline.md` with the comparison of the six models. The report of each model stays about this model only.
+
+### Preparation of the reference models behind a command
+
+- Close the issues `idm-pro-019` to `idm-pro-024`. Each issue has a comment with the path of its report.
+- Add the backend `claude_cli` to `src/models.py`. Each step starts a new process with no tools. The agent loop runs the tools and applies the same limits.
+- The backend uses the system prompt `v3` and the tool text of Bielik (`tools-bielik-v2.md`). It adds no new prompt.
+- If the command fails, the run stops. Thus a reached limit does not give false grades to the next tasks.
+- Add the option `--resume` to `src/evaluate.py`. It keeps the complete tasks and does the other tasks.
+- Add the configs of jobs 27 and 29. No job has started.
+- Git ignores `trajectories.jsonl` of new jobs. A local run makes this file.
+- A test of the real command used a local stand-in for the API. It used no plan limits. It showed these differences from the local models:
+  - The command adds a short identity line and a short block with environment data.
+  - The command does not set the temperature to 0. It uses adaptive thinking.
+  - The model writes a tool call as text, not with native tool use.
+- A test with the status 429 from the stand-in stopped the run, and `--resume` completed the tasks.
+
+### First runs of the reference models
+
+- Record the cached tokens and the cost in each result and in `metrics.json`.
+- `ApiModel` waits at a short limit. It stops the run at a long limit.
+- `claude_cli` starts a step again if the command gives no answer in 120 s. The stream of an answer sometimes stops.
+- Haiku 5.5, 20 test tasks: score 0.700, 243236 input tokens, 14368 output tokens, API price 0.0208 USD.
+- gpt-oss-120b, 5 test tasks: score 0.800, 60460 input tokens, 2333 output tokens.
+- In some Haiku tasks, the model wrote a tool call in a format that the parser does not read. These tasks are incorrect.
+- Kaggle has a quota of 10 USD each day and 100 USD each month for models. A script job has no access to the proxy.
+
+### Reference models on Kaggle
+
+- Add `jobs/runs/2026-11-07_35_kaggle-reference/task.py`. A benchmark task of Kaggle has access to the model proxy.
+- The account `gpla77` runs these tasks, because the account `combainsidm` needs an identity verification.
+- Add the option `--reference-report` to `src/evaluate.py`. A reference report has no `Why` column and no section for SFT and RL. It gives the effort, the temperature, the tokens and the cost.
+- The results use packages without a lock and Python 3.12.
+
+### Stop of the Argon run
+
+- The daily quota stopped the Argon run after 182 of 200 tasks. The partial results are in `jobs/runs/2026-11-07_35_kaggle-reference/output/baseline-gemini-4-argon/results.jsonl`.
+- The service gave a response without a message in `test-073`. `ApiModel` now tries this call again, so that this failure gives no false grade.
+- The partial results do not have the failed attempt of `test-073`. The next run does this task again. The failed attempt used 16504 input tokens, 554 output tokens and 0.027 USD.
+- `task.py` now continues a run from the partial results in the repository.
+
+### Reports of the external models from small files
+
+- The reports of the external models have the name `report-out-<codename>.md`.
+- A reference report reads `answers.jsonl` if the folder has no `trajectories.jsonl`. A CPU job on Kaggle writes this small file, so the trajectories stay on Kaggle.
+- Do not use `kaggle benchmarks tasks download`. It downloads all files of a run, also the trajectories. Use `kernels output --file-pattern` on the kernel of the run.
+- The account `nataliachoszczyk` ran the other 19 Argon tasks and Opus 5.5 (job 35).
+- `jobs/JOBS.md` now has a table of the status values. Jobs 27, 29 and 31 have the status `cancelled`.
+- The report of Argon uses the answers of two runs. Job 37 gives the answers of the first run. The table of the Kaggle report of the second run gives the answers of its 19 tasks.
+- `metrics.json` of Argon has the time of both runs and a note about the two commits.
+
+### Comparison of all baselines
+
+- Add `data/results/baseline/results_baseline.csv`. It has one row for each of the ten models. It is the one source for all later numbers.
+- Add `src/results_table.py`. It reads `results.jsonl` of each run and writes the CSV. It stops if a number differs from `metrics.json` or from the report of the run.
+- The columns have the score for all tasks, for each type and for each category. They also have the times, the failure counts, the tokens and the cost.
+- The local models have the counts of tokens from `results.jsonl`. They have no cost and no cached tokens.
+- Add `data/results/baseline/report-all-baseline-comparison.md`. It compares the six local models and the four external models. It has a short explanation of the score, the types and the categories.
+- Remove `summary-baseline.md`. The new report replaces it.
+- Add `src/plot_baselines.py`. It reads the CSV and writes six figures to `data/results/baseline/figures/`.
+- Add `matplotlib` to `requirements-dev.in`. The lock `requirements.txt` has three new packages. `requirements-kaggle.txt` does not change.
+- Tell the team to do step 3 of "Make the local environment" again after the next `git pull`.
+
+### Selection of the models to train
+
+- The team selects all six models for SFT and RL. If the time is too short, the team reduces the number of models later.
+- Add this decision to `docs/MODELS.md`.

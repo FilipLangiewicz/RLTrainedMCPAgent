@@ -1,0 +1,90 @@
+{
+  "n": 5,
+  "score": 0.8,
+  "correct": 0.8,
+  "correct_refusal": 0.0,
+  "by_difficulty": {
+    "easy": {
+      "n": 3,
+      "score": 1.0,
+      "correct": 1.0,
+      "correct_refusal": 0.0
+    },
+    "multi_step": {
+      "n": 2,
+      "score": 0.5,
+      "correct": 0.5,
+      "correct_refusal": 0.0
+    }
+  },
+  "by_category": {
+    "query": {
+      "n": 5,
+      "score": 0.8,
+      "correct": 0.8,
+      "correct_refusal": 0.0
+    }
+  },
+  "mean_steps": 2.8,
+  "mean_invalid_calls": 0.0,
+  "mean_tool_errors": 0.0,
+  "mean_input_tokens": 12092.0,
+  "mean_output_tokens": 466.6,
+  "mean_time_s": 70.799,
+  "total_time_s": 353.993,
+  "total_input_tokens": 60460,
+  "total_cached_input_tokens": 11776,
+  "total_output_tokens": 2333,
+  "total_cost_usd": 0.0,
+  "errors": 0,
+  "health": {
+    "empty_answers": 0,
+    "garbled_tasks": 0,
+    "no_tool_call_tasks": 0,
+    "invalid_call_tasks": 0,
+    "max_steps_tasks": 0,
+    "loop_same_tasks": 0,
+    "loop_errors_tasks": 0
+  },
+  "run": {
+    "codename": "baseline-gpt-oss-120b",
+    "config": {
+      "model": {
+        "thinking": false,
+        "backend": "openai",
+        "path": "openai/gpt-oss-120b",
+        "base_url": "https://api.groq.com/openai/v1",
+        "api_key_env": "GROQ_API_KEY"
+      },
+      "agent": {
+        "prompt": "v3",
+        "max_steps": 25,
+        "loop_limit": 3,
+        "error_limit": 5
+      },
+      "tasks": {
+        "split": "test",
+        "limit": 5
+      }
+    },
+    "model": {
+      "backend": "openai",
+      "family": null,
+      "path": "openai/gpt-oss-120b",
+      "revision": "openai/gpt-oss-120b",
+      "thinking": false
+    },
+    "prompt_version": "v3",
+    "prompt_sha256": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
+    "git_commit": "5dcfff517954d670c831689886bb13ab9c6da8d3",
+    "python": "3.13.18",
+    "torch": "2.15.0+cpu",
+    "transformers": "5.22.1",
+    "device": "cpu",
+    "date": "2026-11-06T22:22:33+00:00",
+    "wall_time_s": 356.554,
+    "shards": [
+      "0/1"
+    ]
+  }
+}

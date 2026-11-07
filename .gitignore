@@ -20,6 +20,7 @@ kaggle.json
 **/jobs/runs/*/output/**/*.npy
 **/jobs/runs/*/output/**/*.npz
 **/jobs/runs/*/output/**/*.log
+**/jobs/runs/*/output/**/trajectories.jsonl
 *.pt
 *.zip
 *.safetensors

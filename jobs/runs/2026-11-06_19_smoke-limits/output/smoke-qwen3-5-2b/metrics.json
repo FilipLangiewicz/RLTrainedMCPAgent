@@ -1,0 +1,105 @@
+{
+  "n": 3,
+  "score": 0.0,
+  "correct": 0.0,
+  "correct_refusal": 0.0,
+  "by_difficulty": {
+    "multi_step": {
+      "n": 2,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "refusal": {
+      "n": 1,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    }
+  },
+  "by_category": {
+    "bulk": {
+      "n": 1,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "refusal": {
+      "n": 1,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "workflow": {
+      "n": 1,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    }
+  },
+  "mean_steps": 1.333,
+  "mean_invalid_calls": 0.0,
+  "mean_tool_errors": 2.667,
+  "mean_input_tokens": 6966.667,
+  "mean_output_tokens": 1037.0,
+  "mean_time_s": 58.157,
+  "total_time_s": 174.471,
+  "errors": 0,
+  "health": {
+    "empty_answers": 0,
+    "garbled_tasks": 0,
+    "no_tool_call_tasks": 0,
+    "invalid_call_tasks": 0,
+    "max_steps_tasks": 0,
+    "loop_same_tasks": 2,
+    "loop_errors_tasks": 1
+  },
+  "run": {
+    "codename": "smoke-qwen3-5-2b",
+    "config": {
+      "agent": {
+        "error_limit": 5,
+        "loop_limit": 3,
+        "max_steps": 25,
+        "prompt": "v3"
+      },
+      "model": {
+        "thinking": false,
+        "backend": "transformers",
+        "dtype": "float16",
+        "family": "qwen3.5",
+        "max_new_tokens": 1024,
+        "path": "/kaggle/input/models/combainsidm/idm-pro-qwen3-5-2b/transformers/base/1/qwen3.5-2b",
+        "revision": "15852e8c16360a2fea060d615a32b45270f8a8fc"
+      },
+      "tasks": {
+        "ids": [
+          "test-031",
+          "test-159",
+          "test-112"
+        ],
+        "limit": null,
+        "split": "test"
+      }
+    },
+    "model": {
+      "backend": "transformers",
+      "family": "qwen3.5",
+      "path": "/kaggle/input/models/combainsidm/idm-pro-qwen3-5-2b/transformers/base/1/qwen3.5-2b",
+      "revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+      "thinking": false
+    },
+    "prompt_version": "v3",
+    "prompt_sha256": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
+    "git_commit": "505b5302a72fc9e23acfc734b2b72106f5fe4ff1",
+    "python": "3.13.16",
+    "torch": "2.11.0+cu130",
+    "transformers": "5.22.1",
+    "device": "Tesla T4",
+    "date": "2026-11-06T09:06:08+00:00",
+    "wall_time_s": 174.488,
+    "shards": [
+      "0/1"
+    ]
+  }
+}

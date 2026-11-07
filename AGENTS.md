@@ -42,10 +42,33 @@ This rule does not apply to an API model that the project uses as a reference in
 
 - `main` has only work that operates.
 - Do each task on a branch from `main`, for example `e1-simulator`.
+- Name each branch `NN-<topic>`, for example `06-e1-baselines`. NN is the next number of a branch in the project (01, 02, 03, ...). It does not start again. Thus the list of branches on GitHub shows the order of the tasks.
+- Use lowercase letters, digits and hyphens in a branch name. Old branches keep their names.
+- Two persons work in parallel. `FilipLangiewicz` uses odd numbers (07, 09, ...) for branches and jobs. `MikolajRowicki` uses even numbers (08, 10, ...). Thus two persons never use the same number.
+- Take the next number of your parity that is higher than all numbers in use. This rule applies to the numbers of branches (`NN-<topic>`) and to the numbers of jobs (`YYYY-MM-DD_NN_<job>`). Old names keep their numbers.
 - Do not merge a branch into `main` directly. Open a pull request on GitHub when the task is complete.
 - Merge each pull request with "Squash and merge". Then `main` gets one commit for each task, and this commit shows the full change.
 - Write the subject of a commit message in the imperative, for example "Add task verifier".
 - Run the tests before each merge: `uv run --no-project python -m pytest`.
+
+## Find the next task
+
+The tasks are GitHub issues. The titles start with `idm-pro-NNN`. Use `gh` to read them.
+
+To install `gh` and log in, do these steps:
+
+1. Install `gh`: https://cli.github.com/
+2. Log in: `gh auth login`
+3. Check the login: `gh issue list --limit 5`
+
+To find the next task, do these steps:
+
+1. List the open issues: `gh issue list --limit 100`
+2. Skip the issues with the label `epic` or `info`. They are not tasks.
+3. Read the field "Blocked by" of the issue: `gh issue view <number>`. Skip an issue if a blocking issue is open.
+4. Take the open issue with the earliest date in its section "Due date", then with the lowest number.
+5. Move the issue to "In Progress" on the project board when the work starts.
+6. Close the issue when the work is complete. The board then shows "Done".
 
 ## Files
 
@@ -201,7 +224,32 @@ The course grades a before/after measurement on the same test set. These rules k
 - Change one thing in each variant. Keep the test set and all other settings the same.
 - Record the config, the model version, the commit hash and the results of each run.
 - Report the time and the cost of a task next to its quality.
+- Keep all small output files of a job in `jobs/runs/<job folder>/output/<codename>/`, as `KAGGLE.md` tells. Never download `trajectories.jsonl` to a local machine.
+- Copy only `report-<codename>.md` of a baseline run to `data/results/baseline/`. Thus the reports of all baselines are in one place.
 - The size of the model is not a variable in the grade. An improvement must come from the method, not from a larger model.
+
+## Reports of a run
+
+Each evaluation of a model has one short report: the baseline, after SFT and after RL. All reports have the same form, so a reader can compare them quickly.
+
+The report has only these parts, in this order:
+
+1. The title, the model and the time of the job.
+2. A table of the score by task type: all tasks, `easy`, `multi_step`, `refusal`.
+3. A table of the score by category.
+4. One line with the health values.
+5. The section "What SFT and RL must teach": at most 6 short lines, with at most 3 task ids.
+6. The table of all tasks, with the column `Why`.
+
+Obey these rules:
+
+- `write_report` in `src/evaluate.py` writes this form. It leaves the section of part 5 and the `Why` cells for you.
+- To put the hand-written parts into the report, use `python -m src.evaluate --fill <report> --why <file> --comment <file> --output <file>`. This command stops if a check fails.
+- Write each `Why` cell by hand, after you read the calls of this task. Do not use a rule or a template to make a cell.
+- Do not add a comparison with other models. A report is about one model.
+- Do not add other sections, a table of error types or lists of tasks in the text.
+- Use `data/results/baseline/report-baseline-gemma-4-e2b-v2.md` as the example of the form.
+- Put a report of SFT or RL in `data/results/sft/` or `data/results/rl/`.
 
 ## Compute
 

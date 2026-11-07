@@ -1,6 +1,6 @@
 # Candidate models
 
-This file lists the models that the team selected for research. All models have a license that permits commercial use. The decision about SFT and RL for each model is open.
+This file lists the models that the team selected for research. All models have a license that permits commercial use. The team trains all six models. If the time is too short to train all of them, the team reduces the number of models later.
 
 ## Selection
 
@@ -55,8 +55,10 @@ model:
   dtype: bfloat16
   max_new_tokens: 1024
 agent:
-  prompt: v2              # prompts/system-v2.md
-  max_steps: 25
+  prompt: v3              # src/prompts/system-v3.md
+  max_steps: 25           # the hard limit of tool calls in one task
+  loop_limit: 3           # the same call 3 times in a row ends the task
+  error_limit: 5          # 5 tool errors in a row end the task
 tasks:
   split: test
   limit: null
@@ -71,8 +73,10 @@ tasks:
 | `model.thinking` | `false` | The thinking mode. `bielik` has no thinking mode, so `true` stops the run. |
 | `model.dtype`, `model.max_new_tokens`, `model.device` | `bfloat16`, `1024`, auto | Settings of `transformers`. |
 | `model.base_url`, `model.api_key_env` | none, `OPENAI_API_KEY` | Settings of `openai`. The key comes only from the environment or `.env`. |
-| `agent.prompt` | `v2` | The version of `prompts/system-<version>.md`. |
-| `agent.max_steps` | `25` | The step limit of the agent loop. |
+| `agent.prompt` | `v3` | The version of `src/prompts/system-<version>.md`. |
+| `agent.max_steps` | `25` | The hard limit of tool calls in one task. Each call counts, also a broken call and each call in one output. The next call does not start. The stop reason is `max_steps`. |
+| `agent.loop_limit` | `3` | The same tool call (name and arguments) this many times in a row ends the task at once with the stop reason `loop_same`, also inside one output. `null` turns the rule off. |
+| `agent.error_limit` | `5` | This many tool errors in a row end the task with the stop reason `loop_errors`. A call that works resets the count. The task ends at once, also inside one output. `null` turns the rule off. |
 
 An unknown backend, an unknown family, thinking for `bielik` or a missing prompt file stops the run before the first task.
 
@@ -80,4 +84,4 @@ An unknown backend, an unknown family, thinking for `bielik` or a missing prompt
 |---|---|---|
 | `qwen3.5` | `<tool_call><function=name><parameter=arg>value</parameter></function></tool_call>` (chat template) | `enable_thinking`; the text before `</think>` goes into the trajectory |
 | `gemma4` | `<\|tool_call>call:name{arg:value}<tool_call\|>` (chat template) | `enable_thinking`; the text in `<\|channel>thought ... <channel\|>` goes into the trajectory |
-| `bielik` | `<tool_call>{"name": ..., "arguments": {...}}</tool_call>`; `prompts/tools-bielik-v1.md` adds the tools to the system prompt | none |
+| `bielik` | `<tool_call>{"name": ..., "arguments": {...}}</tool_call>`; `src/prompts/tools-bielik-v2.md` adds a compact list of the tools to the system prompt | none |

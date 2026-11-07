@@ -1,0 +1,110 @@
+{
+  "n": 20,
+  "score": 0.7,
+  "correct": 0.7,
+  "correct_refusal": 0.0,
+  "by_difficulty": {
+    "easy": {
+      "n": 12,
+      "score": 0.9167,
+      "correct": 0.9167,
+      "correct_refusal": 0.0
+    },
+    "multi_step": {
+      "n": 8,
+      "score": 0.375,
+      "correct": 0.375,
+      "correct_refusal": 0.0
+    }
+  },
+  "by_category": {
+    "create": {
+      "n": 3,
+      "score": 1.0,
+      "correct": 1.0,
+      "correct_refusal": 0.0
+    },
+    "log": {
+      "n": 5,
+      "score": 0.6,
+      "correct": 0.6,
+      "correct_refusal": 0.0
+    },
+    "query": {
+      "n": 6,
+      "score": 0.6667,
+      "correct": 0.6667,
+      "correct_refusal": 0.0
+    },
+    "update": {
+      "n": 6,
+      "score": 0.6667,
+      "correct": 0.6667,
+      "correct_refusal": 0.0
+    }
+  },
+  "mean_steps": 2.7,
+  "mean_invalid_calls": 0.0,
+  "mean_tool_errors": 0.1,
+  "mean_input_tokens": 12161.8,
+  "mean_output_tokens": 718.4,
+  "mean_time_s": 35.722,
+  "total_time_s": 714.436,
+  "total_input_tokens": 243236,
+  "total_cached_input_tokens": 184167,
+  "total_output_tokens": 14368,
+  "total_cost_usd": 0.020827,
+  "errors": 0,
+  "health": {
+    "empty_answers": 0,
+    "garbled_tasks": 0,
+    "no_tool_call_tasks": 4,
+    "invalid_call_tasks": 0,
+    "max_steps_tasks": 0,
+    "loop_same_tasks": 0,
+    "loop_errors_tasks": 0
+  },
+  "run": {
+    "codename": "baseline-claude-haiku-5-5",
+    "config": {
+      "model": {
+        "thinking": false,
+        "backend": "claude_cli",
+        "path": "claude-haiku-5-5",
+        "effort": "medium"
+      },
+      "agent": {
+        "prompt": "v3",
+        "max_steps": 25,
+        "loop_limit": 3,
+        "error_limit": 5
+      },
+      "tasks": {
+        "split": "test",
+        "limit": 20
+      }
+    },
+    "model": {
+      "backend": "claude_cli",
+      "family": null,
+      "path": "claude-haiku-5-5",
+      "revision": "2.1.319 (Claude Code)",
+      "thinking": false,
+      "effort": "medium",
+      "tools_prompt": "v2",
+      "tools_prompt_sha256": "b1f63676bde2c7ac313e74f23059f5df87c6eab013a7333eb46065fdb9ad2e10"
+    },
+    "prompt_version": "v3",
+    "prompt_sha256": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
+    "git_commit": "bae10b990e3bb4b3e4918b192d1e4e0ee617d25c",
+    "python": "3.13.18",
+    "torch": "2.15.0+cpu",
+    "transformers": "5.22.1",
+    "device": "cpu",
+    "date": "2026-11-06T23:01:20+00:00",
+    "wall_time_s": 421.161,
+    "shards": [
+      "0/1"
+    ]
+  }
+}

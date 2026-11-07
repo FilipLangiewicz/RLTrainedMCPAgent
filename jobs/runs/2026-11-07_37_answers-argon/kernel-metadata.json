@@ -1,0 +1,14 @@
+{
+  "id": "gpla77/rltrainedmcpagent-answers-argon",
+  "title": "rltrainedmcpagent-answers-argon",
+  "code_file": "run.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": false,
+  "dataset_sources": ["gpla77/idm-pro-argon-run-1"],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

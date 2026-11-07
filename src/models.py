@@ -1,20 +1,24 @@
 """Model layer: one interface for all models (design D14, D15).
 
 A family makes the prompt with the chat template and finds the tool calls in the output text.
-A backend runs the model: `transformers`, an OpenAI-compatible API, or fixed outputs for the tests.
+A backend runs the model: `transformers`, an OpenAI-compatible API, the `claude` command, or fixed outputs for the tests.
 """
 
+import gc
 import hashlib
 import json
 import os
 import re
+import subprocess
+import tempfile
+import time
 from pathlib import Path
 
 from pydantic import BaseModel, Field
 
 ROOT = Path(__file__).resolve().parents[1]
-PROMPTS_DIR = ROOT / "prompts"
-BACKENDS = ("transformers", "openai", "scripted")
+PROMPTS_DIR = ROOT / "src" / "prompts"
+BACKENDS = ("transformers", "openai", "claude_cli", "scripted")
 
 
 class Call(BaseModel):
@@ -31,6 +35,8 @@ class ModelOutput(BaseModel):
     thinking_text: str = ""
     input_tokens: int = 0
     output_tokens: int = 0
+    cached_input_tokens: int = 0
+    cost_usd: float = 0.0
 
     @property
     def parse_errors(self) -> list[str]:
@@ -44,7 +50,7 @@ class Prompt(BaseModel):
 
 
 def load_prompt(kind: str, version: str) -> Prompt:
-    """Read `prompts/<kind>-<version>.md`. An unknown version stops with an error that names the file."""
+    """Read `src/prompts/<kind>-<version>.md`. An unknown version stops with an error that names the file."""
     path = PROMPTS_DIR / f"{kind}-{version}.md"
     if not path.is_file():
         raise FileNotFoundError(f"prompt file {path} does not exist")
@@ -97,8 +103,21 @@ class Family:
     def template_args(self, thinking: bool) -> dict:
         return {"enable_thinking": thinking} if self.has_thinking else {}
 
+    @staticmethod
+    def _with_mapping_arguments(messages: list[dict]) -> list[dict]:
+        """The chat templates read the arguments of a call as a mapping. The text of a broken call would stop them."""
+        result = []
+        for m in messages:
+            if m.get("tool_calls"):
+                calls = [{**c, "function": {**c["function"], "arguments": c["function"]["arguments"]
+                                            if isinstance(c["function"]["arguments"], dict) else {}}}
+                         for c in m["tool_calls"]]
+                m = {**m, "tool_calls": calls}
+            result.append(m)
+        return result
+
     def render(self, tokenizer, messages: list[dict], tools: list[dict], thinking: bool) -> str:
-        messages, tools = self.prepare(messages, tools)
+        messages, tools = self.prepare(self._with_mapping_arguments(messages), tools)
         return tokenizer.apply_chat_template(messages, tools=tools, add_generation_prompt=True, tokenize=False,
                                              **self.template_args(thinking))
 
@@ -315,6 +334,25 @@ class Gemma4(Family):
         return "".join(f"<|tool_call>call:{c['name']}{self._format(c['arguments'])}<tool_call|>" for c in calls)
 
 
+def _first_sentence(text: str, limit: int) -> str:
+    """The first line or sentence of a description, cut to `limit` characters."""
+    text = (text or "").strip().split("\n")[0]
+    text = re.split(r"(?<=\.)\s(?=[A-Z])", text)[0]
+    return text if len(text) <= limit else text[: limit - 1].rstrip() + "…"
+
+
+def compact_tool(tool: dict) -> str:
+    """One tool as short text: the signature, the description and one line for each argument."""
+    properties = tool.get("parameters", {}).get("properties", {})
+    required = set(tool.get("parameters", {}).get("required", []))
+    signature = ", ".join(k if k in required else f"{k}?" for k in properties)
+    lines = [f"- {tool['name']}({signature}): {_first_sentence(tool.get('description', ''), 200)}"]
+    for key, spec in properties.items():
+        kind = "|".join(map(str, spec["enum"])) if "enum" in spec else spec.get("type", "any")
+        lines.append(f"    {key} ({kind}): {_first_sentence(spec.get('description', ''), 160)}")
+    return "\n".join(lines)
+
+
 class Bielik(Family):
     """Bielik has no native tool calls. The system prompt gives the tools and the format <tool_call>{json}</tool_call>."""
 
@@ -322,10 +360,11 @@ class Bielik(Family):
     has_thinking = False
     end_markers = ("<|im_end|>", "</s>")
     CALL_RE = re.compile(r"<tool_call>(.*?)(?:</tool_call>|$)", re.DOTALL)
-    TOOLS_PROMPT = "v1"
+    TOOLS_PROMPT = "v2"
 
     def tools_prompt(self, tools: list[dict]) -> str:
-        listed = "\n".join(json.dumps(t.get("function", t), ensure_ascii=False) for t in tools)
+        # The full JSON schemas of the 14 tools need more than 7000 tokens with the Bielik tokenizer.
+        listed = "\n".join(compact_tool(t.get("function", t)) for t in tools)
         return load_prompt("tools-bielik", self.TOOLS_PROMPT).text.replace("{tools}", listed)
 
     def prepare(self, messages, tools):
@@ -385,6 +424,9 @@ class Model:
     def generate(self, messages: list[dict], tools: list[dict]) -> ModelOutput:
         raise NotImplementedError
 
+    def free_memory(self) -> None:
+        """Free the memory of a failed task. Only a local model needs this."""
+
 
 class ScriptedModel(Model):
     """Fixed outputs for the tests. `outputs` is a list of texts (the last text repeats) or a function
@@ -410,13 +452,17 @@ class ScriptedModel(Model):
                            output_tokens=len(text.split()))
 
 
-def load_weights(path: str, revision: str | None, dtype: str):
+def load_weights(path: str, revision: str | None, dtype: str, device_map: str | None = None):
     """Load the tokenizer and the model. A local folder loads without the internet."""
     import torch
     import transformers
 
+    # The bar "Loading weights" writes hundreds of lines into the log of a job.
+    transformers.utils.logging.disable_progress_bar()
     local = Path(path).is_dir()
     kwargs = {"local_files_only": True} if local else {"revision": revision}
+    if device_map:
+        kwargs["device_map"] = device_map
     tokenizer = transformers.AutoTokenizer.from_pretrained(path, **kwargs)
     try:
         model = transformers.AutoModelForCausalLM.from_pretrained(path, dtype=getattr(torch, dtype), **kwargs)
@@ -424,6 +470,20 @@ def load_weights(path: str, revision: str | None, dtype: str):
         # The multimodal models (Gemma 4, Qwen3.5) can need the image-text class.
         model = transformers.AutoModelForImageTextToText.from_pretrained(path, dtype=getattr(torch, dtype), **kwargs)
     return tokenizer, model
+
+
+def avoid_gqa_in_sdpa() -> None:
+    """On a GPU older than Ampere (for example a T4), repeat the key and value heads before the attention.
+
+    Without it, PyTorch uses the math kernel for grouped-query attention. This kernel builds a full
+    attention matrix in float32 and runs out of GPU memory for a prompt of 10000 tokens.
+    """
+    import torch
+
+    if torch.cuda.is_available() and torch.cuda.get_device_capability()[0] < 8:
+        import transformers.integrations.sdpa_attention as sdpa
+
+        sdpa.use_gqa_in_sdpa = lambda *args, **kwargs: False
 
 
 class LocalModel(Model):
@@ -435,9 +495,15 @@ class LocalModel(Model):
 
         super().__init__(get_family(family), path, revision, thinking)
         self.torch, self.max_new_tokens = torch, max_new_tokens
+        # The device "auto" splits a model that is too large for one GPU over all GPUs.
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
-        self.tokenizer, self.model = load_weights(path, revision, dtype)
-        self.model.to(self.device).eval()
+        avoid_gqa_in_sdpa()
+        self.tokenizer, self.model = load_weights(path, revision, dtype, "auto" if self.device == "auto" else None)
+        if self.device == "auto":
+            self.device = self.model.device
+        else:
+            self.model.to(self.device)
+        self.model.eval()
         self.revision = revision or getattr(self.model.config, "_commit_hash", None)
 
     def generate(self, messages, tools):
@@ -455,6 +521,15 @@ class LocalModel(Model):
         content, calls, thinking = self.family.parse(self.family.clean(text), tools, self.steps)
         return ModelOutput(text=content, calls=calls, thinking_text=thinking,
                            input_tokens=inputs["input_ids"].shape[1], output_tokens=len(new))
+
+    def free_memory(self):
+        # The traceback of an error keeps the tensors of `generate` in reference cycles. The automatic
+        # collection can leave them alive for many tasks, and then each next task runs out of memory.
+        allocated = self.torch.cuda.memory_allocated() if self.torch.cuda.is_available() else 0
+        gc.collect()
+        if self.torch.cuda.is_available():
+            self.torch.cuda.empty_cache()
+            print(f"free_memory: allocated {allocated} -> {self.torch.cuda.memory_allocated()} bytes", flush=True)
 
 
 def to_openai_messages(messages: list[dict]) -> list[dict]:
@@ -479,23 +554,30 @@ class ApiModel(Model):
 
     backend = "openai"
 
+    MAX_WAIT_S = 120  # A longer wait means a daily limit. The run stops, and --resume continues it later.
+    MAX_ATTEMPTS = 8
+
     def __init__(self, path: str, base_url: str | None = None, api_key_env: str = "OPENAI_API_KEY",
-                 family: str | None = None, thinking: bool = False, revision: str | None = None, client=None):
+                 family: str | None = None, thinking: bool = False, revision: str | None = None, client=None,
+                 prices: dict | None = None, temperature: float | None = 0, reasoning_effort: str | None = None):
         super().__init__(get_family(family) if family else None, path, revision or path, thinking)
+        self.prices = prices or {}
+        self.options = {"temperature": temperature, "reasoning_effort": reasoning_effort}
         if client is None:
             from dotenv import load_dotenv
             from openai import OpenAI
 
             load_dotenv(ROOT / ".env")
             # A local server (for example Ollama) does not need a key, but the client needs a value.
-            client = OpenAI(base_url=base_url, api_key=os.environ.get(api_key_env) or "none")
+            # This class does its own retries, so that a limit never gives a false grade.
+            client = OpenAI(base_url=base_url, api_key=os.environ.get(api_key_env) or "none", max_retries=0)
         self.client = client
 
     def generate(self, messages, tools):
         self.steps += 1
         extra = {"extra_body": {"chat_template_kwargs": {"enable_thinking": True}}} if self.thinking else {}
-        response = self.client.chat.completions.create(
-            model=self.path, messages=to_openai_messages(messages), tools=tools, temperature=0, **extra)
+        options = {k: v for k, v in self.options.items() if v is not None}
+        response = self._create(model=self.path, messages=to_openai_messages(messages), tools=tools, **options, **extra)
         message = response.choices[0].message
         calls = []
         for tc in message.tool_calls or []:
@@ -511,10 +593,132 @@ class ApiModel(Model):
                 call.error = f"The arguments of the tool call are not valid JSON ({e.msg})."
             calls.append(call)
         usage = response.usage
+        tokens_in = usage.prompt_tokens if usage else 0
+        tokens_out = usage.completion_tokens if usage else 0
+        details = getattr(usage, "prompt_tokens_details", None)
+        cached = getattr(details, "cached_tokens", 0) or 0
+        cost = ((tokens_in - cached) * self.prices.get("input", 0) + cached * self.prices.get("cached_input", 0)
+                + tokens_out * self.prices.get("output", 0)) / 1_000_000
+        # A proxy can give the real cost of the call. This value is better than a price in a config.
+        billed = getattr(usage, "cost", None) or {}
+        if billed:
+            cost = sum(billed.get(f"{k}_tokens_cost_nanodollars") or 0 for k in ("input", "output")) / 1e9
         return ModelOutput(text=message.content or "", calls=calls,
                            thinking_text=getattr(message, "reasoning_content", None) or "",
-                           input_tokens=usage.prompt_tokens if usage else 0,
-                           output_tokens=usage.completion_tokens if usage else 0)
+                           input_tokens=tokens_in, output_tokens=tokens_out, cached_input_tokens=cached, cost_usd=cost)
+
+    def _create(self, **request):
+        """Wait for a short limit. Stop the run at a long limit or a server failure, so that no task gets a false grade."""
+        for attempt in range(self.MAX_ATTEMPTS):
+            try:
+                response = self.client.chat.completions.create(**request)
+                if response.choices and response.choices[0].message is not None:
+                    return response
+                # A response without a message is a failure of the service, not a failure of the model.
+                print(f"no message in the response: wait {2 ** attempt} s", flush=True)
+                time.sleep(2 ** attempt)
+            except Exception as e:  # The next lines select the failures of the service.
+                response = getattr(e, "response", None)
+                status = getattr(response, "status_code", None)
+                if status in (401, 402, 403):
+                    raise ModelStopped(f"no budget or no access, status {status}: {str(e)[:300]}") from e
+                if status is not None and status != 429 and status < 500:
+                    raise
+                if status is None and type(e).__name__ not in ("APIConnectionError", "APITimeoutError"):
+                    raise
+                wait = float((response.headers.get("retry-after") if response is not None else None) or 2 ** attempt)
+                if wait > self.MAX_WAIT_S:
+                    raise ModelStopped(f"limit of the service, wait {wait:.0f} s: {str(e)[:300]}") from e
+                print(f"status {status}: wait {wait:.0f} s", flush=True)
+                time.sleep(wait)
+        raise ModelStopped(f"the service failed {self.MAX_ATTEMPTS} times")
+
+
+class ModelStopped(Exception):
+    """The model cannot continue. The run must stop, because the next tasks would get false grades."""
+
+
+class ClaudeCliModel(Model):
+    """A reference model behind the `claude` command. The command uses the limits of the plan of the logged-in user.
+
+    Each step is a new process without tools, with the full conversation as text. The agent loop runs the tools.
+    The tools and the format of a call are the same as for Bielik. Thus this model gets no new prompt.
+    """
+
+    backend = "claude_cli"
+    # An API key in the environment would make the command use a paid account.
+    REMOVED_ENV_PREFIXES = ("ANTHROPIC_", "CLAUDE_CODE_USE_", "CLAUDECODE")
+    # The rules and the memory of the user must not change the prompt of the test.
+    ADDED_ENV = (("CLAUDE_CODE_DISABLE_CLAUDE_MDS", "1"), ("CLAUDE_CODE_DISABLE_AUTO_MEMORY", "1"))
+
+    def __init__(self, path: str, effort: str = "medium", command: str = "claude", timeout_s: int = 120, attempts: int = 3):
+        self.command, self.effort, self.timeout_s, self.attempts = command, effort, timeout_s, attempts
+        self.parser = get_family("bielik")
+        super().__init__(None, path, self._version(), False)
+        self.workdir = tempfile.mkdtemp(prefix="claude-cli-")
+
+    def _version(self) -> str:
+        try:
+            return subprocess.run([self.command, "--version"], capture_output=True, text=True, check=True).stdout.strip()
+        except (OSError, subprocess.CalledProcessError) as e:
+            raise ModelStopped(f"the command '{self.command}' does not operate: {e}") from e
+
+    def describe(self) -> dict:
+        tools_prompt = load_prompt("tools-bielik", self.parser.TOOLS_PROMPT)
+        return {**super().describe(), "effort": self.effort, "tools_prompt": tools_prompt.version,
+                "tools_prompt_sha256": tools_prompt.sha256}
+
+    def render(self, messages: list[dict], tools: list[dict]) -> tuple[str, str]:
+        """Return the system prompt and the conversation as text."""
+        turns, _ = self.parser.prepare(messages, tools)
+        return turns[0]["content"], "\n\n".join(f"<{m['role']}>\n{m['content']}\n</{m['role']}>" for m in turns[1:])
+
+    def arguments(self, system: str) -> list[str]:
+        return [self.command, "-p", "--model", self.path, "--effort", self.effort, "--output-format", "json",
+                "--system-prompt", system, "--tools", "", "--setting-sources", "", "--strict-mcp-config",
+                "--disable-slash-commands", "--no-session-persistence"]
+
+    def environment(self) -> dict:
+        kept = {k: v for k, v in os.environ.items() if not k.startswith(self.REMOVED_ENV_PREFIXES)}
+        return {**kept, **dict(self.ADDED_ENV)}
+
+    def _run(self, system: str, conversation: str):
+        # The stream of an answer can stop and the process then waits forever. A new attempt of the step is safe.
+        for attempt in range(1, self.attempts + 1):
+            try:
+                return subprocess.run(self.arguments(system), input=conversation, capture_output=True, text=True,
+                                      encoding="utf-8", cwd=self.workdir, env=self.environment(),
+                                      timeout=self.timeout_s, check=False)
+            except subprocess.TimeoutExpired:
+                print(f"no answer in {self.timeout_s} s, attempt {attempt} of {self.attempts}", flush=True)
+            except OSError as e:
+                raise ModelStopped(f"the command failed: {e}") from e
+        raise ModelStopped(f"no answer after {self.attempts} attempts")
+
+    def generate(self, messages, tools):
+        self.steps += 1
+        system, conversation = self.render(messages, tools)
+        done = self._run(system, conversation)
+        try:
+            data = json.loads(done.stdout)
+        except json.JSONDecodeError as e:
+            raise ModelStopped(f"exit code {done.returncode}: {(done.stdout + done.stderr)[:500]}") from e
+        if done.returncode != 0 or data.get("is_error"):
+            raise ModelStopped(f"exit code {done.returncode}: {str(data.get('result'))[:500]}")
+        used = data.get("modelUsage") or {}
+        if used and not any(name.startswith(self.path) for name in used):
+            raise ModelStopped(f"the answer came from {sorted(used)}, not from {self.path}")
+        # No stop sequence exists here. Thus the model can write a false tool result after its call.
+        text = re.split(r"<tool_response>|<user>", data.get("result") or "", maxsplit=1)[0]
+        text = re.sub(r"</?assistant>", "", text)
+        answer, calls, _ = self.parser.parse(text, tools, self.steps)
+        usage = data.get("usage") or {}
+        # On a plan, this cost is the price of the same tokens on the API. The plan does not bill it.
+        return ModelOutput(text=answer, calls=calls,
+                           input_tokens=sum(usage.get(k, 0) for k in ("input_tokens", "cache_creation_input_tokens",
+                                                                      "cache_read_input_tokens")),
+                           cached_input_tokens=usage.get("cache_read_input_tokens", 0),
+                           output_tokens=usage.get("output_tokens", 0), cost_usd=data.get("total_cost_usd") or 0.0)
 
 
 def check_config(cfg: dict) -> dict:
@@ -522,7 +726,7 @@ def check_config(cfg: dict) -> dict:
     cfg = {"thinking": False, **cfg}
     if cfg.get("backend") not in BACKENDS:
         raise ValueError(f"Unknown backend '{cfg.get('backend')}'. Use {', '.join(BACKENDS)}.")
-    if cfg.get("family") is not None or cfg["backend"] != "openai":
+    if cfg.get("family") is not None or cfg["backend"] not in ("openai", "claude_cli"):
         family = get_family(cfg.get("family"))
         if cfg["thinking"] and not family.has_thinking:
             raise ValueError(f"The model family '{family.name}' has no thinking mode. Set model.thinking to false.")
@@ -539,5 +743,9 @@ def make_model(cfg: dict, outputs=None) -> Model:
         return LocalModel(cfg["family"], cfg["path"], revision=cfg.get("revision"), thinking=cfg["thinking"],
                           dtype=cfg.get("dtype", "bfloat16"), max_new_tokens=cfg.get("max_new_tokens", 1024),
                           device=cfg.get("device"))
+    if backend == "claude_cli":
+        return ClaudeCliModel(cfg["path"], effort=cfg.get("effort", "medium"))
     return ApiModel(cfg["path"], base_url=cfg.get("base_url"), api_key_env=cfg.get("api_key_env", "OPENAI_API_KEY"),
-                    family=cfg.get("family"), thinking=cfg["thinking"], revision=cfg.get("revision"))
+                    family=cfg.get("family"), thinking=cfg["thinking"], revision=cfg.get("revision"),
+                    prices=cfg.get("prices"), temperature=cfg.get("temperature", 0),
+                    reasoning_effort=cfg.get("reasoning_effort"))

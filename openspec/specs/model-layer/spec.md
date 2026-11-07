@@ -26,7 +26,7 @@ The layer SHALL support the families `qwen3.5`, `gemma4` and `bielik`. A family 
 - **THEN** the layer returns a parse error for this call, and the agent loop gives the error to the model
 
 ### Requirement: Tools in the prompt
-For a family without native tool calls (`bielik`), the layer SHALL put the tool list and the format of a tool call into the system prompt from the file `prompts/tools-bielik-<version>.md`. The layer SHALL parse the calls of this format.
+For a family without native tool calls (`bielik`), the layer SHALL put the tool list and the format of a tool call into the system prompt from the file `src/prompts/tools-bielik-<version>.md`. The layer SHALL parse the calls of this format.
 
 #### Scenario: Prompt of Bielik
 - **WHEN** the agent runs a model of the family `bielik`
