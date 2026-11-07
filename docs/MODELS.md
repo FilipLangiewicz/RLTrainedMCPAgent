@@ -1,6 +1,6 @@
 # Candidate models
 
-This file lists the models that the team selected for research. All models have a license that permits commercial use. The decision about SFT and RL for each model is open.
+This file lists the models that the team selected for research. All models have a license that permits commercial use. The team trains all six models. If the time is too short to train all of them, the team reduces the number of models later.
 
 ## Selection
 

@@ -510,3 +510,8 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - Add `src/plot_baselines.py`. It reads the CSV and writes six figures to `data/results/baseline/figures/`.
 - Add `matplotlib` to `requirements-dev.in`. The lock `requirements.txt` has three new packages. `requirements-kaggle.txt` does not change.
 - Tell the team to do step 3 of "Make the local environment" again after the next `git pull`.
+
+### Selection of the models to train
+
+- The team selects all six models for SFT and RL. If the time is too short, the team reduces the number of models later.
+- Add this decision to `docs/MODELS.md`.
