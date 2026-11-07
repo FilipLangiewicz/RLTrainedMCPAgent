@@ -167,8 +167,11 @@ def _cell(text: str, limit: int = 300) -> str:
     return text if len(text) <= limit else text[: limit - 1] + "…"
 
 
-def write_report(output_dir: Path) -> None:
-    """Write report-<codename>.md in the form of AGENTS.md. A person writes the comment and the Why cells later."""
+def write_report(output_dir: Path, reference: bool = False) -> None:
+    """Write report-<codename>.md in the form of AGENTS.md. A person writes the comment and the Why cells later.
+
+    A reference model gets no SFT or RL. Thus its report has no comment and no Why cells, but has the tokens and the cost.
+    """
     output_dir = Path(output_dir)
     results = _read_jsonl(output_dir / "results.jsonl")
     trajectories = {t["task_id"]: t for t in _read_jsonl(output_dir / "trajectories.jsonl")}
@@ -184,19 +187,26 @@ def write_report(output_dir: Path) -> None:
         "| Category | Tasks | Score |", "|---|---|---|",
         *[f"| {k} | {v['n']} | {v['score']:.3f} |" for k, v in sorted(metrics["by_category"].items())], "",
         "Health: " + ", ".join(f"{k} {v}" for k, v in metrics["health"].items()) + ".", "",
-        "## What SFT and RL must teach", "",
-        COMMENT_PLACEHOLDER, "",
+    ]
+    if reference:
+        lines += [f"Time of all tasks: {metrics['total_time_s']:.0f} s. Input tokens: {metrics['total_input_tokens']}, "
+                  f"of these cached: {metrics['total_cached_input_tokens']}. Output tokens: {metrics['total_output_tokens']}. "
+                  f"Cost: {metrics['total_cost_usd']:.2f} USD.", ""]
+    else:
+        lines += ["## What SFT and RL must teach", "", COMMENT_PLACEHOLDER, ""]
+    why_title, why_rule = ("", "") if reference else (" Why |", "---|")
+    lines += [
         "## Tasks", "",
         "Points: 1 for `correct` and `correct_refusal`, 0 for `incorrect`.", "",
-        "| Task | Category | Instruction | Calls | Answer of the model | Reason | Why | Points |",
-        "|---|---|---|---|---|---|---|---|",
+        f"| Task | Category | Instruction | Calls | Answer of the model | Reason |{why_title} Points |",
+        f"|---|---|---|---|---|---|{why_rule}---|",
     ]
     for r in results:
         t = trajectories.get(r["task_id"], {})
         answer = t.get("final_answer") or (f"(no answer: {r['stop_reason']})")
         points = int(r["grade"] in GOOD)
         lines.append(f"| {r['task_id']} | {r['category']} | {_cell(t.get('instruction', ''))} | {r['tool_calls']} "
-                     f"| {_cell(answer)} | {_cell(r['reason'])} |  | {points} |")
+                     f"| {_cell(answer)} | {_cell(r['reason'])} |{'' if reference else '  |'} {points} |")
     (output_dir / f"report-{run['codename']}.md").write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
 
 
@@ -338,15 +348,21 @@ def _shard(text: str) -> tuple[int, int]:
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description="Run the evaluation, or merge the results of shards.")
     parser.add_argument("codename", nargs="?", help="codename of a config in jobs/runs/, or a path to a YAML file")
-    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--output", type=Path)
     parser.add_argument("--fill", type=Path, metavar="REPORT", help="put the hand-written parts into this report")
     parser.add_argument("--why", type=Path, help="with --fill: the file with the Why cells")
     parser.add_argument("--comment", type=Path, help="with --fill: the file with the comment")
     parser.add_argument("--shard", type=_shard, default=(0, 1), help="i/n, for example 0/2")
     parser.add_argument("--limit", type=int, help="use only the first N tasks")
     parser.add_argument("--resume", action="store_true", help="keep the results in --output and do the other tasks")
+    parser.add_argument("--reference-report", type=Path, metavar="FOLDER", help="write the report of a reference model")
     parser.add_argument("--merge", type=Path, nargs="+", metavar="FOLDER", help="merge these shard folders")
     args = parser.parse_args(argv)
+    if args.reference_report:
+        write_report(args.reference_report, reference=True)
+        return
+    if not args.output:
+        parser.error("give --output")
     if args.fill:
         if not (args.why and args.comment):
             parser.error("--fill needs --why and --comment")

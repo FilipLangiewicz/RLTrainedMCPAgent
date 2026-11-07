@@ -306,3 +306,11 @@ def test_stopped_model_keeps_results_and_resume_does_the_rest(ten_tasks, data_di
     assert metrics["n"] == len(ten_tasks) == len(results)
     assert len({r["task_id"] for r in results}) == len(results)
     assert len(read_jsonl(tmp_path / "out" / "trajectories.jsonl")) == len(results)
+
+
+def test_reference_report_has_no_why_and_has_cost(ten_tasks, data_dir, tmp_path):
+    run_evaluation(config(), tmp_path / "out", model=reference_model(ten_tasks), data_dir=data_dir)
+    main(["--reference-report", str(tmp_path / "out")])
+    text = (tmp_path / "out" / "report-smoke.md").read_text(encoding="utf-8")
+    assert "Why" not in text and "What SFT and RL" not in text and "Cost: 0.00 USD" in text
+    assert "| Reason | Points |" in text

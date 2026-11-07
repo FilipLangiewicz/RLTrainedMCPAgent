@@ -1,0 +1,140 @@
+{
+  "n": 200,
+  "score": 0.785,
+  "correct": 0.675,
+  "correct_refusal": 0.11,
+  "by_difficulty": {
+    "easy": {
+      "n": 72,
+      "score": 0.75,
+      "correct": 0.75,
+      "correct_refusal": 0.0
+    },
+    "multi_step": {
+      "n": 103,
+      "score": 0.7864,
+      "correct": 0.7864,
+      "correct_refusal": 0.0
+    },
+    "refusal": {
+      "n": 25,
+      "score": 0.88,
+      "correct": 0.0,
+      "correct_refusal": 0.88
+    }
+  },
+  "by_category": {
+    "bulk": {
+      "n": 20,
+      "score": 0.9,
+      "correct": 0.9,
+      "correct_refusal": 0.0
+    },
+    "create": {
+      "n": 25,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "log": {
+      "n": 25,
+      "score": 0.8,
+      "correct": 0.8,
+      "correct_refusal": 0.0
+    },
+    "query": {
+      "n": 30,
+      "score": 0.9667,
+      "correct": 0.9667,
+      "correct_refusal": 0.0
+    },
+    "refusal": {
+      "n": 25,
+      "score": 0.88,
+      "correct": 0.0,
+      "correct_refusal": 0.88
+    },
+    "sprint": {
+      "n": 25,
+      "score": 0.96,
+      "correct": 0.96,
+      "correct_refusal": 0.0
+    },
+    "update": {
+      "n": 30,
+      "score": 1.0,
+      "correct": 1.0,
+      "correct_refusal": 0.0
+    },
+    "workflow": {
+      "n": 20,
+      "score": 0.7,
+      "correct": 0.7,
+      "correct_refusal": 0.0
+    }
+  },
+  "mean_steps": 3.1,
+  "mean_invalid_calls": 0.0,
+  "mean_tool_errors": 0.1,
+  "mean_input_tokens": 25028.555,
+  "mean_output_tokens": 620.77,
+  "mean_time_s": 3.786,
+  "total_time_s": 757.154,
+  "total_input_tokens": 5005711,
+  "total_cached_input_tokens": 4500810,
+  "total_output_tokens": 124154,
+  "total_cost_usd": 0.157577,
+  "errors": 0,
+  "health": {
+    "empty_answers": 0,
+    "garbled_tasks": 0,
+    "no_tool_call_tasks": 34,
+    "invalid_call_tasks": 0,
+    "max_steps_tasks": 0,
+    "loop_same_tasks": 0,
+    "loop_errors_tasks": 0
+  },
+  "run": {
+    "codename": "baseline-kaggle-claude-haiku-5-5",
+    "config": {
+      "agent": {
+        "error_limit": 5,
+        "loop_limit": 3,
+        "max_steps": 25,
+        "prompt": "v3"
+      },
+      "model": {
+        "thinking": false,
+        "api_key_env": "MODEL_PROXY_API_KEY",
+        "backend": "openai",
+        "base_url": "https://mp-staging.kaggle.net/models/openapi",
+        "path": "anthropic/claude-haiku-5-5",
+        "reasoning_effort": "medium",
+        "temperature": null
+      },
+      "tasks": {
+        "limit": null,
+        "split": "test"
+      }
+    },
+    "model": {
+      "backend": "openai",
+      "family": null,
+      "path": "anthropic/claude-haiku-5-5",
+      "revision": "anthropic/claude-haiku-5-5",
+      "thinking": false
+    },
+    "prompt_version": "v3",
+    "prompt_sha256": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
+    "git_commit": "455a8ba387ff1f292e5ed823a71eb924f7a14d23",
+    "python": "3.12.10",
+    "torch": null,
+    "transformers": null,
+    "device": "cpu",
+    "date": "2026-11-06T23:34:42+00:00",
+    "wall_time_s": 757.881,
+    "shards": [
+      "0/1"
+    ]
+  }
+}
