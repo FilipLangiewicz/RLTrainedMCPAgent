@@ -475,3 +475,9 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - In some Haiku tasks, the model wrote a tool call in a format that the parser does not read. These tasks are incorrect.
 - Kaggle has a quota of 10 USD each day and 100 USD each month for models. A script job has no access to the proxy.
 
+### Reference models on Kaggle
+
+- Add `jobs/runs/2026-11-07_35_kaggle-reference/task.py`. A benchmark task of Kaggle has access to the model proxy.
+- The account `gpla77` runs these tasks, because the account `combainsidm` needs an identity verification.
+- Add the option `--reference-report` to `src/evaluate.py`. A reference report has no `Why` column and no section for SFT and RL. It gives the effort, the temperature, the tokens and the cost.
+- The results use packages without a lock and Python 3.12.

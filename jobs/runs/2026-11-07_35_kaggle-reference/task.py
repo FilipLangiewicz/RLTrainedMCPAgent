@@ -25,7 +25,7 @@ def kaggle_reference(llm) -> bool:
     if llm.model not in MODELS:
         print("SKIP", llm.model, flush=True)
         return True
-    codename = "baseline-kaggle-" + MODELS[llm.model]
+    codename = "baseline-" + MODELS[llm.model]
     subprocess.run(["git", "clone", "-q", "--depth", "1", "--branch", BRANCH, REPO, CLONE], check=True)
     head = subprocess.run(["git", "-C", CLONE, "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip()
     print("HEAD", head, sys.version, flush=True)

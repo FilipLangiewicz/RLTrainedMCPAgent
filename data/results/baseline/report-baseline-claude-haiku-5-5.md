@@ -1,4 +1,4 @@
-# Report of baseline-kaggle-claude-haiku-5-5
+# Report of baseline-claude-haiku-5-5
 
 Model: `claude-haiku-5-5`. Time of the job: 758 s.
 
@@ -21,6 +21,8 @@ Model: `claude-haiku-5-5`. Time of the job: 758 s.
 | workflow | 20 | 0.700 |
 
 Health: empty_answers 0, garbled_tasks 0, no_tool_call_tasks 34, invalid_call_tasks 0, max_steps_tasks 0, loop_same_tasks 0, loop_errors_tasks 0.
+
+Effort: medium. Thinking text: not returned by the service. Temperature: default of the service. Tool calls: native. Python: 3.12.10.
 
 Time of all tasks: 757 s. Input tokens: 5005711, of these cached: 4500810. Output tokens: 124154. Cost: 0.16 USD.
 

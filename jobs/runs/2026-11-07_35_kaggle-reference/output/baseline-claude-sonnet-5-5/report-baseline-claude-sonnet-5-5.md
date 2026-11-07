@@ -1,4 +1,4 @@
-# Report of baseline-kaggle-claude-sonnet-5-5
+# Report of baseline-claude-sonnet-5-5
 
 Model: `claude-sonnet-5-5@default`. Time of the job: 806 s.
 
@@ -21,6 +21,8 @@ Model: `claude-sonnet-5-5@default`. Time of the job: 806 s.
 | workflow | 20 | 0.800 |
 
 Health: empty_answers 0, garbled_tasks 0, no_tool_call_tasks 9, invalid_call_tasks 0, max_steps_tasks 0, loop_same_tasks 0, loop_errors_tasks 0.
+
+Effort: medium. Thinking text: not returned by the service. Temperature: default of the service. Tool calls: native. Python: 3.12.10.
 
 Time of all tasks: 806 s. Input tokens: 5610669, of these cached: 4989941. Output tokens: 77762. Cost: 3.02 USD.
 

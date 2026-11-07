@@ -313,4 +313,4 @@ def test_reference_report_has_no_why_and_has_cost(ten_tasks, data_dir, tmp_path)
     main(["--reference-report", str(tmp_path / "out")])
     text = (tmp_path / "out" / "report-smoke.md").read_text(encoding="utf-8")
     assert "Why" not in text and "What SFT and RL" not in text and "Cost: 0.00 USD" in text
-    assert "| Reason | Points |" in text
+    assert "| Reason | Points |" in text and "Effort: default of the service." in text

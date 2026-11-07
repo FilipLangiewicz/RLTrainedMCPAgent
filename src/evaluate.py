@@ -189,6 +189,12 @@ def write_report(output_dir: Path, reference: bool = False) -> None:
         "Health: " + ", ".join(f"{k} {v}" for k, v in metrics["health"].items()) + ".", "",
     ]
     if reference:
+        options = run["config"]["model"]
+        temperature = options.get("temperature", 0)
+        thinking = "saved" if any(t.get("thinking") for t in trajectories.values()) else "not returned by the service"
+        lines += [f"Effort: {options.get('reasoning_effort') or 'default of the service'}. Thinking text: {thinking}. "
+                  f"Temperature: {'default of the service' if temperature is None else temperature}. "
+                  f"Tool calls: native. Python: {run.get('python')}.", ""]
         lines += [f"Time of all tasks: {metrics['total_time_s']:.0f} s. Input tokens: {metrics['total_input_tokens']}, "
                   f"of these cached: {metrics['total_cached_input_tokens']}. Output tokens: {metrics['total_output_tokens']}. "
                   f"Cost: {metrics['total_cost_usd']:.2f} USD.", ""]
