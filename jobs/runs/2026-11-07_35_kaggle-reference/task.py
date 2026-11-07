@@ -1,5 +1,6 @@
 """Run the evaluation of a reference model in a Kaggle benchmark task. Only this kind of job has the model proxy."""
 import os
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -44,8 +45,14 @@ def kaggle_reference(llm) -> bool:
     }))
     # The task ends normally after a failure, so that the results stay.
     output = f"/kaggle/working/{codename}"
-    done = subprocess.run([sys.executable, "-m", "src.evaluate", str(config), "--output", output],
-                          cwd=CLONE, capture_output=True, text=True)
+    command = [sys.executable, "-m", "src.evaluate", str(config), "--output", output]
+    # The results of a stopped run are in the repository. The new run does only the other tasks.
+    partial = Path(CLONE, "jobs/runs/2026-11-07_35_kaggle-reference/output", codename, "results.jsonl")
+    if partial.exists():
+        Path(output).mkdir(parents=True, exist_ok=True)
+        shutil.copy(partial, output)
+        command.append("--resume")
+    done = subprocess.run(command, cwd=CLONE, capture_output=True, text=True)
     print(done.stdout[-3000:], done.stderr[-2000:], "EXIT", done.returncode, flush=True)
     return True
 

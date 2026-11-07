@@ -408,6 +408,14 @@ def test_api_long_limit_stops_the_run(monkeypatch):
         _api_model([_api_failure(429, "3600")], monkeypatch).generate([{"role": "user", "content": "x"}], TOOLS)
 
 
+def test_api_response_without_a_message_gets_a_new_attempt(monkeypatch):
+    model = _api_model([], monkeypatch)
+    good = model.client.chat.completions.create
+    replies = [SimpleNamespace(choices=[SimpleNamespace(message=None)], usage=None), SimpleNamespace(choices=None, usage=None)]
+    model.client.chat.completions.create = lambda **kwargs: replies.pop(0) if replies else good(**kwargs)
+    assert model.generate([{"role": "user", "content": "x"}], TOOLS).text == "done"
+
+
 def test_api_other_error_is_an_error_of_the_task(monkeypatch):
     with pytest.raises(Exception, match="limit") as caught:
         _api_model([_api_failure(400)], monkeypatch).generate([{"role": "user", "content": "x"}], TOOLS)

@@ -611,7 +611,12 @@ class ApiModel(Model):
         """Wait for a short limit. Stop the run at a long limit or a server failure, so that no task gets a false grade."""
         for attempt in range(self.MAX_ATTEMPTS):
             try:
-                return self.client.chat.completions.create(**request)
+                response = self.client.chat.completions.create(**request)
+                if response.choices and response.choices[0].message is not None:
+                    return response
+                # A response without a message is a failure of the service, not a failure of the model.
+                print(f"no message in the response: wait {2 ** attempt} s", flush=True)
+                time.sleep(2 ** attempt)
             except Exception as e:  # The next lines select the failures of the service.
                 response = getattr(e, "response", None)
                 status = getattr(response, "status_code", None)

@@ -481,3 +481,10 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - The account `gpla77` runs these tasks, because the account `combainsidm` needs an identity verification.
 - Add the option `--reference-report` to `src/evaluate.py`. A reference report has no `Why` column and no section for SFT and RL. It gives the effort, the temperature, the tokens and the cost.
 - The results use packages without a lock and Python 3.12.
+
+### Stop of the Argon run
+
+- The daily quota stopped the Argon run after 182 of 200 tasks. The partial results are in `jobs/runs/2026-11-07_35_kaggle-reference/output/baseline-gemini-4-argon/results.jsonl`.
+- The service gave a response without a message in `test-073`. `ApiModel` now tries this call again, so that this failure gives no false grade.
+- The partial results do not have the failed attempt of `test-073`. The next run does this task again. The failed attempt used 16504 input tokens, 554 output tokens and 0.027 USD.
+- `task.py` now continues a run from the partial results in the repository.
