@@ -6,24 +6,19 @@ Status on 2026-11-12: draft. Some decisions wait for the SFT results.
 
 ## Decisions
 
-### Made
-
-1. RL starts after SFT. Before SFT, most groups of rollouts have only zero rewards, so RL gets almost no signal (see "Measurements").
-2. After SFT, the RL probe (`src/rl_probe.py`) runs again on train or validation tasks. The team selects the models for RL from this second probe.
-3. The test set is used only for the cost probe. No test task goes into the train set, the validation set or a choice of settings.
-4. A Kaggle session stops after 12 h. Thus an RL run saves a checkpoint every 25 steps and continues in the next job. The checkpoint has the LoRA adapter, the optimizer state, the step and the state of the task filter.
-5. The team can use more than one Kaggle account for RL. Each account needs access to the private model weights.
-
-### Proposed, not confirmed
-
-1. Method: GRPO with the DAPO and Dr. GRPO changes, in TRL (`GRPOTrainer`, `loss_type="dapo"`, no KL term), with LoRA (rank 16, all linear layers).
-2. Reward: binary (1 for a correct task, 0 for all other results). A partial reward is a separate variant only.
-3. No RFT round before GRPO. SFT already gives the warm start, and GPU time is the main limit.
-
-### Open
-
-1. The models for RL (after the second probe). The budget allows full RL for about 1 to 2 models.
-2. The generation engine: `transformers` with batches, or vLLM. Jobs 51 and 53 measure vLLM on the T4.
+| Topic | Decision | Status | Reason |
+|---|---|---|---|
+| Method | GRPO with the DAPO and Dr. GRPO changes, in TRL (`GRPOTrainer`, `loss_type="dapo"`, no KL term) | proposed | Standard method in 2025-2026. No critic, so it fits on a T4. TRL supports multi-turn tool calls. |
+| Weights | LoRA, rank 16, all linear layers | proposed | In RL, LoRA gives the same result as full fine-tuning. The memory is small. |
+| Reward | Binary: 1 for a correct task, else 0. A write on the board in a refusal task gives -0.2. | proposed | A binary reward is difficult to exploit. A partial reward helped only 0 to 12.5% of the groups. |
+| Partial reward | Only as a separate variant (one change) | proposed | The evidence in papers is mixed. |
+| Start of RL | After SFT | made | Before SFT, most groups of rollouts have only zero rewards. |
+| Warm start with RFT | No RFT round before GRPO | proposed | SFT already gives the warm start. GPU time is the main limit. |
+| Models for RL | Selected after a second probe on the SFT models, on train or validation tasks | made (selection open) | The budget allows full RL for about 1 to 2 models. Rollout times change after SFT. |
+| Generation engine | `transformers` with batches, or vLLM | open | Jobs 51 and 53 measure vLLM on the T4. |
+| Long runs | A checkpoint every 25 steps (LoRA adapter, optimizer state, step, task filter). The next job continues from it. | made | A Kaggle session stops after 12 h. |
+| Kaggle accounts | More than one account is allowed for RL | made | It shortens the calendar time. Each account needs access to the private weights. |
+| Test set | Used only for the cost probe | made | No test task goes into the train set, the validation set or a choice of settings. |
 
 ## Options that we considered
 
@@ -72,21 +67,6 @@ Other results:
 - For Gemma 4, the per-layer lookup table (PLE) can stay in CPU memory. The weights on the GPU then fall from 9.5 GB to 5.1 GB (E2B).
 - A batch of 4 to 8 rollouts gives 2 to 3 times more tokens per second than one rollout, if it fits in memory.
 - The Kaggle image has torchao 0.10. PEFT 0.21 stops with an ImportError for it, so a job must remove torchao first.
-
-## Time estimate
-
-The estimate is for 200 GRPO steps of 64 rollouts, a context of 5000 tokens and two T4 GPUs. Papers on small models with tools used 150 to 500 steps.
-
-| Model | Hours |
-|---|---|
-| Bielik 1.5B | 27 |
-| Gemma 4 E2B | 31 |
-| Gemma 4 E4B | 65 |
-| Qwen3.5-2B | 81 |
-| Bielik 4.5B | 136 |
-| Qwen3.5-4B | 207 |
-
-The total for all six models is about 550 h. Until E3 the team has about 150 h of GPU time, also for SFT and the evaluations. The rollout times will change after SFT.
 
 ## Main sources
 
