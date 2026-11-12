@@ -22,6 +22,8 @@ print("torch", torch.__version__, "cuda", torch.version.cuda, flush=True)
 subprocess.run(["git", "clone", "--depth", "1", "--branch", BRANCH, REPO, CLONE], check=True)
 print("commit", subprocess.run(["git", "-C", CLONE, "rev-parse", "HEAD"], check=True, capture_output=True, text=True).stdout.strip(), flush=True)
 subprocess.run([sys.executable, "-m", "pip", "install", "-q", "--no-warn-conflicts", "-r", f"{CLONE}/requirements-kaggle.txt"], check=True)
+# The Kaggle image has torchao 0.10. PEFT 0.21 stops with an ImportError for torchao below 0.16. The project does not use torchao.
+subprocess.run([sys.executable, "-m", "pip", "uninstall", "-y", "-q", "torchao"], check=True)
 
 import yaml
 

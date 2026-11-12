@@ -77,6 +77,9 @@ def probe_generation(model, prompt_text: str, cfg: dict) -> dict:
     inputs = tok(prompt_text, return_tensors="pt", add_special_tokens=False).to(model.device)
     n_prompt, n_new = inputs["input_ids"].shape[1], cfg["new_tokens"]
     sampling = {"do_sample": True, "temperature": 1.0, "top_p": 1.0, "top_k": 0, "max_new_tokens": n_new, "min_new_tokens": n_new}
+    # The first call of generate is slow (kernel compile and cache setup), so it does not count.
+    with torch.no_grad():
+        model.model.generate(**inputs, **{**sampling, "max_new_tokens": 4, "min_new_tokens": 4})
     rows = []
     for batch in cfg["batch_sizes"]:
         reset_peak(torch)
