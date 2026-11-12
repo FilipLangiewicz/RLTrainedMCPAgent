@@ -254,9 +254,12 @@ def offload_embeddings(model) -> dict:
     sizes = sorted(((sum(p.numel() for p in m.parameters(recurse=False)), n) for n, m in model.model.named_modules()), reverse=True)
     print("largest modules", sizes[:6], flush=True)
     tables = [(n, m) for n, m in model.model.named_modules() if isinstance(m, torch.nn.Embedding) and "per_layer" in n]
-    model.model.to("cuda")
+    # Move each tensor on its own: a move of the full model first does not fit on the GPU for Gemma 4 E4B.
+    keep = {id(t) for _, m in tables for t in [*m.parameters(), *m.buffers()]}
+    for t in [*model.model.parameters(), *model.model.buffers()]:
+        if id(t) not in keep:
+            t.data = t.data.to("cuda")
     for _, m in tables:
-        m.to("cpu")
         m.register_forward_pre_hook(lambda mod, args: tuple(a.to("cpu") if torch.is_tensor(a) else a for a in args))
         m.register_forward_hook(lambda mod, args, out: out.to("cuda"))
     model.device = "cuda"

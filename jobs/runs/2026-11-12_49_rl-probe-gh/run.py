@@ -11,7 +11,7 @@ BRANCH = "07-rl-method"
 CLONE = "/tmp/repo"  # Not in the output folder, so the clone is not an output.
 JOB = "2026-11-12_49_rl-probe-gh"
 # Each stage runs its codenames at the same time. A GPU of None gives the process both GPUs.
-STAGES = [[("rl-probe-g", 0), ("rl-probe-h", 1)]]
+STAGES = [[("rl-probe-h", 0)]]
 DEADLINE_S = 1.5 * 3600
 
 import torch
