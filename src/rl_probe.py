@@ -363,6 +363,7 @@ class VllmServerModel:
         self.client = OpenAI(base_url=url + "/v1", api_key="none", max_retries=2, timeout=900)
         self.temperature, self.max_new_tokens, self.keep, self.max_len = temperature, max_new_tokens, keep, max_len
         self.top_k = 0
+        self.served = "m"  # The name of the base model or of the active LoRA adapter on the server.
         self.samples, self.lock = [], threading.Lock()
         self.special = {t for t in (self.tokenizer.eos_token, self.tokenizer.pad_token, self.tokenizer.bos_token) if t}
 
@@ -371,7 +372,7 @@ class VllmServerModel:
 
     def _complete(self, ids: list[int], room: int, want: bool):
         extra = {"top_k": self.top_k, "skip_special_tokens": False, "return_tokens_as_token_ids": True}
-        return self.client.completions.create(model="m", prompt=ids, max_tokens=room, temperature=self.temperature,
+        return self.client.completions.create(model=self.served, prompt=ids, max_tokens=room, temperature=self.temperature,
                                               top_p=1.0, logprobs=1 if want else None, extra_body=extra)
 
     def generate(self, messages, tools):
@@ -426,6 +427,12 @@ def start_server(model_cfg: dict, vcfg: dict) -> tuple:
         # A smaller prefill chunk needs less activation memory. Then the KV cache of a 4B model fits on a T4.
         cmd += ["--max-num-batched-tokens", str(vcfg["batched_tokens"])]
     env = {**os.environ, "VLLM_TURING_TILE": "1" if vcfg.get("patch") else "0"}
+    if vcfg.get("gpus") is not None:
+        env["CUDA_VISIBLE_DEVICES"] = str(vcfg["gpus"])
+    if vcfg.get("lora_rank"):
+        # The server keeps the base weights and gets each new LoRA adapter at run time, without a restart.
+        env["VLLM_ALLOW_RUNTIME_LORA_UPDATING"] = "True"
+        cmd += ["--enable-lora", "--max-lora-rank", str(vcfg["lora_rank"]), "--max-loras", "2"]
     start = time.perf_counter()
     # A new session gives the server and its engine processes one process group, so that one signal stops them all.
     proc = subprocess.Popen(cmd, env=env, start_new_session=True)
@@ -532,6 +539,167 @@ def main_vllm(cfg: dict, probe: dict, agent: dict, out: Path) -> None:
     save()
 
 
+# Pipeline: vLLM generates on GPU 0, the trainer computes gradients on GPU 1
+
+def post_json(url: str, body: dict) -> float:
+    """Send one POST request. Return the time in seconds."""
+    import urllib.request
+
+    start = time.perf_counter()
+    req = urllib.request.Request(url, data=json.dumps(body).encode(), headers={"Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=600) as r:
+        r.read()
+    return time.perf_counter() - start
+
+
+def random_adapter(peft, scale: float = 1e-3) -> None:
+    """Give lora_B small random values. A new adapter has B = 0, and then it does not change the model."""
+    torch = __import__("torch")
+    with torch.no_grad():
+        for name, p in peft.named_parameters():
+            if "lora_B" in name:
+                p.normal_(0.0, scale)
+
+
+def main_pipeline(cfg: dict, probe: dict, agent: dict, out: Path) -> None:
+    """Measure the real cycle of an RL step with the roles split over two GPUs.
+
+    The trainer never calls an optimizer step. The adapter keeps its random values, so no model learns from test tasks.
+    """
+    import shutil
+
+    import torch
+    from peft import LoraConfig, get_peft_model
+
+    summary = {"config": cfg, "probe": probe}
+
+    def save():
+        (out / "probe.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False))
+
+    vcfg = {**probe["vllm"], "gpus": 0, "lora_rank": probe["lora_rank"]}
+    torch.cuda.set_device(1)  # From here, "cuda" means the trainer GPU.
+    trainer = make_model({**cfg["model"], "temperature": 0.0, **({"device": "cpu"} if probe.get("offload_ple") else {})})
+    if probe.get("offload_ple"):
+        summary["offload"] = offload_embeddings(trainer)
+    trainer.model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
+    trainer.model.enable_input_require_grads()
+    lora = LoraConfig(r=probe["lora_rank"], lora_alpha=2 * probe["lora_rank"], lora_dropout=0.0,
+                      target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
+                      exclude_modules=r".*(vision|audio|visual).*", task_type="CAUSAL_LM")
+    peft = get_peft_model(trainer.model, lora)
+    random_adapter(peft)
+    summary["trainable_params"] = sum(p.numel() for p in peft.parameters() if p.requires_grad)
+    adapters = out.parent / f"{out.name}-adapters"
+    shutil.rmtree(adapters, ignore_errors=True)
+
+    def save_adapter(k: int) -> tuple[str, float]:
+        start = time.perf_counter()
+        path = adapters / f"v{k}"
+        peft.save_pretrained(path)
+        return str(path), time.perf_counter() - start
+
+    path, t_save = save_adapter(0)
+    proc, url, summary["server_start_s"], max_len = start_server(cfg["model"], vcfg)
+    try:
+        run_pipeline(summary, save, probe, cfg, agent, peft, trainer, url, max_len, path, t_save, save_adapter)
+    except Exception:  # noqa: BLE001  The summary keeps the error, for example an adapter that vLLM does not accept.
+        summary["error"] = traceback.format_exc(limit=4)[-3000:]
+        print(summary["error"], file=sys.stderr, flush=True)
+    finally:
+        stop_server(proc)
+        shutil.rmtree(adapters, ignore_errors=True)
+        save()
+
+
+def run_pipeline(summary, save, probe, cfg, agent, peft, trainer, url, max_len, path, t_save, save_adapter) -> None:
+    from concurrent.futures import ThreadPoolExecutor
+
+    t_load = post_json(url + "/v1/load_lora_adapter", {"lora_name": "v0", "lora_path": path})
+    summary["adapter_v0"] = {"save_s": round(t_save, 2), "load_s": round(t_load, 2),
+                             "size_mb": round(sum(f.stat().st_size for f in Path(path).iterdir()) / 2**20, 1)}
+    print("adapter", summary["adapter_v0"], flush=True)
+    save()
+    model = VllmServerModel(cfg["model"]["family"], cfg["model"]["path"], url, cfg["model"].get("temperature", 1.0),
+                            cfg["model"].get("max_new_tokens", 1024), probe.get("logprob_samples", 12), max_len)
+    model.served = "v0"
+    prompt = load_prompt("system", agent["prompt"])
+    tasks = select_tasks(probe["split"], probe["tasks"], probe["seed"])
+    per_step = probe["tasks_per_step"]
+
+    def generate(step: int) -> tuple[list[dict], list[list[dict]], float]:
+        chosen = [tasks[(step * per_step + i) % len(tasks)] for i in range(per_step)]
+        jobs = [(t, g) for t in chosen for g in range(probe["group"])]
+
+        def one(job):
+            try:
+                return rollout(model, job[0], prompt, agent)
+            except Exception:  # noqa: BLE001
+                print(traceback.format_exc(limit=2), file=sys.stderr, flush=True)
+                return None, []
+
+        start = time.perf_counter()
+        with ThreadPoolExecutor(max_workers=probe.get("concurrency", 64)) as pool:
+            results = list(pool.map(one, jobs))
+        rows = [r for r, _ in results if r]
+        return rows, [m for _, m in results if m], time.perf_counter() - start
+
+    def train(conversations: list[list[dict]]) -> dict:
+        start, done, failed, tokens = time.perf_counter(), 0, 0, 0
+        for messages in conversations:
+            ids, positions = assistant_positions(trainer, messages, model_tools)
+            if not positions:
+                continue
+            row = backward_once(trainer, peft, ids, positions)
+            done += "error" not in row
+            failed += "error" in row
+            tokens += len(ids)
+        return {"sequences": done, "out_of_memory": failed, "tokens": tokens, "time_s": round(time.perf_counter() - start, 1)}
+
+    model_tools = asyncio.run(_list_tools(build_server(load_board(board_path(tasks[0].board)))))
+    # vLLM and the trainer must give the same log-probabilities for the adapter.
+    rows, conversations, t_gen = generate(0)
+    peft.eval()
+    summary["logprob_check_lora"] = lora_logprob_check(trainer, peft, model.samples)
+    peft.train()
+    print("lora logprob check", summary["logprob_check_lora"], flush=True)
+    steps = [{"step": 0, "generate_s": round(t_gen, 1), "rollouts": len(rows),
+              "success": round(sum(r["reward"] for r in rows) / max(len(rows), 1), 3)}]
+    save()
+    for k in range(1, probe["steps"] + 1):
+        start = time.perf_counter()
+        with ThreadPoolExecutor(max_workers=1) as gen_pool:
+            future = gen_pool.submit(generate, k)  # vLLM writes step k while the trainer works on step k - 1.
+            t_train = train(conversations)
+            path, t_save = save_adapter(k)
+            t_swap = post_json(url + "/v1/load_lora_adapter", {"lora_name": f"v{k}", "lora_path": path})
+            rows, conversations, t_gen = future.result()
+        model.served = f"v{k}"
+        post_json(url + "/v1/unload_lora_adapter", {"lora_name": f"v{k - 1}"})
+        peft.zero_grad(set_to_none=True)
+        steps.append({"step": k, "wall_s": round(time.perf_counter() - start, 1), "generate_s": round(t_gen, 1),
+                      "train": t_train, "save_s": round(t_save, 2), "swap_s": round(t_swap, 2), "rollouts": len(rows)})
+        print("step", steps[-1], flush=True)
+        summary["steps"] = steps
+        save()
+
+
+def lora_logprob_check(trainer, peft, samples: list[dict]) -> dict:
+    torch = trainer.torch
+    diffs = []
+    for s in samples[:24]:
+        ids = torch.tensor([s["prompt"] + s["tokens"]], device=trainer.device)
+        with torch.no_grad(), torch.autocast("cuda", dtype=torch.float16):
+            logits = peft(input_ids=ids, logits_to_keep=len(s["tokens"]) + 1).logits[0, :-1].float()
+        lp = torch.log_softmax(logits, -1).gather(-1, ids[0, -len(s["tokens"]):, None])[:, 0].cpu()
+        vl = torch.tensor([x if x is not None else float("nan") for x in s["logprobs"]])
+        diffs.append((lp - vl).abs())
+    d = torch.cat(diffs) if diffs else torch.zeros(1)
+    d = d[torch.isfinite(d)]
+    return {"samples": min(len(samples), 24), "tokens": int(d.numel()), "mean_abs_logprob_diff": round(d.mean().item(), 5),
+            "p99_abs_logprob_diff": round(d.quantile(0.99).item(), 5) if d.numel() > 1 else None,
+            "max_abs_logprob_diff": round(d.max().item(), 5)}
+
+
 # Main
 
 def main(argv: list[str] | None = None) -> None:
@@ -546,6 +714,9 @@ def main(argv: list[str] | None = None) -> None:
     out.mkdir(parents=True, exist_ok=True)
     if probe.get("engine") == "vllm":
         main_vllm(cfg, probe, agent, out)
+        return
+    if probe.get("engine") == "pipeline":
+        main_pipeline(cfg, probe, agent, out)
         return
     summary = {"config": cfg, "probe": probe}
 

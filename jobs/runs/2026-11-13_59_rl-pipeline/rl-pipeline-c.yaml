@@ -1,0 +1,32 @@
+model:
+  backend: transformers
+  family: qwen3.5
+  path: /kaggle/input/idm-pro-qwen3-5-2b/transformers/base/1
+  thinking: false
+  dtype: float16
+  max_new_tokens: 1024
+  temperature: 1.0
+agent:
+  prompt: v3
+  max_steps: 25
+  loop_limit: 3
+  error_limit: 5
+probe:
+  engine: pipeline
+  split: test
+  tasks: 16
+  group: 8
+  tasks_per_step: 8
+  steps: 3
+  concurrency: 64
+  lora_rank: 16
+  logprob_samples: 24
+  offload_ple: false
+  vllm:
+    port: 8000
+    patch: false
+    tp: 1
+    mem: 0.85
+    max_len: 16384
+    max_seqs: 64
+    start_minutes: 30
