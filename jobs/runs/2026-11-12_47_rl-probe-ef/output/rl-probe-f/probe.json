@@ -1,0 +1,137 @@
+{
+  "config": {
+    "agent": {
+      "error_limit": 5,
+      "loop_limit": 3,
+      "max_steps": 25,
+      "prompt": "v3"
+    },
+    "model": {
+      "backend": "transformers",
+      "device": "auto",
+      "dtype": "float16",
+      "family": "gemma4",
+      "max_new_tokens": 1024,
+      "path": "/kaggle/input/models/combainsidm/idm-pro-gemma-4-e4b/transformers/base/1/gemma-4-e4b",
+      "revision": "4ecc2ba63bcac23ba4a767fc87025b1450f84c9c",
+      "temperature": 1.0,
+      "thinking": false
+    },
+    "probe": {
+      "batch_sizes": [
+        1,
+        4,
+        8
+      ],
+      "group": 8,
+      "lengths": [
+        2048,
+        4096,
+        6144,
+        8192,
+        12288
+      ],
+      "lora_rank": 16,
+      "new_tokens": 128,
+      "rollout_minutes": 70,
+      "split": "test",
+      "tasks": 16
+    }
+  },
+  "probe": {
+    "split": "test",
+    "tasks": 16,
+    "group": 8,
+    "rollout_minutes": 70,
+    "batch_sizes": [
+      1,
+      4,
+      8
+    ],
+    "new_tokens": 128,
+    "lora_rank": 16,
+    "lengths": [
+      2048,
+      4096,
+      6144,
+      8192,
+      12288
+    ],
+    "seed": 0
+  },
+  "torch": "2.11.0+cu130",
+  "gpu": "Tesla T4",
+  "load_s": 40.5,
+  "weights_gb": 8.56,
+  "generation": {
+    "batches": [
+      {
+        "batch": 1,
+        "prompt_tokens": 4451,
+        "new_tokens": 128,
+        "time_s": 18.9,
+        "tokens_per_s": 6.8,
+        "peak_gb": 9.19
+      },
+      {
+        "batch": 4,
+        "prompt_tokens": 4451,
+        "new_tokens": 128,
+        "time_s": 32.0,
+        "tokens_per_s": 16.0,
+        "peak_gb": 11.02
+      },
+      {
+        "batch": 8,
+        "prompt_tokens": 4451,
+        "new_tokens": 128,
+        "time_s": 51.39,
+        "tokens_per_s": 19.9,
+        "peak_gb": 13.46
+      }
+    ],
+    "mismatch": {
+      "tokens": 128,
+      "mean_abs_logprob_diff": 0.00149,
+      "max_abs_logprob_diff": 0.01675,
+      "ratio_min": 0.9851,
+      "ratio_max": 1.0169
+    }
+  },
+  "rollouts": {
+    "tasks": 16,
+    "complete_groups": 16,
+    "rollouts": 128,
+    "sampled_pass1": 0.203,
+    "pass_at_group": 0.375,
+    "groups_with_signal": 0.312,
+    "groups_all_zero": 0.625,
+    "groups_all_one": 0.062,
+    "groups_with_partial_signal_only": 0.0,
+    "reward_by_category": {
+      "query": 0.0,
+      "update": 0.5,
+      "log": 0.188,
+      "create": 0.0,
+      "sprint": 0.0,
+      "bulk": 0.375,
+      "workflow": 0.062,
+      "refusal": 0.5
+    },
+    "rollout_time_s": {
+      "mean": 19.7,
+      "median": 13.919,
+      "max": 396.634
+    },
+    "output_tokens_mean": 92.6,
+    "input_tokens_mean": 9897.2,
+    "stop_reasons": {
+      "answer": 128
+    }
+  },
+  "rollout_minutes_used": 44.3,
+  "backward": {
+    "error": "Traceback (most recent call last):\n  File \"/tmp/repo/src/rl_probe.py\", line 335, in main\n    summary[\"backward\"] = probe_backward(model, conversations, tools, probe)\n                          ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/repo/src/rl_probe.py\", line 256, in probe_backward\n    real.append(backward_once(model, peft, ids, positions))\n                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/repo/src/rl_probe.py\", line 230, in backward_once\n    logits = peft(input_ids=input_ids, logits_to_keep=keep).logits[0].float()\n             ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Expected all tensors to be on the same device, but got mat2 is on cuda:1, different from other tensors on cuda:0 (when checking argument in method wrapper_CUDA_mm)\n"
+  },
+  "total_s": 2705.0
+}
