@@ -245,9 +245,62 @@ def backward_once(model, peft, ids: list[int], positions: list[int]) -> dict:
     return row
 
 
-def probe_backward(model, conversations: list[list[dict]], tools: list[dict], cfg: dict) -> dict:
+def offload_embeddings(model) -> dict:
+    """Keep the per-layer lookup tables (PLE) of Gemma 4 in CPU memory and put all other weights on the GPU.
+
+    A lookup in such a table needs no matrix product. Thus the CPU gives the rows for the tokens of a sequence quickly.
+    """
+    torch = model.torch
+    sizes = sorted(((sum(p.numel() for p in m.parameters(recurse=False)), n) for n, m in model.model.named_modules()), reverse=True)
+    print("largest modules", sizes[:6], flush=True)
+    tables = [(n, m) for n, m in model.model.named_modules() if isinstance(m, torch.nn.Embedding) and "per_layer" in n]
+    model.model.to("cuda")
+    for _, m in tables:
+        m.to("cpu")
+        m.register_forward_pre_hook(lambda mod, args: tuple(a.to("cpu") if torch.is_tensor(a) else a for a in args))
+        m.register_forward_hook(lambda mod, args, out: out.to("cuda"))
+    model.device = "cuda"
+    torch.cuda.empty_cache()
+    return {"tables": [n for n, _ in tables], "cpu_params": sum(m.weight.numel() for _, m in tables)}
+
+
+def probe_cache(model, prompt_text: str, tokens: int = 128) -> tuple[dict, tuple]:
+    """Compare the log-probabilities with and without the KV cache in one forward pass.
+
+    Gemma 4 shares the KV state over layers. Reports say that some code paths give wrong logits with use_cache=False.
+    The trainer uses use_cache=False, so a difference here makes RL wrong.
+    """
+    torch = model.torch
+    ids = model.tokenizer(prompt_text, return_tensors="pt", add_special_tokens=False)["input_ids"].to(model.device)
+    with torch.no_grad():
+        a = torch.log_softmax(model.model(input_ids=ids, use_cache=True, logits_to_keep=tokens).logits[0].float(), -1)
+        b = torch.log_softmax(model.model(input_ids=ids, use_cache=False, logits_to_keep=tokens).logits[0].float(), -1)
+    top = a.argmax(-1)
+    row = {"tokens": tokens, "max_abs_logprob_diff": round((a - b).abs().max().item(), 5),
+           "top1_logprob_diff": round((a.gather(-1, top[:, None]) - b.gather(-1, top[:, None])).abs().max().item(), 5),
+           "same_argmax": round((a.argmax(-1) == b.argmax(-1)).float().mean().item(), 4)}
+    print("cache", row, flush=True)
+    return row, (ids, a)
+
+
+def train_mode_check(model, peft, ref: tuple) -> dict:
+    """Compare the log-probabilities of the LoRA model in train mode with the reference. Train mode recomputes activations and uses no cache."""
+    torch = model.torch
+    ids, a = ref
+    with torch.no_grad(), torch.autocast("cuda", dtype=torch.float16, enabled=torch.cuda.is_available()):
+        c = torch.log_softmax(peft(input_ids=ids, logits_to_keep=a.shape[0]).logits[0].float(), -1)
+    top = a.argmax(-1)
+    row = {"top1_logprob_diff": round((a.gather(-1, top[:, None]) - c.gather(-1, top[:, None])).abs().max().item(), 5),
+           "same_argmax": round((a.argmax(-1) == c.argmax(-1)).float().mean().item(), 4)}
+    print("train mode", row, flush=True)
+    return row
+
+
+def probe_backward(model, conversations: list[list[dict]], tools: list[dict], cfg: dict, ref: tuple | None = None) -> dict:
     peft, info = lora_model(model, cfg["lora_rank"])
     print("lora", info, flush=True)
+    if ref is not None:
+        info["train_mode_check"] = train_mode_check(model, peft, ref)
     built = sorted((assistant_positions(model, m, tools) for m in conversations), key=lambda x: len(x[0]))
     built = [b for b in built if b[1]]
     real = []
@@ -290,19 +343,28 @@ def main(argv: list[str] | None = None) -> None:
     summary["gpu"] = torch.cuda.get_device_name() if torch.cuda.is_available() else "cpu"
     start = time.perf_counter()
     model = make_model(cfg["model"])
+    if probe.get("offload_ple"):
+        summary["offload"] = offload_embeddings(model)
     summary["load_s"] = round(time.perf_counter() - start, 1)
-    summary["weights_gb"] = gpu_gb(torch)
+    summary["weights_gb"] = round(torch.cuda.memory_allocated() / 2**30, 2) if torch.cuda.is_available() else 0.0
     prompt = load_prompt("system", agent["prompt"])
     tasks = select_tasks(probe["split"], probe["tasks"], probe["seed"])
     tools = asyncio.run(_list_tools(build_server(load_board(board_path(tasks[0].board)))))
     save()
 
+    messages = [{"role": "system", "content": prompt.text}, {"role": "user", "content": tasks[0].instruction}]
+    prompt_text = render(model, messages, tools, True)
     try:
-        messages = [{"role": "system", "content": prompt.text}, {"role": "user", "content": tasks[0].instruction}]
-        summary["generation"] = probe_generation(model, render(model, messages, tools, True), probe)
+        summary["generation"] = probe_generation(model, prompt_text, probe)
     except Exception:  # noqa: BLE001  A failed part must not stop the next parts.
         summary["generation"] = {"error": traceback.format_exc(limit=3)}
         print(summary["generation"]["error"], file=sys.stderr, flush=True)
+    ref = None
+    try:
+        summary["cache"], ref = probe_cache(model, prompt_text)
+    except Exception:  # noqa: BLE001
+        summary["cache"] = {"error": traceback.format_exc(limit=3)}
+        print(summary["cache"]["error"], file=sys.stderr, flush=True)
     save()
 
     rows, conversations = [], []
@@ -332,7 +394,7 @@ def main(argv: list[str] | None = None) -> None:
     save()
 
     try:
-        summary["backward"] = probe_backward(model, conversations, tools, probe)
+        summary["backward"] = probe_backward(model, conversations, tools, probe, ref)
     except Exception:  # noqa: BLE001
         summary["backward"] = {"error": traceback.format_exc(limit=3)}
         print(summary["backward"]["error"], file=sys.stderr, flush=True)

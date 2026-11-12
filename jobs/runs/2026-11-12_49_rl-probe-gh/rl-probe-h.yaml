@@ -1,0 +1,24 @@
+model:
+  backend: transformers
+  family: gemma4
+  path: /kaggle/input/idm-pro-gemma-4-e4b/transformers/base/1
+  thinking: false
+  dtype: float16
+  max_new_tokens: 1024
+  temperature: 1.0
+  device: cpu
+agent:
+  prompt: v3
+  max_steps: 25
+  loop_limit: 3
+  error_limit: 5
+probe:
+  split: test
+  offload_ple: true
+  tasks: 2
+  group: 4
+  rollout_minutes: 6
+  batch_sizes: [1, 4, 8, 16]
+  new_tokens: 128
+  lora_rank: 16
+  lengths: [4096, 8192, 12288, 16384]
