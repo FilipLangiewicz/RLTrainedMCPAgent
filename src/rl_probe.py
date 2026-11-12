@@ -323,6 +323,215 @@ def probe_backward(model, conversations: list[list[dict]], tools: list[dict], cf
     return {**info, "real": real, "ladder": ladder}
 
 
+# vLLM: real agent rollouts through a local server
+
+PATCH_LINES = [
+    "import importlib.util, pathlib",
+    "root = pathlib.Path(importlib.util.find_spec('vllm').origin).parent",
+    "wrapper = '\\n'.join(['', 'def _get_tile_size(*args, **kwargs):',",
+    "    '    import os as _os', '    import torch as _torch', '    size = _get_tile_size_orig(*args, **kwargs)',",
+    "    '    if _os.environ.get(\"VLLM_TURING_TILE\") == \"1\" and _torch.cuda.get_device_capability()[0] < 8:',",
+    "    '        return min(size, 16)', '    return size', ''])",
+    "for path in root.rglob('*.py'):",
+    "    text = path.read_text(errors='ignore')",
+    "    if 'def _get_tile_size(' in text and '_get_tile_size_orig' not in text:",
+    "        path.write_text(text.replace('def _get_tile_size(', 'def _get_tile_size_orig(') + wrapper)",
+    "        print('patched', path)",
+]
+# The code runs in the vLLM environment. It wraps _get_tile_size: a tile of 16 fits the 64 KB of shared memory of a T4.
+PATCH_CODE = "\n".join(PATCH_LINES)
+
+
+class VllmServerModel:
+    """A model behind a local vLLM server. The prompt and the parser are the same as in LocalModel.
+
+    The class sends the token ids of the prompt, so that the server does not add a second BOS token.
+    """
+
+    backend = "vllm"
+
+    def __init__(self, family: str, path: str, url: str, temperature: float, max_new_tokens: int, keep: int, max_len: int):
+        import threading
+
+        import transformers
+        from openai import OpenAI
+
+        from src.models import get_family
+
+        self.family, self.path, self.thinking, self.steps = get_family(family), path, False, 0
+        self.tokenizer = transformers.AutoTokenizer.from_pretrained(path, local_files_only=True)
+        self.client = OpenAI(base_url=url + "/v1", api_key="none", max_retries=2, timeout=900)
+        self.temperature, self.max_new_tokens, self.keep, self.max_len = temperature, max_new_tokens, keep, max_len
+        self.top_k = 0
+        self.samples, self.lock = [], threading.Lock()
+        self.special = {t for t in (self.tokenizer.eos_token, self.tokenizer.pad_token, self.tokenizer.bos_token) if t}
+
+    def free_memory(self) -> None:
+        return None
+
+    def _complete(self, ids: list[int], room: int, want: bool):
+        extra = {"top_k": self.top_k, "skip_special_tokens": False, "return_tokens_as_token_ids": True}
+        return self.client.completions.create(model="m", prompt=ids, max_tokens=room, temperature=self.temperature,
+                                              top_p=1.0, logprobs=1 if want else None, extra_body=extra)
+
+    def generate(self, messages, tools):
+        from src.models import ModelOutput
+
+        self.steps += 1
+        prompt = self.family.render(self.tokenizer, messages, tools, self.thinking)
+        ids = self.tokenizer(prompt, add_special_tokens=False)["input_ids"]
+        with self.lock:
+            want = len(self.samples) < self.keep
+        room = min(self.max_new_tokens, self.max_len - len(ids))
+        if room < 16:
+            raise RuntimeError(f"context full: {len(ids)} prompt tokens, limit {self.max_len}")
+        try:
+            response = self._complete(ids, room, want)
+        except Exception as e:  # Some vLLM versions accept only -1 to disable top-k.
+            if "top_k" not in str(e) or self.top_k == -1:
+                raise
+            self.top_k = -1
+            response = self._complete(ids, room, want)
+        choice = response.choices[0]
+        text = choice.text
+        for token in self.special:
+            text = text.replace(token, "")
+        if want and choice.logprobs and choice.logprobs.tokens:
+            tokens = [int(t.split(":")[-1]) for t in choice.logprobs.tokens]
+            with self.lock:
+                self.samples.append({"prompt": ids, "tokens": tokens, "logprobs": choice.logprobs.token_logprobs})
+        content, calls, thinking = self.family.parse(self.family.clean(text), tools, self.steps)
+        return ModelOutput(text=content, calls=calls, thinking_text=thinking,
+                           input_tokens=response.usage.prompt_tokens, output_tokens=response.usage.completion_tokens)
+
+
+def start_server(model_cfg: dict, vcfg: dict) -> tuple:
+    """Start `vllm serve` from the separate environment. Return the process, the URL, the start time in seconds and the context limit."""
+    import os
+    import subprocess
+    import urllib.request
+
+    python = os.environ["VLLM_PYTHON"]
+    if vcfg.get("patch"):
+        subprocess.run([python, "-c", PATCH_CODE], check=True)
+    config = json.loads((Path(model_cfg["path"]) / "config.json").read_text())
+    limit = config.get("text_config", config).get("max_position_embeddings") or vcfg["max_len"]
+    port = vcfg.get("port", 8000)
+    cmd = [python, "-m", "vllm.entrypoints.openai.api_server", "--model", model_cfg["path"], "--served-model-name", "m",
+           "--dtype", "float16", "--max-model-len", str(min(vcfg["max_len"], limit)), "--port", str(port),
+           "--gpu-memory-utilization", str(vcfg.get("mem", 0.8)), "--enable-prefix-caching",
+           "--max-num-seqs", str(vcfg.get("max_seqs", 64)), "--tensor-parallel-size", str(vcfg.get("tp", 1)),
+           "--compilation-config", json.dumps({"cudagraph_capture_sizes": [1, 2, 4, 8, 16, 32, 64]})]
+    if vcfg.get("batched_tokens"):
+        # A smaller prefill chunk needs less activation memory. Then the KV cache of a 4B model fits on a T4.
+        cmd += ["--max-num-batched-tokens", str(vcfg["batched_tokens"])]
+    env = {**os.environ, "VLLM_TURING_TILE": "1" if vcfg.get("patch") else "0"}
+    start = time.perf_counter()
+    # A new session gives the server and its engine processes one process group, so that one signal stops them all.
+    proc = subprocess.Popen(cmd, env=env, start_new_session=True)
+    url = f"http://127.0.0.1:{port}"
+    while time.perf_counter() - start < 60 * vcfg.get("start_minutes", 30):
+        if proc.poll() is not None:
+            raise RuntimeError(f"vllm serve stopped with code {proc.returncode}")
+        try:
+            with urllib.request.urlopen(url + "/health", timeout=5) as r:
+                if r.status == 200:
+                    return proc, url, round(time.perf_counter() - start, 1), min(vcfg["max_len"], limit)
+        except OSError:
+            pass
+        time.sleep(5)
+    stop_server(proc)
+    raise TimeoutError("vllm serve did not start in time")
+
+
+def stop_server(proc) -> None:
+    import os
+    import signal
+    import subprocess
+
+    for sig in (signal.SIGTERM, signal.SIGKILL):
+        try:
+            os.killpg(proc.pid, sig)
+            proc.wait(timeout=90)
+            break
+        except ProcessLookupError:
+            break
+        except subprocess.TimeoutExpired:
+            continue
+    time.sleep(10)
+
+
+def check_logprobs(model_cfg: dict, probe: dict, samples: list[dict]) -> dict:
+    """Compute the log-probabilities of the vLLM samples again in transformers, as the trainer does."""
+    torch_model = make_model({**model_cfg, "backend": "transformers", "temperature": 0.0})
+    if probe.get("offload_ple"):
+        offload_embeddings(torch_model)
+    torch = torch_model.torch
+    diffs = []
+    for s in samples:
+        ids = torch.tensor([s["prompt"] + s["tokens"]], device=torch_model.device)
+        with torch.no_grad():
+            logits = torch_model.model(input_ids=ids, logits_to_keep=len(s["tokens"]) + 1).logits[0, :-1].float()
+        lp = torch.log_softmax(logits, -1).gather(-1, ids[0, -len(s["tokens"]):, None])[:, 0].cpu()
+        vl = torch.tensor([x if x is not None else float("nan") for x in s["logprobs"]])
+        diffs.append((lp - vl).abs())
+    d = torch.cat(diffs) if diffs else torch.zeros(1)
+    d = d[torch.isfinite(d)]
+    return {"samples": len(samples), "tokens": int(d.numel()), "mean_abs_logprob_diff": round(d.mean().item(), 5),
+            "p99_abs_logprob_diff": round(d.quantile(0.99).item(), 5) if d.numel() > 1 else None,
+            "max_abs_logprob_diff": round(d.max().item(), 5)}
+
+
+def main_vllm(cfg: dict, probe: dict, agent: dict, out: Path) -> None:
+    """Real agent rollouts with the vLLM server, many at the same time, then the check against transformers."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    summary = {"config": cfg, "probe": probe}
+
+    def save():
+        (out / "probe.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False))
+
+    vcfg = probe["vllm"]
+    proc, url, summary["server_start_s"], max_len = start_server(cfg["model"], vcfg)
+    save()
+    model = VllmServerModel(cfg["model"]["family"], cfg["model"]["path"], url, cfg["model"].get("temperature", 1.0),
+                            cfg["model"].get("max_new_tokens", 1024), probe.get("logprob_samples", 12), max_len)
+    prompt = load_prompt("system", agent["prompt"])
+    tasks = select_tasks(probe["split"], probe["tasks"], probe["seed"])
+    jobs = [(i, t, g) for i, t in enumerate(tasks) for g in range(probe["group"])]
+
+    def one(job):
+        index, task, g = job
+        try:
+            row, _ = rollout(model, task, prompt, agent)
+        except Exception:  # noqa: BLE001
+            print(traceback.format_exc(limit=3), file=sys.stderr, flush=True)
+            row = {"category": task.category, "difficulty": task.difficulty, "reward": 0.0, "partial_reward": 0.0,
+                   "stop_reason": "probe_error", "steps": 0, "tool_calls": 0, "invalid_calls": 0,
+                   "input_tokens": 0, "output_tokens": 0, "time_s": 0.0}
+        return {"task_index": index, "rollout": g, **row}
+
+    start = time.perf_counter()
+    with ThreadPoolExecutor(max_workers=probe.get("concurrency", 64)) as pool:
+        rows = list(pool.map(one, jobs))
+    wall = time.perf_counter() - start
+    with open(out / "rollouts.jsonl", "w", encoding="utf-8") as f:
+        f.writelines(json.dumps(row) + "\n" for row in rows)
+    summary["rollouts"] = summarize_groups(rows)
+    summary["wall_s"] = round(wall, 1)
+    summary["wall_s_per_64_rollouts"] = round(wall * 64 / len(rows), 1)
+    print("rollouts", len(rows), "wall", round(wall, 1), "s", flush=True)
+    save()
+    stop_server(proc)
+    try:
+        summary["logprob_check"] = check_logprobs(cfg["model"], probe, model.samples)
+        print("logprob check", summary["logprob_check"], flush=True)
+    except Exception:  # noqa: BLE001
+        summary["logprob_check"] = {"error": traceback.format_exc(limit=3)}
+        print(summary["logprob_check"]["error"], file=sys.stderr, flush=True)
+    save()
+
+
 # Main
 
 def main(argv: list[str] | None = None) -> None:
@@ -335,6 +544,9 @@ def main(argv: list[str] | None = None) -> None:
     agent = {"max_steps": 25, "loop_limit": 3, "error_limit": 5, "prompt": "v3", **cfg.get("agent", {})}
     out = Path(args.output)
     out.mkdir(parents=True, exist_ok=True)
+    if probe.get("engine") == "vllm":
+        main_vllm(cfg, probe, agent, out)
+        return
     summary = {"config": cfg, "probe": probe}
 
     def save():

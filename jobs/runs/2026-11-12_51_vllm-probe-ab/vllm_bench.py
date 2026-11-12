@@ -63,6 +63,10 @@ def main() -> None:
     result["vllm"] = vllm.__version__
     ids = json.loads(Path(args.ids).read_text())
     result["prompt_tokens"] = len(ids)
+    config = json.loads((Path(args.model) / "config.json").read_text())
+    limit = config.get("text_config", config).get("max_position_embeddings") or args.max_len
+    args.max_len = min(args.max_len, limit)  # Bielik 1.5B accepts only 8192 tokens.
+    result["max_len"] = args.max_len
     llm = None
     for eager in (False, True):
         start = time.perf_counter()
