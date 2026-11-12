@@ -515,3 +515,38 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 
 - The team selects all six models for SFT and RL. If the time is too short, the team reduces the number of models later.
 - Add this decision to `docs/MODELS.md`.
+
+## 2026-11-12
+
+### Research of the RL methods (issue idm-pro-047)
+
+- Branch `07-rl-method`. The research covers about 120 sources about these topics:
+  - RLHF, DPO, RLVR and the GRPO family;
+  - agent RL with tools and the design of the reward;
+  - LoRA in RL and the dynamics of an RL run.
+- An interactive page for the team explains the methods and gives the proposal. `docs/RL_methods_research.md` gets the summary after the decision.
+- `LocalModel` gets the setting `temperature`. The default 0 keeps the greedy output of the baselines. A temperature above 0 samples from the full distribution (no top-k and no top-p).
+
+### RL probe on Kaggle
+
+- Add `src/rl_probe.py`. It measures the cost and the signal of RL for one model. It does not train the model.
+- The probe uses 16 test tasks only for the measure. No test task goes into the train set, the validation set or a choice of settings.
+- Jobs 41 to 49 ran the probe for all six models. The results are in `jobs/JOBS.md`.
+- Before SFT, 0 to 38% of the groups of 8 rollouts have mixed rewards. Most groups have only zeros. Thus RL needs SFT first and a filter of the tasks by difficulty.
+- The partial reward gives a signal in only 0 to 12.5% of the groups. The binary reward stays the main reward.
+- In fp16 on a T4, the log-probabilities of the generation and of the forward pass differ by at most 0.037. No NaN occurred.
+- Gemma 4: the per-layer lookup table (PLE) can stay in CPU memory. The weights on the GPU then fall from 9.5 GB to 5.1 GB (E2B), and E4B fits on one GPU.
+- Gemma 4 gives the same log-probabilities with and without the KV cache, and in train mode.
+- The Kaggle image has torchao 0.10. PEFT 0.21 stops with an ImportError for it. A job that uses PEFT must remove torchao first.
+- The estimate is for 200 GRPO steps of 64 rollouts on two T4. The times are:
+
+  | Model | Hours |
+  |---|---|
+  | Bielik 1.5B | 27 |
+  | Gemma 4 E2B | 31 |
+  | Gemma 4 E4B | 65 |
+  | Qwen3.5-2B | 81 |
+  | Bielik 4.5B | 136 |
+  | Qwen3.5-4B | 207 |
+
+- Decision: after SFT, the probe runs again on train or validation tasks. The team selects the models for RL from this second probe. An RL job saves a checkpoint and continues in the next job, because a Kaggle session stops after 12 h.
