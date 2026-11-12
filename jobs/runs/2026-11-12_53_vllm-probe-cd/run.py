@@ -56,9 +56,21 @@ for codename, weights, gpu, patch in jobs:
     if patch:
         cmd.append("--turing-patch")
     procs.append((codename, subprocess.Popen(cmd, env={**os.environ, "CUDA_VISIBLE_DEVICES": str(gpu)})))
-for codename, p in procs:
+for (codename, p), (_, _, gpu, _) in zip(procs, jobs):
     try:
         print(codename, "exit", p.wait(timeout=max(0, END - time.time())), flush=True)
     except subprocess.TimeoutExpired:
         p.kill()
         print(codename, "timeout", flush=True)
+        continue
+    result = OUT / codename / "vllm.json"
+    if result.exists() and "batches" not in json.loads(result.read_text()) and time.time() < END - 120:
+        # A failed load keeps GPU memory in its process. Thus the eager try starts a new process.
+        result.rename(result.with_name("vllm-graphs.json"))
+        cmd = [arg for arg in p.args] + ["--eager"]
+        retry = subprocess.Popen(cmd, env={**os.environ, "CUDA_VISIBLE_DEVICES": str(gpu)})
+        try:
+            print(codename, "eager exit", retry.wait(timeout=max(0, END - time.time())), flush=True)
+        except subprocess.TimeoutExpired:
+            retry.kill()
+            print(codename, "eager timeout", flush=True)

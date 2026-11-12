@@ -47,6 +47,8 @@ def main() -> None:
     p.add_argument("--tp", type=int, default=1)
     p.add_argument("--max-len", type=int, default=16384)
     p.add_argument("--turing-patch", action="store_true")
+    p.add_argument("--eager", action="store_true")
+    p.add_argument("--mem", type=float, default=0.75)
     args = p.parse_args()
     result = {"model": args.model, "tp": args.tp}
     out = Path(args.out)
@@ -63,16 +65,21 @@ def main() -> None:
     result["vllm"] = vllm.__version__
     ids = json.loads(Path(args.ids).read_text())
     result["prompt_tokens"] = len(ids)
+    config = json.loads((Path(args.model) / "config.json").read_text())
+    limit = config.get("text_config", config).get("max_position_embeddings") or args.max_len
+    args.max_len = min(args.max_len, limit)  # Bielik 1.5B accepts only 8192 tokens.
+    result["max_len"] = args.max_len
     llm = None
-    for eager in (False, True):
+    for eager in (args.eager,):
         start = time.perf_counter()
         try:
             llm = LLM(model=args.model, dtype="float16", tensor_parallel_size=args.tp, max_model_len=args.max_len,
-                      gpu_memory_utilization=0.88, enable_prefix_caching=True, seed=0, enforce_eager=eager,
+                      gpu_memory_utilization=args.mem, enable_prefix_caching=True, seed=0, enforce_eager=eager,
+                      max_num_seqs=64, compilation_config={"cudagraph_capture_sizes": [1, 2, 4, 8, 16, 32, 64]},
                       generation_config="vllm")
             result["eager"], result["load_s"] = eager, round(time.perf_counter() - start, 1)
             break
-        except Exception:  # noqa: BLE001  The second try uses eager mode without CUDA graphs.
+        except Exception:  # noqa: BLE001  The job starts a second process in eager mode.
             result[f"load_error_eager_{eager}"] = traceback.format_exc(limit=4)[-3000:]
             save()
     if llm is None:
