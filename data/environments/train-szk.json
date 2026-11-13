@@ -1,0 +1,910 @@
+{
+  "name": "train-szk",
+  "site": "https://example.atlassian.net",
+  "now": "2026-11-25T11:00:00.000+0100",
+  "project": {
+    "key": "SZK",
+    "name": "fizyka.online - wdrożenia w szkołach"
+  },
+  "board": {
+    "id": "34",
+    "name": "SZK board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:270cfbac-512c-528d-a9cb-d92f86d0e342",
+      "display_name": "Jacek Kacprzyk",
+      "email": "jacek.kacprzyk@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:9e56103f-7316-5f51-8b10-ba49efbd7da3",
+      "display_name": "Marzena Cichocka",
+      "email": "marzena.cichocka@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:5326d7aa-3432-5d20-ab9e-07656a34f431",
+      "display_name": "Marzena Florczak",
+      "email": "marzena.florczak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:6731e624-a7d8-582d-9578-643905b9fee5",
+      "display_name": "Robert Gawroński",
+      "email": "robert.gawronski@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:5b78a3c1-5bba-54c7-83e7-84af3bd757b9",
+      "display_name": "Tamara Jurek",
+      "email": "tamara.jurek@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:b2703c0d-bc5a-5d9f-a509-ca09b82954b3",
+      "display_name": "Zdzisław Pośpiech",
+      "email": "zdzislaw.pospiech@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:d550bab1-9fce-59b7-97ea-dea36a9ed785",
+      "display_name": "Stefan Mucha",
+      "email": "stefan.mucha@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "341",
+      "name": "SZK Sprint 5",
+      "state": "closed",
+      "start_date": "2026-11-04T09:00:00.000Z",
+      "end_date": "2026-11-18T09:00:00.000Z",
+      "goal": "Pierwszy etap pilotażu: 10 szkół"
+    },
+    {
+      "id": "342",
+      "name": "SZK Sprint 6",
+      "state": "active",
+      "start_date": "2026-11-18T09:00:00.000Z",
+      "end_date": "2026-12-02T09:00:00.000Z",
+      "goal": "Szkolenia nauczycieli i sprzęt"
+    },
+    {
+      "id": "343",
+      "name": "SZK Sprint 7",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Drugi etap pilotażu"
+    },
+    {
+      "id": "344",
+      "name": "SZK Sprint 8",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "34001",
+      "key": "SZK-1",
+      "summary": "Umowy z dyrekcjami 10 szkół pierwszego etapu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Highest",
+      "assignee": "712020:d550bab1-9fce-59b7-97ea-dea36a9ed785",
+      "reporter": "712020:9e56103f-7316-5f51-8b10-ba49efbd7da3",
+      "labels": [
+        "contracts"
+      ],
+      "sprint": "341",
+      "created": "2026-09-17T14:15:00.000+0100",
+      "updated": "2026-09-20T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "340015",
+          "author": "712020:270cfbac-512c-528d-a9cb-d92f86d0e342",
+          "time_spent_seconds": 21600,
+          "comment": "Spotkania z dyrektorami",
+          "started": "2026-09-19T00:15:00.000+0100"
+        },
+        {
+          "id": "340016",
+          "author": "712020:270cfbac-512c-528d-a9cb-d92f86d0e342",
+          "time_spent_seconds": 7200,
+          "comment": "Podpisy",
+          "started": "2026-09-20T00:15:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "34002",
+      "key": "SZK-2",
+      "summary": "Lista szkół pilotażowych z województwa mazowieckiego",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:9e56103f-7316-5f51-8b10-ba49efbd7da3",
+      "reporter": "712020:6731e624-a7d8-582d-9578-643905b9fee5",
+      "labels": [
+        "pilot"
+      ],
+      "sprint": "341",
+      "created": "2026-09-18T11:45:00.000+0100",
+      "updated": "2026-09-21T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34003",
+      "key": "SZK-3",
+      "summary": "Pilot in a school in Gdańsk",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:5326d7aa-3432-5d20-ab9e-07656a34f431",
+      "labels": [
+        "pilot"
+      ],
+      "sprint": "341",
+      "created": "2026-09-20T12:00:00.000+0100",
+      "updated": "2026-09-23T12:00:00.000+0100",
+      "comments": [
+        {
+          "id": "340031",
+          "author": "712020:5326d7aa-3432-5d20-ab9e-07656a34f431",
+          "body": "The school has no physics teacher this year.",
+          "created": "2026-09-21T12:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "34004",
+      "key": "SZK-4",
+      "summary": "Ankieta sprzętu w szkołach pilotażowych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:b2703c0d-bc5a-5d9f-a509-ca09b82954b3",
+      "reporter": "712020:6731e624-a7d8-582d-9578-643905b9fee5",
+      "labels": [
+        "hardware",
+        "survey"
+      ],
+      "sprint": "341",
+      "created": "2026-09-22T10:00:00.000+0100",
+      "updated": "2026-09-25T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34005",
+      "key": "SZK-5",
+      "summary": "Szkolenie nauczycieli z SP 12 w Radomiu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:5326d7aa-3432-5d20-ab9e-07656a34f431",
+      "reporter": "712020:270cfbac-512c-528d-a9cb-d92f86d0e342",
+      "labels": [
+        "training"
+      ],
+      "sprint": "342",
+      "created": "2026-09-23T17:45:00.000+0100",
+      "updated": "2026-09-26T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "340055",
+          "author": "712020:5326d7aa-3432-5d20-ab9e-07656a34f431",
+          "time_spent_seconds": 18000,
+          "comment": "Szkolenie stacjonarne",
+          "started": "2026-09-25T00:45:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "34006",
+      "key": "SZK-6",
+      "summary": "Wi-Fi w SP 3 w Siedlcach nie wpuszcza aplikacji",
+      "description": "Szkolny filtr treści blokuje domenę aplikacji. Potrzebna zgoda administratora gminy.",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:5326d7aa-3432-5d20-ab9e-07656a34f431",
+      "reporter": "712020:9e56103f-7316-5f51-8b10-ba49efbd7da3",
+      "labels": [
+        "network",
+        "schools"
+      ],
+      "sprint": "342",
+      "created": "2026-09-25T12:15:00.000+0100",
+      "updated": "2026-09-28T12:15:00.000+0100",
+      "comments": [
+        {
+          "id": "340061",
+          "author": "712020:5326d7aa-3432-5d20-ab9e-07656a34f431",
+          "body": "Dzwoniłem do wójta, obiecał pomóc.",
+          "created": "2026-09-26T12:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "34007",
+      "key": "SZK-7",
+      "summary": "Zakup 30 tabletów dla szkoły w Pułtusku",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:6731e624-a7d8-582d-9578-643905b9fee5",
+      "reporter": "712020:6731e624-a7d8-582d-9578-643905b9fee5",
+      "labels": [
+        "hardware"
+      ],
+      "sprint": "342",
+      "created": "2026-09-26T12:45:00.000+0100",
+      "updated": "2026-09-29T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34008",
+      "key": "SZK-8",
+      "summary": "Training materials for the teachers",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:6731e624-a7d8-582d-9578-643905b9fee5",
+      "reporter": "712020:6731e624-a7d8-582d-9578-643905b9fee5",
+      "labels": [
+        "training",
+        "docs"
+      ],
+      "sprint": "342",
+      "created": "2026-09-28T12:45:00.000+0100",
+      "updated": "2026-10-01T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34009",
+      "key": "SZK-9",
+      "summary": "Harmonogram wizyt trenera w szkołach na grudzień",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:6731e624-a7d8-582d-9578-643905b9fee5",
+      "reporter": "712020:b2703c0d-bc5a-5d9f-a509-ca09b82954b3",
+      "labels": [
+        "training",
+        "schedule"
+      ],
+      "sprint": "342",
+      "created": "2026-09-29T15:45:00.000+0100",
+      "updated": "2026-10-02T15:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34010",
+      "key": "SZK-10",
+      "summary": "Zgody rodziców w szkole w Ostrołęce",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:6731e624-a7d8-582d-9578-643905b9fee5",
+      "reporter": "712020:5326d7aa-3432-5d20-ab9e-07656a34f431",
+      "labels": [
+        "consents"
+      ],
+      "sprint": "342",
+      "created": "2026-10-01T12:45:00.000+0100",
+      "updated": "2026-10-04T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34011",
+      "key": "SZK-11",
+      "summary": "Lista szkół od rektora do drugiego etapu pilotażu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:b2703c0d-bc5a-5d9f-a509-ca09b82954b3",
+      "reporter": "712020:b2703c0d-bc5a-5d9f-a509-ca09b82954b3",
+      "labels": [
+        "pilot"
+      ],
+      "sprint": "342",
+      "created": "2026-10-03T17:30:00.000+0100",
+      "updated": "2026-10-06T17:30:00.000+0100",
+      "comments": [
+        {
+          "id": "340111",
+          "author": "712020:b2703c0d-bc5a-5d9f-a509-ca09b82954b3",
+          "body": "Rektor przekazał listę ośmiu szkół, z którymi już rozmawiał.",
+          "created": "2026-10-04T17:30:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "34012",
+      "key": "SZK-12",
+      "summary": "Kontakt z kuratorium w sprawie rekomendacji",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:5326d7aa-3432-5d20-ab9e-07656a34f431",
+      "reporter": "712020:5326d7aa-3432-5d20-ab9e-07656a34f431",
+      "labels": [
+        "partners"
+      ],
+      "sprint": "342",
+      "created": "2026-10-04T13:00:00.000+0100",
+      "updated": "2026-10-07T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34013",
+      "key": "SZK-13",
+      "summary": "Nauczyciele nie mogą się zalogować w SP 7 w Płocku",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:270cfbac-512c-528d-a9cb-d92f86d0e342",
+      "reporter": "712020:6731e624-a7d8-582d-9578-643905b9fee5",
+      "labels": [
+        "accounts",
+        "schools"
+      ],
+      "sprint": "342",
+      "created": "2026-10-06T15:30:00.000+0100",
+      "updated": "2026-10-09T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34014",
+      "key": "SZK-14",
+      "summary": "Plakaty o projekcie do szkolnych korytarzy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:b2703c0d-bc5a-5d9f-a509-ca09b82954b3",
+      "labels": [
+        "promotion"
+      ],
+      "sprint": "342",
+      "created": "2026-10-07T11:45:00.000+0100",
+      "updated": "2026-10-10T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34015",
+      "key": "SZK-15",
+      "summary": "Rekrutacja szkół do drugiego etapu pilotażu",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:6731e624-a7d8-582d-9578-643905b9fee5",
+      "labels": [
+        "pilot"
+      ],
+      "sprint": "343",
+      "created": "2026-10-09T13:15:00.000+0100",
+      "updated": "2026-10-12T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34016",
+      "key": "SZK-16",
+      "summary": "Online training for the teachers of the second stage",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:270cfbac-512c-528d-a9cb-d92f86d0e342",
+      "reporter": "712020:5326d7aa-3432-5d20-ab9e-07656a34f431",
+      "labels": [
+        "training"
+      ],
+      "sprint": "343",
+      "created": "2026-10-10T11:45:00.000+0100",
+      "updated": "2026-10-13T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34017",
+      "key": "SZK-17",
+      "summary": "Umowa użyczenia tabletów dla szkół",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:5326d7aa-3432-5d20-ab9e-07656a34f431",
+      "reporter": "712020:9e56103f-7316-5f51-8b10-ba49efbd7da3",
+      "labels": [
+        "hardware",
+        "contracts"
+      ],
+      "sprint": "343",
+      "created": "2026-10-12T13:15:00.000+0100",
+      "updated": "2026-10-15T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34018",
+      "key": "SZK-18",
+      "summary": "Wzór zgody rodziców w wersji ukraińskiej",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:5326d7aa-3432-5d20-ab9e-07656a34f431",
+      "labels": [
+        "consents",
+        "i18n"
+      ],
+      "sprint": "343",
+      "created": "2026-10-13T09:15:00.000+0100",
+      "updated": "2026-10-16T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34019",
+      "key": "SZK-19",
+      "summary": "Szkoła w Mławie chce rezygnować z pilotażu",
+      "description": "Dyrektorka mówi, że nauczyciel nie ma czasu na nową aplikację.",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:9e56103f-7316-5f51-8b10-ba49efbd7da3",
+      "labels": [
+        "pilot"
+      ],
+      "sprint": null,
+      "created": "2026-10-15T10:45:00.000+0100",
+      "updated": "2026-10-18T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34020",
+      "key": "SZK-20",
+      "summary": "Konferencja dla dyrektorów szkół w styczniu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:6731e624-a7d8-582d-9578-643905b9fee5",
+      "labels": [
+        "promotion",
+        "partners"
+      ],
+      "sprint": null,
+      "created": "2026-10-17T11:45:00.000+0100",
+      "updated": "2026-10-20T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34021",
+      "key": "SZK-21",
+      "summary": "Gmina chce aplikację we wszystkich swoich szkołach",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:b2703c0d-bc5a-5d9f-a509-ca09b82954b3",
+      "labels": [
+        "partners"
+      ],
+      "sprint": null,
+      "created": "2026-10-18T17:00:00.000+0100",
+      "updated": "2026-10-21T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34022",
+      "key": "SZK-22",
+      "summary": "Instrukcja dla szkolnego informatyka",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:b2703c0d-bc5a-5d9f-a509-ca09b82954b3",
+      "labels": [
+        "docs",
+        "network"
+      ],
+      "sprint": null,
+      "created": "2026-10-20T11:45:00.000+0100",
+      "updated": "2026-10-23T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34023",
+      "key": "SZK-23",
+      "summary": "Ubezpieczenie tabletów w szkołach",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:9e56103f-7316-5f51-8b10-ba49efbd7da3",
+      "labels": [
+        "hardware"
+      ],
+      "sprint": null,
+      "created": "2026-10-21T14:00:00.000+0100",
+      "updated": "2026-10-24T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34024",
+      "key": "SZK-24",
+      "summary": "Pupils in Ciechanów share one account",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:270cfbac-512c-528d-a9cb-d92f86d0e342",
+      "reporter": "712020:6731e624-a7d8-582d-9578-643905b9fee5",
+      "labels": [
+        "accounts"
+      ],
+      "sprint": null,
+      "created": "2026-10-23T15:45:00.000+0100",
+      "updated": "2026-10-26T15:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34025",
+      "key": "SZK-25",
+      "summary": "Spotkanie z wydawnictwem podręczników",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:9e56103f-7316-5f51-8b10-ba49efbd7da3",
+      "reporter": "712020:5b78a3c1-5bba-54c7-83e7-84af3bd757b9",
+      "labels": [
+        "partners"
+      ],
+      "sprint": null,
+      "created": "2026-10-24T08:45:00.000+0100",
+      "updated": "2026-10-27T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34026",
+      "key": "SZK-26",
+      "summary": "Lista kontaktów do nauczycieli fizyki w powiecie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:b2703c0d-bc5a-5d9f-a509-ca09b82954b3",
+      "labels": [
+        "partners"
+      ],
+      "sprint": null,
+      "created": "2026-10-26T15:15:00.000+0100",
+      "updated": "2026-10-29T15:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34027",
+      "key": "SZK-27",
+      "summary": "Tablet w SP 1 w Wyszkowie nie ładuje się",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:6731e624-a7d8-582d-9578-643905b9fee5",
+      "labels": [
+        "hardware"
+      ],
+      "sprint": null,
+      "created": "2026-10-28T17:00:00.000+0100",
+      "updated": "2026-10-31T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34028",
+      "key": "SZK-28",
+      "summary": "Dyplomy dla nauczycieli za udział w pilotażu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": "712020:9e56103f-7316-5f51-8b10-ba49efbd7da3",
+      "reporter": "712020:9e56103f-7316-5f51-8b10-ba49efbd7da3",
+      "labels": [
+        "promotion"
+      ],
+      "sprint": null,
+      "created": "2026-10-29T15:45:00.000+0100",
+      "updated": "2026-11-01T15:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34029",
+      "key": "SZK-29",
+      "summary": "Wywiad dla lokalnej telewizji o projekcie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:5b78a3c1-5bba-54c7-83e7-84af3bd757b9",
+      "labels": [
+        "promotion"
+      ],
+      "sprint": "343",
+      "created": "2026-10-31T14:30:00.000+0100",
+      "updated": "2026-11-03T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34030",
+      "key": "SZK-30",
+      "summary": "Dzień otwarty projektu na uczelni",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:270cfbac-512c-528d-a9cb-d92f86d0e342",
+      "labels": [
+        "promotion"
+      ],
+      "sprint": null,
+      "created": "2026-11-01T11:00:00.000+0100",
+      "updated": "2026-11-04T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34031",
+      "key": "SZK-31",
+      "summary": "Kontrola zgód RODO w szkołach pilotażowych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:9e56103f-7316-5f51-8b10-ba49efbd7da3",
+      "labels": [
+        "consents",
+        "privacy"
+      ],
+      "sprint": null,
+      "created": "2026-11-03T17:00:00.000+0100",
+      "updated": "2026-11-06T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34032",
+      "key": "SZK-32",
+      "summary": "Feedback form after each training",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:9e56103f-7316-5f51-8b10-ba49efbd7da3",
+      "labels": [
+        "training",
+        "survey"
+      ],
+      "sprint": null,
+      "created": "2026-11-04T08:15:00.000+0100",
+      "updated": "2026-11-07T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34033",
+      "key": "SZK-33",
+      "summary": "Dwa terminy szkolenia w tej samej szkole",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:b2703c0d-bc5a-5d9f-a509-ca09b82954b3",
+      "labels": [
+        "schedule"
+      ],
+      "sprint": "342",
+      "created": "2026-11-06T13:00:00.000+0100",
+      "updated": "2026-11-09T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34034",
+      "key": "SZK-34",
+      "summary": "Transport tabletów do szkół drugiego etapu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:270cfbac-512c-528d-a9cb-d92f86d0e342",
+      "reporter": "712020:5326d7aa-3432-5d20-ab9e-07656a34f431",
+      "labels": [
+        "hardware"
+      ],
+      "sprint": null,
+      "created": "2026-11-07T10:45:00.000+0100",
+      "updated": "2026-11-10T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34035",
+      "key": "SZK-35",
+      "summary": "Opiekun projektu w każdej szkole",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:5326d7aa-3432-5d20-ab9e-07656a34f431",
+      "labels": [
+        "pilot"
+      ],
+      "sprint": null,
+      "created": "2026-11-09T10:45:00.000+0100",
+      "updated": "2026-11-12T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34036",
+      "key": "SZK-36",
+      "summary": "Zaproszenie dla posłanki na lekcję pokazową",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:9e56103f-7316-5f51-8b10-ba49efbd7da3",
+      "reporter": "712020:5326d7aa-3432-5d20-ab9e-07656a34f431",
+      "labels": [
+        "promotion"
+      ],
+      "sprint": null,
+      "created": "2026-11-11T08:15:00.000+0100",
+      "updated": "2026-11-14T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34037",
+      "key": "SZK-37",
+      "summary": "Lekcja pokazowa w SP 12 w Radomiu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:6731e624-a7d8-582d-9578-643905b9fee5",
+      "reporter": "712020:5b78a3c1-5bba-54c7-83e7-84af3bd757b9",
+      "labels": [
+        "training"
+      ],
+      "sprint": "342",
+      "created": "2026-11-12T13:00:00.000+0100",
+      "updated": "2026-11-15T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34038",
+      "key": "SZK-38",
+      "summary": "Mapa szkół pilotażowych na stronie projektu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:5326d7aa-3432-5d20-ab9e-07656a34f431",
+      "labels": [
+        "promotion"
+      ],
+      "sprint": null,
+      "created": "2026-11-14T16:15:00.000+0100",
+      "updated": "2026-11-17T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34039",
+      "key": "SZK-39",
+      "summary": "Rozliczenie delegacji trenerów za listopad",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:5326d7aa-3432-5d20-ab9e-07656a34f431",
+      "labels": [
+        "costs"
+      ],
+      "sprint": null,
+      "created": "2026-11-15T11:45:00.000+0100",
+      "updated": "2026-11-18T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "34040",
+      "key": "SZK-40",
+      "summary": "Szkoła w Sokołowie bez rzutnika w sali fizycznej",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:9e56103f-7316-5f51-8b10-ba49efbd7da3",
+      "labels": [
+        "hardware",
+        "schools"
+      ],
+      "sprint": null,
+      "created": "2026-11-17T09:30:00.000+0100",
+      "updated": "2026-11-20T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

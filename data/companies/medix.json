@@ -2,6 +2,7 @@
   "name": "Medix",
   "about": "A network of medical centres: registration and call centre, laboratory, imaging, IT of the clinics and settlements with NFZ.",
   "split": "train",
+  "first_board_id": 26,
   "now": "2026-10-21T08:45:00.000+0100",
   "personas": [
     {"name": "Elżbieta Kurowska", "board": "train-rej", "role": "Head of the registration desks", "style": "Practical. Counts patients, calls and queues. Lists the complaints of the front desk, then gives the exact request."},

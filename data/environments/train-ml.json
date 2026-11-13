@@ -1,0 +1,901 @@
+{
+  "name": "train-ml",
+  "site": "https://example.atlassian.net",
+  "now": "2026-11-25T11:00:00.000+0100",
+  "project": {
+    "key": "ML",
+    "name": "fizyka.online - model i tutor AI"
+  },
+  "board": {
+    "id": "33",
+    "name": "ML board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:a0c8e4db-9cdd-5ab5-8652-317b179feadc",
+      "display_name": "Lena Dąbrowska",
+      "email": "lena.dabrowska@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:162bc8fd-3dc1-58d2-9a06-160c4f3471cb",
+      "display_name": "Ignacy Renifer",
+      "email": "ignacy.renifer@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:379b0d57-c19a-513a-a567-f94062954bff",
+      "display_name": "Arash Karimi",
+      "email": "arash.karimi@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:d9b51b47-95ee-5900-b3f4-699dfc23e3c2",
+      "display_name": "Lena Olszewska",
+      "email": "lena.olszewska@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:8bbeb44f-a668-5811-bfc1-e9dbde64770a",
+      "display_name": "Tobiasz Mrozek",
+      "email": "tobiasz.mrozek@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+      "display_name": "Marianna Kołodziej",
+      "email": "marianna.kolodziej@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:2e58af65-4e00-536d-93c3-4140bc2c0b94",
+      "display_name": "Celina Rudnicka",
+      "email": "celina.rudnicka@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "331",
+      "name": "ML Sprint 20",
+      "state": "closed",
+      "start_date": "2026-11-04T09:00:00.000Z",
+      "end_date": "2026-11-18T09:00:00.000Z",
+      "goal": "Ewaluacja tutora na zadaniach z podręcznika"
+    },
+    {
+      "id": "332",
+      "name": "ML Sprint 21",
+      "state": "active",
+      "start_date": "2026-11-18T09:00:00.000Z",
+      "end_date": "2026-12-02T09:00:00.000Z",
+      "goal": "Mniej błędów we wzorach i jednostkach"
+    },
+    {
+      "id": "333",
+      "name": "ML Sprint 22",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Tutor głosowy"
+    },
+    {
+      "id": "334",
+      "name": "ML Sprint 23",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "33001",
+      "key": "ML-1",
+      "summary": "Zbiór 500 zadań z podręcznika do ewaluacji tutora",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:2e58af65-4e00-536d-93c3-4140bc2c0b94",
+      "reporter": "712020:d9b51b47-95ee-5900-b3f4-699dfc23e3c2",
+      "labels": [
+        "evaluation",
+        "data"
+      ],
+      "sprint": "331",
+      "created": "2026-09-17T08:00:00.000+0100",
+      "updated": "2026-09-20T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "330015",
+          "author": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+          "time_spent_seconds": 28800,
+          "comment": "Przepisanie zadań",
+          "started": "2026-09-19T00:00:00.000+0100"
+        },
+        {
+          "id": "330016",
+          "author": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+          "time_spent_seconds": 14400,
+          "comment": "Sprawdzenie odpowiedzi",
+          "started": "2026-09-20T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "33002",
+      "key": "ML-2",
+      "summary": "Baseline evaluation of the tutor",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:a0c8e4db-9cdd-5ab5-8652-317b179feadc",
+      "reporter": "712020:379b0d57-c19a-513a-a567-f94062954bff",
+      "labels": [
+        "evaluation"
+      ],
+      "sprint": "331",
+      "created": "2026-09-19T11:30:00.000+0100",
+      "updated": "2026-09-22T11:30:00.000+0100",
+      "comments": [
+        {
+          "id": "330021",
+          "author": "712020:a0c8e4db-9cdd-5ab5-8652-317b179feadc",
+          "body": "Accuracy 71% on the 500 tasks, the report is on the drive.",
+          "created": "2026-09-20T11:30:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "33003",
+      "key": "ML-3",
+      "summary": "Tutor w formie gadającego kota",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Cancelled",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:d9b51b47-95ee-5900-b3f4-699dfc23e3c2",
+      "labels": [
+        "tutor"
+      ],
+      "sprint": "331",
+      "created": "2026-09-20T15:45:00.000+0100",
+      "updated": "2026-09-23T15:45:00.000+0100",
+      "comments": [
+        {
+          "id": "330031",
+          "author": "712020:d9b51b47-95ee-5900-b3f4-699dfc23e3c2",
+          "body": "Pomysł Ignacego. Nauczyciele w ankiecie byli przeciw.",
+          "created": "2026-09-21T15:45:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "33004",
+      "key": "ML-4",
+      "summary": "Tutor myli masę z ciężarem",
+      "description": "W 14 zadaniach tutor podaje ciężar w kilogramach.",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+      "reporter": "712020:a0c8e4db-9cdd-5ab5-8652-317b179feadc",
+      "labels": [
+        "tutor",
+        "physics"
+      ],
+      "sprint": "332",
+      "created": "2026-09-22T09:00:00.000+0100",
+      "updated": "2026-09-25T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "330045",
+          "author": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+          "time_spent_seconds": 10800,
+          "comment": "Analiza błędnych odpowiedzi",
+          "started": "2026-09-24T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "33005",
+      "key": "ML-5",
+      "summary": "Sprawdzanie jednostek w odpowiedzi tutora",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:8bbeb44f-a668-5811-bfc1-e9dbde64770a",
+      "reporter": "712020:8bbeb44f-a668-5811-bfc1-e9dbde64770a",
+      "labels": [
+        "tutor",
+        "validation"
+      ],
+      "sprint": "332",
+      "created": "2026-09-23T10:15:00.000+0100",
+      "updated": "2026-09-26T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33006",
+      "key": "ML-6",
+      "summary": "Tutor gives the full solution instead of a hint",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:d9b51b47-95ee-5900-b3f4-699dfc23e3c2",
+      "reporter": "712020:a0c8e4db-9cdd-5ab5-8652-317b179feadc",
+      "labels": [
+        "tutor",
+        "pedagogy"
+      ],
+      "sprint": "332",
+      "created": "2026-09-25T12:30:00.000+0100",
+      "updated": "2026-09-28T12:30:00.000+0100",
+      "comments": [
+        {
+          "id": "330061",
+          "author": "712020:d9b51b47-95ee-5900-b3f4-699dfc23e3c2",
+          "body": "Teachers in the pilot say the pupils copy the answers.",
+          "created": "2026-09-26T12:30:00.000+0100"
+        },
+        {
+          "id": "330062",
+          "author": "712020:d9b51b47-95ee-5900-b3f4-699dfc23e3c2",
+          "body": "The prompt does not stop it, we need a check.",
+          "created": "2026-09-27T12:30:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "33007",
+      "key": "ML-7",
+      "summary": "Filtr treści nieodpowiednich dla dzieci",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In review",
+      "priority": "Highest",
+      "assignee": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+      "reporter": "712020:a0c8e4db-9cdd-5ab5-8652-317b179feadc",
+      "labels": [
+        "safety"
+      ],
+      "sprint": "332",
+      "created": "2026-09-27T11:00:00.000+0100",
+      "updated": "2026-09-30T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33008",
+      "key": "ML-8",
+      "summary": "Koszt zapytań do modelu na ucznia miesięcznie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:8bbeb44f-a668-5811-bfc1-e9dbde64770a",
+      "reporter": "712020:379b0d57-c19a-513a-a567-f94062954bff",
+      "labels": [
+        "cost"
+      ],
+      "sprint": "332",
+      "created": "2026-09-28T09:15:00.000+0100",
+      "updated": "2026-10-01T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33009",
+      "key": "ML-9",
+      "summary": "Wzory w LaTeX w odpowiedziach tutora",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+      "reporter": "712020:379b0d57-c19a-513a-a567-f94062954bff",
+      "labels": [
+        "formulas"
+      ],
+      "sprint": "332",
+      "created": "2026-09-30T10:15:00.000+0100",
+      "updated": "2026-10-03T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "330095",
+          "author": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+          "time_spent_seconds": 7200,
+          "comment": "",
+          "started": "2026-10-02T00:15:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "33010",
+      "key": "ML-10",
+      "summary": "Ewaluacja tutora na zadaniach z elektryczności",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:a0c8e4db-9cdd-5ab5-8652-317b179feadc",
+      "reporter": "712020:d9b51b47-95ee-5900-b3f4-699dfc23e3c2",
+      "labels": [
+        "evaluation"
+      ],
+      "sprint": "332",
+      "created": "2026-10-02T11:15:00.000+0100",
+      "updated": "2026-10-05T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33011",
+      "key": "ML-11",
+      "summary": "Tutor odpowiada zbyt trudnym językiem dla 13-latków",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:8bbeb44f-a668-5811-bfc1-e9dbde64770a",
+      "labels": [
+        "tutor",
+        "pedagogy"
+      ],
+      "sprint": "332",
+      "created": "2026-10-03T16:00:00.000+0100",
+      "updated": "2026-10-06T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33012",
+      "key": "ML-12",
+      "summary": "Annotation guide for the tutor answers",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+      "labels": [
+        "data",
+        "docs"
+      ],
+      "sprint": "332",
+      "created": "2026-10-05T09:15:00.000+0100",
+      "updated": "2026-10-08T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33013",
+      "key": "ML-13",
+      "summary": "Demo tutora AI dla rektora",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+      "reporter": "712020:d9b51b47-95ee-5900-b3f4-699dfc23e3c2",
+      "labels": [
+        "demo"
+      ],
+      "sprint": "332",
+      "created": "2026-10-07T08:15:00.000+0100",
+      "updated": "2026-10-10T08:15:00.000+0100",
+      "comments": [
+        {
+          "id": "330131",
+          "author": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+          "body": "Rektor chce zobaczyć tutora przed rozmową o drugim etapie grantu.",
+          "created": "2026-10-08T08:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "33014",
+      "key": "ML-14",
+      "summary": "Czas odpowiedzi tutora ponad 8 sekund",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+      "reporter": "712020:379b0d57-c19a-513a-a567-f94062954bff",
+      "labels": [
+        "performance"
+      ],
+      "sprint": "332",
+      "created": "2026-10-08T13:15:00.000+0100",
+      "updated": "2026-10-11T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33015",
+      "key": "ML-15",
+      "summary": "Tutor głosowy dla uczniów z dysleksją",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+      "labels": [
+        "voice",
+        "accessibility"
+      ],
+      "sprint": "333",
+      "created": "2026-10-10T08:30:00.000+0100",
+      "updated": "2026-10-13T08:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33016",
+      "key": "ML-16",
+      "summary": "Rozpoznawanie mowy z polskimi nazwami jednostek",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:162bc8fd-3dc1-58d2-9a06-160c4f3471cb",
+      "reporter": "712020:d9b51b47-95ee-5900-b3f4-699dfc23e3c2",
+      "labels": [
+        "voice"
+      ],
+      "sprint": "333",
+      "created": "2026-10-12T17:15:00.000+0100",
+      "updated": "2026-10-15T17:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33017",
+      "key": "ML-17",
+      "summary": "Fine-tuning a small model on the textbook tasks",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:379b0d57-c19a-513a-a567-f94062954bff",
+      "labels": [
+        "training"
+      ],
+      "sprint": "333",
+      "created": "2026-10-13T11:30:00.000+0100",
+      "updated": "2026-10-16T11:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33018",
+      "key": "ML-18",
+      "summary": "Tutor nie rozumie zadań z rysunkiem",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:379b0d57-c19a-513a-a567-f94062954bff",
+      "labels": [
+        "tutor",
+        "vision"
+      ],
+      "sprint": "333",
+      "created": "2026-10-15T17:00:00.000+0100",
+      "updated": "2026-10-18T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33019",
+      "key": "ML-19",
+      "summary": "Logi rozmów uczniów bez danych osobowych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:d9b51b47-95ee-5900-b3f4-699dfc23e3c2",
+      "reporter": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+      "labels": [
+        "privacy",
+        "data"
+      ],
+      "sprint": null,
+      "created": "2026-10-17T12:45:00.000+0100",
+      "updated": "2026-10-20T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33020",
+      "key": "ML-20",
+      "summary": "Tutor wymyśla wartości stałych fizycznych",
+      "description": "Przyspieszenie ziemskie raz 9,81, a raz 10,2 m/s².",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+      "labels": [
+        "tutor",
+        "physics"
+      ],
+      "sprint": null,
+      "created": "2026-10-18T09:00:00.000+0100",
+      "updated": "2026-10-21T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33021",
+      "key": "ML-21",
+      "summary": "Porównanie trzech modeli językowych na naszym zbiorze",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:379b0d57-c19a-513a-a567-f94062954bff",
+      "labels": [
+        "evaluation"
+      ],
+      "sprint": null,
+      "created": "2026-10-20T08:00:00.000+0100",
+      "updated": "2026-10-23T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33022",
+      "key": "ML-22",
+      "summary": "Kalkulator jako narzędzie tutora",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:a0c8e4db-9cdd-5ab5-8652-317b179feadc",
+      "reporter": "712020:a0c8e4db-9cdd-5ab5-8652-317b179feadc",
+      "labels": [
+        "tools",
+        "tutor"
+      ],
+      "sprint": null,
+      "created": "2026-10-21T09:45:00.000+0100",
+      "updated": "2026-10-24T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33023",
+      "key": "ML-23",
+      "summary": "Pytania kontrolne tutora po rozwiązaniu zadania",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:379b0d57-c19a-513a-a567-f94062954bff",
+      "reporter": "712020:d9b51b47-95ee-5900-b3f4-699dfc23e3c2",
+      "labels": [
+        "pedagogy"
+      ],
+      "sprint": null,
+      "created": "2026-10-23T14:45:00.000+0100",
+      "updated": "2026-10-26T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33024",
+      "key": "ML-24",
+      "summary": "Tutor chwali błędną odpowiedź ucznia",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:8bbeb44f-a668-5811-bfc1-e9dbde64770a",
+      "labels": [
+        "tutor",
+        "pedagogy"
+      ],
+      "sprint": null,
+      "created": "2026-10-25T10:30:00.000+0100",
+      "updated": "2026-10-28T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33025",
+      "key": "ML-25",
+      "summary": "Model fallback when the API limit ends",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:d9b51b47-95ee-5900-b3f4-699dfc23e3c2",
+      "reporter": "712020:162bc8fd-3dc1-58d2-9a06-160c4f3471cb",
+      "labels": [
+        "cost",
+        "infra"
+      ],
+      "sprint": null,
+      "created": "2026-10-26T14:45:00.000+0100",
+      "updated": "2026-10-29T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33026",
+      "key": "ML-26",
+      "summary": "Zbiór pytań uczniów z pilotażu do analizy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:d9b51b47-95ee-5900-b3f4-699dfc23e3c2",
+      "labels": [
+        "data"
+      ],
+      "sprint": null,
+      "created": "2026-10-28T12:30:00.000+0100",
+      "updated": "2026-10-31T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33027",
+      "key": "ML-27",
+      "summary": "Tutor jako pirat w Dniu Pirata",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:8bbeb44f-a668-5811-bfc1-e9dbde64770a",
+      "labels": [
+        "tutor"
+      ],
+      "sprint": null,
+      "created": "2026-10-30T17:30:00.000+0100",
+      "updated": "2026-11-02T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33028",
+      "key": "ML-28",
+      "summary": "Metryka jakości podpowiedzi oceniana przez nauczycieli",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+      "reporter": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+      "labels": [
+        "evaluation",
+        "pedagogy"
+      ],
+      "sprint": null,
+      "created": "2026-10-31T11:30:00.000+0100",
+      "updated": "2026-11-03T11:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33029",
+      "key": "ML-29",
+      "summary": "Zbyt długie odpowiedzi tutora na telefonie",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:d9b51b47-95ee-5900-b3f4-699dfc23e3c2",
+      "labels": [
+        "tutor",
+        "ui"
+      ],
+      "sprint": "332",
+      "created": "2026-11-02T08:15:00.000+0100",
+      "updated": "2026-11-05T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33030",
+      "key": "ML-30",
+      "summary": "Wersjonowanie promptów tutora",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+      "reporter": "712020:8bbeb44f-a668-5811-bfc1-e9dbde64770a",
+      "labels": [
+        "infra"
+      ],
+      "sprint": null,
+      "created": "2026-11-04T14:15:00.000+0100",
+      "updated": "2026-11-07T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33031",
+      "key": "ML-31",
+      "summary": "Tutor odpowiada po angielsku na pytanie z błędem ortograficznym",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:379b0d57-c19a-513a-a567-f94062954bff",
+      "labels": [
+        "tutor",
+        "i18n"
+      ],
+      "sprint": null,
+      "created": "2026-11-05T11:30:00.000+0100",
+      "updated": "2026-11-08T11:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33032",
+      "key": "ML-32",
+      "summary": "Opis modelu do artykułu na konferencję",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:8bbeb44f-a668-5811-bfc1-e9dbde64770a",
+      "reporter": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+      "labels": [
+        "docs",
+        "research"
+      ],
+      "sprint": null,
+      "created": "2026-11-07T13:30:00.000+0100",
+      "updated": "2026-11-10T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33033",
+      "key": "ML-33",
+      "summary": "Red teaming of the tutor with the PhD students",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:d9b51b47-95ee-5900-b3f4-699dfc23e3c2",
+      "reporter": "712020:162bc8fd-3dc1-58d2-9a06-160c4f3471cb",
+      "labels": [
+        "safety"
+      ],
+      "sprint": "333",
+      "created": "2026-11-09T15:30:00.000+0100",
+      "updated": "2026-11-12T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33034",
+      "key": "ML-34",
+      "summary": "Cache odpowiedzi na najczęstsze pytania",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+      "labels": [
+        "cost",
+        "performance"
+      ],
+      "sprint": null,
+      "created": "2026-11-10T15:30:00.000+0100",
+      "updated": "2026-11-13T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33035",
+      "key": "ML-35",
+      "summary": "Ocena tutora przez uczniów kciukiem w górę lub w dół",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+      "labels": [
+        "evaluation"
+      ],
+      "sprint": null,
+      "created": "2026-11-12T09:00:00.000+0100",
+      "updated": "2026-11-15T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33036",
+      "key": "ML-36",
+      "summary": "Tutor podaje wzór na energię kinetyczną bez połowy",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "High",
+      "assignee": "712020:379b0d57-c19a-513a-a567-f94062954bff",
+      "reporter": "712020:8bbeb44f-a668-5811-bfc1-e9dbde64770a",
+      "labels": [
+        "physics",
+        "formulas"
+      ],
+      "sprint": "332",
+      "created": "2026-11-14T09:30:00.000+0100",
+      "updated": "2026-11-17T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33037",
+      "key": "ML-37",
+      "summary": "Zasady przechowywania danych treningowych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:6671ffe5-4441-5769-8264-27885f8c8ddf",
+      "reporter": "712020:162bc8fd-3dc1-58d2-9a06-160c4f3471cb",
+      "labels": [
+        "privacy",
+        "docs"
+      ],
+      "sprint": null,
+      "created": "2026-11-15T14:30:00.000+0100",
+      "updated": "2026-11-18T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "33038",
+      "key": "ML-38",
+      "summary": "Generowanie nowych zadań z kontrolą nauczyciela",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:8bbeb44f-a668-5811-bfc1-e9dbde64770a",
+      "labels": [
+        "exercises"
+      ],
+      "sprint": null,
+      "created": "2026-11-17T13:30:00.000+0100",
+      "updated": "2026-11-20T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

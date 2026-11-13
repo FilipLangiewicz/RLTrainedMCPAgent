@@ -136,13 +136,15 @@ def check_board(board: Board) -> list[str]:
 def build_all(seed: int = 2026) -> list[Board]:
     """Build the boards of all companies. Stop if a rule fails or if a board repeats a name or a summary of another board."""
     boards, errors = [], []
-    board_id = 21
     for path in sorted(COMPANIES.glob("*.json")):
         company = json.loads(path.read_text(encoding="utf-8"))
-        for spec in company["boards"]:
-            boards.append(build_board(company, spec, board_id, seed))
-            board_id += 1
+        # A fixed first id keeps the ids of a company when a new company file comes before it.
+        for n, spec in enumerate(company["boards"]):
+            boards.append(build_board(company, spec, company["first_board_id"] + n, seed))
     test = [load_board(p) for p in sorted(ENVIRONMENTS.glob("test-*.json"))]
+    ids = [b.board.id for b in test + boards]
+    if len(ids) != len(set(ids)):
+        raise ValueError(f"two boards have the same board id: {sorted(ids)}")
     seen_keys, seen_summaries, seen_names = {}, {}, {}
     for b in test + boards:
         errors += check_board(b) if b not in test else []

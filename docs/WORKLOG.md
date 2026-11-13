@@ -541,3 +541,11 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - Add the boards `data/environments/train-{rej,lab,rtg,it,nfz}.json`.
 - Medix has its own date of the board (`now`), so the sprint dates differ from the dates of Curify.
 - The boards of Curify do not change when the generator runs again.
+
+### Train boards of fizyka.online
+
+- Add `data/companies/fizyka-online.json`: a research project with an AI app for physics in primary schools. It has 5 boards (`FIZ`, `NAU`, `ML`, `SZK`, `BAD`), 194 issues and 15 authors.
+- Add the boards `data/environments/train-{fiz,nau,ml,szk,bad}.json`.
+- Each company file now has `first_board_id`. Before, the board ids came from the order of the files, so a new file changed the ids of other companies.
+- The generator stops if two boards have the same board id.
+- The boards of Curify and Medix keep the ids of their last commit.

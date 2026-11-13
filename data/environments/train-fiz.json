@@ -1,0 +1,916 @@
+{
+  "name": "train-fiz",
+  "site": "https://example.atlassian.net",
+  "now": "2026-11-25T11:00:00.000+0100",
+  "project": {
+    "key": "FIZ",
+    "name": "fizyka.online - aplikacja ucznia"
+  },
+  "board": {
+    "id": "31",
+    "name": "FIZ board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:dad1f746-fb12-591a-ad6f-d006859d47dd",
+      "display_name": "Aleksander Brzeziński",
+      "email": "aleksander.brzezinski@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:06e4c54a-dc5d-58f5-aa50-6917a02386ad",
+      "display_name": "Klara Wysocka",
+      "email": "klara.wysocka@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:9d39da8a-d12d-5c68-8874-d0a3b31815db",
+      "display_name": "Klara Piątek",
+      "email": "klara.piatek@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:fe5af58c-9715-5f2e-a4ac-5b56d7d14004",
+      "display_name": "Daniela Costa",
+      "email": "daniela.costa@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:2208ec43-96ce-5263-9a4c-79e343aebaab",
+      "display_name": "Tymon Rybak",
+      "email": "tymon.rybak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:08475d38-01e6-5b8f-90df-f40f8433570b",
+      "display_name": "Wanda Łukasik",
+      "email": "wanda.lukasik@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:66968ef4-ef8c-56ec-9b24-a7fbf83f38c6",
+      "display_name": "Kornel Sitko",
+      "email": "kornel.sitko@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "311",
+      "name": "FIZ Sprint 13",
+      "state": "closed",
+      "start_date": "2026-11-04T09:00:00.000Z",
+      "end_date": "2026-11-18T09:00:00.000Z",
+      "goal": "Symulacje ruchu i sił"
+    },
+    {
+      "id": "312",
+      "name": "FIZ Sprint 14",
+      "state": "active",
+      "start_date": "2026-11-18T09:00:00.000Z",
+      "end_date": "2026-12-02T09:00:00.000Z",
+      "goal": "Podpowiedzi tutora AI w zadaniach"
+    },
+    {
+      "id": "313",
+      "name": "FIZ Sprint 15",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Elektryczność i obwody"
+    },
+    {
+      "id": "314",
+      "name": "FIZ Sprint 16",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "31001",
+      "key": "FIZ-1",
+      "summary": "Symulacja rzutu ukośnego z regulacją kąta",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:66968ef4-ef8c-56ec-9b24-a7fbf83f38c6",
+      "reporter": "712020:06e4c54a-dc5d-58f5-aa50-6917a02386ad",
+      "labels": [
+        "simulation",
+        "mechanics"
+      ],
+      "sprint": "311",
+      "created": "2026-09-17T08:45:00.000+0100",
+      "updated": "2026-09-20T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "310015",
+          "author": "712020:9d39da8a-d12d-5c68-8874-d0a3b31815db",
+          "time_spent_seconds": 21600,
+          "comment": "Fizyka ruchu",
+          "started": "2026-09-19T00:45:00.000+0100"
+        },
+        {
+          "id": "310016",
+          "author": "712020:9d39da8a-d12d-5c68-8874-d0a3b31815db",
+          "time_spent_seconds": 10800,
+          "comment": "Suwak kąta i prędkości",
+          "started": "2026-09-20T00:45:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "31002",
+      "key": "FIZ-2",
+      "summary": "Wykres prędkości od czasu rysuje się odwrotnie",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:06e4c54a-dc5d-58f5-aa50-6917a02386ad",
+      "reporter": "712020:06e4c54a-dc5d-58f5-aa50-6917a02386ad",
+      "labels": [
+        "simulation",
+        "charts"
+      ],
+      "sprint": "311",
+      "created": "2026-09-18T08:30:00.000+0100",
+      "updated": "2026-09-21T08:30:00.000+0100",
+      "comments": [
+        {
+          "id": "310021",
+          "author": "712020:06e4c54a-dc5d-58f5-aa50-6917a02386ad",
+          "body": "Oś Y była odwrócona w nowej bibliotece wykresów.",
+          "created": "2026-09-19T08:30:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "31003",
+      "key": "FIZ-3",
+      "summary": "3D version of the inclined plane",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:2208ec43-96ce-5263-9a4c-79e343aebaab",
+      "labels": [
+        "simulation"
+      ],
+      "sprint": "311",
+      "created": "2026-09-20T15:30:00.000+0100",
+      "updated": "2026-09-23T15:30:00.000+0100",
+      "comments": [
+        {
+          "id": "310031",
+          "author": "712020:2208ec43-96ce-5263-9a4c-79e343aebaab",
+          "body": "School computers are too slow for 3D, we keep 2D.",
+          "created": "2026-09-21T15:30:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "31004",
+      "key": "FIZ-4",
+      "summary": "Zadania o ruchu jednostajnym dla klasy 7",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:dad1f746-fb12-591a-ad6f-d006859d47dd",
+      "reporter": "712020:2208ec43-96ce-5263-9a4c-79e343aebaab",
+      "labels": [
+        "exercises",
+        "mechanics"
+      ],
+      "sprint": "311",
+      "created": "2026-09-22T08:15:00.000+0100",
+      "updated": "2026-09-25T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31005",
+      "key": "FIZ-5",
+      "summary": "Podpowiedź tutora AI po drugiej błędnej odpowiedzi",
+      "description": "Po dwóch błędach uczeń dostaje podpowiedź, a nie gotowy wynik.",
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:fe5af58c-9715-5f2e-a4ac-5b56d7d14004",
+      "reporter": "712020:2208ec43-96ce-5263-9a4c-79e343aebaab",
+      "labels": [
+        "tutor",
+        "exercises"
+      ],
+      "sprint": "312",
+      "created": "2026-09-23T17:45:00.000+0100",
+      "updated": "2026-09-26T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "310055",
+          "author": "712020:fe5af58c-9715-5f2e-a4ac-5b56d7d14004",
+          "time_spent_seconds": 14400,
+          "comment": "Logika podpowiedzi",
+          "started": "2026-09-25T00:45:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "31006",
+      "key": "FIZ-6",
+      "summary": "Symulacja siły wyporu z naczyniem i klockami",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:2208ec43-96ce-5263-9a4c-79e343aebaab",
+      "reporter": "712020:fe5af58c-9715-5f2e-a4ac-5b56d7d14004",
+      "labels": [
+        "simulation",
+        "hydrostatics"
+      ],
+      "sprint": "312",
+      "created": "2026-09-25T08:30:00.000+0100",
+      "updated": "2026-09-28T08:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31007",
+      "key": "FIZ-7",
+      "summary": "Aplikacja nie działa na tabletach szkolnych z Androidem 9",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:2208ec43-96ce-5263-9a4c-79e343aebaab",
+      "reporter": "712020:08475d38-01e6-5b8f-90df-f40f8433570b",
+      "labels": [
+        "android",
+        "schools"
+      ],
+      "sprint": "312",
+      "created": "2026-09-27T09:00:00.000+0100",
+      "updated": "2026-09-30T09:00:00.000+0100",
+      "comments": [
+        {
+          "id": "310071",
+          "author": "712020:2208ec43-96ce-5263-9a4c-79e343aebaab",
+          "body": "Zgłoszenie z trzech szkół pilotażowych.",
+          "created": "2026-09-28T09:00:00.000+0100"
+        },
+        {
+          "id": "310072",
+          "author": "712020:2208ec43-96ce-5263-9a4c-79e343aebaab",
+          "body": "Biblioteka WebGL wymaga Androida 10.",
+          "created": "2026-09-29T09:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "31008",
+      "key": "FIZ-8",
+      "summary": "Units are not checked in the student answer",
+      "description": "The answer 5 is accepted for 5 m/s and for 5 km/h.",
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "High",
+      "assignee": "712020:08475d38-01e6-5b8f-90df-f40f8433570b",
+      "reporter": "712020:fe5af58c-9715-5f2e-a4ac-5b56d7d14004",
+      "labels": [
+        "exercises",
+        "validation"
+      ],
+      "sprint": "312",
+      "created": "2026-09-28T16:00:00.000+0100",
+      "updated": "2026-10-01T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31009",
+      "key": "FIZ-9",
+      "summary": "Odznaki za serię poprawnych zadań",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In review",
+      "priority": "Low",
+      "assignee": "712020:9d39da8a-d12d-5c68-8874-d0a3b31815db",
+      "reporter": "712020:fe5af58c-9715-5f2e-a4ac-5b56d7d14004",
+      "labels": [
+        "gamification"
+      ],
+      "sprint": "312",
+      "created": "2026-09-30T08:00:00.000+0100",
+      "updated": "2026-10-03T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31010",
+      "key": "FIZ-10",
+      "summary": "Tryb dużej czcionki dla uczniów słabowidzących",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:fe5af58c-9715-5f2e-a4ac-5b56d7d14004",
+      "reporter": "712020:08475d38-01e6-5b8f-90df-f40f8433570b",
+      "labels": [
+        "accessibility"
+      ],
+      "sprint": "312",
+      "created": "2026-10-01T13:30:00.000+0100",
+      "updated": "2026-10-04T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "310105",
+          "author": "712020:fe5af58c-9715-5f2e-a4ac-5b56d7d14004",
+          "time_spent_seconds": 7200,
+          "comment": "",
+          "started": "2026-10-03T00:30:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "31011",
+      "key": "FIZ-11",
+      "summary": "Klawiatura ekranowa ze znakami jednostek",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:06e4c54a-dc5d-58f5-aa50-6917a02386ad",
+      "labels": [
+        "exercises",
+        "ui"
+      ],
+      "sprint": "312",
+      "created": "2026-10-03T10:45:00.000+0100",
+      "updated": "2026-10-06T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31012",
+      "key": "FIZ-12",
+      "summary": "Logowanie ucznia kodem klasy bez adresu e-mail",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:2208ec43-96ce-5263-9a4c-79e343aebaab",
+      "labels": [
+        "login",
+        "privacy"
+      ],
+      "sprint": "312",
+      "created": "2026-10-05T10:15:00.000+0100",
+      "updated": "2026-10-08T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31013",
+      "key": "FIZ-13",
+      "summary": "Tutor AI odpowiada na pytania spoza fizyki",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:08475d38-01e6-5b8f-90df-f40f8433570b",
+      "reporter": "712020:fe5af58c-9715-5f2e-a4ac-5b56d7d14004",
+      "labels": [
+        "tutor"
+      ],
+      "sprint": "312",
+      "created": "2026-10-06T12:30:00.000+0100",
+      "updated": "2026-10-09T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31014",
+      "key": "FIZ-14",
+      "summary": "Animacja spadku swobodnego przyspiesza po minimalizacji okna",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Low",
+      "assignee": "712020:2208ec43-96ce-5263-9a4c-79e343aebaab",
+      "reporter": "712020:2208ec43-96ce-5263-9a4c-79e343aebaab",
+      "labels": [
+        "simulation"
+      ],
+      "sprint": "312",
+      "created": "2026-10-08T17:30:00.000+0100",
+      "updated": "2026-10-11T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31015",
+      "key": "FIZ-15",
+      "summary": "Symulacja prostego obwodu z żarówką i baterią",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:dad1f746-fb12-591a-ad6f-d006859d47dd",
+      "reporter": "712020:08475d38-01e6-5b8f-90df-f40f8433570b",
+      "labels": [
+        "simulation",
+        "electricity"
+      ],
+      "sprint": "313",
+      "created": "2026-10-09T16:15:00.000+0100",
+      "updated": "2026-10-12T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31016",
+      "key": "FIZ-16",
+      "summary": "Zadania o prawie Ohma dla klasy 8",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:08475d38-01e6-5b8f-90df-f40f8433570b",
+      "reporter": "712020:2208ec43-96ce-5263-9a4c-79e343aebaab",
+      "labels": [
+        "exercises",
+        "electricity"
+      ],
+      "sprint": "313",
+      "created": "2026-10-11T13:45:00.000+0100",
+      "updated": "2026-10-14T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31017",
+      "key": "FIZ-17",
+      "summary": "Multimeter tool in the circuit simulation",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:fe5af58c-9715-5f2e-a4ac-5b56d7d14004",
+      "labels": [
+        "simulation",
+        "electricity"
+      ],
+      "sprint": "313",
+      "created": "2026-10-13T09:30:00.000+0100",
+      "updated": "2026-10-16T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31018",
+      "key": "FIZ-18",
+      "summary": "Praca offline przy słabym internecie w szkole",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:9d39da8a-d12d-5c68-8874-d0a3b31815db",
+      "reporter": "712020:fe5af58c-9715-5f2e-a4ac-5b56d7d14004",
+      "labels": [
+        "offline",
+        "schools"
+      ],
+      "sprint": "313",
+      "created": "2026-10-14T11:15:00.000+0100",
+      "updated": "2026-10-17T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31019",
+      "key": "FIZ-19",
+      "summary": "Wzory nie wyświetlają się w przeglądarce Safari",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:2208ec43-96ce-5263-9a4c-79e343aebaab",
+      "labels": [
+        "formulas",
+        "ui"
+      ],
+      "sprint": null,
+      "created": "2026-10-16T12:45:00.000+0100",
+      "updated": "2026-10-19T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31020",
+      "key": "FIZ-20",
+      "summary": "Ciemny motyw na wieczorną naukę",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": "712020:fe5af58c-9715-5f2e-a4ac-5b56d7d14004",
+      "reporter": "712020:06e4c54a-dc5d-58f5-aa50-6917a02386ad",
+      "labels": [
+        "ui"
+      ],
+      "sprint": null,
+      "created": "2026-10-17T15:15:00.000+0100",
+      "updated": "2026-10-20T15:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31021",
+      "key": "FIZ-21",
+      "summary": "Uczeń widzi rozwiązania zadań przed terminem",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": "712020:dad1f746-fb12-591a-ad6f-d006859d47dd",
+      "reporter": "712020:9d39da8a-d12d-5c68-8874-d0a3b31815db",
+      "labels": [
+        "exercises",
+        "permissions"
+      ],
+      "sprint": null,
+      "created": "2026-10-19T10:45:00.000+0100",
+      "updated": "2026-10-22T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31022",
+      "key": "FIZ-22",
+      "summary": "Symulacja soczewki skupiającej",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:dad1f746-fb12-591a-ad6f-d006859d47dd",
+      "labels": [
+        "simulation",
+        "optics"
+      ],
+      "sprint": null,
+      "created": "2026-10-21T16:30:00.000+0100",
+      "updated": "2026-10-24T16:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31023",
+      "key": "FIZ-23",
+      "summary": "Lektor czyta treść zadania na głos",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:fe5af58c-9715-5f2e-a4ac-5b56d7d14004",
+      "reporter": "712020:06e4c54a-dc5d-58f5-aa50-6917a02386ad",
+      "labels": [
+        "accessibility"
+      ],
+      "sprint": null,
+      "created": "2026-10-22T10:15:00.000+0100",
+      "updated": "2026-10-25T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31024",
+      "key": "FIZ-24",
+      "summary": "Wynik z przecinkiem uznany za błędny",
+      "description": "Odpowiedź 2,5 jest błędna, a 2.5 poprawna. Uczniowie piszą z przecinkiem.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:06e4c54a-dc5d-58f5-aa50-6917a02386ad",
+      "reporter": "712020:08475d38-01e6-5b8f-90df-f40f8433570b",
+      "labels": [
+        "exercises",
+        "validation"
+      ],
+      "sprint": null,
+      "created": "2026-10-24T11:15:00.000+0100",
+      "updated": "2026-10-27T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31025",
+      "key": "FIZ-25",
+      "summary": "Add the Ukrainian translation of the exercises",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:06e4c54a-dc5d-58f5-aa50-6917a02386ad",
+      "reporter": "712020:06e4c54a-dc5d-58f5-aa50-6917a02386ad",
+      "labels": [
+        "i18n"
+      ],
+      "sprint": null,
+      "created": "2026-10-25T10:00:00.000+0100",
+      "updated": "2026-10-28T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31026",
+      "key": "FIZ-26",
+      "summary": "Skrót do kalkulatora w zadaniu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:9d39da8a-d12d-5c68-8874-d0a3b31815db",
+      "labels": [
+        "exercises",
+        "ui"
+      ],
+      "sprint": null,
+      "created": "2026-10-27T14:45:00.000+0100",
+      "updated": "2026-10-30T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31027",
+      "key": "FIZ-27",
+      "summary": "Rysunek dźwigni nie skaluje się na małym ekranie",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:9d39da8a-d12d-5c68-8874-d0a3b31815db",
+      "labels": [
+        "ui",
+        "mechanics"
+      ],
+      "sprint": null,
+      "created": "2026-10-29T10:30:00.000+0100",
+      "updated": "2026-11-01T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31028",
+      "key": "FIZ-28",
+      "summary": "Historia rozwiązanych zadań ucznia",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:08475d38-01e6-5b8f-90df-f40f8433570b",
+      "labels": [
+        "exercises"
+      ],
+      "sprint": null,
+      "created": "2026-10-30T11:45:00.000+0100",
+      "updated": "2026-11-02T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31029",
+      "key": "FIZ-29",
+      "summary": "Symulacja rozszerzalności cieplnej",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:08475d38-01e6-5b8f-90df-f40f8433570b",
+      "labels": [
+        "simulation",
+        "heat"
+      ],
+      "sprint": "313",
+      "created": "2026-11-01T09:15:00.000+0100",
+      "updated": "2026-11-04T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31030",
+      "key": "FIZ-30",
+      "summary": "Uczeń traci postęp po wylogowaniu",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:2208ec43-96ce-5263-9a4c-79e343aebaab",
+      "labels": [
+        "backend"
+      ],
+      "sprint": "312",
+      "created": "2026-11-02T10:00:00.000+0100",
+      "updated": "2026-11-05T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31031",
+      "key": "FIZ-31",
+      "summary": "Quiz z gęstości z obrazkami przedmiotów",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:fe5af58c-9715-5f2e-a4ac-5b56d7d14004",
+      "reporter": "712020:08475d38-01e6-5b8f-90df-f40f8433570b",
+      "labels": [
+        "exercises"
+      ],
+      "sprint": null,
+      "created": "2026-11-04T08:30:00.000+0100",
+      "updated": "2026-11-07T08:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31032",
+      "key": "FIZ-32",
+      "summary": "Crash when the student changes the language during a task",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:9d39da8a-d12d-5c68-8874-d0a3b31815db",
+      "labels": [
+        "i18n"
+      ],
+      "sprint": null,
+      "created": "2026-11-06T13:45:00.000+0100",
+      "updated": "2026-11-09T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31033",
+      "key": "FIZ-33",
+      "summary": "Pomiar czasu rozwiązywania zadania",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:06e4c54a-dc5d-58f5-aa50-6917a02386ad",
+      "reporter": "712020:06e4c54a-dc5d-58f5-aa50-6917a02386ad",
+      "labels": [
+        "analytics"
+      ],
+      "sprint": null,
+      "created": "2026-11-07T17:30:00.000+0100",
+      "updated": "2026-11-10T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31034",
+      "key": "FIZ-34",
+      "summary": "Tutor AI podaje wynik bez jednostki",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:06e4c54a-dc5d-58f5-aa50-6917a02386ad",
+      "labels": [
+        "tutor",
+        "validation"
+      ],
+      "sprint": "313",
+      "created": "2026-11-09T13:15:00.000+0100",
+      "updated": "2026-11-12T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31035",
+      "key": "FIZ-35",
+      "summary": "Ekran powitalny z wyborem klasy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:2208ec43-96ce-5263-9a4c-79e343aebaab",
+      "reporter": "712020:06e4c54a-dc5d-58f5-aa50-6917a02386ad",
+      "labels": [
+        "ui"
+      ],
+      "sprint": null,
+      "created": "2026-11-10T10:45:00.000+0100",
+      "updated": "2026-11-13T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31036",
+      "key": "FIZ-36",
+      "summary": "Symulacja fal na wodzie",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:2208ec43-96ce-5263-9a4c-79e343aebaab",
+      "reporter": "712020:9d39da8a-d12d-5c68-8874-d0a3b31815db",
+      "labels": [
+        "simulation",
+        "waves"
+      ],
+      "sprint": null,
+      "created": "2026-11-12T16:45:00.000+0100",
+      "updated": "2026-11-15T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31037",
+      "key": "FIZ-37",
+      "summary": "Zgoda rodzica na korzystanie z tutora AI",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:dad1f746-fb12-591a-ad6f-d006859d47dd",
+      "labels": [
+        "privacy"
+      ],
+      "sprint": null,
+      "created": "2026-11-14T11:00:00.000+0100",
+      "updated": "2026-11-17T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31038",
+      "key": "FIZ-38",
+      "summary": "Zbyt długie ładowanie symulacji na szkolnych laptopach",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:06e4c54a-dc5d-58f5-aa50-6917a02386ad",
+      "labels": [
+        "performance",
+        "schools"
+      ],
+      "sprint": null,
+      "created": "2026-11-15T14:30:00.000+0100",
+      "updated": "2026-11-18T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "31039",
+      "key": "FIZ-39",
+      "summary": "Zadanie dnia na ekranie głównym",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:fe5af58c-9715-5f2e-a4ac-5b56d7d14004",
+      "reporter": "712020:08475d38-01e6-5b8f-90df-f40f8433570b",
+      "labels": [
+        "gamification"
+      ],
+      "sprint": null,
+      "created": "2026-11-17T15:45:00.000+0100",
+      "updated": "2026-11-20T15:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

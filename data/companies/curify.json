@@ -2,6 +2,7 @@
   "name": "Curify",
   "about": "A telemedicine platform: video visits, e-prescriptions, a patient app, a doctor panel and subscriptions.",
   "split": "train",
+  "first_board_id": 21,
   "now": "2026-11-04T09:30:00.000+0100",
   "personas": [
     {"name": "Matylda Jedynak", "board": "train-vid", "role": "Product owner of the video visits, a serial entrepreneur", "style": "Startup words (MVP, scale, quick win, pivot). Mentions her other companies and fast decisions. Writes in a hurry, but the request is clear."},
