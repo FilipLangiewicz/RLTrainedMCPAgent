@@ -1,0 +1,942 @@
+{
+  "name": "train-rej",
+  "site": "https://example.atlassian.net",
+  "now": "2026-10-21T08:45:00.000+0100",
+  "project": {
+    "key": "REJ",
+    "name": "Medix - rejestracja i infolinia"
+  },
+  "board": {
+    "id": "26",
+    "name": "REJ board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:993a7118-2293-5cb3-94d7-abb010338b4d",
+      "display_name": "Elżbieta Kurowska",
+      "email": "elzbieta.kurowska@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:3a853f92-0e24-560b-a536-ae433474dd5b",
+      "display_name": "Wiktoria Sobolewska",
+      "email": "wiktoria.sobolewska@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:cbede616-6ed8-5662-af0b-bfa72b17cd29",
+      "display_name": "Wiktoria Maciejewska",
+      "email": "wiktoria.maciejewska@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:b6474c72-b0de-5490-bae0-b6ac6bbbf345",
+      "display_name": "Olena Kovalenko",
+      "email": "olena.kovalenko@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:29c38f65-02d8-5850-9ad2-11e287e75aca",
+      "display_name": "Damian Kaczmarczyk",
+      "email": "damian.kaczmarczyk@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:00cc6cc1-5a0c-5f3e-82ec-6bfc0d3f856d",
+      "display_name": "Sebastian Pająk",
+      "email": "sebastian.pajak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:18b5f3fe-4ae6-5c1e-8954-be57a9eff53e",
+      "display_name": "Roman Pawłowski",
+      "email": "roman.pawlowski@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "261",
+      "name": "REJ Sprint 33",
+      "state": "closed",
+      "start_date": "2026-09-30T09:00:00.000Z",
+      "end_date": "2026-10-14T09:00:00.000Z",
+      "goal": "Nowa centrala telefoniczna"
+    },
+    {
+      "id": "262",
+      "name": "REJ Sprint 34",
+      "state": "active",
+      "start_date": "2026-10-14T09:00:00.000Z",
+      "end_date": "2026-10-28T09:00:00.000Z",
+      "goal": "Kolejka zapisów i przypomnienia SMS"
+    },
+    {
+      "id": "263",
+      "name": "REJ Sprint 35",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Zapisy przez czat"
+    },
+    {
+      "id": "264",
+      "name": "REJ Sprint 36",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "26001",
+      "key": "REJ-1",
+      "summary": "Migracja infolinii na nową centralę telefoniczną",
+      "description": "Stara centrala nie obsługuje kolejki powyżej 20 połączeń. Nowa ma kolejkę i nagrywanie.",
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:29c38f65-02d8-5850-9ad2-11e287e75aca",
+      "reporter": "712020:00cc6cc1-5a0c-5f3e-82ec-6bfc0d3f856d",
+      "labels": [
+        "telephony"
+      ],
+      "sprint": "261",
+      "created": "2026-08-13T13:30:00.000+0100",
+      "updated": "2026-08-16T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "260015",
+          "author": "712020:29c38f65-02d8-5850-9ad2-11e287e75aca",
+          "time_spent_seconds": 28800,
+          "comment": "Konfiguracja kolejek",
+          "started": "2026-08-15T00:30:00.000+0100"
+        },
+        {
+          "id": "260016",
+          "author": "712020:29c38f65-02d8-5850-9ad2-11e287e75aca",
+          "time_spent_seconds": 14400,
+          "comment": "Testy z konsultantami",
+          "started": "2026-08-16T00:30:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "26002",
+      "key": "REJ-2",
+      "summary": "Połączenia z numerów zastrzeżonych trafiają na pocztę głosową",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:3a853f92-0e24-560b-a536-ae433474dd5b",
+      "reporter": "712020:00cc6cc1-5a0c-5f3e-82ec-6bfc0d3f856d",
+      "labels": [
+        "telephony"
+      ],
+      "sprint": "261",
+      "created": "2026-08-14T12:30:00.000+0100",
+      "updated": "2026-08-17T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26003",
+      "key": "REJ-3",
+      "summary": "Music on hold plays in a loop of 5 seconds",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:3a853f92-0e24-560b-a536-ae433474dd5b",
+      "labels": [
+        "telephony"
+      ],
+      "sprint": "261",
+      "created": "2026-08-16T14:45:00.000+0100",
+      "updated": "2026-08-19T14:45:00.000+0100",
+      "comments": [
+        {
+          "id": "260031",
+          "author": "712020:3a853f92-0e24-560b-a536-ae433474dd5b",
+          "body": "The new switchboard has its own music, closing.",
+          "created": "2026-08-17T14:45:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "26004",
+      "key": "REJ-4",
+      "summary": "Grafik konsultantów infolinii na listopad",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:18b5f3fe-4ae6-5c1e-8954-be57a9eff53e",
+      "reporter": "712020:cbede616-6ed8-5662-af0b-bfa72b17cd29",
+      "labels": [
+        "schedule"
+      ],
+      "sprint": "261",
+      "created": "2026-08-17T09:30:00.000+0100",
+      "updated": "2026-08-20T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26005",
+      "key": "REJ-5",
+      "summary": "Przypomnienie SMS na 24 godziny przed wizytą",
+      "description": "SMS z datą, godziną, adresem placówki i linkiem do odwołania wizyty.",
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:cbede616-6ed8-5662-af0b-bfa72b17cd29",
+      "reporter": "712020:b6474c72-b0de-5490-bae0-b6ac6bbbf345",
+      "labels": [
+        "sms",
+        "reminders"
+      ],
+      "sprint": "262",
+      "created": "2026-08-19T15:30:00.000+0100",
+      "updated": "2026-08-22T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "260055",
+          "author": "712020:cbede616-6ed8-5662-af0b-bfa72b17cd29",
+          "time_spent_seconds": 10800,
+          "comment": "Szablon wiadomości",
+          "started": "2026-08-21T00:30:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "26006",
+      "key": "REJ-6",
+      "summary": "Pacjent zapisany dwa razy na ten sam termin",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:cbede616-6ed8-5662-af0b-bfa72b17cd29",
+      "reporter": "712020:993a7118-2293-5cb3-94d7-abb010338b4d",
+      "labels": [
+        "booking",
+        "backend"
+      ],
+      "sprint": "262",
+      "created": "2026-08-21T14:15:00.000+0100",
+      "updated": "2026-08-24T14:15:00.000+0100",
+      "comments": [
+        {
+          "id": "260061",
+          "author": "712020:cbede616-6ed8-5662-af0b-bfa72b17cd29",
+          "body": "Trzy przypadki w placówce Wola w zeszłym tygodniu.",
+          "created": "2026-08-22T14:15:00.000+0100"
+        },
+        {
+          "id": "260062",
+          "author": "712020:cbede616-6ed8-5662-af0b-bfa72b17cd29",
+          "body": "Dzieje się, gdy dwie konsultantki klikają w tej samej sekundzie.",
+          "created": "2026-08-23T14:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "26007",
+      "key": "REJ-7",
+      "summary": "Lista oczekujących na zwolniony termin",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:29c38f65-02d8-5850-9ad2-11e287e75aca",
+      "reporter": "712020:b6474c72-b0de-5490-bae0-b6ac6bbbf345",
+      "labels": [
+        "booking"
+      ],
+      "sprint": "262",
+      "created": "2026-08-22T13:15:00.000+0100",
+      "updated": "2026-08-25T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26008",
+      "key": "REJ-8",
+      "summary": "Odwołanie wizyty linkiem z SMS-a",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:b6474c72-b0de-5490-bae0-b6ac6bbbf345",
+      "reporter": "712020:993a7118-2293-5cb3-94d7-abb010338b4d",
+      "labels": [
+        "sms",
+        "booking"
+      ],
+      "sprint": "262",
+      "created": "2026-08-24T14:30:00.000+0100",
+      "updated": "2026-08-27T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26009",
+      "key": "REJ-9",
+      "summary": "Wyszukiwarka pacjentów nie znajduje nazwisk z apostrofem",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:29c38f65-02d8-5850-9ad2-11e287e75aca",
+      "reporter": "712020:29c38f65-02d8-5850-9ad2-11e287e75aca",
+      "labels": [
+        "search"
+      ],
+      "sprint": "262",
+      "created": "2026-08-25T12:00:00.000+0100",
+      "updated": "2026-08-28T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26010",
+      "key": "REJ-10",
+      "summary": "Call recordings are kept for only 7 days",
+      "description": "The policy says 90 days. Check the setting of the new switchboard.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:00cc6cc1-5a0c-5f3e-82ec-6bfc0d3f856d",
+      "labels": [
+        "telephony",
+        "privacy"
+      ],
+      "sprint": "262",
+      "created": "2026-08-27T13:45:00.000+0100",
+      "updated": "2026-08-30T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26011",
+      "key": "REJ-11",
+      "summary": "Skrypt powitania na infolinii w języku ukraińskim",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Low",
+      "assignee": "712020:cbede616-6ed8-5662-af0b-bfa72b17cd29",
+      "reporter": "712020:29c38f65-02d8-5850-9ad2-11e287e75aca",
+      "labels": [
+        "telephony",
+        "i18n"
+      ],
+      "sprint": "262",
+      "created": "2026-08-28T08:30:00.000+0100",
+      "updated": "2026-08-31T08:30:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "260115",
+          "author": "712020:cbede616-6ed8-5662-af0b-bfa72b17cd29",
+          "time_spent_seconds": 3600,
+          "comment": "Nagranie komunikatu",
+          "started": "2026-08-30T00:30:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "26012",
+      "key": "REJ-12",
+      "summary": "Licznik pacjentów w kolejce na ekranie rejestracji",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:b6474c72-b0de-5490-bae0-b6ac6bbbf345",
+      "labels": [
+        "ui",
+        "queue"
+      ],
+      "sprint": "262",
+      "created": "2026-08-30T11:00:00.000+0100",
+      "updated": "2026-09-02T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26013",
+      "key": "REJ-13",
+      "summary": "Biletomat w placówce Mokotów drukuje puste bilety",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:00cc6cc1-5a0c-5f3e-82ec-6bfc0d3f856d",
+      "reporter": "712020:b6474c72-b0de-5490-bae0-b6ac6bbbf345",
+      "labels": [
+        "queue",
+        "hardware"
+      ],
+      "sprint": "262",
+      "created": "2026-08-31T09:00:00.000+0100",
+      "updated": "2026-09-03T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26014",
+      "key": "REJ-14",
+      "summary": "Raport nieodebranych połączeń dziennie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:b6474c72-b0de-5490-bae0-b6ac6bbbf345",
+      "labels": [
+        "reports",
+        "telephony"
+      ],
+      "sprint": "262",
+      "created": "2026-09-02T16:45:00.000+0100",
+      "updated": "2026-09-05T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26015",
+      "key": "REJ-15",
+      "summary": "Zgoda pacjenta na SMS-y zapisywana przy rejestracji",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:b6474c72-b0de-5490-bae0-b6ac6bbbf345",
+      "reporter": "712020:3a853f92-0e24-560b-a536-ae433474dd5b",
+      "labels": [
+        "privacy",
+        "sms"
+      ],
+      "sprint": "262",
+      "created": "2026-09-03T15:00:00.000+0100",
+      "updated": "2026-09-06T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26016",
+      "key": "REJ-16",
+      "summary": "Zapisy na wizyty przez czat na stronie",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:29c38f65-02d8-5850-9ad2-11e287e75aca",
+      "labels": [
+        "chat",
+        "booking"
+      ],
+      "sprint": "263",
+      "created": "2026-09-05T14:30:00.000+0100",
+      "updated": "2026-09-08T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26017",
+      "key": "REJ-17",
+      "summary": "Gotowe odpowiedzi dla konsultantek czatu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:cbede616-6ed8-5662-af0b-bfa72b17cd29",
+      "labels": [
+        "chat"
+      ],
+      "sprint": "263",
+      "created": "2026-09-06T11:00:00.000+0100",
+      "updated": "2026-09-09T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26018",
+      "key": "REJ-18",
+      "summary": "Callback when the waiting time is longer than 5 minutes",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:00cc6cc1-5a0c-5f3e-82ec-6bfc0d3f856d",
+      "reporter": "712020:29c38f65-02d8-5850-9ad2-11e287e75aca",
+      "labels": [
+        "telephony",
+        "queue"
+      ],
+      "sprint": "263",
+      "created": "2026-09-08T16:45:00.000+0100",
+      "updated": "2026-09-11T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26019",
+      "key": "REJ-19",
+      "summary": "Termin wizyty pokazuje się w złej placówce",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:00cc6cc1-5a0c-5f3e-82ec-6bfc0d3f856d",
+      "reporter": "712020:29c38f65-02d8-5850-9ad2-11e287e75aca",
+      "labels": [
+        "booking"
+      ],
+      "sprint": "263",
+      "created": "2026-09-09T16:45:00.000+0100",
+      "updated": "2026-09-12T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26020",
+      "key": "REJ-20",
+      "summary": "Brak blokady terminu w czasie urlopu lekarza",
+      "description": "Rejestracja zapisuje pacjentów na dni urlopu, bo grafik nie blokuje terminów.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": "712020:29c38f65-02d8-5850-9ad2-11e287e75aca",
+      "reporter": "712020:3a853f92-0e24-560b-a536-ae433474dd5b",
+      "labels": [
+        "booking",
+        "schedule"
+      ],
+      "sprint": null,
+      "created": "2026-09-11T14:00:00.000+0100",
+      "updated": "2026-09-14T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26021",
+      "key": "REJ-21",
+      "summary": "Dane pacjenta widoczne na monitorze od strony poczekalni",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:3a853f92-0e24-560b-a536-ae433474dd5b",
+      "labels": [
+        "privacy",
+        "hardware"
+      ],
+      "sprint": null,
+      "created": "2026-09-12T14:45:00.000+0100",
+      "updated": "2026-09-15T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26022",
+      "key": "REJ-22",
+      "summary": "Formularz zmiany danych kontaktowych pacjenta",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:00cc6cc1-5a0c-5f3e-82ec-6bfc0d3f856d",
+      "labels": [
+        "ui"
+      ],
+      "sprint": null,
+      "created": "2026-09-14T08:15:00.000+0100",
+      "updated": "2026-09-17T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26023",
+      "key": "REJ-23",
+      "summary": "Statystyka czasu oczekiwania na połączenie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:00cc6cc1-5a0c-5f3e-82ec-6bfc0d3f856d",
+      "reporter": "712020:29c38f65-02d8-5850-9ad2-11e287e75aca",
+      "labels": [
+        "reports",
+        "telephony"
+      ],
+      "sprint": null,
+      "created": "2026-09-15T09:30:00.000+0100",
+      "updated": "2026-09-18T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26024",
+      "key": "REJ-24",
+      "summary": "Rejestracja na badania bez skierowania",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:cbede616-6ed8-5662-af0b-bfa72b17cd29",
+      "labels": [
+        "booking"
+      ],
+      "sprint": null,
+      "created": "2026-09-17T12:30:00.000+0100",
+      "updated": "2026-09-20T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26025",
+      "key": "REJ-25",
+      "summary": "Training for new consultants about the booking system",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:29c38f65-02d8-5850-9ad2-11e287e75aca",
+      "labels": [
+        "docs"
+      ],
+      "sprint": null,
+      "created": "2026-09-18T09:00:00.000+0100",
+      "updated": "2026-09-21T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26026",
+      "key": "REJ-26",
+      "summary": "SMS-y do pacjentów z numerem zagranicznym nie wychodzą",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:b6474c72-b0de-5490-bae0-b6ac6bbbf345",
+      "labels": [
+        "sms"
+      ],
+      "sprint": null,
+      "created": "2026-09-20T08:30:00.000+0100",
+      "updated": "2026-09-23T08:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26027",
+      "key": "REJ-27",
+      "summary": "Kolor terminów dla wizyt prywatnych i NFZ",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:b6474c72-b0de-5490-bae0-b6ac6bbbf345",
+      "labels": [
+        "ui",
+        "booking"
+      ],
+      "sprint": null,
+      "created": "2026-09-22T15:15:00.000+0100",
+      "updated": "2026-09-25T15:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26028",
+      "key": "REJ-28",
+      "summary": "Wizyty dzieci zapisane na PESEL rodzica",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:b6474c72-b0de-5490-bae0-b6ac6bbbf345",
+      "reporter": "712020:b6474c72-b0de-5490-bae0-b6ac6bbbf345",
+      "labels": [
+        "booking",
+        "validation"
+      ],
+      "sprint": null,
+      "created": "2026-09-23T14:30:00.000+0100",
+      "updated": "2026-09-26T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26029",
+      "key": "REJ-29",
+      "summary": "Przekierowanie połączeń po godzinie 18 do placówki dyżurnej",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:00cc6cc1-5a0c-5f3e-82ec-6bfc0d3f856d",
+      "reporter": "712020:3a853f92-0e24-560b-a536-ae433474dd5b",
+      "labels": [
+        "telephony"
+      ],
+      "sprint": null,
+      "created": "2026-09-25T17:30:00.000+0100",
+      "updated": "2026-09-28T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26030",
+      "key": "REJ-30",
+      "summary": "Pole 'uwagi' ucina tekst po 100 znakach",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:3a853f92-0e24-560b-a536-ae433474dd5b",
+      "reporter": "712020:00cc6cc1-5a0c-5f3e-82ec-6bfc0d3f856d",
+      "labels": [
+        "ui"
+      ],
+      "sprint": null,
+      "created": "2026-09-26T13:45:00.000+0100",
+      "updated": "2026-09-29T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26031",
+      "key": "REJ-31",
+      "summary": "Ankieta po rozmowie z infolinią",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:b6474c72-b0de-5490-bae0-b6ac6bbbf345",
+      "labels": [
+        "telephony"
+      ],
+      "sprint": "263",
+      "created": "2026-09-28T14:45:00.000+0100",
+      "updated": "2026-10-01T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26032",
+      "key": "REJ-32",
+      "summary": "Export of the daily bookings to Excel",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:cbede616-6ed8-5662-af0b-bfa72b17cd29",
+      "reporter": "712020:3a853f92-0e24-560b-a536-ae433474dd5b",
+      "labels": [
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-09-29T17:45:00.000+0100",
+      "updated": "2026-10-02T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26033",
+      "key": "REJ-33",
+      "summary": "Słuchawki konsultantek: zamówienie 12 nowych zestawów",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:cbede616-6ed8-5662-af0b-bfa72b17cd29",
+      "reporter": "712020:29c38f65-02d8-5850-9ad2-11e287e75aca",
+      "labels": [
+        "hardware"
+      ],
+      "sprint": null,
+      "created": "2026-10-01T08:30:00.000+0100",
+      "updated": "2026-10-04T08:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26034",
+      "key": "REJ-34",
+      "summary": "Wyświetlacz kolejki w placówce Ursynów gaśnie co godzinę",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:00cc6cc1-5a0c-5f3e-82ec-6bfc0d3f856d",
+      "reporter": "712020:993a7118-2293-5cb3-94d7-abb010338b4d",
+      "labels": [
+        "queue",
+        "hardware"
+      ],
+      "sprint": "262",
+      "created": "2026-10-02T12:45:00.000+0100",
+      "updated": "2026-10-05T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26035",
+      "key": "REJ-35",
+      "summary": "Automatyczne odwołanie wizyt po usunięciu lekarza z grafiku",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": "712020:3a853f92-0e24-560b-a536-ae433474dd5b",
+      "reporter": "712020:cbede616-6ed8-5662-af0b-bfa72b17cd29",
+      "labels": [
+        "booking"
+      ],
+      "sprint": null,
+      "created": "2026-10-04T10:45:00.000+0100",
+      "updated": "2026-10-07T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26036",
+      "key": "REJ-36",
+      "summary": "Zapis na szczepienie przeciw grypie w kampanii jesiennej",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:3a853f92-0e24-560b-a536-ae433474dd5b",
+      "labels": [
+        "booking"
+      ],
+      "sprint": "263",
+      "created": "2026-10-05T08:00:00.000+0100",
+      "updated": "2026-10-08T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26037",
+      "key": "REJ-37",
+      "summary": "Instrukcja: jak przełożyć wizytę na inny dzień",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Low",
+      "assignee": "712020:3a853f92-0e24-560b-a536-ae433474dd5b",
+      "reporter": "712020:29c38f65-02d8-5850-9ad2-11e287e75aca",
+      "labels": [
+        "docs"
+      ],
+      "sprint": "262",
+      "created": "2026-10-07T10:00:00.000+0100",
+      "updated": "2026-10-10T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26038",
+      "key": "REJ-38",
+      "summary": "Konsultantka widzi wyniki badań pacjenta",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:00cc6cc1-5a0c-5f3e-82ec-6bfc0d3f856d",
+      "labels": [
+        "privacy",
+        "permissions"
+      ],
+      "sprint": null,
+      "created": "2026-10-08T12:15:00.000+0100",
+      "updated": "2026-10-11T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26039",
+      "key": "REJ-39",
+      "summary": "Duplicate patient records after the import from the old system",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:b6474c72-b0de-5490-bae0-b6ac6bbbf345",
+      "reporter": "712020:b6474c72-b0de-5490-bae0-b6ac6bbbf345",
+      "labels": [
+        "backend"
+      ],
+      "sprint": null,
+      "created": "2026-10-10T13:30:00.000+0100",
+      "updated": "2026-10-13T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26040",
+      "key": "REJ-40",
+      "summary": "Przegląd umowy z operatorem SMS",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:00cc6cc1-5a0c-5f3e-82ec-6bfc0d3f856d",
+      "reporter": "712020:b6474c72-b0de-5490-bae0-b6ac6bbbf345",
+      "labels": [
+        "sms"
+      ],
+      "sprint": null,
+      "created": "2026-10-11T12:45:00.000+0100",
+      "updated": "2026-10-14T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "26041",
+      "key": "REJ-41",
+      "summary": "Godziny otwarcia placówek w komunikacie infolinii",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:993a7118-2293-5cb3-94d7-abb010338b4d",
+      "reporter": "712020:3a853f92-0e24-560b-a536-ae433474dd5b",
+      "labels": [
+        "telephony"
+      ],
+      "sprint": "263",
+      "created": "2026-10-13T13:15:00.000+0100",
+      "updated": "2026-10-16T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

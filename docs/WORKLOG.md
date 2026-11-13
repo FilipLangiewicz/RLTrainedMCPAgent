@@ -534,3 +534,10 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - The boards have 38 to 42 issues, so that the size is not always the same. The status mix is similar to the test boards.
 - Add the boards `data/environments/train-{vid,rx,pat,doc,pay}.json`.
 - 596 tests pass. 6 tests fail also on `main` without this change: 5 tests of `claude_cli` and `test_checksum_finds_a_change`.
+
+### Train boards of Medix
+
+- Add `data/companies/medix.json`: a network of medical centres with 5 boards (`REJ`, `LAB`, `RTG`, `IT`, `NFZ`), 200 issues and 15 authors.
+- Add the boards `data/environments/train-{rej,lab,rtg,it,nfz}.json`.
+- Medix has its own date of the board (`now`), so the sprint dates differ from the dates of Curify.
+- The boards of Curify do not change when the generator runs again.
