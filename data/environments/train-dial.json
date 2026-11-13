@@ -1,0 +1,900 @@
+{
+  "name": "train-dial",
+  "site": "https://example.atlassian.net",
+  "now": "2026-10-07T09:15:00.000+0100",
+  "project": {
+    "key": "DIAL",
+    "name": "SolarDom - system dzwoniący"
+  },
+  "board": {
+    "id": "41",
+    "name": "DIAL board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:4e200d04-c0a8-5ff9-b974-67b0b1d59956",
+      "display_name": "Sławomir Kubicki",
+      "email": "slawomir.kubicki@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:61b077f8-d65f-55b3-9ddc-dff4afcaef8e",
+      "display_name": "Lidia Banaś",
+      "email": "lidia.banas@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:65b4e3f5-8b1e-58c0-8d07-ffc8846b71ab",
+      "display_name": "Krystian Wilczyński",
+      "email": "krystian.wilczynski@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:645f8e88-f02a-5c4f-a05e-96de92543a0e",
+      "display_name": "Krystian Dudziak",
+      "email": "krystian.dudziak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:df88f349-4267-5dc9-abb9-d5c64898b054",
+      "display_name": "Natasza Bielska",
+      "email": "natasza.bielska@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:17210f70-fce1-5443-948f-503cd0f61092",
+      "display_name": "Wiktor Rosiak",
+      "email": "wiktor.rosiak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:95a8ffae-c774-5f77-b3de-367d51352bcd",
+      "display_name": "Andrzej Pleban",
+      "email": "andrzej.pleban@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "411",
+      "name": "DIAL Sprint 40",
+      "state": "closed",
+      "start_date": "2026-09-16T09:00:00.000Z",
+      "end_date": "2026-09-30T09:00:00.000Z",
+      "goal": "Nowy dialer predykcyjny"
+    },
+    {
+      "id": "412",
+      "name": "DIAL Sprint 41",
+      "state": "active",
+      "start_date": "2026-09-30T09:00:00.000Z",
+      "end_date": "2026-10-14T09:00:00.000Z",
+      "goal": "Krótszy czas między połączeniami"
+    },
+    {
+      "id": "413",
+      "name": "DIAL Sprint 42",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Nagrania i ocena rozmów"
+    },
+    {
+      "id": "414",
+      "name": "DIAL Sprint 43",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "41001",
+      "key": "DIAL-1",
+      "summary": "Wdrożenie dialera predykcyjnego na sali A",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:95a8ffae-c774-5f77-b3de-367d51352bcd",
+      "reporter": "712020:df88f349-4267-5dc9-abb9-d5c64898b054",
+      "labels": [
+        "dialer"
+      ],
+      "sprint": "411",
+      "created": "2026-07-30T12:45:00.000+0100",
+      "updated": "2026-08-02T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "410015",
+          "author": "712020:4e200d04-c0a8-5ff9-b974-67b0b1d59956",
+          "time_spent_seconds": 25200,
+          "comment": "Konfiguracja kampanii",
+          "started": "2026-08-01T00:45:00.000+0100"
+        },
+        {
+          "id": "410016",
+          "author": "712020:4e200d04-c0a8-5ff9-b974-67b0b1d59956",
+          "time_spent_seconds": 10800,
+          "comment": "Szkolenie sali",
+          "started": "2026-08-02T00:45:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "41002",
+      "key": "DIAL-2",
+      "summary": "Dialer dzwoni do numerów po godzinie 21",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "Highest",
+      "assignee": "712020:61b077f8-d65f-55b3-9ddc-dff4afcaef8e",
+      "reporter": "712020:65b4e3f5-8b1e-58c0-8d07-ffc8846b71ab",
+      "labels": [
+        "dialer",
+        "compliance"
+      ],
+      "sprint": "411",
+      "created": "2026-07-31T17:00:00.000+0100",
+      "updated": "2026-08-03T17:00:00.000+0100",
+      "comments": [
+        {
+          "id": "410021",
+          "author": "712020:61b077f8-d65f-55b3-9ddc-dff4afcaef8e",
+          "body": "Strefa czasowa kampanii była ustawiona na UTC.",
+          "created": "2026-08-01T17:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "41003",
+      "key": "DIAL-3",
+      "summary": "Integration with the old switchboard",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:645f8e88-f02a-5c4f-a05e-96de92543a0e",
+      "labels": [
+        "telephony"
+      ],
+      "sprint": "411",
+      "created": "2026-08-02T10:15:00.000+0100",
+      "updated": "2026-08-05T10:15:00.000+0100",
+      "comments": [
+        {
+          "id": "410031",
+          "author": "712020:645f8e88-f02a-5c4f-a05e-96de92543a0e",
+          "body": "The old switchboard is switched off in November.",
+          "created": "2026-08-03T10:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "41004",
+      "key": "DIAL-4",
+      "summary": "Raport połączeń na godzinę dla każdego telemarketera",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:df88f349-4267-5dc9-abb9-d5c64898b054",
+      "reporter": "712020:df88f349-4267-5dc9-abb9-d5c64898b054",
+      "labels": [
+        "reports"
+      ],
+      "sprint": "411",
+      "created": "2026-08-04T16:15:00.000+0100",
+      "updated": "2026-08-07T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41005",
+      "key": "DIAL-5",
+      "summary": "Czas między połączeniami skrócony do 3 sekund",
+      "description": "Teraz telemarketer czeka średnio 9 sekund na kolejne połączenie.",
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:17210f70-fce1-5443-948f-503cd0f61092",
+      "reporter": "712020:4e200d04-c0a8-5ff9-b974-67b0b1d59956",
+      "labels": [
+        "dialer",
+        "performance"
+      ],
+      "sprint": "412",
+      "created": "2026-08-05T16:00:00.000+0100",
+      "updated": "2026-08-08T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "410055",
+          "author": "712020:17210f70-fce1-5443-948f-503cd0f61092",
+          "time_spent_seconds": 14400,
+          "comment": "Strojenie algorytmu",
+          "started": "2026-08-07T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "41006",
+      "key": "DIAL-6",
+      "summary": "Cisza na linii po odebraniu połączenia",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:df88f349-4267-5dc9-abb9-d5c64898b054",
+      "reporter": "712020:61b077f8-d65f-55b3-9ddc-dff4afcaef8e",
+      "labels": [
+        "dialer",
+        "audio"
+      ],
+      "sprint": "412",
+      "created": "2026-08-07T08:45:00.000+0100",
+      "updated": "2026-08-10T08:45:00.000+0100",
+      "comments": [
+        {
+          "id": "410061",
+          "author": "712020:df88f349-4267-5dc9-abb9-d5c64898b054",
+          "body": "Klienci rozłączają się po 2 sekundach ciszy.",
+          "created": "2026-08-08T08:45:00.000+0100"
+        },
+        {
+          "id": "410062",
+          "author": "712020:df88f349-4267-5dc9-abb9-d5c64898b054",
+          "body": "Dialer łączy więcej rozmów niż jest wolnych osób.",
+          "created": "2026-08-09T08:45:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "41007",
+      "key": "DIAL-7",
+      "summary": "Nagrywanie wszystkich rozmów z informacją dla klienta",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:df88f349-4267-5dc9-abb9-d5c64898b054",
+      "reporter": "712020:df88f349-4267-5dc9-abb9-d5c64898b054",
+      "labels": [
+        "recording",
+        "compliance"
+      ],
+      "sprint": "412",
+      "created": "2026-08-09T10:30:00.000+0100",
+      "updated": "2026-08-12T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41008",
+      "key": "DIAL-8",
+      "summary": "Headsets disconnect after the Windows update",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:17210f70-fce1-5443-948f-503cd0f61092",
+      "reporter": "712020:65b4e3f5-8b1e-58c0-8d07-ffc8846b71ab",
+      "labels": [
+        "hardware"
+      ],
+      "sprint": "412",
+      "created": "2026-08-10T12:15:00.000+0100",
+      "updated": "2026-08-13T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41009",
+      "key": "DIAL-9",
+      "summary": "Tablica wyników sali na dużym ekranie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Low",
+      "assignee": "712020:17210f70-fce1-5443-948f-503cd0f61092",
+      "reporter": "712020:4e200d04-c0a8-5ff9-b974-67b0b1d59956",
+      "labels": [
+        "dashboard",
+        "motivation"
+      ],
+      "sprint": "412",
+      "created": "2026-08-12T13:45:00.000+0100",
+      "updated": "2026-08-15T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41010",
+      "key": "DIAL-10",
+      "summary": "Numer wyświetlany klientowi zmienia się co tydzień",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:61b077f8-d65f-55b3-9ddc-dff4afcaef8e",
+      "reporter": "712020:61b077f8-d65f-55b3-9ddc-dff4afcaef8e",
+      "labels": [
+        "telephony"
+      ],
+      "sprint": "412",
+      "created": "2026-08-13T14:15:00.000+0100",
+      "updated": "2026-08-16T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41011",
+      "key": "DIAL-11",
+      "summary": "Przycisk 'oddzwoń później' z wyborem godziny",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:17210f70-fce1-5443-948f-503cd0f61092",
+      "labels": [
+        "callback",
+        "ui"
+      ],
+      "sprint": "412",
+      "created": "2026-08-15T08:00:00.000+0100",
+      "updated": "2026-08-18T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41012",
+      "key": "DIAL-12",
+      "summary": "Dialer pomija numery z listy 'nie dzwonić' tylko w kampanii A",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:df88f349-4267-5dc9-abb9-d5c64898b054",
+      "reporter": "712020:4e200d04-c0a8-5ff9-b974-67b0b1d59956",
+      "labels": [
+        "dialer",
+        "compliance"
+      ],
+      "sprint": "412",
+      "created": "2026-08-17T16:30:00.000+0100",
+      "updated": "2026-08-20T16:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41013",
+      "key": "DIAL-13",
+      "summary": "Statusy rozmowy: brak zainteresowania, oddzwonić, umówiono",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:df88f349-4267-5dc9-abb9-d5c64898b054",
+      "reporter": "712020:df88f349-4267-5dc9-abb9-d5c64898b054",
+      "labels": [
+        "ui"
+      ],
+      "sprint": "412",
+      "created": "2026-08-18T10:00:00.000+0100",
+      "updated": "2026-08-21T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41014",
+      "key": "DIAL-14",
+      "summary": "Dzwonek na sali po każdej umówionej wizycie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:61b077f8-d65f-55b3-9ddc-dff4afcaef8e",
+      "labels": [
+        "motivation"
+      ],
+      "sprint": "412",
+      "created": "2026-08-20T17:00:00.000+0100",
+      "updated": "2026-08-23T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41015",
+      "key": "DIAL-15",
+      "summary": "Ocena nagranych rozmów przez kierownika",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:645f8e88-f02a-5c4f-a05e-96de92543a0e",
+      "labels": [
+        "recording",
+        "quality"
+      ],
+      "sprint": "413",
+      "created": "2026-08-21T13:15:00.000+0100",
+      "updated": "2026-08-24T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41016",
+      "key": "DIAL-16",
+      "summary": "Search of the call recordings by phone number",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:17210f70-fce1-5443-948f-503cd0f61092",
+      "reporter": "712020:61b077f8-d65f-55b3-9ddc-dff4afcaef8e",
+      "labels": [
+        "recording"
+      ],
+      "sprint": "413",
+      "created": "2026-08-23T15:15:00.000+0100",
+      "updated": "2026-08-26T15:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41017",
+      "key": "DIAL-17",
+      "summary": "Automatyczna transkrypcja rozmów",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:4e200d04-c0a8-5ff9-b974-67b0b1d59956",
+      "reporter": "712020:645f8e88-f02a-5c4f-a05e-96de92543a0e",
+      "labels": [
+        "recording"
+      ],
+      "sprint": "413",
+      "created": "2026-08-25T16:45:00.000+0100",
+      "updated": "2026-08-28T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41018",
+      "key": "DIAL-18",
+      "summary": "Dialer dzwoni trzy razy dziennie do tej samej osoby",
+      "description": "Limit prób na numer nie działa po imporcie nowej bazy.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:61b077f8-d65f-55b3-9ddc-dff4afcaef8e",
+      "reporter": "712020:df88f349-4267-5dc9-abb9-d5c64898b054",
+      "labels": [
+        "dialer",
+        "compliance"
+      ],
+      "sprint": null,
+      "created": "2026-08-26T14:45:00.000+0100",
+      "updated": "2026-08-29T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41019",
+      "key": "DIAL-19",
+      "summary": "Druga sala telemarketerów w Kielcach",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:17210f70-fce1-5443-948f-503cd0f61092",
+      "labels": [
+        "telephony"
+      ],
+      "sprint": null,
+      "created": "2026-08-28T10:30:00.000+0100",
+      "updated": "2026-08-31T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41020",
+      "key": "DIAL-20",
+      "summary": "Przerwy telemarketerów liczone przez system",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:65b4e3f5-8b1e-58c0-8d07-ffc8846b71ab",
+      "reporter": "712020:65b4e3f5-8b1e-58c0-8d07-ffc8846b71ab",
+      "labels": [
+        "hr"
+      ],
+      "sprint": null,
+      "created": "2026-08-29T17:30:00.000+0100",
+      "updated": "2026-09-01T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41021",
+      "key": "DIAL-21",
+      "summary": "Połączenia urywają się po 15 minutach",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:df88f349-4267-5dc9-abb9-d5c64898b054",
+      "reporter": "712020:645f8e88-f02a-5c4f-a05e-96de92543a0e",
+      "labels": [
+        "telephony"
+      ],
+      "sprint": null,
+      "created": "2026-08-31T08:45:00.000+0100",
+      "updated": "2026-09-03T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41022",
+      "key": "DIAL-22",
+      "summary": "Licencje dialera na 20 nowych stanowisk",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:4e200d04-c0a8-5ff9-b974-67b0b1d59956",
+      "reporter": "712020:4e200d04-c0a8-5ff9-b974-67b0b1d59956",
+      "labels": [
+        "licenses"
+      ],
+      "sprint": null,
+      "created": "2026-09-02T13:30:00.000+0100",
+      "updated": "2026-09-05T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41023",
+      "key": "DIAL-23",
+      "summary": "Wallboard shows the results of yesterday",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:df88f349-4267-5dc9-abb9-d5c64898b054",
+      "labels": [
+        "dashboard"
+      ],
+      "sprint": null,
+      "created": "2026-09-03T12:00:00.000+0100",
+      "updated": "2026-09-06T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41024",
+      "key": "DIAL-24",
+      "summary": "Kampania dla gmin z dopłatami do fotowoltaiki",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:61b077f8-d65f-55b3-9ddc-dff4afcaef8e",
+      "reporter": "712020:61b077f8-d65f-55b3-9ddc-dff4afcaef8e",
+      "labels": [
+        "campaigns"
+      ],
+      "sprint": null,
+      "created": "2026-09-05T17:15:00.000+0100",
+      "updated": "2026-09-08T17:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41025",
+      "key": "DIAL-25",
+      "summary": "Automatyczna wiadomość głosowa przy braku odbioru",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:61b077f8-d65f-55b3-9ddc-dff4afcaef8e",
+      "reporter": "712020:4e200d04-c0a8-5ff9-b974-67b0b1d59956",
+      "labels": [
+        "dialer"
+      ],
+      "sprint": null,
+      "created": "2026-09-06T08:45:00.000+0100",
+      "updated": "2026-09-09T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41026",
+      "key": "DIAL-26",
+      "summary": "Mikrofony zbierają rozmowy z sąsiednich stanowisk",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:17210f70-fce1-5443-948f-503cd0f61092",
+      "labels": [
+        "audio",
+        "hardware"
+      ],
+      "sprint": null,
+      "created": "2026-09-08T08:30:00.000+0100",
+      "updated": "2026-09-11T08:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41027",
+      "key": "DIAL-27",
+      "summary": "Raport najlepszych godzin na dzwonienie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:645f8e88-f02a-5c4f-a05e-96de92543a0e",
+      "reporter": "712020:65b4e3f5-8b1e-58c0-8d07-ffc8846b71ab",
+      "labels": [
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-09-10T12:00:00.000+0100",
+      "updated": "2026-09-13T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41028",
+      "key": "DIAL-28",
+      "summary": "Czarna lista numerów, które grożą sądem",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:645f8e88-f02a-5c4f-a05e-96de92543a0e",
+      "reporter": "712020:645f8e88-f02a-5c4f-a05e-96de92543a0e",
+      "labels": [
+        "compliance"
+      ],
+      "sprint": null,
+      "created": "2026-09-11T10:00:00.000+0100",
+      "updated": "2026-09-14T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41029",
+      "key": "DIAL-29",
+      "summary": "Panel kierownika: kto teraz rozmawia",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:65b4e3f5-8b1e-58c0-8d07-ffc8846b71ab",
+      "reporter": "712020:4e200d04-c0a8-5ff9-b974-67b0b1d59956",
+      "labels": [
+        "dashboard"
+      ],
+      "sprint": "412",
+      "created": "2026-09-13T13:45:00.000+0100",
+      "updated": "2026-09-16T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41030",
+      "key": "DIAL-30",
+      "summary": "Opóźnienie dźwięku w rozmowach przez VPN",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:65b4e3f5-8b1e-58c0-8d07-ffc8846b71ab",
+      "labels": [
+        "audio",
+        "network"
+      ],
+      "sprint": null,
+      "created": "2026-09-14T16:30:00.000+0100",
+      "updated": "2026-09-17T16:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41031",
+      "key": "DIAL-31",
+      "summary": "Kopia zapasowa nagrań rozmów",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:61b077f8-d65f-55b3-9ddc-dff4afcaef8e",
+      "labels": [
+        "recording",
+        "backup"
+      ],
+      "sprint": null,
+      "created": "2026-09-16T16:45:00.000+0100",
+      "updated": "2026-09-19T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41032",
+      "key": "DIAL-32",
+      "summary": "Średni czas rozmowy na kampanię",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:61b077f8-d65f-55b3-9ddc-dff4afcaef8e",
+      "reporter": "712020:17210f70-fce1-5443-948f-503cd0f61092",
+      "labels": [
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-09-18T09:00:00.000+0100",
+      "updated": "2026-09-21T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41033",
+      "key": "DIAL-33",
+      "summary": "Callbacks are lost after a restart of the dialer",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:4e200d04-c0a8-5ff9-b974-67b0b1d59956",
+      "reporter": "712020:65b4e3f5-8b1e-58c0-8d07-ffc8846b71ab",
+      "labels": [
+        "callback"
+      ],
+      "sprint": null,
+      "created": "2026-09-19T17:45:00.000+0100",
+      "updated": "2026-09-22T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41034",
+      "key": "DIAL-34",
+      "summary": "Instrukcja logowania do dialera dla nowych osób",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:645f8e88-f02a-5c4f-a05e-96de92543a0e",
+      "reporter": "712020:65b4e3f5-8b1e-58c0-8d07-ffc8846b71ab",
+      "labels": [
+        "docs"
+      ],
+      "sprint": null,
+      "created": "2026-09-21T14:30:00.000+0100",
+      "updated": "2026-09-24T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41035",
+      "key": "DIAL-35",
+      "summary": "Numer firmy oznaczany jako spam w telefonach",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:df88f349-4267-5dc9-abb9-d5c64898b054",
+      "reporter": "712020:17210f70-fce1-5443-948f-503cd0f61092",
+      "labels": [
+        "telephony"
+      ],
+      "sprint": "413",
+      "created": "2026-09-22T09:00:00.000+0100",
+      "updated": "2026-09-25T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41036",
+      "key": "DIAL-36",
+      "summary": "Premia za wynik liczona automatycznie z dialera",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:65b4e3f5-8b1e-58c0-8d07-ffc8846b71ab",
+      "labels": [
+        "motivation",
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-09-24T17:00:00.000+0100",
+      "updated": "2026-09-27T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41037",
+      "key": "DIAL-37",
+      "summary": "Wymiana 15 zestawów słuchawkowych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:61b077f8-d65f-55b3-9ddc-dff4afcaef8e",
+      "labels": [
+        "hardware"
+      ],
+      "sprint": null,
+      "created": "2026-09-26T10:15:00.000+0100",
+      "updated": "2026-09-29T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41038",
+      "key": "DIAL-38",
+      "summary": "Wyciszenie rozmowy przy podawaniu danych osobowych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:645f8e88-f02a-5c4f-a05e-96de92543a0e",
+      "reporter": "712020:4e200d04-c0a8-5ff9-b974-67b0b1d59956",
+      "labels": [
+        "recording",
+        "compliance"
+      ],
+      "sprint": null,
+      "created": "2026-09-27T14:15:00.000+0100",
+      "updated": "2026-09-30T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "41039",
+      "key": "DIAL-39",
+      "summary": "Kolejka połączeń przychodzących od oddzwaniających klientów",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:65b4e3f5-8b1e-58c0-8d07-ffc8846b71ab",
+      "reporter": "712020:61b077f8-d65f-55b3-9ddc-dff4afcaef8e",
+      "labels": [
+        "telephony",
+        "callback"
+      ],
+      "sprint": null,
+      "created": "2026-09-29T10:15:00.000+0100",
+      "updated": "2026-10-02T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

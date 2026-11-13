@@ -555,3 +555,9 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - Add `data/companies/wiseai.json`: a company with AI agents for customer service and sales. It has 5 boards (`BOT`, `DEMO`, `GRT`, `RAP`, `PLT`), 191 issues and 15 authors.
 - Add the boards `data/environments/train-{bot,demo,grt,rap,plt}.json`.
 - Most persons of WiseAI have Ukrainian names in the Latin form of their Jira profiles.
+
+### Train boards of SolarDom
+
+- Add `data/companies/solardom.json`: a telemarketing company that sells photovoltaic installations. It has 5 boards (`DIAL`, `LEAD`, `SKR`, `UMW`, `RODO`), 191 issues and 15 authors.
+- Add the boards `data/environments/train-{dial,lead,skr,umw,rodo}.json`.
+- The train split now has 25 boards of 5 companies, 976 issues and 75 authors.

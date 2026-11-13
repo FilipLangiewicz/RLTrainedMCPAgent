@@ -1,0 +1,869 @@
+{
+  "name": "train-lead",
+  "site": "https://example.atlassian.net",
+  "now": "2026-10-07T09:15:00.000+0100",
+  "project": {
+    "key": "LEAD",
+    "name": "SolarDom - bazy kontaktów i leady"
+  },
+  "board": {
+    "id": "42",
+    "name": "LEAD board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:7e1e40bc-a5f9-5550-8bb7-001caff10b78",
+      "display_name": "Jolanta Kurzawa",
+      "email": "jolanta.kurzawa@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:7b059ae4-9ffb-5c1f-92c0-b65abba2165f",
+      "display_name": "Remigiusz Fabiański",
+      "email": "remigiusz.fabianski@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:bee9a840-36db-55ce-9f36-f0b5fd6dad45",
+      "display_name": "Sandra Kozieł",
+      "email": "sandra.koziel@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:7b0c6cab-9689-5b70-a989-c4e7b1c2797b",
+      "display_name": "Sandra Lach",
+      "email": "sandra.lach@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:db5ab975-6d11-53e7-8456-e9eab8ec0ba0",
+      "display_name": "Kajetan Wolny",
+      "email": "kajetan.wolny@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:19d672ac-dcd8-5089-a2fd-f5588c010659",
+      "display_name": "Zuzanna Rak",
+      "email": "zuzanna.rak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:73416681-8ace-5878-934a-33628fc80a45",
+      "display_name": "Mieczysław Kot",
+      "email": "mieczyslaw.kot@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "421",
+      "name": "LEAD Sprint 12",
+      "state": "closed",
+      "start_date": "2026-09-16T09:00:00.000Z",
+      "end_date": "2026-09-30T09:00:00.000Z",
+      "goal": "Import nowej bazy z porównywarki"
+    },
+    {
+      "id": "422",
+      "name": "LEAD Sprint 13",
+      "state": "active",
+      "start_date": "2026-09-30T09:00:00.000Z",
+      "end_date": "2026-10-14T09:00:00.000Z",
+      "goal": "Deduplikacja i scoring leadów"
+    },
+    {
+      "id": "423",
+      "name": "LEAD Sprint 14",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Leady z formularzy na stronie"
+    },
+    {
+      "id": "424",
+      "name": "LEAD Sprint 15",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "42001",
+      "key": "LEAD-1",
+      "summary": "Import bazy 40 tysięcy kontaktów z porównywarki energii",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:73416681-8ace-5878-934a-33628fc80a45",
+      "reporter": "712020:db5ab975-6d11-53e7-8456-e9eab8ec0ba0",
+      "labels": [
+        "import"
+      ],
+      "sprint": "421",
+      "created": "2026-07-30T12:00:00.000+0100",
+      "updated": "2026-08-02T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "420015",
+          "author": "712020:7b059ae4-9ffb-5c1f-92c0-b65abba2165f",
+          "time_spent_seconds": 18000,
+          "comment": "Mapowanie kolumn",
+          "started": "2026-08-01T00:00:00.000+0100"
+        },
+        {
+          "id": "420016",
+          "author": "712020:7b059ae4-9ffb-5c1f-92c0-b65abba2165f",
+          "time_spent_seconds": 7200,
+          "comment": "Kontrola duplikatów",
+          "started": "2026-08-02T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "42002",
+      "key": "LEAD-2",
+      "summary": "Numery telefonów bez prefiksu po imporcie",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:bee9a840-36db-55ce-9f36-f0b5fd6dad45",
+      "reporter": "712020:7b059ae4-9ffb-5c1f-92c0-b65abba2165f",
+      "labels": [
+        "import",
+        "data-quality"
+      ],
+      "sprint": "421",
+      "created": "2026-08-01T10:00:00.000+0100",
+      "updated": "2026-08-04T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42003",
+      "key": "LEAD-3",
+      "summary": "Purchase of the database from the fair in Poznań",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:7b0c6cab-9689-5b70-a989-c4e7b1c2797b",
+      "labels": [
+        "sources"
+      ],
+      "sprint": "421",
+      "created": "2026-08-02T10:15:00.000+0100",
+      "updated": "2026-08-05T10:15:00.000+0100",
+      "comments": [
+        {
+          "id": "420031",
+          "author": "712020:7b0c6cab-9689-5b70-a989-c4e7b1c2797b",
+          "body": "The seller had no consents for the contacts.",
+          "created": "2026-08-03T10:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "42004",
+      "key": "LEAD-4",
+      "summary": "Deduplikacja leadów po numerze telefonu",
+      "description": "Ten sam numer jest w trzech bazach. Zostaje rekord z najnowszą zgodą.",
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:7b0c6cab-9689-5b70-a989-c4e7b1c2797b",
+      "reporter": "712020:db5ab975-6d11-53e7-8456-e9eab8ec0ba0",
+      "labels": [
+        "data-quality"
+      ],
+      "sprint": "422",
+      "created": "2026-08-04T08:00:00.000+0100",
+      "updated": "2026-08-07T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "420045",
+          "author": "712020:7b0c6cab-9689-5b70-a989-c4e7b1c2797b",
+          "time_spent_seconds": 14400,
+          "comment": "Reguły łączenia rekordów",
+          "started": "2026-08-06T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "42005",
+      "key": "LEAD-5",
+      "summary": "Scoring leadów według typu domu i regionu",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:db5ab975-6d11-53e7-8456-e9eab8ec0ba0",
+      "reporter": "712020:7e1e40bc-a5f9-5550-8bb7-001caff10b78",
+      "labels": [
+        "scoring"
+      ],
+      "sprint": "422",
+      "created": "2026-08-05T12:30:00.000+0100",
+      "updated": "2026-08-08T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42006",
+      "key": "LEAD-6",
+      "summary": "Leady bez daty zgody w bazie z porównywarki",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:7e1e40bc-a5f9-5550-8bb7-001caff10b78",
+      "reporter": "712020:db5ab975-6d11-53e7-8456-e9eab8ec0ba0",
+      "labels": [
+        "consents",
+        "import"
+      ],
+      "sprint": "422",
+      "created": "2026-08-07T08:45:00.000+0100",
+      "updated": "2026-08-10T08:45:00.000+0100",
+      "comments": [
+        {
+          "id": "420061",
+          "author": "712020:7e1e40bc-a5f9-5550-8bb7-001caff10b78",
+          "body": "Dotyczy 6 tysięcy rekordów.",
+          "created": "2026-08-08T08:45:00.000+0100"
+        },
+        {
+          "id": "420062",
+          "author": "712020:7e1e40bc-a5f9-5550-8bb7-001caff10b78",
+          "body": "Do wyjaśnienia ze sprzedawcą bazy.",
+          "created": "2026-08-09T08:45:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "42007",
+      "key": "LEAD-7",
+      "summary": "Source column for each lead",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:7e1e40bc-a5f9-5550-8bb7-001caff10b78",
+      "reporter": "712020:7b0c6cab-9689-5b70-a989-c4e7b1c2797b",
+      "labels": [
+        "sources"
+      ],
+      "sprint": "422",
+      "created": "2026-08-09T15:45:00.000+0100",
+      "updated": "2026-08-12T15:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42008",
+      "key": "LEAD-8",
+      "summary": "Filtr: tylko domy jednorodzinne",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:7e1e40bc-a5f9-5550-8bb7-001caff10b78",
+      "reporter": "712020:bee9a840-36db-55ce-9f36-f0b5fd6dad45",
+      "labels": [
+        "scoring"
+      ],
+      "sprint": "422",
+      "created": "2026-08-10T15:00:00.000+0100",
+      "updated": "2026-08-13T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42009",
+      "key": "LEAD-9",
+      "summary": "Raport konwersji leadów według źródła",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:7b059ae4-9ffb-5c1f-92c0-b65abba2165f",
+      "reporter": "712020:bee9a840-36db-55ce-9f36-f0b5fd6dad45",
+      "labels": [
+        "reports"
+      ],
+      "sprint": "422",
+      "created": "2026-08-12T11:15:00.000+0100",
+      "updated": "2026-08-15T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42010",
+      "key": "LEAD-10",
+      "summary": "Usuwanie leadów, które wnieśli sprzeciw",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:7b0c6cab-9689-5b70-a989-c4e7b1c2797b",
+      "reporter": "712020:19d672ac-dcd8-5089-a2fd-f5588c010659",
+      "labels": [
+        "consents",
+        "compliance"
+      ],
+      "sprint": "422",
+      "created": "2026-08-14T17:45:00.000+0100",
+      "updated": "2026-08-17T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42011",
+      "key": "LEAD-11",
+      "summary": "Limit leadów na telemarketera dziennie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:19d672ac-dcd8-5089-a2fd-f5588c010659",
+      "labels": [
+        "distribution"
+      ],
+      "sprint": "422",
+      "created": "2026-08-15T11:00:00.000+0100",
+      "updated": "2026-08-18T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42012",
+      "key": "LEAD-12",
+      "summary": "Leady z formularza na stronie trafiają do spamu",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:7e1e40bc-a5f9-5550-8bb7-001caff10b78",
+      "labels": [
+        "web-form"
+      ],
+      "sprint": "422",
+      "created": "2026-08-17T11:15:00.000+0100",
+      "updated": "2026-08-20T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42013",
+      "key": "LEAD-13",
+      "summary": "Cena za lead od partnerów w tabeli",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:7b059ae4-9ffb-5c1f-92c0-b65abba2165f",
+      "labels": [
+        "sources",
+        "costs"
+      ],
+      "sprint": "422",
+      "created": "2026-08-19T17:15:00.000+0100",
+      "updated": "2026-08-22T17:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42014",
+      "key": "LEAD-14",
+      "summary": "Leady z formularzy na stronie bezpośrednio do dialera",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:db5ab975-6d11-53e7-8456-e9eab8ec0ba0",
+      "reporter": "712020:db5ab975-6d11-53e7-8456-e9eab8ec0ba0",
+      "labels": [
+        "web-form",
+        "integration"
+      ],
+      "sprint": "423",
+      "created": "2026-08-20T10:30:00.000+0100",
+      "updated": "2026-08-23T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42015",
+      "key": "LEAD-15",
+      "summary": "Formularz kalkulatora oszczędności na stronie",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:bee9a840-36db-55ce-9f36-f0b5fd6dad45",
+      "labels": [
+        "web-form"
+      ],
+      "sprint": "423",
+      "created": "2026-08-22T10:15:00.000+0100",
+      "updated": "2026-08-25T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42016",
+      "key": "LEAD-16",
+      "summary": "Wrong region for postal codes starting with 26",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:7b059ae4-9ffb-5c1f-92c0-b65abba2165f",
+      "labels": [
+        "data-quality"
+      ],
+      "sprint": "423",
+      "created": "2026-08-24T10:45:00.000+0100",
+      "updated": "2026-08-27T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42017",
+      "key": "LEAD-17",
+      "summary": "Leady z domów, które już mają panele",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:7b0c6cab-9689-5b70-a989-c4e7b1c2797b",
+      "reporter": "712020:7b0c6cab-9689-5b70-a989-c4e7b1c2797b",
+      "labels": [
+        "scoring",
+        "data-quality"
+      ],
+      "sprint": "423",
+      "created": "2026-08-25T10:00:00.000+0100",
+      "updated": "2026-08-28T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42018",
+      "key": "LEAD-18",
+      "summary": "Baza zawiera numery firm zamiast osób prywatnych",
+      "description": "W bazie z porównywarki 12% numerów to infolinie firm.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:bee9a840-36db-55ce-9f36-f0b5fd6dad45",
+      "labels": [
+        "data-quality"
+      ],
+      "sprint": null,
+      "created": "2026-08-27T15:15:00.000+0100",
+      "updated": "2026-08-30T15:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42019",
+      "key": "LEAD-19",
+      "summary": "Rejestr zakupionych baz z umowami",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:7e1e40bc-a5f9-5550-8bb7-001caff10b78",
+      "reporter": "712020:bee9a840-36db-55ce-9f36-f0b5fd6dad45",
+      "labels": [
+        "sources",
+        "compliance"
+      ],
+      "sprint": null,
+      "created": "2026-08-29T13:15:00.000+0100",
+      "updated": "2026-09-01T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42020",
+      "key": "LEAD-20",
+      "summary": "Automatyczne wzbogacanie leadów o dane działki",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:19d672ac-dcd8-5089-a2fd-f5588c010659",
+      "labels": [
+        "scoring"
+      ],
+      "sprint": null,
+      "created": "2026-08-30T17:30:00.000+0100",
+      "updated": "2026-09-02T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42021",
+      "key": "LEAD-21",
+      "summary": "Leady powracają po usunięciu z bazy",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:19d672ac-dcd8-5089-a2fd-f5588c010659",
+      "reporter": "712020:7b059ae4-9ffb-5c1f-92c0-b65abba2165f",
+      "labels": [
+        "consents"
+      ],
+      "sprint": null,
+      "created": "2026-09-01T10:45:00.000+0100",
+      "updated": "2026-09-04T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42022",
+      "key": "LEAD-22",
+      "summary": "Podział leadów między salę A i salę B",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:7b0c6cab-9689-5b70-a989-c4e7b1c2797b",
+      "reporter": "712020:db5ab975-6d11-53e7-8456-e9eab8ec0ba0",
+      "labels": [
+        "distribution"
+      ],
+      "sprint": null,
+      "created": "2026-09-02T09:00:00.000+0100",
+      "updated": "2026-09-05T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42023",
+      "key": "LEAD-23",
+      "summary": "Export of the leads for the partner in Kraków",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:bee9a840-36db-55ce-9f36-f0b5fd6dad45",
+      "labels": [
+        "sources"
+      ],
+      "sprint": null,
+      "created": "2026-09-04T14:45:00.000+0100",
+      "updated": "2026-09-07T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42024",
+      "key": "LEAD-24",
+      "summary": "Wiek leada z bazy szacowany z imienia",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:bee9a840-36db-55ce-9f36-f0b5fd6dad45",
+      "labels": [
+        "scoring"
+      ],
+      "sprint": null,
+      "created": "2026-09-06T10:45:00.000+0100",
+      "updated": "2026-09-09T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42025",
+      "key": "LEAD-25",
+      "summary": "Lead z polecenia od klienta z premią",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:7e1e40bc-a5f9-5550-8bb7-001caff10b78",
+      "labels": [
+        "referrals"
+      ],
+      "sprint": null,
+      "created": "2026-09-07T15:15:00.000+0100",
+      "updated": "2026-09-10T15:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42026",
+      "key": "LEAD-26",
+      "summary": "Pola adresu ucięte w imporcie z pliku CSV",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:7b0c6cab-9689-5b70-a989-c4e7b1c2797b",
+      "reporter": "712020:7b059ae4-9ffb-5c1f-92c0-b65abba2165f",
+      "labels": [
+        "import"
+      ],
+      "sprint": null,
+      "created": "2026-09-09T17:30:00.000+0100",
+      "updated": "2026-09-12T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42027",
+      "key": "LEAD-27",
+      "summary": "Leady od klientów, którzy odstąpili od umowy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:db5ab975-6d11-53e7-8456-e9eab8ec0ba0",
+      "reporter": "712020:db5ab975-6d11-53e7-8456-e9eab8ec0ba0",
+      "labels": [
+        "scoring"
+      ],
+      "sprint": null,
+      "created": "2026-09-11T16:45:00.000+0100",
+      "updated": "2026-09-14T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42028",
+      "key": "LEAD-28",
+      "summary": "Panel partnera do wgrywania leadów",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:19d672ac-dcd8-5089-a2fd-f5588c010659",
+      "reporter": "712020:bee9a840-36db-55ce-9f36-f0b5fd6dad45",
+      "labels": [
+        "sources"
+      ],
+      "sprint": null,
+      "created": "2026-09-12T16:30:00.000+0100",
+      "updated": "2026-09-15T16:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42029",
+      "key": "LEAD-29",
+      "summary": "Leady z kampanii na Facebooku",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:7b059ae4-9ffb-5c1f-92c0-b65abba2165f",
+      "reporter": "712020:db5ab975-6d11-53e7-8456-e9eab8ec0ba0",
+      "labels": [
+        "sources",
+        "marketing"
+      ],
+      "sprint": "422",
+      "created": "2026-09-14T17:00:00.000+0100",
+      "updated": "2026-09-17T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42030",
+      "key": "LEAD-30",
+      "summary": "Czas od pozyskania leada do pierwszego telefonu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:db5ab975-6d11-53e7-8456-e9eab8ec0ba0",
+      "labels": [
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-09-16T16:15:00.000+0100",
+      "updated": "2026-09-19T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42031",
+      "key": "LEAD-31",
+      "summary": "Validation of the phone numbers before the import",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:19d672ac-dcd8-5089-a2fd-f5588c010659",
+      "reporter": "712020:7b059ae4-9ffb-5c1f-92c0-b65abba2165f",
+      "labels": [
+        "data-quality"
+      ],
+      "sprint": null,
+      "created": "2026-09-17T10:45:00.000+0100",
+      "updated": "2026-09-20T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42032",
+      "key": "LEAD-32",
+      "summary": "Leady przypisane do telemarketera, który odszedł",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:19d672ac-dcd8-5089-a2fd-f5588c010659",
+      "labels": [
+        "distribution"
+      ],
+      "sprint": null,
+      "created": "2026-09-19T10:30:00.000+0100",
+      "updated": "2026-09-22T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42033",
+      "key": "LEAD-33",
+      "summary": "Archiwizacja leadów starszych niż dwa lata",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:7b059ae4-9ffb-5c1f-92c0-b65abba2165f",
+      "reporter": "712020:bee9a840-36db-55ce-9f36-f0b5fd6dad45",
+      "labels": [
+        "consents"
+      ],
+      "sprint": null,
+      "created": "2026-09-21T11:00:00.000+0100",
+      "updated": "2026-09-24T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42034",
+      "key": "LEAD-34",
+      "summary": "Szablon umowy na zakup bazy kontaktów",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:19d672ac-dcd8-5089-a2fd-f5588c010659",
+      "reporter": "712020:7e1e40bc-a5f9-5550-8bb7-001caff10b78",
+      "labels": [
+        "sources"
+      ],
+      "sprint": null,
+      "created": "2026-09-22T11:00:00.000+0100",
+      "updated": "2026-09-25T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42035",
+      "key": "LEAD-35",
+      "summary": "Mapa leadów według województw",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:db5ab975-6d11-53e7-8456-e9eab8ec0ba0",
+      "labels": [
+        "reports"
+      ],
+      "sprint": "423",
+      "created": "2026-09-24T11:45:00.000+0100",
+      "updated": "2026-09-27T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42036",
+      "key": "LEAD-36",
+      "summary": "Oznaczenie leadów z gmin z programem dopłat",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:bee9a840-36db-55ce-9f36-f0b5fd6dad45",
+      "reporter": "712020:7e1e40bc-a5f9-5550-8bb7-001caff10b78",
+      "labels": [
+        "scoring"
+      ],
+      "sprint": null,
+      "created": "2026-09-26T12:00:00.000+0100",
+      "updated": "2026-09-29T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42037",
+      "key": "LEAD-37",
+      "summary": "Duplicate leads from the web form and the call",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:7b059ae4-9ffb-5c1f-92c0-b65abba2165f",
+      "reporter": "712020:bee9a840-36db-55ce-9f36-f0b5fd6dad45",
+      "labels": [
+        "data-quality",
+        "web-form"
+      ],
+      "sprint": null,
+      "created": "2026-09-27T09:45:00.000+0100",
+      "updated": "2026-09-30T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "42038",
+      "key": "LEAD-38",
+      "summary": "Kontrola jakości bazy przed zapłatą sprzedawcy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:db5ab975-6d11-53e7-8456-e9eab8ec0ba0",
+      "labels": [
+        "sources",
+        "data-quality"
+      ],
+      "sprint": null,
+      "created": "2026-09-29T13:15:00.000+0100",
+      "updated": "2026-10-02T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}
