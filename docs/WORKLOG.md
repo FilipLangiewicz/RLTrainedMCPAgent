@@ -561,3 +561,9 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - Add `data/companies/solardom.json`: a telemarketing company that sells photovoltaic installations. It has 5 boards (`DIAL`, `LEAD`, `SKR`, `UMW`, `RODO`), 191 issues and 15 authors.
 - Add the boards `data/environments/train-{dial,lead,skr,umw,rodo}.json`.
 - The train split now has 25 boards of 5 companies, 976 issues and 75 authors.
+
+### Validation boards of Housi
+
+- Add `data/companies/housi.json`: one system for the property manager, the service companies and the residents. It has 3 boards (`USR`, `SRW`, `ZRZ`), 117 issues and 9 authors.
+- Add the boards `data/environments/validation-{usr,srw,zrz}.json`. They are for the selection of the SFT settings, not for the training.
+- No project key, summary or person of a validation board occurs on a train board or a test board.
