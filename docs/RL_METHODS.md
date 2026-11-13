@@ -97,8 +97,8 @@ Layout A: each GPU keeps a copy of the model in `transformers`, generates one ha
 | Gemma 4 E2B | A | 11.6 min | about 39 h | calculated from measured parts. B measured 13.8 min. |
 | Gemma 4 E4B | A | about 20 min | about 67 h | calculated from measured parts |
 | Qwen3.5-2B | B | 28 min | about 95 h | measured (job 59) |
-| Bielik 4.5B | B | not measured | more than 60 h | estimate |
-| Qwen3.5-4B | none | more than 45 min | more than 150 h | the generation alone takes 44 min |
+| Bielik 4.5B | B | about 16 min | about 53 h | estimate: the measured generation and the backward times of the probe |
+| Qwen3.5-4B | B | about 64 min | about 210 h | estimate. The backward pass of trajectories with 8000 tokens is near the memory limit. |
 
 In all layouts the backward pass takes most of the time. The trajectories of Qwen3.5-2B have about 8000 tokens, almost two times more than the trajectories of Bielik and Gemma. Thus a limit of the context (shorter tool results or a window of the last turns) is the strongest way to make RL faster.
 
