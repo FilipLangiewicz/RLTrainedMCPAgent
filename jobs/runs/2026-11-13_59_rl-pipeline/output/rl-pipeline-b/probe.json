@@ -1,0 +1,147 @@
+{
+  "config": {
+    "agent": {
+      "error_limit": 5,
+      "loop_limit": 3,
+      "max_steps": 25,
+      "prompt": "v3"
+    },
+    "model": {
+      "backend": "transformers",
+      "dtype": "float16",
+      "family": "gemma4",
+      "max_new_tokens": 1024,
+      "path": "/kaggle/input/models/combainsidm/idm-pro-gemma-4-e2b/transformers/base/1/gemma-4-e2b",
+      "temperature": 1.0,
+      "thinking": false
+    },
+    "probe": {
+      "concurrency": 64,
+      "engine": "pipeline",
+      "group": 8,
+      "logprob_samples": 24,
+      "lora_rank": 16,
+      "offload_ple": true,
+      "split": "test",
+      "steps": 3,
+      "tasks": 16,
+      "tasks_per_step": 8,
+      "vllm": {
+        "batched_tokens": 4096,
+        "max_len": 16384,
+        "max_seqs": 64,
+        "mem": 0.85,
+        "patch": true,
+        "port": 8000,
+        "start_minutes": 30,
+        "tp": 1
+      }
+    }
+  },
+  "probe": {
+    "split": "test",
+    "tasks": 16,
+    "group": 8,
+    "rollout_minutes": 60,
+    "batch_sizes": [
+      1,
+      4,
+      8
+    ],
+    "new_tokens": 128,
+    "lora_rank": 16,
+    "lengths": [
+      2048,
+      4096,
+      8192,
+      12288
+    ],
+    "seed": 0,
+    "concurrency": 64,
+    "engine": "pipeline",
+    "logprob_samples": 24,
+    "offload_ple": true,
+    "steps": 3,
+    "tasks_per_step": 8,
+    "vllm": {
+      "batched_tokens": 4096,
+      "max_len": 16384,
+      "max_seqs": 64,
+      "mem": 0.85,
+      "patch": true,
+      "port": 8000,
+      "start_minutes": 30,
+      "tp": 1
+    }
+  },
+  "offload": {
+    "tables": [
+      "model.language_model.embed_tokens_per_layer"
+    ],
+    "cpu_params": 2348810240
+  },
+  "trainable_params": 24158208,
+  "server_start_s": 345.1,
+  "adapter_v0": {
+    "save_s": 0.22,
+    "load_s": 0.56,
+    "size_mb": 92.2
+  },
+  "logprob_check_lora": {
+    "samples": 24,
+    "tokens": 602,
+    "mean_abs_logprob_diff": 0.0021,
+    "p99_abs_logprob_diff": 0.02355,
+    "max_abs_logprob_diff": 0.07424
+  },
+  "steps": [
+    {
+      "step": 0,
+      "generate_s": 122.2,
+      "rollouts": 64,
+      "success": 0.297
+    },
+    {
+      "step": 1,
+      "wall_s": 810.0,
+      "generate_s": 90.5,
+      "train": {
+        "sequences": 64,
+        "out_of_memory": 0,
+        "tokens": 302519,
+        "time_s": 809.6
+      },
+      "save_s": 0.27,
+      "swap_s": 0.13,
+      "rollouts": 64
+    },
+    {
+      "step": 2,
+      "wall_s": 857.0,
+      "generate_s": 124.5,
+      "train": {
+        "sequences": 64,
+        "out_of_memory": 0,
+        "tokens": 312307,
+        "time_s": 856.6
+      },
+      "save_s": 0.25,
+      "swap_s": 0.13,
+      "rollouts": 64
+    },
+    {
+      "step": 3,
+      "wall_s": 813.5,
+      "generate_s": 120.7,
+      "train": {
+        "sequences": 64,
+        "out_of_memory": 0,
+        "tokens": 303053,
+        "time_s": 813.2
+      },
+      "save_s": 0.22,
+      "swap_s": 0.08,
+      "rollouts": 64
+    }
+  ]
+}

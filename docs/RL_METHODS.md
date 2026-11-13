@@ -15,7 +15,7 @@ Status on 2026-11-12: draft. Some decisions wait for the SFT results.
 | Start of RL | After SFT | made | Before SFT, most groups of rollouts have only zero rewards. |
 | Warm start with RFT | No RFT round before GRPO | proposed | SFT already gives the warm start. GPU time is the main limit. |
 | Models for RL | Selected after a second probe on the SFT models, on train or validation tasks | made (selection open) | The budget allows full RL for about 1 to 2 models. Rollout times change after SFT. |
-| Generation engine | `transformers` with batches for Gemma 4 E2B. vLLM is an option for the models with slow generation (Qwen3.5). | open | See "Generation engine". The final choice follows the selection of the models. |
+| Generation engine | Bielik 1.5B and Qwen3.5-2B: vLLM on GPU 0, the trainer on GPU 1. Gemma 4: `transformers` on both GPUs. | proposed | Measured in jobs 51 to 61. See "Generation engine and GPU layout". |
 | Long runs | A checkpoint every 25 steps (LoRA adapter, optimizer state, step, task filter). The next job continues from it. | made | A Kaggle session stops after 12 h. |
 | Kaggle accounts | More than one account is allowed for RL | made | It shortens the calendar time. Each account needs access to the private weights. |
 | Test set | Used only for the cost probe | made | No test task goes into the train set, the validation set or a choice of settings. |
@@ -68,27 +68,49 @@ Other results:
 - A batch of 4 to 8 rollouts gives 2 to 3 times more tokens per second than one rollout, if it fits in memory.
 - The Kaggle image has torchao 0.10. PEFT 0.21 stops with an ImportError for it, so a job must remove torchao first.
 
-## Generation engine
+## Generation engine and GPU layout
 
-Jobs 51 and 53 measured vLLM 0.33 on one T4 in fp16. The prompt had about 4500 to 5200 tokens, and each rollout wrote 128 new tokens. Gemma 4 needs a patch on the T4: the attention kernel uses a tile of 16, because the T4 has only 64 KB of shared memory.
+Jobs 51 to 61 measured vLLM 0.33 on the T4 in fp16, with real agent rollouts (our parser, the simulator, 64 rollouts at the same time). Gemma 4 needs a patch on the T4: the attention kernel uses a tile of 16, because the T4 has only 64 KB of shared memory.
 
-| Model | `transformers`, batch 1 / best batch | vLLM, 1 / 8 / 64 rollouts at the same time | vLLM start |
+### Generation of 64 rollouts
+
+| Model | `transformers`, one rollout after the other, one GPU | vLLM, 64 at the same time | vLLM start |
 |---|---|---|---|
-| Gemma 4 E2B | 11 / 39 tokens/s (batch 8) | 30 / 96 / 148 tokens/s | 5 min |
-| Qwen3.5-2B | 16.5 / 52 tokens/s (batch 8) | 42 / 171 / 269 tokens/s | 11 min |
+| Gemma 4 E2B | 9.6 min | 2.1 min | 5.6 min |
+| Gemma 4 E4B | 21 min | 1.4 min (two GPUs) | 6.4 min |
+| Bielik 1.5B | 16 min | 2.1 min | 2.8 min |
+| Bielik 4.5B | 59 min | 8.2 min | 2.5 min |
+| Qwen3.5-2B | 58 min | 6.2 min | 11.3 min |
+| Qwen3.5-4B | 82 min | 44 min | 11.7 min |
 
-vLLM generates 2.5 to 5 times faster. The start of 5 to 11 minutes is about 1 to 2% of a job of 11 h, so it is not a problem.
+- The success rates with vLLM are the same as with `transformers`. Thus vLLM does not change the behavior of the agent.
+- vLLM and `transformers` give the same log-probabilities: the mean difference is 0.0008 to 0.0027, and 99% of the tokens are below 0.036. This is also true with a LoRA adapter.
+- Qwen3.5-4B is slow in vLLM: after 8.6 GB of weights, the KV cache holds only about 15 rollouts at the same time.
 
-The problem is the GPU memory. vLLM keeps most of the memory of its GPU. Thus vLLM generates on one GPU, and the trainer uses only the other GPU. With `transformers`, each GPU keeps its own copy of the model, and both GPUs generate and train. Estimate for one GRPO step (64 rollouts, context of 5000 tokens, backward times from the probe):
+### One RL step (64 rollouts, two T4 GPUs)
 
-| Model | `transformers`, two copies | vLLM first, then the trainer | vLLM and the trainer at the same time |
-|---|---|---|---|
-| Gemma 4 E2B | about 9 min | about 14 min | about 12.5 min |
-| Qwen3.5-2B | about 23 min | about 18.5 min | about 12 min |
+Layout A: each GPU keeps a copy of the model in `transformers`, generates one half of the rollouts and trains on it. Layout B: vLLM with the LoRA adapter generates on GPU 0, and at the same time the trainer works on GPU 1. After each step, the trainer saves the adapter, and vLLM loads it without a restart. The save and the load take less than 1 s.
 
-For Gemma 4 E2B the backward pass takes most of the time, so vLLM gives no gain. For Qwen3.5 the generation takes most of the time, so vLLM gives 20 to 50%. If vLLM and the trainer work at the same time, the rollouts come from the weights of the previous step (off-policy). TRL corrects this with an importance weight.
+| Model | Faster layout | One step | 200 steps | Source |
+|---|---|---|---|---|
+| Bielik 1.5B | B | 5.8 min | about 19 h | measured (job 59) |
+| Gemma 4 E2B | A | 11.6 min | about 39 h | calculated from measured parts. B measured 13.8 min. |
+| Gemma 4 E4B | A | about 20 min | about 67 h | calculated from measured parts |
+| Qwen3.5-2B | B | 28 min | about 95 h | measured (job 59) |
+| Bielik 4.5B | B | not measured | more than 60 h | estimate |
+| Qwen3.5-4B | none | more than 45 min | more than 150 h | the generation alone takes 44 min |
 
-Risks of vLLM: a separate environment (vLLM brings its own PyTorch), a patch for Gemma 4, and little free memory on the T4. In job 53 version 1, Qwen3.5-4B ran out of memory at the capture of the CUDA graphs. Version 2 measures Bielik 1.5B and Qwen3.5-4B with less memory.
+In all layouts the backward pass takes most of the time. The trajectories of Qwen3.5-2B have about 8000 tokens, almost two times more than the trajectories of Bielik and Gemma. Thus a limit of the context (shorter tool results or a window of the last turns) is the strongest way to make RL faster.
+
+Layout C (vLLM generates, then sleeps, and two trainer copies use both GPUs) failed three times in job 61. The causes were full RAM, GPU memory that the sleeping vLLM keeps, and an illegal memory access. The team does not use this layout.
+
+### Requirements for the RL code (issue idm-pro-048)
+
+- Compute the log-probabilities in chunks. The vocabulary of Qwen has 248k tokens. Thus 2800 trained tokens need about 2.8 GB for the logits alone.
+- Limit the length of a trajectory. Some Qwen3.5-2B trajectories had 25000 tokens and did not fit in the backward pass.
+- Remove torchao in each Kaggle job that uses PEFT.
+- Keep vLLM in a separate environment (it brings its own PyTorch). Use `--max-num-batched-tokens 4096` and 85 to 90% of the GPU memory for models with about 9 GB of weights.
+- Keep the PLE table of Gemma 4 in CPU memory in the trainer.
 
 ## Main sources
 
