@@ -549,3 +549,9 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - Each company file now has `first_board_id`. Before, the board ids came from the order of the files, so a new file changed the ids of other companies.
 - The generator stops if two boards have the same board id.
 - The boards of Curify and Medix keep the ids of their last commit.
+
+### Train boards of WiseAI
+
+- Add `data/companies/wiseai.json`: a company with AI agents for customer service and sales. It has 5 boards (`BOT`, `DEMO`, `GRT`, `RAP`, `PLT`), 191 issues and 15 authors.
+- Add the boards `data/environments/train-{bot,demo,grt,rap,plt}.json`.
+- Most persons of WiseAI have Ukrainian names in the Latin form of their Jira profiles.

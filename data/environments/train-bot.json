@@ -1,0 +1,898 @@
+{
+  "name": "train-bot",
+  "site": "https://example.atlassian.net",
+  "now": "2026-12-01T10:00:00.000+0100",
+  "project": {
+    "key": "BOT",
+    "name": "WiseAI - agent AI dla klientów"
+  },
+  "board": {
+    "id": "36",
+    "name": "BOT board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:cfc11d72-1e7a-5b73-aac1-11475bc8bdd6",
+      "display_name": "Oleksandr Bondarenko",
+      "email": "oleksandr.bondarenko@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:37f0c340-e66d-5cac-825a-20f6e3d7e64e",
+      "display_name": "Iryna Melnyk",
+      "email": "iryna.melnyk@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:eb910cbd-ef28-59aa-b728-8d8b3df9ed51",
+      "display_name": "Iryna Tkachenko",
+      "email": "iryna.tkachenko@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:5c219e01-c826-5a28-baee-1cb819637449",
+      "display_name": "Kornelia Sęk",
+      "email": "kornelia.sek@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:4b3176c0-654b-5ad0-86aa-d140a282d89e",
+      "display_name": "Artem Sydorenko",
+      "email": "artem.sydorenko@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:0528e14e-2763-5bed-b39b-1948d2054b8c",
+      "display_name": "Mariia Kovalchuk",
+      "email": "mariia.kovalchuk@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:49705097-722d-5ccf-8193-48b6e09ed708",
+      "display_name": "Denys Lytvyn",
+      "email": "denys.lytvyn@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "361",
+      "name": "BOT Sprint 17",
+      "state": "closed",
+      "start_date": "2026-11-10T09:00:00.000Z",
+      "end_date": "2026-11-24T09:00:00.000Z",
+      "goal": "Pilot u klienta Meblux"
+    },
+    {
+      "id": "362",
+      "name": "BOT Sprint 18",
+      "state": "active",
+      "start_date": "2026-11-24T09:00:00.000Z",
+      "end_date": "2026-12-08T09:00:00.000Z",
+      "goal": "Eskalacja do konsultanta i integracja z CRM"
+    },
+    {
+      "id": "363",
+      "name": "BOT Sprint 19",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Agent głosowy"
+    },
+    {
+      "id": "364",
+      "name": "BOT Sprint 20",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "36001",
+      "key": "BOT-1",
+      "summary": "Wdrożenie czatu AI w sklepie Meblux",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:cfc11d72-1e7a-5b73-aac1-11475bc8bdd6",
+      "reporter": "712020:cfc11d72-1e7a-5b73-aac1-11475bc8bdd6",
+      "labels": [
+        "pilot",
+        "chat"
+      ],
+      "sprint": "361",
+      "created": "2026-09-23T08:45:00.000+0100",
+      "updated": "2026-09-26T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "360015",
+          "author": "712020:cfc11d72-1e7a-5b73-aac1-11475bc8bdd6",
+          "time_spent_seconds": 25200,
+          "comment": "Konfiguracja bazy wiedzy",
+          "started": "2026-09-25T00:45:00.000+0100"
+        },
+        {
+          "id": "360016",
+          "author": "712020:cfc11d72-1e7a-5b73-aac1-11475bc8bdd6",
+          "time_spent_seconds": 10800,
+          "comment": "Testy z klientem",
+          "started": "2026-09-26T00:45:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "36002",
+      "key": "BOT-2",
+      "summary": "Agent podaje ceny mebli sprzed promocji",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:cfc11d72-1e7a-5b73-aac1-11475bc8bdd6",
+      "reporter": "712020:0528e14e-2763-5bed-b39b-1948d2054b8c",
+      "labels": [
+        "knowledge-base",
+        "pilot"
+      ],
+      "sprint": "361",
+      "created": "2026-09-24T09:00:00.000+0100",
+      "updated": "2026-09-27T09:00:00.000+0100",
+      "comments": [
+        {
+          "id": "360021",
+          "author": "712020:cfc11d72-1e7a-5b73-aac1-11475bc8bdd6",
+          "body": "Baza wiedzy odświeża się teraz co noc.",
+          "created": "2026-09-25T09:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "36003",
+      "key": "BOT-3",
+      "summary": "Integration with the Facebook Messenger of the customer",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:eb910cbd-ef28-59aa-b728-8d8b3df9ed51",
+      "labels": [
+        "channels"
+      ],
+      "sprint": "361",
+      "created": "2026-09-26T10:30:00.000+0100",
+      "updated": "2026-09-29T10:30:00.000+0100",
+      "comments": [
+        {
+          "id": "360031",
+          "author": "712020:eb910cbd-ef28-59aa-b728-8d8b3df9ed51",
+          "body": "The customer does not use Messenger any more.",
+          "created": "2026-09-27T10:30:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "36004",
+      "key": "BOT-4",
+      "summary": "Eskalacja rozmowy do konsultanta po prośbie klienta",
+      "description": "Gdy klient pisze 'chcę rozmawiać z człowiekiem', agent przekazuje rozmowę z podsumowaniem.",
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:0528e14e-2763-5bed-b39b-1948d2054b8c",
+      "reporter": "712020:0528e14e-2763-5bed-b39b-1948d2054b8c",
+      "labels": [
+        "escalation"
+      ],
+      "sprint": "362",
+      "created": "2026-09-28T17:30:00.000+0100",
+      "updated": "2026-10-01T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "360045",
+          "author": "712020:0528e14e-2763-5bed-b39b-1948d2054b8c",
+          "time_spent_seconds": 14400,
+          "comment": "Wykrywanie prośby o konsultanta",
+          "started": "2026-09-30T00:30:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "36005",
+      "key": "BOT-5",
+      "summary": "Integracja agenta z CRM klienta",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:37f0c340-e66d-5cac-825a-20f6e3d7e64e",
+      "reporter": "712020:cfc11d72-1e7a-5b73-aac1-11475bc8bdd6",
+      "labels": [
+        "crm",
+        "integration"
+      ],
+      "sprint": "362",
+      "created": "2026-09-29T10:00:00.000+0100",
+      "updated": "2026-10-02T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36006",
+      "key": "BOT-6",
+      "summary": "Agent obiecuje darmową dostawę, której nie ma",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:cfc11d72-1e7a-5b73-aac1-11475bc8bdd6",
+      "reporter": "712020:4b3176c0-654b-5ad0-86aa-d140a282d89e",
+      "labels": [
+        "hallucination",
+        "pilot"
+      ],
+      "sprint": "362",
+      "created": "2026-10-01T09:15:00.000+0100",
+      "updated": "2026-10-04T09:15:00.000+0100",
+      "comments": [
+        {
+          "id": "360061",
+          "author": "712020:cfc11d72-1e7a-5b73-aac1-11475bc8bdd6",
+          "body": "Klient Meblux dostał 4 skargi w tym tygodniu.",
+          "created": "2026-10-02T09:15:00.000+0100"
+        },
+        {
+          "id": "360062",
+          "author": "712020:cfc11d72-1e7a-5b73-aac1-11475bc8bdd6",
+          "body": "Potrzebna lista rzeczy, których agent nie może obiecywać.",
+          "created": "2026-10-03T09:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "36007",
+      "key": "BOT-7",
+      "summary": "Conversation summary for the human agent",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:cfc11d72-1e7a-5b73-aac1-11475bc8bdd6",
+      "reporter": "712020:5c219e01-c826-5a28-baee-1cb819637449",
+      "labels": [
+        "escalation"
+      ],
+      "sprint": "362",
+      "created": "2026-10-03T10:00:00.000+0100",
+      "updated": "2026-10-06T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36008",
+      "key": "BOT-8",
+      "summary": "Odpowiedzi agenta za długie na telefonie",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "Low",
+      "assignee": "712020:37f0c340-e66d-5cac-825a-20f6e3d7e64e",
+      "reporter": "712020:4b3176c0-654b-5ad0-86aa-d140a282d89e",
+      "labels": [
+        "chat",
+        "ui"
+      ],
+      "sprint": "362",
+      "created": "2026-10-04T08:15:00.000+0100",
+      "updated": "2026-10-07T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36009",
+      "key": "BOT-9",
+      "summary": "Widżet czatu w kolorach klienta",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Low",
+      "assignee": "712020:49705097-722d-5ccf-8193-48b6e09ed708",
+      "reporter": "712020:0528e14e-2763-5bed-b39b-1948d2054b8c",
+      "labels": [
+        "chat",
+        "ui"
+      ],
+      "sprint": "362",
+      "created": "2026-10-06T13:00:00.000+0100",
+      "updated": "2026-10-09T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36010",
+      "key": "BOT-10",
+      "summary": "Panel z historią rozmów dla klienta",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:4b3176c0-654b-5ad0-86aa-d140a282d89e",
+      "reporter": "712020:cfc11d72-1e7a-5b73-aac1-11475bc8bdd6",
+      "labels": [
+        "dashboard"
+      ],
+      "sprint": "362",
+      "created": "2026-10-07T08:45:00.000+0100",
+      "updated": "2026-10-10T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36011",
+      "key": "BOT-11",
+      "summary": "Agent nie rozumie pytań o status zamówienia",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:cfc11d72-1e7a-5b73-aac1-11475bc8bdd6",
+      "labels": [
+        "intents"
+      ],
+      "sprint": "362",
+      "created": "2026-10-09T11:30:00.000+0100",
+      "updated": "2026-10-12T11:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36012",
+      "key": "BOT-12",
+      "summary": "Ocena rozmowy przez klienta na końcu czatu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:0528e14e-2763-5bed-b39b-1948d2054b8c",
+      "labels": [
+        "chat",
+        "analytics"
+      ],
+      "sprint": "362",
+      "created": "2026-10-11T08:15:00.000+0100",
+      "updated": "2026-10-14T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36013",
+      "key": "BOT-13",
+      "summary": "Pilot w firmie ubezpieczeniowej Kotwica",
+      "description": "Bezpłatny pilot na 30 dni. Klient chce zobaczyć wyniki przed decyzją o umowie.",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:cfc11d72-1e7a-5b73-aac1-11475bc8bdd6",
+      "reporter": "712020:4b3176c0-654b-5ad0-86aa-d140a282d89e",
+      "labels": [
+        "pilot"
+      ],
+      "sprint": "362",
+      "created": "2026-10-12T13:45:00.000+0100",
+      "updated": "2026-10-15T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36014",
+      "key": "BOT-14",
+      "summary": "Agent głosowy na infolinii",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:37f0c340-e66d-5cac-825a-20f6e3d7e64e",
+      "labels": [
+        "voice"
+      ],
+      "sprint": "363",
+      "created": "2026-10-14T11:00:00.000+0100",
+      "updated": "2026-10-17T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36015",
+      "key": "BOT-15",
+      "summary": "Rozpoznawanie mowy z szumem w tle",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:cfc11d72-1e7a-5b73-aac1-11475bc8bdd6",
+      "reporter": "712020:eb910cbd-ef28-59aa-b728-8d8b3df9ed51",
+      "labels": [
+        "voice"
+      ],
+      "sprint": "363",
+      "created": "2026-10-15T11:30:00.000+0100",
+      "updated": "2026-10-18T11:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36016",
+      "key": "BOT-16",
+      "summary": "Agent answers in Russian to a question in Ukrainian",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:5c219e01-c826-5a28-baee-1cb819637449",
+      "labels": [
+        "i18n"
+      ],
+      "sprint": "363",
+      "created": "2026-10-17T09:15:00.000+0100",
+      "updated": "2026-10-20T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36017",
+      "key": "BOT-17",
+      "summary": "Godziny pracy konsultantów w eskalacji",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:37f0c340-e66d-5cac-825a-20f6e3d7e64e",
+      "labels": [
+        "escalation"
+      ],
+      "sprint": "363",
+      "created": "2026-10-19T17:45:00.000+0100",
+      "updated": "2026-10-22T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36018",
+      "key": "BOT-18",
+      "summary": "Agent zapisuje numer karty klienta w logach",
+      "description": "Gdy klient wkleja numer karty, trafia on do logów rozmowy bez maskowania.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": null,
+      "reporter": "712020:4b3176c0-654b-5ad0-86aa-d140a282d89e",
+      "labels": [
+        "privacy",
+        "security"
+      ],
+      "sprint": null,
+      "created": "2026-10-20T11:30:00.000+0100",
+      "updated": "2026-10-23T11:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36019",
+      "key": "BOT-19",
+      "summary": "Sprzedaż dodatkowa: agent proponuje akcesoria",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:eb910cbd-ef28-59aa-b728-8d8b3df9ed51",
+      "labels": [
+        "sales"
+      ],
+      "sprint": null,
+      "created": "2026-10-22T12:00:00.000+0100",
+      "updated": "2026-10-25T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36020",
+      "key": "BOT-20",
+      "summary": "Agent nie kończy rozmowy po pożegnaniu klienta",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:0528e14e-2763-5bed-b39b-1948d2054b8c",
+      "labels": [
+        "chat"
+      ],
+      "sprint": null,
+      "created": "2026-10-23T16:15:00.000+0100",
+      "updated": "2026-10-26T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36021",
+      "key": "BOT-21",
+      "summary": "Import bazy wiedzy z plików PDF klienta",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:cfc11d72-1e7a-5b73-aac1-11475bc8bdd6",
+      "labels": [
+        "knowledge-base"
+      ],
+      "sprint": null,
+      "created": "2026-10-25T13:00:00.000+0100",
+      "updated": "2026-10-28T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36022",
+      "key": "BOT-22",
+      "summary": "Raport skuteczności agenta dla klienta",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:5c219e01-c826-5a28-baee-1cb819637449",
+      "reporter": "712020:5c219e01-c826-5a28-baee-1cb819637449",
+      "labels": [
+        "analytics",
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-10-27T12:30:00.000+0100",
+      "updated": "2026-10-30T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36023",
+      "key": "BOT-23",
+      "summary": "Integracja z WhatsApp Business",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:eb910cbd-ef28-59aa-b728-8d8b3df9ed51",
+      "labels": [
+        "channels"
+      ],
+      "sprint": null,
+      "created": "2026-10-28T13:45:00.000+0100",
+      "updated": "2026-10-31T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36024",
+      "key": "BOT-24",
+      "summary": "Agent nie rozpoznaje numeru zamówienia z myślnikiem",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:37f0c340-e66d-5cac-825a-20f6e3d7e64e",
+      "reporter": "712020:0528e14e-2763-5bed-b39b-1948d2054b8c",
+      "labels": [
+        "intents"
+      ],
+      "sprint": null,
+      "created": "2026-10-30T13:00:00.000+0100",
+      "updated": "2026-11-02T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36025",
+      "key": "BOT-25",
+      "summary": "Odpowiedzi agenta po ukraińsku",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:5c219e01-c826-5a28-baee-1cb819637449",
+      "reporter": "712020:5c219e01-c826-5a28-baee-1cb819637449",
+      "labels": [
+        "i18n"
+      ],
+      "sprint": null,
+      "created": "2026-10-31T13:15:00.000+0100",
+      "updated": "2026-11-03T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36026",
+      "key": "BOT-26",
+      "summary": "Test of 50 typical customer questions before each release",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:eb910cbd-ef28-59aa-b728-8d8b3df9ed51",
+      "labels": [
+        "quality"
+      ],
+      "sprint": null,
+      "created": "2026-11-02T11:15:00.000+0100",
+      "updated": "2026-11-05T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36027",
+      "key": "BOT-27",
+      "summary": "Limit wiadomości na rozmowę, żeby ograniczyć koszty",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:cfc11d72-1e7a-5b73-aac1-11475bc8bdd6",
+      "labels": [
+        "cost"
+      ],
+      "sprint": null,
+      "created": "2026-11-04T16:00:00.000+0100",
+      "updated": "2026-11-07T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36028",
+      "key": "BOT-28",
+      "summary": "Agent przeprasza w każdej odpowiedzi",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": "712020:4b3176c0-654b-5ad0-86aa-d140a282d89e",
+      "reporter": "712020:eb910cbd-ef28-59aa-b728-8d8b3df9ed51",
+      "labels": [
+        "tone"
+      ],
+      "sprint": null,
+      "created": "2026-11-05T15:15:00.000+0100",
+      "updated": "2026-11-08T15:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36029",
+      "key": "BOT-29",
+      "summary": "Formularz kontaktowy, gdy agent nie zna odpowiedzi",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:5c219e01-c826-5a28-baee-1cb819637449",
+      "labels": [
+        "chat"
+      ],
+      "sprint": "362",
+      "created": "2026-11-07T14:15:00.000+0100",
+      "updated": "2026-11-10T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36030",
+      "key": "BOT-30",
+      "summary": "Agent podaje godziny otwarcia złego sklepu",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:5c219e01-c826-5a28-baee-1cb819637449",
+      "reporter": "712020:4b3176c0-654b-5ad0-86aa-d140a282d89e",
+      "labels": [
+        "knowledge-base"
+      ],
+      "sprint": "363",
+      "created": "2026-11-08T16:00:00.000+0100",
+      "updated": "2026-11-11T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36031",
+      "key": "BOT-31",
+      "summary": "Szablon wdrożenia dla nowego klienta",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:5c219e01-c826-5a28-baee-1cb819637449",
+      "reporter": "712020:cfc11d72-1e7a-5b73-aac1-11475bc8bdd6",
+      "labels": [
+        "docs",
+        "pilot"
+      ],
+      "sprint": null,
+      "created": "2026-11-10T12:00:00.000+0100",
+      "updated": "2026-11-13T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36032",
+      "key": "BOT-32",
+      "summary": "Wykrywanie zdenerwowanego klienta",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:eb910cbd-ef28-59aa-b728-8d8b3df9ed51",
+      "labels": [
+        "escalation",
+        "sentiment"
+      ],
+      "sprint": null,
+      "created": "2026-11-12T09:15:00.000+0100",
+      "updated": "2026-11-15T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36033",
+      "key": "BOT-33",
+      "summary": "Duplicate messages when the customer clicks twice",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:cfc11d72-1e7a-5b73-aac1-11475bc8bdd6",
+      "labels": [
+        "chat"
+      ],
+      "sprint": null,
+      "created": "2026-11-13T14:00:00.000+0100",
+      "updated": "2026-11-16T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36034",
+      "key": "BOT-34",
+      "summary": "Instrukcja dla konsultantów klienta",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:5c219e01-c826-5a28-baee-1cb819637449",
+      "reporter": "712020:4b3176c0-654b-5ad0-86aa-d140a282d89e",
+      "labels": [
+        "docs"
+      ],
+      "sprint": null,
+      "created": "2026-11-15T12:30:00.000+0100",
+      "updated": "2026-11-18T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36035",
+      "key": "BOT-35",
+      "summary": "Agent przyjmuje reklamacje ze zdjęciem",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:5c219e01-c826-5a28-baee-1cb819637449",
+      "reporter": "712020:eb910cbd-ef28-59aa-b728-8d8b3df9ed51",
+      "labels": [
+        "chat",
+        "complaints"
+      ],
+      "sprint": null,
+      "created": "2026-11-16T15:15:00.000+0100",
+      "updated": "2026-11-19T15:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36036",
+      "key": "BOT-36",
+      "summary": "Zgoda klienta na nagrywanie rozmowy z agentem głosowym",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:37f0c340-e66d-5cac-825a-20f6e3d7e64e",
+      "reporter": "712020:37f0c340-e66d-5cac-825a-20f6e3d7e64e",
+      "labels": [
+        "voice",
+        "privacy"
+      ],
+      "sprint": null,
+      "created": "2026-11-18T08:30:00.000+0100",
+      "updated": "2026-11-21T08:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36037",
+      "key": "BOT-37",
+      "summary": "Ankieta po pilocie w sklepie Meblux",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:37f0c340-e66d-5cac-825a-20f6e3d7e64e",
+      "reporter": "712020:4b3176c0-654b-5ad0-86aa-d140a282d89e",
+      "labels": [
+        "pilot"
+      ],
+      "sprint": "362",
+      "created": "2026-11-20T15:15:00.000+0100",
+      "updated": "2026-11-23T15:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36038",
+      "key": "BOT-38",
+      "summary": "Agent myli nazwy kolekcji mebli",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:eb910cbd-ef28-59aa-b728-8d8b3df9ed51",
+      "labels": [
+        "knowledge-base"
+      ],
+      "sprint": null,
+      "created": "2026-11-21T14:45:00.000+0100",
+      "updated": "2026-11-24T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "36039",
+      "key": "BOT-39",
+      "summary": "Przegląd odpowiedzi agenta z ostatniego tygodnia",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:0528e14e-2763-5bed-b39b-1948d2054b8c",
+      "labels": [
+        "quality"
+      ],
+      "sprint": null,
+      "created": "2026-11-23T13:45:00.000+0100",
+      "updated": "2026-11-26T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

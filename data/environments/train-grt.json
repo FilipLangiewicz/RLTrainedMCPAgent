@@ -1,0 +1,866 @@
+{
+  "name": "train-grt",
+  "site": "https://example.atlassian.net",
+  "now": "2026-12-01T10:00:00.000+0100",
+  "project": {
+    "key": "GRT",
+    "name": "WiseAI - dotacje i wnioski"
+  },
+  "board": {
+    "id": "38",
+    "name": "GRT board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:e79b376f-69c9-5824-ad66-038eea5869e1",
+      "display_name": "Nataliia Lysenko",
+      "email": "nataliia.lysenko@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:f5395f9a-da48-5365-bd36-065109b72a9a",
+      "display_name": "Taras Hnatiuk",
+      "email": "taras.hnatiuk@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:b50b9bd4-3761-5322-a070-f0a62293e7b1",
+      "display_name": "Danuta Wrzos",
+      "email": "danuta.wrzos@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:0c20ffcc-ce39-5409-98fc-890fce293f2d",
+      "display_name": "Maksym Pavlenko",
+      "email": "maksym.pavlenko@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:b47e5493-4a87-51f2-9172-fd0615029603",
+      "display_name": "Maksym Wierzbicki",
+      "email": "maksym.wierzbicki@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:6f63da32-e292-5269-b7fc-ce79de44fef9",
+      "display_name": "Halyna Vovk",
+      "email": "halyna.vovk@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:fbf5ab7e-0d79-5f36-8fa9-4517bc714a34",
+      "display_name": "Pavlo Humeniuk",
+      "email": "pavlo.humeniuk@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "381",
+      "name": "GRT Sprint 6",
+      "state": "closed",
+      "start_date": "2026-11-10T09:00:00.000Z",
+      "end_date": "2026-11-24T09:00:00.000Z",
+      "goal": "Wniosek do programu innowacji"
+    },
+    {
+      "id": "382",
+      "name": "GRT Sprint 7",
+      "state": "active",
+      "start_date": "2026-11-24T09:00:00.000Z",
+      "end_date": "2026-12-08T09:00:00.000Z",
+      "goal": "Kamienie milowe i wskaźniki"
+    },
+    {
+      "id": "383",
+      "name": "GRT Sprint 8",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Wniosek na rozwój agenta głosowego"
+    },
+    {
+      "id": "384",
+      "name": "GRT Sprint 9",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "38001",
+      "key": "GRT-1",
+      "summary": "Wniosek do programu innowacji regionalnych",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "Highest",
+      "assignee": "712020:6f63da32-e292-5269-b7fc-ce79de44fef9",
+      "reporter": "712020:e79b376f-69c9-5824-ad66-038eea5869e1",
+      "labels": [
+        "application",
+        "deadline"
+      ],
+      "sprint": "381",
+      "created": "2026-09-23T12:15:00.000+0100",
+      "updated": "2026-09-26T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "380015",
+          "author": "712020:6f63da32-e292-5269-b7fc-ce79de44fef9",
+          "time_spent_seconds": 28800,
+          "comment": "Opis projektu",
+          "started": "2026-09-25T00:15:00.000+0100"
+        },
+        {
+          "id": "380016",
+          "author": "712020:6f63da32-e292-5269-b7fc-ce79de44fef9",
+          "time_spent_seconds": 18000,
+          "comment": "Budżet",
+          "started": "2026-09-26T00:15:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "38002",
+      "key": "GRT-2",
+      "summary": "Opinia o innowacyjności od uczelni",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:fbf5ab7e-0d79-5f36-8fa9-4517bc714a34",
+      "reporter": "712020:b50b9bd4-3761-5322-a070-f0a62293e7b1",
+      "labels": [
+        "application",
+        "partners"
+      ],
+      "sprint": "381",
+      "created": "2026-09-25T08:30:00.000+0100",
+      "updated": "2026-09-28T08:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38003",
+      "key": "GRT-3",
+      "summary": "Application to the call for green technologies",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:6f63da32-e292-5269-b7fc-ce79de44fef9",
+      "labels": [
+        "application"
+      ],
+      "sprint": "381",
+      "created": "2026-09-26T11:45:00.000+0100",
+      "updated": "2026-09-29T11:45:00.000+0100",
+      "comments": [
+        {
+          "id": "380031",
+          "author": "712020:6f63da32-e292-5269-b7fc-ce79de44fef9",
+          "body": "Our project does not fit the call.",
+          "created": "2026-09-27T11:45:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "38004",
+      "key": "GRT-4",
+      "summary": "Harmonogram projektu na 24 miesiące",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:f5395f9a-da48-5365-bd36-065109b72a9a",
+      "reporter": "712020:b47e5493-4a87-51f2-9172-fd0615029603",
+      "labels": [
+        "schedule",
+        "application"
+      ],
+      "sprint": "381",
+      "created": "2026-09-28T13:15:00.000+0100",
+      "updated": "2026-10-01T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38005",
+      "key": "GRT-5",
+      "summary": "Kamienie milowe na pierwszy rok projektu",
+      "description": "Trzy kamienie milowe: prototyp agenta, pilot u dwóch klientów, raport z testów.",
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:e79b376f-69c9-5824-ad66-038eea5869e1",
+      "reporter": "712020:e79b376f-69c9-5824-ad66-038eea5869e1",
+      "labels": [
+        "milestones"
+      ],
+      "sprint": "382",
+      "created": "2026-09-29T08:30:00.000+0100",
+      "updated": "2026-10-02T08:30:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "380055",
+          "author": "712020:e79b376f-69c9-5824-ad66-038eea5869e1",
+          "time_spent_seconds": 10800,
+          "comment": "Opis kamieni milowych",
+          "started": "2026-10-01T00:30:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "38006",
+      "key": "GRT-6",
+      "summary": "Wskaźniki rezultatu: liczba wdrożeń u klientów",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:6f63da32-e292-5269-b7fc-ce79de44fef9",
+      "reporter": "712020:6f63da32-e292-5269-b7fc-ce79de44fef9",
+      "labels": [
+        "indicators"
+      ],
+      "sprint": "382",
+      "created": "2026-10-01T13:30:00.000+0100",
+      "updated": "2026-10-04T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38007",
+      "key": "GRT-7",
+      "summary": "Budżet wniosku przekracza limit kosztów pośrednich",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:6f63da32-e292-5269-b7fc-ce79de44fef9",
+      "reporter": "712020:f5395f9a-da48-5365-bd36-065109b72a9a",
+      "labels": [
+        "budget",
+        "application"
+      ],
+      "sprint": "382",
+      "created": "2026-10-03T12:30:00.000+0100",
+      "updated": "2026-10-06T12:30:00.000+0100",
+      "comments": [
+        {
+          "id": "380071",
+          "author": "712020:6f63da32-e292-5269-b7fc-ce79de44fef9",
+          "body": "Limit to 25%, mamy 31%.",
+          "created": "2026-10-04T12:30:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "38008",
+      "key": "GRT-8",
+      "summary": "CVs of the key staff in English",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:6f63da32-e292-5269-b7fc-ce79de44fef9",
+      "reporter": "712020:f5395f9a-da48-5365-bd36-065109b72a9a",
+      "labels": [
+        "application",
+        "staff"
+      ],
+      "sprint": "382",
+      "created": "2026-10-04T15:15:00.000+0100",
+      "updated": "2026-10-07T15:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38009",
+      "key": "GRT-9",
+      "summary": "Analiza rynku do części B wniosku",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:b47e5493-4a87-51f2-9172-fd0615029603",
+      "reporter": "712020:f5395f9a-da48-5365-bd36-065109b72a9a",
+      "labels": [
+        "application",
+        "market"
+      ],
+      "sprint": "382",
+      "created": "2026-10-06T09:15:00.000+0100",
+      "updated": "2026-10-09T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38010",
+      "key": "GRT-10",
+      "summary": "Lista naborów na pierwszy kwartał",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:0c20ffcc-ce39-5409-98fc-890fce293f2d",
+      "reporter": "712020:0c20ffcc-ce39-5409-98fc-890fce293f2d",
+      "labels": [
+        "calls"
+      ],
+      "sprint": "382",
+      "created": "2026-10-08T16:15:00.000+0100",
+      "updated": "2026-10-11T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38011",
+      "key": "GRT-11",
+      "summary": "Oświadczenie o statusie MŚP",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:e79b376f-69c9-5824-ad66-038eea5869e1",
+      "labels": [
+        "documents"
+      ],
+      "sprint": "382",
+      "created": "2026-10-09T08:00:00.000+0100",
+      "updated": "2026-10-12T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38012",
+      "key": "GRT-12",
+      "summary": "Wniosek na rozwój agenta głosowego",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:6f63da32-e292-5269-b7fc-ce79de44fef9",
+      "reporter": "712020:0c20ffcc-ce39-5409-98fc-890fce293f2d",
+      "labels": [
+        "application",
+        "voice"
+      ],
+      "sprint": "382",
+      "created": "2026-10-11T09:45:00.000+0100",
+      "updated": "2026-10-14T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38013",
+      "key": "GRT-13",
+      "summary": "Odpowiedź na uwagi ekspertów z oceny formalnej",
+      "description": "Termin: 7 dni od otrzymania pisma.",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": null,
+      "reporter": "712020:0c20ffcc-ce39-5409-98fc-890fce293f2d",
+      "labels": [
+        "evaluation",
+        "deadline"
+      ],
+      "sprint": "382",
+      "created": "2026-10-13T12:00:00.000+0100",
+      "updated": "2026-10-16T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38014",
+      "key": "GRT-14",
+      "summary": "Partner zagraniczny do projektu międzynarodowego",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:b47e5493-4a87-51f2-9172-fd0615029603",
+      "reporter": "712020:e79b376f-69c9-5824-ad66-038eea5869e1",
+      "labels": [
+        "partners"
+      ],
+      "sprint": "383",
+      "created": "2026-10-14T12:45:00.000+0100",
+      "updated": "2026-10-17T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38015",
+      "key": "GRT-15",
+      "summary": "Analiza ryzyk projektu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:b50b9bd4-3761-5322-a070-f0a62293e7b1",
+      "reporter": "712020:b50b9bd4-3761-5322-a070-f0a62293e7b1",
+      "labels": [
+        "application"
+      ],
+      "sprint": "383",
+      "created": "2026-10-16T16:00:00.000+0100",
+      "updated": "2026-10-19T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38016",
+      "key": "GRT-16",
+      "summary": "Letter of intent from the pilot customers",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:b50b9bd4-3761-5322-a070-f0a62293e7b1",
+      "reporter": "712020:0c20ffcc-ce39-5409-98fc-890fce293f2d",
+      "labels": [
+        "documents",
+        "partners"
+      ],
+      "sprint": "383",
+      "created": "2026-10-18T12:15:00.000+0100",
+      "updated": "2026-10-21T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38017",
+      "key": "GRT-17",
+      "summary": "Plan zatrudnienia w projekcie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:0c20ffcc-ce39-5409-98fc-890fce293f2d",
+      "reporter": "712020:e79b376f-69c9-5824-ad66-038eea5869e1",
+      "labels": [
+        "staff"
+      ],
+      "sprint": "383",
+      "created": "2026-10-19T11:30:00.000+0100",
+      "updated": "2026-10-22T11:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38018",
+      "key": "GRT-18",
+      "summary": "Opis stanu techniki w obszarze agentów AI",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:f5395f9a-da48-5365-bd36-065109b72a9a",
+      "reporter": "712020:b50b9bd4-3761-5322-a070-f0a62293e7b1",
+      "labels": [
+        "application"
+      ],
+      "sprint": null,
+      "created": "2026-10-21T08:45:00.000+0100",
+      "updated": "2026-10-24T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38019",
+      "key": "GRT-19",
+      "summary": "Kalkulacja stawek godzinowych zespołu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:b47e5493-4a87-51f2-9172-fd0615029603",
+      "labels": [
+        "budget"
+      ],
+      "sprint": null,
+      "created": "2026-10-23T08:45:00.000+0100",
+      "updated": "2026-10-26T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38020",
+      "key": "GRT-20",
+      "summary": "Wniosek o ulgę badawczo-rozwojową",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:0c20ffcc-ce39-5409-98fc-890fce293f2d",
+      "labels": [
+        "tax"
+      ],
+      "sprint": null,
+      "created": "2026-10-24T10:00:00.000+0100",
+      "updated": "2026-10-27T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38021",
+      "key": "GRT-21",
+      "summary": "Kalendarz naborów na cały rok",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:f5395f9a-da48-5365-bd36-065109b72a9a",
+      "reporter": "712020:f5395f9a-da48-5365-bd36-065109b72a9a",
+      "labels": [
+        "calls"
+      ],
+      "sprint": null,
+      "created": "2026-10-26T15:30:00.000+0100",
+      "updated": "2026-10-29T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38022",
+      "key": "GRT-22",
+      "summary": "Wskaźnik liczby nowych miejsc pracy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:6f63da32-e292-5269-b7fc-ce79de44fef9",
+      "reporter": "712020:e79b376f-69c9-5824-ad66-038eea5869e1",
+      "labels": [
+        "indicators",
+        "staff"
+      ],
+      "sprint": null,
+      "created": "2026-10-27T16:15:00.000+0100",
+      "updated": "2026-10-30T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38023",
+      "key": "GRT-23",
+      "summary": "Uzasadnienie zakupu serwerów GPU",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:e79b376f-69c9-5824-ad66-038eea5869e1",
+      "reporter": "712020:e79b376f-69c9-5824-ad66-038eea5869e1",
+      "labels": [
+        "budget"
+      ],
+      "sprint": null,
+      "created": "2026-10-29T17:00:00.000+0100",
+      "updated": "2026-11-01T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38024",
+      "key": "GRT-24",
+      "summary": "Wrong sum in the budget table of the application",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:f5395f9a-da48-5365-bd36-065109b72a9a",
+      "labels": [
+        "budget"
+      ],
+      "sprint": null,
+      "created": "2026-10-31T13:00:00.000+0100",
+      "updated": "2026-11-03T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38025",
+      "key": "GRT-25",
+      "summary": "Opis efektu zachęty we wniosku",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:f5395f9a-da48-5365-bd36-065109b72a9a",
+      "reporter": "712020:e79b376f-69c9-5824-ad66-038eea5869e1",
+      "labels": [
+        "application"
+      ],
+      "sprint": null,
+      "created": "2026-11-01T12:00:00.000+0100",
+      "updated": "2026-11-04T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38026",
+      "key": "GRT-26",
+      "summary": "Spotkanie z doradcą punktu informacyjnego",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:b47e5493-4a87-51f2-9172-fd0615029603",
+      "labels": [
+        "calls"
+      ],
+      "sprint": null,
+      "created": "2026-11-03T09:15:00.000+0100",
+      "updated": "2026-11-06T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38027",
+      "key": "GRT-27",
+      "summary": "Pełnomocnictwo do podpisu wniosku",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:b47e5493-4a87-51f2-9172-fd0615029603",
+      "labels": [
+        "documents"
+      ],
+      "sprint": null,
+      "created": "2026-11-05T09:00:00.000+0100",
+      "updated": "2026-11-08T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38028",
+      "key": "GRT-28",
+      "summary": "Wniosek o przedłużenie terminu projektu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:b47e5493-4a87-51f2-9172-fd0615029603",
+      "labels": [
+        "application",
+        "schedule"
+      ],
+      "sprint": null,
+      "created": "2026-11-06T14:15:00.000+0100",
+      "updated": "2026-11-09T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38029",
+      "key": "GRT-29",
+      "summary": "Biblioteka gotowych opisów firmy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": "712020:b47e5493-4a87-51f2-9172-fd0615029603",
+      "reporter": "712020:b47e5493-4a87-51f2-9172-fd0615029603",
+      "labels": [
+        "docs"
+      ],
+      "sprint": null,
+      "created": "2026-11-08T11:45:00.000+0100",
+      "updated": "2026-11-11T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38030",
+      "key": "GRT-30",
+      "summary": "Wskaźniki z zeszłorocznego projektu do nowego wniosku",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:f5395f9a-da48-5365-bd36-065109b72a9a",
+      "reporter": "712020:0c20ffcc-ce39-5409-98fc-890fce293f2d",
+      "labels": [
+        "indicators"
+      ],
+      "sprint": "382",
+      "created": "2026-11-10T15:30:00.000+0100",
+      "updated": "2026-11-13T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38031",
+      "key": "GRT-31",
+      "summary": "Weryfikacja zgodności wniosku z regulaminem naboru",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:6f63da32-e292-5269-b7fc-ce79de44fef9",
+      "reporter": "712020:b50b9bd4-3761-5322-a070-f0a62293e7b1",
+      "labels": [
+        "application"
+      ],
+      "sprint": "383",
+      "created": "2026-11-11T10:00:00.000+0100",
+      "updated": "2026-11-14T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38032",
+      "key": "GRT-32",
+      "summary": "Sprawdzenie pomocy de minimis z trzech lat",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:6f63da32-e292-5269-b7fc-ce79de44fef9",
+      "labels": [
+        "documents"
+      ],
+      "sprint": null,
+      "created": "2026-11-13T17:30:00.000+0100",
+      "updated": "2026-11-16T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38033",
+      "key": "GRT-33",
+      "summary": "Translation of the project summary",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:6f63da32-e292-5269-b7fc-ce79de44fef9",
+      "reporter": "712020:6f63da32-e292-5269-b7fc-ce79de44fef9",
+      "labels": [
+        "application"
+      ],
+      "sprint": null,
+      "created": "2026-11-15T15:30:00.000+0100",
+      "updated": "2026-11-18T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38034",
+      "key": "GRT-34",
+      "summary": "Załączniki finansowe za ostatnie dwa lata",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:0c20ffcc-ce39-5409-98fc-890fce293f2d",
+      "reporter": "712020:b50b9bd4-3761-5322-a070-f0a62293e7b1",
+      "labels": [
+        "documents",
+        "budget"
+      ],
+      "sprint": null,
+      "created": "2026-11-16T10:00:00.000+0100",
+      "updated": "2026-11-19T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38035",
+      "key": "GRT-35",
+      "summary": "Lista ekspertów zewnętrznych do projektu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:b47e5493-4a87-51f2-9172-fd0615029603",
+      "reporter": "712020:b50b9bd4-3761-5322-a070-f0a62293e7b1",
+      "labels": [
+        "staff"
+      ],
+      "sprint": null,
+      "created": "2026-11-18T13:45:00.000+0100",
+      "updated": "2026-11-21T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38036",
+      "key": "GRT-36",
+      "summary": "Wniosek do programu dla firm z kapitałem zagranicznym",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:f5395f9a-da48-5365-bd36-065109b72a9a",
+      "labels": [
+        "application"
+      ],
+      "sprint": null,
+      "created": "2026-11-20T08:00:00.000+0100",
+      "updated": "2026-11-23T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38037",
+      "key": "GRT-37",
+      "summary": "Ocena merytoryczna: lista pytań do panelu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:e79b376f-69c9-5824-ad66-038eea5869e1",
+      "reporter": "712020:e79b376f-69c9-5824-ad66-038eea5869e1",
+      "labels": [
+        "evaluation"
+      ],
+      "sprint": null,
+      "created": "2026-11-21T11:15:00.000+0100",
+      "updated": "2026-11-24T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "38038",
+      "key": "GRT-38",
+      "summary": "Opis zespołu z doświadczeniem w projektach",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:b50b9bd4-3761-5322-a070-f0a62293e7b1",
+      "labels": [
+        "staff",
+        "application"
+      ],
+      "sprint": null,
+      "created": "2026-11-23T11:30:00.000+0100",
+      "updated": "2026-11-26T11:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}
