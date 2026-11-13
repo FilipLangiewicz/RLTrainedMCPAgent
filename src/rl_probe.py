@@ -700,7 +700,7 @@ def run_pipeline(summary, save, probe, cfg, agent, peft, trainer, url, max_len, 
 def main_sleep(cfg: dict, probe: dict, agent: dict, out: Path) -> None:
     """Measure an RL step in which vLLM first generates and then frees its GPU, so that both GPUs train.
 
-    vLLM sleeps (level 1: the weights go to CPU memory, the KV cache is freed). A second trainer copy then moves
+    vLLM sleeps (level 2: the weights and the KV cache are freed). A second trainer copy then moves
     to GPU 0. The two copies train on one half of the rollouts each. The trainer never calls an optimizer step.
     """
     import shutil
@@ -782,7 +782,8 @@ def main_sleep(cfg: dict, probe: dict, agent: dict, out: Path) -> None:
             conversations = [m for _, m in results if m]
             t["generate_s"] = round(time.perf_counter() - start, 1)
             mark = time.perf_counter()
-            post_json(url + "/sleep?level=1", {})
+            # Level 2 drops the weights. Level 1 keeps them in CPU memory, and with two trainer copies the RAM runs out.
+            post_json(url + f"/sleep?level={probe.get('sleep_level', 2)}", {})
             move_weights(trainer0, "cuda:0")
             t["sleep_and_move_s"] = round(time.perf_counter() - mark, 1)
             mark = time.perf_counter()
@@ -804,6 +805,8 @@ def main_sleep(cfg: dict, probe: dict, agent: dict, out: Path) -> None:
             move_weights(trainer0, "cpu")
             peft1.save_pretrained(adapters / f"v{k + 1}")
             post_json(url + "/wake_up", {})
+            if probe.get("sleep_level", 2) == 2:
+                post_json(url + "/collective_rpc", {"method": "reload_weights"})
             post_json(url + "/v1/load_lora_adapter", {"lora_name": f"v{k + 1}", "lora_path": str(adapters / f"v{k + 1}")})
             model.served = f"v{k + 1}"
             t["sync_wake_swap_s"] = round(time.perf_counter() - mark, 1)
