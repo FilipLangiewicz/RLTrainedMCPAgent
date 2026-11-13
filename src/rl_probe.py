@@ -741,6 +741,7 @@ def main_sleep(cfg: dict, probe: dict, agent: dict, out: Path) -> None:
     for n, m in trainer0.model.named_modules():
         if n in tables1:
             m.weight = tables1[n].weight
+            trainer0.keep_on_cpu = getattr(trainer0, "keep_on_cpu", set()) | {id(m.weight)}
     adapters = out.parent / f"{out.name}-adapters"
     shutil.rmtree(adapters, ignore_errors=True)
     peft1.save_pretrained(adapters / "v0")
