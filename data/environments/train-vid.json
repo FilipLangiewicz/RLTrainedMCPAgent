@@ -1,0 +1,963 @@
+{
+  "name": "train-vid",
+  "site": "https://example.atlassian.net",
+  "now": "2026-11-04T09:30:00.000+0100",
+  "project": {
+    "key": "VID",
+    "name": "Curify - wideokonsultacje"
+  },
+  "board": {
+    "id": "21",
+    "name": "VID board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:905825e6-3c0f-5db0-8287-5565f5750876",
+      "display_name": "Matylda Jedynak",
+      "email": "matylda.jedynak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:7f918893-402c-51d8-a80d-659d08a11a24",
+      "display_name": "Rafał Domański",
+      "email": "rafal.domanski@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:15f76ba6-268a-59ea-a362-fe1dd5520061",
+      "display_name": "Liam Murphy",
+      "email": "liam.murphy@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:cdd95850-4f85-5da6-9f7f-96996a536876",
+      "display_name": "Katarzyna Zielińska",
+      "email": "katarzyna.zielinska@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:ff7debc5-10a7-51dd-a5f1-31f14781e74a",
+      "display_name": "Katarzyna Bąk",
+      "email": "katarzyna.bak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:0e6e2d1b-ed14-5923-8ef8-8ee5ce5e4313",
+      "display_name": "Adrian Wójcik",
+      "email": "adrian.wojcik@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:eb31b90c-583c-5fa1-b241-e8eb8a5a7a8e",
+      "display_name": "Weronika Sadowska",
+      "email": "weronika.sadowska@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:04bdb598-f7be-59de-bf19-6df38086bd54",
+      "display_name": "Przemysław Gołąb",
+      "email": "przemyslaw.golab@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "211",
+      "name": "VID Sprint 18",
+      "state": "closed",
+      "start_date": "2026-10-14T09:00:00.000Z",
+      "end_date": "2026-10-28T09:00:00.000Z",
+      "goal": "Stabilne połączenia na słabym łączu"
+    },
+    {
+      "id": "212",
+      "name": "VID Sprint 19",
+      "state": "active",
+      "start_date": "2026-10-28T09:00:00.000Z",
+      "end_date": "2026-11-11T09:00:00.000Z",
+      "goal": "Wirtualna poczekalnia i nagrania wizyt"
+    },
+    {
+      "id": "213",
+      "name": "VID Sprint 20",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Tłumacz języka migowego"
+    },
+    {
+      "id": "214",
+      "name": "VID Sprint 21",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "21001",
+      "key": "VID-1",
+      "summary": "Automatyczne obniżanie jakości wideo przy słabym łączu",
+      "description": "Przy spadku przepustowości poniżej 500 kb/s przełączamy obraz na 360p zamiast zrywać rozmowę.",
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:04bdb598-f7be-59de-bf19-6df38086bd54",
+      "reporter": "712020:905825e6-3c0f-5db0-8287-5565f5750876",
+      "labels": [
+        "webrtc",
+        "quality"
+      ],
+      "sprint": "211",
+      "created": "2026-08-27T16:30:00.000+0100",
+      "updated": "2026-08-30T16:30:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "210015",
+          "author": "712020:eb31b90c-583c-5fa1-b241-e8eb8a5a7a8e",
+          "time_spent_seconds": 21600,
+          "comment": "Adaptacja bitrate",
+          "started": "2026-08-29T00:30:00.000+0100"
+        },
+        {
+          "id": "210016",
+          "author": "712020:eb31b90c-583c-5fa1-b241-e8eb8a5a7a8e",
+          "time_spent_seconds": 10800,
+          "comment": "Testy z ograniczonym łączem",
+          "started": "2026-08-30T00:30:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "21002",
+      "key": "VID-2",
+      "summary": "Połączenie zrywa się po 20 minutach w Safari",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "Highest",
+      "assignee": "712020:15f76ba6-268a-59ea-a362-fe1dd5520061",
+      "reporter": "712020:eb31b90c-583c-5fa1-b241-e8eb8a5a7a8e",
+      "labels": [
+        "webrtc",
+        "safari"
+      ],
+      "sprint": "211",
+      "created": "2026-08-28T11:15:00.000+0100",
+      "updated": "2026-08-31T11:15:00.000+0100",
+      "comments": [
+        {
+          "id": "210021",
+          "author": "712020:15f76ba6-268a-59ea-a362-fe1dd5520061",
+          "body": "Przyczyną był timeout serwera TURN, podnieśliśmy limit.",
+          "created": "2026-08-29T11:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "21003",
+      "key": "VID-3",
+      "summary": "Echo during calls on Lenovo laptops",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Cancelled",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:7f918893-402c-51d8-a80d-659d08a11a24",
+      "labels": [
+        "audio"
+      ],
+      "sprint": "211",
+      "created": "2026-08-30T13:00:00.000+0100",
+      "updated": "2026-09-02T13:00:00.000+0100",
+      "comments": [
+        {
+          "id": "210031",
+          "author": "712020:7f918893-402c-51d8-a80d-659d08a11a24",
+          "body": "Not reproducible after the driver update, closing.",
+          "created": "2026-08-31T13:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "21004",
+      "key": "VID-4",
+      "summary": "Aktualizacja biblioteki mediasoup do wersji 3.14",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Low",
+      "assignee": "712020:0e6e2d1b-ed14-5923-8ef8-8ee5ce5e4313",
+      "reporter": "712020:905825e6-3c0f-5db0-8287-5565f5750876",
+      "labels": [
+        "backend"
+      ],
+      "sprint": "211",
+      "created": "2026-09-01T16:15:00.000+0100",
+      "updated": "2026-09-04T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21005",
+      "key": "VID-5",
+      "summary": "Wirtualna poczekalnia przed wizytą",
+      "description": "Pacjent widzi swoją pozycję w kolejce i szacowany czas oczekiwania na lekarza.",
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:0e6e2d1b-ed14-5923-8ef8-8ee5ce5e4313",
+      "reporter": "712020:eb31b90c-583c-5fa1-b241-e8eb8a5a7a8e",
+      "labels": [
+        "waiting-room",
+        "frontend"
+      ],
+      "sprint": "212",
+      "created": "2026-09-02T12:00:00.000+0100",
+      "updated": "2026-09-05T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "210055",
+          "author": "712020:0e6e2d1b-ed14-5923-8ef8-8ee5ce5e4313",
+          "time_spent_seconds": 14400,
+          "comment": "Makieta i komponent kolejki",
+          "started": "2026-09-04T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "21006",
+      "key": "VID-6",
+      "summary": "Lekarz nie słyszy pacjenta po przełączeniu na słuchawki Bluetooth",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:0e6e2d1b-ed14-5923-8ef8-8ee5ce5e4313",
+      "reporter": "712020:cdd95850-4f85-5da6-9f7f-96996a536876",
+      "labels": [
+        "audio",
+        "webrtc"
+      ],
+      "sprint": "212",
+      "created": "2026-09-04T15:30:00.000+0100",
+      "updated": "2026-09-07T15:30:00.000+0100",
+      "comments": [
+        {
+          "id": "210061",
+          "author": "712020:0e6e2d1b-ed14-5923-8ef8-8ee5ce5e4313",
+          "body": "Zgłoszenia z trzech gabinetów w tym tygodniu.",
+          "created": "2026-09-05T15:30:00.000+0100"
+        },
+        {
+          "id": "210062",
+          "author": "712020:0e6e2d1b-ed14-5923-8ef8-8ee5ce5e4313",
+          "body": "Odtworzone na Androidzie 14.",
+          "created": "2026-09-06T15:30:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "21007",
+      "key": "VID-7",
+      "summary": "Nagrywanie wizyty za zgodą pacjenta",
+      "description": "Nagranie zapisujemy tylko po zaznaczeniu zgody. Przechowujemy je 30 dni.",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:ff7debc5-10a7-51dd-a5f1-31f14781e74a",
+      "reporter": "712020:cdd95850-4f85-5da6-9f7f-96996a536876",
+      "labels": [
+        "recording",
+        "backend"
+      ],
+      "sprint": "212",
+      "created": "2026-09-05T15:00:00.000+0100",
+      "updated": "2026-09-08T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21008",
+      "key": "VID-8",
+      "summary": "Test of the camera and microphone before the visit",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:ff7debc5-10a7-51dd-a5f1-31f14781e74a",
+      "reporter": "712020:eb31b90c-583c-5fa1-b241-e8eb8a5a7a8e",
+      "labels": [
+        "frontend",
+        "quality"
+      ],
+      "sprint": "212",
+      "created": "2026-09-07T08:15:00.000+0100",
+      "updated": "2026-09-10T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21009",
+      "key": "VID-9",
+      "summary": "Udostępnianie ekranu pokazuje czarny obraz na macOS",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "High",
+      "assignee": "712020:15f76ba6-268a-59ea-a362-fe1dd5520061",
+      "reporter": "712020:ff7debc5-10a7-51dd-a5f1-31f14781e74a",
+      "labels": [
+        "screen-share"
+      ],
+      "sprint": "212",
+      "created": "2026-09-08T12:30:00.000+0100",
+      "updated": "2026-09-11T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21010",
+      "key": "VID-10",
+      "summary": "Automatyczne usuwanie nagrań po 30 dniach",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:15f76ba6-268a-59ea-a362-fe1dd5520061",
+      "reporter": "712020:905825e6-3c0f-5db0-8287-5565f5750876",
+      "labels": [
+        "recording",
+        "privacy"
+      ],
+      "sprint": "212",
+      "created": "2026-09-10T15:00:00.000+0100",
+      "updated": "2026-09-13T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21011",
+      "key": "VID-11",
+      "summary": "Licznik czasu wizyty widoczny dla lekarza",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Low",
+      "assignee": "712020:0e6e2d1b-ed14-5923-8ef8-8ee5ce5e4313",
+      "reporter": "712020:905825e6-3c0f-5db0-8287-5565f5750876",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": "212",
+      "created": "2026-09-12T11:15:00.000+0100",
+      "updated": "2026-09-15T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "210115",
+          "author": "712020:0e6e2d1b-ed14-5923-8ef8-8ee5ce5e4313",
+          "time_spent_seconds": 7200,
+          "comment": "",
+          "started": "2026-09-14T00:15:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "21012",
+      "key": "VID-12",
+      "summary": "Monitoring jakości połączeń w Grafanie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:0e6e2d1b-ed14-5923-8ef8-8ee5ce5e4313",
+      "reporter": "712020:7f918893-402c-51d8-a80d-659d08a11a24",
+      "labels": [
+        "monitoring",
+        "quality"
+      ],
+      "sprint": "212",
+      "created": "2026-09-13T14:15:00.000+0100",
+      "updated": "2026-09-16T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "210125",
+          "author": "712020:0e6e2d1b-ed14-5923-8ef8-8ee5ce5e4313",
+          "time_spent_seconds": 10800,
+          "comment": "",
+          "started": "2026-09-15T00:15:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "21013",
+      "key": "VID-13",
+      "summary": "Literówka w komunikacie: 'Połacz ponownie'",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:0e6e2d1b-ed14-5923-8ef8-8ee5ce5e4313",
+      "reporter": "712020:cdd95850-4f85-5da6-9f7f-96996a536876",
+      "labels": [
+        "ui"
+      ],
+      "sprint": "212",
+      "created": "2026-09-15T13:15:00.000+0100",
+      "updated": "2026-09-18T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21014",
+      "key": "VID-14",
+      "summary": "Waiting room music can be muted",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:0e6e2d1b-ed14-5923-8ef8-8ee5ce5e4313",
+      "reporter": "712020:0e6e2d1b-ed14-5923-8ef8-8ee5ce5e4313",
+      "labels": [
+        "waiting-room",
+        "audio"
+      ],
+      "sprint": "212",
+      "created": "2026-09-16T13:15:00.000+0100",
+      "updated": "2026-09-19T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21015",
+      "key": "VID-15",
+      "summary": "Tłumacz języka migowego jako trzeci uczestnik wizyty",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:15f76ba6-268a-59ea-a362-fe1dd5520061",
+      "reporter": "712020:cdd95850-4f85-5da6-9f7f-96996a536876",
+      "labels": [
+        "accessibility",
+        "webrtc"
+      ],
+      "sprint": "213",
+      "created": "2026-09-18T09:15:00.000+0100",
+      "updated": "2026-09-21T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21016",
+      "key": "VID-16",
+      "summary": "Load test with 500 simultaneous visits",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:eb31b90c-583c-5fa1-b241-e8eb8a5a7a8e",
+      "labels": [
+        "performance"
+      ],
+      "sprint": "213",
+      "created": "2026-09-19T11:45:00.000+0100",
+      "updated": "2026-09-22T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21017",
+      "key": "VID-17",
+      "summary": "Podgląd własnej kamery odwrócony po obróceniu telefonu",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:ff7debc5-10a7-51dd-a5f1-31f14781e74a",
+      "reporter": "712020:eb31b90c-583c-5fa1-b241-e8eb8a5a7a8e",
+      "labels": [
+        "mobile",
+        "ui"
+      ],
+      "sprint": "213",
+      "created": "2026-09-21T11:15:00.000+0100",
+      "updated": "2026-09-24T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21018",
+      "key": "VID-18",
+      "summary": "Rozmyte tło podczas wizyty",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:7f918893-402c-51d8-a80d-659d08a11a24",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": "213",
+      "created": "2026-09-22T09:15:00.000+0100",
+      "updated": "2026-09-25T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21019",
+      "key": "VID-19",
+      "summary": "Link do wizyty działa po jej zakończeniu",
+      "description": "Stary link pozwala wejść do pokoju, jeśli lekarz go nie zamknął.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": "712020:eb31b90c-583c-5fa1-b241-e8eb8a5a7a8e",
+      "reporter": "712020:cdd95850-4f85-5da6-9f7f-96996a536876",
+      "labels": [
+        "security"
+      ],
+      "sprint": null,
+      "created": "2026-09-24T11:45:00.000+0100",
+      "updated": "2026-09-27T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21020",
+      "key": "VID-20",
+      "summary": "Migracja serwerów TURN do nowego regionu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:7f918893-402c-51d8-a80d-659d08a11a24",
+      "labels": [
+        "infra"
+      ],
+      "sprint": null,
+      "created": "2026-09-26T14:30:00.000+0100",
+      "updated": "2026-09-29T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21021",
+      "key": "VID-21",
+      "summary": "Czat tekstowy w trakcie wideorozmowy",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:7f918893-402c-51d8-a80d-659d08a11a24",
+      "reporter": "712020:905825e6-3c0f-5db0-8287-5565f5750876",
+      "labels": [
+        "chat",
+        "frontend"
+      ],
+      "sprint": null,
+      "created": "2026-09-27T17:00:00.000+0100",
+      "updated": "2026-09-30T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21022",
+      "key": "VID-22",
+      "summary": "Napisy na żywo gubią polskie znaki",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:cdd95850-4f85-5da6-9f7f-96996a536876",
+      "labels": [
+        "accessibility"
+      ],
+      "sprint": null,
+      "created": "2026-09-29T17:30:00.000+0100",
+      "updated": "2026-10-02T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21023",
+      "key": "VID-23",
+      "summary": "Remove the old Flash fallback page",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:7f918893-402c-51d8-a80d-659d08a11a24",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": null,
+      "created": "2026-09-30T08:00:00.000+0100",
+      "updated": "2026-10-03T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21024",
+      "key": "VID-24",
+      "summary": "Pacjent trafia do złego pokoju po odświeżeniu strony",
+      "description": "Po odświeżeniu strony w poczekalni system daje nowy pokój zamiast wrócić do starego.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:cdd95850-4f85-5da6-9f7f-96996a536876",
+      "reporter": "712020:ff7debc5-10a7-51dd-a5f1-31f14781e74a",
+      "labels": [
+        "waiting-room",
+        "backend"
+      ],
+      "sprint": null,
+      "created": "2026-10-02T10:30:00.000+0100",
+      "updated": "2026-10-05T10:30:00.000+0100",
+      "comments": [
+        {
+          "id": "210241",
+          "author": "712020:cdd95850-4f85-5da6-9f7f-96996a536876",
+          "body": "Potwierdzone w logach z 28 października.",
+          "created": "2026-10-03T10:30:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "21025",
+      "key": "VID-25",
+      "summary": "Dokumentacja API pokoi wideo dla partnerów",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:ff7debc5-10a7-51dd-a5f1-31f14781e74a",
+      "labels": [
+        "docs"
+      ],
+      "sprint": null,
+      "created": "2026-10-03T09:00:00.000+0100",
+      "updated": "2026-10-06T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21026",
+      "key": "VID-26",
+      "summary": "Wizyta z udziałem opiekuna pacjenta",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:cdd95850-4f85-5da6-9f7f-96996a536876",
+      "reporter": "712020:eb31b90c-583c-5fa1-b241-e8eb8a5a7a8e",
+      "labels": [
+        "webrtc"
+      ],
+      "sprint": null,
+      "created": "2026-10-05T13:30:00.000+0100",
+      "updated": "2026-10-08T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21027",
+      "key": "VID-27",
+      "summary": "Video freezes when the doctor opens the patient record",
+      "description": "Happens in Chrome 130 when the record panel loads next to the video.",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:ff7debc5-10a7-51dd-a5f1-31f14781e74a",
+      "reporter": "712020:7f918893-402c-51d8-a80d-659d08a11a24",
+      "labels": [
+        "performance",
+        "quality"
+      ],
+      "sprint": "212",
+      "created": "2026-10-07T08:45:00.000+0100",
+      "updated": "2026-10-10T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21028",
+      "key": "VID-28",
+      "summary": "Ankieta jakości po zakończonej wizycie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:eb31b90c-583c-5fa1-b241-e8eb8a5a7a8e",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": null,
+      "created": "2026-10-08T12:15:00.000+0100",
+      "updated": "2026-10-11T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21029",
+      "key": "VID-29",
+      "summary": "Ikona mikrofonu nie zmienia koloru po wyciszeniu",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:ff7debc5-10a7-51dd-a5f1-31f14781e74a",
+      "reporter": "712020:ff7debc5-10a7-51dd-a5f1-31f14781e74a",
+      "labels": [
+        "ui"
+      ],
+      "sprint": null,
+      "created": "2026-10-10T14:00:00.000+0100",
+      "updated": "2026-10-13T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21030",
+      "key": "VID-30",
+      "summary": "Instrukcja dla pacjenta: jak przygotować się do wideowizyty",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "Low",
+      "assignee": "712020:905825e6-3c0f-5db0-8287-5565f5750876",
+      "reporter": "712020:cdd95850-4f85-5da6-9f7f-96996a536876",
+      "labels": [
+        "docs"
+      ],
+      "sprint": "212",
+      "created": "2026-10-11T08:00:00.000+0100",
+      "updated": "2026-10-14T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "210305",
+          "author": "712020:905825e6-3c0f-5db0-8287-5565f5750876",
+          "time_spent_seconds": 5400,
+          "comment": "",
+          "started": "2026-10-13T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "21031",
+      "key": "VID-31",
+      "summary": "Powiadomienie o wizycie przychodzi po jej rozpoczęciu",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:0e6e2d1b-ed14-5923-8ef8-8ee5ce5e4313",
+      "labels": [
+        "notifications"
+      ],
+      "sprint": "212",
+      "created": "2026-10-13T08:15:00.000+0100",
+      "updated": "2026-10-16T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21032",
+      "key": "VID-32",
+      "summary": "Pokój dla konsylium trzech lekarzy",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:0e6e2d1b-ed14-5923-8ef8-8ee5ce5e4313",
+      "reporter": "712020:905825e6-3c0f-5db0-8287-5565f5750876",
+      "labels": [
+        "webrtc"
+      ],
+      "sprint": null,
+      "created": "2026-10-14T13:00:00.000+0100",
+      "updated": "2026-10-17T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21033",
+      "key": "VID-33",
+      "summary": "Brak limitu prób wejścia do pokoju z błędnym PIN-em",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:ff7debc5-10a7-51dd-a5f1-31f14781e74a",
+      "labels": [
+        "security"
+      ],
+      "sprint": null,
+      "created": "2026-10-16T12:00:00.000+0100",
+      "updated": "2026-10-19T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21034",
+      "key": "VID-34",
+      "summary": "Alert, gdy odsetek zerwanych połączeń przekroczy 5%",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:eb31b90c-583c-5fa1-b241-e8eb8a5a7a8e",
+      "reporter": "712020:eb31b90c-583c-5fa1-b241-e8eb8a5a7a8e",
+      "labels": [
+        "monitoring"
+      ],
+      "sprint": "212",
+      "created": "2026-10-17T09:30:00.000+0100",
+      "updated": "2026-10-20T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "210345",
+          "author": "712020:eb31b90c-583c-5fa1-b241-e8eb8a5a7a8e",
+          "time_spent_seconds": 7200,
+          "comment": "",
+          "started": "2026-10-19T00:30:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "21035",
+      "key": "VID-35",
+      "summary": "Rozmowa nie startuje w przeglądarce Samsung Internet",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:15f76ba6-268a-59ea-a362-fe1dd5520061",
+      "labels": [
+        "mobile",
+        "webrtc"
+      ],
+      "sprint": "213",
+      "created": "2026-10-19T11:15:00.000+0100",
+      "updated": "2026-10-22T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21036",
+      "key": "VID-36",
+      "summary": "Duplicate 'visit started' events in the audit log",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:905825e6-3c0f-5db0-8287-5565f5750876",
+      "reporter": "712020:ff7debc5-10a7-51dd-a5f1-31f14781e74a",
+      "labels": [
+        "backend"
+      ],
+      "sprint": "212",
+      "created": "2026-10-21T13:30:00.000+0100",
+      "updated": "2026-10-24T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21037",
+      "key": "VID-37",
+      "summary": "Przygotować pytania do dostawcy serwerów TURN",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:15f76ba6-268a-59ea-a362-fe1dd5520061",
+      "reporter": "712020:0e6e2d1b-ed14-5923-8ef8-8ee5ce5e4313",
+      "labels": [],
+      "sprint": null,
+      "created": "2026-10-22T11:15:00.000+0100",
+      "updated": "2026-10-25T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21038",
+      "key": "VID-38",
+      "summary": "Udostępnianie wyników badań w trakcie wizyty",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:ff7debc5-10a7-51dd-a5f1-31f14781e74a",
+      "reporter": "712020:cdd95850-4f85-5da6-9f7f-96996a536876",
+      "labels": [
+        "screen-share"
+      ],
+      "sprint": "213",
+      "created": "2026-10-24T13:15:00.000+0100",
+      "updated": "2026-10-27T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21039",
+      "key": "VID-39",
+      "summary": "Kompresja nagrań do formatu H.265",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:0e6e2d1b-ed14-5923-8ef8-8ee5ce5e4313",
+      "labels": [
+        "recording",
+        "performance"
+      ],
+      "sprint": null,
+      "created": "2026-10-25T16:00:00.000+0100",
+      "updated": "2026-10-28T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "21040",
+      "key": "VID-40",
+      "summary": "Komunikat o słabym łączu zasłania przycisk rozłączenia",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:15f76ba6-268a-59ea-a362-fe1dd5520061",
+      "reporter": "712020:0e6e2d1b-ed14-5923-8ef8-8ee5ce5e4313",
+      "labels": [
+        "ui"
+      ],
+      "sprint": null,
+      "created": "2026-10-27T11:45:00.000+0100",
+      "updated": "2026-10-30T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

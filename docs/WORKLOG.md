@@ -515,3 +515,22 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 
 - The team selects all six models for SFT and RL. If the time is too short, the team reduces the number of models later.
 - Add this decision to `docs/MODELS.md`.
+
+## 2026-11-14
+
+### Generator of the train boards and the company Curify
+
+- Branch `40-e2-train-data` starts the work on the train boards and the validation boards (`idm-pro-028`, `idm-pro-030`).
+- The train boards and the validation boards use six invented companies. Each company has its own domain.
+- Add `src/boards.py`. It makes the boards from the hand-written content of a company. Run: `python -m src.boards`.
+- The generator adds the ids, the account ids, the e-mail addresses, the dates, the sprints and the assignees. The same seed gives the same boards.
+- The generator stops if a board breaks a rule of `docs/TASKS.md`. Each board must have these traps:
+  - one person who is not active
+  - two active persons with the same first name
+  - exactly one `Cancelled` issue
+  - summaries in Polish and in English
+- The generator also stops if a project key, a summary or a person occurs on two boards, also on a test board.
+- Add `data/companies/curify.json`: a telemedicine platform with 5 boards (`VID`, `RX`, `PAT`, `DOC`, `PAY`), 200 issues and 15 authors.
+- The boards have 38 to 42 issues, so that the size is not always the same. The status mix is similar to the test boards.
+- Add the boards `data/environments/train-{vid,rx,pat,doc,pay}.json`.
+- 596 tests pass. 6 tests fail also on `main` without this change: 5 tests of `claude_cli` and `test_checksum_finds_a_change`.
