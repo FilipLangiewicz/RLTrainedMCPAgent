@@ -245,7 +245,7 @@ def backward_once(model, peft, ids: list[int], positions: list[int]) -> dict:
     return row
 
 
-def offload_embeddings(model) -> dict:
+def offload_embeddings(model, device: str = "cuda") -> dict:
     """Keep the per-layer lookup tables (PLE) of Gemma 4 in CPU memory and put all other weights on the GPU.
 
     A lookup in such a table needs no matrix product. Thus the CPU gives the rows for the tokens of a sequence quickly.
@@ -256,15 +256,25 @@ def offload_embeddings(model) -> dict:
     tables = [(n, m) for n, m in model.model.named_modules() if isinstance(m, torch.nn.Embedding) and "per_layer" in n]
     # Move each tensor on its own: a move of the full model first does not fit on the GPU for Gemma 4 E4B.
     keep = {id(t) for _, m in tables for t in [*m.parameters(), *m.buffers()]}
-    for t in [*model.model.parameters(), *model.model.buffers()]:
-        if id(t) not in keep:
-            t.data = t.data.to("cuda")
+    model.keep_on_cpu = keep
+    move_weights(model, device)
     for _, m in tables:
         m.register_forward_pre_hook(lambda mod, args: tuple(a.to("cpu") if torch.is_tensor(a) else a for a in args))
-        m.register_forward_hook(lambda mod, args, out: out.to("cuda"))
-    model.device = "cuda"
-    torch.cuda.empty_cache()
+        m.register_forward_hook(lambda mod, args, out: out.to(model.device))
     return {"tables": [n for n, _ in tables], "cpu_params": sum(m.weight.numel() for _, m in tables)}
+
+
+def move_weights(model, device: str) -> None:
+    """Move all weights except the PLE tables. LoRA weights and their gradients move with them."""
+    keep = getattr(model, "keep_on_cpu", set())
+    for t in [*model.model.parameters(), *model.model.buffers()]:
+        if id(t) not in keep:
+            t.data = t.data.to(device)
+            if getattr(t, "grad", None) is not None:
+                t.grad = t.grad.to(device)
+    model.device = device
+    if model.torch.cuda.is_available():
+        model.torch.cuda.empty_cache()
 
 
 def probe_cache(model, prompt_text: str, tokens: int = 128) -> tuple[dict, tuple]:
@@ -433,6 +443,10 @@ def start_server(model_cfg: dict, vcfg: dict) -> tuple:
         # The server keeps the base weights and gets each new LoRA adapter at run time, without a restart.
         env["VLLM_ALLOW_RUNTIME_LORA_UPDATING"] = "True"
         cmd += ["--enable-lora", "--max-lora-rank", str(vcfg["lora_rank"]), "--max-loras", "2"]
+    if vcfg.get("sleep"):
+        # Sleep mode frees the GPU between the generation and the training. The endpoints need the dev mode.
+        env["VLLM_SERVER_DEV_MODE"] = "1"
+        cmd += ["--enable-sleep-mode"]
     start = time.perf_counter()
     # A new session gives the server and its engine processes one process group, so that one signal stops them all.
     proc = subprocess.Popen(cmd, env=env, start_new_session=True)
@@ -683,6 +697,130 @@ def run_pipeline(summary, save, probe, cfg, agent, peft, trainer, url, max_len, 
         save()
 
 
+def main_sleep(cfg: dict, probe: dict, agent: dict, out: Path) -> None:
+    """Measure an RL step in which vLLM first generates and then frees its GPU, so that both GPUs train.
+
+    vLLM sleeps (level 1: the weights go to CPU memory, the KV cache is freed). A second trainer copy then moves
+    to GPU 0. The two copies train on one half of the rollouts each. The trainer never calls an optimizer step.
+    """
+    import shutil
+    from concurrent.futures import ThreadPoolExecutor
+
+    import torch
+    from peft import LoraConfig, get_peft_model
+
+    summary = {"config": cfg, "probe": probe}
+
+    def save():
+        (out / "probe.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False))
+
+    lora = LoraConfig(r=probe["lora_rank"], lora_alpha=2 * probe["lora_rank"], lora_dropout=0.0,
+                      target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
+                      exclude_modules=r".*(vision|audio|visual).*", task_type="CAUSAL_LM")
+
+    def make_trainer(device: str):
+        trainer = make_model({**cfg["model"], "temperature": 0.0, "device": "cpu"})
+        if probe.get("offload_ple"):
+            offload_embeddings(trainer, device)
+        else:
+            move_weights(trainer, device)
+        trainer.model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
+        trainer.model.enable_input_require_grads()
+        peft = get_peft_model(trainer.model, lora)
+        return trainer, peft
+
+    torch.cuda.set_device(1)
+    trainer1, peft1 = make_trainer("cuda:1")
+    random_adapter(peft1)
+    trainer0, peft0 = make_trainer("cpu")  # GPU 0 belongs to vLLM until it sleeps.
+    from peft import get_peft_model_state_dict, set_peft_model_state_dict
+
+    set_peft_model_state_dict(peft0, {k: v.cpu() for k, v in get_peft_model_state_dict(peft1).items()})
+    # Both copies read the same PLE table in CPU memory. One table less saves about 5 GB of RAM.
+    tables1 = {n: m for n, m in trainer1.model.named_modules() if isinstance(m, torch.nn.Embedding) and "per_layer" in n}
+    for n, m in trainer0.model.named_modules():
+        if n in tables1:
+            m.weight = tables1[n].weight
+    adapters = out.parent / f"{out.name}-adapters"
+    shutil.rmtree(adapters, ignore_errors=True)
+    peft1.save_pretrained(adapters / "v0")
+    vcfg = {**probe["vllm"], "gpus": 0, "lora_rank": probe["lora_rank"], "sleep": True}
+    proc, url, summary["server_start_s"], max_len = start_server(cfg["model"], vcfg)
+    try:
+        post_json(url + "/v1/load_lora_adapter", {"lora_name": "v0", "lora_path": str(adapters / "v0")})
+        model = VllmServerModel(cfg["model"]["family"], cfg["model"]["path"], url, cfg["model"].get("temperature", 1.0),
+                                cfg["model"].get("max_new_tokens", 1024), 0, max_len)
+        model.served = "v0"
+        prompt = load_prompt("system", agent["prompt"])
+        tasks = select_tasks(probe["split"], probe["tasks"], probe["seed"])
+        tools = asyncio.run(_list_tools(build_server(load_board(board_path(tasks[0].board)))))
+        per_step, steps = probe["tasks_per_step"], []
+
+        def train_half(trainer, peft, conversations):
+            start, done = time.perf_counter(), 0
+            torch.cuda.set_device(torch.device(trainer.device))
+            for messages in conversations:
+                ids, positions = assistant_positions(trainer, messages, tools)
+                if positions and "error" not in backward_once(trainer, peft, ids, positions):
+                    done += 1
+            return done, time.perf_counter() - start
+
+        for k in range(probe["steps"]):
+            t = {"step": k}
+            start = time.perf_counter()
+            chosen = [tasks[(k * per_step + i) % len(tasks)] for i in range(per_step)]
+            jobs = [(task, g) for task in chosen for g in range(probe["group"])]
+            def one(job):
+                try:
+                    return rollout(model, job[0], prompt, agent)
+                except Exception:  # noqa: BLE001
+                    print(traceback.format_exc(limit=2), file=sys.stderr, flush=True)
+                    return None, []
+
+            with ThreadPoolExecutor(max_workers=probe.get("concurrency", 64)) as pool:
+                results = list(pool.map(one, jobs))
+            conversations = [m for _, m in results if m]
+            t["generate_s"] = round(time.perf_counter() - start, 1)
+            mark = time.perf_counter()
+            post_json(url + "/sleep?level=1", {})
+            move_weights(trainer0, "cuda:0")
+            t["sleep_and_move_s"] = round(time.perf_counter() - mark, 1)
+            mark = time.perf_counter()
+            with ThreadPoolExecutor(max_workers=2) as pool:
+                a = pool.submit(train_half, trainer0, peft0, conversations[0::2])
+                b = pool.submit(train_half, trainer1, peft1, conversations[1::2])
+                (n0, s0), (n1, s1) = a.result(), b.result()
+            t["train_s"] = round(time.perf_counter() - mark, 1)
+            t["train_halves_s"] = [round(s0, 1), round(s1, 1)]
+            t["sequences"] = n0 + n1
+            mark = time.perf_counter()
+            # The sum of the two gradients goes to the copy on GPU 1. Here the values only cost time: no step follows.
+            grads0 = {n: p.grad for n, p in peft0.named_parameters() if p.grad is not None}
+            for n, p in peft1.named_parameters():
+                if p.grad is not None and n in grads0:
+                    p.grad += grads0[n].to(p.grad.device)
+            peft0.zero_grad(set_to_none=True)
+            peft1.zero_grad(set_to_none=True)
+            move_weights(trainer0, "cpu")
+            peft1.save_pretrained(adapters / f"v{k + 1}")
+            post_json(url + "/wake_up", {})
+            post_json(url + "/v1/load_lora_adapter", {"lora_name": f"v{k + 1}", "lora_path": str(adapters / f"v{k + 1}")})
+            model.served = f"v{k + 1}"
+            t["sync_wake_swap_s"] = round(time.perf_counter() - mark, 1)
+            t["wall_s"] = round(time.perf_counter() - start, 1)
+            steps.append(t)
+            print("step", t, flush=True)
+            summary["steps"] = steps
+            save()
+    except Exception:  # noqa: BLE001  The summary keeps the error.
+        summary["error"] = traceback.format_exc(limit=4)[-3000:]
+        print(summary["error"], file=sys.stderr, flush=True)
+    finally:
+        stop_server(proc)
+        shutil.rmtree(adapters, ignore_errors=True)
+        save()
+
+
 def lora_logprob_check(trainer, peft, samples: list[dict]) -> dict:
     torch = trainer.torch
     diffs = []
@@ -717,6 +855,9 @@ def main(argv: list[str] | None = None) -> None:
         return
     if probe.get("engine") == "pipeline":
         main_pipeline(cfg, probe, agent, out)
+        return
+    if probe.get("engine") == "sleep":
+        main_sleep(cfg, probe, agent, out)
         return
     summary = {"config": cfg, "probe": probe}
 
