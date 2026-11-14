@@ -599,3 +599,11 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - Each board has the same mix of types and categories as the other companies.
 - 117 tasks find the project with `jira_get_agile_boards` first. 18 tasks search again after an empty result.
 - All tasks passed the checks at the first build.
+
+### Train tasks of WiseAI
+
+- Add 200 train tasks of WiseAI (`train-0601` to `train-0800`). The earlier tasks do not change.
+- Each board has the same mix of types and categories as the other companies.
+- 117 tasks find the project with `jira_get_agile_boards` first. 20 tasks search again after an empty result.
+- Two tasks search again with a label after an empty text search.
+- All tasks passed the checks at the first build.

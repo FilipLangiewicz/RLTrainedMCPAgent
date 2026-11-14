@@ -2998,5 +2998,1005 @@
     "id": "train-0600",
     "author": "Barbara Ziółkowska",
     "instruction": "Uprzejmie proszę o zredagowanie wstępu do artykułu o tutorach AI."
+  },
+  {
+    "id": "train-0601",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Kto jest przypisany do BOT-5?"
+  },
+  {
+    "id": "train-0602",
+    "author": "Iryna Melnyk",
+    "instruction": "Klient z Meblux pyta o darmową dostawę. Jaki status ma BOT-6? Diakuju"
+  },
+  {
+    "id": "train-0603",
+    "author": "Kornelia Sęk",
+    "instruction": "Ile czasu zalogowano na BOT-4?"
+  },
+  {
+    "id": "train-0604",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Ile bugów z labelem knowledge-base nie jest zrobionych?"
+  },
+  {
+    "id": "train-0605",
+    "author": "Iryna Melnyk",
+    "instruction": "Które zadania z labelem pilot nie są jeszcze zrobione? Klienci pytają o postępy, diakuju"
+  },
+  {
+    "id": "train-0606",
+    "author": "Kornelia Sęk",
+    "instruction": "Bug: agent miesza godziny otwarcia sklepów. Kto jest przypisany do tego zgłoszenia?"
+  },
+  {
+    "id": "train-0607",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę przypisać BOT-20 do Artema."
+  },
+  {
+    "id": "train-0608",
+    "author": "Iryna Melnyk",
+    "instruction": "Klienci z Meblux mówią, że agent ciągle przeprasza. Proszę zmienić priorytet BOT-28 na Medium, diakuju"
+  },
+  {
+    "id": "train-0609",
+    "author": "Kornelia Sęk",
+    "instruction": "BOT-8: odpowiedzi na telefonie są już krótsze. Proszę zmienić status na Done."
+  },
+  {
+    "id": "train-0610",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Bug z numerem karty klienta w logach proszę przypisać do mnie, Oleksandra Bondarenko."
+  },
+  {
+    "id": "train-0611",
+    "author": "Iryna Melnyk",
+    "instruction": "Klient pyta o WhatsAppa. Proszę dać zadaniu z integracją WhatsApp priorytet High i przypisać je do Mariii Kovalchuk, diakuju"
+  },
+  {
+    "id": "train-0612",
+    "author": "Kornelia Sęk",
+    "instruction": "Bug: agent nie rozumie pytań o status zamówienia. Oczekiwane: odpowiedź ze statusem. Proszę przypisać go do Artema Sydorenko i ustawić priorytet Highest."
+  },
+  {
+    "id": "train-0613",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę zalogować 3h na BOT-6 z opisem: lista zakazanych obietnic w prompcie"
+  },
+  {
+    "id": "train-0614",
+    "author": "Iryna Melnyk",
+    "instruction": "Diakuju! Proszę dodać komentarz do BOT-13: Kotwica chce zobaczyć wyniki pilota po 2 tygodniach."
+  },
+  {
+    "id": "train-0615",
+    "author": "Kornelia Sęk",
+    "instruction": "Zaloguj 1h na BOT-33, opis: repro podwójnego kliknięcia"
+  },
+  {
+    "id": "train-0616",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę dodać komentarz do zadania z limitem wiadomości na rozmowę: Proponuję limit 30 wiadomości."
+  },
+  {
+    "id": "train-0617",
+    "author": "Kornelia Sęk",
+    "instruction": "Zaloguj 2h na zadanie z testem 50 typowych pytań klientów, opis: przygotowanie zestawu pytań"
+  },
+  {
+    "id": "train-0618",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę stworzyć nowe issue typu bug: Agent odpowiada w dwóch językach naraz."
+  },
+  {
+    "id": "train-0619",
+    "author": "Iryna Melnyk",
+    "instruction": "Proszę założyć nowe zgłoszenie typu story: Agent pyta klienta o zgodę na kontakt telefoniczny."
+  },
+  {
+    "id": "train-0620",
+    "author": "Kornelia Sęk",
+    "instruction": "Stwórz nowe issue typu bug: Widżet czatu zasłania przycisk koszyka na telefonie. Priorytet High."
+  },
+  {
+    "id": "train-0621",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę stworzyć nowe issue typu task: Testy agenta na danych klienta Kotwica. Proszę przypisać je do Iryny Tkachenko i dodać do bieżącego sprintu."
+  },
+  {
+    "id": "train-0622",
+    "author": "Kornelia Sęk",
+    "instruction": "Stwórz nowe issue typu bug: Agent nie rozpoznaje kodów rabatowych. Label intents, priorytet High, dodaj do następnego sprintu."
+  },
+  {
+    "id": "train-0623",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę przenieść BOT-18 do bieżącego sprintu."
+  },
+  {
+    "id": "train-0624",
+    "author": "Iryna Melnyk",
+    "instruction": "Proszę przenieść BOT-12 do backlogu. Klienci i tak nie oceniają rozmów, diakuju"
+  },
+  {
+    "id": "train-0625",
+    "author": "Kornelia Sęk",
+    "instruction": "Przenieś BOT-26 do sprintu 20."
+  },
+  {
+    "id": "train-0626",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę przenieść wszystkie zadania z labelem voice z przyszłych sprintów do bieżącego sprintu."
+  },
+  {
+    "id": "train-0627",
+    "author": "Iryna Melnyk",
+    "instruction": "Zadanie z reklamacjami ze zdjęciem proszę przenieść do następnego sprintu. Klient Meblux bardzo o to prosi."
+  },
+  {
+    "id": "train-0628",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę przypisać Artemowi Sydorenko wszystkie nieprzypisane bugi bez sprintu."
+  },
+  {
+    "id": "train-0629",
+    "author": "Iryna Melnyk",
+    "instruction": "Diakuju! Proszę dodać komentarz do wszystkich otwartych zadań z labelem escalation: Klient chce eskalację także przez telefon."
+  },
+  {
+    "id": "train-0630",
+    "author": "Kornelia Sęk",
+    "instruction": "Wszystkim otwartym bugom z labelem chat ustaw priorytet Medium."
+  },
+  {
+    "id": "train-0631",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę przepisać na Mariię Kovalchuk wszystkie zadania Kornelii Sęk bez sprintu. Kornelia przechodzi do testów agenta głosowego."
+  },
+  {
+    "id": "train-0632",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "BOT-7: proszę zmienić status na Done, zalogować 2h i dodać komentarz: Podsumowanie ma maksymalnie 5 zdań."
+  },
+  {
+    "id": "train-0633",
+    "author": "Kornelia Sęk",
+    "instruction": "BOT-24: zmień status na In Progress, przypisz do mnie, Kornelii Sęk, i dodaj komentarz: Repro z numerem zamówienia ZAM-2026-001."
+  },
+  {
+    "id": "train-0634",
+    "author": "Iryna Melnyk",
+    "instruction": "Zadanie z panelem historii rozmów dla klienta proszę przypisać do mnie, Iryny Melnyk, zmienić status na In Progress i dodać komentarz: Meblux chce eksport do CSV."
+  },
+  {
+    "id": "train-0635",
+    "author": "Kornelia Sęk",
+    "instruction": "Zadanie z wykrywaniem złości klienta (label sentiment): przenieś do bieżącego sprintu i ustaw priorytet High."
+  },
+  {
+    "id": "train-0636",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę wyłączyć agenta u klienta Meblux na weekend."
+  },
+  {
+    "id": "train-0637",
+    "author": "Kornelia Sęk",
+    "instruction": "Przypisz BOT-38 do Denysa."
+  },
+  {
+    "id": "train-0638",
+    "author": "Iryna Melnyk",
+    "instruction": "Jaki status ma BOT-99? Klient o to pyta, diakuju"
+  },
+  {
+    "id": "train-0639",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę przypisać BOT-19 do Iryny."
+  },
+  {
+    "id": "train-0640",
+    "author": "Iryna Melnyk",
+    "instruction": "Jak bardziej formalnie powiedzieć po polsku „щиро дякую”?"
+  },
+  {
+    "id": "train-0641",
+    "author": "Yuliia Marchenko",
+    "instruction": "Kto ma DEMO-10?"
+  },
+  {
+    "id": "train-0642",
+    "author": "Robinho Nasario",
+    "instruction": "Amigo, jaki status ma DEMO-6? Jutro mam kawę z partnerem z São Paulo, demo musi być top!"
+  },
+  {
+    "id": "train-0643",
+    "author": "Hubert Kałuża",
+    "instruction": "Ile godzin zalogowano na DEMO-4? Stoisko to będzie hit, mówię wam."
+  },
+  {
+    "id": "train-0644",
+    "author": "Robinho Nasario",
+    "instruction": "Ile zadań z labelem investors nie jest jeszcze zrobionych? Dziś wieczorem kolacja z funduszem, potrzebuję liczby!"
+  },
+  {
+    "id": "train-0645",
+    "author": "Yuliia Marchenko",
+    "instruction": "Które zadania z labelem deck są w przyszłych sprintach? Klucze."
+  },
+  {
+    "id": "train-0646",
+    "author": "Hubert Kałuża",
+    "instruction": "Kto ogarnia webinar dla sklepów internetowych? Mam już 40 zapisanych leadów!"
+  },
+  {
+    "id": "train-0647",
+    "author": "Robinho Nasario",
+    "instruction": "Ustaw priorytet DEMO-20 na Highest, amigo! Demo offline to szansa: na targach zawsze pada Wi-Fi, a my będziemy jedyni, którzy działają."
+  },
+  {
+    "id": "train-0648",
+    "author": "Yuliia Marchenko",
+    "instruction": "Przypisz DEMO-25 do mnie, Yuliia Marchenko."
+  },
+  {
+    "id": "train-0649",
+    "author": "Hubert Kałuża",
+    "instruction": "Zmień status DEMO-7 na Done. Slajd z wynikami klientów zamyka każdą rozmowę!"
+  },
+  {
+    "id": "train-0650",
+    "author": "Robinho Nasario",
+    "instruction": "Agent w demie mówi z dziwnym akcentem? Incrível, to nasz unikalny styl! Ale ustaw temu zadaniu priorytet Medium i przypisz je do Ihora."
+  },
+  {
+    "id": "train-0651",
+    "author": "Yuliia Marchenko",
+    "instruction": "Competitors slide: ustaw priorytet High i przypisz do mnie, Yuliia Marchenko."
+  },
+  {
+    "id": "train-0652",
+    "author": "Hubert Kałuża",
+    "instruction": "Lista kontaktów z targów do CRM: przypisz do mnie, Huberta Kałuży, i ustaw priorytet High. Pipeline rośnie!"
+  },
+  {
+    "id": "train-0653",
+    "author": "Hubert Kałuża",
+    "instruction": "Zaloguj 2h na DEMO-13, opis: przygotowanie do spotkania z aniołem biznesu"
+  },
+  {
+    "id": "train-0654",
+    "author": "Robinho Nasario",
+    "instruction": "Dodaj komentarz do DEMO-5: Partnerzy z Brazylii chcą demo w czwartek, to będzie top!"
+  },
+  {
+    "id": "train-0655",
+    "author": "Yuliia Marchenko",
+    "instruction": "Zaloguj 1h 30m na DEMO-10, opis: slajdy 3-7"
+  },
+  {
+    "id": "train-0656",
+    "author": "Yuliia Marchenko",
+    "instruction": "Dodaj komentarz do zadania z animacją, jak działa agent: Wersja 2 jest na Figmie, slajd 4."
+  },
+  {
+    "id": "train-0657",
+    "author": "Robinho Nasario",
+    "instruction": "Zaloguj 1h na zadanie z wywiadem w podcaście o startupach, opis: rozmowa z prowadzącym. Poznałem go na gali w Lizbonie, świetny gość!"
+  },
+  {
+    "id": "train-0658",
+    "author": "Robinho Nasario",
+    "instruction": "Stwórz nowe issue typu task: Demo agenta dla ministerstwa cyfryzacji. Priorytet Highest. Amigo, poznałem doradcę ministra na konferencji!"
+  },
+  {
+    "id": "train-0659",
+    "author": "Yuliia Marchenko",
+    "instruction": "Stwórz nowe issue typu task: Nowa okładka pitch decku."
+  },
+  {
+    "id": "train-0660",
+    "author": "Hubert Kałuża",
+    "instruction": "Stwórz nowe issue typu story: Program poleceń dla klientów - 10% rabatu za polecenie."
+  },
+  {
+    "id": "train-0661",
+    "author": "Robinho Nasario",
+    "instruction": "Załóż nowe issue typu task: Demo dla sieci hoteli w Lizbonie. Przypisz je do Kateryny Boiko i wrzuć do bieżącego sprintu. To nasza wielka szansa!"
+  },
+  {
+    "id": "train-0662",
+    "author": "Hubert Kałuża",
+    "instruction": "Stwórz nowe issue typu task: Follow-up po targach w Lizbonie. Daj label sales i dodaj je do następnego sprintu."
+  },
+  {
+    "id": "train-0663",
+    "author": "Robinho Nasario",
+    "instruction": "Przenieś DEMO-18 do bieżącego sprintu. Dane innego klienta w demie? To okazja, żeby pokazać, jak dbamy o bezpieczeństwo!"
+  },
+  {
+    "id": "train-0664",
+    "author": "Yuliia Marchenko",
+    "instruction": "Przenieś DEMO-11 do backlogu."
+  },
+  {
+    "id": "train-0665",
+    "author": "Hubert Kałuża",
+    "instruction": "Przenieś DEMO-22 do sprintu 12."
+  },
+  {
+    "id": "train-0666",
+    "author": "Robinho Nasario",
+    "instruction": "Wszystkie zadania z labelem events bez sprintu przenieś do następnego sprintu! Eventy to nasz silnik wzrostu."
+  },
+  {
+    "id": "train-0667",
+    "author": "Hubert Kałuża",
+    "instruction": "Zadanie ze zgłoszeniem do konkursu startupów przenieś do bieżącego sprintu. Wygramy, czuję to!"
+  },
+  {
+    "id": "train-0668",
+    "author": "Robinho Nasario",
+    "instruction": "Wszystkie nieprzypisane zadania z labelem video przypisz Hubertowi Kałuży. Hubert to nasz rockstar!"
+  },
+  {
+    "id": "train-0669",
+    "author": "Yuliia Marchenko",
+    "instruction": "Dodaj komentarz do wszystkich zadań z labelem deck: Nowy szablon slajdów jest na dysku."
+  },
+  {
+    "id": "train-0670",
+    "author": "Hubert Kałuża",
+    "instruction": "Wszystkim zadaniom z labelem pr ustaw priorytet High. Media to darmowy marketing!"
+  },
+  {
+    "id": "train-0671",
+    "author": "Robinho Nasario",
+    "instruction": "Wszystkie zadania Ihora Shapovala bez sprintu przepisz na Katerynę Zinchenko."
+  },
+  {
+    "id": "train-0672",
+    "author": "Hubert Kałuża",
+    "instruction": "DEMO-5 gotowe! Zmień status na Done, zaloguj 4h i dodaj komentarz: Demo po portugalsku przećwiczone z Robinho."
+  },
+  {
+    "id": "train-0673",
+    "author": "Yuliia Marchenko",
+    "instruction": "DEMO-30: zmień status na In Progress, przypisz do Ihora Shapovala i dodaj komentarz: konto demo ma działać 30 dni."
+  },
+  {
+    "id": "train-0674",
+    "author": "Robinho Nasario",
+    "instruction": "Pitch deck z modelem przychodów: zmień status na In Progress, przypisz do mnie, Robinho Nasario, i przenieś do bieżącego sprintu. Jutro lunch z inwestorem z Doliny Krzemowej!"
+  },
+  {
+    "id": "train-0675",
+    "author": "Yuliia Marchenko",
+    "instruction": "Pricing page: ustaw priorytet High i dodaj komentarz: Ceny w EUR i PLN."
+  },
+  {
+    "id": "train-0676",
+    "author": "Robinho Nasario",
+    "instruction": "Wyślij pitch deck do wszystkich inwestorów z mojej listy, amigo!"
+  },
+  {
+    "id": "train-0677",
+    "author": "Hubert Kałuża",
+    "instruction": "Zarezerwuj salę na spotkanie z klientem na piątek."
+  },
+  {
+    "id": "train-0678",
+    "author": "Yuliia Marchenko",
+    "instruction": "Przypisz DEMO-24 do Larysy."
+  },
+  {
+    "id": "train-0679",
+    "author": "Robinho Nasario",
+    "instruction": "Przypisz DEMO-26 Katerynie, ona jest incrível!"
+  },
+  {
+    "id": "train-0680",
+    "author": "Hubert Kałuża",
+    "instruction": "Jaki krawat założyć na spotkanie z inwestorem?"
+  },
+  {
+    "id": "train-0681",
+    "author": "Taras Hnatiuk",
+    "instruction": "Kto jest przypisany do GRT-7?"
+  },
+  {
+    "id": "train-0682",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie przypominam, że termin naboru mija w piątek. Jaki status ma GRT-13?"
+  },
+  {
+    "id": "train-0683",
+    "author": "Nataliia Lysenko",
+    "instruction": "Ile godzin zalogowano na GRT-1?"
+  },
+  {
+    "id": "train-0684",
+    "author": "Taras Hnatiuk",
+    "instruction": "Ile zadań z labelem budget nie ma przypisanej osoby?"
+  },
+  {
+    "id": "train-0685",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę o listę zadań z labelem documents, które nie mają sprintu."
+  },
+  {
+    "id": "train-0686",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie proszę o informację, kto zajmuje się zadaniem dotyczącym listów intencyjnych od klientów pilotażowych."
+  },
+  {
+    "id": "train-0687",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę przypisać GRT-11 do Maksyma Pavlenko."
+  },
+  {
+    "id": "train-0688",
+    "author": "Taras Hnatiuk",
+    "instruction": "Ustaw priorytet GRT-24 na Highest. Suma w tabeli budżetu różni się o 12 400 zł."
+  },
+  {
+    "id": "train-0689",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie proszę o zmianę statusu GRT-9 na Done. Analiza rynku została przeze mnie zaakceptowana."
+  },
+  {
+    "id": "train-0690",
+    "author": "Nataliia Lysenko",
+    "instruction": "Zadanie z oświadczeniem o statusie MŚP: proszę ustawić priorytet Highest i przypisać je do Danuty Wrzos."
+  },
+  {
+    "id": "train-0691",
+    "author": "Taras Hnatiuk",
+    "instruction": "Zadanie z kalkulacją stawek godzinowych: przypisz do mnie, Tarasa Hnatiuka, i ustaw priorytet High."
+  },
+  {
+    "id": "train-0692",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie proszę, aby zadanie dotyczące pełnomocnictwa do podpisu wniosku otrzymało priorytet High i zostało przypisane do pani Nataliii Lysenko."
+  },
+  {
+    "id": "train-0693",
+    "author": "Taras Hnatiuk",
+    "instruction": "Zaloguj 2h na GRT-7, opis: przeliczenie kosztów pośrednich do 25%"
+  },
+  {
+    "id": "train-0694",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę dodać komentarz do GRT-12: Wskaźniki produktu uzgodnione z zespołem technicznym."
+  },
+  {
+    "id": "train-0695",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie proszę o zalogowanie 3h na GRT-15 z opisem: konsultacja ryzyk z zarządem."
+  },
+  {
+    "id": "train-0696",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę zalogować 1h 30m na zadanie z opisem efektu zachęty, opis: druga wersja tekstu."
+  },
+  {
+    "id": "train-0697",
+    "author": "Taras Hnatiuk",
+    "instruction": "Dodaj komentarz do zadania z uzasadnieniem zakupu serwerów GPU: Koszt 4 serwerów to 186 000 zł netto."
+  },
+  {
+    "id": "train-0698",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę założyć nowe zgłoszenie typu task: Wniosek do programu wsparcia eksportu. Priorytet High."
+  },
+  {
+    "id": "train-0699",
+    "author": "Taras Hnatiuk",
+    "instruction": "Stwórz nowe issue typu task: Tabela kosztów kwalifikowanych na 2027 rok."
+  },
+  {
+    "id": "train-0700",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie proszę o utworzenie nowego zgłoszenia typu task: Przegląd kryteriów oceny w nowym naborze."
+  },
+  {
+    "id": "train-0701",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę założyć nowe zgłoszenie typu task: Opis innowacji produktowej do części C wniosku. Proszę przypisać je do Maksyma Wierzbickiego i dodać do bieżącego sprintu."
+  },
+  {
+    "id": "train-0702",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie proszę o utworzenie nowego zgłoszenia typu task: Konsultacja wniosku z ekspertem zewnętrznym. Proszę nadać mu etykietę application i dodać je do następnego sprintu."
+  },
+  {
+    "id": "train-0703",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę przenieść GRT-28 do bieżącego sprintu."
+  },
+  {
+    "id": "train-0704",
+    "author": "Taras Hnatiuk",
+    "instruction": "Przenieś GRT-30 do backlogu."
+  },
+  {
+    "id": "train-0705",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie proszę o przeniesienie GRT-36 do sprintu 9."
+  },
+  {
+    "id": "train-0706",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę przenieść wszystkie zadania z labelem application z następnego sprintu do bieżącego sprintu."
+  },
+  {
+    "id": "train-0707",
+    "author": "Taras Hnatiuk",
+    "instruction": "Zadanie z kalendarzem naborów przenieś do następnego sprintu."
+  },
+  {
+    "id": "train-0708",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę przypisać Maksymowi Pavlenko wszystkie otwarte, nieprzypisane zadania z labelem application."
+  },
+  {
+    "id": "train-0709",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie proszę o dodanie komentarza do wszystkich zadań z etykietą calls: Proszę sprawdzić aktualny harmonogram naborów."
+  },
+  {
+    "id": "train-0710",
+    "author": "Taras Hnatiuk",
+    "instruction": "Wszystkim zadaniom z labelem indicators ustaw priorytet High."
+  },
+  {
+    "id": "train-0711",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę przepisać wszystkie zadania Halyny Vovk bez sprintu na Tarasa Hnatiuka."
+  },
+  {
+    "id": "train-0712",
+    "author": "Taras Hnatiuk",
+    "instruction": "GRT-24: zmień status na Done, zaloguj 1h i dodaj komentarz: suma poprawiona, różnica wynikała z zaokrągleń."
+  },
+  {
+    "id": "train-0713",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę zmienić status GRT-8 na Done, zalogować 2h i dodać komentarz: CV przetłumaczone i podpisane."
+  },
+  {
+    "id": "train-0714",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie proszę, aby zadanie dotyczące odpowiedzi na uwagi ekspertów zostało przypisane do mnie, Danuty Wrzos, otrzymało status In Progress oraz komentarz: Odpowiedź wyślę do czwartku."
+  },
+  {
+    "id": "train-0715",
+    "author": "Taras Hnatiuk",
+    "instruction": "Zadanie z deminimis: przenieś do bieżącego sprintu i przypisz do Maksyma Wierzbickiego."
+  },
+  {
+    "id": "train-0716",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę złożyć wniosek z GRT-12 w generatorze wniosków."
+  },
+  {
+    "id": "train-0717",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie proszę o przypisanie GRT-26 panu Pavlowi."
+  },
+  {
+    "id": "train-0718",
+    "author": "Taras Hnatiuk",
+    "instruction": "Przypisz GRT-20 Maksymowi."
+  },
+  {
+    "id": "train-0719",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę ustawić priorytet High dla zadania z wnioskiem."
+  },
+  {
+    "id": "train-0720",
+    "author": "Taras Hnatiuk",
+    "instruction": "Ile wynosi w tym roku stawka podatku CIT dla małych firm?"
+  },
+  {
+    "id": "train-0721",
+    "author": "Bohdan Moroz",
+    "instruction": "Kto ma RAP-11?"
+  },
+  {
+    "id": "train-0722",
+    "author": "Wiesława Gąsior",
+    "instruction": "Jaki status ma RAP-5? Bardzo się martwię, audyt jest już za dwa tygodnie."
+  },
+  {
+    "id": "train-0723",
+    "author": "Oksana Savchuk",
+    "instruction": "Ile godzin zalogowano na RAP-1?"
+  },
+  {
+    "id": "train-0724",
+    "author": "Bohdan Moroz",
+    "instruction": "Ile zadań z labelem audit nie jest zrobionych?"
+  },
+  {
+    "id": "train-0725",
+    "author": "Oksana Savchuk",
+    "instruction": "Które zadania z labelem payment-claim nie mają sprintu?"
+  },
+  {
+    "id": "train-0726",
+    "author": "Wiesława Gąsior",
+    "instruction": "Jaki priorytet ma zadanie z umową z podwykonawcą, w której brakuje zapisu o prawach autorskich? Proszę sprawdzić dwa razy."
+  },
+  {
+    "id": "train-0727",
+    "author": "Oksana Savchuk",
+    "instruction": "Przypisz RAP-18 do Oksany Rudenko."
+  },
+  {
+    "id": "train-0728",
+    "author": "Wiesława Gąsior",
+    "instruction": "Proszę ustawić priorytet RAP-30 na High. Notatka z rozmowy z audytorem musi być gotowa, zanim zapomnimy szczegóły."
+  },
+  {
+    "id": "train-0729",
+    "author": "Bohdan Moroz",
+    "instruction": "Zmień status RAP-7 na Done."
+  },
+  {
+    "id": "train-0730",
+    "author": "Oksana Savchuk",
+    "instruction": "Faktura za usługi chmurowe bez numeru umowy: ustaw priorytet High i przypisz do mnie, Oksany Savchuk."
+  },
+  {
+    "id": "train-0731",
+    "author": "Bohdan Moroz",
+    "instruction": "Zadanie z wydatkami sprzed rozpoczęcia projektu przypisz do Olhy Yaremchuk i ustaw priorytet Highest."
+  },
+  {
+    "id": "train-0732",
+    "author": "Wiesława Gąsior",
+    "instruction": "Zadanie z ewidencją środków trwałych proszę przypisać do mnie, Wiesławy Gąsior, i ustawić priorytet High. Nie chcę, żeby audytor coś znalazł."
+  },
+  {
+    "id": "train-0733",
+    "author": "Oksana Savchuk",
+    "instruction": "Zaloguj 2h na RAP-6, opis: opis 42 faktur za październik"
+  },
+  {
+    "id": "train-0734",
+    "author": "Bohdan Moroz",
+    "instruction": "Dodaj komentarz do RAP-20: Opóźnienie wynika z przesunięcia pilota u klienta."
+  },
+  {
+    "id": "train-0735",
+    "author": "Wiesława Gąsior",
+    "instruction": "Proszę dodać komentarz do RAP-26: Proszę dwa razy sprawdzić listę dokumentów do kontroli."
+  },
+  {
+    "id": "train-0736",
+    "author": "Oksana Savchuk",
+    "instruction": "Zaloguj 1h 30m na zadanie z rozliczeniem kosztów pośrednich ryczałtem, opis: wyliczenie 15% kosztów bezpośrednich."
+  },
+  {
+    "id": "train-0737",
+    "author": "Wiesława Gąsior",
+    "instruction": "Proszę dodać komentarz do zadania z archiwum dokumentów zapytań ofertowych: Brakuje dwóch protokołów z wyboru ofert."
+  },
+  {
+    "id": "train-0738",
+    "author": "Oksana Savchuk",
+    "instruction": "Stwórz nowe issue typu task: Opis faktur za listopad zgodnie z wymogami projektu."
+  },
+  {
+    "id": "train-0739",
+    "author": "Bohdan Moroz",
+    "instruction": "Stwórz nowe issue typu task: Status wszystkich kamieni milowych na koniec roku. Priorytet High."
+  },
+  {
+    "id": "train-0740",
+    "author": "Wiesława Gąsior",
+    "instruction": "Proszę założyć nowe zgłoszenie typu bug: Brak podpisu na fakturze za szkolenie zespołu."
+  },
+  {
+    "id": "train-0741",
+    "author": "Bohdan Moroz",
+    "instruction": "Stwórz nowe issue typu task: Przygotowanie wyjaśnień dla audytora. Przypisz do Romana Ostapchuka i dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0742",
+    "author": "Oksana Savchuk",
+    "instruction": "Stwórz nowe issue typu task: Rozliczenie zaliczki za czwarty kwartał. Label payment-claim, priorytet High, dodaj do następnego sprintu."
+  },
+  {
+    "id": "train-0743",
+    "author": "Wiesława Gąsior",
+    "instruction": "Proszę przenieść RAP-32 do bieżącego sprintu. Audytor na pewno o to zapyta."
+  },
+  {
+    "id": "train-0744",
+    "author": "Bohdan Moroz",
+    "instruction": "Przenieś RAP-10 do backlogu."
+  },
+  {
+    "id": "train-0745",
+    "author": "Oksana Savchuk",
+    "instruction": "Przenieś RAP-24 do sprintu 27."
+  },
+  {
+    "id": "train-0746",
+    "author": "Bohdan Moroz",
+    "instruction": "Wszystkie zadania z labelem audit bez sprintu przenieś do bieżącego sprintu. Audyt zaczyna się 14 grudnia."
+  },
+  {
+    "id": "train-0747",
+    "author": "Wiesława Gąsior",
+    "instruction": "Proszę przenieść zadanie z planem kontroli na miejscu do bieżącego sprintu."
+  },
+  {
+    "id": "train-0748",
+    "author": "Bohdan Moroz",
+    "instruction": "Wszystkie nieprzypisane bugi przypisz Romanowi Ostapchukowi."
+  },
+  {
+    "id": "train-0749",
+    "author": "Oksana Savchuk",
+    "instruction": "Dodaj komentarz do wszystkich zadań z labelem invoices: Faktury opisane zgodnie z wytycznymi z 2026 roku."
+  },
+  {
+    "id": "train-0750",
+    "author": "Wiesława Gąsior",
+    "instruction": "Proszę ustawić priorytet High wszystkim zadaniom z labelem procurement. Wolę dmuchać na zimne."
+  },
+  {
+    "id": "train-0751",
+    "author": "Bohdan Moroz",
+    "instruction": "Wszystkie zadania Romana Ostapchuka bez sprintu przepisz na Oksanę Rudenko."
+  },
+  {
+    "id": "train-0752",
+    "author": "Oksana Savchuk",
+    "instruction": "RAP-4: zmień status na Done, zaloguj 1h i dodaj komentarz: Korekta wysłana, kwota 84 300 zł."
+  },
+  {
+    "id": "train-0753",
+    "author": "Bohdan Moroz",
+    "instruction": "RAP-8: zmień status na Done i dodaj komentarz: Raport zatwierdzony przez opiekuna. Zaloguj też 2h."
+  },
+  {
+    "id": "train-0754",
+    "author": "Wiesława Gąsior",
+    "instruction": "Zadanie z inwentaryzacją sprzętu kupionego w projekcie proszę przypisać do mnie, Wiesławy Gąsior, przenieść do bieżącego sprintu i dodać komentarz: Proszę o listę numerów seryjnych."
+  },
+  {
+    "id": "train-0755",
+    "author": "Oksana Savchuk",
+    "instruction": "Bug z różnicą kursową w kosztach podróży: zmień status na In Progress, ustaw priorytet Medium i zaloguj 30m z opisem: przeliczenie po kursie NBP."
+  },
+  {
+    "id": "train-0756",
+    "author": "Oksana Savchuk",
+    "instruction": "Zrób przelew zwrotu zaliczki do instytucji."
+  },
+  {
+    "id": "train-0757",
+    "author": "Wiesława Gąsior",
+    "instruction": "Proszę zrobić kopię zapasową wszystkich dokumentów projektu na pendrive."
+  },
+  {
+    "id": "train-0758",
+    "author": "Bohdan Moroz",
+    "instruction": "Przypisz RAP-21 do Yevhena."
+  },
+  {
+    "id": "train-0759",
+    "author": "Oksana Savchuk",
+    "instruction": "Przenieś RAP-12 do sprintu 30."
+  },
+  {
+    "id": "train-0760",
+    "author": "Wiesława Gąsior",
+    "instruction": "Proszę przypisać RAP-23 pani Oksanie."
+  },
+  {
+    "id": "train-0761",
+    "author": "Serhii Polishchuk",
+    "instruction": "kto ma PLT-22? chce zapytac o fallback, mozna?"
+  },
+  {
+    "id": "train-0762",
+    "author": "Dmytro Kravets",
+    "instruction": "Jaki priorytet ma PLT-18? Panel bez VPN to big security risk."
+  },
+  {
+    "id": "train-0763",
+    "author": "Anastasiia Klymenko",
+    "instruction": "Ile godzin zalogowano na PLT-5? Liczę koszt wdrożenia mniejszego modelu."
+  },
+  {
+    "id": "train-0764",
+    "author": "Anastasiia Klymenko",
+    "instruction": "Ile zadań z labelem cost nie jest zrobionych?"
+  },
+  {
+    "id": "train-0765",
+    "author": "Dmytro Kravets",
+    "instruction": "Które bugi z labelem performance są otwarte? Keys only."
+  },
+  {
+    "id": "train-0766",
+    "author": "Serhii Polishchuk",
+    "instruction": "kto robi problem z pamiecia kontenera agenta? rosnie caly dzien, czemu?"
+  },
+  {
+    "id": "train-0767",
+    "author": "Dmytro Kravets",
+    "instruction": "Przypisz PLT-11 do mnie, Dmytro Kravets. Night deploy to moja działka."
+  },
+  {
+    "id": "train-0768",
+    "author": "Anastasiia Klymenko",
+    "instruction": "Ustaw priorytet PLT-23 na High. Bez kosztu na klienta nie policzymy marży."
+  },
+  {
+    "id": "train-0769",
+    "author": "Serhii Polishchuk",
+    "instruction": "zmien status PLT-7 na Done, backup dziala, sprawdzilem restore"
+  },
+  {
+    "id": "train-0770",
+    "author": "Dmytro Kravets",
+    "instruction": "Pipeline CI trwa 40 minut: ustaw priorytet High i przypisz do Mariii Ponomarenko."
+  },
+  {
+    "id": "train-0771",
+    "author": "Anastasiia Klymenko",
+    "instruction": "Zadanie z wersjonowaniem promptów agenta przypisz do mnie, Anastasiia Klymenko, i ustaw priorytet High."
+  },
+  {
+    "id": "train-0772",
+    "author": "Serhii Polishchuk",
+    "instruction": "ticket z rotacja hasel do bazy: ustaw priorytet high i przypisz do Vladyslava Hrytsenko, ok?"
+  },
+  {
+    "id": "train-0773",
+    "author": "Dmytro Kravets",
+    "instruction": "Zaloguj 3h na PLT-6, opis: node pools and ingress setup"
+  },
+  {
+    "id": "train-0774",
+    "author": "Anastasiia Klymenko",
+    "instruction": "Dodaj komentarz do PLT-4: Testowe środowisko wysłało w listopadzie 1,2 mln tokenów do dużego modelu."
+  },
+  {
+    "id": "train-0775",
+    "author": "Serhii Polishchuk",
+    "instruction": "zaloguj 1h na PLT-12, opis: skrypt usuwania logow"
+  },
+  {
+    "id": "train-0776",
+    "author": "Dmytro Kravets",
+    "instruction": "Zaloguj 2h na task z disaster recovery plan, opis: RTO and RPO draft"
+  },
+  {
+    "id": "train-0777",
+    "author": "Serhii Polishchuk",
+    "instruction": "dodaj komentarz do zadania ze stara wersja pythona: mozemy przejsc na 3.13?"
+  },
+  {
+    "id": "train-0778",
+    "author": "Dmytro Kravets",
+    "instruction": "Stwórz nowe issue typu bug: Ingress returns 502 after the node rotation. Priorytet High."
+  },
+  {
+    "id": "train-0779",
+    "author": "Anastasiia Klymenko",
+    "instruction": "Stwórz nowe issue typu task: Porównanie kosztu tokenów trzech dostawców modeli."
+  },
+  {
+    "id": "train-0780",
+    "author": "Serhii Polishchuk",
+    "instruction": "stworz nowe issue typu task: Aktualizacja bibliotek w kontenerze agenta"
+  },
+  {
+    "id": "train-0781",
+    "author": "Dmytro Kravets",
+    "instruction": "Stwórz nowe issue typu task: Night deploy checklist. Przypisz do Vladyslava Savchenko i dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0782",
+    "author": "Anastasiia Klymenko",
+    "instruction": "Stwórz nowe issue typu story: Router zapytań między modelami według kosztu. Label llm, priorytet High, dodaj do następnego sprintu."
+  },
+  {
+    "id": "train-0783",
+    "author": "Dmytro Kravets",
+    "instruction": "Przenieś PLT-18 do bieżącego sprintu. ASAP."
+  },
+  {
+    "id": "train-0784",
+    "author": "Serhii Polishchuk",
+    "instruction": "przenies PLT-10 do backlogu, ok?"
+  },
+  {
+    "id": "train-0785",
+    "author": "Anastasiia Klymenko",
+    "instruction": "Przenieś PLT-31 do sprintu 32."
+  },
+  {
+    "id": "train-0786",
+    "author": "Dmytro Kravets",
+    "instruction": "Wszystkie zadania z labelem multi-tenant z przyszłych sprintów przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "train-0787",
+    "author": "Serhii Polishchuk",
+    "instruction": "zadanie z odnowieniem domeny firmowej przenies do biezacego sprintu"
+  },
+  {
+    "id": "train-0788",
+    "author": "Dmytro Kravets",
+    "instruction": "Wszystkie nieprzypisane bugi przypisz Vladyslavowi Hrytsenko."
+  },
+  {
+    "id": "train-0789",
+    "author": "Anastasiia Klymenko",
+    "instruction": "Dodaj komentarz do wszystkich zadań z labelem llm: Sprawdzić wpływ na koszt tokenów przed wdrożeniem."
+  },
+  {
+    "id": "train-0790",
+    "author": "Serhii Polishchuk",
+    "instruction": "wszystkim zadaniom z labelem security bez sprintu, ktore maja priorytet nizszy niz high, ustaw high, ok?"
+  },
+  {
+    "id": "train-0791",
+    "author": "Dmytro Kravets",
+    "instruction": "Wszystkie zadania Serhiia Polishchuka bez sprintu przepisz na Mariię Ponomarenko."
+  },
+  {
+    "id": "train-0792",
+    "author": "Dmytro Kravets",
+    "instruction": "PLT-6: zmień status na Done, zaloguj 4h i dodaj komentarz: cluster ready, traffic switch planned for Friday night."
+  },
+  {
+    "id": "train-0793",
+    "author": "Anastasiia Klymenko",
+    "instruction": "PLT-8: zmień status na Done, zaloguj 1h i dodaj komentarz: cache obniżył koszt o 18%."
+  },
+  {
+    "id": "train-0794",
+    "author": "Serhii Polishchuk",
+    "instruction": "zadanie z limitem zapytan na klienta: przypisz do mnie, Serhii Polishchuk, zmien status na In Progress i dodaj komentarz: limit 60 zapytan na minute"
+  },
+  {
+    "id": "train-0795",
+    "author": "Dmytro Kravets",
+    "instruction": "Status page for customers: przenieś do następnego sprintu i ustaw priorytet Medium."
+  },
+  {
+    "id": "train-0796",
+    "author": "Dmytro Kravets",
+    "instruction": "Zrestartuj produkcyjny klaster Kubernetes."
+  },
+  {
+    "id": "train-0797",
+    "author": "Serhii Polishchuk",
+    "instruction": "przypisz PLT-24 do viktorii, ok?"
+  },
+  {
+    "id": "train-0798",
+    "author": "Anastasiia Klymenko",
+    "instruction": "Przypisz PLT-16 Vladyslavowi."
+  },
+  {
+    "id": "train-0799",
+    "author": "Serhii Polishchuk",
+    "instruction": "jaki laptop kupic do programowania do 5000 zl?"
+  },
+  {
+    "id": "train-0800",
+    "author": "Dmytro Kravets",
+    "instruction": "Write me a bash script for log rotation."
   }
 ]

@@ -9012,5 +9012,3051 @@
     "category": "refusal",
     "difficulty": "refusal",
     "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0601",
+    "board": "train-bot",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Iryna Melnyk"
+    }
+  },
+  {
+    "id": "train-0602",
+    "board": "train-bot",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "In Progress"
+    }
+  },
+  {
+    "id": "train-0603",
+    "board": "train-bot",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 14400
+    }
+  },
+  {
+    "id": "train-0604",
+    "board": "train-bot",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 2
+    }
+  },
+  {
+    "id": "train-0605",
+    "board": "train-bot",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "BOT-31",
+        "BOT-13",
+        "BOT-6"
+      ]
+    }
+  },
+  {
+    "id": "train-0606",
+    "board": "train-bot",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "person",
+      "value": "Kornelia Sęk"
+    }
+  },
+  {
+    "id": "train-0607",
+    "board": "train-bot",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "BOT-20",
+        "field": "assignee",
+        "value": "Artem Sydorenko"
+      }
+    ]
+  },
+  {
+    "id": "train-0608",
+    "board": "train-bot",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "BOT-28",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "train-0609",
+    "board": "train-bot",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "BOT-8",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "train-0610",
+    "board": "train-bot",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BOT-18",
+        "field": "assignee",
+        "value": "Oleksandr Bondarenko"
+      }
+    ]
+  },
+  {
+    "id": "train-0611",
+    "board": "train-bot",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BOT-23",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "BOT-23",
+        "field": "assignee",
+        "value": "Mariia Kovalchuk"
+      }
+    ]
+  },
+  {
+    "id": "train-0612",
+    "board": "train-bot",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BOT-11",
+        "field": "assignee",
+        "value": "Artem Sydorenko"
+      },
+      {
+        "issue": "BOT-11",
+        "field": "priority",
+        "value": "Highest"
+      }
+    ]
+  },
+  {
+    "id": "train-0613",
+    "board": "train-bot",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "BOT-6",
+        "worklog": {
+          "seconds": 10800,
+          "comment": "lista zakazanych obietnic w prompcie"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0614",
+    "board": "train-bot",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "BOT-13",
+        "comment": "Kotwica chce zobaczyć wyniki pilota po 2 tygodniach."
+      }
+    ]
+  },
+  {
+    "id": "train-0615",
+    "board": "train-bot",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "BOT-33",
+        "worklog": {
+          "seconds": 3600,
+          "comment": "repro podwójnego kliknięcia"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0616",
+    "board": "train-bot",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BOT-27",
+        "comment": "Proponuję limit 30 wiadomości."
+      }
+    ]
+  },
+  {
+    "id": "train-0617",
+    "board": "train-bot",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BOT-26",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "przygotowanie zestawu pytań"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0618",
+    "board": "train-bot",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Agent odpowiada w dwóch językach naraz",
+          "issue_type": "Bug",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0619",
+    "board": "train-bot",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Agent pyta klienta o zgodę na kontakt telefoniczny",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0620",
+    "board": "train-bot",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Widżet czatu zasłania przycisk koszyka na telefonie",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0621",
+    "board": "train-bot",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Testy agenta na danych klienta Kotwica",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Iryna Tkachenko",
+          "labels": [],
+          "sprint": "BOT Sprint 18"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0622",
+    "board": "train-bot",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Agent nie rozpoznaje kodów rabatowych",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": null,
+          "labels": [
+            "intents"
+          ],
+          "sprint": "BOT Sprint 19"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0623",
+    "board": "train-bot",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "BOT-18",
+        "field": "sprint",
+        "value": "BOT Sprint 18"
+      }
+    ]
+  },
+  {
+    "id": "train-0624",
+    "board": "train-bot",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "BOT-12",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0625",
+    "board": "train-bot",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "BOT-26",
+        "field": "sprint",
+        "value": "BOT Sprint 20"
+      }
+    ]
+  },
+  {
+    "id": "train-0626",
+    "board": "train-bot",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BOT-14",
+        "field": "sprint",
+        "value": "BOT Sprint 18"
+      },
+      {
+        "issue": "BOT-15",
+        "field": "sprint",
+        "value": "BOT Sprint 18"
+      }
+    ]
+  },
+  {
+    "id": "train-0627",
+    "board": "train-bot",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BOT-35",
+        "field": "sprint",
+        "value": "BOT Sprint 19"
+      }
+    ]
+  },
+  {
+    "id": "train-0628",
+    "board": "train-bot",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BOT-18",
+        "field": "assignee",
+        "value": "Artem Sydorenko"
+      },
+      {
+        "issue": "BOT-20",
+        "field": "assignee",
+        "value": "Artem Sydorenko"
+      },
+      {
+        "issue": "BOT-33",
+        "field": "assignee",
+        "value": "Artem Sydorenko"
+      },
+      {
+        "issue": "BOT-38",
+        "field": "assignee",
+        "value": "Artem Sydorenko"
+      }
+    ]
+  },
+  {
+    "id": "train-0629",
+    "board": "train-bot",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BOT-4",
+        "comment": "Klient chce eskalację także przez telefon."
+      },
+      {
+        "issue": "BOT-7",
+        "comment": "Klient chce eskalację także przez telefon."
+      },
+      {
+        "issue": "BOT-17",
+        "comment": "Klient chce eskalację także przez telefon."
+      },
+      {
+        "issue": "BOT-32",
+        "comment": "Klient chce eskalację także przez telefon."
+      }
+    ]
+  },
+  {
+    "id": "train-0630",
+    "board": "train-bot",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BOT-8",
+        "field": "priority",
+        "value": "Medium"
+      },
+      {
+        "issue": "BOT-20",
+        "field": "priority",
+        "value": "Medium"
+      },
+      {
+        "issue": "BOT-33",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "train-0631",
+    "board": "train-bot",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BOT-22",
+        "field": "assignee",
+        "value": "Mariia Kovalchuk"
+      },
+      {
+        "issue": "BOT-25",
+        "field": "assignee",
+        "value": "Mariia Kovalchuk"
+      },
+      {
+        "issue": "BOT-31",
+        "field": "assignee",
+        "value": "Mariia Kovalchuk"
+      },
+      {
+        "issue": "BOT-34",
+        "field": "assignee",
+        "value": "Mariia Kovalchuk"
+      },
+      {
+        "issue": "BOT-35",
+        "field": "assignee",
+        "value": "Mariia Kovalchuk"
+      }
+    ]
+  },
+  {
+    "id": "train-0632",
+    "board": "train-bot",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BOT-7",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "BOT-7",
+        "worklog": {
+          "seconds": 7200,
+          "comment": null
+        }
+      },
+      {
+        "issue": "BOT-7",
+        "comment": "Podsumowanie ma maksymalnie 5 zdań."
+      }
+    ]
+  },
+  {
+    "id": "train-0633",
+    "board": "train-bot",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BOT-24",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "BOT-24",
+        "field": "assignee",
+        "value": "Kornelia Sęk"
+      },
+      {
+        "issue": "BOT-24",
+        "comment": "Repro z numerem zamówienia ZAM-2026-001."
+      }
+    ]
+  },
+  {
+    "id": "train-0634",
+    "board": "train-bot",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BOT-10",
+        "field": "assignee",
+        "value": "Iryna Melnyk"
+      },
+      {
+        "issue": "BOT-10",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "BOT-10",
+        "comment": "Meblux chce eksport do CSV."
+      }
+    ]
+  },
+  {
+    "id": "train-0635",
+    "board": "train-bot",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BOT-32",
+        "field": "sprint",
+        "value": "BOT Sprint 18"
+      },
+      {
+        "issue": "BOT-32",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0636",
+    "board": "train-bot",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0637",
+    "board": "train-bot",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0638",
+    "board": "train-bot",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0639",
+    "board": "train-bot",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0640",
+    "board": "train-bot",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0641",
+    "board": "train-demo",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Kateryna Zinchenko"
+    }
+  },
+  {
+    "id": "train-0642",
+    "board": "train-demo",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "In Progress"
+    }
+  },
+  {
+    "id": "train-0643",
+    "board": "train-demo",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 10800
+    }
+  },
+  {
+    "id": "train-0644",
+    "board": "train-demo",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 4
+    }
+  },
+  {
+    "id": "train-0645",
+    "board": "train-demo",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "DEMO-14"
+      ]
+    }
+  },
+  {
+    "id": "train-0646",
+    "board": "train-demo",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "person",
+      "value": "Kateryna Boiko"
+    }
+  },
+  {
+    "id": "train-0647",
+    "board": "train-demo",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DEMO-20",
+        "field": "priority",
+        "value": "Highest"
+      }
+    ]
+  },
+  {
+    "id": "train-0648",
+    "board": "train-demo",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DEMO-25",
+        "field": "assignee",
+        "value": "Yuliia Marchenko"
+      }
+    ]
+  },
+  {
+    "id": "train-0649",
+    "board": "train-demo",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DEMO-7",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "train-0650",
+    "board": "train-demo",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DEMO-27",
+        "field": "priority",
+        "value": "Medium"
+      },
+      {
+        "issue": "DEMO-27",
+        "field": "assignee",
+        "value": "Ihor Shapoval"
+      }
+    ]
+  },
+  {
+    "id": "train-0651",
+    "board": "train-demo",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DEMO-32",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "DEMO-32",
+        "field": "assignee",
+        "value": "Yuliia Marchenko"
+      }
+    ]
+  },
+  {
+    "id": "train-0652",
+    "board": "train-demo",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DEMO-31",
+        "field": "assignee",
+        "value": "Hubert Kałuża"
+      },
+      {
+        "issue": "DEMO-31",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0653",
+    "board": "train-demo",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DEMO-13",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "przygotowanie do spotkania z aniołem biznesu"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0654",
+    "board": "train-demo",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DEMO-5",
+        "comment": "Partnerzy z Brazylii chcą demo w czwartek, to będzie top!"
+      }
+    ]
+  },
+  {
+    "id": "train-0655",
+    "board": "train-demo",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DEMO-10",
+        "worklog": {
+          "seconds": 5400,
+          "comment": "slajdy 3-7"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0656",
+    "board": "train-demo",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DEMO-15",
+        "comment": "Wersja 2 jest na Figmie, slajd 4."
+      }
+    ]
+  },
+  {
+    "id": "train-0657",
+    "board": "train-demo",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DEMO-36",
+        "worklog": {
+          "seconds": 3600,
+          "comment": "rozmowa z prowadzącym"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0658",
+    "board": "train-demo",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Demo agenta dla ministerstwa cyfryzacji",
+          "issue_type": "Task",
+          "priority": "Highest",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0659",
+    "board": "train-demo",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Nowa okładka pitch decku",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0660",
+    "board": "train-demo",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Program poleceń dla klientów - 10% rabatu za polecenie",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0661",
+    "board": "train-demo",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Demo dla sieci hoteli w Lizbonie",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Kateryna Boiko",
+          "labels": [],
+          "sprint": "DEMO Sprint 10"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0662",
+    "board": "train-demo",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Follow-up po targach w Lizbonie",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "sales"
+          ],
+          "sprint": "DEMO Sprint 11"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0663",
+    "board": "train-demo",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DEMO-18",
+        "field": "sprint",
+        "value": "DEMO Sprint 10"
+      }
+    ]
+  },
+  {
+    "id": "train-0664",
+    "board": "train-demo",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DEMO-11",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0665",
+    "board": "train-demo",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DEMO-22",
+        "field": "sprint",
+        "value": "DEMO Sprint 12"
+      }
+    ]
+  },
+  {
+    "id": "train-0666",
+    "board": "train-demo",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DEMO-20",
+        "field": "sprint",
+        "value": "DEMO Sprint 11"
+      },
+      {
+        "issue": "DEMO-22",
+        "field": "sprint",
+        "value": "DEMO Sprint 11"
+      },
+      {
+        "issue": "DEMO-28",
+        "field": "sprint",
+        "value": "DEMO Sprint 11"
+      },
+      {
+        "issue": "DEMO-33",
+        "field": "sprint",
+        "value": "DEMO Sprint 11"
+      }
+    ]
+  },
+  {
+    "id": "train-0667",
+    "board": "train-demo",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DEMO-33",
+        "field": "sprint",
+        "value": "DEMO Sprint 10"
+      }
+    ]
+  },
+  {
+    "id": "train-0668",
+    "board": "train-demo",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DEMO-15",
+        "field": "assignee",
+        "value": "Hubert Kałuża"
+      },
+      {
+        "issue": "DEMO-26",
+        "field": "assignee",
+        "value": "Hubert Kałuża"
+      }
+    ]
+  },
+  {
+    "id": "train-0669",
+    "board": "train-demo",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DEMO-7",
+        "comment": "Nowy szablon slajdów jest na dysku."
+      },
+      {
+        "issue": "DEMO-10",
+        "comment": "Nowy szablon slajdów jest na dysku."
+      },
+      {
+        "issue": "DEMO-14",
+        "comment": "Nowy szablon slajdów jest na dysku."
+      },
+      {
+        "issue": "DEMO-25",
+        "comment": "Nowy szablon slajdów jest na dysku."
+      },
+      {
+        "issue": "DEMO-32",
+        "comment": "Nowy szablon slajdów jest na dysku."
+      }
+    ]
+  },
+  {
+    "id": "train-0670",
+    "board": "train-demo",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DEMO-19",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "DEMO-33",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "DEMO-36",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0671",
+    "board": "train-demo",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DEMO-28",
+        "field": "assignee",
+        "value": "Kateryna Zinchenko"
+      },
+      {
+        "issue": "DEMO-34",
+        "field": "assignee",
+        "value": "Kateryna Zinchenko"
+      },
+      {
+        "issue": "DEMO-37",
+        "field": "assignee",
+        "value": "Kateryna Zinchenko"
+      }
+    ]
+  },
+  {
+    "id": "train-0672",
+    "board": "train-demo",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DEMO-5",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "DEMO-5",
+        "worklog": {
+          "seconds": 14400,
+          "comment": null
+        }
+      },
+      {
+        "issue": "DEMO-5",
+        "comment": "Demo po portugalsku przećwiczone z Robinho."
+      }
+    ]
+  },
+  {
+    "id": "train-0673",
+    "board": "train-demo",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DEMO-30",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "DEMO-30",
+        "field": "assignee",
+        "value": "Ihor Shapoval"
+      },
+      {
+        "issue": "DEMO-30",
+        "comment": "konto demo ma działać 30 dni."
+      }
+    ]
+  },
+  {
+    "id": "train-0674",
+    "board": "train-demo",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DEMO-14",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "DEMO-14",
+        "field": "assignee",
+        "value": "Robinho Nasario"
+      },
+      {
+        "issue": "DEMO-14",
+        "field": "sprint",
+        "value": "DEMO Sprint 10"
+      }
+    ]
+  },
+  {
+    "id": "train-0675",
+    "board": "train-demo",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DEMO-35",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "DEMO-35",
+        "comment": "Ceny w EUR i PLN."
+      }
+    ]
+  },
+  {
+    "id": "train-0676",
+    "board": "train-demo",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0677",
+    "board": "train-demo",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0678",
+    "board": "train-demo",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0679",
+    "board": "train-demo",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0680",
+    "board": "train-demo",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0681",
+    "board": "train-grt",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Halyna Vovk"
+    }
+  },
+  {
+    "id": "train-0682",
+    "board": "train-grt",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "Backlog"
+    }
+  },
+  {
+    "id": "train-0683",
+    "board": "train-grt",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 46800
+    }
+  },
+  {
+    "id": "train-0684",
+    "board": "train-grt",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 2
+    }
+  },
+  {
+    "id": "train-0685",
+    "board": "train-grt",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "GRT-34",
+        "GRT-32",
+        "GRT-27"
+      ]
+    }
+  },
+  {
+    "id": "train-0686",
+    "board": "train-grt",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "person",
+      "value": "Danuta Wrzos"
+    }
+  },
+  {
+    "id": "train-0687",
+    "board": "train-grt",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "GRT-11",
+        "field": "assignee",
+        "value": "Maksym Pavlenko"
+      }
+    ]
+  },
+  {
+    "id": "train-0688",
+    "board": "train-grt",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "GRT-24",
+        "field": "priority",
+        "value": "Highest"
+      }
+    ]
+  },
+  {
+    "id": "train-0689",
+    "board": "train-grt",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "GRT-9",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "train-0690",
+    "board": "train-grt",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "GRT-11",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "GRT-11",
+        "field": "assignee",
+        "value": "Danuta Wrzos"
+      }
+    ]
+  },
+  {
+    "id": "train-0691",
+    "board": "train-grt",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "GRT-19",
+        "field": "assignee",
+        "value": "Taras Hnatiuk"
+      },
+      {
+        "issue": "GRT-19",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0692",
+    "board": "train-grt",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "GRT-27",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "GRT-27",
+        "field": "assignee",
+        "value": "Nataliia Lysenko"
+      }
+    ]
+  },
+  {
+    "id": "train-0693",
+    "board": "train-grt",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "GRT-7",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "przeliczenie kosztów pośrednich do 25%"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0694",
+    "board": "train-grt",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "GRT-12",
+        "comment": "Wskaźniki produktu uzgodnione z zespołem technicznym."
+      }
+    ]
+  },
+  {
+    "id": "train-0695",
+    "board": "train-grt",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "GRT-15",
+        "worklog": {
+          "seconds": 10800,
+          "comment": "konsultacja ryzyk z zarządem"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0696",
+    "board": "train-grt",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "GRT-25",
+        "worklog": {
+          "seconds": 5400,
+          "comment": "druga wersja tekstu"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0697",
+    "board": "train-grt",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "GRT-23",
+        "comment": "Koszt 4 serwerów to 186 000 zł netto."
+      }
+    ]
+  },
+  {
+    "id": "train-0698",
+    "board": "train-grt",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Wniosek do programu wsparcia eksportu",
+          "issue_type": "Task",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0699",
+    "board": "train-grt",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Tabela kosztów kwalifikowanych na 2027 rok",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0700",
+    "board": "train-grt",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Przegląd kryteriów oceny w nowym naborze",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0701",
+    "board": "train-grt",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Opis innowacji produktowej do części C wniosku",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Maksym Wierzbicki",
+          "labels": [],
+          "sprint": "GRT Sprint 7"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0702",
+    "board": "train-grt",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Konsultacja wniosku z ekspertem zewnętrznym",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "application"
+          ],
+          "sprint": "GRT Sprint 8"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0703",
+    "board": "train-grt",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "GRT-28",
+        "field": "sprint",
+        "value": "GRT Sprint 7"
+      }
+    ]
+  },
+  {
+    "id": "train-0704",
+    "board": "train-grt",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "GRT-30",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0705",
+    "board": "train-grt",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "GRT-36",
+        "field": "sprint",
+        "value": "GRT Sprint 9"
+      }
+    ]
+  },
+  {
+    "id": "train-0706",
+    "board": "train-grt",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "GRT-15",
+        "field": "sprint",
+        "value": "GRT Sprint 7"
+      },
+      {
+        "issue": "GRT-31",
+        "field": "sprint",
+        "value": "GRT Sprint 7"
+      }
+    ]
+  },
+  {
+    "id": "train-0707",
+    "board": "train-grt",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "GRT-21",
+        "field": "sprint",
+        "value": "GRT Sprint 8"
+      }
+    ]
+  },
+  {
+    "id": "train-0708",
+    "board": "train-grt",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "GRT-28",
+        "field": "assignee",
+        "value": "Maksym Pavlenko"
+      },
+      {
+        "issue": "GRT-36",
+        "field": "assignee",
+        "value": "Maksym Pavlenko"
+      },
+      {
+        "issue": "GRT-38",
+        "field": "assignee",
+        "value": "Maksym Pavlenko"
+      }
+    ]
+  },
+  {
+    "id": "train-0709",
+    "board": "train-grt",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "GRT-10",
+        "comment": "Proszę sprawdzić aktualny harmonogram naborów."
+      },
+      {
+        "issue": "GRT-21",
+        "comment": "Proszę sprawdzić aktualny harmonogram naborów."
+      },
+      {
+        "issue": "GRT-26",
+        "comment": "Proszę sprawdzić aktualny harmonogram naborów."
+      }
+    ]
+  },
+  {
+    "id": "train-0710",
+    "board": "train-grt",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "GRT-6",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "GRT-22",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "GRT-30",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0711",
+    "board": "train-grt",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "GRT-22",
+        "field": "assignee",
+        "value": "Taras Hnatiuk"
+      },
+      {
+        "issue": "GRT-33",
+        "field": "assignee",
+        "value": "Taras Hnatiuk"
+      }
+    ]
+  },
+  {
+    "id": "train-0712",
+    "board": "train-grt",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "GRT-24",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "GRT-24",
+        "worklog": {
+          "seconds": 3600,
+          "comment": null
+        }
+      },
+      {
+        "issue": "GRT-24",
+        "comment": "suma poprawiona, różnica wynikała z zaokrągleń."
+      }
+    ]
+  },
+  {
+    "id": "train-0713",
+    "board": "train-grt",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "GRT-8",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "GRT-8",
+        "worklog": {
+          "seconds": 7200,
+          "comment": null
+        }
+      },
+      {
+        "issue": "GRT-8",
+        "comment": "CV przetłumaczone i podpisane."
+      }
+    ]
+  },
+  {
+    "id": "train-0714",
+    "board": "train-grt",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "GRT-13",
+        "field": "assignee",
+        "value": "Danuta Wrzos"
+      },
+      {
+        "issue": "GRT-13",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "GRT-13",
+        "comment": "Odpowiedź wyślę do czwartku."
+      }
+    ]
+  },
+  {
+    "id": "train-0715",
+    "board": "train-grt",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "GRT-32",
+        "field": "sprint",
+        "value": "GRT Sprint 7"
+      },
+      {
+        "issue": "GRT-32",
+        "field": "assignee",
+        "value": "Maksym Wierzbicki"
+      }
+    ]
+  },
+  {
+    "id": "train-0716",
+    "board": "train-grt",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0717",
+    "board": "train-grt",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0718",
+    "board": "train-grt",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0719",
+    "board": "train-grt",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0720",
+    "board": "train-grt",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0721",
+    "board": "train-rap",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Bohdan Moroz"
+    }
+  },
+  {
+    "id": "train-0722",
+    "board": "train-rap",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "In Progress"
+    }
+  },
+  {
+    "id": "train-0723",
+    "board": "train-rap",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 28800
+    }
+  },
+  {
+    "id": "train-0724",
+    "board": "train-rap",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 6
+    }
+  },
+  {
+    "id": "train-0725",
+    "board": "train-rap",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "RAP-37",
+        "RAP-25"
+      ]
+    }
+  },
+  {
+    "id": "train-0726",
+    "board": "train-rap",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "value",
+      "value": "High"
+    }
+  },
+  {
+    "id": "train-0727",
+    "board": "train-rap",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RAP-18",
+        "field": "assignee",
+        "value": "Oksana Rudenko"
+      }
+    ]
+  },
+  {
+    "id": "train-0728",
+    "board": "train-rap",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RAP-30",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0729",
+    "board": "train-rap",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RAP-7",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "train-0730",
+    "board": "train-rap",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RAP-18",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "RAP-18",
+        "field": "assignee",
+        "value": "Oksana Savchuk"
+      }
+    ]
+  },
+  {
+    "id": "train-0731",
+    "board": "train-rap",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RAP-27",
+        "field": "assignee",
+        "value": "Olha Yaremchuk"
+      },
+      {
+        "issue": "RAP-27",
+        "field": "priority",
+        "value": "Highest"
+      }
+    ]
+  },
+  {
+    "id": "train-0732",
+    "board": "train-rap",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RAP-31",
+        "field": "assignee",
+        "value": "Wiesława Gąsior"
+      },
+      {
+        "issue": "RAP-31",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0733",
+    "board": "train-rap",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RAP-6",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "opis 42 faktur za październik"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0734",
+    "board": "train-rap",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RAP-20",
+        "comment": "Opóźnienie wynika z przesunięcia pilota u klienta."
+      }
+    ]
+  },
+  {
+    "id": "train-0735",
+    "board": "train-rap",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RAP-26",
+        "comment": "Proszę dwa razy sprawdzić listę dokumentów do kontroli."
+      }
+    ]
+  },
+  {
+    "id": "train-0736",
+    "board": "train-rap",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RAP-35",
+        "worklog": {
+          "seconds": 5400,
+          "comment": "wyliczenie 15% kosztów bezpośrednich"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0737",
+    "board": "train-rap",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RAP-34",
+        "comment": "Brakuje dwóch protokołów z wyboru ofert."
+      }
+    ]
+  },
+  {
+    "id": "train-0738",
+    "board": "train-rap",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Opis faktur za listopad zgodnie z wymogami projektu",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0739",
+    "board": "train-rap",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Status wszystkich kamieni milowych na koniec roku",
+          "issue_type": "Task",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0740",
+    "board": "train-rap",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Brak podpisu na fakturze za szkolenie zespołu",
+          "issue_type": "Bug",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0741",
+    "board": "train-rap",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Przygotowanie wyjaśnień dla audytora",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Roman Ostapchuk",
+          "labels": [],
+          "sprint": "RAP Sprint 25"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0742",
+    "board": "train-rap",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Rozliczenie zaliczki za czwarty kwartał",
+          "issue_type": "Task",
+          "priority": "High",
+          "assignee": null,
+          "labels": [
+            "payment-claim"
+          ],
+          "sprint": "RAP Sprint 26"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0743",
+    "board": "train-rap",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RAP-32",
+        "field": "sprint",
+        "value": "RAP Sprint 25"
+      }
+    ]
+  },
+  {
+    "id": "train-0744",
+    "board": "train-rap",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RAP-10",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0745",
+    "board": "train-rap",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RAP-24",
+        "field": "sprint",
+        "value": "RAP Sprint 27"
+      }
+    ]
+  },
+  {
+    "id": "train-0746",
+    "board": "train-rap",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RAP-26",
+        "field": "sprint",
+        "value": "RAP Sprint 25"
+      },
+      {
+        "issue": "RAP-30",
+        "field": "sprint",
+        "value": "RAP Sprint 25"
+      },
+      {
+        "issue": "RAP-32",
+        "field": "sprint",
+        "value": "RAP Sprint 25"
+      }
+    ]
+  },
+  {
+    "id": "train-0747",
+    "board": "train-rap",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RAP-26",
+        "field": "sprint",
+        "value": "RAP Sprint 25"
+      }
+    ]
+  },
+  {
+    "id": "train-0748",
+    "board": "train-rap",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RAP-13",
+        "field": "assignee",
+        "value": "Roman Ostapchuk"
+      },
+      {
+        "issue": "RAP-18",
+        "field": "assignee",
+        "value": "Roman Ostapchuk"
+      },
+      {
+        "issue": "RAP-27",
+        "field": "assignee",
+        "value": "Roman Ostapchuk"
+      },
+      {
+        "issue": "RAP-32",
+        "field": "assignee",
+        "value": "Roman Ostapchuk"
+      }
+    ]
+  },
+  {
+    "id": "train-0749",
+    "board": "train-rap",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RAP-6",
+        "comment": "Faktury opisane zgodnie z wytycznymi z 2026 roku."
+      },
+      {
+        "issue": "RAP-18",
+        "comment": "Faktury opisane zgodnie z wytycznymi z 2026 roku."
+      }
+    ]
+  },
+  {
+    "id": "train-0750",
+    "board": "train-rap",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RAP-19",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "RAP-34",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0751",
+    "board": "train-rap",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RAP-28",
+        "field": "assignee",
+        "value": "Oksana Rudenko"
+      },
+      {
+        "issue": "RAP-33",
+        "field": "assignee",
+        "value": "Oksana Rudenko"
+      }
+    ]
+  },
+  {
+    "id": "train-0752",
+    "board": "train-rap",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RAP-4",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "RAP-4",
+        "worklog": {
+          "seconds": 3600,
+          "comment": null
+        }
+      },
+      {
+        "issue": "RAP-4",
+        "comment": "Korekta wysłana, kwota 84 300 zł."
+      }
+    ]
+  },
+  {
+    "id": "train-0753",
+    "board": "train-rap",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RAP-8",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "RAP-8",
+        "comment": "Raport zatwierdzony przez opiekuna."
+      },
+      {
+        "issue": "RAP-8",
+        "worklog": {
+          "seconds": 7200,
+          "comment": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0754",
+    "board": "train-rap",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RAP-16",
+        "field": "assignee",
+        "value": "Wiesława Gąsior"
+      },
+      {
+        "issue": "RAP-16",
+        "field": "sprint",
+        "value": "RAP Sprint 25"
+      },
+      {
+        "issue": "RAP-16",
+        "comment": "Proszę o listę numerów seryjnych."
+      }
+    ]
+  },
+  {
+    "id": "train-0755",
+    "board": "train-rap",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RAP-22",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "RAP-22",
+        "field": "priority",
+        "value": "Medium"
+      },
+      {
+        "issue": "RAP-22",
+        "worklog": {
+          "seconds": 1800,
+          "comment": "przeliczenie po kursie NBP"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0756",
+    "board": "train-rap",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0757",
+    "board": "train-rap",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0758",
+    "board": "train-rap",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0759",
+    "board": "train-rap",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0760",
+    "board": "train-rap",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0761",
+    "board": "train-plt",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Serhii Polishchuk"
+    }
+  },
+  {
+    "id": "train-0762",
+    "board": "train-plt",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "Highest"
+    }
+  },
+  {
+    "id": "train-0763",
+    "board": "train-plt",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 18000
+    }
+  },
+  {
+    "id": "train-0764",
+    "board": "train-plt",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 5
+    }
+  },
+  {
+    "id": "train-0765",
+    "board": "train-plt",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "PLT-39",
+        "PLT-25"
+      ]
+    }
+  },
+  {
+    "id": "train-0766",
+    "board": "train-plt",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "person",
+      "value": "Vladyslav Savchenko"
+    }
+  },
+  {
+    "id": "train-0767",
+    "board": "train-plt",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PLT-11",
+        "field": "assignee",
+        "value": "Dmytro Kravets"
+      }
+    ]
+  },
+  {
+    "id": "train-0768",
+    "board": "train-plt",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PLT-23",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0769",
+    "board": "train-plt",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PLT-7",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "train-0770",
+    "board": "train-plt",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PLT-20",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "PLT-20",
+        "field": "assignee",
+        "value": "Mariia Ponomarenko"
+      }
+    ]
+  },
+  {
+    "id": "train-0771",
+    "board": "train-plt",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PLT-21",
+        "field": "assignee",
+        "value": "Anastasiia Klymenko"
+      },
+      {
+        "issue": "PLT-21",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0772",
+    "board": "train-plt",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PLT-36",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "PLT-36",
+        "field": "assignee",
+        "value": "Vladyslav Hrytsenko"
+      }
+    ]
+  },
+  {
+    "id": "train-0773",
+    "board": "train-plt",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PLT-6",
+        "worklog": {
+          "seconds": 10800,
+          "comment": "node pools and ingress setup"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0774",
+    "board": "train-plt",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PLT-4",
+        "comment": "Testowe środowisko wysłało w listopadzie 1,2 mln tokenów do dużego modelu."
+      }
+    ]
+  },
+  {
+    "id": "train-0775",
+    "board": "train-plt",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PLT-12",
+        "worklog": {
+          "seconds": 3600,
+          "comment": "skrypt usuwania logow"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0776",
+    "board": "train-plt",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PLT-28",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "RTO and RPO draft"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0777",
+    "board": "train-plt",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PLT-24",
+        "comment": "mozemy przejsc na 3.13?"
+      }
+    ]
+  },
+  {
+    "id": "train-0778",
+    "board": "train-plt",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Ingress returns 502 after the node rotation",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0779",
+    "board": "train-plt",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Porównanie kosztu tokenów trzech dostawców modeli",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0780",
+    "board": "train-plt",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Aktualizacja bibliotek w kontenerze agenta",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0781",
+    "board": "train-plt",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Night deploy checklist",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Vladyslav Savchenko",
+          "labels": [],
+          "sprint": "PLT Sprint 31"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0782",
+    "board": "train-plt",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Router zapytań między modelami według kosztu",
+          "issue_type": "Story",
+          "priority": "High",
+          "assignee": null,
+          "labels": [
+            "llm"
+          ],
+          "sprint": "PLT Sprint 32"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0783",
+    "board": "train-plt",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PLT-18",
+        "field": "sprint",
+        "value": "PLT Sprint 31"
+      }
+    ]
+  },
+  {
+    "id": "train-0784",
+    "board": "train-plt",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PLT-10",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0785",
+    "board": "train-plt",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PLT-31",
+        "field": "sprint",
+        "value": "PLT Sprint 32"
+      }
+    ]
+  },
+  {
+    "id": "train-0786",
+    "board": "train-plt",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PLT-14",
+        "field": "sprint",
+        "value": "PLT Sprint 31"
+      },
+      {
+        "issue": "PLT-15",
+        "field": "sprint",
+        "value": "PLT Sprint 31"
+      }
+    ]
+  },
+  {
+    "id": "train-0787",
+    "board": "train-plt",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PLT-33",
+        "field": "sprint",
+        "value": "PLT Sprint 31"
+      }
+    ]
+  },
+  {
+    "id": "train-0788",
+    "board": "train-plt",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PLT-11",
+        "field": "assignee",
+        "value": "Vladyslav Hrytsenko"
+      },
+      {
+        "issue": "PLT-18",
+        "field": "assignee",
+        "value": "Vladyslav Hrytsenko"
+      },
+      {
+        "issue": "PLT-20",
+        "field": "assignee",
+        "value": "Vladyslav Hrytsenko"
+      },
+      {
+        "issue": "PLT-32",
+        "field": "assignee",
+        "value": "Vladyslav Hrytsenko"
+      },
+      {
+        "issue": "PLT-39",
+        "field": "assignee",
+        "value": "Vladyslav Hrytsenko"
+      }
+    ]
+  },
+  {
+    "id": "train-0789",
+    "board": "train-plt",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PLT-4",
+        "comment": "Sprawdzić wpływ na koszt tokenów przed wdrożeniem."
+      },
+      {
+        "issue": "PLT-5",
+        "comment": "Sprawdzić wpływ na koszt tokenów przed wdrożeniem."
+      },
+      {
+        "issue": "PLT-21",
+        "comment": "Sprawdzić wpływ na koszt tokenów przed wdrożeniem."
+      },
+      {
+        "issue": "PLT-22",
+        "comment": "Sprawdzić wpływ na koszt tokenów przed wdrożeniem."
+      },
+      {
+        "issue": "PLT-31",
+        "comment": "Sprawdzić wpływ na koszt tokenów przed wdrożeniem."
+      },
+      {
+        "issue": "PLT-39",
+        "comment": "Sprawdzić wpływ na koszt tokenów przed wdrożeniem."
+      }
+    ]
+  },
+  {
+    "id": "train-0790",
+    "board": "train-plt",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PLT-27",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "PLT-34",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "PLT-36",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0791",
+    "board": "train-plt",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PLT-19",
+        "field": "assignee",
+        "value": "Mariia Ponomarenko"
+      },
+      {
+        "issue": "PLT-21",
+        "field": "assignee",
+        "value": "Mariia Ponomarenko"
+      },
+      {
+        "issue": "PLT-22",
+        "field": "assignee",
+        "value": "Mariia Ponomarenko"
+      },
+      {
+        "issue": "PLT-26",
+        "field": "assignee",
+        "value": "Mariia Ponomarenko"
+      },
+      {
+        "issue": "PLT-31",
+        "field": "assignee",
+        "value": "Mariia Ponomarenko"
+      }
+    ]
+  },
+  {
+    "id": "train-0792",
+    "board": "train-plt",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PLT-6",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "PLT-6",
+        "worklog": {
+          "seconds": 14400,
+          "comment": null
+        }
+      },
+      {
+        "issue": "PLT-6",
+        "comment": "cluster ready, traffic switch planned for Friday night."
+      }
+    ]
+  },
+  {
+    "id": "train-0793",
+    "board": "train-plt",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PLT-8",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "PLT-8",
+        "worklog": {
+          "seconds": 3600,
+          "comment": null
+        }
+      },
+      {
+        "issue": "PLT-8",
+        "comment": "cache obniżył koszt o 18%."
+      }
+    ]
+  },
+  {
+    "id": "train-0794",
+    "board": "train-plt",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PLT-10",
+        "field": "assignee",
+        "value": "Serhii Polishchuk"
+      },
+      {
+        "issue": "PLT-10",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "PLT-10",
+        "comment": "limit 60 zapytan na minute"
+      }
+    ]
+  },
+  {
+    "id": "train-0795",
+    "board": "train-plt",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PLT-37",
+        "field": "sprint",
+        "value": "PLT Sprint 32"
+      },
+      {
+        "issue": "PLT-37",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "train-0796",
+    "board": "train-plt",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0797",
+    "board": "train-plt",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0798",
+    "board": "train-plt",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0799",
+    "board": "train-plt",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0800",
+    "board": "train-plt",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
   }
 ]
