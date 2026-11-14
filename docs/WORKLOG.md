@@ -567,3 +567,20 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - Add `data/companies/housi.json`: one system for the property manager, the service companies and the residents. It has 3 boards (`USR`, `SRW`, `ZRZ`), 117 issues and 9 authors.
 - Add the boards `data/environments/validation-{usr,srw,zrz}.json`. They are for the selection of the SFT settings, not for the training.
 - No project key, summary or person of a validation board occurs on a train board or a test board.
+
+### Train tasks of Curify
+
+- Add the first 200 train tasks (`train-0001` to `train-0200`) in `data/tasks/train/`: `queries.json`, `solutions.json`, `expected.json` and `personas.json`.
+- `personas.json` has the 75 authors of all train companies.
+- Each board has 40 tasks with the mix of the test set: 15 `easy`, 20 `multi_step` and 5 `refusal`. The refusal kinds have the same counts as on the test set.
+- The reference solutions show the skills that the baselines do not have:
+  - A task without a key finds the project with `jira_get_agile_boards` first (117 tasks).
+  - A search after an empty result uses another word or the correct Polish form (19 tasks).
+  - Each sprint id, transition id and person comes from a tool result.
+- A temporary script outside the repository made the files. It checked each task on the simulator:
+  - No reference call gives an error, except the intended read in a `missing_entity` task.
+  - The verifier gives `correct` or `correct_refusal`.
+  - Each key, sprint id, transition id and person in a call occurs in the instruction or in an earlier result.
+  - The expected answer of a `query` task agrees with the last tool result.
+- The checks found 4 wrong expected values before the files were written. The issues had the priority `Highest`, not `High`.
+- The instructions obey the rules of the review of the test set: an explicit action verb, a clear request for a new issue, full questions.

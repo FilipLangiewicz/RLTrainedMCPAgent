@@ -1,0 +1,2984 @@
+[
+  {
+    "id": "train-0001",
+    "board": "train-vid",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Katarzyna Zielińska"
+    }
+  },
+  {
+    "id": "train-0002",
+    "board": "train-vid",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 32400
+    }
+  },
+  {
+    "id": "train-0003",
+    "board": "train-vid",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "High"
+    }
+  },
+  {
+    "id": "train-0004",
+    "board": "train-vid",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 6
+    }
+  },
+  {
+    "id": "train-0005",
+    "board": "train-vid",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "VID-39"
+      ]
+    }
+  },
+  {
+    "id": "train-0006",
+    "board": "train-vid",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "person",
+      "value": "Katarzyna Zielińska"
+    }
+  },
+  {
+    "id": "train-0007",
+    "board": "train-vid",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "VID-16",
+        "field": "assignee",
+        "value": "Weronika Sadowska"
+      }
+    ]
+  },
+  {
+    "id": "train-0008",
+    "board": "train-vid",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "VID-22",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0009",
+    "board": "train-vid",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "VID-8",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "train-0010",
+    "board": "train-vid",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "VID-3",
+        "field": "status",
+        "value": "Backlog"
+      },
+      {
+        "issue": "VID-3",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0011",
+    "board": "train-vid",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "VID-35",
+        "field": "assignee",
+        "value": "Rafał Domański"
+      }
+    ]
+  },
+  {
+    "id": "train-0012",
+    "board": "train-vid",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "VID-9",
+        "field": "labels",
+        "value": [
+          "screen-share",
+          "macos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "train-0013",
+    "board": "train-vid",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "VID-6",
+        "worklog": {
+          "seconds": 10800,
+          "comment": "debug bluetooth na androidzie"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0014",
+    "board": "train-vid",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "VID-36",
+        "comment": "The duplicate events come from the retry in the webhook worker."
+      }
+    ]
+  },
+  {
+    "id": "train-0015",
+    "board": "train-vid",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "VID-19",
+        "comment": "Klient z sieci przychodni pyta o ten błąd, to priorytet na ten tydzień."
+      }
+    ]
+  },
+  {
+    "id": "train-0016",
+    "board": "train-vid",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "VID-16",
+        "worklog": {
+          "seconds": 5400,
+          "comment": "test plan"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0017",
+    "board": "train-vid",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "VID-30",
+        "comment": "Wersja dla seniorów ma mieć większą czcionkę."
+      }
+    ]
+  },
+  {
+    "id": "train-0018",
+    "board": "train-vid",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Wizyta z tłumaczem języka ukraińskiego",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0019",
+    "board": "train-vid",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Microphone stays muted after reconnect",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0020",
+    "board": "train-vid",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Aktualizacja certyfikatow serwera TURN",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0021",
+    "board": "train-vid",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Poczekalnia nie pokazuje czasu oczekiwania na tabletach",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": "Adrian Wójcik",
+          "labels": [],
+          "sprint": "VID Sprint 19"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0022",
+    "board": "train-vid",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Upgrade the TURN servers to coturn 4.6",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": "VID Sprint 20"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0023",
+    "board": "train-vid",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "VID-35",
+        "field": "sprint",
+        "value": "VID Sprint 19"
+      }
+    ]
+  },
+  {
+    "id": "train-0024",
+    "board": "train-vid",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "VID-14",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0025",
+    "board": "train-vid",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "VID-20",
+        "field": "sprint",
+        "value": "VID Sprint 20"
+      }
+    ]
+  },
+  {
+    "id": "train-0026",
+    "board": "train-vid",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "VID-21",
+        "field": "sprint",
+        "value": "VID Sprint 20"
+      },
+      {
+        "issue": "VID-23",
+        "field": "sprint",
+        "value": "VID Sprint 20"
+      },
+      {
+        "issue": "VID-28",
+        "field": "sprint",
+        "value": "VID Sprint 20"
+      }
+    ]
+  },
+  {
+    "id": "train-0027",
+    "board": "train-vid",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "VID-32",
+        "field": "sprint",
+        "value": "VID Sprint 21"
+      }
+    ]
+  },
+  {
+    "id": "train-0028",
+    "board": "train-vid",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "VID-22",
+        "field": "assignee",
+        "value": "Weronika Sadowska"
+      },
+      {
+        "issue": "VID-33",
+        "field": "assignee",
+        "value": "Weronika Sadowska"
+      }
+    ]
+  },
+  {
+    "id": "train-0029",
+    "board": "train-vid",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "VID-26",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "VID-32",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "VID-35",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0030",
+    "board": "train-vid",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "VID-7",
+        "comment": "czekamy na decyzje prawnikow w sprawie nagran"
+      },
+      {
+        "issue": "VID-10",
+        "comment": "czekamy na decyzje prawnikow w sprawie nagran"
+      },
+      {
+        "issue": "VID-39",
+        "comment": "czekamy na decyzje prawnikow w sprawie nagran"
+      }
+    ]
+  },
+  {
+    "id": "train-0031",
+    "board": "train-vid",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "VID-7",
+        "field": "assignee",
+        "value": "Adrian Wójcik"
+      },
+      {
+        "issue": "VID-17",
+        "field": "assignee",
+        "value": "Adrian Wójcik"
+      },
+      {
+        "issue": "VID-29",
+        "field": "assignee",
+        "value": "Adrian Wójcik"
+      },
+      {
+        "issue": "VID-38",
+        "field": "assignee",
+        "value": "Adrian Wójcik"
+      }
+    ]
+  },
+  {
+    "id": "train-0032",
+    "board": "train-vid",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "VID-12",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "VID-12",
+        "worklog": {
+          "seconds": 7200,
+          "comment": null
+        }
+      },
+      {
+        "issue": "VID-12",
+        "comment": "dashboard jakosci polaczen jest na prodzie"
+      }
+    ]
+  },
+  {
+    "id": "train-0033",
+    "board": "train-vid",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "VID-27",
+        "field": "status",
+        "value": "In review"
+      },
+      {
+        "issue": "VID-27",
+        "field": "assignee",
+        "value": "Katarzyna Zielińska"
+      },
+      {
+        "issue": "VID-27",
+        "comment": "Fixed by lazy loading of the record panel."
+      }
+    ]
+  },
+  {
+    "id": "train-0034",
+    "board": "train-vid",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "VID-19",
+        "field": "assignee",
+        "value": "Adrian Wójcik"
+      },
+      {
+        "issue": "VID-19",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "VID-19",
+        "field": "sprint",
+        "value": "VID Sprint 19"
+      }
+    ]
+  },
+  {
+    "id": "train-0035",
+    "board": "train-vid",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "VID-18",
+        "field": "priority",
+        "value": "Lowest"
+      },
+      {
+        "issue": "VID-18",
+        "field": "sprint",
+        "value": null
+      },
+      {
+        "issue": "VID-18",
+        "comment": "Not needed for the first release."
+      }
+    ]
+  },
+  {
+    "id": "train-0036",
+    "board": "train-vid",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0037",
+    "board": "train-vid",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0038",
+    "board": "train-vid",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0039",
+    "board": "train-vid",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0040",
+    "board": "train-vid",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0041",
+    "board": "train-rx",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Marcin Pietrzak"
+    }
+  },
+  {
+    "id": "train-0042",
+    "board": "train-rx",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "In review"
+    }
+  },
+  {
+    "id": "train-0043",
+    "board": "train-rx",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 43200
+    }
+  },
+  {
+    "id": "train-0044",
+    "board": "train-rx",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 5
+    }
+  },
+  {
+    "id": "train-0045",
+    "board": "train-rx",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "RX-38",
+        "RX-20"
+      ]
+    }
+  },
+  {
+    "id": "train-0046",
+    "board": "train-rx",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "value",
+      "value": "Highest"
+    }
+  },
+  {
+    "id": "train-0047",
+    "board": "train-rx",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RX-25",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0048",
+    "board": "train-rx",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RX-13",
+        "field": "assignee",
+        "value": "Dorota Kaczor"
+      }
+    ]
+  },
+  {
+    "id": "train-0049",
+    "board": "train-rx",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RX-10",
+        "field": "status",
+        "value": "In Progress"
+      }
+    ]
+  },
+  {
+    "id": "train-0050",
+    "board": "train-rx",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RX-31",
+        "field": "priority",
+        "value": "Medium"
+      },
+      {
+        "issue": "RX-31",
+        "field": "assignee",
+        "value": "Hannah Becker"
+      }
+    ]
+  },
+  {
+    "id": "train-0051",
+    "board": "train-rx",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RX-27",
+        "field": "assignee",
+        "value": "Ilona Szymańska"
+      }
+    ]
+  },
+  {
+    "id": "train-0052",
+    "board": "train-rx",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RX-38",
+        "field": "status",
+        "value": "In Progress"
+      }
+    ]
+  },
+  {
+    "id": "train-0053",
+    "board": "train-rx",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RX-12",
+        "worklog": {
+          "seconds": 14400,
+          "comment": "retry z backoff dla P1"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0054",
+    "board": "train-rx",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RX-6",
+        "comment": "Operator bramki SMS potwierdził poprawkę dla prefiksu +380, wdrożenie w piątek."
+      }
+    ]
+  },
+  {
+    "id": "train-0055",
+    "board": "train-rx",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RX-7",
+        "worklog": {
+          "seconds": 2700,
+          "comment": "konsultacja z farmaceutą"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0056",
+    "board": "train-rx",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RX-36",
+        "comment": "Próg alertu to 3 sekundy, zgodnie z umową z CSIOZ."
+      }
+    ]
+  },
+  {
+    "id": "train-0057",
+    "board": "train-rx",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RX-29",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "poprawa szablonu PDF"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0058",
+    "board": "train-rx",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Aktualizacja słownika kodów pokrewieństwa ZUS",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0059",
+    "board": "train-rx",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Lekarz nie widzi recept wystawionych przez zastępcę",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0060",
+    "board": "train-rx",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Recepta w języku angielskim dla turystów",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0061",
+    "board": "train-rx",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Kod pokrewieństwa znika po edycji zwolnienia",
+          "issue_type": "Bug",
+          "priority": "Highest",
+          "assignee": "Marcin Woźniak",
+          "labels": [],
+          "sprint": "RX Sprint 43"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0062",
+    "board": "train-rx",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Test integracji z nową wersją P1",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "p1"
+          ],
+          "sprint": "RX Sprint 44"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0063",
+    "board": "train-rx",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RX-34",
+        "field": "sprint",
+        "value": "RX Sprint 43"
+      }
+    ]
+  },
+  {
+    "id": "train-0064",
+    "board": "train-rx",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RX-11",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0065",
+    "board": "train-rx",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RX-18",
+        "field": "sprint",
+        "value": "RX Sprint 45"
+      }
+    ]
+  },
+  {
+    "id": "train-0066",
+    "board": "train-rx",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RX-16",
+        "field": "sprint",
+        "value": "RX Sprint 43"
+      },
+      {
+        "issue": "RX-19",
+        "field": "sprint",
+        "value": "RX Sprint 43"
+      }
+    ]
+  },
+  {
+    "id": "train-0067",
+    "board": "train-rx",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RX-26",
+        "field": "sprint",
+        "value": "RX Sprint 44"
+      }
+    ]
+  },
+  {
+    "id": "train-0068",
+    "board": "train-rx",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RX-15",
+        "field": "assignee",
+        "value": "Bogdan Kalinowski"
+      },
+      {
+        "issue": "RX-17",
+        "field": "assignee",
+        "value": "Bogdan Kalinowski"
+      },
+      {
+        "issue": "RX-28",
+        "field": "assignee",
+        "value": "Bogdan Kalinowski"
+      },
+      {
+        "issue": "RX-34",
+        "field": "assignee",
+        "value": "Bogdan Kalinowski"
+      },
+      {
+        "issue": "RX-36",
+        "field": "assignee",
+        "value": "Bogdan Kalinowski"
+      }
+    ]
+  },
+  {
+    "id": "train-0069",
+    "board": "train-rx",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RX-13",
+        "comment": "Proszę o wycenę czasu do piątku."
+      },
+      {
+        "issue": "RX-15",
+        "comment": "Proszę o wycenę czasu do piątku."
+      },
+      {
+        "issue": "RX-32",
+        "comment": "Proszę o wycenę czasu do piątku."
+      }
+    ]
+  },
+  {
+    "id": "train-0070",
+    "board": "train-rx",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RX-21",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "RX-35",
+        "field": "priority",
+        "value": "Highest"
+      }
+    ]
+  },
+  {
+    "id": "train-0071",
+    "board": "train-rx",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RX-21",
+        "field": "assignee",
+        "value": "Marcin Pietrzak"
+      },
+      {
+        "issue": "RX-23",
+        "field": "assignee",
+        "value": "Marcin Pietrzak"
+      },
+      {
+        "issue": "RX-29",
+        "field": "assignee",
+        "value": "Marcin Pietrzak"
+      },
+      {
+        "issue": "RX-41",
+        "field": "assignee",
+        "value": "Marcin Pietrzak"
+      }
+    ]
+  },
+  {
+    "id": "train-0072",
+    "board": "train-rx",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RX-14",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "RX-14",
+        "worklog": {
+          "seconds": 10800,
+          "comment": null
+        }
+      },
+      {
+        "issue": "RX-14",
+        "comment": "ważność antybiotyku teraz 7 dni"
+      }
+    ]
+  },
+  {
+    "id": "train-0073",
+    "board": "train-rx",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RX-35",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "RX-35",
+        "comment": "Dawka 0,5 zapisuje się poprawnie, test na środowisku P1 OK"
+      },
+      {
+        "issue": "RX-35",
+        "worklog": {
+          "seconds": 3600,
+          "comment": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0074",
+    "board": "train-rx",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RX-10",
+        "field": "assignee",
+        "value": "Hannah Becker"
+      },
+      {
+        "issue": "RX-10",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "RX-10",
+        "worklog": {
+          "seconds": 1800,
+          "comment": "analiza wymagań ZUS"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0075",
+    "board": "train-rx",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RX-40",
+        "field": "sprint",
+        "value": "RX Sprint 43"
+      },
+      {
+        "issue": "RX-40",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0076",
+    "board": "train-rx",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0077",
+    "board": "train-rx",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0078",
+    "board": "train-rx",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0079",
+    "board": "train-rx",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0080",
+    "board": "train-rx",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0081",
+    "board": "train-pat",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Mateusz Urban"
+    }
+  },
+  {
+    "id": "train-0082",
+    "board": "train-pat",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "In review"
+    }
+  },
+  {
+    "id": "train-0083",
+    "board": "train-pat",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 21600
+    }
+  },
+  {
+    "id": "train-0084",
+    "board": "train-pat",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "PAT-5"
+      ]
+    }
+  },
+  {
+    "id": "train-0085",
+    "board": "train-pat",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 3
+    }
+  },
+  {
+    "id": "train-0086",
+    "board": "train-pat",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "person",
+      "value": "Lucas Moreau"
+    }
+  },
+  {
+    "id": "train-0087",
+    "board": "train-pat",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PAT-25",
+        "field": "priority",
+        "value": "Highest"
+      }
+    ]
+  },
+  {
+    "id": "train-0088",
+    "board": "train-pat",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PAT-34",
+        "field": "assignee",
+        "value": "Oskar Majewski"
+      }
+    ]
+  },
+  {
+    "id": "train-0089",
+    "board": "train-pat",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PAT-7",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "train-0090",
+    "board": "train-pat",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAT-27",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "PAT-27",
+        "field": "assignee",
+        "value": "Julia Ptak"
+      }
+    ]
+  },
+  {
+    "id": "train-0091",
+    "board": "train-pat",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAT-24",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0092",
+    "board": "train-pat",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAT-36",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "PAT-36",
+        "field": "assignee",
+        "value": "Szymon Krupa"
+      }
+    ]
+  },
+  {
+    "id": "train-0093",
+    "board": "train-pat",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PAT-6",
+        "worklog": {
+          "seconds": 9000,
+          "comment": "repro na xiaomi"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0094",
+    "board": "train-pat",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PAT-16",
+        "comment": "Apple Health to nasz killer feature na Q1! 🍎"
+      }
+    ]
+  },
+  {
+    "id": "train-0095",
+    "board": "train-pat",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PAT-17",
+        "comment": "Makieta wykresu jest w Figmie, zakładka Pomiary."
+      }
+    ]
+  },
+  {
+    "id": "train-0096",
+    "board": "train-pat",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAT-18",
+        "worklog": {
+          "seconds": 10800,
+          "comment": "warsztat z pacjentami"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0097",
+    "board": "train-pat",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAT-23",
+        "comment": "zaczynam w poniedzialek"
+      }
+    ]
+  },
+  {
+    "id": "train-0098",
+    "board": "train-pat",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Program poleceń - zaproś znajomego do Curify",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0099",
+    "board": "train-pat",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Crash on iOS 18 after granting camera access",
+          "issue_type": "Bug",
+          "priority": "Highest",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0100",
+    "board": "train-pat",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Badanie użyteczności ekranu płatności z seniorami",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0101",
+    "board": "train-pat",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Odznaki za regularne branie leków",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": "Julia Kowalczyk",
+          "labels": [],
+          "sprint": "PAT Sprint 9"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0102",
+    "board": "train-pat",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Push o leku przychodzi godzine za pozno po zmianie czasu",
+          "issue_type": "Bug",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "push"
+          ],
+          "sprint": "PAT Sprint 8"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0103",
+    "board": "train-pat",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PAT-15",
+        "field": "sprint",
+        "value": "PAT Sprint 8"
+      }
+    ]
+  },
+  {
+    "id": "train-0104",
+    "board": "train-pat",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PAT-12",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0105",
+    "board": "train-pat",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PAT-31",
+        "field": "sprint",
+        "value": "PAT Sprint 10"
+      }
+    ]
+  },
+  {
+    "id": "train-0106",
+    "board": "train-pat",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAT-15",
+        "field": "sprint",
+        "value": "PAT Sprint 10"
+      },
+      {
+        "issue": "PAT-16",
+        "field": "sprint",
+        "value": "PAT Sprint 10"
+      },
+      {
+        "issue": "PAT-17",
+        "field": "sprint",
+        "value": "PAT Sprint 10"
+      }
+    ]
+  },
+  {
+    "id": "train-0107",
+    "board": "train-pat",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAT-31",
+        "field": "sprint",
+        "value": "PAT Sprint 8"
+      }
+    ]
+  },
+  {
+    "id": "train-0108",
+    "board": "train-pat",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAT-14",
+        "field": "assignee",
+        "value": "Julia Kowalczyk"
+      },
+      {
+        "issue": "PAT-17",
+        "field": "assignee",
+        "value": "Julia Kowalczyk"
+      },
+      {
+        "issue": "PAT-27",
+        "field": "assignee",
+        "value": "Julia Kowalczyk"
+      }
+    ]
+  },
+  {
+    "id": "train-0109",
+    "board": "train-pat",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAT-7",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "PAT-36",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0110",
+    "board": "train-pat",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAT-7",
+        "comment": "Potrzebna nowa makieta od UX."
+      },
+      {
+        "issue": "PAT-31",
+        "comment": "Potrzebna nowa makieta od UX."
+      }
+    ]
+  },
+  {
+    "id": "train-0111",
+    "board": "train-pat",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAT-24",
+        "field": "assignee",
+        "value": "Oskar Majewski"
+      },
+      {
+        "issue": "PAT-36",
+        "field": "assignee",
+        "value": "Oskar Majewski"
+      }
+    ]
+  },
+  {
+    "id": "train-0112",
+    "board": "train-pat",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAT-9",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "PAT-9",
+        "worklog": {
+          "seconds": 3600,
+          "comment": null
+        }
+      },
+      {
+        "issue": "PAT-9",
+        "comment": "duplikat push naprawiony w 4.3.0"
+      }
+    ]
+  },
+  {
+    "id": "train-0113",
+    "board": "train-pat",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAT-5",
+        "field": "status",
+        "value": "In review"
+      },
+      {
+        "issue": "PAT-5",
+        "field": "assignee",
+        "value": "Julia Kowalczyk"
+      },
+      {
+        "issue": "PAT-5",
+        "comment": "Sprawdziłam z lekarzami, tekst jest czytelny."
+      }
+    ]
+  },
+  {
+    "id": "train-0114",
+    "board": "train-pat",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAT-26",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "PAT-26",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "PAT-26",
+        "field": "assignee",
+        "value": "Mateusz Urban"
+      }
+    ]
+  },
+  {
+    "id": "train-0115",
+    "board": "train-pat",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAT-10",
+        "field": "sprint",
+        "value": "PAT Sprint 9"
+      },
+      {
+        "issue": "PAT-10",
+        "field": "assignee",
+        "value": "Szymon Krupa"
+      }
+    ]
+  },
+  {
+    "id": "train-0116",
+    "board": "train-pat",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0117",
+    "board": "train-pat",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0118",
+    "board": "train-pat",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0119",
+    "board": "train-pat",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0120",
+    "board": "train-pat",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0121",
+    "board": "train-doc",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Piotr Jabłoński"
+    }
+  },
+  {
+    "id": "train-0122",
+    "board": "train-doc",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "Highest"
+    }
+  },
+  {
+    "id": "train-0123",
+    "board": "train-doc",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 36000
+    }
+  },
+  {
+    "id": "train-0124",
+    "board": "train-doc",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 2
+    }
+  },
+  {
+    "id": "train-0125",
+    "board": "train-doc",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "DOC-18",
+        "DOC-17",
+        "DOC-16"
+      ]
+    }
+  },
+  {
+    "id": "train-0126",
+    "board": "train-doc",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "person",
+      "value": "Halina Stępień"
+    }
+  },
+  {
+    "id": "train-0127",
+    "board": "train-doc",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DOC-26",
+        "field": "assignee",
+        "value": "Ewelina Michalska"
+      }
+    ]
+  },
+  {
+    "id": "train-0128",
+    "board": "train-doc",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DOC-31",
+        "field": "priority",
+        "value": "Highest"
+      }
+    ]
+  },
+  {
+    "id": "train-0129",
+    "board": "train-doc",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DOC-11",
+        "field": "status",
+        "value": "In Progress"
+      }
+    ]
+  },
+  {
+    "id": "train-0130",
+    "board": "train-doc",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DOC-26",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "DOC-26",
+        "field": "assignee",
+        "value": "Piotr Adamczyk"
+      }
+    ]
+  },
+  {
+    "id": "train-0131",
+    "board": "train-doc",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DOC-24",
+        "field": "priority",
+        "value": "Low"
+      }
+    ]
+  },
+  {
+    "id": "train-0132",
+    "board": "train-doc",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DOC-28",
+        "field": "assignee",
+        "value": "Konrad Sikorski"
+      }
+    ]
+  },
+  {
+    "id": "train-0133",
+    "board": "train-doc",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DOC-8",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "PESEL search prototype"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0134",
+    "board": "train-doc",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DOC-7",
+        "comment": "autozapis co 30 sekund gotowy do testów."
+      }
+    ]
+  },
+  {
+    "id": "train-0135",
+    "board": "train-doc",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DOC-37",
+        "comment": "Informacja o alergii musi być widoczna także na wydruku."
+      }
+    ]
+  },
+  {
+    "id": "train-0136",
+    "board": "train-doc",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DOC-40",
+        "worklog": {
+          "seconds": 3600,
+          "comment": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0137",
+    "board": "train-doc",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DOC-35",
+        "comment": "version 6 ma breaking changes w tabelach"
+      }
+    ]
+  },
+  {
+    "id": "train-0138",
+    "board": "train-doc",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Podpis lekarza nie mieści się na wydruku zaświadczenia",
+          "issue_type": "Bug",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0139",
+    "board": "train-doc",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Skala bólu w notatce z wizyty",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0140",
+    "board": "train-doc",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Dark mode for the doctor panel",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0141",
+    "board": "train-doc",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Lista wizyt nie odświeża się po północy",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": "Konrad Sikorski",
+          "labels": [],
+          "sprint": "DOC Sprint 26"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0142",
+    "board": "train-doc",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Szablony zaleceń po angielsku",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "notes"
+          ],
+          "sprint": "DOC Sprint 28"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0143",
+    "board": "train-doc",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DOC-19",
+        "field": "sprint",
+        "value": "DOC Sprint 26"
+      }
+    ]
+  },
+  {
+    "id": "train-0144",
+    "board": "train-doc",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DOC-15",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0145",
+    "board": "train-doc",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DOC-36",
+        "field": "sprint",
+        "value": "DOC Sprint 27"
+      }
+    ]
+  },
+  {
+    "id": "train-0146",
+    "board": "train-doc",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DOC-12",
+        "field": "sprint",
+        "value": "DOC Sprint 27"
+      },
+      {
+        "issue": "DOC-33",
+        "field": "sprint",
+        "value": "DOC Sprint 27"
+      }
+    ]
+  },
+  {
+    "id": "train-0147",
+    "board": "train-doc",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DOC-32",
+        "field": "sprint",
+        "value": "DOC Sprint 26"
+      }
+    ]
+  },
+  {
+    "id": "train-0148",
+    "board": "train-doc",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DOC-20",
+        "field": "assignee",
+        "value": "Ewelina Michalska"
+      },
+      {
+        "issue": "DOC-36",
+        "field": "assignee",
+        "value": "Ewelina Michalska"
+      }
+    ]
+  },
+  {
+    "id": "train-0149",
+    "board": "train-doc",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DOC-7",
+        "field": "labels",
+        "value": [
+          "notes",
+          "frontend",
+          "q4"
+        ]
+      },
+      {
+        "issue": "DOC-8",
+        "field": "labels",
+        "value": [
+          "search",
+          "q4"
+        ]
+      },
+      {
+        "issue": "DOC-38",
+        "field": "labels",
+        "value": [
+          "performance",
+          "q4"
+        ]
+      },
+      {
+        "issue": "DOC-39",
+        "field": "labels",
+        "value": [
+          "frontend",
+          "q4"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "train-0150",
+    "board": "train-doc",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DOC-16",
+        "comment": "Czekamy na słownik z ministerstwa."
+      },
+      {
+        "issue": "DOC-17",
+        "comment": "Czekamy na słownik z ministerstwa."
+      },
+      {
+        "issue": "DOC-18",
+        "comment": "Czekamy na słownik z ministerstwa."
+      }
+    ]
+  },
+  {
+    "id": "train-0151",
+    "board": "train-doc",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DOC-12",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "DOC-38",
+        "field": "priority",
+        "value": "Highest"
+      }
+    ]
+  },
+  {
+    "id": "train-0152",
+    "board": "train-doc",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DOC-21",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "DOC-21",
+        "worklog": {
+          "seconds": 14400,
+          "comment": null
+        }
+      },
+      {
+        "issue": "DOC-21",
+        "comment": "zaświadczenie ma nowy szablon."
+      }
+    ]
+  },
+  {
+    "id": "train-0153",
+    "board": "train-doc",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DOC-14",
+        "field": "status",
+        "value": "In review"
+      },
+      {
+        "issue": "DOC-14",
+        "field": "assignee",
+        "value": "Piotr Jabłoński"
+      },
+      {
+        "issue": "DOC-14",
+        "comment": "proszę o review autozapisu."
+      }
+    ]
+  },
+  {
+    "id": "train-0154",
+    "board": "train-doc",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DOC-16",
+        "field": "sprint",
+        "value": "DOC Sprint 26"
+      },
+      {
+        "issue": "DOC-16",
+        "field": "status",
+        "value": "In Progress"
+      }
+    ]
+  },
+  {
+    "id": "train-0155",
+    "board": "train-doc",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DOC-22",
+        "field": "assignee",
+        "value": "Ryan Walsh"
+      },
+      {
+        "issue": "DOC-22",
+        "field": "priority",
+        "value": "Medium"
+      },
+      {
+        "issue": "DOC-22",
+        "worklog": {
+          "seconds": 3600,
+          "comment": "analiza danych"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0156",
+    "board": "train-doc",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0157",
+    "board": "train-doc",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0158",
+    "board": "train-doc",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0159",
+    "board": "train-doc",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0160",
+    "board": "train-doc",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0161",
+    "board": "train-pay",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Tereza Nováková"
+    }
+  },
+  {
+    "id": "train-0162",
+    "board": "train-pay",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "In Progress"
+    }
+  },
+  {
+    "id": "train-0163",
+    "board": "train-pay",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 28800
+    }
+  },
+  {
+    "id": "train-0164",
+    "board": "train-pay",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 2
+    }
+  },
+  {
+    "id": "train-0165",
+    "board": "train-pay",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "PAY-26",
+        "PAY-22",
+        "PAY-19"
+      ]
+    }
+  },
+  {
+    "id": "train-0166",
+    "board": "train-pay",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "value",
+      "value": "Highest"
+    }
+  },
+  {
+    "id": "train-0167",
+    "board": "train-pay",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PAY-22",
+        "field": "priority",
+        "value": "Highest"
+      }
+    ]
+  },
+  {
+    "id": "train-0168",
+    "board": "train-pay",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PAY-29",
+        "field": "assignee",
+        "value": "Agata Wilczek"
+      }
+    ]
+  },
+  {
+    "id": "train-0169",
+    "board": "train-pay",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PAY-14",
+        "field": "status",
+        "value": "In review"
+      }
+    ]
+  },
+  {
+    "id": "train-0170",
+    "board": "train-pay",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAY-27",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "PAY-27",
+        "field": "assignee",
+        "value": "Kacper Laskowski"
+      }
+    ]
+  },
+  {
+    "id": "train-0171",
+    "board": "train-pay",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAY-36",
+        "field": "assignee",
+        "value": "Dawid Kozłowski"
+      }
+    ]
+  },
+  {
+    "id": "train-0172",
+    "board": "train-pay",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAY-31",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "train-0173",
+    "board": "train-pay",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PAY-6",
+        "worklog": {
+          "seconds": 18000,
+          "comment": "licznik faktur w bazie zamiast w pamięci"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0174",
+    "board": "train-pay",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PAY-4",
+        "comment": "Pierwsze trzy firmy dostaną fakturę zbiorczą za listopad."
+      }
+    ]
+  },
+  {
+    "id": "train-0175",
+    "board": "train-pay",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PAY-21",
+        "comment": "Klient prosi o wyraźną informację o stawce VAT na ekranie."
+      }
+    ]
+  },
+  {
+    "id": "train-0176",
+    "board": "train-pay",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAY-38",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "scenariusz końca miesiąca"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0177",
+    "board": "train-pay",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAY-26",
+        "comment": "Duplikaty tworzy stary import CSV, zgadnijcie z którego roku."
+      }
+    ]
+  },
+  {
+    "id": "train-0178",
+    "board": "train-pay",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Abonament dla seniorów z rabatem 20%",
+          "issue_type": "Story",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0179",
+    "board": "train-pay",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Usunąć stary moduł płatności po migracji",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0180",
+    "board": "train-pay",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Faktura korygująca nie ma numeru faktury pierwotnej",
+          "issue_type": "Bug",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0181",
+    "board": "train-pay",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Raport MRR na koniec grudnia",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Tereza Nováková",
+          "labels": [],
+          "sprint": "PAY Sprint 12"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0182",
+    "board": "train-pay",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Webhook bramki przychodzi dwa razy dla jednej płatności",
+          "issue_type": "Bug",
+          "priority": "Highest",
+          "assignee": null,
+          "labels": [
+            "gateway"
+          ],
+          "sprint": "PAY Sprint 13"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0183",
+    "board": "train-pay",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PAY-20",
+        "field": "sprint",
+        "value": "PAY Sprint 12"
+      }
+    ]
+  },
+  {
+    "id": "train-0184",
+    "board": "train-pay",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PAY-15",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0185",
+    "board": "train-pay",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "PAY-29",
+        "field": "sprint",
+        "value": "PAY Sprint 13"
+      }
+    ]
+  },
+  {
+    "id": "train-0186",
+    "board": "train-pay",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAY-16",
+        "field": "sprint",
+        "value": "PAY Sprint 14"
+      },
+      {
+        "issue": "PAY-17",
+        "field": "sprint",
+        "value": "PAY Sprint 14"
+      },
+      {
+        "issue": "PAY-32",
+        "field": "sprint",
+        "value": "PAY Sprint 14"
+      }
+    ]
+  },
+  {
+    "id": "train-0187",
+    "board": "train-pay",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAY-19",
+        "field": "sprint",
+        "value": "PAY Sprint 12"
+      }
+    ]
+  },
+  {
+    "id": "train-0188",
+    "board": "train-pay",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAY-11",
+        "field": "assignee",
+        "value": "Agata Rogalska"
+      },
+      {
+        "issue": "PAY-20",
+        "field": "assignee",
+        "value": "Agata Rogalska"
+      },
+      {
+        "issue": "PAY-25",
+        "field": "assignee",
+        "value": "Agata Rogalska"
+      },
+      {
+        "issue": "PAY-35",
+        "field": "assignee",
+        "value": "Agata Rogalska"
+      }
+    ]
+  },
+  {
+    "id": "train-0189",
+    "board": "train-pay",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAY-4",
+        "comment": "Sprawdzić po migracji numeracji faktur."
+      },
+      {
+        "issue": "PAY-6",
+        "comment": "Sprawdzić po migracji numeracji faktur."
+      },
+      {
+        "issue": "PAY-10",
+        "comment": "Sprawdzić po migracji numeracji faktur."
+      },
+      {
+        "issue": "PAY-12",
+        "comment": "Sprawdzić po migracji numeracji faktur."
+      },
+      {
+        "issue": "PAY-30",
+        "comment": "Sprawdzić po migracji numeracji faktur."
+      }
+    ]
+  },
+  {
+    "id": "train-0190",
+    "board": "train-pay",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAY-10",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "PAY-29",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0191",
+    "board": "train-pay",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAY-24",
+        "field": "assignee",
+        "value": "Kacper Laskowski"
+      },
+      {
+        "issue": "PAY-27",
+        "field": "assignee",
+        "value": "Kacper Laskowski"
+      },
+      {
+        "issue": "PAY-31",
+        "field": "assignee",
+        "value": "Kacper Laskowski"
+      },
+      {
+        "issue": "PAY-38",
+        "field": "assignee",
+        "value": "Kacper Laskowski"
+      }
+    ]
+  },
+  {
+    "id": "train-0192",
+    "board": "train-pay",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAY-7",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "PAY-7",
+        "worklog": {
+          "seconds": 10800,
+          "comment": null
+        }
+      },
+      {
+        "issue": "PAY-7",
+        "comment": "podpis webhooka sprawdzany HMAC-iem."
+      }
+    ]
+  },
+  {
+    "id": "train-0193",
+    "board": "train-pay",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAY-8",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "PAY-8",
+        "comment": "Kod NOWY20 działa od poniedziałku."
+      },
+      {
+        "issue": "PAY-8",
+        "worklog": {
+          "seconds": 1800,
+          "comment": "testy kodów"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0194",
+    "board": "train-pay",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAY-22",
+        "field": "assignee",
+        "value": "Agata Wilczek"
+      },
+      {
+        "issue": "PAY-22",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "PAY-22",
+        "field": "sprint",
+        "value": "PAY Sprint 12"
+      }
+    ]
+  },
+  {
+    "id": "train-0195",
+    "board": "train-pay",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "PAY-40",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "PAY-40",
+        "field": "assignee",
+        "value": "Agata Rogalska"
+      },
+      {
+        "issue": "PAY-40",
+        "comment": "Cena idzie z cache CDN, nie z bazy."
+      }
+    ]
+  },
+  {
+    "id": "train-0196",
+    "board": "train-pay",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0197",
+    "board": "train-pay",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0198",
+    "board": "train-pay",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0199",
+    "board": "train-pay",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0200",
+    "board": "train-pay",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  }
+]
