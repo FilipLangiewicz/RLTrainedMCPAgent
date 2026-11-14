@@ -1998,5 +1998,1005 @@
     "id": "train-0400",
     "author": "Stanisław Góral",
     "instruction": "Napisz przemówienie na wigilię firmową. Ma być najlepsze w historii Medixu!"
+  },
+  {
+    "id": "train-0401",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Kto jest przypisany do FIZ-8?"
+  },
+  {
+    "id": "train-0402",
+    "author": "Klara Wysocka",
+    "instruction": "Jaki priorytet ma FIZ-22? Soczewka skupiająca to mój ulubiony temat z optyki, dzieci uwielbiają szukać ogniska!"
+  },
+  {
+    "id": "train-0403",
+    "author": "Daniela Costa",
+    "instruction": "How many hours are logged on FIZ-1? Could you confirm, please?"
+  },
+  {
+    "id": "train-0404",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Ile bugów jest w bieżącym sprincie? Tylko liczba."
+  },
+  {
+    "id": "train-0405",
+    "author": "Klara Wysocka",
+    "instruction": "Które zadania z labelem simulation są w przyszłych sprintach? Chcę zaplanować lekcje pokazowe!"
+  },
+  {
+    "id": "train-0406",
+    "author": "Daniela Costa",
+    "instruction": "Who is working on the buoyancy simulation? Could you confirm, please?"
+  },
+  {
+    "id": "train-0407",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Przypisz FIZ-11 do Tymona."
+  },
+  {
+    "id": "train-0408",
+    "author": "Klara Wysocka",
+    "instruction": "Ustaw priorytet FIZ-36 na Medium! Fale na wodzie to piękne zjawisko, uczniowie z 8b już czekają."
+  },
+  {
+    "id": "train-0409",
+    "author": "Daniela Costa",
+    "instruction": "Please change the status of FIZ-9 to Done. The badges work now. Could you confirm, please?"
+  },
+  {
+    "id": "train-0410",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Bug z wynikiem z przecinkiem: przypisz do mnie, Aleksander Brzeziński, i ustaw priorytet Highest."
+  },
+  {
+    "id": "train-0411",
+    "author": "Klara Wysocka",
+    "instruction": "Zadanie z rysunkiem dźwigni na małym ekranie: ustaw priorytet Medium i przypisz je do Klary Piątek. Dźwignia to podstawa mechaniki!"
+  },
+  {
+    "id": "train-0412",
+    "author": "Daniela Costa",
+    "instruction": "Please assign the Safari formulas bug to me, Daniela Costa, and set the priority to High. Could you confirm, please?"
+  },
+  {
+    "id": "train-0413",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Zaloguj 4h na FIZ-7, opis: fallback z WebGL na canvas"
+  },
+  {
+    "id": "train-0414",
+    "author": "Klara Wysocka",
+    "instruction": "Dodaj komentarz do FIZ-6: Klocki z drewna, żelaza i korka, żeby było widać różnicę gęstości."
+  },
+  {
+    "id": "train-0415",
+    "author": "Daniela Costa",
+    "instruction": "Please log 1h 30m on FIZ-10, description: tests with the large font. Could you confirm, please?"
+  },
+  {
+    "id": "train-0416",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Zaloguj 2h na bug z utratą postępu po wylogowaniu, opis: zapis sesji w backendzie"
+  },
+  {
+    "id": "train-0417",
+    "author": "Klara Wysocka",
+    "instruction": "Do zadania z symulacją rozszerzalności cieplnej dodaj komentarz: Pokażmy pręt mosiężny i szynę kolejową latem!"
+  },
+  {
+    "id": "train-0418",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Stwórz nowe issue typu bug: Wykres drogi od czasu nie skaluje osi przy dużych prędkościach."
+  },
+  {
+    "id": "train-0419",
+    "author": "Klara Wysocka",
+    "instruction": "Stwórz nowe issue typu story: Symulacja wahadła z regulacją długości nici. Uczniowie to pokochają!"
+  },
+  {
+    "id": "train-0420",
+    "author": "Daniela Costa",
+    "instruction": "Please create a new task: Translate the tutor hints to Portuguese. Could you confirm, please?"
+  },
+  {
+    "id": "train-0421",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Stwórz nowe issue typu bug: Tutor AI nie widzi jednostki w odpowiedzi ucznia. Priorytet High, przypisz do Wandy Łukasik, dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0422",
+    "author": "Klara Wysocka",
+    "instruction": "Stwórz nowe issue typu story: Symulacja dyfuzji z kolorowym atramentem. Daj label simulation i dodaj je do następnego sprintu."
+  },
+  {
+    "id": "train-0423",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Przenieś FIZ-38 do bieżącego sprintu."
+  },
+  {
+    "id": "train-0424",
+    "author": "Klara Wysocka",
+    "instruction": "Przenieś FIZ-9 do backlogu. Odznaki mogą poczekać, najpierw fizyka!"
+  },
+  {
+    "id": "train-0425",
+    "author": "Daniela Costa",
+    "instruction": "Please move FIZ-22 to sprint 16. Could you confirm, please?"
+  },
+  {
+    "id": "train-0426",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Wszystkie zadania z labelem electricity z przyszłych sprintów przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "train-0427",
+    "author": "Daniela Costa",
+    "instruction": "Please move the ticket about pupils who see the solutions before the deadline to the current sprint. Could you confirm, please?"
+  },
+  {
+    "id": "train-0428",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Wszystkie nieprzypisane bugi bez sprintu przypisz Tymonowi Rybakowi."
+  },
+  {
+    "id": "train-0429",
+    "author": "Klara Wysocka",
+    "instruction": "Wszystkim zadaniom z labelem exercises bez sprintu, które mają priorytet niższy niż High, ustaw priorytet High. Zadania to serce nauki!"
+  },
+  {
+    "id": "train-0430",
+    "author": "Daniela Costa",
+    "instruction": "Please add a comment to all issues with the label accessibility: Tested with the school for visually impaired pupils."
+  },
+  {
+    "id": "train-0431",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Wszystkie zadania Danieli Costy bez sprintu przepisz na Klarę Wysocką."
+  },
+  {
+    "id": "train-0432",
+    "author": "Aleksander Brzeziński",
+    "instruction": "FIZ-14: zmień status na Done, zaloguj 1h i dodaj komentarz: requestAnimationFrame zamiast setInterval"
+  },
+  {
+    "id": "train-0433",
+    "author": "Klara Wysocka",
+    "instruction": "Skończyłam symulację siły wyporu! Zmień status FIZ-6 na In review, przypisz do Aleksandra Brzezińskiego i dodaj komentarz: Proszę sprawdzić klocek z korka."
+  },
+  {
+    "id": "train-0434",
+    "author": "Daniela Costa",
+    "instruction": "The issue about the pupil login with a class code: please assign it to Tymon Rybak, move it to In Progress and log 30m with the description: analysis. Could you confirm, please?"
+  },
+  {
+    "id": "train-0435",
+    "author": "Klara Wysocka",
+    "instruction": "Zadanie z symulacją fal na wodzie przenieś do następnego sprintu i przypisz do mnie, Klary Wysockiej."
+  },
+  {
+    "id": "train-0436",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Zrób deploy aplikacji na produkcję."
+  },
+  {
+    "id": "train-0437",
+    "author": "Klara Wysocka",
+    "instruction": "Przypisz FIZ-26 Kornelowi, on robił rzut ukośny!"
+  },
+  {
+    "id": "train-0438",
+    "author": "Daniela Costa",
+    "instruction": "Please move FIZ-35 to sprint 20. Could you confirm, please?"
+  },
+  {
+    "id": "train-0439",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Przypisz FIZ-17 do Klary."
+  },
+  {
+    "id": "train-0440",
+    "author": "Daniela Costa",
+    "instruction": "Can you explain Newton's second law to me in Portuguese?"
+  },
+  {
+    "id": "train-0441",
+    "author": "Witold Szymczak",
+    "instruction": "Kto ma NAU-13?"
+  },
+  {
+    "id": "train-0442",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Jaki status ma NAU-9? Proszę o odpowiedź do końca przerwy, zaraz mam lekcję z 7b."
+  },
+  {
+    "id": "train-0443",
+    "author": "Witold Szymczak",
+    "instruction": "Ile godzin zalogowano na NAU-5?"
+  },
+  {
+    "id": "train-0444",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Ile zadań z labelem homework nie ma jeszcze sprintu? Proszę o samą liczbę."
+  },
+  {
+    "id": "train-0445",
+    "author": "Roksana Wieczorek",
+    "instruction": "Które zadania o sprawdzianach (label tests) ma przypisane Roksana Bednarek?"
+  },
+  {
+    "id": "train-0446",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Jaki priorytet ma problem z oceną, która trafia do złego ucznia? W 8a była przez to awantura."
+  },
+  {
+    "id": "train-0447",
+    "author": "Witold Szymczak",
+    "instruction": "Przypisz NAU-33 do Fryderyka."
+  },
+  {
+    "id": "train-0448",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę o ustawienie priorytetu NAU-19 na Medium. Uczniowie z 7b pomylili prace domowe już dwa razy."
+  },
+  {
+    "id": "train-0449",
+    "author": "Roksana Wieczorek",
+    "instruction": "Proszę zmienić status NAU-12 na In Progress. Mam już makietę wykresu."
+  },
+  {
+    "id": "train-0450",
+    "author": "Witold Szymczak",
+    "instruction": "Bug z sesją, która wygasa podczas pisania komentarza: ustaw priorytet High i przypisz do mnie, Witold Szymczak."
+  },
+  {
+    "id": "train-0451",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę o przypisanie zadania z kalendarzem prac domowych do mnie, Bogumiły Sarneckiej, i o ustawienie priorytetu Medium. Kalendarz bardzo pomoże moim klasom."
+  },
+  {
+    "id": "train-0452",
+    "author": "Roksana Wieczorek",
+    "instruction": "Nauczyciel wkleja tekst i przycisk 'Zapisz' jest nieaktywny. Proszę dać temu zadaniu priorytet High i przypisać je do Oliwii."
+  },
+  {
+    "id": "train-0453",
+    "author": "Witold Szymczak",
+    "instruction": "Zaloguj 3h na NAU-6, opis: filtr klas po szkole"
+  },
+  {
+    "id": "train-0454",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę o dodanie komentarza do NAU-21: Uczniowie ze zwolnieniem lekarskim nie powinni obniżać średniej."
+  },
+  {
+    "id": "train-0455",
+    "author": "Roksana Wieczorek",
+    "instruction": "Proszę dodać komentarz do NAU-28: Dyrektorzy chcą widzieć klasy 7 i 8 osobno."
+  },
+  {
+    "id": "train-0456",
+    "author": "Witold Szymczak",
+    "instruction": "Zaloguj 1h na zadanie z przypomnieniem dla uczniów przed terminem pracy, opis: cron o 18:00"
+  },
+  {
+    "id": "train-0457",
+    "author": "Roksana Wieczorek",
+    "instruction": "Proszę dodać komentarz do zadania z drukiem kart pracy: Nauczyciele chcą format A5."
+  },
+  {
+    "id": "train-0458",
+    "author": "Witold Szymczak",
+    "instruction": "Stwórz nowe issue typu bug: Raport klasy nie liczy zadań oddanych po terminie."
+  },
+  {
+    "id": "train-0459",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę o założenie nowego zgłoszenia typu story: Notatka nauczyciela do całej klasy po lekcji."
+  },
+  {
+    "id": "train-0460",
+    "author": "Roksana Wieczorek",
+    "instruction": "Proszę stworzyć nowe issue typu task: Badanie z nauczycielami, jak oceniają prace domowe."
+  },
+  {
+    "id": "train-0461",
+    "author": "Witold Szymczak",
+    "instruction": "Stwórz nowe issue typu task: Indeks na tabeli wyników uczniów. Przypisz do Fryderyka Malca i dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0462",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę o założenie nowego zgłoszenia typu story: Sprawdzian z działu energia. Proszę dać label tests i dodać je do następnego sprintu."
+  },
+  {
+    "id": "train-0463",
+    "author": "Witold Szymczak",
+    "instruction": "Przenieś NAU-22 do bieżącego sprintu."
+  },
+  {
+    "id": "train-0464",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę przenieść NAU-11 do backlogu. Powiadomienia e-mail mogą poczekać."
+  },
+  {
+    "id": "train-0465",
+    "author": "Roksana Wieczorek",
+    "instruction": "Proszę przenieść NAU-26 do sprintu 11."
+  },
+  {
+    "id": "train-0466",
+    "author": "Witold Szymczak",
+    "instruction": "Wszystkie zadania z labelem tests z przyszłych sprintów przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "train-0467",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę przenieść zadanie z rankingiem klasy bez nazwisk uczniów do następnego sprintu."
+  },
+  {
+    "id": "train-0468",
+    "author": "Witold Szymczak",
+    "instruction": "Wszystkie nieprzypisane bugi przypisz Fryderykowi Malcowi."
+  },
+  {
+    "id": "train-0469",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę o dodanie komentarza do wszystkich zadań z labelem grades: Oceny muszą zgadzać się z dziennikiem elektronicznym."
+  },
+  {
+    "id": "train-0470",
+    "author": "Roksana Wieczorek",
+    "instruction": "Proszę dodać label teachers do wszystkich zadań z labelem homework z bieżącego sprintu."
+  },
+  {
+    "id": "train-0471",
+    "author": "Witold Szymczak",
+    "instruction": "Wszystkie zadania Roksany Wieczorek bez sprintu przepisz na Oliwię Jaworską."
+  },
+  {
+    "id": "train-0472",
+    "author": "Witold Szymczak",
+    "instruction": "NAU-8 gotowe: zmień status na Done, zaloguj 2h i dodaj komentarz: PDF generowany po stronie serwera."
+  },
+  {
+    "id": "train-0473",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę o zmianę statusu NAU-9 na Done, zalogowanie 30m i dodanie komentarza: Lista działa, sprawdziłam z klasą 8a."
+  },
+  {
+    "id": "train-0474",
+    "author": "Roksana Wieczorek",
+    "instruction": "Biorę zadanie z szablonem pracy domowej na każdy dział podręcznika. Proszę zmienić status na In Progress, przenieść je do bieżącego sprintu i dodać komentarz: Zaczynam od działu siły."
+  },
+  {
+    "id": "train-0475",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę o przeniesienie zadania z wiadomościami do rodziców do bieżącego sprintu i o ustawienie priorytetu High. Rodzice z 7b bardzo pytają."
+  },
+  {
+    "id": "train-0476",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę wpisać oceny z ostatniego sprawdzianu do dziennika elektronicznego."
+  },
+  {
+    "id": "train-0477",
+    "author": "Witold Szymczak",
+    "instruction": "Utwórz nowy board dla zespołu mobilnego."
+  },
+  {
+    "id": "train-0478",
+    "author": "Roksana Wieczorek",
+    "instruction": "Proszę przypisać NAU-27 do Jerzego."
+  },
+  {
+    "id": "train-0479",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę o przypisanie NAU-20 pani Roksanie."
+  },
+  {
+    "id": "train-0480",
+    "author": "Roksana Wieczorek",
+    "instruction": "Jaki kolor ściany najlepiej działa na uczniów w klasie? Chcę pomalować salę."
+  },
+  {
+    "id": "train-0481",
+    "author": "Lena Dąbrowska",
+    "instruction": "Kto jest przypisany do ML-36?"
+  },
+  {
+    "id": "train-0482",
+    "author": "Ignacy Renifer",
+    "instruction": "Jaki status ma ML-3? Wciąż uważam, że gadający kot byłby hitem, nawet jeśli nikt się nie zaśmiał na spotkaniu."
+  },
+  {
+    "id": "train-0483",
+    "author": "Arash Karimi",
+    "instruction": "Ile godzin zalogowano na ML-1? Potrzebuję tego do sekcji methods w artykule."
+  },
+  {
+    "id": "train-0484",
+    "author": "Lena Dąbrowska",
+    "instruction": "Ile otwartych bugów z labelem tutor ma priorytet High lub Highest?"
+  },
+  {
+    "id": "train-0485",
+    "author": "Arash Karimi",
+    "instruction": "Które zadania z labelem evaluation nie mają sprintu? Podaj klucze, potrzebuję ich do related work."
+  },
+  {
+    "id": "train-0486",
+    "author": "Ignacy Renifer",
+    "instruction": "Jaki priorytet ma bug, w którym tutor chwali złą odpowiedź ucznia? Ja bym go od razu zwolnił. Tutora, oczywiście, nie programistę."
+  },
+  {
+    "id": "train-0487",
+    "author": "Lena Dąbrowska",
+    "instruction": "Przypisz ML-34 do Tobiasza."
+  },
+  {
+    "id": "train-0488",
+    "author": "Ignacy Renifer",
+    "instruction": "Ustaw priorytet ML-27 na Low. Tutor-pirat zasługuje na więcej niż Lowest. Arrr. Dobra, już przestaję."
+  },
+  {
+    "id": "train-0489",
+    "author": "Arash Karimi",
+    "instruction": "Zmień status ML-10 na In Progress, zaczynam baseline na elektryczności."
+  },
+  {
+    "id": "train-0490",
+    "author": "Lena Dąbrowska",
+    "instruction": "Bug z wymyślaniem wartości stałych fizycznych: ustaw priorytet Highest i przypisz do Marianny Kołodziej."
+  },
+  {
+    "id": "train-0491",
+    "author": "Ignacy Renifer",
+    "instruction": "Zadanie z tutorem jako piratem przypisz do mnie, Ignacego Renifera. W końcu ktoś musi to zrobić porządnie."
+  },
+  {
+    "id": "train-0492",
+    "author": "Arash Karimi",
+    "instruction": "Zadanie z porównaniem trzech modeli językowych przypisz do mnie, Arash Karimi, i ustaw priorytet High."
+  },
+  {
+    "id": "train-0493",
+    "author": "Arash Karimi",
+    "instruction": "Zaloguj 4h na ML-36, opis: ablation bez połowy we wzorze"
+  },
+  {
+    "id": "train-0494",
+    "author": "Ignacy Renifer",
+    "instruction": "Dodaj komentarz do ML-13: Rektor podobno lubi kolor zielony, zróbmy zielony motyw na demo."
+  },
+  {
+    "id": "train-0495",
+    "author": "Lena Dąbrowska",
+    "instruction": "Zaloguj 2h 30m na ML-5, opis: test jednostek w 200 odpowiedziach"
+  },
+  {
+    "id": "train-0496",
+    "author": "Lena Dąbrowska",
+    "instruction": "Na zadaniu z cache odpowiedzi na najczęstsze pytania zaloguj 1h z opisem: analiza logów zapytań."
+  },
+  {
+    "id": "train-0497",
+    "author": "Arash Karimi",
+    "instruction": "Dodaj komentarz do zadania z guideline do anotacji odpowiedzi tutora: Proszę dodać przykłady dla podpowiedzi."
+  },
+  {
+    "id": "train-0498",
+    "author": "Lena Dąbrowska",
+    "instruction": "Stwórz nowe issue typu task: Ewaluacja tutora na zadaniach z optyki. Priorytet High."
+  },
+  {
+    "id": "train-0499",
+    "author": "Ignacy Renifer",
+    "instruction": "Stwórz nowe issue typu story: Tutor opowiada żart z fizyki po trzech poprawnych odpowiedziach. Moje żarty testowałem na zespole i nikt nie protestował."
+  },
+  {
+    "id": "train-0500",
+    "author": "Arash Karimi",
+    "instruction": "Stwórz nowe issue typu task: Literature review of AI tutors in primary schools."
+  },
+  {
+    "id": "train-0501",
+    "author": "Lena Dąbrowska",
+    "instruction": "Stwórz nowe issue typu bug: Tutor podaje prędkość światła w km/h zamiast km/s. Priorytet High, przypisz do Marianny Kołodziej i dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0502",
+    "author": "Arash Karimi",
+    "instruction": "Stwórz nowe issue typu task: Ablation study of the hint prompt. Daj label evaluation i dodaj je do następnego sprintu."
+  },
+  {
+    "id": "train-0503",
+    "author": "Lena Dąbrowska",
+    "instruction": "Przenieś ML-20 do bieżącego sprintu."
+  },
+  {
+    "id": "train-0504",
+    "author": "Ignacy Renifer",
+    "instruction": "Przenieś ML-12 do backlogu. Anotacje to nie moja bajka, mówiłem to już trzy razy na stand-upie."
+  },
+  {
+    "id": "train-0505",
+    "author": "Arash Karimi",
+    "instruction": "Przenieś ML-21 do sprintu 23."
+  },
+  {
+    "id": "train-0506",
+    "author": "Lena Dąbrowska",
+    "instruction": "Wszystkie zadania z labelem voice z przyszłych sprintów przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "train-0507",
+    "author": "Ignacy Renifer",
+    "instruction": "Zadanie z red teamingiem tutora z doktorantami przenieś do bieżącego sprintu. Chętnie zagram złego ucznia, mam w tym doświadczenie z liceum."
+  },
+  {
+    "id": "train-0508",
+    "author": "Lena Dąbrowska",
+    "instruction": "Wszystkie nieprzypisane bugi z labelem tutor przypisz Lenie Olszewskiej."
+  },
+  {
+    "id": "train-0509",
+    "author": "Arash Karimi",
+    "instruction": "Do wszystkich zadań z labelem privacy dodaj komentarz: Proszę sprawdzić zgodność z RODO przed publikacją."
+  },
+  {
+    "id": "train-0510",
+    "author": "Ignacy Renifer",
+    "instruction": "Wszystkim zadaniom z labelem cost ustaw priorytet High. Pieniądze z grantu nie rosną na drzewach, sprawdzałem."
+  },
+  {
+    "id": "train-0511",
+    "author": "Lena Dąbrowska",
+    "instruction": "Wszystkie zadania Marianny Kołodziej bez sprintu przepisz na Tobiasza Mrozka. Marianna przygotowuje demo dla rektora."
+  },
+  {
+    "id": "train-0512",
+    "author": "Arash Karimi",
+    "instruction": "ML-36: zmień status na Done, zaloguj 1h i dodaj komentarz: wzór Ek = mv²/2 poprawiony we wszystkich promptach."
+  },
+  {
+    "id": "train-0513",
+    "author": "Lena Dąbrowska",
+    "instruction": "ML-14: zmień status na In Progress, przypisz do Tobiasza Mrozka i dodaj komentarz: cel to odpowiedź poniżej 3 sekund."
+  },
+  {
+    "id": "train-0514",
+    "author": "Ignacy Renifer",
+    "instruction": "Zadanie z demo tutora dla rektora: zmień status na In Progress, zaloguj 2h z opisem: próba generalna i dodaj komentarz: Rektor podobno woli demo bez slajdów."
+  },
+  {
+    "id": "train-0515",
+    "author": "Arash Karimi",
+    "instruction": "Zadanie z fallbackiem modelu przy limicie API: przenieś do następnego sprintu i ustaw priorytet High."
+  },
+  {
+    "id": "train-0516",
+    "author": "Lena Dąbrowska",
+    "instruction": "Uruchom ewaluację tutora na 500 zadaniach."
+  },
+  {
+    "id": "train-0517",
+    "author": "Arash Karimi",
+    "instruction": "Przypisz ML-26 do Celiny."
+  },
+  {
+    "id": "train-0518",
+    "author": "Ignacy Renifer",
+    "instruction": "Przypisz ML-35 Lenie. Tej mądrzejszej. Żartuję, obie są mądre."
+  },
+  {
+    "id": "train-0519",
+    "author": "Arash Karimi",
+    "instruction": "Ustaw priorytet High dla zadania z danymi."
+  },
+  {
+    "id": "train-0520",
+    "author": "Ignacy Renifer",
+    "instruction": "Jak wygonić renifera z ogrodu? Pytam dla kolegi."
+  },
+  {
+    "id": "train-0521",
+    "author": "Marzena Cichocka",
+    "instruction": "Kto jest przypisany do SZK-6? SP 3 w Siedlcach czeka od tygodnia."
+  },
+  {
+    "id": "train-0522",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Jaki status ma SZK-11? Za godzinę mam rozmowę z rektorem, piszę między spotkaniami."
+  },
+  {
+    "id": "train-0523",
+    "author": "Robert Gawroński",
+    "instruction": "Ile godzin zalogowano na SZK-5? Piszę z trasy do Radomia."
+  },
+  {
+    "id": "train-0524",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Ile zadań z labelem promotion nie ma przypisanej osoby? Szybko, jadę do kuratorium."
+  },
+  {
+    "id": "train-0525",
+    "author": "Marzena Cichocka",
+    "instruction": "Które zadania z labelem hardware nie są jeszcze zrobione? Do piątku muszę zamknąć listę sprzętu."
+  },
+  {
+    "id": "train-0526",
+    "author": "Robert Gawroński",
+    "instruction": "Kto zajmuje się przewozem tabletów do szkół drugiego etapu? Piszę z parkingu pod szkołą."
+  },
+  {
+    "id": "train-0527",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Przypisz SZK-19 do Marzeny Cichockiej. Zawsze była lojalna, poradzi sobie z dyrektorką z Mławy."
+  },
+  {
+    "id": "train-0528",
+    "author": "Marzena Cichocka",
+    "instruction": "Ustaw priorytet SZK-31 na Highest. Kontrola zgód RODO musi być gotowa do 15 grudnia."
+  },
+  {
+    "id": "train-0529",
+    "author": "Robert Gawroński",
+    "instruction": "Zmień status SZK-9 na Done, szkoły zatwierdziły harmonogram na grudzień."
+  },
+  {
+    "id": "train-0530",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Zadanie z gminą, która chce aplikację we wszystkich swoich szkołach: ustaw priorytet Highest i przypisz do mnie, Jacka Kacprzyka. Znam wójta, załatwię to osobiście."
+  },
+  {
+    "id": "train-0531",
+    "author": "Marzena Cichocka",
+    "instruction": "Zadanie ze szkołą w Sokołowie bez rzutnika: ustaw priorytet Medium i przypisz do Zdzisława Pośpiecha."
+  },
+  {
+    "id": "train-0532",
+    "author": "Robert Gawroński",
+    "instruction": "Zadanie z dwoma terminami szkolenia w jednej szkole przypisz do mnie, Roberta Gawrońskiego, i ustaw priorytet High."
+  },
+  {
+    "id": "train-0533",
+    "author": "Robert Gawroński",
+    "instruction": "Zaloguj 6h na SZK-5, opis: drugi dzień szkolenia w Radomiu"
+  },
+  {
+    "id": "train-0534",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Dodaj komentarz do SZK-11: Rektor przekazał listę osobiście, szkoły czekają na telefon."
+  },
+  {
+    "id": "train-0535",
+    "author": "Marzena Cichocka",
+    "instruction": "Dodaj komentarz do SZK-12: Kuratorium prosi o prezentację projektu do 10 grudnia."
+  },
+  {
+    "id": "train-0536",
+    "author": "Marzena Cichocka",
+    "instruction": "Na zadaniu z rozliczeniem delegacji trenerów za listopad zaloguj 1h z opisem: zestawienie kilometrówek."
+  },
+  {
+    "id": "train-0537",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Do zadania z wywiadem dla lokalnej telewizji dodaj komentarz: Redaktor to mój znajomy, nagranie w czwartek o 10:00."
+  },
+  {
+    "id": "train-0538",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Stwórz nowe issue typu task: Spotkanie z burmistrzem Radomia w sprawie wszystkich szkół w mieście. Priorytet High."
+  },
+  {
+    "id": "train-0539",
+    "author": "Marzena Cichocka",
+    "instruction": "Stwórz nowe issue typu task: Lista szkół z powiatu płockiego do trzeciego etapu."
+  },
+  {
+    "id": "train-0540",
+    "author": "Robert Gawroński",
+    "instruction": "Stwórz nowe issue typu bug: Tablety w SP 12 w Radomiu tracą Wi-Fi po aktualizacji."
+  },
+  {
+    "id": "train-0541",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Stwórz nowe issue typu task: Umowa z gminą Pułtusk na wszystkie szkoły. Przypisz je Marzenie Cichockiej i dodaj do bieżącego sprintu. Wiem, że da radę."
+  },
+  {
+    "id": "train-0542",
+    "author": "Marzena Cichocka",
+    "instruction": "Stwórz nowe issue typu task: Szkolenie nauczycieli w SP 2 w Ciechanowie. Daj label training i dodaj je do następnego sprintu."
+  },
+  {
+    "id": "train-0543",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Przenieś SZK-19 do bieżącego sprintu. Jutro jadę do Mławy, muszę mieć to zadanie w sprincie."
+  },
+  {
+    "id": "train-0544",
+    "author": "Marzena Cichocka",
+    "instruction": "Przenieś SZK-14 do backlogu. Plakaty poczekają do drugiego etapu."
+  },
+  {
+    "id": "train-0545",
+    "author": "Robert Gawroński",
+    "instruction": "Przenieś SZK-32 do sprintu 8."
+  },
+  {
+    "id": "train-0546",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Wszystkie zadania z labelem pilot bez sprintu przenieś do następnego sprintu. Drugi etap ruszy szybciej, niż wszyscy myślą."
+  },
+  {
+    "id": "train-0547",
+    "author": "Marzena Cichocka",
+    "instruction": "Zadanie z kontrolą zgód RODO w szkołach pilotażowych przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "train-0548",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Wszystkie nieprzypisane zadania z labelem partners przypisz mnie, Jackowi Kacprzykowi. Partnerzy to moja działka, znam tam wszystkich."
+  },
+  {
+    "id": "train-0549",
+    "author": "Marzena Cichocka",
+    "instruction": "Do wszystkich niezrobionych zadań z labelem consents dodaj komentarz: Termin zbierania zgód to 15 grudnia."
+  },
+  {
+    "id": "train-0550",
+    "author": "Robert Gawroński",
+    "instruction": "Wszystkim bugom z labelem hardware ustaw priorytet Medium, szkoły się skarżą."
+  },
+  {
+    "id": "train-0551",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Wszystkie moje zadania bez sprintu, czyli zadania Jacka Kacprzyka, przepisz na Tamarę Jurek. Tamara jest lojalna, ogarnie."
+  },
+  {
+    "id": "train-0552",
+    "author": "Robert Gawroński",
+    "instruction": "Tablety dojechały do Pułtuska. Zmień status SZK-7 na Done, zaloguj 3h i dodaj komentarz: 30 tabletów w szkole, protokół podpisany."
+  },
+  {
+    "id": "train-0553",
+    "author": "Marzena Cichocka",
+    "instruction": "SZK-13: zmień status na In Progress, przypisz do Zdzisława Pośpiecha i dodaj komentarz: Nauczyciele z SP 7 w Płocku dostali nowe hasła."
+  },
+  {
+    "id": "train-0554",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Zadanie ze szkołą w Mławie, która chce zrezygnować: przypisz do mnie, Jacka Kacprzyka, zmień status na In Progress i dodaj komentarz: Rozmawiałem z dyrektorką, szkoła zostaje w pilotażu."
+  },
+  {
+    "id": "train-0555",
+    "author": "Robert Gawroński",
+    "instruction": "Zadanie z formularzem opinii po szkoleniu przenieś do bieżącego sprintu i przypisz do mnie, Roberta Gawrońskiego."
+  },
+  {
+    "id": "train-0556",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Zadzwoń do rektora i umów mnie na jutro na 9:00."
+  },
+  {
+    "id": "train-0557",
+    "author": "Marzena Cichocka",
+    "instruction": "Wyślij wszystkim dyrektorom szkół zaproszenie na konferencję."
+  },
+  {
+    "id": "train-0558",
+    "author": "Robert Gawroński",
+    "instruction": "Przypisz SZK-22 Stefanowi."
+  },
+  {
+    "id": "train-0559",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Jaki status ma SZK-55? Rektor o to pytał."
+  },
+  {
+    "id": "train-0560",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Przypisz SZK-25 Marzenie, ona jest lojalna."
+  },
+  {
+    "id": "train-0561",
+    "author": "Patryk Szostak",
+    "instruction": "Kto jest przypisany do BAD-24? Załącznik nr 3 musi być gotowy przed terminem sprawozdania."
+  },
+  {
+    "id": "train-0562",
+    "author": "Nina Woźnicka",
+    "instruction": "Przepraszam, jaki status ma BAD-6? Nie chcę przeszkadzać 🙈"
+  },
+  {
+    "id": "train-0563",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Ile godzin zalogowano dotychczas na BAD-1, czyli na przeprowadzenie pretestu w szkołach pilotażowych?"
+  },
+  {
+    "id": "train-0564",
+    "author": "Patryk Szostak",
+    "instruction": "Ile zadań z labelem grant nie ma przypisanej osoby? Potrzebuję tej liczby do raportu kamieni milowych."
+  },
+  {
+    "id": "train-0565",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Które zadania z etykietą statistics znajdują się w przyszłych sprintach? Uprzejmie proszę o klucze."
+  },
+  {
+    "id": "train-0566",
+    "author": "Nina Woźnicka",
+    "instruction": "Przepraszam, kto robi książkę kodów do analizy wywiadów? 😅"
+  },
+  {
+    "id": "train-0567",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o ustawienie priorytetu BAD-25 na High, albowiem rzetelność narzędzia badawczego warunkuje dalsze analizy."
+  },
+  {
+    "id": "train-0568",
+    "author": "Patryk Szostak",
+    "instruction": "Przypisz BAD-21 do Igi Sobczyk. Repozytorium danych to wskaźnik w kamieniu milowym nr 2."
+  },
+  {
+    "id": "train-0569",
+    "author": "Nina Woźnicka",
+    "instruction": "Przepraszam, czy można zmienić status BAD-12 na In Progress? Zaczęłam transkrypcję 🙂"
+  },
+  {
+    "id": "train-0570",
+    "author": "Patryk Szostak",
+    "instruction": "Zadanie z planem zarządzania danymi dla grantodawcy: ustaw priorytet Highest i przypisz do Niny Tomczak. Termin złożenia to 15 grudnia."
+  },
+  {
+    "id": "train-0571",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o przypisanie zadania związanego z obserwacjami lekcji pani Ninie Woźnickiej oraz o nadanie mu priorytetu High."
+  },
+  {
+    "id": "train-0572",
+    "author": "Nina Woźnicka",
+    "instruction": "Przepraszam, czy zadanie z posterem na dzień otwarty można przypisać do mnie, Niny Woźnickiej, i ustawić mu priorytet Medium? 🙏"
+  },
+  {
+    "id": "train-0573",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o zalogowanie 3h na BAD-7 z opisem: weryfikacja założeń modelu mieszanego."
+  },
+  {
+    "id": "train-0574",
+    "author": "Patryk Szostak",
+    "instruction": "Dodaj komentarz do BAD-11: Kamień milowy nr 1 zatwierdzony przez opiekuna projektu."
+  },
+  {
+    "id": "train-0575",
+    "author": "Nina Woźnicka",
+    "instruction": "Przepraszam, czy można zalogować 2h na BAD-12 z opisem: transkrypcja wywiadów 1-3? 🙂"
+  },
+  {
+    "id": "train-0576",
+    "author": "Patryk Szostak",
+    "instruction": "Na zadaniu z rozliczeniem kosztów wyjazdów do szkół zaloguj 1h 30m z opisem: zestawienie biletów i faktur."
+  },
+  {
+    "id": "train-0577",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o dodanie komentarza do zadania dotyczącego rzetelności testu: Alfę Cronbacha należy policzyć osobno dla klas 7 i 8."
+  },
+  {
+    "id": "train-0578",
+    "author": "Patryk Szostak",
+    "instruction": "Stwórz nowe issue typu task: Sprawozdanie końcowe z pierwszego roku grantu. Priorytet Highest."
+  },
+  {
+    "id": "train-0579",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o założenie nowego zgłoszenia typu task: Analiza wielkości efektu w grupie eksperymentalnej."
+  },
+  {
+    "id": "train-0580",
+    "author": "Nina Woźnicka",
+    "instruction": "Przepraszam, czy można stworzyć nowe issue typu task: Przegląd literatury o tutorach AI? 🙂"
+  },
+  {
+    "id": "train-0581",
+    "author": "Patryk Szostak",
+    "instruction": "Załóż nowe zgłoszenie typu task: Harmonogram płatności transz grantu. Przypisz je do mnie, Patryka Szostaka, i dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0582",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o założenie nowego zgłoszenia typu task: Kwestionariusz wywiadu dla dyrektorów szkół. Proszę nadać mu etykietę interviews i dodać je do następnego sprintu."
+  },
+  {
+    "id": "train-0583",
+    "author": "Patryk Szostak",
+    "instruction": "Przenieś BAD-35 do bieżącego sprintu. Plan zarządzania danymi to wymóg grantodawcy."
+  },
+  {
+    "id": "train-0584",
+    "author": "Nina Woźnicka",
+    "instruction": "Przepraszam, czy można przenieść BAD-13 do backlogu? Abstrakt nie zdąży 😔"
+  },
+  {
+    "id": "train-0585",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o przeniesienie BAD-25 do sprintu 6."
+  },
+  {
+    "id": "train-0586",
+    "author": "Patryk Szostak",
+    "instruction": "Wszystkie zadania z labelem grant bez sprintu przenieś do następnego sprintu."
+  },
+  {
+    "id": "train-0587",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o przeniesienie zadania dotyczącego wywiadu grupowego z uczniami klasy 8 do bieżącego sprintu."
+  },
+  {
+    "id": "train-0588",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o przypisanie pani Idze Sobczyk wszystkich nieprzypisanych zadań z etykietą data."
+  },
+  {
+    "id": "train-0589",
+    "author": "Patryk Szostak",
+    "instruction": "Do wszystkich zadań z labelem grant z bieżącego sprintu dodaj komentarz: Proszę o aktualizację statusu przed spotkaniem u rektora."
+  },
+  {
+    "id": "train-0590",
+    "author": "Nina Woźnicka",
+    "instruction": "Przepraszam, czy wszystkim zadaniom z labelem survey można ustawić priorytet High? Ankiety są bardzo ważne dla mojego doktoratu 🙏"
+  },
+  {
+    "id": "train-0591",
+    "author": "Patryk Szostak",
+    "instruction": "Wszystkie zadania Niny Tomczak bez sprintu przepisz na Kazimierza Batora."
+  },
+  {
+    "id": "train-0592",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o zmianę statusu BAD-7 na Done, zalogowanie 2h oraz dodanie komentarza: Plan analiz zatwierdzony przez zespół."
+  },
+  {
+    "id": "train-0593",
+    "author": "Nina Woźnicka",
+    "instruction": "Dziękuję za pomoc 🙂 Przepraszam, proszę zmienić status BAD-8 na Done, zalogować 1h i dodać komentarz: Wszystkie 12 wywiadów przeprowadzone."
+  },
+  {
+    "id": "train-0594",
+    "author": "Patryk Szostak",
+    "instruction": "Zadanie ze spotkaniem u rektora w sprawie przedłużenia grantu przypisz do Barbary Ziółkowskiej, zmień status na In Progress i dodaj komentarz: Spotkanie potwierdzone na wtorek, godz. 12:00."
+  },
+  {
+    "id": "train-0595",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o przeniesienie zadania dotyczącego archiwizacji danych badawczych do następnego sprintu oraz o nadanie mu priorytetu High."
+  },
+  {
+    "id": "train-0596",
+    "author": "Patryk Szostak",
+    "instruction": "Złóż sprawozdanie okresowe w systemie grantodawcy."
+  },
+  {
+    "id": "train-0597",
+    "author": "Nina Woźnicka",
+    "instruction": "Przepraszam, czy można przypisać BAD-28 do pana Bogusława? 🙂"
+  },
+  {
+    "id": "train-0598",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o przypisanie BAD-22 pani Ninie."
+  },
+  {
+    "id": "train-0599",
+    "author": "Nina Woźnicka",
+    "instruction": "Przepraszam, czy możesz policzyć dla mnie test t-Studenta na moich danych? 🙈"
+  },
+  {
+    "id": "train-0600",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o zredagowanie wstępu do artykułu o tutorach AI."
   }
 ]

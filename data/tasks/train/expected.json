@@ -5948,5 +5948,3069 @@
     "category": "refusal",
     "difficulty": "refusal",
     "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0401",
+    "board": "train-fiz",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Wanda Łukasik"
+    }
+  },
+  {
+    "id": "train-0402",
+    "board": "train-fiz",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "Medium"
+    }
+  },
+  {
+    "id": "train-0403",
+    "board": "train-fiz",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 32400
+    }
+  },
+  {
+    "id": "train-0404",
+    "board": "train-fiz",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 5
+    }
+  },
+  {
+    "id": "train-0405",
+    "board": "train-fiz",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "FIZ-29",
+        "FIZ-17",
+        "FIZ-15"
+      ]
+    }
+  },
+  {
+    "id": "train-0406",
+    "board": "train-fiz",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "person",
+      "value": "Tymon Rybak"
+    }
+  },
+  {
+    "id": "train-0407",
+    "board": "train-fiz",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "FIZ-11",
+        "field": "assignee",
+        "value": "Tymon Rybak"
+      }
+    ]
+  },
+  {
+    "id": "train-0408",
+    "board": "train-fiz",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "FIZ-36",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "train-0409",
+    "board": "train-fiz",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "FIZ-9",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "train-0410",
+    "board": "train-fiz",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "FIZ-24",
+        "field": "assignee",
+        "value": "Aleksander Brzeziński"
+      },
+      {
+        "issue": "FIZ-24",
+        "field": "priority",
+        "value": "Highest"
+      }
+    ]
+  },
+  {
+    "id": "train-0411",
+    "board": "train-fiz",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "FIZ-27",
+        "field": "priority",
+        "value": "Medium"
+      },
+      {
+        "issue": "FIZ-27",
+        "field": "assignee",
+        "value": "Klara Piątek"
+      }
+    ]
+  },
+  {
+    "id": "train-0412",
+    "board": "train-fiz",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "FIZ-19",
+        "field": "assignee",
+        "value": "Daniela Costa"
+      },
+      {
+        "issue": "FIZ-19",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0413",
+    "board": "train-fiz",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "FIZ-7",
+        "worklog": {
+          "seconds": 14400,
+          "comment": "fallback z WebGL na canvas"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0414",
+    "board": "train-fiz",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "FIZ-6",
+        "comment": "Klocki z drewna, żelaza i korka, żeby było widać różnicę gęstości."
+      }
+    ]
+  },
+  {
+    "id": "train-0415",
+    "board": "train-fiz",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "FIZ-10",
+        "worklog": {
+          "seconds": 5400,
+          "comment": "tests with the large font"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0416",
+    "board": "train-fiz",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "FIZ-30",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "zapis sesji w backendzie"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0417",
+    "board": "train-fiz",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "FIZ-29",
+        "comment": "Pokażmy pręt mosiężny i szynę kolejową latem!"
+      }
+    ]
+  },
+  {
+    "id": "train-0418",
+    "board": "train-fiz",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Wykres drogi od czasu nie skaluje osi przy dużych prędkościach",
+          "issue_type": "Bug",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0419",
+    "board": "train-fiz",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Symulacja wahadła z regulacją długości nici",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0420",
+    "board": "train-fiz",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Translate the tutor hints to Portuguese",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0421",
+    "board": "train-fiz",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Tutor AI nie widzi jednostki w odpowiedzi ucznia",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": "Wanda Łukasik",
+          "labels": [],
+          "sprint": "FIZ Sprint 14"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0422",
+    "board": "train-fiz",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Symulacja dyfuzji z kolorowym atramentem",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "simulation"
+          ],
+          "sprint": "FIZ Sprint 15"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0423",
+    "board": "train-fiz",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "FIZ-38",
+        "field": "sprint",
+        "value": "FIZ Sprint 14"
+      }
+    ]
+  },
+  {
+    "id": "train-0424",
+    "board": "train-fiz",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "FIZ-9",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0425",
+    "board": "train-fiz",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "FIZ-22",
+        "field": "sprint",
+        "value": "FIZ Sprint 16"
+      }
+    ]
+  },
+  {
+    "id": "train-0426",
+    "board": "train-fiz",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "FIZ-15",
+        "field": "sprint",
+        "value": "FIZ Sprint 14"
+      },
+      {
+        "issue": "FIZ-16",
+        "field": "sprint",
+        "value": "FIZ Sprint 14"
+      },
+      {
+        "issue": "FIZ-17",
+        "field": "sprint",
+        "value": "FIZ Sprint 14"
+      }
+    ]
+  },
+  {
+    "id": "train-0427",
+    "board": "train-fiz",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "FIZ-21",
+        "field": "sprint",
+        "value": "FIZ Sprint 14"
+      }
+    ]
+  },
+  {
+    "id": "train-0428",
+    "board": "train-fiz",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "FIZ-19",
+        "field": "assignee",
+        "value": "Tymon Rybak"
+      },
+      {
+        "issue": "FIZ-27",
+        "field": "assignee",
+        "value": "Tymon Rybak"
+      },
+      {
+        "issue": "FIZ-32",
+        "field": "assignee",
+        "value": "Tymon Rybak"
+      },
+      {
+        "issue": "FIZ-38",
+        "field": "assignee",
+        "value": "Tymon Rybak"
+      }
+    ]
+  },
+  {
+    "id": "train-0429",
+    "board": "train-fiz",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "FIZ-26",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "FIZ-28",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "FIZ-31",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0430",
+    "board": "train-fiz",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "FIZ-10",
+        "comment": "Tested with the school for visually impaired pupils."
+      },
+      {
+        "issue": "FIZ-23",
+        "comment": "Tested with the school for visually impaired pupils."
+      }
+    ]
+  },
+  {
+    "id": "train-0431",
+    "board": "train-fiz",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "FIZ-20",
+        "field": "assignee",
+        "value": "Klara Wysocka"
+      },
+      {
+        "issue": "FIZ-23",
+        "field": "assignee",
+        "value": "Klara Wysocka"
+      },
+      {
+        "issue": "FIZ-31",
+        "field": "assignee",
+        "value": "Klara Wysocka"
+      },
+      {
+        "issue": "FIZ-39",
+        "field": "assignee",
+        "value": "Klara Wysocka"
+      }
+    ]
+  },
+  {
+    "id": "train-0432",
+    "board": "train-fiz",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "FIZ-14",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "FIZ-14",
+        "worklog": {
+          "seconds": 3600,
+          "comment": null
+        }
+      },
+      {
+        "issue": "FIZ-14",
+        "comment": "requestAnimationFrame zamiast setInterval"
+      }
+    ]
+  },
+  {
+    "id": "train-0433",
+    "board": "train-fiz",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "FIZ-6",
+        "field": "status",
+        "value": "In review"
+      },
+      {
+        "issue": "FIZ-6",
+        "field": "assignee",
+        "value": "Aleksander Brzeziński"
+      },
+      {
+        "issue": "FIZ-6",
+        "comment": "Proszę sprawdzić klocek z korka."
+      }
+    ]
+  },
+  {
+    "id": "train-0434",
+    "board": "train-fiz",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "FIZ-12",
+        "field": "assignee",
+        "value": "Tymon Rybak"
+      },
+      {
+        "issue": "FIZ-12",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "FIZ-12",
+        "worklog": {
+          "seconds": 1800,
+          "comment": "analysis"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0435",
+    "board": "train-fiz",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "FIZ-36",
+        "field": "sprint",
+        "value": "FIZ Sprint 15"
+      },
+      {
+        "issue": "FIZ-36",
+        "field": "assignee",
+        "value": "Klara Wysocka"
+      }
+    ]
+  },
+  {
+    "id": "train-0436",
+    "board": "train-fiz",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0437",
+    "board": "train-fiz",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0438",
+    "board": "train-fiz",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0439",
+    "board": "train-fiz",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0440",
+    "board": "train-fiz",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0441",
+    "board": "train-nau",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Roksana Bednarek"
+    }
+  },
+  {
+    "id": "train-0442",
+    "board": "train-nau",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "In review"
+    }
+  },
+  {
+    "id": "train-0443",
+    "board": "train-nau",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 21600
+    }
+  },
+  {
+    "id": "train-0444",
+    "board": "train-nau",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 5
+    }
+  },
+  {
+    "id": "train-0445",
+    "board": "train-nau",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "NAU-18",
+        "NAU-17"
+      ]
+    }
+  },
+  {
+    "id": "train-0446",
+    "board": "train-nau",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "value",
+      "value": "Highest"
+    }
+  },
+  {
+    "id": "train-0447",
+    "board": "train-nau",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "NAU-33",
+        "field": "assignee",
+        "value": "Fryderyk Malec"
+      }
+    ]
+  },
+  {
+    "id": "train-0448",
+    "board": "train-nau",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "NAU-19",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "train-0449",
+    "board": "train-nau",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "NAU-12",
+        "field": "status",
+        "value": "In Progress"
+      }
+    ]
+  },
+  {
+    "id": "train-0450",
+    "board": "train-nau",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NAU-24",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "NAU-24",
+        "field": "assignee",
+        "value": "Witold Szymczak"
+      }
+    ]
+  },
+  {
+    "id": "train-0451",
+    "board": "train-nau",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NAU-37",
+        "field": "assignee",
+        "value": "Bogumiła Sarnecka"
+      },
+      {
+        "issue": "NAU-37",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "train-0452",
+    "board": "train-nau",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NAU-39",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "NAU-39",
+        "field": "assignee",
+        "value": "Oliwia Jaworska"
+      }
+    ]
+  },
+  {
+    "id": "train-0453",
+    "board": "train-nau",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "NAU-6",
+        "worklog": {
+          "seconds": 10800,
+          "comment": "filtr klas po szkole"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0454",
+    "board": "train-nau",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "NAU-21",
+        "comment": "Uczniowie ze zwolnieniem lekarskim nie powinni obniżać średniej."
+      }
+    ]
+  },
+  {
+    "id": "train-0455",
+    "board": "train-nau",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "NAU-28",
+        "comment": "Dyrektorzy chcą widzieć klasy 7 i 8 osobno."
+      }
+    ]
+  },
+  {
+    "id": "train-0456",
+    "board": "train-nau",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NAU-36",
+        "worklog": {
+          "seconds": 3600,
+          "comment": "cron o 18:00"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0457",
+    "board": "train-nau",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NAU-34",
+        "comment": "Nauczyciele chcą format A5."
+      }
+    ]
+  },
+  {
+    "id": "train-0458",
+    "board": "train-nau",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Raport klasy nie liczy zadań oddanych po terminie",
+          "issue_type": "Bug",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0459",
+    "board": "train-nau",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Notatka nauczyciela do całej klasy po lekcji",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0460",
+    "board": "train-nau",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Badanie z nauczycielami, jak oceniają prace domowe",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0461",
+    "board": "train-nau",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Indeks na tabeli wyników uczniów",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Fryderyk Malec",
+          "labels": [],
+          "sprint": "NAU Sprint 9"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0462",
+    "board": "train-nau",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Sprawdzian z działu energia",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "tests"
+          ],
+          "sprint": "NAU Sprint 10"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0463",
+    "board": "train-nau",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "NAU-22",
+        "field": "sprint",
+        "value": "NAU Sprint 9"
+      }
+    ]
+  },
+  {
+    "id": "train-0464",
+    "board": "train-nau",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "NAU-11",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0465",
+    "board": "train-nau",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "NAU-26",
+        "field": "sprint",
+        "value": "NAU Sprint 11"
+      }
+    ]
+  },
+  {
+    "id": "train-0466",
+    "board": "train-nau",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NAU-15",
+        "field": "sprint",
+        "value": "NAU Sprint 9"
+      },
+      {
+        "issue": "NAU-16",
+        "field": "sprint",
+        "value": "NAU Sprint 9"
+      },
+      {
+        "issue": "NAU-17",
+        "field": "sprint",
+        "value": "NAU Sprint 9"
+      },
+      {
+        "issue": "NAU-18",
+        "field": "sprint",
+        "value": "NAU Sprint 9"
+      },
+      {
+        "issue": "NAU-32",
+        "field": "sprint",
+        "value": "NAU Sprint 9"
+      }
+    ]
+  },
+  {
+    "id": "train-0467",
+    "board": "train-nau",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NAU-31",
+        "field": "sprint",
+        "value": "NAU Sprint 10"
+      }
+    ]
+  },
+  {
+    "id": "train-0468",
+    "board": "train-nau",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NAU-19",
+        "field": "assignee",
+        "value": "Fryderyk Malec"
+      },
+      {
+        "issue": "NAU-22",
+        "field": "assignee",
+        "value": "Fryderyk Malec"
+      },
+      {
+        "issue": "NAU-24",
+        "field": "assignee",
+        "value": "Fryderyk Malec"
+      },
+      {
+        "issue": "NAU-30",
+        "field": "assignee",
+        "value": "Fryderyk Malec"
+      },
+      {
+        "issue": "NAU-33",
+        "field": "assignee",
+        "value": "Fryderyk Malec"
+      },
+      {
+        "issue": "NAU-39",
+        "field": "assignee",
+        "value": "Fryderyk Malec"
+      },
+      {
+        "issue": "NAU-40",
+        "field": "assignee",
+        "value": "Fryderyk Malec"
+      }
+    ]
+  },
+  {
+    "id": "train-0469",
+    "board": "train-nau",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NAU-13",
+        "comment": "Oceny muszą zgadzać się z dziennikiem elektronicznym."
+      },
+      {
+        "issue": "NAU-22",
+        "comment": "Oceny muszą zgadzać się z dziennikiem elektronicznym."
+      },
+      {
+        "issue": "NAU-40",
+        "comment": "Oceny muszą zgadzać się z dziennikiem elektronicznym."
+      }
+    ]
+  },
+  {
+    "id": "train-0470",
+    "board": "train-nau",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NAU-7",
+        "field": "labels",
+        "value": [
+          "homework",
+          "teachers"
+        ]
+      },
+      {
+        "issue": "NAU-9",
+        "field": "labels",
+        "value": [
+          "homework",
+          "teachers"
+        ]
+      },
+      {
+        "issue": "NAU-10",
+        "field": "labels",
+        "value": [
+          "homework",
+          "teachers"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "train-0471",
+    "board": "train-nau",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NAU-25",
+        "field": "assignee",
+        "value": "Oliwia Jaworska"
+      },
+      {
+        "issue": "NAU-28",
+        "field": "assignee",
+        "value": "Oliwia Jaworska"
+      }
+    ]
+  },
+  {
+    "id": "train-0472",
+    "board": "train-nau",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NAU-8",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "NAU-8",
+        "worklog": {
+          "seconds": 7200,
+          "comment": null
+        }
+      },
+      {
+        "issue": "NAU-8",
+        "comment": "PDF generowany po stronie serwera."
+      }
+    ]
+  },
+  {
+    "id": "train-0473",
+    "board": "train-nau",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NAU-9",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "NAU-9",
+        "worklog": {
+          "seconds": 1800,
+          "comment": null
+        }
+      },
+      {
+        "issue": "NAU-9",
+        "comment": "Lista działa, sprawdziłam z klasą 8a."
+      }
+    ]
+  },
+  {
+    "id": "train-0474",
+    "board": "train-nau",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NAU-25",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "NAU-25",
+        "field": "sprint",
+        "value": "NAU Sprint 9"
+      },
+      {
+        "issue": "NAU-25",
+        "comment": "Zaczynam od działu siły."
+      }
+    ]
+  },
+  {
+    "id": "train-0475",
+    "board": "train-nau",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NAU-23",
+        "field": "sprint",
+        "value": "NAU Sprint 9"
+      },
+      {
+        "issue": "NAU-23",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0476",
+    "board": "train-nau",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0477",
+    "board": "train-nau",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0478",
+    "board": "train-nau",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0479",
+    "board": "train-nau",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0480",
+    "board": "train-nau",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0481",
+    "board": "train-ml",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Arash Karimi"
+    }
+  },
+  {
+    "id": "train-0482",
+    "board": "train-ml",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "Cancelled"
+    }
+  },
+  {
+    "id": "train-0483",
+    "board": "train-ml",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 43200
+    }
+  },
+  {
+    "id": "train-0484",
+    "board": "train-ml",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 4
+    }
+  },
+  {
+    "id": "train-0485",
+    "board": "train-ml",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "ML-35",
+        "ML-28",
+        "ML-21"
+      ]
+    }
+  },
+  {
+    "id": "train-0486",
+    "board": "train-ml",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "value",
+      "value": "High"
+    }
+  },
+  {
+    "id": "train-0487",
+    "board": "train-ml",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "ML-34",
+        "field": "assignee",
+        "value": "Tobiasz Mrozek"
+      }
+    ]
+  },
+  {
+    "id": "train-0488",
+    "board": "train-ml",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "ML-27",
+        "field": "priority",
+        "value": "Low"
+      }
+    ]
+  },
+  {
+    "id": "train-0489",
+    "board": "train-ml",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "ML-10",
+        "field": "status",
+        "value": "In Progress"
+      }
+    ]
+  },
+  {
+    "id": "train-0490",
+    "board": "train-ml",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ML-20",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "ML-20",
+        "field": "assignee",
+        "value": "Marianna Kołodziej"
+      }
+    ]
+  },
+  {
+    "id": "train-0491",
+    "board": "train-ml",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ML-27",
+        "field": "assignee",
+        "value": "Ignacy Renifer"
+      }
+    ]
+  },
+  {
+    "id": "train-0492",
+    "board": "train-ml",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ML-21",
+        "field": "assignee",
+        "value": "Arash Karimi"
+      },
+      {
+        "issue": "ML-21",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0493",
+    "board": "train-ml",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "ML-36",
+        "worklog": {
+          "seconds": 14400,
+          "comment": "ablation bez połowy we wzorze"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0494",
+    "board": "train-ml",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "ML-13",
+        "comment": "Rektor podobno lubi kolor zielony, zróbmy zielony motyw na demo."
+      }
+    ]
+  },
+  {
+    "id": "train-0495",
+    "board": "train-ml",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "ML-5",
+        "worklog": {
+          "seconds": 9000,
+          "comment": "test jednostek w 200 odpowiedziach"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0496",
+    "board": "train-ml",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ML-34",
+        "worklog": {
+          "seconds": 3600,
+          "comment": "analiza logów zapytań"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0497",
+    "board": "train-ml",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ML-12",
+        "comment": "Proszę dodać przykłady dla podpowiedzi."
+      }
+    ]
+  },
+  {
+    "id": "train-0498",
+    "board": "train-ml",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Ewaluacja tutora na zadaniach z optyki",
+          "issue_type": "Task",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0499",
+    "board": "train-ml",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Tutor opowiada żart z fizyki po trzech poprawnych odpowiedziach",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0500",
+    "board": "train-ml",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Literature review of AI tutors in primary schools",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0501",
+    "board": "train-ml",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Tutor podaje prędkość światła w km/h zamiast km/s",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": "Marianna Kołodziej",
+          "labels": [],
+          "sprint": "ML Sprint 21"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0502",
+    "board": "train-ml",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Ablation study of the hint prompt",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "evaluation"
+          ],
+          "sprint": "ML Sprint 22"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0503",
+    "board": "train-ml",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "ML-20",
+        "field": "sprint",
+        "value": "ML Sprint 21"
+      }
+    ]
+  },
+  {
+    "id": "train-0504",
+    "board": "train-ml",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "ML-12",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0505",
+    "board": "train-ml",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "ML-21",
+        "field": "sprint",
+        "value": "ML Sprint 23"
+      }
+    ]
+  },
+  {
+    "id": "train-0506",
+    "board": "train-ml",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ML-15",
+        "field": "sprint",
+        "value": "ML Sprint 21"
+      },
+      {
+        "issue": "ML-16",
+        "field": "sprint",
+        "value": "ML Sprint 21"
+      }
+    ]
+  },
+  {
+    "id": "train-0507",
+    "board": "train-ml",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ML-33",
+        "field": "sprint",
+        "value": "ML Sprint 21"
+      }
+    ]
+  },
+  {
+    "id": "train-0508",
+    "board": "train-ml",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ML-11",
+        "field": "assignee",
+        "value": "Lena Olszewska"
+      },
+      {
+        "issue": "ML-18",
+        "field": "assignee",
+        "value": "Lena Olszewska"
+      },
+      {
+        "issue": "ML-20",
+        "field": "assignee",
+        "value": "Lena Olszewska"
+      },
+      {
+        "issue": "ML-24",
+        "field": "assignee",
+        "value": "Lena Olszewska"
+      },
+      {
+        "issue": "ML-29",
+        "field": "assignee",
+        "value": "Lena Olszewska"
+      },
+      {
+        "issue": "ML-31",
+        "field": "assignee",
+        "value": "Lena Olszewska"
+      }
+    ]
+  },
+  {
+    "id": "train-0509",
+    "board": "train-ml",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ML-19",
+        "comment": "Proszę sprawdzić zgodność z RODO przed publikacją."
+      },
+      {
+        "issue": "ML-37",
+        "comment": "Proszę sprawdzić zgodność z RODO przed publikacją."
+      }
+    ]
+  },
+  {
+    "id": "train-0510",
+    "board": "train-ml",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ML-8",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "ML-25",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "ML-34",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0511",
+    "board": "train-ml",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ML-28",
+        "field": "assignee",
+        "value": "Tobiasz Mrozek"
+      },
+      {
+        "issue": "ML-30",
+        "field": "assignee",
+        "value": "Tobiasz Mrozek"
+      },
+      {
+        "issue": "ML-37",
+        "field": "assignee",
+        "value": "Tobiasz Mrozek"
+      }
+    ]
+  },
+  {
+    "id": "train-0512",
+    "board": "train-ml",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ML-36",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "ML-36",
+        "worklog": {
+          "seconds": 3600,
+          "comment": null
+        }
+      },
+      {
+        "issue": "ML-36",
+        "comment": "wzór Ek = mv²/2 poprawiony we wszystkich promptach."
+      }
+    ]
+  },
+  {
+    "id": "train-0513",
+    "board": "train-ml",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ML-14",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "ML-14",
+        "field": "assignee",
+        "value": "Tobiasz Mrozek"
+      },
+      {
+        "issue": "ML-14",
+        "comment": "cel to odpowiedź poniżej 3 sekund."
+      }
+    ]
+  },
+  {
+    "id": "train-0514",
+    "board": "train-ml",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ML-13",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "ML-13",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "próba generalna"
+        }
+      },
+      {
+        "issue": "ML-13",
+        "comment": "Rektor podobno woli demo bez slajdów."
+      }
+    ]
+  },
+  {
+    "id": "train-0515",
+    "board": "train-ml",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ML-25",
+        "field": "sprint",
+        "value": "ML Sprint 22"
+      },
+      {
+        "issue": "ML-25",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0516",
+    "board": "train-ml",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0517",
+    "board": "train-ml",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0518",
+    "board": "train-ml",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0519",
+    "board": "train-ml",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0520",
+    "board": "train-ml",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0521",
+    "board": "train-szk",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Marzena Florczak"
+    }
+  },
+  {
+    "id": "train-0522",
+    "board": "train-szk",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "Backlog"
+    }
+  },
+  {
+    "id": "train-0523",
+    "board": "train-szk",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 18000
+    }
+  },
+  {
+    "id": "train-0524",
+    "board": "train-szk",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 5
+    }
+  },
+  {
+    "id": "train-0525",
+    "board": "train-szk",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "SZK-40",
+        "SZK-34",
+        "SZK-27",
+        "SZK-23",
+        "SZK-17",
+        "SZK-7"
+      ]
+    }
+  },
+  {
+    "id": "train-0526",
+    "board": "train-szk",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "person",
+      "value": "Jacek Kacprzyk"
+    }
+  },
+  {
+    "id": "train-0527",
+    "board": "train-szk",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SZK-19",
+        "field": "assignee",
+        "value": "Marzena Cichocka"
+      }
+    ]
+  },
+  {
+    "id": "train-0528",
+    "board": "train-szk",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SZK-31",
+        "field": "priority",
+        "value": "Highest"
+      }
+    ]
+  },
+  {
+    "id": "train-0529",
+    "board": "train-szk",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SZK-9",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "train-0530",
+    "board": "train-szk",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SZK-21",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "SZK-21",
+        "field": "assignee",
+        "value": "Jacek Kacprzyk"
+      }
+    ]
+  },
+  {
+    "id": "train-0531",
+    "board": "train-szk",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SZK-40",
+        "field": "priority",
+        "value": "Medium"
+      },
+      {
+        "issue": "SZK-40",
+        "field": "assignee",
+        "value": "Zdzisław Pośpiech"
+      }
+    ]
+  },
+  {
+    "id": "train-0532",
+    "board": "train-szk",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SZK-33",
+        "field": "assignee",
+        "value": "Robert Gawroński"
+      },
+      {
+        "issue": "SZK-33",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0533",
+    "board": "train-szk",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SZK-5",
+        "worklog": {
+          "seconds": 21600,
+          "comment": "drugi dzień szkolenia w Radomiu"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0534",
+    "board": "train-szk",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SZK-11",
+        "comment": "Rektor przekazał listę osobiście, szkoły czekają na telefon."
+      }
+    ]
+  },
+  {
+    "id": "train-0535",
+    "board": "train-szk",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SZK-12",
+        "comment": "Kuratorium prosi o prezentację projektu do 10 grudnia."
+      }
+    ]
+  },
+  {
+    "id": "train-0536",
+    "board": "train-szk",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SZK-39",
+        "worklog": {
+          "seconds": 3600,
+          "comment": "zestawienie kilometrówek"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0537",
+    "board": "train-szk",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SZK-29",
+        "comment": "Redaktor to mój znajomy, nagranie w czwartek o 10:00."
+      }
+    ]
+  },
+  {
+    "id": "train-0538",
+    "board": "train-szk",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Spotkanie z burmistrzem Radomia w sprawie wszystkich szkół w mieście",
+          "issue_type": "Task",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0539",
+    "board": "train-szk",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Lista szkół z powiatu płockiego do trzeciego etapu",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0540",
+    "board": "train-szk",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Tablety w SP 12 w Radomiu tracą Wi-Fi po aktualizacji",
+          "issue_type": "Bug",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0541",
+    "board": "train-szk",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Umowa z gminą Pułtusk na wszystkie szkoły",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Marzena Cichocka",
+          "labels": [],
+          "sprint": "SZK Sprint 6"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0542",
+    "board": "train-szk",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Szkolenie nauczycieli w SP 2 w Ciechanowie",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "training"
+          ],
+          "sprint": "SZK Sprint 7"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0543",
+    "board": "train-szk",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SZK-19",
+        "field": "sprint",
+        "value": "SZK Sprint 6"
+      }
+    ]
+  },
+  {
+    "id": "train-0544",
+    "board": "train-szk",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SZK-14",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0545",
+    "board": "train-szk",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SZK-32",
+        "field": "sprint",
+        "value": "SZK Sprint 8"
+      }
+    ]
+  },
+  {
+    "id": "train-0546",
+    "board": "train-szk",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SZK-19",
+        "field": "sprint",
+        "value": "SZK Sprint 7"
+      },
+      {
+        "issue": "SZK-35",
+        "field": "sprint",
+        "value": "SZK Sprint 7"
+      }
+    ]
+  },
+  {
+    "id": "train-0547",
+    "board": "train-szk",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SZK-31",
+        "field": "sprint",
+        "value": "SZK Sprint 6"
+      }
+    ]
+  },
+  {
+    "id": "train-0548",
+    "board": "train-szk",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SZK-20",
+        "field": "assignee",
+        "value": "Jacek Kacprzyk"
+      },
+      {
+        "issue": "SZK-21",
+        "field": "assignee",
+        "value": "Jacek Kacprzyk"
+      },
+      {
+        "issue": "SZK-26",
+        "field": "assignee",
+        "value": "Jacek Kacprzyk"
+      }
+    ]
+  },
+  {
+    "id": "train-0549",
+    "board": "train-szk",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SZK-18",
+        "comment": "Termin zbierania zgód to 15 grudnia."
+      },
+      {
+        "issue": "SZK-31",
+        "comment": "Termin zbierania zgód to 15 grudnia."
+      }
+    ]
+  },
+  {
+    "id": "train-0550",
+    "board": "train-szk",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SZK-27",
+        "field": "priority",
+        "value": "Medium"
+      },
+      {
+        "issue": "SZK-40",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "train-0551",
+    "board": "train-szk",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SZK-24",
+        "field": "assignee",
+        "value": "Tamara Jurek"
+      },
+      {
+        "issue": "SZK-34",
+        "field": "assignee",
+        "value": "Tamara Jurek"
+      }
+    ]
+  },
+  {
+    "id": "train-0552",
+    "board": "train-szk",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SZK-7",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "SZK-7",
+        "worklog": {
+          "seconds": 10800,
+          "comment": null
+        }
+      },
+      {
+        "issue": "SZK-7",
+        "comment": "30 tabletów w szkole, protokół podpisany."
+      }
+    ]
+  },
+  {
+    "id": "train-0553",
+    "board": "train-szk",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SZK-13",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "SZK-13",
+        "field": "assignee",
+        "value": "Zdzisław Pośpiech"
+      },
+      {
+        "issue": "SZK-13",
+        "comment": "Nauczyciele z SP 7 w Płocku dostali nowe hasła."
+      }
+    ]
+  },
+  {
+    "id": "train-0554",
+    "board": "train-szk",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SZK-19",
+        "field": "assignee",
+        "value": "Jacek Kacprzyk"
+      },
+      {
+        "issue": "SZK-19",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "SZK-19",
+        "comment": "Rozmawiałem z dyrektorką, szkoła zostaje w pilotażu."
+      }
+    ]
+  },
+  {
+    "id": "train-0555",
+    "board": "train-szk",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SZK-32",
+        "field": "sprint",
+        "value": "SZK Sprint 6"
+      },
+      {
+        "issue": "SZK-32",
+        "field": "assignee",
+        "value": "Robert Gawroński"
+      }
+    ]
+  },
+  {
+    "id": "train-0556",
+    "board": "train-szk",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0557",
+    "board": "train-szk",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0558",
+    "board": "train-szk",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0559",
+    "board": "train-szk",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0560",
+    "board": "train-szk",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0561",
+    "board": "train-bad",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Barbara Ziółkowska"
+    }
+  },
+  {
+    "id": "train-0562",
+    "board": "train-bad",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "In Progress"
+    }
+  },
+  {
+    "id": "train-0563",
+    "board": "train-bad",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 36000
+    }
+  },
+  {
+    "id": "train-0564",
+    "board": "train-bad",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 4
+    }
+  },
+  {
+    "id": "train-0565",
+    "board": "train-bad",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "BAD-15"
+      ]
+    }
+  },
+  {
+    "id": "train-0566",
+    "board": "train-bad",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "person",
+      "value": "Kazimierz Bator"
+    }
+  },
+  {
+    "id": "train-0567",
+    "board": "train-bad",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "BAD-25",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0568",
+    "board": "train-bad",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "BAD-21",
+        "field": "assignee",
+        "value": "Iga Sobczyk"
+      }
+    ]
+  },
+  {
+    "id": "train-0569",
+    "board": "train-bad",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "BAD-12",
+        "field": "status",
+        "value": "In Progress"
+      }
+    ]
+  },
+  {
+    "id": "train-0570",
+    "board": "train-bad",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BAD-35",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "BAD-35",
+        "field": "assignee",
+        "value": "Nina Tomczak"
+      }
+    ]
+  },
+  {
+    "id": "train-0571",
+    "board": "train-bad",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BAD-30",
+        "field": "assignee",
+        "value": "Nina Woźnicka"
+      },
+      {
+        "issue": "BAD-30",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0572",
+    "board": "train-bad",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BAD-31",
+        "field": "assignee",
+        "value": "Nina Woźnicka"
+      },
+      {
+        "issue": "BAD-31",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "train-0573",
+    "board": "train-bad",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "BAD-7",
+        "worklog": {
+          "seconds": 10800,
+          "comment": "weryfikacja założeń modelu mieszanego"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0574",
+    "board": "train-bad",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "BAD-11",
+        "comment": "Kamień milowy nr 1 zatwierdzony przez opiekuna projektu."
+      }
+    ]
+  },
+  {
+    "id": "train-0575",
+    "board": "train-bad",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "BAD-12",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "transkrypcja wywiadów 1-3"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0576",
+    "board": "train-bad",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BAD-32",
+        "worklog": {
+          "seconds": 5400,
+          "comment": "zestawienie biletów i faktur"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0577",
+    "board": "train-bad",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BAD-25",
+        "comment": "Alfę Cronbacha należy policzyć osobno dla klas 7 i 8."
+      }
+    ]
+  },
+  {
+    "id": "train-0578",
+    "board": "train-bad",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Sprawozdanie końcowe z pierwszego roku grantu",
+          "issue_type": "Task",
+          "priority": "Highest",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0579",
+    "board": "train-bad",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Analiza wielkości efektu w grupie eksperymentalnej",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0580",
+    "board": "train-bad",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Przegląd literatury o tutorach AI",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0581",
+    "board": "train-bad",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Harmonogram płatności transz grantu",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Patryk Szostak",
+          "labels": [],
+          "sprint": "BAD Sprint 4"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0582",
+    "board": "train-bad",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Kwestionariusz wywiadu dla dyrektorów szkół",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "interviews"
+          ],
+          "sprint": "BAD Sprint 5"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0583",
+    "board": "train-bad",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "BAD-35",
+        "field": "sprint",
+        "value": "BAD Sprint 4"
+      }
+    ]
+  },
+  {
+    "id": "train-0584",
+    "board": "train-bad",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "BAD-13",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0585",
+    "board": "train-bad",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "BAD-25",
+        "field": "sprint",
+        "value": "BAD Sprint 6"
+      }
+    ]
+  },
+  {
+    "id": "train-0586",
+    "board": "train-bad",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BAD-18",
+        "field": "sprint",
+        "value": "BAD Sprint 5"
+      },
+      {
+        "issue": "BAD-19",
+        "field": "sprint",
+        "value": "BAD Sprint 5"
+      },
+      {
+        "issue": "BAD-24",
+        "field": "sprint",
+        "value": "BAD Sprint 5"
+      },
+      {
+        "issue": "BAD-27",
+        "field": "sprint",
+        "value": "BAD Sprint 5"
+      },
+      {
+        "issue": "BAD-35",
+        "field": "sprint",
+        "value": "BAD Sprint 5"
+      }
+    ]
+  },
+  {
+    "id": "train-0587",
+    "board": "train-bad",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BAD-37",
+        "field": "sprint",
+        "value": "BAD Sprint 4"
+      }
+    ]
+  },
+  {
+    "id": "train-0588",
+    "board": "train-bad",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BAD-21",
+        "field": "assignee",
+        "value": "Iga Sobczyk"
+      },
+      {
+        "issue": "BAD-36",
+        "field": "assignee",
+        "value": "Iga Sobczyk"
+      }
+    ]
+  },
+  {
+    "id": "train-0589",
+    "board": "train-bad",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BAD-4",
+        "comment": "Proszę o aktualizację statusu przed spotkaniem u rektora."
+      },
+      {
+        "issue": "BAD-10",
+        "comment": "Proszę o aktualizację statusu przed spotkaniem u rektora."
+      },
+      {
+        "issue": "BAD-11",
+        "comment": "Proszę o aktualizację statusu przed spotkaniem u rektora."
+      },
+      {
+        "issue": "BAD-32",
+        "comment": "Proszę o aktualizację statusu przed spotkaniem u rektora."
+      }
+    ]
+  },
+  {
+    "id": "train-0590",
+    "board": "train-bad",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BAD-5",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "BAD-19",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "BAD-22",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "BAD-23",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0591",
+    "board": "train-bad",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BAD-20",
+        "field": "assignee",
+        "value": "Kazimierz Bator"
+      },
+      {
+        "issue": "BAD-23",
+        "field": "assignee",
+        "value": "Kazimierz Bator"
+      },
+      {
+        "issue": "BAD-26",
+        "field": "assignee",
+        "value": "Kazimierz Bator"
+      },
+      {
+        "issue": "BAD-34",
+        "field": "assignee",
+        "value": "Kazimierz Bator"
+      },
+      {
+        "issue": "BAD-37",
+        "field": "assignee",
+        "value": "Kazimierz Bator"
+      }
+    ]
+  },
+  {
+    "id": "train-0592",
+    "board": "train-bad",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BAD-7",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "BAD-7",
+        "worklog": {
+          "seconds": 7200,
+          "comment": null
+        }
+      },
+      {
+        "issue": "BAD-7",
+        "comment": "Plan analiz zatwierdzony przez zespół."
+      }
+    ]
+  },
+  {
+    "id": "train-0593",
+    "board": "train-bad",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BAD-8",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "BAD-8",
+        "worklog": {
+          "seconds": 3600,
+          "comment": null
+        }
+      },
+      {
+        "issue": "BAD-8",
+        "comment": "Wszystkie 12 wywiadów przeprowadzone."
+      }
+    ]
+  },
+  {
+    "id": "train-0594",
+    "board": "train-bad",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BAD-10",
+        "field": "assignee",
+        "value": "Barbara Ziółkowska"
+      },
+      {
+        "issue": "BAD-10",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "BAD-10",
+        "comment": "Spotkanie potwierdzone na wtorek, godz. 12:00."
+      }
+    ]
+  },
+  {
+    "id": "train-0595",
+    "board": "train-bad",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "BAD-21",
+        "field": "sprint",
+        "value": "BAD Sprint 5"
+      },
+      {
+        "issue": "BAD-21",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0596",
+    "board": "train-bad",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0597",
+    "board": "train-bad",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0598",
+    "board": "train-bad",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0599",
+    "board": "train-bad",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0600",
+    "board": "train-bad",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
   }
 ]

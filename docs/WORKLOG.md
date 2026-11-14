@@ -592,3 +592,10 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - 117 tasks find the project with `jira_get_agile_boards` first. 21 tasks search again after an empty result.
 - One task searches again with a label and a status after an empty text search.
 - The checks found one wrong expected number before the files were written.
+
+### Train tasks of fizyka.online
+
+- Add 200 train tasks of fizyka.online (`train-0401` to `train-0600`). The earlier tasks do not change.
+- Each board has the same mix of types and categories as the other companies.
+- 117 tasks find the project with `jira_get_agile_boards` first. 18 tasks search again after an empty result.
+- All tasks passed the checks at the first build.
