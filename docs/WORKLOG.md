@@ -617,3 +617,12 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
   - 585 tasks find the project with `jira_get_agile_boards` first
   - 100 tasks search again after an empty result
 - An extra check compared the keys in the answers of the 5 `ambiguous` refusals that use a search. All keys agree with the search results.
+
+### Validation tasks of Housi
+
+- Add 120 validation tasks (`validation-001` to `validation-120`) in `data/tasks/validation/`: `queries.json`, `solutions.json`, `expected.json` and `personas.json`.
+- Each of the 3 validation boards has 40 tasks with the same mix as the train boards: 15 `easy`, 20 `multi_step` and 5 `refusal`.
+- 71 tasks find the project with `jira_get_agile_boards` first. 14 tasks search again after an empty result.
+- No validation instruction occurs in the train set.
+- The same temporary script checked each task. All tasks passed at the first build.
+- The team reviews the train set and the validation set later (`idm-pro-033` to `idm-pro-036`).

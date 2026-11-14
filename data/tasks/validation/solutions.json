@@ -1,0 +1,2946 @@
+[
+  {
+    "id": "validation-001",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "USR-7",
+          "fields": "summary,assignee"
+        }
+      }
+    ],
+    "answer": "USR-7 ma przypisaną osobę: Marlena Sobieraj."
+  },
+  {
+    "id": "validation-002",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "USR-10",
+          "fields": "status"
+        }
+      }
+    ],
+    "answer": "USR-10 ma status Backlog."
+  },
+  {
+    "id": "validation-003",
+    "calls": [
+      {
+        "name": "jira_get_worklog",
+        "arguments": {
+          "issue_key": "USR-1"
+        }
+      }
+    ],
+    "answer": "Na USR-1 zalogowano łącznie 8h."
+  },
+  {
+    "id": "validation-004",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = USR AND labels = emergency AND assignee is EMPTY",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "Jest 1 takie zadanie."
+  },
+  {
+    "id": "validation-005",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = USR AND type = Bug AND labels = media AND status in (Backlog, \"In Progress\", \"In review\")",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "Otwarte bugi z labelem media: USR-39, USR-27 i USR-7."
+  },
+  {
+    "id": "validation-006",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = USR AND summary ~ \"lokatorów\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = USR AND summary ~ \"lokali\"",
+          "fields": "summary,priority",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "USR-18 ma priorytet Highest."
+  },
+  {
+    "id": "validation-007",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Olaf",
+          "project_key": "USR"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "USR-12",
+          "fields": "{\"assignee\": \"Olaf Ziemba\"}"
+        }
+      }
+    ],
+    "answer": "USR-12 jest przypisane do Olafa Ziemby."
+  },
+  {
+    "id": "validation-008",
+    "calls": [
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "USR-34",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "USR-34 ma teraz priorytet High."
+  },
+  {
+    "id": "validation-009",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "USR-9"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "USR-9",
+          "transition_id": "51"
+        }
+      }
+    ],
+    "answer": "USR-9 ma status Done."
+  },
+  {
+    "id": "validation-010",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = USR AND summary ~ \"seniorów\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Kordian",
+          "project_key": "USR"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "USR-26",
+          "fields": "{\"priority\": {\"name\": \"High\"}, \"assignee\": \"Kordian Siwiec\"}"
+        }
+      }
+    ],
+    "answer": "USR-26 ma priorytet High i jest przypisane do Kordiana Siwca."
+  },
+  {
+    "id": "validation-011",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = USR AND summary ~ \"obroconymi\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = USR AND summary ~ \"obrócone\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Kordian",
+          "project_key": "USR"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "USR-27",
+          "fields": "{\"priority\": {\"name\": \"Medium\"}, \"assignee\": \"Kordian Siwiec\"}"
+        }
+      }
+    ],
+    "answer": "USR-27 ma priorytet Medium i jest przypisane do Kordiana Siwca."
+  },
+  {
+    "id": "validation-012",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = USR AND summary ~ \"ucięty\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Dagmara",
+          "project_key": "USR"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "USR-40",
+          "fields": "{\"priority\": {\"name\": \"Medium\"}, \"assignee\": \"Dagmara Kos\"}"
+        }
+      }
+    ],
+    "answer": "USR-40 ma priorytet Medium i jest przypisane do Dagmary Kos."
+  },
+  {
+    "id": "validation-013",
+    "calls": [
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "USR-7",
+          "time_spent": "2h",
+          "comment": "retry uploadu przy slabym zasiegu"
+        }
+      }
+    ],
+    "answer": "Zalogowano 2h na USR-7."
+  },
+  {
+    "id": "validation-014",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "USR-14",
+          "body": "Od stycznia awarie zgłasza średnio 40 mieszkańców miesięcznie."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do USR-14."
+  },
+  {
+    "id": "validation-015",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "USR-21",
+          "body": "Mieszkańcy z ul. Lipowej proszą o komunikat dzień wcześniej."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do USR-21."
+  },
+  {
+    "id": "validation-016",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = USR AND summary ~ \"Statystyka\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "USR-36",
+          "time_spent": "1h",
+          "comment": "zestawienie z października"
+        }
+      }
+    ],
+    "answer": "Zalogowano 1h na USR-36."
+  },
+  {
+    "id": "validation-017",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = USR AND summary ~ \"hałasu\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = USR AND summary ~ \"hałas\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "USR-29",
+          "body": "Mieszkańcy dzwonią z tym codziennie."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do USR-29."
+  },
+  {
+    "id": "validation-018",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "USR",
+          "summary": "Zgłoszenie usterki przez SMS",
+          "issue_type": "Story",
+          "additional_fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Utworzono story USR-41 z priorytetem High."
+  },
+  {
+    "id": "validation-019",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "USR",
+          "summary": "Push o statusie przychodzi dwa razy na Androidzie",
+          "issue_type": "Bug"
+        }
+      }
+    ],
+    "answer": "Utworzono bug USR-41."
+  },
+  {
+    "id": "validation-020",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "USR",
+          "summary": "Papierowa instrukcja zgłaszania usterek dla seniorów",
+          "issue_type": "Task"
+        }
+      }
+    ],
+    "answer": "Utworzono task USR-41."
+  },
+  {
+    "id": "validation-021",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Dagmara",
+          "project_key": "USR"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "USR",
+          "summary": "Testy aplikacji z mieszkańcami z ul. Klonowej",
+          "issue_type": "Task",
+          "assignee": "Dagmara Kos"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "51"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "512",
+          "issue_keys": "USR-41"
+        }
+      }
+    ],
+    "answer": "Utworzono task USR-41, przypisany do Dagmary Kos, w sprincie USR Sprint 27."
+  },
+  {
+    "id": "validation-022",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "USR",
+          "summary": "Mapa budynku nie laduje sie na iOS 17",
+          "issue_type": "Bug",
+          "additional_fields": "{\"labels\": [\"ios\"]}"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "51"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "513",
+          "issue_keys": "USR-41"
+        }
+      }
+    ],
+    "answer": "Utworzono bug USR-41 z labelem ios w sprincie USR Sprint 28."
+  },
+  {
+    "id": "validation-023",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "USR"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "51"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "512",
+          "issue_keys": "USR-18"
+        }
+      }
+    ],
+    "answer": "USR-18 jest w sprincie USR Sprint 27."
+  },
+  {
+    "id": "validation-024",
+    "calls": [
+      {
+        "name": "jira_move_issues_to_backlog",
+        "arguments": {
+          "issue_keys": "USR-12"
+        }
+      }
+    ],
+    "answer": "USR-12 jest w backlogu."
+  },
+  {
+    "id": "validation-025",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "USR"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "51"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "514",
+          "issue_keys": "USR-21"
+        }
+      }
+    ],
+    "answer": "USR-21 jest w sprincie USR Sprint 29."
+  },
+  {
+    "id": "validation-026",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = USR AND labels = emergency AND sprint in futureSprints()",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "51"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "512",
+          "issue_keys": "USR-16,USR-15,USR-14"
+        }
+      }
+    ],
+    "answer": "Przeniesiono do USR Sprint 27: USR-16, USR-15, USR-14."
+  },
+  {
+    "id": "validation-027",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = USR AND summary ~ \"nieobecność\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "51"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "513",
+          "issue_keys": "USR-38"
+        }
+      }
+    ],
+    "answer": "USR-38 jest w sprincie USR Sprint 28."
+  },
+  {
+    "id": "validation-028",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = USR AND type = Bug AND assignee is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Kordian",
+          "project_key": "USR"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "USR-39",
+          "fields": "{\"assignee\": \"Kordian Siwiec\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "USR-34",
+          "fields": "{\"assignee\": \"Kordian Siwiec\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "USR-31",
+          "fields": "{\"assignee\": \"Kordian Siwiec\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "USR-27",
+          "fields": "{\"assignee\": \"Kordian Siwiec\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "USR-18",
+          "fields": "{\"assignee\": \"Kordian Siwiec\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "USR-10",
+          "fields": "{\"assignee\": \"Kordian Siwiec\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Kordianowi Siwcowi: USR-39, USR-34, USR-31, USR-27, USR-18, USR-10."
+  },
+  {
+    "id": "validation-029",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = USR AND labels = push",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "USR-23",
+          "body": "sprawdzic po release 2.4"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "USR-20",
+          "body": "sprawdzic po release 2.4"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "USR-6",
+          "body": "sprawdzic po release 2.4"
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do USR-23, USR-20 i USR-6."
+  },
+  {
+    "id": "validation-030",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = USR AND labels = feedback",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "USR-28",
+          "fields": "{\"priority\": {\"name\": \"Medium\"}}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "USR-9",
+          "fields": "{\"priority\": {\"name\": \"Medium\"}}"
+        }
+      }
+    ],
+    "answer": "Priorytet Medium mają teraz USR-28 i USR-9."
+  },
+  {
+    "id": "validation-031",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = USR AND assignee = \"Dagmara Kos\" AND sprint is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Olaf",
+          "project_key": "USR"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "USR-26",
+          "fields": "{\"assignee\": \"Olaf Ziemba\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "USR-24",
+          "fields": "{\"assignee\": \"Olaf Ziemba\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Olafowi Ziembie: USR-26, USR-24."
+  },
+  {
+    "id": "validation-032",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "USR-8"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "USR-8",
+          "transition_id": "51"
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "USR-8",
+          "time_spent": "1h"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "USR-8",
+          "body": "formularz krotszy o 3 pola"
+        }
+      }
+    ],
+    "answer": "USR-8 ma status Done, zalogowano 1h i dodano komentarz."
+  },
+  {
+    "id": "validation-033",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "USR-5"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "USR-5",
+          "transition_id": "31"
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "USR-5",
+          "time_spent": "2h"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "USR-5",
+          "body": "Statusy przetestowane z 15 mieszkańcami."
+        }
+      }
+    ],
+    "answer": "USR-5 ma status In review, zalogowano 2h i dodano komentarz."
+  },
+  {
+    "id": "validation-034",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = USR AND summary ~ \"dyspozytorki\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Józefa",
+          "project_key": "USR"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "USR-37",
+          "fields": "{\"assignee\": \"Józefa Wiącek\"}"
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "USR-37"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "USR-37",
+          "transition_id": "21"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "USR-37",
+          "body": "Potrzebny filtr także po klatce."
+        }
+      }
+    ],
+    "answer": "USR-37 jest przypisane do Józefy Wiącek, ma status In Progress i ma nowy komentarz."
+  },
+  {
+    "id": "validation-035",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = USR AND summary ~ \"czatem\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = USR AND summary ~ \"Czat\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "51"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "513",
+          "issue_keys": "USR-25"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "USR-25",
+          "fields": "{\"priority\": {\"name\": \"Medium\"}}"
+        }
+      }
+    ],
+    "answer": "USR-25 jest w sprincie USR Sprint 28 i ma priorytet Medium."
+  },
+  {
+    "id": "validation-036",
+    "calls": [],
+    "answer": "ODMOWA: nie mam narzędzia do dzwonienia do mieszkańców. Mogę dodać komentarz do zgłoszenia."
+  },
+  {
+    "id": "validation-037",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Leon",
+          "project_key": "USR"
+        }
+      }
+    ],
+    "answer": "ODMOWA: nie znalazłem w projekcie aktywnej osoby o imieniu Leon."
+  },
+  {
+    "id": "validation-038",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "USR"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "51"
+        }
+      }
+    ],
+    "answer": "ODMOWA: na boardzie nie ma sprintu 35. Są sprinty od USR Sprint 26 do USR Sprint 29."
+  },
+  {
+    "id": "validation-039",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Marlena",
+          "project_key": "USR"
+        }
+      }
+    ],
+    "answer": "ODMOWA: w projekcie są dwie osoby o imieniu Marlena: Marlena Pietrasik i Marlena Sobieraj. Napisz, o którą chodzi."
+  },
+  {
+    "id": "validation-040",
+    "calls": [],
+    "answer": "ODMOWA: pomagam tylko w pracy z Jirą tego projektu."
+  },
+  {
+    "id": "validation-041",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "SRW-31",
+          "fields": "summary,assignee"
+        }
+      }
+    ],
+    "answer": "SRW-31 ma przypisaną osobę: Ludmiła Szpak."
+  },
+  {
+    "id": "validation-042",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "SRW-7",
+          "fields": "status"
+        }
+      }
+    ],
+    "answer": "SRW-7 ma status In Progress."
+  },
+  {
+    "id": "validation-043",
+    "calls": [
+      {
+        "name": "jira_get_worklog",
+        "arguments": {
+          "issue_key": "SRW-1"
+        }
+      }
+    ],
+    "answer": "Na SRW-1 zalogowano łącznie 9h."
+  },
+  {
+    "id": "validation-044",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND labels = protocols AND statusCategory != Done",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "6 zadań z labelem protocols nie jest zrobionych."
+  },
+  {
+    "id": "validation-045",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND type = Bug AND labels = dispatch AND status in (Backlog, \"In Progress\", \"In review\")",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "Otwarte bugi z labelem dispatch: SRW-31 i SRW-25."
+  },
+  {
+    "id": "validation-046",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND summary ~ \"gazówki\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND summary ~ \"gazowej\"",
+          "fields": "summary,priority",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "SRW-20 ma priorytet Medium."
+  },
+  {
+    "id": "validation-047",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Regina",
+          "project_key": "SRW"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "SRW-21",
+          "fields": "{\"assignee\": \"Regina Kuś\"}"
+        }
+      }
+    ],
+    "answer": "SRW-21 jest przypisane do Reginy Kuś."
+  },
+  {
+    "id": "validation-048",
+    "calls": [
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "SRW-28",
+          "fields": "{\"priority\": {\"name\": \"Medium\"}}"
+        }
+      }
+    ],
+    "answer": "SRW-28 ma teraz priorytet Medium."
+  },
+  {
+    "id": "validation-049",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "SRW-9"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "SRW-9",
+          "transition_id": "51"
+        }
+      }
+    ],
+    "answer": "SRW-9 ma status Done."
+  },
+  {
+    "id": "validation-050",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND summary ~ \"zamyka\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Stefania",
+          "project_key": "SRW"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "SRW-22",
+          "fields": "{\"priority\": {\"name\": \"High\"}, \"assignee\": \"Stefania Dorosz\"}"
+        }
+      }
+    ],
+    "answer": "SRW-22 ma priorytet High i jest przypisane do Stefanii Dorosz."
+  },
+  {
+    "id": "validation-051",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND summary ~ \"cennikiem\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND summary ~ \"Cennik\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Ludmiła",
+          "project_key": "SRW"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "SRW-15",
+          "fields": "{\"priority\": {\"name\": \"High\"}, \"assignee\": \"Ludmiła Szpak\"}"
+        }
+      }
+    ],
+    "answer": "SRW-15 ma priorytet High i jest przypisane do Ludmiły Szpak."
+  },
+  {
+    "id": "validation-052",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND summary ~ \"technikami\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND summary ~ \"technicians\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Ostrowiak",
+          "project_key": "SRW"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "SRW-31",
+          "fields": "{\"assignee\": \"Nikodem Ostrowiak\", \"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "SRW-31 jest przypisane do Nikodema Ostrowiaka i ma priorytet High."
+  },
+  {
+    "id": "validation-053",
+    "calls": [
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "SRW-7",
+          "time_spent": "3h",
+          "comment": "adres i piętro w widoku zlecenia"
+        }
+      }
+    ],
+    "answer": "Zalogowano 3h na SRW-7."
+  },
+  {
+    "id": "validation-054",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "SRW-13",
+          "body": "Brakuje zaworów 1/2 cala w hurtowni, druga wizyta w piątek."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do SRW-13."
+  },
+  {
+    "id": "validation-055",
+    "calls": [
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "SRW-8",
+          "time_spent": "1h",
+          "comment": "terminy z 12 umów serwisowych"
+        }
+      }
+    ],
+    "answer": "Zalogowano 1h na SRW-8."
+  },
+  {
+    "id": "validation-056",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND summary ~ \"Tarasy\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "SRW-33",
+          "body": "Przegląd zaplanowany na 18 listopada, godz. 8:00."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do SRW-33."
+  },
+  {
+    "id": "validation-057",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND summary ~ \"kominiarskim\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "SRW-21",
+          "time_spent": "2h",
+          "comment": "lista kominów z trzech budynków"
+        }
+      }
+    ],
+    "answer": "Zalogowano 2h na SRW-21."
+  },
+  {
+    "id": "validation-058",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "SRW",
+          "summary": "Zlecenie na przeciek pionu nie ma zdjęć od mieszkańca",
+          "issue_type": "Bug"
+        }
+      }
+    ],
+    "answer": "Utworzono bug SRW-39."
+  },
+  {
+    "id": "validation-059",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "SRW",
+          "summary": "Raport napraw za październik dla zarządcy",
+          "issue_type": "Task",
+          "additional_fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Utworzono task SRW-39 z priorytetem High."
+  },
+  {
+    "id": "validation-060",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "SRW",
+          "summary": "Indeks na tabeli zleceń według firmy serwisowej",
+          "issue_type": "Task"
+        }
+      }
+    ],
+    "answer": "Utworzono task SRW-39."
+  },
+  {
+    "id": "validation-061",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Regina",
+          "project_key": "SRW"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "SRW",
+          "summary": "Lista hydraulików na dyżur świąteczny",
+          "issue_type": "Task",
+          "assignee": "Regina Kuś"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "52"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "522",
+          "issue_keys": "SRW-39"
+        }
+      }
+    ],
+    "answer": "Utworzono task SRW-39, przypisany do Reginy Kuś, w sprincie SRW Sprint 15."
+  },
+  {
+    "id": "validation-062",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "SRW",
+          "summary": "Szablon protokołu przeglądu gazowego",
+          "issue_type": "Task",
+          "additional_fields": "{\"priority\": {\"name\": \"High\"}, \"labels\": [\"protocols\"]}"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "52"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "523",
+          "issue_keys": "SRW-39"
+        }
+      }
+    ],
+    "answer": "Utworzono task SRW-39 z priorytetem High i labelem protocols w sprincie SRW Sprint 16."
+  },
+  {
+    "id": "validation-063",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "SRW"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "52"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "522",
+          "issue_keys": "SRW-19"
+        }
+      }
+    ],
+    "answer": "SRW-19 jest w sprincie SRW Sprint 15."
+  },
+  {
+    "id": "validation-064",
+    "calls": [
+      {
+        "name": "jira_move_issues_to_backlog",
+        "arguments": {
+          "issue_keys": "SRW-13"
+        }
+      }
+    ],
+    "answer": "SRW-13 jest w backlogu."
+  },
+  {
+    "id": "validation-065",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "SRW"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "52"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "524",
+          "issue_keys": "SRW-20"
+        }
+      }
+    ],
+    "answer": "SRW-20 jest w sprincie SRW Sprint 17."
+  },
+  {
+    "id": "validation-066",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND labels = billing AND sprint in futureSprints()",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "52"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "522",
+          "issue_keys": "SRW-16,SRW-15,SRW-14"
+        }
+      }
+    ],
+    "answer": "Przeniesiono do SRW Sprint 15: SRW-16, SRW-15, SRW-14."
+  },
+  {
+    "id": "validation-067",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND summary ~ \"Magazyn\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "52"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "523",
+          "issue_keys": "SRW-26"
+        }
+      }
+    ],
+    "answer": "SRW-26 jest w sprincie SRW Sprint 16."
+  },
+  {
+    "id": "validation-068",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND type = Bug AND assignee is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Fijas",
+          "project_key": "SRW"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "SRW-25",
+          "fields": "{\"assignee\": \"Nikodem Fijas\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "SRW-22",
+          "fields": "{\"assignee\": \"Nikodem Fijas\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Nikodemowi Fijasowi: SRW-25, SRW-22."
+  },
+  {
+    "id": "validation-069",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND labels = contracts AND status in (Backlog, \"In Progress\", \"In review\")",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "SRW-34",
+          "body": "Sprawdzić terminy umów do 30 listopada."
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "SRW-25",
+          "body": "Sprawdzić terminy umów do 30 listopada."
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "SRW-15",
+          "body": "Sprawdzić terminy umów do 30 listopada."
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "SRW-8",
+          "body": "Sprawdzić terminy umów do 30 listopada."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do SRW-34, SRW-25, SRW-15 i SRW-8."
+  },
+  {
+    "id": "validation-070",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND labels = inspections",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "SRW-33",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "SRW-21",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "SRW-20",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Priorytet High mają teraz SRW-33, SRW-21 i SRW-20."
+  },
+  {
+    "id": "validation-071",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND assignee = \"Ludmiła Szpak\" AND sprint is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Regina",
+          "project_key": "SRW"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "SRW-36",
+          "fields": "{\"assignee\": \"Regina Kuś\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "SRW-34",
+          "fields": "{\"assignee\": \"Regina Kuś\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "SRW-31",
+          "fields": "{\"assignee\": \"Regina Kuś\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "SRW-24",
+          "fields": "{\"assignee\": \"Regina Kuś\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "SRW-18",
+          "fields": "{\"assignee\": \"Regina Kuś\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Reginie Kuś: SRW-36, SRW-34, SRW-31, SRW-24, SRW-18."
+  },
+  {
+    "id": "validation-072",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "SRW-5"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "SRW-5",
+          "transition_id": "51"
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "SRW-5",
+          "time_spent": "2h"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "SRW-5",
+          "body": "zdjęcia przed i po dołączone do protokołu."
+        }
+      }
+    ],
+    "answer": "SRW-5 ma status Done, zalogowano 2h i dodano komentarz."
+  },
+  {
+    "id": "validation-073",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "SRW-6"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "SRW-6",
+          "transition_id": "31"
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "SRW-6",
+          "time_spent": "1h"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "SRW-6",
+          "body": "Podpis przetestowany na 8 zleceniach z 6 listopada."
+        }
+      }
+    ],
+    "answer": "SRW-6 ma status In review, zalogowano 1h i dodano komentarz."
+  },
+  {
+    "id": "validation-074",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND summary ~ \"ubezpieczycielem\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND summary ~ \"ubezpieczyciela\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Wacław",
+          "project_key": "SRW"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "SRW-32",
+          "fields": "{\"assignee\": \"Wacław Grzelak\"}"
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "SRW-32"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "SRW-32",
+          "transition_id": "21"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "SRW-32",
+          "body": "Pion w klatce B, zalane dwa lokale."
+        }
+      }
+    ],
+    "answer": "SRW-32 jest przypisane do Wacława Grzelaka, ma status In Progress i ma nowy komentarz."
+  },
+  {
+    "id": "validation-075",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND summary ~ \"rozliczeniami\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = SRW AND summary ~ \"Rozliczenia\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "52"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "522",
+          "issue_keys": "SRW-14"
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Ludmiła",
+          "project_key": "SRW"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "SRW-14",
+          "fields": "{\"assignee\": \"Ludmiła Szpak\"}"
+        }
+      }
+    ],
+    "answer": "SRW-14 jest w sprincie SRW Sprint 15 i jest przypisane do Ludmiły Szpak."
+  },
+  {
+    "id": "validation-076",
+    "calls": [],
+    "answer": "ODMOWA: nie mam narzędzia do składania zamówień. Mogę założyć zadanie w projekcie."
+  },
+  {
+    "id": "validation-077",
+    "calls": [],
+    "answer": "ODMOWA: nie mam narzędzia do wystawiania faktur."
+  },
+  {
+    "id": "validation-078",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Bernard",
+          "project_key": "SRW"
+        }
+      }
+    ],
+    "answer": "ODMOWA: nie znalazłem w projekcie aktywnej osoby o imieniu Bernard."
+  },
+  {
+    "id": "validation-079",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Nikodem",
+          "project_key": "SRW"
+        }
+      }
+    ],
+    "answer": "ODMOWA: w projekcie są dwie osoby o imieniu Nikodem: Nikodem Ostrowiak i Nikodem Fijas. Napisz, o którego chodzi."
+  },
+  {
+    "id": "validation-080",
+    "calls": [],
+    "answer": "ODMOWA: pomagam tylko w pracy z Jirą tego projektu."
+  },
+  {
+    "id": "validation-081",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "ZRZ-27",
+          "fields": "summary,assignee"
+        }
+      }
+    ],
+    "answer": "ZRZ-27 ma przypisaną osobę: Matteo Rinaldi."
+  },
+  {
+    "id": "validation-082",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "ZRZ-5",
+          "fields": "status"
+        }
+      }
+    ],
+    "answer": "ZRZ-5 ma status In Progress."
+  },
+  {
+    "id": "validation-083",
+    "calls": [
+      {
+        "name": "jira_get_worklog",
+        "arguments": {
+          "issue_key": "ZRZ-1"
+        }
+      }
+    ],
+    "answer": "Na ZRZ-1 zalogowano łącznie 7h."
+  },
+  {
+    "id": "validation-084",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND labels = reports AND assignee is EMPTY",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "3 zadania z labelem reports nie mają przypisanej osoby."
+  },
+  {
+    "id": "validation-085",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND labels = documents AND sprint in futureSprints()",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "W przyszłych sprintach są ZRZ-34, ZRZ-16, ZRZ-15 i ZRZ-14."
+  },
+  {
+    "id": "validation-086",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND summary ~ \"diagram\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND summary ~ \"chart\"",
+          "fields": "summary,assignee",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "ZRZ-8 ma przypisaną osobę: Edward Pacholczyk."
+  },
+  {
+    "id": "validation-087",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Albert",
+          "project_key": "ZRZ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "ZRZ-11",
+          "fields": "{\"assignee\": \"Albert Chmiel\"}"
+        }
+      }
+    ],
+    "answer": "ZRZ-11 jest przypisane do Alberta Chmiela."
+  },
+  {
+    "id": "validation-088",
+    "calls": [
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "ZRZ-26",
+          "fields": "{\"priority\": {\"name\": \"Highest\"}}"
+        }
+      }
+    ],
+    "answer": "ZRZ-26 ma teraz priorytet Highest."
+  },
+  {
+    "id": "validation-089",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "ZRZ-8"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "ZRZ-8",
+          "transition_id": "51"
+        }
+      }
+    ],
+    "answer": "ZRZ-8 ma status Done."
+  },
+  {
+    "id": "validation-090",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND summary ~ \"adresie\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Matteo",
+          "project_key": "ZRZ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "ZRZ-33",
+          "fields": "{\"priority\": {\"name\": \"Highest\"}, \"assignee\": \"Matteo Rinaldi\"}"
+        }
+      }
+    ],
+    "answer": "ZRZ-33 ma priorytet Highest i jest przypisane do Matteo Rinaldiego."
+  },
+  {
+    "id": "validation-091",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND summary ~ \"funduszu\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND summary ~ \"Fundusz\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Edward",
+          "project_key": "ZRZ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "ZRZ-21",
+          "fields": "{\"priority\": {\"name\": \"High\"}, \"assignee\": \"Edward Pacholczyk\"}"
+        }
+      }
+    ],
+    "answer": "ZRZ-21 ma priorytet High i jest przypisane do Edwarda Pacholczyka."
+  },
+  {
+    "id": "validation-092",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND summary ~ \"timeout\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Matteo",
+          "project_key": "ZRZ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "ZRZ-39",
+          "fields": "{\"assignee\": \"Matteo Rinaldi\", \"priority\": {\"name\": \"Medium\"}}"
+        }
+      }
+    ],
+    "answer": "ZRZ-39 jest przypisane do Matteo Rinaldiego i ma priorytet Medium."
+  },
+  {
+    "id": "validation-093",
+    "calls": [
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "ZRZ-7",
+          "time_spent": "3h",
+          "comment": "organization filter fix"
+        }
+      }
+    ],
+    "answer": "Zalogowano 3h na ZRZ-7."
+  },
+  {
+    "id": "validation-094",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "ZRZ-13",
+          "body": "Zarząd wspólnoty przy ul. Lipowej 12 chce raport co miesiąc."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do ZRZ-13."
+  },
+  {
+    "id": "validation-095",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "ZRZ-24",
+          "body": "Historię budynku należy przekazać nowemu zarządcy w całości."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do ZRZ-24."
+  },
+  {
+    "id": "validation-096",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND summary ~ \"wykresem\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND summary ~ \"Wykres\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "ZRZ-37",
+          "time_spent": "1h 30m",
+          "comment": "dane od stycznia"
+        }
+      }
+    ],
+    "answer": "Zalogowano 1h 30m na ZRZ-37."
+  },
+  {
+    "id": "validation-097",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND summary ~ \"obiektu\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "ZRZ-15",
+          "body": "Wersja papierowa musi być nadal prowadzona."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do ZRZ-15."
+  },
+  {
+    "id": "validation-098",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "ZRZ",
+          "summary": "Raport zużycia wody dla budynku przy ul. Klonowej 5",
+          "issue_type": "Task"
+        }
+      }
+    ],
+    "answer": "Utworzono task ZRZ-40."
+  },
+  {
+    "id": "validation-099",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "ZRZ",
+          "summary": "Wydruk rocznego sprawozdania dla wspólnoty",
+          "issue_type": "Story"
+        }
+      }
+    ],
+    "answer": "Utworzono story ZRZ-40."
+  },
+  {
+    "id": "validation-100",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "ZRZ",
+          "summary": "The building map does not load on Firefox",
+          "issue_type": "Bug",
+          "additional_fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Utworzono bug ZRZ-40 z priorytetem High."
+  },
+  {
+    "id": "validation-101",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Wojtas",
+          "project_key": "ZRZ"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "ZRZ",
+          "summary": "Import budynków nowego zarządcy z Wilanowa",
+          "issue_type": "Task",
+          "assignee": "Izabela Wojtas"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "53"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "532",
+          "issue_keys": "ZRZ-40"
+        }
+      }
+    ],
+    "answer": "Utworzono task ZRZ-40, przypisany do Izabeli Wojtas, w sprincie ZRZ Sprint 32."
+  },
+  {
+    "id": "validation-102",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "ZRZ",
+          "summary": "Dark theme for the manager panel",
+          "issue_type": "Task",
+          "additional_fields": "{\"labels\": [\"ui\"]}"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "53"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "533",
+          "issue_keys": "ZRZ-40"
+        }
+      }
+    ],
+    "answer": "Utworzono task ZRZ-40 z labelem ui w sprincie ZRZ Sprint 33."
+  },
+  {
+    "id": "validation-103",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "ZRZ"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "53"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "532",
+          "issue_keys": "ZRZ-18"
+        }
+      }
+    ],
+    "answer": "ZRZ-18 jest w sprincie ZRZ Sprint 32."
+  },
+  {
+    "id": "validation-104",
+    "calls": [
+      {
+        "name": "jira_move_issues_to_backlog",
+        "arguments": {
+          "issue_keys": "ZRZ-12"
+        }
+      }
+    ],
+    "answer": "ZRZ-12 jest w backlogu."
+  },
+  {
+    "id": "validation-105",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "ZRZ"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "53"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "534",
+          "issue_keys": "ZRZ-21"
+        }
+      }
+    ],
+    "answer": "ZRZ-21 jest w sprincie ZRZ Sprint 34."
+  },
+  {
+    "id": "validation-106",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND labels = community AND sprint is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "53"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "533",
+          "issue_keys": "ZRZ-38,ZRZ-21,ZRZ-20,ZRZ-19"
+        }
+      }
+    ],
+    "answer": "Przeniesiono do ZRZ Sprint 33: ZRZ-38, ZRZ-21, ZRZ-20, ZRZ-19."
+  },
+  {
+    "id": "validation-107",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND summary ~ \"pełnomocnictwa\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND summary ~ \"Pełnomocnictwo\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "53"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "532",
+          "issue_keys": "ZRZ-34"
+        }
+      }
+    ],
+    "answer": "ZRZ-34 jest w sprincie ZRZ Sprint 32."
+  },
+  {
+    "id": "validation-108",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND type = Bug AND assignee is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Albert",
+          "project_key": "ZRZ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "ZRZ-39",
+          "fields": "{\"assignee\": \"Albert Chmiel\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "ZRZ-33",
+          "fields": "{\"assignee\": \"Albert Chmiel\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "ZRZ-23",
+          "fields": "{\"assignee\": \"Albert Chmiel\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "ZRZ-12",
+          "fields": "{\"assignee\": \"Albert Chmiel\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Albertowi Chmielowi: ZRZ-39, ZRZ-33, ZRZ-23, ZRZ-12."
+  },
+  {
+    "id": "validation-109",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND labels = import",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "ZRZ-33",
+          "body": "Check the flat numbers with letters."
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "ZRZ-2",
+          "body": "Check the flat numbers with letters."
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "ZRZ-1",
+          "body": "Check the flat numbers with letters."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do ZRZ-33, ZRZ-2 i ZRZ-1."
+  },
+  {
+    "id": "validation-110",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND labels = permissions AND priority in (Medium, Low, Lowest)",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "ZRZ-36",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "ZRZ-9",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Priorytet High mają teraz ZRZ-36 i ZRZ-9."
+  },
+  {
+    "id": "validation-111",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND assignee = \"Bolesław Kurant\" AND sprint is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Wojtas",
+          "project_key": "ZRZ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "ZRZ-38",
+          "fields": "{\"assignee\": \"Izabela Wojtas\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "ZRZ-24",
+          "fields": "{\"assignee\": \"Izabela Wojtas\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Izabeli Wojtas: ZRZ-38, ZRZ-24."
+  },
+  {
+    "id": "validation-112",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "ZRZ-7"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "ZRZ-7",
+          "transition_id": "31"
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "ZRZ-7",
+          "time_spent": "2h"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "ZRZ-7",
+          "body": "Organization filter checked on all accounts."
+        }
+      }
+    ],
+    "answer": "ZRZ-7 ma status In review, zalogowano 2h i dodano komentarz."
+  },
+  {
+    "id": "validation-113",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "ZRZ-9"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "ZRZ-9",
+          "transition_id": "51"
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "ZRZ-9",
+          "time_spent": "1h"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "ZRZ-9",
+          "body": "Członkowie zarządu widzą tylko raporty."
+        }
+      }
+    ],
+    "answer": "ZRZ-9 ma status Done, zalogowano 1h i dodano komentarz."
+  },
+  {
+    "id": "validation-114",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND summary ~ \"księgowej\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Bolesław",
+          "project_key": "ZRZ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "ZRZ-36",
+          "fields": "{\"assignee\": \"Bolesław Kurant\"}"
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "ZRZ-36"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "ZRZ-36",
+          "transition_id": "21"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "ZRZ-36",
+          "body": "Księgowa ma widzieć tylko fundusz remontowy."
+        }
+      }
+    ],
+    "answer": "ZRZ-36 jest przypisane do Bolesława Kuranta, ma status In Progress i ma nowy komentarz."
+  },
+  {
+    "id": "validation-115",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND summary ~ \"slash\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND summary ~ \"ukośnikiem\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "ZRZ-27"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "ZRZ-27",
+          "transition_id": "21"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "ZRZ-27",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "ZRZ-27 ma status In Progress i priorytet High."
+  },
+  {
+    "id": "validation-116",
+    "calls": [],
+    "answer": "ODMOWA: nie mam narzędzia do wysyłania raportów. Mogę dodać komentarz do zadania z raportem."
+  },
+  {
+    "id": "validation-117",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Wanda",
+          "project_key": "ZRZ"
+        }
+      }
+    ],
+    "answer": "ODMOWA: nie znalazłem w projekcie aktywnej osoby o imieniu Wanda."
+  },
+  {
+    "id": "validation-118",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Izabela",
+          "project_key": "ZRZ"
+        }
+      }
+    ],
+    "answer": "ODMOWA: w projekcie są dwie osoby o imieniu Izabela: Izabela Rudzka i Izabela Wojtas. Napisz, o którą chodzi."
+  },
+  {
+    "id": "validation-119",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = ZRZ AND summary ~ \"Raport\"",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "ODMOWA: pasuje kilka zgłoszeń z raportem: ZRZ-38, ZRZ-18 i ZRZ-5. Napisz, o które chodzi."
+  },
+  {
+    "id": "validation-120",
+    "calls": [],
+    "answer": "ODMOWA: pomagam tylko w pracy z Jirą tego projektu."
+  }
+]
