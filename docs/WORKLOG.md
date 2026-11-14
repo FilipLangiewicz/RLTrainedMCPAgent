@@ -626,3 +626,17 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - No validation instruction occurs in the train set.
 - The same temporary script checked each task. All tasks passed at the first build.
 - The team reviews the train set and the validation set later (`idm-pro-033` to `idm-pro-036`).
+
+### Automatic checks of the train data
+
+- `tests/test_tasks.py` now checks the test, train and validation splits (`idm-pro-032`). The checks of the temporary script are now in the tests.
+- All splits: the reference solutions, the mix of difficulties, the categories, the refusal kinds, the authors and the rules of the instruction text.
+- All pairs of splits: no board, instruction, issue summary or person occurs in two splits.
+- The boards of the train and validation splits must be the output of `src/boards.py` for `data/companies/`.
+- The train and validation splits have two more checks:
+  - Each key, sprint id, transition id, project and person in a call comes from the instruction or from an earlier tool result.
+  - The expected answer of a `query` task agrees with the last tool result. The answer of an `ambiguous` refusal names the issues of the last search.
+- A test run with broken copies of tasks and boards found each of 9 errors.
+- Fix `test_checksum_finds_a_change`. With `core.autocrlf`, the checkout has CRLF line ends, and the test added a second CR.
+- `docs/TASKS.md` describes the new checks.
+- 621 tests pass. 5 tests of `claude_cli` in `tests/test_models.py` fail also on `main`.

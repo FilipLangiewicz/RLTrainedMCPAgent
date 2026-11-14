@@ -2,7 +2,9 @@
 
 This file describes the task set: the boards, the tasks, the files and the rules for the review. The team uses it for the review of the data and for the report.
 
-Status on 2026-11-05: the test set (200 tasks) is frozen. `tests/test_tasks.py` compares the task files and the 5 test boards with stored checksums. The train set does not exist yet.
+Status on 2026-11-05: the test set (200 tasks) is frozen. `tests/test_tasks.py` compares the task files and the 5 test boards with stored checksums.
+
+Status on 2026-11-14: the train set (1000 tasks on 25 boards) and the validation set (120 tasks on 3 boards) exist. `src/boards.py` makes their boards from `data/companies/`. The team has not reviewed them yet.
 
 ## Flow
 
@@ -149,7 +151,21 @@ All files are in `data/tasks/test/`. The field `id` connects the files.
 | `expected.json` | `id`, `board`, `category`, `difficulty`, and the expected result | the verifier |
 | `personas.json` | the authors and their styles | the team |
 
-`src/tasks.py` loads the three task files of a split and checks them. A missing file, an unknown board, an unknown author or a value that is not allowed stops the load with an error that names the task id. A split without task files (for example `train` now) loads as an empty list.
+`src/tasks.py` loads the three task files of a split and checks them. A missing file, an unknown board, an unknown author or a value that is not allowed stops the load with an error that names the task id. A split without task files loads as an empty list.
+
+### Checks of all splits
+
+`tests/test_tasks.py` checks the test, train and validation splits:
+
+- Each reference solution gets the grade `correct` or `correct_refusal`. No reference call gives an error, with the exception of a `missing_entity` read.
+- The mix of difficulties, the categories and the refusal kinds agree with the rules of this file.
+- No board, instruction, issue summary or person occurs in two splits.
+- The boards of the train and validation splits are the output of `src/boards.py`.
+
+The train and validation splits have two more checks, because their solutions must teach the use of the tools:
+
+- Each key, sprint id, transition id, project and person in a call occurs in the instruction or in an earlier tool result.
+- The expected answer of a `query` task agrees with the last tool result. The answer of an `ambiguous` refusal names the issues of the last search.
 
 ### Expected result
 
