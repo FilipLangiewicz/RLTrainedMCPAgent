@@ -1,0 +1,913 @@
+{
+  "name": "train-nau",
+  "site": "https://example.atlassian.net",
+  "now": "2026-11-25T11:00:00.000+0100",
+  "project": {
+    "key": "NAU",
+    "name": "fizyka.online - panel nauczyciela"
+  },
+  "board": {
+    "id": "32",
+    "name": "NAU board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:6d0dba36-c4a5-5f12-92d2-a3c08dc0ad05",
+      "display_name": "Witold Szymczak",
+      "email": "witold.szymczak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:9281cf63-6893-5491-819f-59034c3502d8",
+      "display_name": "Bogumiła Sarnecka",
+      "email": "bogumila.sarnecka@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:1ea691a1-6cb3-5192-b821-4791ae4b95d4",
+      "display_name": "Roksana Wieczorek",
+      "email": "roksana.wieczorek@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:fc5c0228-47d4-5daa-9e91-4f844656de1e",
+      "display_name": "Roksana Bednarek",
+      "email": "roksana.bednarek@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:ffc49ceb-4935-59c3-8439-312c4cafdbbd",
+      "display_name": "Fryderyk Malec",
+      "email": "fryderyk.malec@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:67e4d486-e3db-576f-9776-6dc494d3afd0",
+      "display_name": "Oliwia Jaworska",
+      "email": "oliwia.jaworska@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:7cbe2dc9-b9ea-519f-98c4-ae2f98468774",
+      "display_name": "Jerzy Pakuła",
+      "email": "jerzy.pakula@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "321",
+      "name": "NAU Sprint 8",
+      "state": "closed",
+      "start_date": "2026-11-04T09:00:00.000Z",
+      "end_date": "2026-11-18T09:00:00.000Z",
+      "goal": "Klasy i prace domowe"
+    },
+    {
+      "id": "322",
+      "name": "NAU Sprint 9",
+      "state": "active",
+      "start_date": "2026-11-18T09:00:00.000Z",
+      "end_date": "2026-12-02T09:00:00.000Z",
+      "goal": "Raport postępów klasy"
+    },
+    {
+      "id": "323",
+      "name": "NAU Sprint 10",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Sprawdziany online"
+    },
+    {
+      "id": "324",
+      "name": "NAU Sprint 11",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "32001",
+      "key": "NAU-1",
+      "summary": "Tworzenie klasy i dodawanie uczniów kodem",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:6d0dba36-c4a5-5f12-92d2-a3c08dc0ad05",
+      "reporter": "712020:ffc49ceb-4935-59c3-8439-312c4cafdbbd",
+      "labels": [
+        "classes"
+      ],
+      "sprint": "321",
+      "created": "2026-09-17T08:30:00.000+0100",
+      "updated": "2026-09-20T08:30:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "320015",
+          "author": "712020:6d0dba36-c4a5-5f12-92d2-a3c08dc0ad05",
+          "time_spent_seconds": 18000,
+          "comment": "Kody klas",
+          "started": "2026-09-19T00:30:00.000+0100"
+        },
+        {
+          "id": "320016",
+          "author": "712020:6d0dba36-c4a5-5f12-92d2-a3c08dc0ad05",
+          "time_spent_seconds": 7200,
+          "comment": "Import listy uczniów",
+          "started": "2026-09-20T00:30:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "32002",
+      "key": "NAU-2",
+      "summary": "Zadanie pracy domowej z terminem oddania",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:7cbe2dc9-b9ea-519f-98c4-ae2f98468774",
+      "reporter": "712020:ffc49ceb-4935-59c3-8439-312c4cafdbbd",
+      "labels": [
+        "homework"
+      ],
+      "sprint": "321",
+      "created": "2026-09-18T14:15:00.000+0100",
+      "updated": "2026-09-21T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32003",
+      "key": "NAU-3",
+      "summary": "Import of the class list from the school register",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:1ea691a1-6cb3-5192-b821-4791ae4b95d4",
+      "labels": [
+        "classes",
+        "integration"
+      ],
+      "sprint": "321",
+      "created": "2026-09-20T11:15:00.000+0100",
+      "updated": "2026-09-23T11:15:00.000+0100",
+      "comments": [
+        {
+          "id": "320031",
+          "author": "712020:1ea691a1-6cb3-5192-b821-4791ae4b95d4",
+          "body": "The register vendor has no API for us.",
+          "created": "2026-09-21T11:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "32004",
+      "key": "NAU-4",
+      "summary": "Termin pracy domowej przesuwa się o godzinę",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:fc5c0228-47d4-5daa-9e91-4f844656de1e",
+      "reporter": "712020:6d0dba36-c4a5-5f12-92d2-a3c08dc0ad05",
+      "labels": [
+        "homework"
+      ],
+      "sprint": "321",
+      "created": "2026-09-22T13:45:00.000+0100",
+      "updated": "2026-09-25T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32005",
+      "key": "NAU-5",
+      "summary": "Raport postępów klasy z podziałem na działy",
+      "description": "Nauczyciel widzi procent poprawnych zadań z każdego działu: ruch, siły, energia.",
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:9281cf63-6893-5491-819f-59034c3502d8",
+      "reporter": "712020:fc5c0228-47d4-5daa-9e91-4f844656de1e",
+      "labels": [
+        "reports"
+      ],
+      "sprint": "322",
+      "created": "2026-09-23T17:45:00.000+0100",
+      "updated": "2026-09-26T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "320055",
+          "author": "712020:9281cf63-6893-5491-819f-59034c3502d8",
+          "time_spent_seconds": 14400,
+          "comment": "Agregacja wyników",
+          "started": "2026-09-25T00:45:00.000+0100"
+        },
+        {
+          "id": "320056",
+          "author": "712020:9281cf63-6893-5491-819f-59034c3502d8",
+          "time_spent_seconds": 7200,
+          "comment": "",
+          "started": "2026-09-26T00:45:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "32006",
+      "key": "NAU-6",
+      "summary": "Nauczyciel widzi uczniów z innej klasy",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:ffc49ceb-4935-59c3-8439-312c4cafdbbd",
+      "reporter": "712020:67e4d486-e3db-576f-9776-6dc494d3afd0",
+      "labels": [
+        "permissions",
+        "privacy"
+      ],
+      "sprint": "322",
+      "created": "2026-09-25T13:45:00.000+0100",
+      "updated": "2026-09-28T13:45:00.000+0100",
+      "comments": [
+        {
+          "id": "320061",
+          "author": "712020:ffc49ceb-4935-59c3-8439-312c4cafdbbd",
+          "body": "Dotyczy nauczycieli, którzy uczą w dwóch szkołach.",
+          "created": "2026-09-26T13:45:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "32007",
+      "key": "NAU-7",
+      "summary": "Komentarz nauczyciela do rozwiązania ucznia",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:1ea691a1-6cb3-5192-b821-4791ae4b95d4",
+      "reporter": "712020:fc5c0228-47d4-5daa-9e91-4f844656de1e",
+      "labels": [
+        "homework"
+      ],
+      "sprint": "322",
+      "created": "2026-09-26T17:00:00.000+0100",
+      "updated": "2026-09-29T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32008",
+      "key": "NAU-8",
+      "summary": "Export of the class report to PDF",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:6d0dba36-c4a5-5f12-92d2-a3c08dc0ad05",
+      "reporter": "712020:ffc49ceb-4935-59c3-8439-312c4cafdbbd",
+      "labels": [
+        "reports",
+        "print"
+      ],
+      "sprint": "322",
+      "created": "2026-09-28T10:45:00.000+0100",
+      "updated": "2026-10-01T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32009",
+      "key": "NAU-9",
+      "summary": "Lista uczniów, którzy nie oddali pracy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:9281cf63-6893-5491-819f-59034c3502d8",
+      "reporter": "712020:9281cf63-6893-5491-819f-59034c3502d8",
+      "labels": [
+        "homework"
+      ],
+      "sprint": "322",
+      "created": "2026-09-29T11:45:00.000+0100",
+      "updated": "2026-10-02T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32010",
+      "key": "NAU-10",
+      "summary": "Kopiowanie pracy domowej do drugiej klasy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Low",
+      "assignee": "712020:ffc49ceb-4935-59c3-8439-312c4cafdbbd",
+      "reporter": "712020:ffc49ceb-4935-59c3-8439-312c4cafdbbd",
+      "labels": [
+        "homework"
+      ],
+      "sprint": "322",
+      "created": "2026-10-01T13:00:00.000+0100",
+      "updated": "2026-10-04T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32011",
+      "key": "NAU-11",
+      "summary": "Powiadomienie e-mail o oddanej pracy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:ffc49ceb-4935-59c3-8439-312c4cafdbbd",
+      "reporter": "712020:6d0dba36-c4a5-5f12-92d2-a3c08dc0ad05",
+      "labels": [
+        "notifications"
+      ],
+      "sprint": "322",
+      "created": "2026-10-03T09:30:00.000+0100",
+      "updated": "2026-10-06T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32012",
+      "key": "NAU-12",
+      "summary": "Wykres postępu ucznia od września",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:1ea691a1-6cb3-5192-b821-4791ae4b95d4",
+      "reporter": "712020:fc5c0228-47d4-5daa-9e91-4f844656de1e",
+      "labels": [
+        "reports",
+        "charts"
+      ],
+      "sprint": "322",
+      "created": "2026-10-04T10:30:00.000+0100",
+      "updated": "2026-10-07T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32013",
+      "key": "NAU-13",
+      "summary": "Oceny w skali szkolnej od 1 do 6",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:fc5c0228-47d4-5daa-9e91-4f844656de1e",
+      "reporter": "712020:fc5c0228-47d4-5daa-9e91-4f844656de1e",
+      "labels": [
+        "grades"
+      ],
+      "sprint": "322",
+      "created": "2026-10-06T11:15:00.000+0100",
+      "updated": "2026-10-09T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32014",
+      "key": "NAU-14",
+      "summary": "Panel nie mieści się na tablicy interaktywnej",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:6d0dba36-c4a5-5f12-92d2-a3c08dc0ad05",
+      "reporter": "712020:1ea691a1-6cb3-5192-b821-4791ae4b95d4",
+      "labels": [
+        "ui",
+        "schools"
+      ],
+      "sprint": "322",
+      "created": "2026-10-07T14:45:00.000+0100",
+      "updated": "2026-10-10T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32015",
+      "key": "NAU-15",
+      "summary": "Sprawdzian online z limitem czasu",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:9281cf63-6893-5491-819f-59034c3502d8",
+      "labels": [
+        "tests"
+      ],
+      "sprint": "323",
+      "created": "2026-10-09T08:30:00.000+0100",
+      "updated": "2026-10-12T08:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32016",
+      "key": "NAU-16",
+      "summary": "Losowa kolejność pytań w sprawdzianie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:9281cf63-6893-5491-819f-59034c3502d8",
+      "labels": [
+        "tests"
+      ],
+      "sprint": "323",
+      "created": "2026-10-10T11:00:00.000+0100",
+      "updated": "2026-10-13T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32017",
+      "key": "NAU-17",
+      "summary": "Teacher can lock the tutor during a test",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:fc5c0228-47d4-5daa-9e91-4f844656de1e",
+      "reporter": "712020:ffc49ceb-4935-59c3-8439-312c4cafdbbd",
+      "labels": [
+        "tests",
+        "tutor"
+      ],
+      "sprint": "323",
+      "created": "2026-10-12T11:00:00.000+0100",
+      "updated": "2026-10-15T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32018",
+      "key": "NAU-18",
+      "summary": "Bank zadań do sprawdzianów z działu siły",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:fc5c0228-47d4-5daa-9e91-4f844656de1e",
+      "reporter": "712020:1ea691a1-6cb3-5192-b821-4791ae4b95d4",
+      "labels": [
+        "tests",
+        "exercises"
+      ],
+      "sprint": "323",
+      "created": "2026-10-13T12:15:00.000+0100",
+      "updated": "2026-10-16T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32019",
+      "key": "NAU-19",
+      "summary": "Dwie prace domowe o tej samej nazwie mylą uczniów",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:ffc49ceb-4935-59c3-8439-312c4cafdbbd",
+      "labels": [
+        "homework"
+      ],
+      "sprint": null,
+      "created": "2026-10-15T08:15:00.000+0100",
+      "updated": "2026-10-18T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32020",
+      "key": "NAU-20",
+      "summary": "Konto nauczyciela zastępującego",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:9281cf63-6893-5491-819f-59034c3502d8",
+      "reporter": "712020:6d0dba36-c4a5-5f12-92d2-a3c08dc0ad05",
+      "labels": [
+        "permissions"
+      ],
+      "sprint": null,
+      "created": "2026-10-17T10:45:00.000+0100",
+      "updated": "2026-10-20T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32021",
+      "key": "NAU-21",
+      "summary": "Średnia klasy bez uczniów nieobecnych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:9281cf63-6893-5491-819f-59034c3502d8",
+      "reporter": "712020:67e4d486-e3db-576f-9776-6dc494d3afd0",
+      "labels": [
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-10-18T10:15:00.000+0100",
+      "updated": "2026-10-21T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32022",
+      "key": "NAU-22",
+      "summary": "Uczeń przeniesiony do innej klasy traci oceny",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:67e4d486-e3db-576f-9776-6dc494d3afd0",
+      "labels": [
+        "classes",
+        "grades"
+      ],
+      "sprint": null,
+      "created": "2026-10-20T15:15:00.000+0100",
+      "updated": "2026-10-23T15:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32023",
+      "key": "NAU-23",
+      "summary": "Wiadomość do rodziców z wynikami ucznia",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:ffc49ceb-4935-59c3-8439-312c4cafdbbd",
+      "labels": [
+        "notifications",
+        "privacy"
+      ],
+      "sprint": null,
+      "created": "2026-10-21T09:00:00.000+0100",
+      "updated": "2026-10-24T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32024",
+      "key": "NAU-24",
+      "summary": "Session expires while the teacher writes a comment",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:fc5c0228-47d4-5daa-9e91-4f844656de1e",
+      "labels": [
+        "homework"
+      ],
+      "sprint": null,
+      "created": "2026-10-23T11:15:00.000+0100",
+      "updated": "2026-10-26T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32025",
+      "key": "NAU-25",
+      "summary": "Szablon pracy domowej na każdy dział podręcznika",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:1ea691a1-6cb3-5192-b821-4791ae4b95d4",
+      "reporter": "712020:ffc49ceb-4935-59c3-8439-312c4cafdbbd",
+      "labels": [
+        "homework"
+      ],
+      "sprint": null,
+      "created": "2026-10-24T12:45:00.000+0100",
+      "updated": "2026-10-27T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32026",
+      "key": "NAU-26",
+      "summary": "Filtr uczniów z dostosowaniem wymagań",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:6d0dba36-c4a5-5f12-92d2-a3c08dc0ad05",
+      "reporter": "712020:1ea691a1-6cb3-5192-b821-4791ae4b95d4",
+      "labels": [
+        "classes",
+        "accessibility"
+      ],
+      "sprint": null,
+      "created": "2026-10-26T11:45:00.000+0100",
+      "updated": "2026-10-29T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32027",
+      "key": "NAU-27",
+      "summary": "Instrukcja wideo dla nauczycieli",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:9281cf63-6893-5491-819f-59034c3502d8",
+      "labels": [
+        "docs"
+      ],
+      "sprint": null,
+      "created": "2026-10-28T11:15:00.000+0100",
+      "updated": "2026-10-31T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32028",
+      "key": "NAU-28",
+      "summary": "Raport dyrektora dla całej szkoły",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:1ea691a1-6cb3-5192-b821-4791ae4b95d4",
+      "reporter": "712020:1ea691a1-6cb3-5192-b821-4791ae4b95d4",
+      "labels": [
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-10-29T14:45:00.000+0100",
+      "updated": "2026-11-01T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32029",
+      "key": "NAU-29",
+      "summary": "Usuwanie klasy po końcu roku szkolnego",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": "712020:9281cf63-6893-5491-819f-59034c3502d8",
+      "reporter": "712020:6d0dba36-c4a5-5f12-92d2-a3c08dc0ad05",
+      "labels": [
+        "classes",
+        "privacy"
+      ],
+      "sprint": null,
+      "created": "2026-10-31T14:00:00.000+0100",
+      "updated": "2026-11-03T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32030",
+      "key": "NAU-30",
+      "summary": "Procent poprawnych zadań liczony z zadań nieoddanych",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:6d0dba36-c4a5-5f12-92d2-a3c08dc0ad05",
+      "labels": [
+        "reports"
+      ],
+      "sprint": "322",
+      "created": "2026-11-01T09:30:00.000+0100",
+      "updated": "2026-11-04T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32031",
+      "key": "NAU-31",
+      "summary": "Ranking klasy bez nazwisk uczniów",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:67e4d486-e3db-576f-9776-6dc494d3afd0",
+      "reporter": "712020:fc5c0228-47d4-5daa-9e91-4f844656de1e",
+      "labels": [
+        "gamification",
+        "privacy"
+      ],
+      "sprint": null,
+      "created": "2026-11-03T13:45:00.000+0100",
+      "updated": "2026-11-06T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32032",
+      "key": "NAU-32",
+      "summary": "Wyniki sprawdzianu widoczne po zatwierdzeniu przez nauczyciela",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:1ea691a1-6cb3-5192-b821-4791ae4b95d4",
+      "reporter": "712020:fc5c0228-47d4-5daa-9e91-4f844656de1e",
+      "labels": [
+        "tests"
+      ],
+      "sprint": "323",
+      "created": "2026-11-04T08:00:00.000+0100",
+      "updated": "2026-11-07T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32033",
+      "key": "NAU-33",
+      "summary": "Slow class list for schools with 300 students",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:1ea691a1-6cb3-5192-b821-4791ae4b95d4",
+      "labels": [
+        "performance"
+      ],
+      "sprint": null,
+      "created": "2026-11-06T14:45:00.000+0100",
+      "updated": "2026-11-09T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32034",
+      "key": "NAU-34",
+      "summary": "Druk kart pracy z zadaniami",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:fc5c0228-47d4-5daa-9e91-4f844656de1e",
+      "labels": [
+        "print",
+        "exercises"
+      ],
+      "sprint": null,
+      "created": "2026-11-07T13:30:00.000+0100",
+      "updated": "2026-11-10T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32035",
+      "key": "NAU-35",
+      "summary": "Uwagi nauczycieli z pilotażu o raporcie postępów",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:ffc49ceb-4935-59c3-8439-312c4cafdbbd",
+      "labels": [
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-11-09T12:45:00.000+0100",
+      "updated": "2026-11-12T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32036",
+      "key": "NAU-36",
+      "summary": "Przypomnienie uczniom dzień przed terminem pracy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:6d0dba36-c4a5-5f12-92d2-a3c08dc0ad05",
+      "reporter": "712020:67e4d486-e3db-576f-9776-6dc494d3afd0",
+      "labels": [
+        "notifications",
+        "homework"
+      ],
+      "sprint": null,
+      "created": "2026-11-11T16:00:00.000+0100",
+      "updated": "2026-11-14T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32037",
+      "key": "NAU-37",
+      "summary": "Kalendarz prac domowych dla klasy",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:67e4d486-e3db-576f-9776-6dc494d3afd0",
+      "reporter": "712020:67e4d486-e3db-576f-9776-6dc494d3afd0",
+      "labels": [
+        "homework"
+      ],
+      "sprint": null,
+      "created": "2026-11-12T15:00:00.000+0100",
+      "updated": "2026-11-15T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32038",
+      "key": "NAU-38",
+      "summary": "Oznaczenie zadań rozwiązanych z pomocą tutora",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:9281cf63-6893-5491-819f-59034c3502d8",
+      "reporter": "712020:1ea691a1-6cb3-5192-b821-4791ae4b95d4",
+      "labels": [
+        "tutor",
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-11-14T16:00:00.000+0100",
+      "updated": "2026-11-17T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32039",
+      "key": "NAU-39",
+      "summary": "Przycisk 'Zapisz' nieaktywny po wklejeniu tekstu",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:1ea691a1-6cb3-5192-b821-4791ae4b95d4",
+      "labels": [
+        "ui"
+      ],
+      "sprint": null,
+      "created": "2026-11-15T16:45:00.000+0100",
+      "updated": "2026-11-18T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "32040",
+      "key": "NAU-40",
+      "summary": "Ocena za pracę domową trafia do złego ucznia",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": null,
+      "reporter": "712020:1ea691a1-6cb3-5192-b821-4791ae4b95d4",
+      "labels": [
+        "grades"
+      ],
+      "sprint": null,
+      "created": "2026-11-17T10:00:00.000+0100",
+      "updated": "2026-11-20T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

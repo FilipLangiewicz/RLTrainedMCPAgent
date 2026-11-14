@@ -1,0 +1,923 @@
+{
+  "name": "validation-usr",
+  "site": "https://example.atlassian.net",
+  "now": "2026-11-18T13:00:00.000+0100",
+  "project": {
+    "key": "USR",
+    "name": "Housi - zgłoszenia usterek"
+  },
+  "board": {
+    "id": "51",
+    "name": "USR board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:a713a7bf-1f78-5193-ace3-22175258f749",
+      "display_name": "Marlena Pietrasik",
+      "email": "marlena.pietrasik@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:6cb1dd9c-b412-5e08-8fb7-6eb19119dfee",
+      "display_name": "Kordian Siwiec",
+      "email": "kordian.siwiec@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:03eafaef-6391-5b8e-924b-d86f8db971ee",
+      "display_name": "Józefa Wiącek",
+      "email": "jozefa.wiacek@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:189abba6-9bab-5aa0-9583-dadc0a63976b",
+      "display_name": "Marlena Sobieraj",
+      "email": "marlena.sobieraj@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:81e92501-5f3d-5133-ad11-afb8a8f8bcb5",
+      "display_name": "Olaf Ziemba",
+      "email": "olaf.ziemba@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:48eaa213-0345-5d02-b167-cdfed1fe4756",
+      "display_name": "Dagmara Kos",
+      "email": "dagmara.kos@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:ad25b587-894e-5fe7-9cd8-1858a9e96bfe",
+      "display_name": "Leon Pruski",
+      "email": "leon.pruski@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "511",
+      "name": "USR Sprint 26",
+      "state": "closed",
+      "start_date": "2026-10-28T09:00:00.000Z",
+      "end_date": "2026-11-11T09:00:00.000Z",
+      "goal": "Zdjęcia w zgłoszeniu usterki"
+    },
+    {
+      "id": "512",
+      "name": "USR Sprint 27",
+      "state": "active",
+      "start_date": "2026-11-11T09:00:00.000Z",
+      "end_date": "2026-11-25T09:00:00.000Z",
+      "goal": "Statusy zgłoszeń dla mieszkańca"
+    },
+    {
+      "id": "513",
+      "name": "USR Sprint 28",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Zgłoszenia awaryjne całodobowo"
+    },
+    {
+      "id": "514",
+      "name": "USR Sprint 29",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "51001",
+      "key": "USR-1",
+      "summary": "Zdjęcia i film w zgłoszeniu usterki",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:03eafaef-6391-5b8e-924b-d86f8db971ee",
+      "reporter": "712020:81e92501-5f3d-5133-ad11-afb8a8f8bcb5",
+      "labels": [
+        "reports",
+        "media"
+      ],
+      "sprint": "511",
+      "created": "2026-09-10T11:00:00.000+0100",
+      "updated": "2026-09-13T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "510015",
+          "author": "712020:03eafaef-6391-5b8e-924b-d86f8db971ee",
+          "time_spent_seconds": 21600,
+          "comment": "Upload zdjęć",
+          "started": "2026-09-12T00:00:00.000+0100"
+        },
+        {
+          "id": "510016",
+          "author": "712020:03eafaef-6391-5b8e-924b-d86f8db971ee",
+          "time_spent_seconds": 7200,
+          "comment": "Kompresja filmów",
+          "started": "2026-09-13T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "51002",
+      "key": "USR-2",
+      "summary": "Zgłoszenie bez numeru lokalu trafia do złego budynku",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:48eaa213-0345-5d02-b167-cdfed1fe4756",
+      "reporter": "712020:48eaa213-0345-5d02-b167-cdfed1fe4756",
+      "labels": [
+        "reports",
+        "validation"
+      ],
+      "sprint": "511",
+      "created": "2026-09-11T13:45:00.000+0100",
+      "updated": "2026-09-14T13:45:00.000+0100",
+      "comments": [
+        {
+          "id": "510021",
+          "author": "712020:48eaa213-0345-5d02-b167-cdfed1fe4756",
+          "body": "Numer lokalu jest teraz polem wymaganym.",
+          "created": "2026-09-12T13:45:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "51003",
+      "key": "USR-3",
+      "summary": "Voice message instead of the report form",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:a713a7bf-1f78-5193-ace3-22175258f749",
+      "labels": [
+        "reports"
+      ],
+      "sprint": "511",
+      "created": "2026-09-13T15:00:00.000+0100",
+      "updated": "2026-09-16T15:00:00.000+0100",
+      "comments": [
+        {
+          "id": "510031",
+          "author": "712020:a713a7bf-1f78-5193-ace3-22175258f749",
+          "body": "The dispatchers could not handle the audio, closing.",
+          "created": "2026-09-14T15:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "51004",
+      "key": "USR-4",
+      "summary": "Kategorie usterek: hydraulika, elektryka, winda",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:ad25b587-894e-5fe7-9cd8-1858a9e96bfe",
+      "reporter": "712020:189abba6-9bab-5aa0-9583-dadc0a63976b",
+      "labels": [
+        "reports"
+      ],
+      "sprint": "511",
+      "created": "2026-09-15T08:30:00.000+0100",
+      "updated": "2026-09-18T08:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51005",
+      "key": "USR-5",
+      "summary": "Status zgłoszenia widoczny dla mieszkańca",
+      "description": "Mieszkaniec widzi: przyjęte, przekazane do serwisu, termin wizyty, naprawione.",
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:6cb1dd9c-b412-5e08-8fb7-6eb19119dfee",
+      "reporter": "712020:81e92501-5f3d-5133-ad11-afb8a8f8bcb5",
+      "labels": [
+        "statuses",
+        "app"
+      ],
+      "sprint": "512",
+      "created": "2026-09-16T14:00:00.000+0100",
+      "updated": "2026-09-19T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "510055",
+          "author": "712020:6cb1dd9c-b412-5e08-8fb7-6eb19119dfee",
+          "time_spent_seconds": 14400,
+          "comment": "Ekran statusu",
+          "started": "2026-09-18T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "51006",
+      "key": "USR-6",
+      "summary": "Powiadomienie push o terminie wizyty serwisanta",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:189abba6-9bab-5aa0-9583-dadc0a63976b",
+      "reporter": "712020:a713a7bf-1f78-5193-ace3-22175258f749",
+      "labels": [
+        "push",
+        "app"
+      ],
+      "sprint": "512",
+      "created": "2026-09-18T12:15:00.000+0100",
+      "updated": "2026-09-21T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51007",
+      "key": "USR-7",
+      "summary": "Aplikacja gubi zdjęcia przy słabym zasięgu w piwnicy",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:189abba6-9bab-5aa0-9583-dadc0a63976b",
+      "reporter": "712020:81e92501-5f3d-5133-ad11-afb8a8f8bcb5",
+      "labels": [
+        "media",
+        "offline"
+      ],
+      "sprint": "512",
+      "created": "2026-09-19T12:00:00.000+0100",
+      "updated": "2026-09-22T12:00:00.000+0100",
+      "comments": [
+        {
+          "id": "510071",
+          "author": "712020:189abba6-9bab-5aa0-9583-dadc0a63976b",
+          "body": "Mieszkańcy zgłaszają przecieki z piwnic, a tam nie ma zasięgu.",
+          "created": "2026-09-20T12:00:00.000+0100"
+        },
+        {
+          "id": "510072",
+          "author": "712020:189abba6-9bab-5aa0-9583-dadc0a63976b",
+          "body": "Zdjęcie znika bez komunikatu.",
+          "created": "2026-09-21T12:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "51008",
+      "key": "USR-8",
+      "summary": "Report form is too long on small phones",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:6cb1dd9c-b412-5e08-8fb7-6eb19119dfee",
+      "reporter": "712020:03eafaef-6391-5b8e-924b-d86f8db971ee",
+      "labels": [
+        "ui",
+        "app"
+      ],
+      "sprint": "512",
+      "created": "2026-09-21T14:30:00.000+0100",
+      "updated": "2026-09-24T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51009",
+      "key": "USR-9",
+      "summary": "Ocena naprawy przez mieszkańca",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In review",
+      "priority": "Low",
+      "assignee": "712020:6cb1dd9c-b412-5e08-8fb7-6eb19119dfee",
+      "reporter": "712020:03eafaef-6391-5b8e-924b-d86f8db971ee",
+      "labels": [
+        "feedback"
+      ],
+      "sprint": "512",
+      "created": "2026-09-22T12:00:00.000+0100",
+      "updated": "2026-09-25T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51010",
+      "key": "USR-10",
+      "summary": "Duplikaty zgłoszeń tej samej usterki w klatce",
+      "description": "Pięciu mieszkańców zgłasza tę samą zepsutą windę. Dyspozytor widzi pięć osobnych zgłoszeń.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:189abba6-9bab-5aa0-9583-dadc0a63976b",
+      "labels": [
+        "reports",
+        "duplicates"
+      ],
+      "sprint": "512",
+      "created": "2026-09-24T17:30:00.000+0100",
+      "updated": "2026-09-27T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51011",
+      "key": "USR-11",
+      "summary": "Logowanie mieszkańca kodem z umowy najmu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:6cb1dd9c-b412-5e08-8fb7-6eb19119dfee",
+      "reporter": "712020:a713a7bf-1f78-5193-ace3-22175258f749",
+      "labels": [
+        "login"
+      ],
+      "sprint": "512",
+      "created": "2026-09-26T13:00:00.000+0100",
+      "updated": "2026-09-29T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51012",
+      "key": "USR-12",
+      "summary": "Zgłoszenie w imieniu sąsiada",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:48eaa213-0345-5d02-b167-cdfed1fe4756",
+      "labels": [
+        "reports"
+      ],
+      "sprint": "512",
+      "created": "2026-09-27T14:30:00.000+0100",
+      "updated": "2026-09-30T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51013",
+      "key": "USR-13",
+      "summary": "Mapa budynku z miejscem usterki",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:6cb1dd9c-b412-5e08-8fb7-6eb19119dfee",
+      "labels": [
+        "reports",
+        "ui"
+      ],
+      "sprint": "512",
+      "created": "2026-09-29T15:15:00.000+0100",
+      "updated": "2026-10-02T15:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51014",
+      "key": "USR-14",
+      "summary": "Zgłoszenia awaryjne przez całą dobę",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": "712020:81e92501-5f3d-5133-ad11-afb8a8f8bcb5",
+      "reporter": "712020:189abba6-9bab-5aa0-9583-dadc0a63976b",
+      "labels": [
+        "emergency"
+      ],
+      "sprint": "513",
+      "created": "2026-09-30T10:30:00.000+0100",
+      "updated": "2026-10-03T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51015",
+      "key": "USR-15",
+      "summary": "Numer alarmowy pogotowia technicznego w aplikacji",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:a713a7bf-1f78-5193-ace3-22175258f749",
+      "reporter": "712020:6cb1dd9c-b412-5e08-8fb7-6eb19119dfee",
+      "labels": [
+        "emergency",
+        "app"
+      ],
+      "sprint": "513",
+      "created": "2026-10-02T08:45:00.000+0100",
+      "updated": "2026-10-05T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51016",
+      "key": "USR-16",
+      "summary": "Emergency flag for gas smell reports",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": null,
+      "reporter": "712020:48eaa213-0345-5d02-b167-cdfed1fe4756",
+      "labels": [
+        "emergency"
+      ],
+      "sprint": "513",
+      "created": "2026-10-03T16:30:00.000+0100",
+      "updated": "2026-10-06T16:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51017",
+      "key": "USR-17",
+      "summary": "Aplikacja mieszkańca w języku ukraińskim",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:81e92501-5f3d-5133-ad11-afb8a8f8bcb5",
+      "labels": [
+        "i18n",
+        "app"
+      ],
+      "sprint": "513",
+      "created": "2026-10-05T16:30:00.000+0100",
+      "updated": "2026-10-08T16:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51018",
+      "key": "USR-18",
+      "summary": "Mieszkaniec widzi zgłoszenia innych lokali",
+      "description": "Po zmianie lokalu w profilu lista pokazuje zgłoszenia poprzedniego najemcy.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": null,
+      "reporter": "712020:189abba6-9bab-5aa0-9583-dadc0a63976b",
+      "labels": [
+        "permissions",
+        "privacy"
+      ],
+      "sprint": null,
+      "created": "2026-10-06T17:15:00.000+0100",
+      "updated": "2026-10-09T17:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51019",
+      "key": "USR-19",
+      "summary": "Formularz zgłoszenia na stronie dla osób bez aplikacji",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:a713a7bf-1f78-5193-ace3-22175258f749",
+      "reporter": "712020:6cb1dd9c-b412-5e08-8fb7-6eb19119dfee",
+      "labels": [
+        "web"
+      ],
+      "sprint": null,
+      "created": "2026-10-08T10:30:00.000+0100",
+      "updated": "2026-10-11T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51020",
+      "key": "USR-20",
+      "summary": "Przypomnienie o niepotwierdzonej naprawie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:a713a7bf-1f78-5193-ace3-22175258f749",
+      "labels": [
+        "push"
+      ],
+      "sprint": null,
+      "created": "2026-10-10T13:00:00.000+0100",
+      "updated": "2026-10-13T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51021",
+      "key": "USR-21",
+      "summary": "Komunikat o planowanym wyłączeniu wody",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:48eaa213-0345-5d02-b167-cdfed1fe4756",
+      "labels": [
+        "announcements"
+      ],
+      "sprint": null,
+      "created": "2026-10-11T08:30:00.000+0100",
+      "updated": "2026-10-14T08:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51022",
+      "key": "USR-22",
+      "summary": "Zgłoszenie przez telefon wpisywane przez dyspozytorkę",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:6cb1dd9c-b412-5e08-8fb7-6eb19119dfee",
+      "reporter": "712020:48eaa213-0345-5d02-b167-cdfed1fe4756",
+      "labels": [
+        "reports",
+        "dispatch"
+      ],
+      "sprint": null,
+      "created": "2026-10-13T13:15:00.000+0100",
+      "updated": "2026-10-16T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51023",
+      "key": "USR-23",
+      "summary": "Push notifications arrive at night",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:189abba6-9bab-5aa0-9583-dadc0a63976b",
+      "reporter": "712020:03eafaef-6391-5b8e-924b-d86f8db971ee",
+      "labels": [
+        "push"
+      ],
+      "sprint": null,
+      "created": "2026-10-14T16:00:00.000+0100",
+      "updated": "2026-10-17T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51024",
+      "key": "USR-24",
+      "summary": "Historia zgłoszeń lokalu od początku najmu",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:48eaa213-0345-5d02-b167-cdfed1fe4756",
+      "reporter": "712020:48eaa213-0345-5d02-b167-cdfed1fe4756",
+      "labels": [
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-10-16T15:45:00.000+0100",
+      "updated": "2026-10-19T15:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51025",
+      "key": "USR-25",
+      "summary": "Czat mieszkańca z serwisantem",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:a713a7bf-1f78-5193-ace3-22175258f749",
+      "labels": [
+        "chat"
+      ],
+      "sprint": null,
+      "created": "2026-10-17T10:15:00.000+0100",
+      "updated": "2026-10-20T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51026",
+      "key": "USR-26",
+      "summary": "Duży przycisk 'Zgłoś usterkę' dla seniorów",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:48eaa213-0345-5d02-b167-cdfed1fe4756",
+      "reporter": "712020:48eaa213-0345-5d02-b167-cdfed1fe4756",
+      "labels": [
+        "accessibility",
+        "ui"
+      ],
+      "sprint": null,
+      "created": "2026-10-19T08:45:00.000+0100",
+      "updated": "2026-10-22T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51027",
+      "key": "USR-27",
+      "summary": "Zdjęcia obrócone o 90 stopni na iPhone'ach",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:81e92501-5f3d-5133-ad11-afb8a8f8bcb5",
+      "labels": [
+        "media",
+        "ios"
+      ],
+      "sprint": "512",
+      "created": "2026-10-21T11:15:00.000+0100",
+      "updated": "2026-10-24T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51028",
+      "key": "USR-28",
+      "summary": "Ankieta zadowolenia mieszkańców raz w roku",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:81e92501-5f3d-5133-ad11-afb8a8f8bcb5",
+      "labels": [
+        "feedback"
+      ],
+      "sprint": null,
+      "created": "2026-10-22T14:30:00.000+0100",
+      "updated": "2026-10-25T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51029",
+      "key": "USR-29",
+      "summary": "Kategoria 'hałas sąsiada' poza zakresem usterek",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:81e92501-5f3d-5133-ad11-afb8a8f8bcb5",
+      "labels": [
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-10-24T12:15:00.000+0100",
+      "updated": "2026-10-27T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51030",
+      "key": "USR-30",
+      "summary": "Automatic category from the photo",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:6cb1dd9c-b412-5e08-8fb7-6eb19119dfee",
+      "reporter": "712020:6cb1dd9c-b412-5e08-8fb7-6eb19119dfee",
+      "labels": [
+        "ml"
+      ],
+      "sprint": null,
+      "created": "2026-10-25T17:15:00.000+0100",
+      "updated": "2026-10-28T17:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51031",
+      "key": "USR-31",
+      "summary": "Zgłoszenie zamknięte bez zgody mieszkańca",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:48eaa213-0345-5d02-b167-cdfed1fe4756",
+      "labels": [
+        "statuses"
+      ],
+      "sprint": null,
+      "created": "2026-10-27T11:15:00.000+0100",
+      "updated": "2026-10-30T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51032",
+      "key": "USR-32",
+      "summary": "Instrukcja aplikacji na tablicy ogłoszeń w klatce",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:a713a7bf-1f78-5193-ace3-22175258f749",
+      "reporter": "712020:48eaa213-0345-5d02-b167-cdfed1fe4756",
+      "labels": [
+        "docs"
+      ],
+      "sprint": null,
+      "created": "2026-10-28T16:15:00.000+0100",
+      "updated": "2026-10-31T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51033",
+      "key": "USR-33",
+      "summary": "Termin wizyty proponowany przez mieszkańca",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:6cb1dd9c-b412-5e08-8fb7-6eb19119dfee",
+      "labels": [
+        "calendar"
+      ],
+      "sprint": "513",
+      "created": "2026-10-30T15:00:00.000+0100",
+      "updated": "2026-11-02T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51034",
+      "key": "USR-34",
+      "summary": "Aplikacja wylogowuje po aktualizacji",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:48eaa213-0345-5d02-b167-cdfed1fe4756",
+      "labels": [
+        "login",
+        "app"
+      ],
+      "sprint": null,
+      "created": "2026-10-31T10:30:00.000+0100",
+      "updated": "2026-11-03T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51035",
+      "key": "USR-35",
+      "summary": "Zgłoszenia z części wspólnych bez numeru lokalu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:6cb1dd9c-b412-5e08-8fb7-6eb19119dfee",
+      "labels": [
+        "reports",
+        "validation"
+      ],
+      "sprint": null,
+      "created": "2026-11-02T11:00:00.000+0100",
+      "updated": "2026-11-05T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51036",
+      "key": "USR-36",
+      "summary": "Statystyka czasu od zgłoszenia do naprawy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:03eafaef-6391-5b8e-924b-d86f8db971ee",
+      "reporter": "712020:48eaa213-0345-5d02-b167-cdfed1fe4756",
+      "labels": [
+        "reports",
+        "analytics"
+      ],
+      "sprint": null,
+      "created": "2026-11-04T15:00:00.000+0100",
+      "updated": "2026-11-07T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51037",
+      "key": "USR-37",
+      "summary": "Widok zgłoszeń dla dyspozytorki z filtrem budynku",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:6cb1dd9c-b412-5e08-8fb7-6eb19119dfee",
+      "reporter": "712020:03eafaef-6391-5b8e-924b-d86f8db971ee",
+      "labels": [
+        "dispatch"
+      ],
+      "sprint": null,
+      "created": "2026-11-05T14:15:00.000+0100",
+      "updated": "2026-11-08T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51038",
+      "key": "USR-38",
+      "summary": "Zgoda mieszkańca na wejście serwisu pod nieobecność",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:a713a7bf-1f78-5193-ace3-22175258f749",
+      "labels": [
+        "privacy",
+        "calendar"
+      ],
+      "sprint": null,
+      "created": "2026-11-07T15:30:00.000+0100",
+      "updated": "2026-11-10T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51039",
+      "key": "USR-39",
+      "summary": "Slow upload of the photos on Android 12",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:189abba6-9bab-5aa0-9583-dadc0a63976b",
+      "labels": [
+        "media",
+        "android"
+      ],
+      "sprint": null,
+      "created": "2026-11-08T11:30:00.000+0100",
+      "updated": "2026-11-11T11:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "51040",
+      "key": "USR-40",
+      "summary": "Opis usterki ucięty po 500 znakach",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:81e92501-5f3d-5133-ad11-afb8a8f8bcb5",
+      "reporter": "712020:a713a7bf-1f78-5193-ace3-22175258f749",
+      "labels": [
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-11-10T09:30:00.000+0100",
+      "updated": "2026-11-13T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

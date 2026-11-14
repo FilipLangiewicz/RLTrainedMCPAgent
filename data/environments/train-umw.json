@@ -1,0 +1,896 @@
+{
+  "name": "train-umw",
+  "site": "https://example.atlassian.net",
+  "now": "2026-10-07T09:15:00.000+0100",
+  "project": {
+    "key": "UMW",
+    "name": "SolarDom - umowy i umawianie audytów"
+  },
+  "board": {
+    "id": "44",
+    "name": "UMW board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:e1741c6f-6962-5ce7-9cce-09d0a12b67bd",
+      "display_name": "Aneta Zych",
+      "email": "aneta.zych@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:bead6f66-b69d-5914-ae0f-aec7f934091a",
+      "display_name": "Grzegorz Lenart",
+      "email": "grzegorz.lenart@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:c33428b3-7675-5e8b-8293-8186141b2b4e",
+      "display_name": "Teodora Wasiak",
+      "email": "teodora.wasiak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:827c122f-18a7-5759-b307-502d680dd606",
+      "display_name": "Grzegorz Mularczyk",
+      "email": "grzegorz.mularczyk@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:8c734cd6-3df7-5cf6-b5fc-adb004b8fc1f",
+      "display_name": "Lech Kowalik",
+      "email": "lech.kowalik@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:3b2a5313-a022-5f88-9225-7f1b1ba11117",
+      "display_name": "Daria Bielak",
+      "email": "daria.bielak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:6e1ac5d7-2dea-53b6-89a4-1e72251afd7c",
+      "display_name": "Zenon Kruk",
+      "email": "zenon.kruk@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "441",
+      "name": "UMW Sprint 7",
+      "state": "closed",
+      "start_date": "2026-09-16T09:00:00.000Z",
+      "end_date": "2026-09-30T09:00:00.000Z",
+      "goal": "Kalendarz doradców terenowych"
+    },
+    {
+      "id": "442",
+      "name": "UMW Sprint 8",
+      "state": "active",
+      "start_date": "2026-09-30T09:00:00.000Z",
+      "end_date": "2026-10-14T09:00:00.000Z",
+      "goal": "Umowy elektroniczne i odstąpienia"
+    },
+    {
+      "id": "443",
+      "name": "UMW Sprint 9",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Grafik montaży"
+    },
+    {
+      "id": "444",
+      "name": "UMW Sprint 10",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "44001",
+      "key": "UMW-1",
+      "summary": "Kalendarz doradców terenowych z rejonami",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:3b2a5313-a022-5f88-9225-7f1b1ba11117",
+      "reporter": "712020:c33428b3-7675-5e8b-8293-8186141b2b4e",
+      "labels": [
+        "calendar",
+        "advisers"
+      ],
+      "sprint": "441",
+      "created": "2026-07-30T17:30:00.000+0100",
+      "updated": "2026-08-02T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "440015",
+          "author": "712020:3b2a5313-a022-5f88-9225-7f1b1ba11117",
+          "time_spent_seconds": 21600,
+          "comment": "Podział na rejony",
+          "started": "2026-08-01T00:30:00.000+0100"
+        },
+        {
+          "id": "440016",
+          "author": "712020:3b2a5313-a022-5f88-9225-7f1b1ba11117",
+          "time_spent_seconds": 7200,
+          "comment": "Import grafików",
+          "started": "2026-08-02T00:30:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "44002",
+      "key": "UMW-2",
+      "summary": "Wizyta umówiona na adres bez numeru domu",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:c33428b3-7675-5e8b-8293-8186141b2b4e",
+      "reporter": "712020:c33428b3-7675-5e8b-8293-8186141b2b4e",
+      "labels": [
+        "appointments",
+        "validation"
+      ],
+      "sprint": "441",
+      "created": "2026-07-31T12:00:00.000+0100",
+      "updated": "2026-08-03T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44003",
+      "key": "UMW-3",
+      "summary": "Paper contracts in the cars of the advisers",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:827c122f-18a7-5759-b307-502d680dd606",
+      "labels": [
+        "contracts"
+      ],
+      "sprint": "441",
+      "created": "2026-08-02T10:00:00.000+0100",
+      "updated": "2026-08-05T10:00:00.000+0100",
+      "comments": [
+        {
+          "id": "440031",
+          "author": "712020:827c122f-18a7-5759-b307-502d680dd606",
+          "body": "We move to electronic contracts.",
+          "created": "2026-08-03T10:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "44004",
+      "key": "UMW-4",
+      "summary": "Umowa elektroniczna podpisywana na tablecie",
+      "description": "Klient podpisuje umowę na tablecie doradcy i dostaje kopię mailem.",
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:8c734cd6-3df7-5cf6-b5fc-adb004b8fc1f",
+      "reporter": "712020:3b2a5313-a022-5f88-9225-7f1b1ba11117",
+      "labels": [
+        "contracts",
+        "e-signature"
+      ],
+      "sprint": "442",
+      "created": "2026-08-04T13:00:00.000+0100",
+      "updated": "2026-08-07T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "440045",
+          "author": "712020:8c734cd6-3df7-5cf6-b5fc-adb004b8fc1f",
+          "time_spent_seconds": 18000,
+          "comment": "Szablon umowy",
+          "started": "2026-08-06T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "44005",
+      "key": "UMW-5",
+      "summary": "Rejestr odstąpień od umowy w 14 dni",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:c33428b3-7675-5e8b-8293-8186141b2b4e",
+      "reporter": "712020:e1741c6f-6962-5ce7-9cce-09d0a12b67bd",
+      "labels": [
+        "withdrawals"
+      ],
+      "sprint": "442",
+      "created": "2026-08-05T10:45:00.000+0100",
+      "updated": "2026-08-08T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44006",
+      "key": "UMW-6",
+      "summary": "Dwie wizyty doradcy w tym samym czasie",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:3b2a5313-a022-5f88-9225-7f1b1ba11117",
+      "reporter": "712020:bead6f66-b69d-5914-ae0f-aec7f934091a",
+      "labels": [
+        "calendar",
+        "appointments"
+      ],
+      "sprint": "442",
+      "created": "2026-08-07T11:15:00.000+0100",
+      "updated": "2026-08-10T11:15:00.000+0100",
+      "comments": [
+        {
+          "id": "440061",
+          "author": "712020:3b2a5313-a022-5f88-9225-7f1b1ba11117",
+          "body": "Doradca z rejonu Radom ma 3 nakładające się wizyty w czwartek.",
+          "created": "2026-08-08T11:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "44007",
+      "key": "UMW-7",
+      "summary": "SMS to the customer one day before the visit",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:c33428b3-7675-5e8b-8293-8186141b2b4e",
+      "reporter": "712020:827c122f-18a7-5759-b307-502d680dd606",
+      "labels": [
+        "appointments",
+        "sms"
+      ],
+      "sprint": "442",
+      "created": "2026-08-09T16:30:00.000+0100",
+      "updated": "2026-08-12T16:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44008",
+      "key": "UMW-8",
+      "summary": "Trasa doradcy na mapie dnia",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:e1741c6f-6962-5ce7-9cce-09d0a12b67bd",
+      "reporter": "712020:8c734cd6-3df7-5cf6-b5fc-adb004b8fc1f",
+      "labels": [
+        "advisers",
+        "maps"
+      ],
+      "sprint": "442",
+      "created": "2026-08-10T10:00:00.000+0100",
+      "updated": "2026-08-13T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44009",
+      "key": "UMW-9",
+      "summary": "Oświadczenie o odstąpieniu do pobrania na stronie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:6e1ac5d7-2dea-53b6-89a4-1e72251afd7c",
+      "reporter": "712020:8c734cd6-3df7-5cf6-b5fc-adb004b8fc1f",
+      "labels": [
+        "withdrawals",
+        "website"
+      ],
+      "sprint": "442",
+      "created": "2026-08-12T08:45:00.000+0100",
+      "updated": "2026-08-15T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44010",
+      "key": "UMW-10",
+      "summary": "Prowizja doradcy po upływie terminu odstąpienia",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:3b2a5313-a022-5f88-9225-7f1b1ba11117",
+      "reporter": "712020:c33428b3-7675-5e8b-8293-8186141b2b4e",
+      "labels": [
+        "commission"
+      ],
+      "sprint": "442",
+      "created": "2026-08-13T14:00:00.000+0100",
+      "updated": "2026-08-16T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44011",
+      "key": "UMW-11",
+      "summary": "Status wizyty: klient nie otworzył drzwi",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:827c122f-18a7-5759-b307-502d680dd606",
+      "reporter": "712020:8c734cd6-3df7-5cf6-b5fc-adb004b8fc1f",
+      "labels": [
+        "appointments"
+      ],
+      "sprint": "442",
+      "created": "2026-08-15T09:45:00.000+0100",
+      "updated": "2026-08-18T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44012",
+      "key": "UMW-12",
+      "summary": "Kopia umowy nie dochodzi mailem do klienta",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:c33428b3-7675-5e8b-8293-8186141b2b4e",
+      "labels": [
+        "contracts",
+        "email"
+      ],
+      "sprint": "442",
+      "created": "2026-08-17T11:30:00.000+0100",
+      "updated": "2026-08-20T11:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44013",
+      "key": "UMW-13",
+      "summary": "Odwołanie wizyty przez klienta linkiem",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:827c122f-18a7-5759-b307-502d680dd606",
+      "reporter": "712020:827c122f-18a7-5759-b307-502d680dd606",
+      "labels": [
+        "appointments"
+      ],
+      "sprint": "442",
+      "created": "2026-08-18T15:30:00.000+0100",
+      "updated": "2026-08-21T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44014",
+      "key": "UMW-14",
+      "summary": "Grafik montaży po podpisaniu umowy",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:827c122f-18a7-5759-b307-502d680dd606",
+      "labels": [
+        "installation",
+        "calendar"
+      ],
+      "sprint": "443",
+      "created": "2026-08-20T15:15:00.000+0100",
+      "updated": "2026-08-23T15:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44015",
+      "key": "UMW-15",
+      "summary": "Formularz audytu dachu dla doradcy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:e1741c6f-6962-5ce7-9cce-09d0a12b67bd",
+      "reporter": "712020:bead6f66-b69d-5914-ae0f-aec7f934091a",
+      "labels": [
+        "advisers",
+        "audit"
+      ],
+      "sprint": "443",
+      "created": "2026-08-21T15:45:00.000+0100",
+      "updated": "2026-08-24T15:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44016",
+      "key": "UMW-16",
+      "summary": "Photos of the roof attached to the contract",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:bead6f66-b69d-5914-ae0f-aec7f934091a",
+      "reporter": "712020:e1741c6f-6962-5ce7-9cce-09d0a12b67bd",
+      "labels": [
+        "audit",
+        "contracts"
+      ],
+      "sprint": "443",
+      "created": "2026-08-23T14:15:00.000+0100",
+      "updated": "2026-08-26T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44017",
+      "key": "UMW-17",
+      "summary": "Umowa kredytowa razem z umową montażu",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:c33428b3-7675-5e8b-8293-8186141b2b4e",
+      "labels": [
+        "contracts",
+        "finance"
+      ],
+      "sprint": "443",
+      "created": "2026-08-25T13:45:00.000+0100",
+      "updated": "2026-08-28T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44018",
+      "key": "UMW-18",
+      "summary": "Klient podpisał umowę bez kopii regulaminu",
+      "description": "W wersji na tablecie brakuje załącznika z regulaminem.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:c33428b3-7675-5e8b-8293-8186141b2b4e",
+      "reporter": "712020:bead6f66-b69d-5914-ae0f-aec7f934091a",
+      "labels": [
+        "contracts",
+        "compliance"
+      ],
+      "sprint": null,
+      "created": "2026-08-26T17:00:00.000+0100",
+      "updated": "2026-08-29T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44019",
+      "key": "UMW-19",
+      "summary": "Liczba odstąpień od umowy według doradcy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:8c734cd6-3df7-5cf6-b5fc-adb004b8fc1f",
+      "reporter": "712020:bead6f66-b69d-5914-ae0f-aec7f934091a",
+      "labels": [
+        "withdrawals",
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-08-28T09:45:00.000+0100",
+      "updated": "2026-08-31T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44020",
+      "key": "UMW-20",
+      "summary": "Doradca widzi wizyty z innych rejonów",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:3b2a5313-a022-5f88-9225-7f1b1ba11117",
+      "labels": [
+        "permissions"
+      ],
+      "sprint": null,
+      "created": "2026-08-29T09:15:00.000+0100",
+      "updated": "2026-09-01T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44021",
+      "key": "UMW-21",
+      "summary": "Aneks do umowy przy zmianie liczby paneli",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:8c734cd6-3df7-5cf6-b5fc-adb004b8fc1f",
+      "labels": [
+        "contracts"
+      ],
+      "sprint": null,
+      "created": "2026-08-31T10:45:00.000+0100",
+      "updated": "2026-09-03T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44022",
+      "key": "UMW-22",
+      "summary": "Wniosek o dopłatę wypełniany za klienta",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:c33428b3-7675-5e8b-8293-8186141b2b4e",
+      "reporter": "712020:827c122f-18a7-5759-b307-502d680dd606",
+      "labels": [
+        "subsidies"
+      ],
+      "sprint": null,
+      "created": "2026-09-02T10:45:00.000+0100",
+      "updated": "2026-09-05T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44023",
+      "key": "UMW-23",
+      "summary": "Mileage report of the advisers",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:bead6f66-b69d-5914-ae0f-aec7f934091a",
+      "reporter": "712020:827c122f-18a7-5759-b307-502d680dd606",
+      "labels": [
+        "advisers",
+        "costs"
+      ],
+      "sprint": null,
+      "created": "2026-09-03T16:15:00.000+0100",
+      "updated": "2026-09-06T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44024",
+      "key": "UMW-24",
+      "summary": "Wizyta umówiona przez telemarketera bez zgody domownika",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:c33428b3-7675-5e8b-8293-8186141b2b4e",
+      "reporter": "712020:827c122f-18a7-5759-b307-502d680dd606",
+      "labels": [
+        "appointments",
+        "compliance"
+      ],
+      "sprint": null,
+      "created": "2026-09-05T14:15:00.000+0100",
+      "updated": "2026-09-08T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44025",
+      "key": "UMW-25",
+      "summary": "Umowy podpisane w niedzielę bez dokumentu tożsamości",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:c33428b3-7675-5e8b-8293-8186141b2b4e",
+      "reporter": "712020:bead6f66-b69d-5914-ae0f-aec7f934091a",
+      "labels": [
+        "contracts",
+        "validation"
+      ],
+      "sprint": null,
+      "created": "2026-09-06T11:15:00.000+0100",
+      "updated": "2026-09-09T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44026",
+      "key": "UMW-26",
+      "summary": "Przypomnienie dla doradcy o niepodpisanych umowach",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:c33428b3-7675-5e8b-8293-8186141b2b4e",
+      "reporter": "712020:c33428b3-7675-5e8b-8293-8186141b2b4e",
+      "labels": [
+        "contracts"
+      ],
+      "sprint": null,
+      "created": "2026-09-08T09:00:00.000+0100",
+      "updated": "2026-09-11T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44027",
+      "key": "UMW-27",
+      "summary": "Archiwum umów w PDF",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:3b2a5313-a022-5f88-9225-7f1b1ba11117",
+      "labels": [
+        "contracts",
+        "archive"
+      ],
+      "sprint": null,
+      "created": "2026-09-10T08:15:00.000+0100",
+      "updated": "2026-09-13T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44028",
+      "key": "UMW-28",
+      "summary": "Ranking doradców według podpisanych umów",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:827c122f-18a7-5759-b307-502d680dd606",
+      "reporter": "712020:e1741c6f-6962-5ce7-9cce-09d0a12b67bd",
+      "labels": [
+        "reports",
+        "commission"
+      ],
+      "sprint": null,
+      "created": "2026-09-11T13:00:00.000+0100",
+      "updated": "2026-09-14T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44029",
+      "key": "UMW-29",
+      "summary": "Mapa wizyt doradców w województwie świętokrzyskim",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:3b2a5313-a022-5f88-9225-7f1b1ba11117",
+      "reporter": "712020:3b2a5313-a022-5f88-9225-7f1b1ba11117",
+      "labels": [
+        "maps"
+      ],
+      "sprint": "442",
+      "created": "2026-09-13T14:30:00.000+0100",
+      "updated": "2026-09-16T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44030",
+      "key": "UMW-30",
+      "summary": "Odstąpienie wysłane pocztą nie trafia do systemu",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:3b2a5313-a022-5f88-9225-7f1b1ba11117",
+      "labels": [
+        "withdrawals"
+      ],
+      "sprint": null,
+      "created": "2026-09-14T08:00:00.000+0100",
+      "updated": "2026-09-17T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44031",
+      "key": "UMW-31",
+      "summary": "Contract template for companies",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:827c122f-18a7-5759-b307-502d680dd606",
+      "labels": [
+        "contracts"
+      ],
+      "sprint": null,
+      "created": "2026-09-16T14:45:00.000+0100",
+      "updated": "2026-09-19T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44032",
+      "key": "UMW-32",
+      "summary": "Zwrot zaliczki po odstąpieniu od umowy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:bead6f66-b69d-5914-ae0f-aec7f934091a",
+      "labels": [
+        "withdrawals",
+        "finance"
+      ],
+      "sprint": null,
+      "created": "2026-09-18T16:30:00.000+0100",
+      "updated": "2026-09-21T16:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44033",
+      "key": "UMW-33",
+      "summary": "Kolejka wizyt do ponownego umówienia",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:bead6f66-b69d-5914-ae0f-aec7f934091a",
+      "reporter": "712020:827c122f-18a7-5759-b307-502d680dd606",
+      "labels": [
+        "appointments"
+      ],
+      "sprint": null,
+      "created": "2026-09-19T09:30:00.000+0100",
+      "updated": "2026-09-22T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44034",
+      "key": "UMW-34",
+      "summary": "Tablet doradcy bez internetu na wsi",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:3b2a5313-a022-5f88-9225-7f1b1ba11117",
+      "labels": [
+        "advisers",
+        "offline"
+      ],
+      "sprint": null,
+      "created": "2026-09-21T13:30:00.000+0100",
+      "updated": "2026-09-24T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44035",
+      "key": "UMW-35",
+      "summary": "Szkolenie doradców z umowy elektronicznej",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:8c734cd6-3df7-5cf6-b5fc-adb004b8fc1f",
+      "labels": [
+        "training",
+        "e-signature"
+      ],
+      "sprint": "443",
+      "created": "2026-09-22T10:15:00.000+0100",
+      "updated": "2026-09-25T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44036",
+      "key": "UMW-36",
+      "summary": "Termin montażu w umowie dłuższy niż obiecany przez telefon",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:8c734cd6-3df7-5cf6-b5fc-adb004b8fc1f",
+      "labels": [
+        "contracts",
+        "installation"
+      ],
+      "sprint": null,
+      "created": "2026-09-24T13:30:00.000+0100",
+      "updated": "2026-09-27T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44037",
+      "key": "UMW-37",
+      "summary": "Oznaczenie wizyt u klientów po 75. roku życia",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:8c734cd6-3df7-5cf6-b5fc-adb004b8fc1f",
+      "labels": [
+        "appointments"
+      ],
+      "sprint": null,
+      "created": "2026-09-26T16:00:00.000+0100",
+      "updated": "2026-09-29T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44038",
+      "key": "UMW-38",
+      "summary": "Protokół odbioru instalacji podpisany przez klienta",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:8c734cd6-3df7-5cf6-b5fc-adb004b8fc1f",
+      "labels": [
+        "installation",
+        "documents"
+      ],
+      "sprint": null,
+      "created": "2026-09-27T09:00:00.000+0100",
+      "updated": "2026-09-30T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "44039",
+      "key": "UMW-39",
+      "summary": "Doradca terenowy z rejonu Lublin odchodzi z firmy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:8c734cd6-3df7-5cf6-b5fc-adb004b8fc1f",
+      "labels": [
+        "advisers"
+      ],
+      "sprint": null,
+      "created": "2026-09-29T08:15:00.000+0100",
+      "updated": "2026-10-02T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

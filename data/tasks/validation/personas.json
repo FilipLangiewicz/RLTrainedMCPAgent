@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Marlena Pietrasik",
+    "board": "validation-usr",
+    "role": "Product owner of the resident app",
+    "style": "Practical. Gives the number of reports and residents, then the exact request."
+  },
+  {
+    "name": "Kordian Siwiec",
+    "board": "validation-usr",
+    "role": "Mobile developer",
+    "style": "Short lines, Polish mixed with English words (release, crash, fix)."
+  },
+  {
+    "name": "Józefa Wiącek",
+    "board": "validation-usr",
+    "role": "Dispatcher of the fault reports",
+    "style": "Tells what the residents said on the phone. Long and kind messages, does not know issue keys."
+  },
+  {
+    "name": "Wacław Grzelak",
+    "board": "validation-srw",
+    "role": "Coordinator of the service companies, a former plumber",
+    "style": "Practical words of a craftsman (pion, zawór, przeciek). Short and direct."
+  },
+  {
+    "name": "Ludmiła Szpak",
+    "board": "validation-srw",
+    "role": "Operations specialist",
+    "style": "Exact dates, hours and numbers of the repair reports."
+  },
+  {
+    "name": "Nikodem Ostrowiak",
+    "board": "validation-srw",
+    "role": "Backend developer",
+    "style": "Terse. Uses issue keys and names of statuses."
+  },
+  {
+    "name": "Izabela Rudzka",
+    "board": "validation-zrz",
+    "role": "Product manager of the manager panel",
+    "style": "Names buildings by their address (ul. Lipowa 12) and asks for reports."
+  },
+  {
+    "name": "Bolesław Kurant",
+    "board": "validation-zrz",
+    "role": "Advisor, a property manager with 30 years of practice",
+    "style": "Formal and old-fashioned. Does not trust apps, but is very polite."
+  },
+  {
+    "name": "Matteo Rinaldi",
+    "board": "validation-zrz",
+    "role": "Frontend developer from Italy",
+    "style": "English with some Italian words (allora, perfetto, grazie)."
+  }
+]

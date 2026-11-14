@@ -1,0 +1,5002 @@
+[
+  {
+    "id": "train-0001",
+    "author": "Liam Murphy",
+    "instruction": "Who is working on VID-24 right now? I need to ask about the room bug. Cheers"
+  },
+  {
+    "id": "train-0002",
+    "author": "Rafał Domański",
+    "instruction": "ile czasu poszlo juz na VID-1? potrzebuje do retro"
+  },
+  {
+    "id": "train-0003",
+    "author": "Matylda Jedynak",
+    "instruction": "Jaki priorytet ma VID-33? Inwestor z mojej drugiej firmy pytał dziś o bezpieczeństwo PIN-ów, chcę mieć odpowiedź od ręki."
+  },
+  {
+    "id": "train-0004",
+    "author": "Matylda Jedynak",
+    "instruction": "Ile bugów w bieżącym sprincie nie jest jeszcze zrobionych? Potrzebuję jednej liczby do pitchu dla zarządu."
+  },
+  {
+    "id": "train-0005",
+    "author": "Liam Murphy",
+    "instruction": "Which issues with the label recording have no sprint yet? Just the keys, cheers"
+  },
+  {
+    "id": "train-0006",
+    "author": "Rafał Domański",
+    "instruction": "kto ogarnia buga, ze pacjent trafia do zlego pokoju po odswiezeniu strony?"
+  },
+  {
+    "id": "train-0007",
+    "author": "Matylda Jedynak",
+    "instruction": "Przypisz VID-16 do Weroniki. Robiła load testy w moim poprzednim startupie i wie, jak to szybko ogarnąć."
+  },
+  {
+    "id": "train-0008",
+    "author": "Liam Murphy",
+    "instruction": "Please set the priority of VID-22 to High, the live captions bug is getting worse. Cheers"
+  },
+  {
+    "id": "train-0009",
+    "author": "Rafał Domański",
+    "instruction": "zmien status VID-8 na Done, testy kamery przeszly na prodzie"
+  },
+  {
+    "id": "train-0010",
+    "author": "Matylda Jedynak",
+    "instruction": "Ten bug z echem na laptopach Lenovo wraca jak bumerang. Otwórz go ponownie: ustaw status Backlog i daj priorytet High."
+  },
+  {
+    "id": "train-0011",
+    "author": "Liam Murphy",
+    "instruction": "Please assign the Samsung Internet bug to Rafał. Cheers"
+  },
+  {
+    "id": "train-0012",
+    "author": "Rafał Domański",
+    "instruction": "dodaj label macos do buga z czarnym ekranem przy udostepnianiu na macOS"
+  },
+  {
+    "id": "train-0013",
+    "author": "Rafał Domański",
+    "instruction": "zaloguj 3h na VID-6, opis: debug bluetooth na androidzie"
+  },
+  {
+    "id": "train-0014",
+    "author": "Liam Murphy",
+    "instruction": "Please add a comment to VID-36: The duplicate events come from the retry in the webhook worker. Cheers"
+  },
+  {
+    "id": "train-0015",
+    "author": "Matylda Jedynak",
+    "instruction": "Napisz w VID-19 komentarz: Klient z sieci przychodni pyta o ten błąd, to priorytet na ten tydzień."
+  },
+  {
+    "id": "train-0016",
+    "author": "Liam Murphy",
+    "instruction": "Please log 1h 30m on the load test with 500 visits, description: test plan. Cheers"
+  },
+  {
+    "id": "train-0017",
+    "author": "Matylda Jedynak",
+    "instruction": "Do zadania z instrukcją dla pacjenta, jak przygotować się do wideowizyty, dodaj komentarz: Wersja dla seniorów ma mieć większą czcionkę."
+  },
+  {
+    "id": "train-0018",
+    "author": "Matylda Jedynak",
+    "instruction": "Stwórz nowe issue typu story: Wizyta z tłumaczem języka ukraińskiego. To będzie hit, w mojej drugiej firmie pacjenci pytali o to co tydzień."
+  },
+  {
+    "id": "train-0019",
+    "author": "Liam Murphy",
+    "instruction": "Please create a new bug: Microphone stays muted after reconnect. Priority High. Cheers"
+  },
+  {
+    "id": "train-0020",
+    "author": "Rafał Domański",
+    "instruction": "stworz nowe issue typu task: Aktualizacja certyfikatow serwera TURN"
+  },
+  {
+    "id": "train-0021",
+    "author": "Matylda Jedynak",
+    "instruction": "Załóż nowe zgłoszenie typu bug: Poczekalnia nie pokazuje czasu oczekiwania na tabletach. Daj priorytet High, przypisz Adrianowi i od razu wrzuć do bieżącego sprintu."
+  },
+  {
+    "id": "train-0022",
+    "author": "Liam Murphy",
+    "instruction": "Please create a new task: Upgrade the TURN servers to coturn 4.6. Put it in the next sprint. Cheers"
+  },
+  {
+    "id": "train-0023",
+    "author": "Rafał Domański",
+    "instruction": "przenies VID-35 do biezacego sprintu, to blokuje prod"
+  },
+  {
+    "id": "train-0024",
+    "author": "Matylda Jedynak",
+    "instruction": "Przenieś VID-14 do backlogu. Muzyka w poczekalni może poczekać, przed demo dla inwestora mamy ważniejsze rzeczy."
+  },
+  {
+    "id": "train-0025",
+    "author": "Liam Murphy",
+    "instruction": "Please move VID-20 to the next sprint. Cheers"
+  },
+  {
+    "id": "train-0026",
+    "author": "Matylda Jedynak",
+    "instruction": "Wszystkie zadania z labelem frontend, które nie mają sprintu, przenieś do następnego sprintu."
+  },
+  {
+    "id": "train-0027",
+    "author": "Rafał Domański",
+    "instruction": "przenies ticket z konsylium trzech lekarzy do sprintu 21"
+  },
+  {
+    "id": "train-0028",
+    "author": "Matylda Jedynak",
+    "instruction": "Wszystkie nieprzypisane bugi bez sprintu przypisz Weronice Sadowskiej. Bezpieczeństwo i jakość to u mnie priorytet w każdej firmie."
+  },
+  {
+    "id": "train-0029",
+    "author": "Liam Murphy",
+    "instruction": "Please raise every open issue with the label webrtc that is not High yet to priority High. Cheers"
+  },
+  {
+    "id": "train-0030",
+    "author": "Rafał Domański",
+    "instruction": "dodaj do wszystkich otwartych ticketow z labelem recording komentarz: czekamy na decyzje prawnikow w sprawie nagran"
+  },
+  {
+    "id": "train-0031",
+    "author": "Matylda Jedynak",
+    "instruction": "Wszystkie zadania Katarzyny Bąk ze statusem Backlog przepisz na Adriana Wójcika. Kasia od jutra ma urlop."
+  },
+  {
+    "id": "train-0032",
+    "author": "Rafał Domański",
+    "instruction": "skonczylem VID-12: zmien status na done, zaloguj 2h i napisz w komentarzu: dashboard jakosci polaczen jest na prodzie"
+  },
+  {
+    "id": "train-0033",
+    "author": "Liam Murphy",
+    "instruction": "VID-27 is ready for review: move it to In review, assign it to Katarzyna Zielińska and add a comment: Fixed by lazy loading of the record panel. Cheers"
+  },
+  {
+    "id": "train-0034",
+    "author": "Matylda Jedynak",
+    "instruction": "Problem z linkiem do wizyty, który działa po jej zakończeniu, bierze Adrian. Przypisz go Adrianowi, zmień status na In Progress i wrzuć do bieżącego sprintu. Klient czeka."
+  },
+  {
+    "id": "train-0035",
+    "author": "Liam Murphy",
+    "instruction": "The ticket about the blurred background: please set the priority to Lowest, move it to the backlog and add a comment: Not needed for the first release. Cheers"
+  },
+  {
+    "id": "train-0036",
+    "author": "Matylda Jedynak",
+    "instruction": "Usuń VID-23, ta strona z Flashem to prehistoria."
+  },
+  {
+    "id": "train-0037",
+    "author": "Rafał Domański",
+    "instruction": "przypisz VID-20 Przemyslawowi, on robil wczesniej serwery TURN"
+  },
+  {
+    "id": "train-0038",
+    "author": "Liam Murphy",
+    "instruction": "Please assign VID-31 to Katarzyna. Cheers"
+  },
+  {
+    "id": "train-0039",
+    "author": "Rafał Domański",
+    "instruction": "polec mi dobre sluchawki do grania do 300 zl"
+  },
+  {
+    "id": "train-0040",
+    "author": "Matylda Jedynak",
+    "instruction": "Jaki jest status VID-140? Inwestor pytał mnie o to na spotkaniu."
+  },
+  {
+    "id": "train-0041",
+    "author": "Ilona Szymańska",
+    "instruction": "Czy mogłabyś sprawdzić, kto jest przypisany do RX-14? Byłabym wdzięczna, bo lekarze pytają o ważność recept na antybiotyki."
+  },
+  {
+    "id": "train-0042",
+    "author": "Bogdan Kalinowski",
+    "instruction": "Jaki jest status RX-35? - to wymóg rozporządzenia o receptach - potrzebuję tego na kontrolę"
+  },
+  {
+    "id": "train-0043",
+    "author": "Hannah Becker",
+    "instruction": "Ile godzin jest zalogowane na RX-1? Potrzebuję to do raport (report) dla klienta."
+  },
+  {
+    "id": "train-0044",
+    "author": "Bogdan Kalinowski",
+    "instruction": "Ile zadań z labelem p1 nie ma przypisanej osoby? - liczba do raportu dla CSIOZ"
+  },
+  {
+    "id": "train-0045",
+    "author": "Ilona Szymańska",
+    "instruction": "Czy mogłabyś wypisać mi wszystkie bugi z labelem zus, które nie są jeszcze zrobione? Przygotowuję zestawienie dla działu prawnego."
+  },
+  {
+    "id": "train-0046",
+    "author": "Hannah Becker",
+    "instruction": "Jaki priorytet ma zadanie z certyfikatem do P1, który wygasa w listopadzie?"
+  },
+  {
+    "id": "train-0047",
+    "author": "Bogdan Kalinowski",
+    "instruction": "Zmień priorytet RX-25 na High. - logi z danymi pacjentów dłużej niż 90 dni to ryzyko RODO"
+  },
+  {
+    "id": "train-0048",
+    "author": "Hannah Becker",
+    "instruction": "Proszę przypisać RX-13 do Doroty, ona zna ten panel (frontend)."
+  },
+  {
+    "id": "train-0049",
+    "author": "Ilona Szymańska",
+    "instruction": "Czy mogłabyś zmienić status RX-10 na In Progress? Marcin Pietrzak właśnie zaczął nad tym pracować."
+  },
+  {
+    "id": "train-0050",
+    "author": "Bogdan Kalinowski",
+    "instruction": "Zadanie z integracją z Rejestrem Asystentów Medycznych: - ustaw priorytet Medium - przypisz je do Hannah Becker - to wymóg ustawy od stycznia"
+  },
+  {
+    "id": "train-0051",
+    "author": "Ilona Szymańska",
+    "instruction": "Czy mogłabyś przypisać zadanie o szablonach recept do mnie, Ilony Szymańskiej? Chętnie się tym zajmę."
+  },
+  {
+    "id": "train-0052",
+    "author": "Hannah Becker",
+    "instruction": "Bug z podwójnym zwolnieniem po double click (podwójne kliknięcie): proszę zmienić status na In Progress, ja to robię."
+  },
+  {
+    "id": "train-0053",
+    "author": "Hannah Becker",
+    "instruction": "Proszę zalogować 4h na RX-12, opis: retry z backoff dla P1"
+  },
+  {
+    "id": "train-0054",
+    "author": "Bogdan Kalinowski",
+    "instruction": "Dodaj komentarz do RX-6: Operator bramki SMS potwierdził poprawkę dla prefiksu +380, wdrożenie w piątek."
+  },
+  {
+    "id": "train-0055",
+    "author": "Ilona Szymańska",
+    "instruction": "Czy mogłabyś zalogować 45m na RX-7? Opis: konsultacja z farmaceutą."
+  },
+  {
+    "id": "train-0056",
+    "author": "Bogdan Kalinowski",
+    "instruction": "Dodaj komentarz do zadania o monitorowaniu czasu odpowiedzi P1: Próg alertu to 3 sekundy, zgodnie z umową z CSIOZ."
+  },
+  {
+    "id": "train-0057",
+    "author": "Hannah Becker",
+    "instruction": "Proszę zalogować 2h na zadanie z wydruk zwolnienia, opis: poprawa szablonu PDF"
+  },
+  {
+    "id": "train-0058",
+    "author": "Bogdan Kalinowski",
+    "instruction": "Stwórz nowe issue typu task: Aktualizacja słownika kodów pokrewieństwa ZUS. - wymóg od 1 stycznia"
+  },
+  {
+    "id": "train-0059",
+    "author": "Ilona Szymańska",
+    "instruction": "Czy mogłabyś założyć nowe zgłoszenie typu bug z tytułem: Lekarz nie widzi recept wystawionych przez zastępcę. Priorytet High, bardzo proszę."
+  },
+  {
+    "id": "train-0060",
+    "author": "Hannah Becker",
+    "instruction": "Proszę stworzyć nowe issue typu story: Recepta w języku angielskim dla turystów."
+  },
+  {
+    "id": "train-0061",
+    "author": "Bogdan Kalinowski",
+    "instruction": "Załóż nowe zgłoszenie typu bug: Kod pokrewieństwa znika po edycji zwolnienia. - priorytet Highest - przypisz do Marcina Woźniaka - dodaj do bieżącego sprintu"
+  },
+  {
+    "id": "train-0062",
+    "author": "Hannah Becker",
+    "instruction": "Proszę stworzyć nowe issue typu task: Test integracji z nową wersją P1. Proszę dać label p1 i dodać je do następnego sprintu."
+  },
+  {
+    "id": "train-0063",
+    "author": "Ilona Szymańska",
+    "instruction": "Czy mogłabyś przenieść RX-34 do bieżącego sprintu? Pacjenci bardzo czekają na odnowienie recept."
+  },
+  {
+    "id": "train-0064",
+    "author": "Bogdan Kalinowski",
+    "instruction": "Przenieś RX-11 do backlogu. - najpierw certyfikat P1, potem wyszukiwarka"
+  },
+  {
+    "id": "train-0065",
+    "author": "Hannah Becker",
+    "instruction": "Proszę przenieść RX-18 do sprintu 45."
+  },
+  {
+    "id": "train-0066",
+    "author": "Bogdan Kalinowski",
+    "instruction": "Wszystkie zadania z labelem drugs z przyszłych sprintów przenieś do bieżącego sprintu. - zmiana listy leków od grudnia"
+  },
+  {
+    "id": "train-0067",
+    "author": "Ilona Szymańska",
+    "instruction": "Czy mogłabyś przenieść zadanie z ostrzeżeniem o interakcjach leków do następnego sprintu?"
+  },
+  {
+    "id": "train-0068",
+    "author": "Bogdan Kalinowski",
+    "instruction": "Wszystkie nieprzypisane zadania z labelem p1 przypisz do mnie, Bogdana Kalinowskiego. - P1 to moja odpowiedzialność"
+  },
+  {
+    "id": "train-0069",
+    "author": "Ilona Szymańska",
+    "instruction": "Czy mogłabyś dodać komentarz do wszystkich nieprzypisanych zadań z bieżącego sprintu? Treść: Proszę o wycenę czasu do piątku."
+  },
+  {
+    "id": "train-0070",
+    "author": "Hannah Becker",
+    "instruction": "Proszę ustawić priorytet Highest dla wszystkich otwartych bugów z labelem validation. To ważne dla bezpieczeństwo pacjentów."
+  },
+  {
+    "id": "train-0071",
+    "author": "Bogdan Kalinowski",
+    "instruction": "Wszystkie zadania Marcina Woźniaka bez sprintu przepisz na Marcina Pietrzaka. - Woźniak przechodzi do innego zespołu"
+  },
+  {
+    "id": "train-0072",
+    "author": "Hannah Becker",
+    "instruction": "Skończyłam RX-14: proszę zmienić status na Done, zalogować 3h i dodać komentarz: ważność antybiotyku teraz 7 dni"
+  },
+  {
+    "id": "train-0073",
+    "author": "Bogdan Kalinowski",
+    "instruction": "RX-35: - zmień status na Done - dodaj komentarz: Dawka 0,5 zapisuje się poprawnie, test na środowisku P1 OK - zaloguj 1h"
+  },
+  {
+    "id": "train-0074",
+    "author": "Ilona Szymańska",
+    "instruction": "Czy mogłabyś zadanie z anulowaniem e-zwolnienia przypisać do Hannah Becker, zmienić jego status na In Progress i zalogować 30m z opisem: analiza wymagań ZUS?"
+  },
+  {
+    "id": "train-0075",
+    "author": "Hannah Becker",
+    "instruction": "Zadanie z kopią klucze podpisu: proszę przenieść do bieżącego sprintu i ustawić priorytet High."
+  },
+  {
+    "id": "train-0076",
+    "author": "Bogdan Kalinowski",
+    "instruction": "Wyślij e-mail do CSIOZ z listą pytań z RX-37."
+  },
+  {
+    "id": "train-0077",
+    "author": "Ilona Szymańska",
+    "instruction": "Czy mogłabyś połączyć RX-16 z RX-34 jako powiązane zgłoszenia?"
+  },
+  {
+    "id": "train-0078",
+    "author": "Hannah Becker",
+    "instruction": "Proszę przypisać RX-24 do Jarosława, on pracował nad uprawnienia."
+  },
+  {
+    "id": "train-0079",
+    "author": "Ilona Szymańska",
+    "instruction": "Czy mogłabyś przypisać RX-28 Marcinowi?"
+  },
+  {
+    "id": "train-0080",
+    "author": "Hannah Becker",
+    "instruction": "Jak się mówi po polsku 'Feierabend'? Potrzebuję na mail do koleżanka."
+  },
+  {
+    "id": "train-0081",
+    "author": "Szymon Krupa",
+    "instruction": "kto ma PAT-23? pls, chce zapytac o firebase"
+  },
+  {
+    "id": "train-0082",
+    "author": "Patrycja Lewandowska",
+    "instruction": "Jaki status ma PAT-9? 🙏 Podwójny push o wizycie to dla nas wizerunkowy dramat!"
+  },
+  {
+    "id": "train-0083",
+    "author": "Szymon Krupa",
+    "instruction": "ile czasu jest zalogowane na PAT-4? potrzebuje do sprint review"
+  },
+  {
+    "id": "train-0084",
+    "author": "Julia Kowalczyk",
+    "instruction": "Które zadania o wizytach (label visits) mają teraz status In Progress? Chcę wiedzieć, które ekrany mogę już testować."
+  },
+  {
+    "id": "train-0085",
+    "author": "Patrycja Lewandowska",
+    "instruction": "Ile mamy zadań z labelem push w bieżącym sprincie? 🚀 Chcę pochwalić zespół na all-hands!"
+  },
+  {
+    "id": "train-0086",
+    "author": "Szymon Krupa",
+    "instruction": "kto robi crash przy dodawaniu zdjecia skierowania na androidzie? asap"
+  },
+  {
+    "id": "train-0087",
+    "author": "Patrycja Lewandowska",
+    "instruction": "Ustaw priorytet PAT-25 na Highest! 💥 Usuwanie konta to must-have przed kampanią."
+  },
+  {
+    "id": "train-0088",
+    "author": "Szymon Krupa",
+    "instruction": "przypisz PAT-34 do oskara pls"
+  },
+  {
+    "id": "train-0089",
+    "author": "Julia Kowalczyk",
+    "instruction": "Proszę zmienić status PAT-7 na Done. Sprawdziłam ekran PIN z dużą czcionką i wszystko wygląda dobrze."
+  },
+  {
+    "id": "train-0090",
+    "author": "Julia Kowalczyk",
+    "instruction": "Na tabletach w poziomie aplikacja w ogóle nie działa, a to połowa naszych seniorów. Proszę dać temu zadaniu priorytet High i przypisać je do Julii Ptak."
+  },
+  {
+    "id": "train-0091",
+    "author": "Patrycja Lewandowska",
+    "instruction": "Widget z najbliższą wizytą to nasz hit sezonu! ✨ Zmień jego priorytet na High."
+  },
+  {
+    "id": "train-0092",
+    "author": "Szymon Krupa",
+    "instruction": "bug z animacja ladowania na starszych iphonach: ustaw priority high i przypisz do mnie, Szymona Krupy"
+  },
+  {
+    "id": "train-0093",
+    "author": "Szymon Krupa",
+    "instruction": "zaloguj 2h 30m na PAT-6, opis: repro na xiaomi"
+  },
+  {
+    "id": "train-0094",
+    "author": "Patrycja Lewandowska",
+    "instruction": "Dodaj komentarz do PAT-16: Apple Health to nasz killer feature na Q1! 🍎"
+  },
+  {
+    "id": "train-0095",
+    "author": "Julia Kowalczyk",
+    "instruction": "Proszę dodać komentarz do PAT-17: Makieta wykresu jest w Figmie, zakładka Pomiary."
+  },
+  {
+    "id": "train-0096",
+    "author": "Julia Kowalczyk",
+    "instruction": "Przy zadaniu z ekranami onboardingu dla nowych pacjentów proszę zalogować 3h z opisem: warsztat z pacjentami."
+  },
+  {
+    "id": "train-0097",
+    "author": "Szymon Krupa",
+    "instruction": "dodaj komentarz do ticketa z migracja push na nowe firebase api: zaczynam w poniedzialek"
+  },
+  {
+    "id": "train-0098",
+    "author": "Patrycja Lewandowska",
+    "instruction": "Stwórz nowe issue typu story o tytule: Program poleceń - zaproś znajomego do Curify. To będzie viral! 🎉"
+  },
+  {
+    "id": "train-0099",
+    "author": "Szymon Krupa",
+    "instruction": "stworz nowe issue typu bug: Crash on iOS 18 after granting camera access, priority highest"
+  },
+  {
+    "id": "train-0100",
+    "author": "Julia Kowalczyk",
+    "instruction": "Proszę założyć nowe zgłoszenie typu task: Badanie użyteczności ekranu płatności z seniorami."
+  },
+  {
+    "id": "train-0101",
+    "author": "Patrycja Lewandowska",
+    "instruction": "Załóż nowe issue typu story: Odznaki za regularne branie leków. Przypisz je Julii Kowalczyk i dodaj do następnego sprintu! 🏅"
+  },
+  {
+    "id": "train-0102",
+    "author": "Szymon Krupa",
+    "instruction": "stworz nowe issue typu bug: Push o leku przychodzi godzine za pozno po zmianie czasu. daj label push i wrzuc do biezacego sprintu"
+  },
+  {
+    "id": "train-0103",
+    "author": "Patrycja Lewandowska",
+    "instruction": "Przenieś PAT-15 do bieżącego sprintu! Dzienniczek ciśnienia musi być gotowy na kampanię 💪"
+  },
+  {
+    "id": "train-0104",
+    "author": "Szymon Krupa",
+    "instruction": "przenies PAT-12 do backlogu, analytics poczeka"
+  },
+  {
+    "id": "train-0105",
+    "author": "Julia Kowalczyk",
+    "instruction": "Proszę przenieść PAT-31 do sprintu 10."
+  },
+  {
+    "id": "train-0106",
+    "author": "Patrycja Lewandowska",
+    "instruction": "Wszystkie zadania z labelem measurements z następnego sprintu przenieś do sprintu 10. Teraz skupiamy się na przypomnieniach! 🔔"
+  },
+  {
+    "id": "train-0107",
+    "author": "Julia Kowalczyk",
+    "instruction": "Zadanie z czytnikiem ekranu, który nie odczytuje przycisków kalendarza, proszę przenieść do bieżącego sprintu."
+  },
+  {
+    "id": "train-0108",
+    "author": "Patrycja Lewandowska",
+    "instruction": "Wszystkie otwarte, nieprzypisane zadania z labelem ui przypisz Julii Kowalczyk! 🎨"
+  },
+  {
+    "id": "train-0109",
+    "author": "Szymon Krupa",
+    "instruction": "wszystkim otwartym bugom z labelem ios ustaw priority high pls"
+  },
+  {
+    "id": "train-0110",
+    "author": "Julia Kowalczyk",
+    "instruction": "Proszę dodać komentarz do wszystkich zadań z labelem accessibility. Treść: Potrzebna nowa makieta od UX."
+  },
+  {
+    "id": "train-0111",
+    "author": "Patrycja Lewandowska",
+    "instruction": "Wszystkie zadania Lucasa Moreau bez sprintu przypisz Oskarowi Majewskiemu! Lucas leci na konferencję 🛫"
+  },
+  {
+    "id": "train-0112",
+    "author": "Szymon Krupa",
+    "instruction": "skonczylem PAT-9: zmien status na done, zaloguj 1h i dodaj komentarz: duplikat push naprawiony w 4.3.0"
+  },
+  {
+    "id": "train-0113",
+    "author": "Julia Kowalczyk",
+    "instruction": "Zadanie z historią wizyt z notatkami lekarza jest gotowe do przeglądu. Proszę zmienić status na In review, przypisać je do mnie, Julii Kowalczyk, i dodać komentarz: Sprawdziłam z lekarzami, tekst jest czytelny."
+  },
+  {
+    "id": "train-0114",
+    "author": "Patrycja Lewandowska",
+    "instruction": "PAT-26 to bomba przed zmianą czasu! ⏰ Zmień status na In Progress, ustaw priorytet Highest i przypisz Mateuszowi."
+  },
+  {
+    "id": "train-0115",
+    "author": "Szymon Krupa",
+    "instruction": "ticket z eksportem e-recepty do pdf: przenies do nastepnego sprintu i przypisz do mnie, Szymona Krupy"
+  },
+  {
+    "id": "train-0116",
+    "author": "Patrycja Lewandowska",
+    "instruction": "Wyślij wszystkim pacjentom push z informacją o nowej wersji aplikacji! 📣"
+  },
+  {
+    "id": "train-0117",
+    "author": "Szymon Krupa",
+    "instruction": "przypisz PAT-30 do renaty pls"
+  },
+  {
+    "id": "train-0118",
+    "author": "Julia Kowalczyk",
+    "instruction": "Proszę przypisać PAT-21 do Julii."
+  },
+  {
+    "id": "train-0119",
+    "author": "Szymon Krupa",
+    "instruction": "zmien priorytet ticketa z loginem na high"
+  },
+  {
+    "id": "train-0120",
+    "author": "Julia Kowalczyk",
+    "instruction": "Jaka czcionka jest najlepsza dla osób starszych? Potrzebuję tego do prezentacji."
+  },
+  {
+    "id": "train-0121",
+    "author": "Konrad Sikorski",
+    "instruction": "Kto ma DOC-12?"
+  },
+  {
+    "id": "train-0122",
+    "author": "Ryan Walsh",
+    "instruction": "Hej, jaki priorytet ma DOC-20? To super ważne dla security review."
+  },
+  {
+    "id": "train-0123",
+    "author": "Halina Stępień",
+    "instruction": "Szanowni Państwo, ile czasu poświęcono dotąd na DOC-1? Z poważaniem, Halina Stępień"
+  },
+  {
+    "id": "train-0124",
+    "author": "Konrad Sikorski",
+    "instruction": "Ile bugów z bieżącego sprintu ma status In review?"
+  },
+  {
+    "id": "train-0125",
+    "author": "Ryan Walsh",
+    "instruction": "Hej, które tickety z labelem referrals są w przyszłych sprintach? Super, thx"
+  },
+  {
+    "id": "train-0126",
+    "author": "Halina Stępień",
+    "instruction": "Szanowni Państwo, kto zajmuje się problemem z alergiami pacjentów na kartach wizyty? Z poważaniem, Halina Stępień"
+  },
+  {
+    "id": "train-0127",
+    "author": "Konrad Sikorski",
+    "instruction": "Przypisz DOC-26 do Eweliny."
+  },
+  {
+    "id": "train-0128",
+    "author": "Halina Stępień",
+    "instruction": "Szanowni Państwo, uprzejmie proszę o nadanie zgłoszeniu DOC-31 najwyższego priorytetu (Highest). Historia zmian w dokumentacji jest wymogiem prawnym. Z poważaniem, Halina Stępień"
+  },
+  {
+    "id": "train-0129",
+    "author": "Ryan Walsh",
+    "instruction": "Hej, zmień status DOC-11 na In Progress, biorę te keyboard shortcuts."
+  },
+  {
+    "id": "train-0130",
+    "author": "Konrad Sikorski",
+    "instruction": "Bug z wagą ujemną: ustaw priorytet High i przypisz do Piotra Adamczyka."
+  },
+  {
+    "id": "train-0131",
+    "author": "Ryan Walsh",
+    "instruction": "Hej, ten ticket z faksem: ustaw priorytet Low, super"
+  },
+  {
+    "id": "train-0132",
+    "author": "Halina Stępień",
+    "instruction": "Szanowni Państwo, sytuacja, w której dwóch lekarzy edytuje jednocześnie tę samą notatkę, jest groźna dla pacjentów. Uprzejmie proszę o przypisanie tego zgłoszenia panu Konradowi Sikorskiemu. Z poważaniem"
+  },
+  {
+    "id": "train-0133",
+    "author": "Ryan Walsh",
+    "instruction": "Hej, zaloguj 2h na DOC-8, opis: PESEL search prototype"
+  },
+  {
+    "id": "train-0134",
+    "author": "Konrad Sikorski",
+    "instruction": "Dodaj komentarz do DOC-7: autozapis co 30 sekund gotowy do testów."
+  },
+  {
+    "id": "train-0135",
+    "author": "Halina Stępień",
+    "instruction": "Szanowni Państwo, uprzejmie proszę o dodanie do DOC-37 komentarza: Informacja o alergii musi być widoczna także na wydruku. Z poważaniem, Halina Stępień"
+  },
+  {
+    "id": "train-0136",
+    "author": "Konrad Sikorski",
+    "instruction": "Zaloguj 1h na zadanie ze słownikiem skrótów medycznych."
+  },
+  {
+    "id": "train-0137",
+    "author": "Ryan Walsh",
+    "instruction": "Hej, dodaj komentarz do ticketu z upgrade rich text editora: version 6 ma breaking changes w tabelach"
+  },
+  {
+    "id": "train-0138",
+    "author": "Konrad Sikorski",
+    "instruction": "Stwórz nowe issue typu bug: Podpis lekarza nie mieści się na wydruku zaświadczenia."
+  },
+  {
+    "id": "train-0139",
+    "author": "Halina Stępień",
+    "instruction": "Szanowni Państwo, uprzejmie proszę o założenie nowego zgłoszenia typu story: Skala bólu w notatce z wizyty. Z poważaniem, Halina Stępień"
+  },
+  {
+    "id": "train-0140",
+    "author": "Ryan Walsh",
+    "instruction": "Hej, stwórz nowe issue typu task: Dark mode for the doctor panel. Super!"
+  },
+  {
+    "id": "train-0141",
+    "author": "Konrad Sikorski",
+    "instruction": "Stwórz nowe issue typu bug: Lista wizyt nie odświeża się po północy. Priorytet High, przypisz do mnie (Konrad Sikorski), dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0142",
+    "author": "Ryan Walsh",
+    "instruction": "Hej, stwórz nowe issue typu story: Szablony zaleceń po angielsku. Daj label notes i dodaj je do sprintu 28. Thx"
+  },
+  {
+    "id": "train-0143",
+    "author": "Konrad Sikorski",
+    "instruction": "Przenieś DOC-19 do bieżącego sprintu."
+  },
+  {
+    "id": "train-0144",
+    "author": "Ryan Walsh",
+    "instruction": "Hej, przenieś DOC-15 do backlogu, kolory poczekają."
+  },
+  {
+    "id": "train-0145",
+    "author": "Halina Stępień",
+    "instruction": "Szanowni Państwo, uprzejmie proszę o przeniesienie zgłoszenia DOC-36 do najbliższego planowanego sprintu. Z poważaniem"
+  },
+  {
+    "id": "train-0146",
+    "author": "Konrad Sikorski",
+    "instruction": "Wszystkie bugi z bieżącego sprintu ze statusem Backlog przenieś do następnego sprintu."
+  },
+  {
+    "id": "train-0147",
+    "author": "Ryan Walsh",
+    "instruction": "Hej, ticket z exportem dokumentacji pacjenta do PDF przenieś do bieżącego sprintu"
+  },
+  {
+    "id": "train-0148",
+    "author": "Halina Stępień",
+    "instruction": "Szanowni Państwo, uprzejmie proszę o przypisanie pani Ewelinie Michalskiej wszystkich nieprzypisanych zgłoszeń z etykietą permissions. Z poważaniem"
+  },
+  {
+    "id": "train-0149",
+    "author": "Konrad Sikorski",
+    "instruction": "Dodaj label q4 do wszystkich otwartych zadań Piotra Adamczyka."
+  },
+  {
+    "id": "train-0150",
+    "author": "Ryan Walsh",
+    "instruction": "Hej, dodaj komentarz do wszystkich ticketów z labelem referrals: Czekamy na słownik z ministerstwa."
+  },
+  {
+    "id": "train-0151",
+    "author": "Konrad Sikorski",
+    "instruction": "Wszystkim bugom z labelem performance ustaw priorytet Highest."
+  },
+  {
+    "id": "train-0152",
+    "author": "Ryan Walsh",
+    "instruction": "Hej, skończyłem DOC-21: zmień status na Done, zaloguj 4h i dodaj komentarz: zaświadczenie ma nowy szablon. Super"
+  },
+  {
+    "id": "train-0153",
+    "author": "Konrad Sikorski",
+    "instruction": "DOC-14: zmień status na In review, przypisz do Piotra Jabłońskiego i dodaj komentarz: proszę o review autozapisu."
+  },
+  {
+    "id": "train-0154",
+    "author": "Halina Stępień",
+    "instruction": "Szanowni Państwo, wystawianie e-skierowań z panelu jest pilne. Uprzejmie proszę przenieść to zgłoszenie do bieżącego sprintu i zmienić jego status na In Progress. Z poważaniem"
+  },
+  {
+    "id": "train-0155",
+    "author": "Ryan Walsh",
+    "instruction": "Hej, ticket ze statystyką czasu wizyt dla kierownika: przypisz do mnie (Ryan Walsh), ustaw priorytet Medium i zaloguj 1h, opis: analiza danych"
+  },
+  {
+    "id": "train-0156",
+    "author": "Halina Stępień",
+    "instruction": "Szanowni Państwo, uprzejmie proszę o wydrukowanie zgłoszenia DOC-20 i przesłanie go faksem do dyrekcji. Z poważaniem"
+  },
+  {
+    "id": "train-0157",
+    "author": "Konrad Sikorski",
+    "instruction": "Zamknij sprint 26."
+  },
+  {
+    "id": "train-0158",
+    "author": "Ryan Walsh",
+    "instruction": "Hej, przypisz DOC-27 do Beaty, super"
+  },
+  {
+    "id": "train-0159",
+    "author": "Konrad Sikorski",
+    "instruction": "Przenieś DOC-23 do sprintu 30."
+  },
+  {
+    "id": "train-0160",
+    "author": "Halina Stępień",
+    "instruction": "Szanowni Państwo, uprzejmie proszę o przypisanie DOC-29 panu Piotrowi. Z poważaniem"
+  },
+  {
+    "id": "train-0161",
+    "author": "Agata Wilczek",
+    "instruction": "Przepraszam, że pytam, ale kto zajmuje się PAY-5? Klienci dzwonią do księgowości w sprawie zwrotów."
+  },
+  {
+    "id": "train-0162",
+    "author": "Magdalena Czerwińska",
+    "instruction": "Jaki jest status PAY-6? Do końca miesiąca musimy wystawić 4000 faktur bez duplikatów numerów."
+  },
+  {
+    "id": "train-0163",
+    "author": "Dawid Kozłowski",
+    "instruction": "Ile godzin już poszło na PAY-1? Pewnie mniej niż na łatanie tego starego modułu."
+  },
+  {
+    "id": "train-0164",
+    "author": "Magdalena Czerwińska",
+    "instruction": "Ile otwartych bugów z priorytetem High lub Highest nie ma przypisanej osoby? Potrzebuję liczby do raportu ryzyk dla zarządu."
+  },
+  {
+    "id": "train-0165",
+    "author": "Agata Wilczek",
+    "instruction": "Przepraszam, czy mogę prosić o listę zadań z etykietą accounting? Chcę wiedzieć, co dotyczy księgowości."
+  },
+  {
+    "id": "train-0166",
+    "author": "Dawid Kozłowski",
+    "instruction": "Jaki priorytet ma bug, w którym timeout bramki pokazuje się jako udana płatność? Brzmi jak klasyka naszego legacy."
+  },
+  {
+    "id": "train-0167",
+    "author": "Magdalena Czerwińska",
+    "instruction": "Ustaw priorytet PAY-22 na Highest. Uzgodnienie wpłat musimy skończyć przed zamknięciem roku."
+  },
+  {
+    "id": "train-0168",
+    "author": "Agata Wilczek",
+    "instruction": "Przepraszam za kłopot, czy można przypisać PAY-29 do mnie, Agaty Wilczek? Raport zwrotów jest dla mnie."
+  },
+  {
+    "id": "train-0169",
+    "author": "Dawid Kozłowski",
+    "instruction": "Zmień status PAY-14 na In review. Stary moduł w końcu przestał blokować framework, cud."
+  },
+  {
+    "id": "train-0170",
+    "author": "Magdalena Czerwińska",
+    "instruction": "Zadanie z kartą podarunkową na konsultacje: ustaw priorytet High i przypisz do Kacpra. Święta to 30% sprzedaży pakietów."
+  },
+  {
+    "id": "train-0171",
+    "author": "Dawid Kozłowski",
+    "instruction": "Bug z polem NIP i myślnikami przypisz do mnie, Dawida Kozłowskiego. Kto pisał tę walidację, ten wie."
+  },
+  {
+    "id": "train-0172",
+    "author": "Agata Wilczek",
+    "instruction": "Przepraszam, czy zadanie z fakturą po angielsku mogłoby dostać priorytet Medium? Klienci z zagranicy pytają."
+  },
+  {
+    "id": "train-0173",
+    "author": "Dawid Kozłowski",
+    "instruction": "Zaloguj 5h na PAY-6, opis: licznik faktur w bazie zamiast w pamięci"
+  },
+  {
+    "id": "train-0174",
+    "author": "Magdalena Czerwińska",
+    "instruction": "Dodaj komentarz do PAY-4: Pierwsze trzy firmy dostaną fakturę zbiorczą za listopad."
+  },
+  {
+    "id": "train-0175",
+    "author": "Agata Wilczek",
+    "instruction": "Przepraszam, czy można dodać komentarz do PAY-21: Klient prosi o wyraźną informację o stawce VAT na ekranie."
+  },
+  {
+    "id": "train-0176",
+    "author": "Magdalena Czerwińska",
+    "instruction": "Na zadaniu z testami obciążeniowymi bramki zaloguj 2h z opisem: scenariusz końca miesiąca."
+  },
+  {
+    "id": "train-0177",
+    "author": "Dawid Kozłowski",
+    "instruction": "Dodaj komentarz do buga z duplikatami klientów w systemie księgowym: Duplikaty tworzy stary import CSV, zgadnijcie z którego roku."
+  },
+  {
+    "id": "train-0178",
+    "author": "Magdalena Czerwińska",
+    "instruction": "Stwórz nowe issue typu story: Abonament dla seniorów z rabatem 20%. Priorytet High."
+  },
+  {
+    "id": "train-0179",
+    "author": "Dawid Kozłowski",
+    "instruction": "Stwórz nowe issue typu task: Usunąć stary moduł płatności po migracji. Ktoś w końcu musi."
+  },
+  {
+    "id": "train-0180",
+    "author": "Agata Wilczek",
+    "instruction": "Przepraszam, czy można założyć nowe zgłoszenie typu bug z tytułem: Faktura korygująca nie ma numeru faktury pierwotnej. Dziękuję bardzo."
+  },
+  {
+    "id": "train-0181",
+    "author": "Magdalena Czerwińska",
+    "instruction": "Załóż nowe zgłoszenie typu task: Raport MRR na koniec grudnia. Przypisz je Terezie Novákovej i dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0182",
+    "author": "Dawid Kozłowski",
+    "instruction": "Stwórz nowe issue typu bug: Webhook bramki przychodzi dwa razy dla jednej płatności. Priorytet Highest, label gateway, dodaj do następnego sprintu."
+  },
+  {
+    "id": "train-0183",
+    "author": "Magdalena Czerwińska",
+    "instruction": "Przenieś PAY-20 do bieżącego sprintu. BLIK na iOS to 40% płatności mobilnych."
+  },
+  {
+    "id": "train-0184",
+    "author": "Dawid Kozłowski",
+    "instruction": "Przenieś PAY-15 do backlogu. Przypomnienie o karcie przeżyje jeszcze jeden sprint."
+  },
+  {
+    "id": "train-0185",
+    "author": "Agata Wilczek",
+    "instruction": "Przepraszam, czy można przenieść PAY-29 do sprintu 13?"
+  },
+  {
+    "id": "train-0186",
+    "author": "Magdalena Czerwińska",
+    "instruction": "Wszystkie zadania z labelem subscriptions z następnego sprintu przenieś do sprintu 14."
+  },
+  {
+    "id": "train-0187",
+    "author": "Agata Wilczek",
+    "instruction": "Przepraszam, czy zadanie z eksportem płatności do systemu księgowego można przenieść do bieżącego sprintu? Zamykamy rok."
+  },
+  {
+    "id": "train-0188",
+    "author": "Magdalena Czerwińska",
+    "instruction": "Wszystkie nieprzypisane zadania z labelem gateway przypisz Agacie Rogalskiej."
+  },
+  {
+    "id": "train-0189",
+    "author": "Dawid Kozłowski",
+    "instruction": "Dodaj komentarz do wszystkich niezrobionych zadań z labelem invoices z bieżącego sprintu: Sprawdzić po migracji numeracji faktur."
+  },
+  {
+    "id": "train-0190",
+    "author": "Agata Wilczek",
+    "instruction": "Przepraszam, czy wszystkie zadania z etykietą refunds, które nie mają jeszcze priorytetu High, mogłyby go dostać?"
+  },
+  {
+    "id": "train-0191",
+    "author": "Magdalena Czerwińska",
+    "instruction": "Wszystkie zadania Terezy Novákovej bez sprintu przepisz na Kacpra Laskowskiego. Tereza przejmuje faktury zbiorcze."
+  },
+  {
+    "id": "train-0192",
+    "author": "Dawid Kozłowski",
+    "instruction": "Skończyłem PAY-7: zmień status na Done, zaloguj 3h i dodaj komentarz: podpis webhooka sprawdzany HMAC-iem. Wreszcie."
+  },
+  {
+    "id": "train-0193",
+    "author": "Magdalena Czerwińska",
+    "instruction": "PAY-8: zmień status na Done i dodaj komentarz: Kod NOWY20 działa od poniedziałku. Zaloguj też 30m z opisem: testy kodów."
+  },
+  {
+    "id": "train-0194",
+    "author": "Agata Wilczek",
+    "instruction": "Przepraszam, zadanie z uzgodnieniem wpłat z wyciągiem bankowym biorę ja. Czy można przypisać je do mnie, Agaty Wilczek, zmienić status na In Progress i przenieść do bieżącego sprintu?"
+  },
+  {
+    "id": "train-0195",
+    "author": "Dawid Kozłowski",
+    "instruction": "Bug z ceną abonamentu, która w appce jest inna niż na stronie: ustaw priorytet High, przypisz do Agaty Rogalskiej i dodaj komentarz: Cena idzie z cache CDN, nie z bazy."
+  },
+  {
+    "id": "train-0196",
+    "author": "Magdalena Czerwińska",
+    "instruction": "Wystaw fakturę dla firmy Kowalski Sp. z o.o. na 12 000 zł."
+  },
+  {
+    "id": "train-0197",
+    "author": "Agata Wilczek",
+    "instruction": "Przepraszam, czy można przypisać PAY-33 do Emila? On zna umowę z operatorem."
+  },
+  {
+    "id": "train-0198",
+    "author": "Dawid Kozłowski",
+    "instruction": "Przypisz PAY-12 do Agaty. Maile w spamie to jej działka."
+  },
+  {
+    "id": "train-0199",
+    "author": "Magdalena Czerwińska",
+    "instruction": "Jaki jest w tym roku limit zwolnienia z VAT dla małych firm?"
+  },
+  {
+    "id": "train-0200",
+    "author": "Agata Wilczek",
+    "instruction": "Przepraszam, czy może mi Pan pomóc wypełnić PIT-37?"
+  },
+  {
+    "id": "train-0201",
+    "author": "Wiktoria Sobolewska",
+    "instruction": "Hejka! Kto ma REJ-13? Ten biletomat na Mokotowie serio drukuje puste bilety, mega chaos."
+  },
+  {
+    "id": "train-0202",
+    "author": "Elżbieta Kurowska",
+    "instruction": "Dziś 140 pacjentów w kolejce i trzy skargi na infolinię. Jaki priorytet ma REJ-10?"
+  },
+  {
+    "id": "train-0203",
+    "author": "Olena Kovalenko",
+    "instruction": "Ile godzin zalogowane jest na REJ-1? Czy dobrze napisałam?"
+  },
+  {
+    "id": "train-0204",
+    "author": "Elżbieta Kurowska",
+    "instruction": "Ile zadań z labelem telephony nie ma przypisanej osoby? Potrzebuję tej liczby na zebranie kierowników."
+  },
+  {
+    "id": "train-0205",
+    "author": "Wiktoria Sobolewska",
+    "instruction": "Hejka, które bugi z labelem booking są w bieżącym sprincie? Mega potrzebuję listy na odprawę."
+  },
+  {
+    "id": "train-0206",
+    "author": "Olena Kovalenko",
+    "instruction": "Kto robi zadanie o dzieciach zapisanych na PESEL rodzica? Czy dobrze napisałam?"
+  },
+  {
+    "id": "train-0207",
+    "author": "Elżbieta Kurowska",
+    "instruction": "Przypisz REJ-14 do Wiktorii Sobolewskiej. Mamy 60 nieodebranych połączeń dziennie i chcę mieć ten raport."
+  },
+  {
+    "id": "train-0208",
+    "author": "Wiktoria Sobolewska",
+    "instruction": "Hejka, zmień priorytet REJ-26 na High, serio pacjenci z zagranicy dzwonią co godzinę!"
+  },
+  {
+    "id": "train-0209",
+    "author": "Olena Kovalenko",
+    "instruction": "Proszę zmienić status REJ-8 na Done. Odwołanie linkiem działa, sprawdziłam."
+  },
+  {
+    "id": "train-0210",
+    "author": "Elżbieta Kurowska",
+    "instruction": "Konsultantki zgłaszają, że widzą wyniki badań pacjentów. To trzy skargi w tym tygodniu. Ustaw temu zadaniu priorytet Highest i przypisz je do Damiana."
+  },
+  {
+    "id": "train-0211",
+    "author": "Wiktoria Sobolewska",
+    "instruction": "Hejka, bug z apostrofem w nazwiskach przypisz do Wiktorii Maciejewskiej, mega proszę"
+  },
+  {
+    "id": "train-0212",
+    "author": "Olena Kovalenko",
+    "instruction": "Zadaniu z zamówieniem słuchawek proszę dać priorytet Medium. Słuchawki są zepsute."
+  },
+  {
+    "id": "train-0213",
+    "author": "Wiktoria Sobolewska",
+    "instruction": "Zaloguj 1h 15m na REJ-37, opis: poprawki instrukcji. Hejka i dzięki!"
+  },
+  {
+    "id": "train-0214",
+    "author": "Elżbieta Kurowska",
+    "instruction": "Dodaj komentarz do REJ-6: W piątek zapisaliśmy dwóch pacjentów na 9:00 w placówce Wola."
+  },
+  {
+    "id": "train-0215",
+    "author": "Olena Kovalenko",
+    "instruction": "Proszę dodać komentarz do REJ-11: Nagranie po ukraińsku jest gotowe."
+  },
+  {
+    "id": "train-0216",
+    "author": "Elżbieta Kurowska",
+    "instruction": "Na zadaniu z przekierowaniem połączeń po godzinie 18 zaloguj 2h z opisem: konfiguracja placówki dyżurnej."
+  },
+  {
+    "id": "train-0217",
+    "author": "Wiktoria Sobolewska",
+    "instruction": "Hejka, dodaj komentarz do zadania z ankietą po rozmowie z infolinią: pytania są w dokumencie ankieta_v2."
+  },
+  {
+    "id": "train-0218",
+    "author": "Elżbieta Kurowska",
+    "instruction": "Stwórz nowe issue typu bug: Rejestracja nie widzi wolnych terminów w sobotę. Priorytet High."
+  },
+  {
+    "id": "train-0219",
+    "author": "Wiktoria Sobolewska",
+    "instruction": "Hejka, stwórz nowe issue typu task: Szkolenie z nowej centrali dla nocnej zmiany. Mega dzięki!"
+  },
+  {
+    "id": "train-0220",
+    "author": "Olena Kovalenko",
+    "instruction": "Proszę stworzyć nowe issue typu story: Komunikat infolinii po ukraińsku o wynikach badań."
+  },
+  {
+    "id": "train-0221",
+    "author": "Elżbieta Kurowska",
+    "instruction": "Załóż nowe zgłoszenie typu bug: SMS z przypomnieniem przychodzi z błędną godziną. Priorytet Highest, przypisz do Wiktorii Maciejewskiej i dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0222",
+    "author": "Wiktoria Sobolewska",
+    "instruction": "Hejka, stwórz nowe issue typu story: Zapisy na wizyty przez Messengera. Daj label chat i dodaj je do następnego sprintu."
+  },
+  {
+    "id": "train-0223",
+    "author": "Elżbieta Kurowska",
+    "instruction": "Przenieś REJ-21 do bieżącego sprintu. Dane pacjenta na monitorze to ryzyko kary."
+  },
+  {
+    "id": "train-0224",
+    "author": "Olena Kovalenko",
+    "instruction": "Proszę przenieść REJ-31 do backlogu."
+  },
+  {
+    "id": "train-0225",
+    "author": "Wiktoria Sobolewska",
+    "instruction": "Hejka, przenieś REJ-24 do sprintu 36, serio to może poczekać."
+  },
+  {
+    "id": "train-0226",
+    "author": "Elżbieta Kurowska",
+    "instruction": "Wszystkie zadania z labelem chat z następnego sprintu przenieś do bieżącego sprintu. Ludzie wolą pisać niż dzwonić."
+  },
+  {
+    "id": "train-0227",
+    "author": "Olena Kovalenko",
+    "instruction": "Zadanie z zapisem na szczepienie przeciw grypie proszę przenieść do bieżącego sprintu. Czy dobrze napisałam?"
+  },
+  {
+    "id": "train-0228",
+    "author": "Elżbieta Kurowska",
+    "instruction": "Wszystkie nieprzypisane bugi bez sprintu przypisz Damianowi Kaczmarczykowi."
+  },
+  {
+    "id": "train-0229",
+    "author": "Wiktoria Sobolewska",
+    "instruction": "Hejka, wszystkim otwartym zadaniom z labelem sms, które nie mają jeszcze priorytetu High, ustaw High, mega ważne!"
+  },
+  {
+    "id": "train-0230",
+    "author": "Olena Kovalenko",
+    "instruction": "Proszę dodać komentarz do wszystkich zadań z labelem hardware: Sprzęt jest w magazynie na Woli."
+  },
+  {
+    "id": "train-0231",
+    "author": "Elżbieta Kurowska",
+    "instruction": "Wszystkie zadania Sebastiana Pająka bez sprintu przepisz na Wiktorię Sobolewską. Sebastian przechodzi do zespołu IT."
+  },
+  {
+    "id": "train-0232",
+    "author": "Wiktoria Sobolewska",
+    "instruction": "Hejka, REJ-15 gotowe: zmień status na Done, zaloguj 2h i dodaj komentarz: zgoda na SMS-y zapisuje się przy rejestracji. Mega!"
+  },
+  {
+    "id": "train-0233",
+    "author": "Elżbieta Kurowska",
+    "instruction": "REJ-13: zmień status na In review, przypisz do Damiana Kaczmarczyka i dodaj komentarz: Nowa rolka papieru i aktualizacja sterownika, proszę sprawdzić."
+  },
+  {
+    "id": "train-0234",
+    "author": "Olena Kovalenko",
+    "instruction": "Zadanie z formularzem zmiany danych kontaktowych proszę przypisać do mnie, Oleny Kovalenko, zmienić status na In Progress i przenieść do bieżącego sprintu."
+  },
+  {
+    "id": "train-0235",
+    "author": "Wiktoria Sobolewska",
+    "instruction": "Hejka, bug z nagraniami rozmów trzymanymi tylko 7 dni: ustaw priorytet Highest, przypisz do Sebastiana i dodaj komentarz: polityka mówi 90 dni."
+  },
+  {
+    "id": "train-0236",
+    "author": "Elżbieta Kurowska",
+    "instruction": "Zadzwoń do pacjentki z REJ-28 i przeproś ją za błąd."
+  },
+  {
+    "id": "train-0237",
+    "author": "Olena Kovalenko",
+    "instruction": "Proszę przypisać REJ-30 do Romana."
+  },
+  {
+    "id": "train-0238",
+    "author": "Wiktoria Sobolewska",
+    "instruction": "Hejka, przypisz REJ-12 Wiktorii, mega dzięki"
+  },
+  {
+    "id": "train-0239",
+    "author": "Elżbieta Kurowska",
+    "instruction": "Jaki status ma REJ-77? Pacjent dzwonił w tej sprawie."
+  },
+  {
+    "id": "train-0240",
+    "author": "Wiktoria Sobolewska",
+    "instruction": "Hejka, jaki film polecasz na weekend? Serio potrzebuję odpocząć."
+  },
+  {
+    "id": "train-0241",
+    "author": "Norbert Szulc",
+    "instruction": "Kto jest przypisany do LAB-7?"
+  },
+  {
+    "id": "train-0242",
+    "author": "Teresa Wróblewska",
+    "instruction": "Jaki status ma LAB-31? Zakres referencyjny dla dzieci poniżej 2 lat musi być poprawny przed kontrolą jakości."
+  },
+  {
+    "id": "train-0243",
+    "author": "Ksenia Borowska",
+    "instruction": "ile godzin jest zalogowane na LAB-4? pisze z nocki, jest 3:20"
+  },
+  {
+    "id": "train-0244",
+    "author": "Teresa Wróblewska",
+    "instruction": "Ile zadań z labelem results ma priorytet High lub Highest? Potrzebuję tej liczby do raportu jakości."
+  },
+  {
+    "id": "train-0245",
+    "author": "Norbert Szulc",
+    "instruction": "Które bugi z labelem analyzer nie są zrobione? Podaj klucze."
+  },
+  {
+    "id": "train-0246",
+    "author": "Ksenia Borowska",
+    "instruction": "jaki priorytet ma zadanie z drukarke etykiet na woli? znowu gubi ustawienia"
+  },
+  {
+    "id": "train-0247",
+    "author": "Teresa Wróblewska",
+    "instruction": "Proszę ustawić priorytet LAB-20 na Medium. Wynik TSH z przecinkiem i kropką w jednym raporcie jest niedopuszczalny."
+  },
+  {
+    "id": "train-0248",
+    "author": "Norbert Szulc",
+    "instruction": "Przypisz LAB-39 do Henryka."
+  },
+  {
+    "id": "train-0249",
+    "author": "Ksenia Borowska",
+    "instruction": "zmien status LAB-29 na Done, polskie znaki w pdf juz sa ok"
+  },
+  {
+    "id": "train-0250",
+    "author": "Teresa Wróblewska",
+    "instruction": "Zadanie z kartą kontrolną Levey-Jenningsa dla glukozy: proszę ustawić priorytet Medium i przypisać je do Alicji Kubackiej."
+  },
+  {
+    "id": "train-0251",
+    "author": "Norbert Szulc",
+    "instruction": "Bug z logiem interfejsu HL7: przypisz do mnie, Norberta Szulca, i ustaw priorytet High."
+  },
+  {
+    "id": "train-0252",
+    "author": "Ksenia Borowska",
+    "instruction": "lista zlecen nie odswieza sie na nocnej zmianie. daj temu priorytet high i przypisz do mnie, Ksenia Borowska"
+  },
+  {
+    "id": "train-0253",
+    "author": "Norbert Szulc",
+    "instruction": "Zaloguj 3h na LAB-6, opis: mapowanie ID próbki po ponownym skanie"
+  },
+  {
+    "id": "train-0254",
+    "author": "Teresa Wróblewska",
+    "instruction": "Proszę dodać komentarz do LAB-8: Zakresy referencyjne według wieku są zgodne z zaleceniami KIDL."
+  },
+  {
+    "id": "train-0255",
+    "author": "Ksenia Borowska",
+    "instruction": "zaloguj 30m na LAB-13, opis: odczyt temperatury o 2:00"
+  },
+  {
+    "id": "train-0256",
+    "author": "Teresa Wróblewska",
+    "instruction": "Na zadaniu z rejestrem zużycia odczynników proszę zalogować 1h 30m z opisem: przegląd kart odczynników."
+  },
+  {
+    "id": "train-0257",
+    "author": "Ksenia Borowska",
+    "instruction": "dodaj komentarz do zadania z procedura na awarie analizatora w nocy: w nocy nie ma kogo zapytac, procedura pilna"
+  },
+  {
+    "id": "train-0258",
+    "author": "Teresa Wróblewska",
+    "instruction": "Proszę założyć nowe zgłoszenie typu bug: Wynik INR bez jednostki w portalu pacjenta. Priorytet High."
+  },
+  {
+    "id": "train-0259",
+    "author": "Norbert Szulc",
+    "instruction": "Stwórz nowe issue typu task: Test komunikatów HL7 ORU z nowego analizatora."
+  },
+  {
+    "id": "train-0260",
+    "author": "Ksenia Borowska",
+    "instruction": "stworz nowe issue typu bug: Skaner w punkcie pobran nie czyta kodow po 22"
+  },
+  {
+    "id": "train-0261",
+    "author": "Teresa Wróblewska",
+    "instruction": "Proszę założyć nowe zgłoszenie typu story: Automatyczna walidacja wyników morfologii. Proszę przypisać je do Henryka Sołtysa i dodać do następnego sprintu."
+  },
+  {
+    "id": "train-0262",
+    "author": "Norbert Szulc",
+    "instruction": "Stwórz nowe issue typu bug: Analizator moczu wysyła wynik bez ID zlecenia. Priorytet Highest, label analyzer, dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0263",
+    "author": "Teresa Wróblewska",
+    "instruction": "Proszę przenieść LAB-17 do bieżącego sprintu. Zlecenia bez ICD-10 blokują rozliczenia."
+  },
+  {
+    "id": "train-0264",
+    "author": "Norbert Szulc",
+    "instruction": "Przenieś LAB-13 do backlogu."
+  },
+  {
+    "id": "train-0265",
+    "author": "Ksenia Borowska",
+    "instruction": "przenies LAB-34 do sprintu 12"
+  },
+  {
+    "id": "train-0266",
+    "author": "Teresa Wróblewska",
+    "instruction": "Wszystkie zadania z labelem quality z następnego sprintu proszę przenieść do bieżącego sprintu."
+  },
+  {
+    "id": "train-0267",
+    "author": "Norbert Szulc",
+    "instruction": "Zadanie z podpisem elektronicznym diagnosty przenieś do następnego sprintu."
+  },
+  {
+    "id": "train-0268",
+    "author": "Teresa Wróblewska",
+    "instruction": "Wszystkie nieprzypisane zadania z labelem orders proszę przypisać Alicji Mazurek."
+  },
+  {
+    "id": "train-0269",
+    "author": "Norbert Szulc",
+    "instruction": "Wszystkim niezrobionym bugom z labelem labels ustaw priorytet High."
+  },
+  {
+    "id": "train-0270",
+    "author": "Ksenia Borowska",
+    "instruction": "dodaj komentarz do wszystkich otwartych zadan z labelem hardware: nocna zmiana prosi o szybka naprawe"
+  },
+  {
+    "id": "train-0271",
+    "author": "Teresa Wróblewska",
+    "instruction": "Wszystkie moje zadania bez sprintu, przypisane do Teresy Wróblewskiej, proszę przepisać na Alicję Kubacką. Przejmuję kontrolę jakości."
+  },
+  {
+    "id": "train-0272",
+    "author": "Norbert Szulc",
+    "instruction": "LAB-7 gotowe: zmień status na Done, zaloguj 4h i dodaj komentarz: ramki ASTM składane z kilku pakietów."
+  },
+  {
+    "id": "train-0273",
+    "author": "Ksenia Borowska",
+    "instruction": "zmien status LAB-5 na In review, zaloguj 2h i dodaj komentarz: nazwisko skracane do 20 znakow"
+  },
+  {
+    "id": "train-0274",
+    "author": "Teresa Wróblewska",
+    "instruction": "Zadanie z oznaczeniem wyników krytycznych na czerwono jest pilne. Proszę zmienić status na In Progress, przypisać je do Norberta Szulca i dodać komentarz: Wartości krytyczne według tabeli z 2026 roku."
+  },
+  {
+    "id": "train-0275",
+    "author": "Ksenia Borowska",
+    "instruction": "zadanie z archiwum wynikow starszych niz 20 lat przenies do backlogu i daj priorytet lowest"
+  },
+  {
+    "id": "train-0276",
+    "author": "Teresa Wróblewska",
+    "instruction": "Proszę wydrukować wyniki z LAB-2 dla pacjenta."
+  },
+  {
+    "id": "train-0277",
+    "author": "Norbert Szulc",
+    "instruction": "Zrestartuj middleware analizatorów na serwerze."
+  },
+  {
+    "id": "train-0278",
+    "author": "Ksenia Borowska",
+    "instruction": "przypisz LAB-35 do Zbigniewa"
+  },
+  {
+    "id": "train-0279",
+    "author": "Teresa Wróblewska",
+    "instruction": "Proszę przypisać LAB-36 pani Alicji."
+  },
+  {
+    "id": "train-0280",
+    "author": "Ksenia Borowska",
+    "instruction": "jaka kawa najlepiej dziala na nocnej zmianie?"
+  },
+  {
+    "id": "train-0281",
+    "author": "Erik Johansson",
+    "instruction": "Dzień dobry! Who is assigned to RTG-30? Dziękuję"
+  },
+  {
+    "id": "train-0282",
+    "author": "Leszek Nowakowski",
+    "instruction": "Jaki status ma RTG-6? Pięć badań MR czeka na opis."
+  },
+  {
+    "id": "train-0283",
+    "author": "Iwona Stachowiak",
+    "instruction": "Ile godzin zalogowano na RTG-5?"
+  },
+  {
+    "id": "train-0284",
+    "author": "Leszek Nowakowski",
+    "instruction": "Ile otwartych bugów ma label worklist?"
+  },
+  {
+    "id": "train-0285",
+    "author": "Erik Johansson",
+    "instruction": "Which issues with the label pacs have no sprint? Proszę, just the keys."
+  },
+  {
+    "id": "train-0286",
+    "author": "Iwona Stachowiak",
+    "instruction": "Jaki priorytet ma problem z aparatem USG na Woli, który nie wysyła zdjęć? Rano technik zgrywał zdjęcia na pendrive."
+  },
+  {
+    "id": "train-0287",
+    "author": "Leszek Nowakowski",
+    "instruction": "Ustaw priorytet RTG-12 na High. Nagrywanie płyty przez 15 minut to absurd."
+  },
+  {
+    "id": "train-0288",
+    "author": "Erik Johansson",
+    "instruction": "Please assign RTG-24 to Bartłomiej Cieślak. Dziękuję!"
+  },
+  {
+    "id": "train-0289",
+    "author": "Iwona Stachowiak",
+    "instruction": "Proszę zmienić status RTG-7 na In review. Grafik USG jest gotowy."
+  },
+  {
+    "id": "train-0290",
+    "author": "Leszek Nowakowski",
+    "instruction": "Opis badania nie trafia do dokumentacji pacjenta. Ustaw priorytet Highest i przypisz do Bartłomieja Zalewskiego."
+  },
+  {
+    "id": "train-0291",
+    "author": "Iwona Stachowiak",
+    "instruction": "Na mammografie badania wychodzą bez opisu strony, lewa czy prawa. Proszę dać temu zadaniu priorytet High i przypisać je do Sylwii."
+  },
+  {
+    "id": "train-0292",
+    "author": "Erik Johansson",
+    "instruction": "The issue about the old Windows 7 stations: please set the priority to Low. Dziękuję"
+  },
+  {
+    "id": "train-0293",
+    "author": "Erik Johansson",
+    "instruction": "Please log 2h on RTG-30, description: profiling of the viewer. Dziękuję!"
+  },
+  {
+    "id": "train-0294",
+    "author": "Leszek Nowakowski",
+    "instruction": "Dodaj komentarz do RTG-9: Link ma działać 30 dni, nie 24 godziny."
+  },
+  {
+    "id": "train-0295",
+    "author": "Iwona Stachowiak",
+    "instruction": "Proszę dodać komentarz do RTG-14: Pacjenci dostają SMS dzień przed badaniem, ale bez informacji o kontraście."
+  },
+  {
+    "id": "train-0296",
+    "author": "Leszek Nowakowski",
+    "instruction": "Zaloguj 1h na zadanie z kalibracją monitora w gabinecie 3, opis: pomiar luminancji."
+  },
+  {
+    "id": "train-0297",
+    "author": "Erik Johansson",
+    "instruction": "Please add a comment to the issue about the VPN for the external radiologists: The vendor sent the certificates. Dziękuję"
+  },
+  {
+    "id": "train-0298",
+    "author": "Leszek Nowakowski",
+    "instruction": "Stwórz nowe issue typu bug: Opis TK bez godziny podania kontrastu. Priorytet High."
+  },
+  {
+    "id": "train-0299",
+    "author": "Iwona Stachowiak",
+    "instruction": "Proszę założyć nowe zgłoszenie typu task: Nowe fartuchy ołowiane dla pracowni RTG."
+  },
+  {
+    "id": "train-0300",
+    "author": "Erik Johansson",
+    "instruction": "Please create a new story: Export of DICOM studies to a USB stick for patients. Dziękuję"
+  },
+  {
+    "id": "train-0301",
+    "author": "Leszek Nowakowski",
+    "instruction": "Załóż nowe zgłoszenie typu bug: Szablon opisu USG gubi wymiary zmian. Priorytet Highest, przypisz do Iwony Stachowiak i dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0302",
+    "author": "Erik Johansson",
+    "instruction": "Please create a new task: Update the PACS certificates. Add the label pacs and put it in the next sprint. Dziękuję"
+  },
+  {
+    "id": "train-0303",
+    "author": "Leszek Nowakowski",
+    "instruction": "Przenieś RTG-19 do bieżącego sprintu. Wola bez zdjęć z USG w PACS to dramat."
+  },
+  {
+    "id": "train-0304",
+    "author": "Iwona Stachowiak",
+    "instruction": "Proszę przenieść RTG-13 do backlogu. Lekarze mówią, że porównanie badań może poczekać."
+  },
+  {
+    "id": "train-0305",
+    "author": "Erik Johansson",
+    "instruction": "Please move RTG-28 to sprint 7. Dziękuję"
+  },
+  {
+    "id": "train-0306",
+    "author": "Leszek Nowakowski",
+    "instruction": "Wszystkie zadania z labelem teleradiology z następnego sprintu przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "train-0307",
+    "author": "Iwona Stachowiak",
+    "instruction": "Zadanie z ankietą przed badaniem MR w formie elektronicznej proszę przenieść do następnego sprintu."
+  },
+  {
+    "id": "train-0308",
+    "author": "Leszek Nowakowski",
+    "instruction": "Wszystkie nieprzypisane bugi przypisz Bartłomiejowi Cieślakowi."
+  },
+  {
+    "id": "train-0309",
+    "author": "Erik Johansson",
+    "instruction": "Please set the priority High for all open bugs with the label viewer. Dziękuję"
+  },
+  {
+    "id": "train-0310",
+    "author": "Iwona Stachowiak",
+    "instruction": "Proszę dodać komentarz do wszystkich zadań z labelem ultrasound: Pracownia USG jest zamknięta w piątek."
+  },
+  {
+    "id": "train-0311",
+    "author": "Leszek Nowakowski",
+    "instruction": "Wszystkie zadania Iwony Stachowiak bez sprintu przepisz na Bartłomieja Zalewskiego."
+  },
+  {
+    "id": "train-0312",
+    "author": "Iwona Stachowiak",
+    "instruction": "Szablony opisów TK są gotowe. Proszę zmienić status RTG-5 na Done, zalogować 2h i dodać komentarz: szablony sprawdzone z doktorem Nowakowskim."
+  },
+  {
+    "id": "train-0313",
+    "author": "Leszek Nowakowski",
+    "instruction": "RTG-33: zmień status na In review, przypisz do Bartłomieja Zalewskiego i dodaj komentarz: korekta ma nadpisywać dokument."
+  },
+  {
+    "id": "train-0314",
+    "author": "Erik Johansson",
+    "instruction": "The issue about speech recognition for the reports is now in review: please move it back to In Progress, assign it to me, Erik Johansson, and log 1h with the description: test of the Polish model. Dziękuję"
+  },
+  {
+    "id": "train-0315",
+    "author": "Leszek Nowakowski",
+    "instruction": "Zadanie z licencjami przeglądarki DICOM: ustaw priorytet Medium i przenieś je do następnego sprintu."
+  },
+  {
+    "id": "train-0316",
+    "author": "Leszek Nowakowski",
+    "instruction": "Wyślij opis z RTG-23 mailem do lekarza kierującego."
+  },
+  {
+    "id": "train-0317",
+    "author": "Iwona Stachowiak",
+    "instruction": "Proszę przypisać RTG-29 do pani Lucyny."
+  },
+  {
+    "id": "train-0318",
+    "author": "Erik Johansson",
+    "instruction": "Please assign RTG-17 to Bartłomiej. Dziękuję"
+  },
+  {
+    "id": "train-0319",
+    "author": "Leszek Nowakowski",
+    "instruction": "Daj priorytet Highest temu zadaniu z USG."
+  },
+  {
+    "id": "train-0320",
+    "author": "Iwona Stachowiak",
+    "instruction": "Jak najlepiej doczyścić fartuch ołowiany? Mamy plamy po kontraście."
+  },
+  {
+    "id": "train-0321",
+    "author": "Tadeusz Wrona",
+    "instruction": "Kto ma IT-15? LOGOWANIE rano trwa wieki."
+  },
+  {
+    "id": "train-0322",
+    "author": "Arkadiusz Mikulski",
+    "instruction": "Jaki priorytet ma IT-27? Serwer plików w centrali to duża pozycja w budżecie na ten kwartał."
+  },
+  {
+    "id": "train-0323",
+    "author": "Dominika Ryba",
+    "instruction": "Ile godzin zalogowano już na IT-5? Lekarze pytają o nowe komputery."
+  },
+  {
+    "id": "train-0324",
+    "author": "Arkadiusz Mikulski",
+    "instruction": "Ile zadań z labelem security nie ma sprintu? Muszę to pokazać zarządowi przy budżecie."
+  },
+  {
+    "id": "train-0325",
+    "author": "Tadeusz Wrona",
+    "instruction": "Które bugi z labelem printers są otwarte? KLUCZE."
+  },
+  {
+    "id": "train-0326",
+    "author": "Dominika Ryba",
+    "instruction": "Jaki priorytet ma zadanie z kamerą do teleporad w gabinecie 4? Doktor mówi: „pacjenci mnie nie widzą”."
+  },
+  {
+    "id": "train-0327",
+    "author": "Arkadiusz Mikulski",
+    "instruction": "Ustaw priorytet IT-20 na Highest. UPS na Woli to 4 tysiące złotych, a awaria serwerowni kosztuje więcej."
+  },
+  {
+    "id": "train-0328",
+    "author": "Tadeusz Wrona",
+    "instruction": "Przypisz IT-37 do mnie, Tadeusz Wrona. STARY SERWER POCZTY i tak tylko ja rozumiem."
+  },
+  {
+    "id": "train-0329",
+    "author": "Dominika Ryba",
+    "instruction": "Proszę zmienić status IT-10 na Done. Lekarka z Mokotowa mówi: „czytnik działa, dziękuję”."
+  },
+  {
+    "id": "train-0330",
+    "author": "Arkadiusz Mikulski",
+    "instruction": "Nowa placówka Bemowo otwiera się w lutym. Ustaw temu zadaniu priorytet Highest i przypisz je do Pauliny Zawiszy."
+  },
+  {
+    "id": "train-0331",
+    "author": "Tadeusz Wrona",
+    "instruction": "ZEGAR NA SERWERZE się spieszy. Daj priorytet High i przypisz do Konstantego."
+  },
+  {
+    "id": "train-0332",
+    "author": "Dominika Ryba",
+    "instruction": "Proszę przypisać zadanie z monitorem w gabinecie zabiegowym do Pauliny Gajewskiej. Pielęgniarki mówią: „boli nas głowa od tego migania”."
+  },
+  {
+    "id": "train-0333",
+    "author": "Tadeusz Wrona",
+    "instruction": "Zaloguj 3h na IT-7, opis: wymiana ROUTERA i konfiguracja LTE"
+  },
+  {
+    "id": "train-0334",
+    "author": "Arkadiusz Mikulski",
+    "instruction": "Dodaj komentarz do IT-13: Budżet na inwentaryzację to 6 tysięcy złotych, wszystkie placówki do końca grudnia."
+  },
+  {
+    "id": "train-0335",
+    "author": "Dominika Ryba",
+    "instruction": "Proszę zalogować 45m na IT-6, opis: kalibracja drukarki recept"
+  },
+  {
+    "id": "train-0336",
+    "author": "Arkadiusz Mikulski",
+    "instruction": "Na zadaniu z monitoringiem łączy internetowych placówek zaloguj 2h z opisem: wybór narzędzia."
+  },
+  {
+    "id": "train-0337",
+    "author": "Tadeusz Wrona",
+    "instruction": "Dodaj komentarz do zadania z PRZEŁĄCZNIKIEM w Ursynowie: przełącznik zamówiony, montaż w sobotę"
+  },
+  {
+    "id": "train-0338",
+    "author": "Arkadiusz Mikulski",
+    "instruction": "Stwórz nowe issue typu story: Wi-Fi dla pacjentów w placówce Ursynów. Priorytet High."
+  },
+  {
+    "id": "train-0339",
+    "author": "Tadeusz Wrona",
+    "instruction": "Stwórz nowe issue typu bug: DRUKARKA w rejestracji Wola nie drukuje kodów kreskowych."
+  },
+  {
+    "id": "train-0340",
+    "author": "Dominika Ryba",
+    "instruction": "Proszę założyć nowe zgłoszenie typu task: Drugi monitor dla rejestracji na Mokotowie."
+  },
+  {
+    "id": "train-0341",
+    "author": "Arkadiusz Mikulski",
+    "instruction": "Załóż nowe zgłoszenie typu task: Zakup 10 laptopów dla lekarzy. Przypisz je Dominice Rybie i dodaj do następnego sprintu."
+  },
+  {
+    "id": "train-0342",
+    "author": "Tadeusz Wrona",
+    "instruction": "Stwórz nowe issue typu bug: Serwer kopii zapasowych nie wstaje po restarcie. Priorytet Highest, label backup, dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0343",
+    "author": "Arkadiusz Mikulski",
+    "instruction": "Przenieś IT-27 do bieżącego sprintu. Serwer plików zapełni się przed końcem miesiąca."
+  },
+  {
+    "id": "train-0344",
+    "author": "Tadeusz Wrona",
+    "instruction": "Przenieś IT-13 do backlogu. INWENTARYZACJA poczeka."
+  },
+  {
+    "id": "train-0345",
+    "author": "Dominika Ryba",
+    "instruction": "Proszę przenieść IT-29 do sprintu 63."
+  },
+  {
+    "id": "train-0346",
+    "author": "Arkadiusz Mikulski",
+    "instruction": "Wszystkie zadania z labelem backup z następnego sprintu przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "train-0347",
+    "author": "Dominika Ryba",
+    "instruction": "Zadanie z kolejką zgłoszeń helpdesku proszę przenieść do bieżącego sprintu. Wszyscy mówią: „dzwonimy i nikt nie odbiera”."
+  },
+  {
+    "id": "train-0348",
+    "author": "Arkadiusz Mikulski",
+    "instruction": "Wszystkie nieprzypisane bugi przypisz Paulinie Gajewskiej."
+  },
+  {
+    "id": "train-0349",
+    "author": "Tadeusz Wrona",
+    "instruction": "Wszystkim otwartym zadaniom z labelem printers, które nie mają priorytetu Low, ustaw Low."
+  },
+  {
+    "id": "train-0350",
+    "author": "Dominika Ryba",
+    "instruction": "Proszę dodać komentarz do wszystkich otwartych zadań z labelem accounts: Proszę o kontakt z kadrami przed zmianą."
+  },
+  {
+    "id": "train-0351",
+    "author": "Arkadiusz Mikulski",
+    "instruction": "Przepisz na Konstantego Bielawskiego wszystkie zadania bez sprintu, które są przypisane do mnie, Arkadiusza Mikulskiego."
+  },
+  {
+    "id": "train-0352",
+    "author": "Tadeusz Wrona",
+    "instruction": "Skończyłem IT-15: zmień status na Done, zaloguj 2h i dodaj komentarz: LOGOWANIE szybsze po zmianie DNS."
+  },
+  {
+    "id": "train-0353",
+    "author": "Dominika Ryba",
+    "instruction": "Pani z rejestracji mówi: „w końcu!”. IT-12 jest naprawione: proszę zmienić status na Done, zalogować 1h i dodać komentarz: Skaner zapisuje do folderu Rejestracja/Skany."
+  },
+  {
+    "id": "train-0354",
+    "author": "Arkadiusz Mikulski",
+    "instruction": "Zadanie z hasłem do Wi-Fi na ścianie w Mokotowie przypisz Tadeuszowi Wronie, zmień status na In Progress i przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "train-0355",
+    "author": "Tadeusz Wrona",
+    "instruction": "ANTYWIRUS nie aktualizuje się na 6 komputerach. Przenieś to zadanie do bieżącego sprintu i daj priorytet High."
+  },
+  {
+    "id": "train-0356",
+    "author": "Arkadiusz Mikulski",
+    "instruction": "Zamów 25 komputerów u dostawcy."
+  },
+  {
+    "id": "train-0357",
+    "author": "Tadeusz Wrona",
+    "instruction": "Zresetuj hasło doktorowi Nowakowi."
+  },
+  {
+    "id": "train-0358",
+    "author": "Dominika Ryba",
+    "instruction": "Proszę przypisać IT-40 do pana Waldemara."
+  },
+  {
+    "id": "train-0359",
+    "author": "Tadeusz Wrona",
+    "instruction": "Przenieś IT-28 do sprintu 70."
+  },
+  {
+    "id": "train-0360",
+    "author": "Dominika Ryba",
+    "instruction": "Proszę przypisać IT-39 do Pauliny."
+  },
+  {
+    "id": "train-0361",
+    "author": "Stanisław Góral",
+    "instruction": "Kto odpowiada za NFZ-24? Natychmiast chcę wiedzieć, kto zaimportował te duplikaty!"
+  },
+  {
+    "id": "train-0362",
+    "author": "Grażyna Pietruszka",
+    "instruction": "Jaki status ma NFZ-6? Korekty z sierpnia musimy wysłać do 15. dnia miesiąca."
+  },
+  {
+    "id": "train-0363",
+    "author": "Jakub Sowiński",
+    "instruction": "Ile godzin zalogowano na NFZ-4? Chcę to dodać do dashboardu."
+  },
+  {
+    "id": "train-0364",
+    "author": "Stanisław Góral",
+    "instruction": "Ile mamy niezrobionych bugów z labelem rejections? JEDNA LICZBA, bez tłumaczenia!"
+  },
+  {
+    "id": "train-0365",
+    "author": "Jakub Sowiński",
+    "instruction": "Które zadania z labelem reports są w bieżącym sprincie? Potrzebuję kluczy do query w dashboardzie."
+  },
+  {
+    "id": "train-0366",
+    "author": "Grażyna Pietruszka",
+    "instruction": "Jaki priorytet ma zadanie z kontrolą NFZ w placówce Mokotów?"
+  },
+  {
+    "id": "train-0367",
+    "author": "Stanisław Góral",
+    "instruction": "Ustaw priorytet NFZ-25 na Highest! To odwołanie to NAJWAŻNIEJSZA sprawa w tym roku, nie będę płacił kar przez cudze błędy."
+  },
+  {
+    "id": "train-0368",
+    "author": "Grażyna Pietruszka",
+    "instruction": "Proszę przypisać NFZ-30 do Jakuba Lipińskiego. Teleporady rozliczamy według nowego zarządzenia."
+  },
+  {
+    "id": "train-0369",
+    "author": "Jakub Sowiński",
+    "instruction": "Zmień status NFZ-7 na Done. Dashboard ma już wszystkie placówki."
+  },
+  {
+    "id": "train-0370",
+    "author": "Stanisław Góral",
+    "instruction": "Zadanie z aneksem do umowy na rehabilitację: ustaw priorytet Highest i przypisz je Grażynie Pietruszce. NATYCHMIAST."
+  },
+  {
+    "id": "train-0371",
+    "author": "Jakub Sowiński",
+    "instruction": "Zadanie z outlierami liczby świadczeń na lekarza przypisz do mnie, Jakuba Sowińskiego, i ustaw priorytet Medium."
+  },
+  {
+    "id": "train-0372",
+    "author": "Grażyna Pietruszka",
+    "instruction": "Proszę ustawić priorytet High dla zadania z błędem zaokrąglenia punktów rozliczeniowych."
+  },
+  {
+    "id": "train-0373",
+    "author": "Grażyna Pietruszka",
+    "instruction": "Proszę zalogować 2h na NFZ-11, opis: lista świadczeń bez ICD-10 za październik"
+  },
+  {
+    "id": "train-0374",
+    "author": "Stanisław Góral",
+    "instruction": "Dodaj komentarz do NFZ-19: Nadwykonania mają być rozliczone w tym kwartale, bez wymówek!"
+  },
+  {
+    "id": "train-0375",
+    "author": "Jakub Sowiński",
+    "instruction": "Zaloguj 1h 30m na NFZ-31, opis: query przychodów po placówkach"
+  },
+  {
+    "id": "train-0376",
+    "author": "Grażyna Pietruszka",
+    "instruction": "Na zadaniu z instrukcją rozliczania teleporad proszę zalogować 1h z opisem: przegląd zarządzenia."
+  },
+  {
+    "id": "train-0377",
+    "author": "Stanisław Góral",
+    "instruction": "Do buga ze zduplikowanymi świadczeniami z Woli dodaj komentarz: Kto to zaimportował, ma to wyjaśnić do piątku."
+  },
+  {
+    "id": "train-0378",
+    "author": "Grażyna Pietruszka",
+    "instruction": "Proszę założyć nowe zgłoszenie typu task: Sprawozdanie za listopad do NFZ. Priorytet Highest."
+  },
+  {
+    "id": "train-0379",
+    "author": "Stanisław Góral",
+    "instruction": "Stwórz nowe issue typu task: Raport najlepszych placówek dla zarządu. Ma to być najlepszy raport w historii firmy!"
+  },
+  {
+    "id": "train-0380",
+    "author": "Jakub Sowiński",
+    "instruction": "Stwórz nowe issue typu story: Dashboard odrzuconych świadczeń według kodu błędu."
+  },
+  {
+    "id": "train-0381",
+    "author": "Grażyna Pietruszka",
+    "instruction": "Proszę założyć nowe zgłoszenie typu bug: Kod świadczenia 5.01.00.0000089 odrzucany bez powodu. Priorytet High, proszę przypisać je do Fabiana Rogowskiego i dodać do bieżącego sprintu."
+  },
+  {
+    "id": "train-0382",
+    "author": "Stanisław Góral",
+    "instruction": "Załóż nowe issue typu task: Lista placówek z najniższym przychodem z NFZ. Daj label reports i wrzuć je do następnego sprintu. Chcę to mieć NA BIURKU."
+  },
+  {
+    "id": "train-0383",
+    "author": "Stanisław Góral",
+    "instruction": "Przenieś NFZ-19 do bieżącego sprintu. NATYCHMIAST."
+  },
+  {
+    "id": "train-0384",
+    "author": "Grażyna Pietruszka",
+    "instruction": "Proszę przenieść NFZ-13 do backlogu. Porównanie rok do roku zrobimy po sprawozdaniu."
+  },
+  {
+    "id": "train-0385",
+    "author": "Jakub Sowiński",
+    "instruction": "Przenieś NFZ-33 do sprintu 18."
+  },
+  {
+    "id": "train-0386",
+    "author": "Grażyna Pietruszka",
+    "instruction": "Proszę przenieść wszystkie zadania z labelem prevention z następnego sprintu do bieżącego sprintu. Termin programu profilaktyki to koniec listopada."
+  },
+  {
+    "id": "train-0387",
+    "author": "Jakub Sowiński",
+    "instruction": "Zadanie z rankingiem placówek według przychodu przenieś do następnego sprintu."
+  },
+  {
+    "id": "train-0388",
+    "author": "Stanisław Góral",
+    "instruction": "Wszystkie nieprzypisane zadania z labelem contract przypisz Grażynie Pietruszce. Umowy z NFZ to podstawa tej firmy!"
+  },
+  {
+    "id": "train-0389",
+    "author": "Grażyna Pietruszka",
+    "instruction": "Proszę dodać komentarz do wszystkich otwartych zadań z labelem ewus: Weryfikacja eWUŚ według komunikatu z 1 października."
+  },
+  {
+    "id": "train-0390",
+    "author": "Jakub Sowiński",
+    "instruction": "Wszystkim zadaniom z labelem reports bez sprintu ustaw priorytet Medium."
+  },
+  {
+    "id": "train-0391",
+    "author": "Stanisław Góral",
+    "instruction": "Wszystkie zadania Fabiana Rogowskiego bez sprintu przepisz na Jakuba Lipińskiego. Fabian ma za dużo na głowie, a wyniki są słabe."
+  },
+  {
+    "id": "train-0392",
+    "author": "Grażyna Pietruszka",
+    "instruction": "NFZ-6 jest skończone. Proszę zmienić status na Done, zalogować 3h i dodać komentarz: Wszystkie 140 pozycji poprawione."
+  },
+  {
+    "id": "train-0393",
+    "author": "Jakub Sowiński",
+    "instruction": "NFZ-5: zmień status na In review, zaloguj 2h i dodaj komentarz: Ostrzeżenie przetestowane na danych z października."
+  },
+  {
+    "id": "train-0394",
+    "author": "Stanisław Góral",
+    "instruction": "Zadanie z rozliczeniem nadwykonań za trzeci kwartał przypisz Bożenie Kmiecik, zmień status na In Progress i dodaj komentarz: Termin to piątek, bez dyskusji."
+  },
+  {
+    "id": "train-0395",
+    "author": "Grażyna Pietruszka",
+    "instruction": "Zadanie z archiwizacją sprawozdań proszę przenieść do następnego sprintu i ustawić mu priorytet Medium."
+  },
+  {
+    "id": "train-0396",
+    "author": "Stanisław Góral",
+    "instruction": "Wyślij sprawozdanie za październik do NFZ. Natychmiast!"
+  },
+  {
+    "id": "train-0397",
+    "author": "Grażyna Pietruszka",
+    "instruction": "Proszę przypisać NFZ-20 do pani Ireny."
+  },
+  {
+    "id": "train-0398",
+    "author": "Stanisław Góral",
+    "instruction": "Przypisz NFZ-26 Jakubowi! Natychmiast!"
+  },
+  {
+    "id": "train-0399",
+    "author": "Jakub Sowiński",
+    "instruction": "Jaki jest dzisiaj kurs euro? Chcę przeliczyć przychody."
+  },
+  {
+    "id": "train-0400",
+    "author": "Stanisław Góral",
+    "instruction": "Napisz przemówienie na wigilię firmową. Ma być najlepsze w historii Medixu!"
+  },
+  {
+    "id": "train-0401",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Kto jest przypisany do FIZ-8?"
+  },
+  {
+    "id": "train-0402",
+    "author": "Klara Wysocka",
+    "instruction": "Jaki priorytet ma FIZ-22? Soczewka skupiająca to mój ulubiony temat z optyki, dzieci uwielbiają szukać ogniska!"
+  },
+  {
+    "id": "train-0403",
+    "author": "Daniela Costa",
+    "instruction": "How many hours are logged on FIZ-1? Could you confirm, please?"
+  },
+  {
+    "id": "train-0404",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Ile bugów jest w bieżącym sprincie? Tylko liczba."
+  },
+  {
+    "id": "train-0405",
+    "author": "Klara Wysocka",
+    "instruction": "Które zadania z labelem simulation są w przyszłych sprintach? Chcę zaplanować lekcje pokazowe!"
+  },
+  {
+    "id": "train-0406",
+    "author": "Daniela Costa",
+    "instruction": "Who is working on the buoyancy simulation? Could you confirm, please?"
+  },
+  {
+    "id": "train-0407",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Przypisz FIZ-11 do Tymona."
+  },
+  {
+    "id": "train-0408",
+    "author": "Klara Wysocka",
+    "instruction": "Ustaw priorytet FIZ-36 na Medium! Fale na wodzie to piękne zjawisko, uczniowie z 8b już czekają."
+  },
+  {
+    "id": "train-0409",
+    "author": "Daniela Costa",
+    "instruction": "Please change the status of FIZ-9 to Done. The badges work now. Could you confirm, please?"
+  },
+  {
+    "id": "train-0410",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Bug z wynikiem z przecinkiem: przypisz do mnie, Aleksander Brzeziński, i ustaw priorytet Highest."
+  },
+  {
+    "id": "train-0411",
+    "author": "Klara Wysocka",
+    "instruction": "Zadanie z rysunkiem dźwigni na małym ekranie: ustaw priorytet Medium i przypisz je do Klary Piątek. Dźwignia to podstawa mechaniki!"
+  },
+  {
+    "id": "train-0412",
+    "author": "Daniela Costa",
+    "instruction": "Please assign the Safari formulas bug to me, Daniela Costa, and set the priority to High. Could you confirm, please?"
+  },
+  {
+    "id": "train-0413",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Zaloguj 4h na FIZ-7, opis: fallback z WebGL na canvas"
+  },
+  {
+    "id": "train-0414",
+    "author": "Klara Wysocka",
+    "instruction": "Dodaj komentarz do FIZ-6: Klocki z drewna, żelaza i korka, żeby było widać różnicę gęstości."
+  },
+  {
+    "id": "train-0415",
+    "author": "Daniela Costa",
+    "instruction": "Please log 1h 30m on FIZ-10, description: tests with the large font. Could you confirm, please?"
+  },
+  {
+    "id": "train-0416",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Zaloguj 2h na bug z utratą postępu po wylogowaniu, opis: zapis sesji w backendzie"
+  },
+  {
+    "id": "train-0417",
+    "author": "Klara Wysocka",
+    "instruction": "Do zadania z symulacją rozszerzalności cieplnej dodaj komentarz: Pokażmy pręt mosiężny i szynę kolejową latem!"
+  },
+  {
+    "id": "train-0418",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Stwórz nowe issue typu bug: Wykres drogi od czasu nie skaluje osi przy dużych prędkościach."
+  },
+  {
+    "id": "train-0419",
+    "author": "Klara Wysocka",
+    "instruction": "Stwórz nowe issue typu story: Symulacja wahadła z regulacją długości nici. Uczniowie to pokochają!"
+  },
+  {
+    "id": "train-0420",
+    "author": "Daniela Costa",
+    "instruction": "Please create a new task: Translate the tutor hints to Portuguese. Could you confirm, please?"
+  },
+  {
+    "id": "train-0421",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Stwórz nowe issue typu bug: Tutor AI nie widzi jednostki w odpowiedzi ucznia. Priorytet High, przypisz do Wandy Łukasik, dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0422",
+    "author": "Klara Wysocka",
+    "instruction": "Stwórz nowe issue typu story: Symulacja dyfuzji z kolorowym atramentem. Daj label simulation i dodaj je do następnego sprintu."
+  },
+  {
+    "id": "train-0423",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Przenieś FIZ-38 do bieżącego sprintu."
+  },
+  {
+    "id": "train-0424",
+    "author": "Klara Wysocka",
+    "instruction": "Przenieś FIZ-9 do backlogu. Odznaki mogą poczekać, najpierw fizyka!"
+  },
+  {
+    "id": "train-0425",
+    "author": "Daniela Costa",
+    "instruction": "Please move FIZ-22 to sprint 16. Could you confirm, please?"
+  },
+  {
+    "id": "train-0426",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Wszystkie zadania z labelem electricity z przyszłych sprintów przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "train-0427",
+    "author": "Daniela Costa",
+    "instruction": "Please move the ticket about pupils who see the solutions before the deadline to the current sprint. Could you confirm, please?"
+  },
+  {
+    "id": "train-0428",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Wszystkie nieprzypisane bugi bez sprintu przypisz Tymonowi Rybakowi."
+  },
+  {
+    "id": "train-0429",
+    "author": "Klara Wysocka",
+    "instruction": "Wszystkim zadaniom z labelem exercises bez sprintu, które mają priorytet niższy niż High, ustaw priorytet High. Zadania to serce nauki!"
+  },
+  {
+    "id": "train-0430",
+    "author": "Daniela Costa",
+    "instruction": "Please add a comment to all issues with the label accessibility: Tested with the school for visually impaired pupils."
+  },
+  {
+    "id": "train-0431",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Wszystkie zadania Danieli Costy bez sprintu przepisz na Klarę Wysocką."
+  },
+  {
+    "id": "train-0432",
+    "author": "Aleksander Brzeziński",
+    "instruction": "FIZ-14: zmień status na Done, zaloguj 1h i dodaj komentarz: requestAnimationFrame zamiast setInterval"
+  },
+  {
+    "id": "train-0433",
+    "author": "Klara Wysocka",
+    "instruction": "Skończyłam symulację siły wyporu! Zmień status FIZ-6 na In review, przypisz do Aleksandra Brzezińskiego i dodaj komentarz: Proszę sprawdzić klocek z korka."
+  },
+  {
+    "id": "train-0434",
+    "author": "Daniela Costa",
+    "instruction": "The issue about the pupil login with a class code: please assign it to Tymon Rybak, move it to In Progress and log 30m with the description: analysis. Could you confirm, please?"
+  },
+  {
+    "id": "train-0435",
+    "author": "Klara Wysocka",
+    "instruction": "Zadanie z symulacją fal na wodzie przenieś do następnego sprintu i przypisz do mnie, Klary Wysockiej."
+  },
+  {
+    "id": "train-0436",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Zrób deploy aplikacji na produkcję."
+  },
+  {
+    "id": "train-0437",
+    "author": "Klara Wysocka",
+    "instruction": "Przypisz FIZ-26 Kornelowi, on robił rzut ukośny!"
+  },
+  {
+    "id": "train-0438",
+    "author": "Daniela Costa",
+    "instruction": "Please move FIZ-35 to sprint 20. Could you confirm, please?"
+  },
+  {
+    "id": "train-0439",
+    "author": "Aleksander Brzeziński",
+    "instruction": "Przypisz FIZ-17 do Klary."
+  },
+  {
+    "id": "train-0440",
+    "author": "Daniela Costa",
+    "instruction": "Can you explain Newton's second law to me in Portuguese?"
+  },
+  {
+    "id": "train-0441",
+    "author": "Witold Szymczak",
+    "instruction": "Kto ma NAU-13?"
+  },
+  {
+    "id": "train-0442",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Jaki status ma NAU-9? Proszę o odpowiedź do końca przerwy, zaraz mam lekcję z 7b."
+  },
+  {
+    "id": "train-0443",
+    "author": "Witold Szymczak",
+    "instruction": "Ile godzin zalogowano na NAU-5?"
+  },
+  {
+    "id": "train-0444",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Ile zadań z labelem homework nie ma jeszcze sprintu? Proszę o samą liczbę."
+  },
+  {
+    "id": "train-0445",
+    "author": "Roksana Wieczorek",
+    "instruction": "Które zadania o sprawdzianach (label tests) ma przypisane Roksana Bednarek?"
+  },
+  {
+    "id": "train-0446",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Jaki priorytet ma problem z oceną, która trafia do złego ucznia? W 8a była przez to awantura."
+  },
+  {
+    "id": "train-0447",
+    "author": "Witold Szymczak",
+    "instruction": "Przypisz NAU-33 do Fryderyka."
+  },
+  {
+    "id": "train-0448",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę o ustawienie priorytetu NAU-19 na Medium. Uczniowie z 7b pomylili prace domowe już dwa razy."
+  },
+  {
+    "id": "train-0449",
+    "author": "Roksana Wieczorek",
+    "instruction": "Proszę zmienić status NAU-12 na In Progress. Mam już makietę wykresu."
+  },
+  {
+    "id": "train-0450",
+    "author": "Witold Szymczak",
+    "instruction": "Bug z sesją, która wygasa podczas pisania komentarza: ustaw priorytet High i przypisz do mnie, Witold Szymczak."
+  },
+  {
+    "id": "train-0451",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę o przypisanie zadania z kalendarzem prac domowych do mnie, Bogumiły Sarneckiej, i o ustawienie priorytetu Medium. Kalendarz bardzo pomoże moim klasom."
+  },
+  {
+    "id": "train-0452",
+    "author": "Roksana Wieczorek",
+    "instruction": "Nauczyciel wkleja tekst i przycisk 'Zapisz' jest nieaktywny. Proszę dać temu zadaniu priorytet High i przypisać je do Oliwii."
+  },
+  {
+    "id": "train-0453",
+    "author": "Witold Szymczak",
+    "instruction": "Zaloguj 3h na NAU-6, opis: filtr klas po szkole"
+  },
+  {
+    "id": "train-0454",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę o dodanie komentarza do NAU-21: Uczniowie ze zwolnieniem lekarskim nie powinni obniżać średniej."
+  },
+  {
+    "id": "train-0455",
+    "author": "Roksana Wieczorek",
+    "instruction": "Proszę dodać komentarz do NAU-28: Dyrektorzy chcą widzieć klasy 7 i 8 osobno."
+  },
+  {
+    "id": "train-0456",
+    "author": "Witold Szymczak",
+    "instruction": "Zaloguj 1h na zadanie z przypomnieniem dla uczniów przed terminem pracy, opis: cron o 18:00"
+  },
+  {
+    "id": "train-0457",
+    "author": "Roksana Wieczorek",
+    "instruction": "Proszę dodać komentarz do zadania z drukiem kart pracy: Nauczyciele chcą format A5."
+  },
+  {
+    "id": "train-0458",
+    "author": "Witold Szymczak",
+    "instruction": "Stwórz nowe issue typu bug: Raport klasy nie liczy zadań oddanych po terminie."
+  },
+  {
+    "id": "train-0459",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę o założenie nowego zgłoszenia typu story: Notatka nauczyciela do całej klasy po lekcji."
+  },
+  {
+    "id": "train-0460",
+    "author": "Roksana Wieczorek",
+    "instruction": "Proszę stworzyć nowe issue typu task: Badanie z nauczycielami, jak oceniają prace domowe."
+  },
+  {
+    "id": "train-0461",
+    "author": "Witold Szymczak",
+    "instruction": "Stwórz nowe issue typu task: Indeks na tabeli wyników uczniów. Przypisz do Fryderyka Malca i dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0462",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę o założenie nowego zgłoszenia typu story: Sprawdzian z działu energia. Proszę dać label tests i dodać je do następnego sprintu."
+  },
+  {
+    "id": "train-0463",
+    "author": "Witold Szymczak",
+    "instruction": "Przenieś NAU-22 do bieżącego sprintu."
+  },
+  {
+    "id": "train-0464",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę przenieść NAU-11 do backlogu. Powiadomienia e-mail mogą poczekać."
+  },
+  {
+    "id": "train-0465",
+    "author": "Roksana Wieczorek",
+    "instruction": "Proszę przenieść NAU-26 do sprintu 11."
+  },
+  {
+    "id": "train-0466",
+    "author": "Witold Szymczak",
+    "instruction": "Wszystkie zadania z labelem tests z przyszłych sprintów przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "train-0467",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę przenieść zadanie z rankingiem klasy bez nazwisk uczniów do następnego sprintu."
+  },
+  {
+    "id": "train-0468",
+    "author": "Witold Szymczak",
+    "instruction": "Wszystkie nieprzypisane bugi przypisz Fryderykowi Malcowi."
+  },
+  {
+    "id": "train-0469",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę o dodanie komentarza do wszystkich zadań z labelem grades: Oceny muszą zgadzać się z dziennikiem elektronicznym."
+  },
+  {
+    "id": "train-0470",
+    "author": "Roksana Wieczorek",
+    "instruction": "Proszę dodać label teachers do wszystkich zadań z labelem homework z bieżącego sprintu."
+  },
+  {
+    "id": "train-0471",
+    "author": "Witold Szymczak",
+    "instruction": "Wszystkie zadania Roksany Wieczorek bez sprintu przepisz na Oliwię Jaworską."
+  },
+  {
+    "id": "train-0472",
+    "author": "Witold Szymczak",
+    "instruction": "NAU-8 gotowe: zmień status na Done, zaloguj 2h i dodaj komentarz: PDF generowany po stronie serwera."
+  },
+  {
+    "id": "train-0473",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę o zmianę statusu NAU-9 na Done, zalogowanie 30m i dodanie komentarza: Lista działa, sprawdziłam z klasą 8a."
+  },
+  {
+    "id": "train-0474",
+    "author": "Roksana Wieczorek",
+    "instruction": "Biorę zadanie z szablonem pracy domowej na każdy dział podręcznika. Proszę zmienić status na In Progress, przenieść je do bieżącego sprintu i dodać komentarz: Zaczynam od działu siły."
+  },
+  {
+    "id": "train-0475",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę o przeniesienie zadania z wiadomościami do rodziców do bieżącego sprintu i o ustawienie priorytetu High. Rodzice z 7b bardzo pytają."
+  },
+  {
+    "id": "train-0476",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę wpisać oceny z ostatniego sprawdzianu do dziennika elektronicznego."
+  },
+  {
+    "id": "train-0477",
+    "author": "Witold Szymczak",
+    "instruction": "Utwórz nowy board dla zespołu mobilnego."
+  },
+  {
+    "id": "train-0478",
+    "author": "Roksana Wieczorek",
+    "instruction": "Proszę przypisać NAU-27 do Jerzego."
+  },
+  {
+    "id": "train-0479",
+    "author": "Bogumiła Sarnecka",
+    "instruction": "Proszę o przypisanie NAU-20 pani Roksanie."
+  },
+  {
+    "id": "train-0480",
+    "author": "Roksana Wieczorek",
+    "instruction": "Jaki kolor ściany najlepiej działa na uczniów w klasie? Chcę pomalować salę."
+  },
+  {
+    "id": "train-0481",
+    "author": "Lena Dąbrowska",
+    "instruction": "Kto jest przypisany do ML-36?"
+  },
+  {
+    "id": "train-0482",
+    "author": "Ignacy Renifer",
+    "instruction": "Jaki status ma ML-3? Wciąż uważam, że gadający kot byłby hitem, nawet jeśli nikt się nie zaśmiał na spotkaniu."
+  },
+  {
+    "id": "train-0483",
+    "author": "Arash Karimi",
+    "instruction": "Ile godzin zalogowano na ML-1? Potrzebuję tego do sekcji methods w artykule."
+  },
+  {
+    "id": "train-0484",
+    "author": "Lena Dąbrowska",
+    "instruction": "Ile otwartych bugów z labelem tutor ma priorytet High lub Highest?"
+  },
+  {
+    "id": "train-0485",
+    "author": "Arash Karimi",
+    "instruction": "Które zadania z labelem evaluation nie mają sprintu? Podaj klucze, potrzebuję ich do related work."
+  },
+  {
+    "id": "train-0486",
+    "author": "Ignacy Renifer",
+    "instruction": "Jaki priorytet ma bug, w którym tutor chwali złą odpowiedź ucznia? Ja bym go od razu zwolnił. Tutora, oczywiście, nie programistę."
+  },
+  {
+    "id": "train-0487",
+    "author": "Lena Dąbrowska",
+    "instruction": "Przypisz ML-34 do Tobiasza."
+  },
+  {
+    "id": "train-0488",
+    "author": "Ignacy Renifer",
+    "instruction": "Ustaw priorytet ML-27 na Low. Tutor-pirat zasługuje na więcej niż Lowest. Arrr. Dobra, już przestaję."
+  },
+  {
+    "id": "train-0489",
+    "author": "Arash Karimi",
+    "instruction": "Zmień status ML-10 na In Progress, zaczynam baseline na elektryczności."
+  },
+  {
+    "id": "train-0490",
+    "author": "Lena Dąbrowska",
+    "instruction": "Bug z wymyślaniem wartości stałych fizycznych: ustaw priorytet Highest i przypisz do Marianny Kołodziej."
+  },
+  {
+    "id": "train-0491",
+    "author": "Ignacy Renifer",
+    "instruction": "Zadanie z tutorem jako piratem przypisz do mnie, Ignacego Renifera. W końcu ktoś musi to zrobić porządnie."
+  },
+  {
+    "id": "train-0492",
+    "author": "Arash Karimi",
+    "instruction": "Zadanie z porównaniem trzech modeli językowych przypisz do mnie, Arash Karimi, i ustaw priorytet High."
+  },
+  {
+    "id": "train-0493",
+    "author": "Arash Karimi",
+    "instruction": "Zaloguj 4h na ML-36, opis: ablation bez połowy we wzorze"
+  },
+  {
+    "id": "train-0494",
+    "author": "Ignacy Renifer",
+    "instruction": "Dodaj komentarz do ML-13: Rektor podobno lubi kolor zielony, zróbmy zielony motyw na demo."
+  },
+  {
+    "id": "train-0495",
+    "author": "Lena Dąbrowska",
+    "instruction": "Zaloguj 2h 30m na ML-5, opis: test jednostek w 200 odpowiedziach"
+  },
+  {
+    "id": "train-0496",
+    "author": "Lena Dąbrowska",
+    "instruction": "Na zadaniu z cache odpowiedzi na najczęstsze pytania zaloguj 1h z opisem: analiza logów zapytań."
+  },
+  {
+    "id": "train-0497",
+    "author": "Arash Karimi",
+    "instruction": "Dodaj komentarz do zadania z guideline do anotacji odpowiedzi tutora: Proszę dodać przykłady dla podpowiedzi."
+  },
+  {
+    "id": "train-0498",
+    "author": "Lena Dąbrowska",
+    "instruction": "Stwórz nowe issue typu task: Ewaluacja tutora na zadaniach z optyki. Priorytet High."
+  },
+  {
+    "id": "train-0499",
+    "author": "Ignacy Renifer",
+    "instruction": "Stwórz nowe issue typu story: Tutor opowiada żart z fizyki po trzech poprawnych odpowiedziach. Moje żarty testowałem na zespole i nikt nie protestował."
+  },
+  {
+    "id": "train-0500",
+    "author": "Arash Karimi",
+    "instruction": "Stwórz nowe issue typu task: Literature review of AI tutors in primary schools."
+  },
+  {
+    "id": "train-0501",
+    "author": "Lena Dąbrowska",
+    "instruction": "Stwórz nowe issue typu bug: Tutor podaje prędkość światła w km/h zamiast km/s. Priorytet High, przypisz do Marianny Kołodziej i dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0502",
+    "author": "Arash Karimi",
+    "instruction": "Stwórz nowe issue typu task: Ablation study of the hint prompt. Daj label evaluation i dodaj je do następnego sprintu."
+  },
+  {
+    "id": "train-0503",
+    "author": "Lena Dąbrowska",
+    "instruction": "Przenieś ML-20 do bieżącego sprintu."
+  },
+  {
+    "id": "train-0504",
+    "author": "Ignacy Renifer",
+    "instruction": "Przenieś ML-12 do backlogu. Anotacje to nie moja bajka, mówiłem to już trzy razy na stand-upie."
+  },
+  {
+    "id": "train-0505",
+    "author": "Arash Karimi",
+    "instruction": "Przenieś ML-21 do sprintu 23."
+  },
+  {
+    "id": "train-0506",
+    "author": "Lena Dąbrowska",
+    "instruction": "Wszystkie zadania z labelem voice z przyszłych sprintów przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "train-0507",
+    "author": "Ignacy Renifer",
+    "instruction": "Zadanie z red teamingiem tutora z doktorantami przenieś do bieżącego sprintu. Chętnie zagram złego ucznia, mam w tym doświadczenie z liceum."
+  },
+  {
+    "id": "train-0508",
+    "author": "Lena Dąbrowska",
+    "instruction": "Wszystkie nieprzypisane bugi z labelem tutor przypisz Lenie Olszewskiej."
+  },
+  {
+    "id": "train-0509",
+    "author": "Arash Karimi",
+    "instruction": "Do wszystkich zadań z labelem privacy dodaj komentarz: Proszę sprawdzić zgodność z RODO przed publikacją."
+  },
+  {
+    "id": "train-0510",
+    "author": "Ignacy Renifer",
+    "instruction": "Wszystkim zadaniom z labelem cost ustaw priorytet High. Pieniądze z grantu nie rosną na drzewach, sprawdzałem."
+  },
+  {
+    "id": "train-0511",
+    "author": "Lena Dąbrowska",
+    "instruction": "Wszystkie zadania Marianny Kołodziej bez sprintu przepisz na Tobiasza Mrozka. Marianna przygotowuje demo dla rektora."
+  },
+  {
+    "id": "train-0512",
+    "author": "Arash Karimi",
+    "instruction": "ML-36: zmień status na Done, zaloguj 1h i dodaj komentarz: wzór Ek = mv²/2 poprawiony we wszystkich promptach."
+  },
+  {
+    "id": "train-0513",
+    "author": "Lena Dąbrowska",
+    "instruction": "ML-14: zmień status na In Progress, przypisz do Tobiasza Mrozka i dodaj komentarz: cel to odpowiedź poniżej 3 sekund."
+  },
+  {
+    "id": "train-0514",
+    "author": "Ignacy Renifer",
+    "instruction": "Zadanie z demo tutora dla rektora: zmień status na In Progress, zaloguj 2h z opisem: próba generalna i dodaj komentarz: Rektor podobno woli demo bez slajdów."
+  },
+  {
+    "id": "train-0515",
+    "author": "Arash Karimi",
+    "instruction": "Zadanie z fallbackiem modelu przy limicie API: przenieś do następnego sprintu i ustaw priorytet High."
+  },
+  {
+    "id": "train-0516",
+    "author": "Lena Dąbrowska",
+    "instruction": "Uruchom ewaluację tutora na 500 zadaniach."
+  },
+  {
+    "id": "train-0517",
+    "author": "Arash Karimi",
+    "instruction": "Przypisz ML-26 do Celiny."
+  },
+  {
+    "id": "train-0518",
+    "author": "Ignacy Renifer",
+    "instruction": "Przypisz ML-35 Lenie. Tej mądrzejszej. Żartuję, obie są mądre."
+  },
+  {
+    "id": "train-0519",
+    "author": "Arash Karimi",
+    "instruction": "Ustaw priorytet High dla zadania z danymi."
+  },
+  {
+    "id": "train-0520",
+    "author": "Ignacy Renifer",
+    "instruction": "Jak wygonić renifera z ogrodu? Pytam dla kolegi."
+  },
+  {
+    "id": "train-0521",
+    "author": "Marzena Cichocka",
+    "instruction": "Kto jest przypisany do SZK-6? SP 3 w Siedlcach czeka od tygodnia."
+  },
+  {
+    "id": "train-0522",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Jaki status ma SZK-11? Za godzinę mam rozmowę z rektorem, piszę między spotkaniami."
+  },
+  {
+    "id": "train-0523",
+    "author": "Robert Gawroński",
+    "instruction": "Ile godzin zalogowano na SZK-5? Piszę z trasy do Radomia."
+  },
+  {
+    "id": "train-0524",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Ile zadań z labelem promotion nie ma przypisanej osoby? Szybko, jadę do kuratorium."
+  },
+  {
+    "id": "train-0525",
+    "author": "Marzena Cichocka",
+    "instruction": "Które zadania z labelem hardware nie są jeszcze zrobione? Do piątku muszę zamknąć listę sprzętu."
+  },
+  {
+    "id": "train-0526",
+    "author": "Robert Gawroński",
+    "instruction": "Kto zajmuje się przewozem tabletów do szkół drugiego etapu? Piszę z parkingu pod szkołą."
+  },
+  {
+    "id": "train-0527",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Przypisz SZK-19 do Marzeny Cichockiej. Zawsze była lojalna, poradzi sobie z dyrektorką z Mławy."
+  },
+  {
+    "id": "train-0528",
+    "author": "Marzena Cichocka",
+    "instruction": "Ustaw priorytet SZK-31 na Highest. Kontrola zgód RODO musi być gotowa do 15 grudnia."
+  },
+  {
+    "id": "train-0529",
+    "author": "Robert Gawroński",
+    "instruction": "Zmień status SZK-9 na Done, szkoły zatwierdziły harmonogram na grudzień."
+  },
+  {
+    "id": "train-0530",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Zadanie z gminą, która chce aplikację we wszystkich swoich szkołach: ustaw priorytet Highest i przypisz do mnie, Jacka Kacprzyka. Znam wójta, załatwię to osobiście."
+  },
+  {
+    "id": "train-0531",
+    "author": "Marzena Cichocka",
+    "instruction": "Zadanie ze szkołą w Sokołowie bez rzutnika: ustaw priorytet Medium i przypisz do Zdzisława Pośpiecha."
+  },
+  {
+    "id": "train-0532",
+    "author": "Robert Gawroński",
+    "instruction": "Zadanie z dwoma terminami szkolenia w jednej szkole przypisz do mnie, Roberta Gawrońskiego, i ustaw priorytet High."
+  },
+  {
+    "id": "train-0533",
+    "author": "Robert Gawroński",
+    "instruction": "Zaloguj 6h na SZK-5, opis: drugi dzień szkolenia w Radomiu"
+  },
+  {
+    "id": "train-0534",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Dodaj komentarz do SZK-11: Rektor przekazał listę osobiście, szkoły czekają na telefon."
+  },
+  {
+    "id": "train-0535",
+    "author": "Marzena Cichocka",
+    "instruction": "Dodaj komentarz do SZK-12: Kuratorium prosi o prezentację projektu do 10 grudnia."
+  },
+  {
+    "id": "train-0536",
+    "author": "Marzena Cichocka",
+    "instruction": "Na zadaniu z rozliczeniem delegacji trenerów za listopad zaloguj 1h z opisem: zestawienie kilometrówek."
+  },
+  {
+    "id": "train-0537",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Do zadania z wywiadem dla lokalnej telewizji dodaj komentarz: Redaktor to mój znajomy, nagranie w czwartek o 10:00."
+  },
+  {
+    "id": "train-0538",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Stwórz nowe issue typu task: Spotkanie z burmistrzem Radomia w sprawie wszystkich szkół w mieście. Priorytet High."
+  },
+  {
+    "id": "train-0539",
+    "author": "Marzena Cichocka",
+    "instruction": "Stwórz nowe issue typu task: Lista szkół z powiatu płockiego do trzeciego etapu."
+  },
+  {
+    "id": "train-0540",
+    "author": "Robert Gawroński",
+    "instruction": "Stwórz nowe issue typu bug: Tablety w SP 12 w Radomiu tracą Wi-Fi po aktualizacji."
+  },
+  {
+    "id": "train-0541",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Stwórz nowe issue typu task: Umowa z gminą Pułtusk na wszystkie szkoły. Przypisz je Marzenie Cichockiej i dodaj do bieżącego sprintu. Wiem, że da radę."
+  },
+  {
+    "id": "train-0542",
+    "author": "Marzena Cichocka",
+    "instruction": "Stwórz nowe issue typu task: Szkolenie nauczycieli w SP 2 w Ciechanowie. Daj label training i dodaj je do następnego sprintu."
+  },
+  {
+    "id": "train-0543",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Przenieś SZK-19 do bieżącego sprintu. Jutro jadę do Mławy, muszę mieć to zadanie w sprincie."
+  },
+  {
+    "id": "train-0544",
+    "author": "Marzena Cichocka",
+    "instruction": "Przenieś SZK-14 do backlogu. Plakaty poczekają do drugiego etapu."
+  },
+  {
+    "id": "train-0545",
+    "author": "Robert Gawroński",
+    "instruction": "Przenieś SZK-32 do sprintu 8."
+  },
+  {
+    "id": "train-0546",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Wszystkie zadania z labelem pilot bez sprintu przenieś do następnego sprintu. Drugi etap ruszy szybciej, niż wszyscy myślą."
+  },
+  {
+    "id": "train-0547",
+    "author": "Marzena Cichocka",
+    "instruction": "Zadanie z kontrolą zgód RODO w szkołach pilotażowych przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "train-0548",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Wszystkie nieprzypisane zadania z labelem partners przypisz mnie, Jackowi Kacprzykowi. Partnerzy to moja działka, znam tam wszystkich."
+  },
+  {
+    "id": "train-0549",
+    "author": "Marzena Cichocka",
+    "instruction": "Do wszystkich niezrobionych zadań z labelem consents dodaj komentarz: Termin zbierania zgód to 15 grudnia."
+  },
+  {
+    "id": "train-0550",
+    "author": "Robert Gawroński",
+    "instruction": "Wszystkim bugom z labelem hardware ustaw priorytet Medium, szkoły się skarżą."
+  },
+  {
+    "id": "train-0551",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Wszystkie moje zadania bez sprintu, czyli zadania Jacka Kacprzyka, przepisz na Tamarę Jurek. Tamara jest lojalna, ogarnie."
+  },
+  {
+    "id": "train-0552",
+    "author": "Robert Gawroński",
+    "instruction": "Tablety dojechały do Pułtuska. Zmień status SZK-7 na Done, zaloguj 3h i dodaj komentarz: 30 tabletów w szkole, protokół podpisany."
+  },
+  {
+    "id": "train-0553",
+    "author": "Marzena Cichocka",
+    "instruction": "SZK-13: zmień status na In Progress, przypisz do Zdzisława Pośpiecha i dodaj komentarz: Nauczyciele z SP 7 w Płocku dostali nowe hasła."
+  },
+  {
+    "id": "train-0554",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Zadanie ze szkołą w Mławie, która chce zrezygnować: przypisz do mnie, Jacka Kacprzyka, zmień status na In Progress i dodaj komentarz: Rozmawiałem z dyrektorką, szkoła zostaje w pilotażu."
+  },
+  {
+    "id": "train-0555",
+    "author": "Robert Gawroński",
+    "instruction": "Zadanie z formularzem opinii po szkoleniu przenieś do bieżącego sprintu i przypisz do mnie, Roberta Gawrońskiego."
+  },
+  {
+    "id": "train-0556",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Zadzwoń do rektora i umów mnie na jutro na 9:00."
+  },
+  {
+    "id": "train-0557",
+    "author": "Marzena Cichocka",
+    "instruction": "Wyślij wszystkim dyrektorom szkół zaproszenie na konferencję."
+  },
+  {
+    "id": "train-0558",
+    "author": "Robert Gawroński",
+    "instruction": "Przypisz SZK-22 Stefanowi."
+  },
+  {
+    "id": "train-0559",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Jaki status ma SZK-55? Rektor o to pytał."
+  },
+  {
+    "id": "train-0560",
+    "author": "Jacek Kacprzyk",
+    "instruction": "Przypisz SZK-25 Marzenie, ona jest lojalna."
+  },
+  {
+    "id": "train-0561",
+    "author": "Patryk Szostak",
+    "instruction": "Kto jest przypisany do BAD-24? Załącznik nr 3 musi być gotowy przed terminem sprawozdania."
+  },
+  {
+    "id": "train-0562",
+    "author": "Nina Woźnicka",
+    "instruction": "Przepraszam, jaki status ma BAD-6? Nie chcę przeszkadzać 🙈"
+  },
+  {
+    "id": "train-0563",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Ile godzin zalogowano dotychczas na BAD-1, czyli na przeprowadzenie pretestu w szkołach pilotażowych?"
+  },
+  {
+    "id": "train-0564",
+    "author": "Patryk Szostak",
+    "instruction": "Ile zadań z labelem grant nie ma przypisanej osoby? Potrzebuję tej liczby do raportu kamieni milowych."
+  },
+  {
+    "id": "train-0565",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Które zadania z etykietą statistics znajdują się w przyszłych sprintach? Uprzejmie proszę o klucze."
+  },
+  {
+    "id": "train-0566",
+    "author": "Nina Woźnicka",
+    "instruction": "Przepraszam, kto robi książkę kodów do analizy wywiadów? 😅"
+  },
+  {
+    "id": "train-0567",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o ustawienie priorytetu BAD-25 na High, albowiem rzetelność narzędzia badawczego warunkuje dalsze analizy."
+  },
+  {
+    "id": "train-0568",
+    "author": "Patryk Szostak",
+    "instruction": "Przypisz BAD-21 do Igi Sobczyk. Repozytorium danych to wskaźnik w kamieniu milowym nr 2."
+  },
+  {
+    "id": "train-0569",
+    "author": "Nina Woźnicka",
+    "instruction": "Przepraszam, czy można zmienić status BAD-12 na In Progress? Zaczęłam transkrypcję 🙂"
+  },
+  {
+    "id": "train-0570",
+    "author": "Patryk Szostak",
+    "instruction": "Zadanie z planem zarządzania danymi dla grantodawcy: ustaw priorytet Highest i przypisz do Niny Tomczak. Termin złożenia to 15 grudnia."
+  },
+  {
+    "id": "train-0571",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o przypisanie zadania związanego z obserwacjami lekcji pani Ninie Woźnickiej oraz o nadanie mu priorytetu High."
+  },
+  {
+    "id": "train-0572",
+    "author": "Nina Woźnicka",
+    "instruction": "Przepraszam, czy zadanie z posterem na dzień otwarty można przypisać do mnie, Niny Woźnickiej, i ustawić mu priorytet Medium? 🙏"
+  },
+  {
+    "id": "train-0573",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o zalogowanie 3h na BAD-7 z opisem: weryfikacja założeń modelu mieszanego."
+  },
+  {
+    "id": "train-0574",
+    "author": "Patryk Szostak",
+    "instruction": "Dodaj komentarz do BAD-11: Kamień milowy nr 1 zatwierdzony przez opiekuna projektu."
+  },
+  {
+    "id": "train-0575",
+    "author": "Nina Woźnicka",
+    "instruction": "Przepraszam, czy można zalogować 2h na BAD-12 z opisem: transkrypcja wywiadów 1-3? 🙂"
+  },
+  {
+    "id": "train-0576",
+    "author": "Patryk Szostak",
+    "instruction": "Na zadaniu z rozliczeniem kosztów wyjazdów do szkół zaloguj 1h 30m z opisem: zestawienie biletów i faktur."
+  },
+  {
+    "id": "train-0577",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o dodanie komentarza do zadania dotyczącego rzetelności testu: Alfę Cronbacha należy policzyć osobno dla klas 7 i 8."
+  },
+  {
+    "id": "train-0578",
+    "author": "Patryk Szostak",
+    "instruction": "Stwórz nowe issue typu task: Sprawozdanie końcowe z pierwszego roku grantu. Priorytet Highest."
+  },
+  {
+    "id": "train-0579",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o założenie nowego zgłoszenia typu task: Analiza wielkości efektu w grupie eksperymentalnej."
+  },
+  {
+    "id": "train-0580",
+    "author": "Nina Woźnicka",
+    "instruction": "Przepraszam, czy można stworzyć nowe issue typu task: Przegląd literatury o tutorach AI? 🙂"
+  },
+  {
+    "id": "train-0581",
+    "author": "Patryk Szostak",
+    "instruction": "Załóż nowe zgłoszenie typu task: Harmonogram płatności transz grantu. Przypisz je do mnie, Patryka Szostaka, i dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0582",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o założenie nowego zgłoszenia typu task: Kwestionariusz wywiadu dla dyrektorów szkół. Proszę nadać mu etykietę interviews i dodać je do następnego sprintu."
+  },
+  {
+    "id": "train-0583",
+    "author": "Patryk Szostak",
+    "instruction": "Przenieś BAD-35 do bieżącego sprintu. Plan zarządzania danymi to wymóg grantodawcy."
+  },
+  {
+    "id": "train-0584",
+    "author": "Nina Woźnicka",
+    "instruction": "Przepraszam, czy można przenieść BAD-13 do backlogu? Abstrakt nie zdąży 😔"
+  },
+  {
+    "id": "train-0585",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o przeniesienie BAD-25 do sprintu 6."
+  },
+  {
+    "id": "train-0586",
+    "author": "Patryk Szostak",
+    "instruction": "Wszystkie zadania z labelem grant bez sprintu przenieś do następnego sprintu."
+  },
+  {
+    "id": "train-0587",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o przeniesienie zadania dotyczącego wywiadu grupowego z uczniami klasy 8 do bieżącego sprintu."
+  },
+  {
+    "id": "train-0588",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o przypisanie pani Idze Sobczyk wszystkich nieprzypisanych zadań z etykietą data."
+  },
+  {
+    "id": "train-0589",
+    "author": "Patryk Szostak",
+    "instruction": "Do wszystkich zadań z labelem grant z bieżącego sprintu dodaj komentarz: Proszę o aktualizację statusu przed spotkaniem u rektora."
+  },
+  {
+    "id": "train-0590",
+    "author": "Nina Woźnicka",
+    "instruction": "Przepraszam, czy wszystkim zadaniom z labelem survey można ustawić priorytet High? Ankiety są bardzo ważne dla mojego doktoratu 🙏"
+  },
+  {
+    "id": "train-0591",
+    "author": "Patryk Szostak",
+    "instruction": "Wszystkie zadania Niny Tomczak bez sprintu przepisz na Kazimierza Batora."
+  },
+  {
+    "id": "train-0592",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o zmianę statusu BAD-7 na Done, zalogowanie 2h oraz dodanie komentarza: Plan analiz zatwierdzony przez zespół."
+  },
+  {
+    "id": "train-0593",
+    "author": "Nina Woźnicka",
+    "instruction": "Dziękuję za pomoc 🙂 Przepraszam, proszę zmienić status BAD-8 na Done, zalogować 1h i dodać komentarz: Wszystkie 12 wywiadów przeprowadzone."
+  },
+  {
+    "id": "train-0594",
+    "author": "Patryk Szostak",
+    "instruction": "Zadanie ze spotkaniem u rektora w sprawie przedłużenia grantu przypisz do Barbary Ziółkowskiej, zmień status na In Progress i dodaj komentarz: Spotkanie potwierdzone na wtorek, godz. 12:00."
+  },
+  {
+    "id": "train-0595",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o przeniesienie zadania dotyczącego archiwizacji danych badawczych do następnego sprintu oraz o nadanie mu priorytetu High."
+  },
+  {
+    "id": "train-0596",
+    "author": "Patryk Szostak",
+    "instruction": "Złóż sprawozdanie okresowe w systemie grantodawcy."
+  },
+  {
+    "id": "train-0597",
+    "author": "Nina Woźnicka",
+    "instruction": "Przepraszam, czy można przypisać BAD-28 do pana Bogusława? 🙂"
+  },
+  {
+    "id": "train-0598",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o przypisanie BAD-22 pani Ninie."
+  },
+  {
+    "id": "train-0599",
+    "author": "Nina Woźnicka",
+    "instruction": "Przepraszam, czy możesz policzyć dla mnie test t-Studenta na moich danych? 🙈"
+  },
+  {
+    "id": "train-0600",
+    "author": "Barbara Ziółkowska",
+    "instruction": "Uprzejmie proszę o zredagowanie wstępu do artykułu o tutorach AI."
+  },
+  {
+    "id": "train-0601",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Kto jest przypisany do BOT-5?"
+  },
+  {
+    "id": "train-0602",
+    "author": "Iryna Melnyk",
+    "instruction": "Klient z Meblux pyta o darmową dostawę. Jaki status ma BOT-6? Diakuju"
+  },
+  {
+    "id": "train-0603",
+    "author": "Kornelia Sęk",
+    "instruction": "Ile czasu zalogowano na BOT-4?"
+  },
+  {
+    "id": "train-0604",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Ile bugów z labelem knowledge-base nie jest zrobionych?"
+  },
+  {
+    "id": "train-0605",
+    "author": "Iryna Melnyk",
+    "instruction": "Które zadania z labelem pilot nie są jeszcze zrobione? Klienci pytają o postępy, diakuju"
+  },
+  {
+    "id": "train-0606",
+    "author": "Kornelia Sęk",
+    "instruction": "Bug: agent miesza godziny otwarcia sklepów. Kto jest przypisany do tego zgłoszenia?"
+  },
+  {
+    "id": "train-0607",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę przypisać BOT-20 do Artema."
+  },
+  {
+    "id": "train-0608",
+    "author": "Iryna Melnyk",
+    "instruction": "Klienci z Meblux mówią, że agent ciągle przeprasza. Proszę zmienić priorytet BOT-28 na Medium, diakuju"
+  },
+  {
+    "id": "train-0609",
+    "author": "Kornelia Sęk",
+    "instruction": "BOT-8: odpowiedzi na telefonie są już krótsze. Proszę zmienić status na Done."
+  },
+  {
+    "id": "train-0610",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Bug z numerem karty klienta w logach proszę przypisać do mnie, Oleksandra Bondarenko."
+  },
+  {
+    "id": "train-0611",
+    "author": "Iryna Melnyk",
+    "instruction": "Klient pyta o WhatsAppa. Proszę dać zadaniu z integracją WhatsApp priorytet High i przypisać je do Mariii Kovalchuk, diakuju"
+  },
+  {
+    "id": "train-0612",
+    "author": "Kornelia Sęk",
+    "instruction": "Bug: agent nie rozumie pytań o status zamówienia. Oczekiwane: odpowiedź ze statusem. Proszę przypisać go do Artema Sydorenko i ustawić priorytet Highest."
+  },
+  {
+    "id": "train-0613",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę zalogować 3h na BOT-6 z opisem: lista zakazanych obietnic w prompcie"
+  },
+  {
+    "id": "train-0614",
+    "author": "Iryna Melnyk",
+    "instruction": "Diakuju! Proszę dodać komentarz do BOT-13: Kotwica chce zobaczyć wyniki pilota po 2 tygodniach."
+  },
+  {
+    "id": "train-0615",
+    "author": "Kornelia Sęk",
+    "instruction": "Zaloguj 1h na BOT-33, opis: repro podwójnego kliknięcia"
+  },
+  {
+    "id": "train-0616",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę dodać komentarz do zadania z limitem wiadomości na rozmowę: Proponuję limit 30 wiadomości."
+  },
+  {
+    "id": "train-0617",
+    "author": "Kornelia Sęk",
+    "instruction": "Zaloguj 2h na zadanie z testem 50 typowych pytań klientów, opis: przygotowanie zestawu pytań"
+  },
+  {
+    "id": "train-0618",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę stworzyć nowe issue typu bug: Agent odpowiada w dwóch językach naraz."
+  },
+  {
+    "id": "train-0619",
+    "author": "Iryna Melnyk",
+    "instruction": "Proszę założyć nowe zgłoszenie typu story: Agent pyta klienta o zgodę na kontakt telefoniczny."
+  },
+  {
+    "id": "train-0620",
+    "author": "Kornelia Sęk",
+    "instruction": "Stwórz nowe issue typu bug: Widżet czatu zasłania przycisk koszyka na telefonie. Priorytet High."
+  },
+  {
+    "id": "train-0621",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę stworzyć nowe issue typu task: Testy agenta na danych klienta Kotwica. Proszę przypisać je do Iryny Tkachenko i dodać do bieżącego sprintu."
+  },
+  {
+    "id": "train-0622",
+    "author": "Kornelia Sęk",
+    "instruction": "Stwórz nowe issue typu bug: Agent nie rozpoznaje kodów rabatowych. Label intents, priorytet High, dodaj do następnego sprintu."
+  },
+  {
+    "id": "train-0623",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę przenieść BOT-18 do bieżącego sprintu."
+  },
+  {
+    "id": "train-0624",
+    "author": "Iryna Melnyk",
+    "instruction": "Proszę przenieść BOT-12 do backlogu. Klienci i tak nie oceniają rozmów, diakuju"
+  },
+  {
+    "id": "train-0625",
+    "author": "Kornelia Sęk",
+    "instruction": "Przenieś BOT-26 do sprintu 20."
+  },
+  {
+    "id": "train-0626",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę przenieść wszystkie zadania z labelem voice z przyszłych sprintów do bieżącego sprintu."
+  },
+  {
+    "id": "train-0627",
+    "author": "Iryna Melnyk",
+    "instruction": "Zadanie z reklamacjami ze zdjęciem proszę przenieść do następnego sprintu. Klient Meblux bardzo o to prosi."
+  },
+  {
+    "id": "train-0628",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę przypisać Artemowi Sydorenko wszystkie nieprzypisane bugi bez sprintu."
+  },
+  {
+    "id": "train-0629",
+    "author": "Iryna Melnyk",
+    "instruction": "Diakuju! Proszę dodać komentarz do wszystkich otwartych zadań z labelem escalation: Klient chce eskalację także przez telefon."
+  },
+  {
+    "id": "train-0630",
+    "author": "Kornelia Sęk",
+    "instruction": "Wszystkim otwartym bugom z labelem chat ustaw priorytet Medium."
+  },
+  {
+    "id": "train-0631",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę przepisać na Mariię Kovalchuk wszystkie zadania Kornelii Sęk bez sprintu. Kornelia przechodzi do testów agenta głosowego."
+  },
+  {
+    "id": "train-0632",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "BOT-7: proszę zmienić status na Done, zalogować 2h i dodać komentarz: Podsumowanie ma maksymalnie 5 zdań."
+  },
+  {
+    "id": "train-0633",
+    "author": "Kornelia Sęk",
+    "instruction": "BOT-24: zmień status na In Progress, przypisz do mnie, Kornelii Sęk, i dodaj komentarz: Repro z numerem zamówienia ZAM-2026-001."
+  },
+  {
+    "id": "train-0634",
+    "author": "Iryna Melnyk",
+    "instruction": "Zadanie z panelem historii rozmów dla klienta proszę przypisać do mnie, Iryny Melnyk, zmienić status na In Progress i dodać komentarz: Meblux chce eksport do CSV."
+  },
+  {
+    "id": "train-0635",
+    "author": "Kornelia Sęk",
+    "instruction": "Zadanie z wykrywaniem złości klienta (label sentiment): przenieś do bieżącego sprintu i ustaw priorytet High."
+  },
+  {
+    "id": "train-0636",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę wyłączyć agenta u klienta Meblux na weekend."
+  },
+  {
+    "id": "train-0637",
+    "author": "Kornelia Sęk",
+    "instruction": "Przypisz BOT-38 do Denysa."
+  },
+  {
+    "id": "train-0638",
+    "author": "Iryna Melnyk",
+    "instruction": "Jaki status ma BOT-99? Klient o to pyta, diakuju"
+  },
+  {
+    "id": "train-0639",
+    "author": "Oleksandr Bondarenko",
+    "instruction": "Proszę przypisać BOT-19 do Iryny."
+  },
+  {
+    "id": "train-0640",
+    "author": "Iryna Melnyk",
+    "instruction": "Jak bardziej formalnie powiedzieć po polsku „щиро дякую”?"
+  },
+  {
+    "id": "train-0641",
+    "author": "Yuliia Marchenko",
+    "instruction": "Kto ma DEMO-10?"
+  },
+  {
+    "id": "train-0642",
+    "author": "Robinho Nasario",
+    "instruction": "Amigo, jaki status ma DEMO-6? Jutro mam kawę z partnerem z São Paulo, demo musi być top!"
+  },
+  {
+    "id": "train-0643",
+    "author": "Hubert Kałuża",
+    "instruction": "Ile godzin zalogowano na DEMO-4? Stoisko to będzie hit, mówię wam."
+  },
+  {
+    "id": "train-0644",
+    "author": "Robinho Nasario",
+    "instruction": "Ile zadań z labelem investors nie jest jeszcze zrobionych? Dziś wieczorem kolacja z funduszem, potrzebuję liczby!"
+  },
+  {
+    "id": "train-0645",
+    "author": "Yuliia Marchenko",
+    "instruction": "Które zadania z labelem deck są w przyszłych sprintach? Klucze."
+  },
+  {
+    "id": "train-0646",
+    "author": "Hubert Kałuża",
+    "instruction": "Kto ogarnia webinar dla sklepów internetowych? Mam już 40 zapisanych leadów!"
+  },
+  {
+    "id": "train-0647",
+    "author": "Robinho Nasario",
+    "instruction": "Ustaw priorytet DEMO-20 na Highest, amigo! Demo offline to szansa: na targach zawsze pada Wi-Fi, a my będziemy jedyni, którzy działają."
+  },
+  {
+    "id": "train-0648",
+    "author": "Yuliia Marchenko",
+    "instruction": "Przypisz DEMO-25 do mnie, Yuliia Marchenko."
+  },
+  {
+    "id": "train-0649",
+    "author": "Hubert Kałuża",
+    "instruction": "Zmień status DEMO-7 na Done. Slajd z wynikami klientów zamyka każdą rozmowę!"
+  },
+  {
+    "id": "train-0650",
+    "author": "Robinho Nasario",
+    "instruction": "Agent w demie mówi z dziwnym akcentem? Incrível, to nasz unikalny styl! Ale ustaw temu zadaniu priorytet Medium i przypisz je do Ihora."
+  },
+  {
+    "id": "train-0651",
+    "author": "Yuliia Marchenko",
+    "instruction": "Competitors slide: ustaw priorytet High i przypisz do mnie, Yuliia Marchenko."
+  },
+  {
+    "id": "train-0652",
+    "author": "Hubert Kałuża",
+    "instruction": "Lista kontaktów z targów do CRM: przypisz do mnie, Huberta Kałuży, i ustaw priorytet High. Pipeline rośnie!"
+  },
+  {
+    "id": "train-0653",
+    "author": "Hubert Kałuża",
+    "instruction": "Zaloguj 2h na DEMO-13, opis: przygotowanie do spotkania z aniołem biznesu"
+  },
+  {
+    "id": "train-0654",
+    "author": "Robinho Nasario",
+    "instruction": "Dodaj komentarz do DEMO-5: Partnerzy z Brazylii chcą demo w czwartek, to będzie top!"
+  },
+  {
+    "id": "train-0655",
+    "author": "Yuliia Marchenko",
+    "instruction": "Zaloguj 1h 30m na DEMO-10, opis: slajdy 3-7"
+  },
+  {
+    "id": "train-0656",
+    "author": "Yuliia Marchenko",
+    "instruction": "Dodaj komentarz do zadania z animacją, jak działa agent: Wersja 2 jest na Figmie, slajd 4."
+  },
+  {
+    "id": "train-0657",
+    "author": "Robinho Nasario",
+    "instruction": "Zaloguj 1h na zadanie z wywiadem w podcaście o startupach, opis: rozmowa z prowadzącym. Poznałem go na gali w Lizbonie, świetny gość!"
+  },
+  {
+    "id": "train-0658",
+    "author": "Robinho Nasario",
+    "instruction": "Stwórz nowe issue typu task: Demo agenta dla ministerstwa cyfryzacji. Priorytet Highest. Amigo, poznałem doradcę ministra na konferencji!"
+  },
+  {
+    "id": "train-0659",
+    "author": "Yuliia Marchenko",
+    "instruction": "Stwórz nowe issue typu task: Nowa okładka pitch decku."
+  },
+  {
+    "id": "train-0660",
+    "author": "Hubert Kałuża",
+    "instruction": "Stwórz nowe issue typu story: Program poleceń dla klientów - 10% rabatu za polecenie."
+  },
+  {
+    "id": "train-0661",
+    "author": "Robinho Nasario",
+    "instruction": "Załóż nowe issue typu task: Demo dla sieci hoteli w Lizbonie. Przypisz je do Kateryny Boiko i wrzuć do bieżącego sprintu. To nasza wielka szansa!"
+  },
+  {
+    "id": "train-0662",
+    "author": "Hubert Kałuża",
+    "instruction": "Stwórz nowe issue typu task: Follow-up po targach w Lizbonie. Daj label sales i dodaj je do następnego sprintu."
+  },
+  {
+    "id": "train-0663",
+    "author": "Robinho Nasario",
+    "instruction": "Przenieś DEMO-18 do bieżącego sprintu. Dane innego klienta w demie? To okazja, żeby pokazać, jak dbamy o bezpieczeństwo!"
+  },
+  {
+    "id": "train-0664",
+    "author": "Yuliia Marchenko",
+    "instruction": "Przenieś DEMO-11 do backlogu."
+  },
+  {
+    "id": "train-0665",
+    "author": "Hubert Kałuża",
+    "instruction": "Przenieś DEMO-22 do sprintu 12."
+  },
+  {
+    "id": "train-0666",
+    "author": "Robinho Nasario",
+    "instruction": "Wszystkie zadania z labelem events bez sprintu przenieś do następnego sprintu! Eventy to nasz silnik wzrostu."
+  },
+  {
+    "id": "train-0667",
+    "author": "Hubert Kałuża",
+    "instruction": "Zadanie ze zgłoszeniem do konkursu startupów przenieś do bieżącego sprintu. Wygramy, czuję to!"
+  },
+  {
+    "id": "train-0668",
+    "author": "Robinho Nasario",
+    "instruction": "Wszystkie nieprzypisane zadania z labelem video przypisz Hubertowi Kałuży. Hubert to nasz rockstar!"
+  },
+  {
+    "id": "train-0669",
+    "author": "Yuliia Marchenko",
+    "instruction": "Dodaj komentarz do wszystkich zadań z labelem deck: Nowy szablon slajdów jest na dysku."
+  },
+  {
+    "id": "train-0670",
+    "author": "Hubert Kałuża",
+    "instruction": "Wszystkim zadaniom z labelem pr ustaw priorytet High. Media to darmowy marketing!"
+  },
+  {
+    "id": "train-0671",
+    "author": "Robinho Nasario",
+    "instruction": "Wszystkie zadania Ihora Shapovala bez sprintu przepisz na Katerynę Zinchenko."
+  },
+  {
+    "id": "train-0672",
+    "author": "Hubert Kałuża",
+    "instruction": "DEMO-5 gotowe! Zmień status na Done, zaloguj 4h i dodaj komentarz: Demo po portugalsku przećwiczone z Robinho."
+  },
+  {
+    "id": "train-0673",
+    "author": "Yuliia Marchenko",
+    "instruction": "DEMO-30: zmień status na In Progress, przypisz do Ihora Shapovala i dodaj komentarz: konto demo ma działać 30 dni."
+  },
+  {
+    "id": "train-0674",
+    "author": "Robinho Nasario",
+    "instruction": "Pitch deck z modelem przychodów: zmień status na In Progress, przypisz do mnie, Robinho Nasario, i przenieś do bieżącego sprintu. Jutro lunch z inwestorem z Doliny Krzemowej!"
+  },
+  {
+    "id": "train-0675",
+    "author": "Yuliia Marchenko",
+    "instruction": "Pricing page: ustaw priorytet High i dodaj komentarz: Ceny w EUR i PLN."
+  },
+  {
+    "id": "train-0676",
+    "author": "Robinho Nasario",
+    "instruction": "Wyślij pitch deck do wszystkich inwestorów z mojej listy, amigo!"
+  },
+  {
+    "id": "train-0677",
+    "author": "Hubert Kałuża",
+    "instruction": "Zarezerwuj salę na spotkanie z klientem na piątek."
+  },
+  {
+    "id": "train-0678",
+    "author": "Yuliia Marchenko",
+    "instruction": "Przypisz DEMO-24 do Larysy."
+  },
+  {
+    "id": "train-0679",
+    "author": "Robinho Nasario",
+    "instruction": "Przypisz DEMO-26 Katerynie, ona jest incrível!"
+  },
+  {
+    "id": "train-0680",
+    "author": "Hubert Kałuża",
+    "instruction": "Jaki krawat założyć na spotkanie z inwestorem?"
+  },
+  {
+    "id": "train-0681",
+    "author": "Taras Hnatiuk",
+    "instruction": "Kto jest przypisany do GRT-7?"
+  },
+  {
+    "id": "train-0682",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie przypominam, że termin naboru mija w piątek. Jaki status ma GRT-13?"
+  },
+  {
+    "id": "train-0683",
+    "author": "Nataliia Lysenko",
+    "instruction": "Ile godzin zalogowano na GRT-1?"
+  },
+  {
+    "id": "train-0684",
+    "author": "Taras Hnatiuk",
+    "instruction": "Ile zadań z labelem budget nie ma przypisanej osoby?"
+  },
+  {
+    "id": "train-0685",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę o listę zadań z labelem documents, które nie mają sprintu."
+  },
+  {
+    "id": "train-0686",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie proszę o informację, kto zajmuje się zadaniem dotyczącym listów intencyjnych od klientów pilotażowych."
+  },
+  {
+    "id": "train-0687",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę przypisać GRT-11 do Maksyma Pavlenko."
+  },
+  {
+    "id": "train-0688",
+    "author": "Taras Hnatiuk",
+    "instruction": "Ustaw priorytet GRT-24 na Highest. Suma w tabeli budżetu różni się o 12 400 zł."
+  },
+  {
+    "id": "train-0689",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie proszę o zmianę statusu GRT-9 na Done. Analiza rynku została przeze mnie zaakceptowana."
+  },
+  {
+    "id": "train-0690",
+    "author": "Nataliia Lysenko",
+    "instruction": "Zadanie z oświadczeniem o statusie MŚP: proszę ustawić priorytet Highest i przypisać je do Danuty Wrzos."
+  },
+  {
+    "id": "train-0691",
+    "author": "Taras Hnatiuk",
+    "instruction": "Zadanie z kalkulacją stawek godzinowych: przypisz do mnie, Tarasa Hnatiuka, i ustaw priorytet High."
+  },
+  {
+    "id": "train-0692",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie proszę, aby zadanie dotyczące pełnomocnictwa do podpisu wniosku otrzymało priorytet High i zostało przypisane do pani Nataliii Lysenko."
+  },
+  {
+    "id": "train-0693",
+    "author": "Taras Hnatiuk",
+    "instruction": "Zaloguj 2h na GRT-7, opis: przeliczenie kosztów pośrednich do 25%"
+  },
+  {
+    "id": "train-0694",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę dodać komentarz do GRT-12: Wskaźniki produktu uzgodnione z zespołem technicznym."
+  },
+  {
+    "id": "train-0695",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie proszę o zalogowanie 3h na GRT-15 z opisem: konsultacja ryzyk z zarządem."
+  },
+  {
+    "id": "train-0696",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę zalogować 1h 30m na zadanie z opisem efektu zachęty, opis: druga wersja tekstu."
+  },
+  {
+    "id": "train-0697",
+    "author": "Taras Hnatiuk",
+    "instruction": "Dodaj komentarz do zadania z uzasadnieniem zakupu serwerów GPU: Koszt 4 serwerów to 186 000 zł netto."
+  },
+  {
+    "id": "train-0698",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę założyć nowe zgłoszenie typu task: Wniosek do programu wsparcia eksportu. Priorytet High."
+  },
+  {
+    "id": "train-0699",
+    "author": "Taras Hnatiuk",
+    "instruction": "Stwórz nowe issue typu task: Tabela kosztów kwalifikowanych na 2027 rok."
+  },
+  {
+    "id": "train-0700",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie proszę o utworzenie nowego zgłoszenia typu task: Przegląd kryteriów oceny w nowym naborze."
+  },
+  {
+    "id": "train-0701",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę założyć nowe zgłoszenie typu task: Opis innowacji produktowej do części C wniosku. Proszę przypisać je do Maksyma Wierzbickiego i dodać do bieżącego sprintu."
+  },
+  {
+    "id": "train-0702",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie proszę o utworzenie nowego zgłoszenia typu task: Konsultacja wniosku z ekspertem zewnętrznym. Proszę nadać mu etykietę application i dodać je do następnego sprintu."
+  },
+  {
+    "id": "train-0703",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę przenieść GRT-28 do bieżącego sprintu."
+  },
+  {
+    "id": "train-0704",
+    "author": "Taras Hnatiuk",
+    "instruction": "Przenieś GRT-30 do backlogu."
+  },
+  {
+    "id": "train-0705",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie proszę o przeniesienie GRT-36 do sprintu 9."
+  },
+  {
+    "id": "train-0706",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę przenieść wszystkie zadania z labelem application z następnego sprintu do bieżącego sprintu."
+  },
+  {
+    "id": "train-0707",
+    "author": "Taras Hnatiuk",
+    "instruction": "Zadanie z kalendarzem naborów przenieś do następnego sprintu."
+  },
+  {
+    "id": "train-0708",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę przypisać Maksymowi Pavlenko wszystkie otwarte, nieprzypisane zadania z labelem application."
+  },
+  {
+    "id": "train-0709",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie proszę o dodanie komentarza do wszystkich zadań z etykietą calls: Proszę sprawdzić aktualny harmonogram naborów."
+  },
+  {
+    "id": "train-0710",
+    "author": "Taras Hnatiuk",
+    "instruction": "Wszystkim zadaniom z labelem indicators ustaw priorytet High."
+  },
+  {
+    "id": "train-0711",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę przepisać wszystkie zadania Halyny Vovk bez sprintu na Tarasa Hnatiuka."
+  },
+  {
+    "id": "train-0712",
+    "author": "Taras Hnatiuk",
+    "instruction": "GRT-24: zmień status na Done, zaloguj 1h i dodaj komentarz: suma poprawiona, różnica wynikała z zaokrągleń."
+  },
+  {
+    "id": "train-0713",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę zmienić status GRT-8 na Done, zalogować 2h i dodać komentarz: CV przetłumaczone i podpisane."
+  },
+  {
+    "id": "train-0714",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie proszę, aby zadanie dotyczące odpowiedzi na uwagi ekspertów zostało przypisane do mnie, Danuty Wrzos, otrzymało status In Progress oraz komentarz: Odpowiedź wyślę do czwartku."
+  },
+  {
+    "id": "train-0715",
+    "author": "Taras Hnatiuk",
+    "instruction": "Zadanie z deminimis: przenieś do bieżącego sprintu i przypisz do Maksyma Wierzbickiego."
+  },
+  {
+    "id": "train-0716",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę złożyć wniosek z GRT-12 w generatorze wniosków."
+  },
+  {
+    "id": "train-0717",
+    "author": "Danuta Wrzos",
+    "instruction": "Uprzejmie proszę o przypisanie GRT-26 panu Pavlowi."
+  },
+  {
+    "id": "train-0718",
+    "author": "Taras Hnatiuk",
+    "instruction": "Przypisz GRT-20 Maksymowi."
+  },
+  {
+    "id": "train-0719",
+    "author": "Nataliia Lysenko",
+    "instruction": "Proszę ustawić priorytet High dla zadania z wnioskiem."
+  },
+  {
+    "id": "train-0720",
+    "author": "Taras Hnatiuk",
+    "instruction": "Ile wynosi w tym roku stawka podatku CIT dla małych firm?"
+  },
+  {
+    "id": "train-0721",
+    "author": "Bohdan Moroz",
+    "instruction": "Kto ma RAP-11?"
+  },
+  {
+    "id": "train-0722",
+    "author": "Wiesława Gąsior",
+    "instruction": "Jaki status ma RAP-5? Bardzo się martwię, audyt jest już za dwa tygodnie."
+  },
+  {
+    "id": "train-0723",
+    "author": "Oksana Savchuk",
+    "instruction": "Ile godzin zalogowano na RAP-1?"
+  },
+  {
+    "id": "train-0724",
+    "author": "Bohdan Moroz",
+    "instruction": "Ile zadań z labelem audit nie jest zrobionych?"
+  },
+  {
+    "id": "train-0725",
+    "author": "Oksana Savchuk",
+    "instruction": "Które zadania z labelem payment-claim nie mają sprintu?"
+  },
+  {
+    "id": "train-0726",
+    "author": "Wiesława Gąsior",
+    "instruction": "Jaki priorytet ma zadanie z umową z podwykonawcą, w której brakuje zapisu o prawach autorskich? Proszę sprawdzić dwa razy."
+  },
+  {
+    "id": "train-0727",
+    "author": "Oksana Savchuk",
+    "instruction": "Przypisz RAP-18 do Oksany Rudenko."
+  },
+  {
+    "id": "train-0728",
+    "author": "Wiesława Gąsior",
+    "instruction": "Proszę ustawić priorytet RAP-30 na High. Notatka z rozmowy z audytorem musi być gotowa, zanim zapomnimy szczegóły."
+  },
+  {
+    "id": "train-0729",
+    "author": "Bohdan Moroz",
+    "instruction": "Zmień status RAP-7 na Done."
+  },
+  {
+    "id": "train-0730",
+    "author": "Oksana Savchuk",
+    "instruction": "Faktura za usługi chmurowe bez numeru umowy: ustaw priorytet High i przypisz do mnie, Oksany Savchuk."
+  },
+  {
+    "id": "train-0731",
+    "author": "Bohdan Moroz",
+    "instruction": "Zadanie z wydatkami sprzed rozpoczęcia projektu przypisz do Olhy Yaremchuk i ustaw priorytet Highest."
+  },
+  {
+    "id": "train-0732",
+    "author": "Wiesława Gąsior",
+    "instruction": "Zadanie z ewidencją środków trwałych proszę przypisać do mnie, Wiesławy Gąsior, i ustawić priorytet High. Nie chcę, żeby audytor coś znalazł."
+  },
+  {
+    "id": "train-0733",
+    "author": "Oksana Savchuk",
+    "instruction": "Zaloguj 2h na RAP-6, opis: opis 42 faktur za październik"
+  },
+  {
+    "id": "train-0734",
+    "author": "Bohdan Moroz",
+    "instruction": "Dodaj komentarz do RAP-20: Opóźnienie wynika z przesunięcia pilota u klienta."
+  },
+  {
+    "id": "train-0735",
+    "author": "Wiesława Gąsior",
+    "instruction": "Proszę dodać komentarz do RAP-26: Proszę dwa razy sprawdzić listę dokumentów do kontroli."
+  },
+  {
+    "id": "train-0736",
+    "author": "Oksana Savchuk",
+    "instruction": "Zaloguj 1h 30m na zadanie z rozliczeniem kosztów pośrednich ryczałtem, opis: wyliczenie 15% kosztów bezpośrednich."
+  },
+  {
+    "id": "train-0737",
+    "author": "Wiesława Gąsior",
+    "instruction": "Proszę dodać komentarz do zadania z archiwum dokumentów zapytań ofertowych: Brakuje dwóch protokołów z wyboru ofert."
+  },
+  {
+    "id": "train-0738",
+    "author": "Oksana Savchuk",
+    "instruction": "Stwórz nowe issue typu task: Opis faktur za listopad zgodnie z wymogami projektu."
+  },
+  {
+    "id": "train-0739",
+    "author": "Bohdan Moroz",
+    "instruction": "Stwórz nowe issue typu task: Status wszystkich kamieni milowych na koniec roku. Priorytet High."
+  },
+  {
+    "id": "train-0740",
+    "author": "Wiesława Gąsior",
+    "instruction": "Proszę założyć nowe zgłoszenie typu bug: Brak podpisu na fakturze za szkolenie zespołu."
+  },
+  {
+    "id": "train-0741",
+    "author": "Bohdan Moroz",
+    "instruction": "Stwórz nowe issue typu task: Przygotowanie wyjaśnień dla audytora. Przypisz do Romana Ostapchuka i dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0742",
+    "author": "Oksana Savchuk",
+    "instruction": "Stwórz nowe issue typu task: Rozliczenie zaliczki za czwarty kwartał. Label payment-claim, priorytet High, dodaj do następnego sprintu."
+  },
+  {
+    "id": "train-0743",
+    "author": "Wiesława Gąsior",
+    "instruction": "Proszę przenieść RAP-32 do bieżącego sprintu. Audytor na pewno o to zapyta."
+  },
+  {
+    "id": "train-0744",
+    "author": "Bohdan Moroz",
+    "instruction": "Przenieś RAP-10 do backlogu."
+  },
+  {
+    "id": "train-0745",
+    "author": "Oksana Savchuk",
+    "instruction": "Przenieś RAP-24 do sprintu 27."
+  },
+  {
+    "id": "train-0746",
+    "author": "Bohdan Moroz",
+    "instruction": "Wszystkie zadania z labelem audit bez sprintu przenieś do bieżącego sprintu. Audyt zaczyna się 14 grudnia."
+  },
+  {
+    "id": "train-0747",
+    "author": "Wiesława Gąsior",
+    "instruction": "Proszę przenieść zadanie z planem kontroli na miejscu do bieżącego sprintu."
+  },
+  {
+    "id": "train-0748",
+    "author": "Bohdan Moroz",
+    "instruction": "Wszystkie nieprzypisane bugi przypisz Romanowi Ostapchukowi."
+  },
+  {
+    "id": "train-0749",
+    "author": "Oksana Savchuk",
+    "instruction": "Dodaj komentarz do wszystkich zadań z labelem invoices: Faktury opisane zgodnie z wytycznymi z 2026 roku."
+  },
+  {
+    "id": "train-0750",
+    "author": "Wiesława Gąsior",
+    "instruction": "Proszę ustawić priorytet High wszystkim zadaniom z labelem procurement. Wolę dmuchać na zimne."
+  },
+  {
+    "id": "train-0751",
+    "author": "Bohdan Moroz",
+    "instruction": "Wszystkie zadania Romana Ostapchuka bez sprintu przepisz na Oksanę Rudenko."
+  },
+  {
+    "id": "train-0752",
+    "author": "Oksana Savchuk",
+    "instruction": "RAP-4: zmień status na Done, zaloguj 1h i dodaj komentarz: Korekta wysłana, kwota 84 300 zł."
+  },
+  {
+    "id": "train-0753",
+    "author": "Bohdan Moroz",
+    "instruction": "RAP-8: zmień status na Done i dodaj komentarz: Raport zatwierdzony przez opiekuna. Zaloguj też 2h."
+  },
+  {
+    "id": "train-0754",
+    "author": "Wiesława Gąsior",
+    "instruction": "Zadanie z inwentaryzacją sprzętu kupionego w projekcie proszę przypisać do mnie, Wiesławy Gąsior, przenieść do bieżącego sprintu i dodać komentarz: Proszę o listę numerów seryjnych."
+  },
+  {
+    "id": "train-0755",
+    "author": "Oksana Savchuk",
+    "instruction": "Bug z różnicą kursową w kosztach podróży: zmień status na In Progress, ustaw priorytet Medium i zaloguj 30m z opisem: przeliczenie po kursie NBP."
+  },
+  {
+    "id": "train-0756",
+    "author": "Oksana Savchuk",
+    "instruction": "Zrób przelew zwrotu zaliczki do instytucji."
+  },
+  {
+    "id": "train-0757",
+    "author": "Wiesława Gąsior",
+    "instruction": "Proszę zrobić kopię zapasową wszystkich dokumentów projektu na pendrive."
+  },
+  {
+    "id": "train-0758",
+    "author": "Bohdan Moroz",
+    "instruction": "Przypisz RAP-21 do Yevhena."
+  },
+  {
+    "id": "train-0759",
+    "author": "Oksana Savchuk",
+    "instruction": "Przenieś RAP-12 do sprintu 30."
+  },
+  {
+    "id": "train-0760",
+    "author": "Wiesława Gąsior",
+    "instruction": "Proszę przypisać RAP-23 pani Oksanie."
+  },
+  {
+    "id": "train-0761",
+    "author": "Serhii Polishchuk",
+    "instruction": "kto ma PLT-22? chce zapytac o fallback, mozna?"
+  },
+  {
+    "id": "train-0762",
+    "author": "Dmytro Kravets",
+    "instruction": "Jaki priorytet ma PLT-18? Panel bez VPN to big security risk."
+  },
+  {
+    "id": "train-0763",
+    "author": "Anastasiia Klymenko",
+    "instruction": "Ile godzin zalogowano na PLT-5? Liczę koszt wdrożenia mniejszego modelu."
+  },
+  {
+    "id": "train-0764",
+    "author": "Anastasiia Klymenko",
+    "instruction": "Ile zadań z labelem cost nie jest zrobionych?"
+  },
+  {
+    "id": "train-0765",
+    "author": "Dmytro Kravets",
+    "instruction": "Które bugi z labelem performance są otwarte? Keys only."
+  },
+  {
+    "id": "train-0766",
+    "author": "Serhii Polishchuk",
+    "instruction": "kto robi problem z pamiecia kontenera agenta? rosnie caly dzien, czemu?"
+  },
+  {
+    "id": "train-0767",
+    "author": "Dmytro Kravets",
+    "instruction": "Przypisz PLT-11 do mnie, Dmytro Kravets. Night deploy to moja działka."
+  },
+  {
+    "id": "train-0768",
+    "author": "Anastasiia Klymenko",
+    "instruction": "Ustaw priorytet PLT-23 na High. Bez kosztu na klienta nie policzymy marży."
+  },
+  {
+    "id": "train-0769",
+    "author": "Serhii Polishchuk",
+    "instruction": "zmien status PLT-7 na Done, backup dziala, sprawdzilem restore"
+  },
+  {
+    "id": "train-0770",
+    "author": "Dmytro Kravets",
+    "instruction": "Pipeline CI trwa 40 minut: ustaw priorytet High i przypisz do Mariii Ponomarenko."
+  },
+  {
+    "id": "train-0771",
+    "author": "Anastasiia Klymenko",
+    "instruction": "Zadanie z wersjonowaniem promptów agenta przypisz do mnie, Anastasiia Klymenko, i ustaw priorytet High."
+  },
+  {
+    "id": "train-0772",
+    "author": "Serhii Polishchuk",
+    "instruction": "ticket z rotacja hasel do bazy: ustaw priorytet high i przypisz do Vladyslava Hrytsenko, ok?"
+  },
+  {
+    "id": "train-0773",
+    "author": "Dmytro Kravets",
+    "instruction": "Zaloguj 3h na PLT-6, opis: node pools and ingress setup"
+  },
+  {
+    "id": "train-0774",
+    "author": "Anastasiia Klymenko",
+    "instruction": "Dodaj komentarz do PLT-4: Testowe środowisko wysłało w listopadzie 1,2 mln tokenów do dużego modelu."
+  },
+  {
+    "id": "train-0775",
+    "author": "Serhii Polishchuk",
+    "instruction": "zaloguj 1h na PLT-12, opis: skrypt usuwania logow"
+  },
+  {
+    "id": "train-0776",
+    "author": "Dmytro Kravets",
+    "instruction": "Zaloguj 2h na task z disaster recovery plan, opis: RTO and RPO draft"
+  },
+  {
+    "id": "train-0777",
+    "author": "Serhii Polishchuk",
+    "instruction": "dodaj komentarz do zadania ze stara wersja pythona: mozemy przejsc na 3.13?"
+  },
+  {
+    "id": "train-0778",
+    "author": "Dmytro Kravets",
+    "instruction": "Stwórz nowe issue typu bug: Ingress returns 502 after the node rotation. Priorytet High."
+  },
+  {
+    "id": "train-0779",
+    "author": "Anastasiia Klymenko",
+    "instruction": "Stwórz nowe issue typu task: Porównanie kosztu tokenów trzech dostawców modeli."
+  },
+  {
+    "id": "train-0780",
+    "author": "Serhii Polishchuk",
+    "instruction": "stworz nowe issue typu task: Aktualizacja bibliotek w kontenerze agenta"
+  },
+  {
+    "id": "train-0781",
+    "author": "Dmytro Kravets",
+    "instruction": "Stwórz nowe issue typu task: Night deploy checklist. Przypisz do Vladyslava Savchenko i dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0782",
+    "author": "Anastasiia Klymenko",
+    "instruction": "Stwórz nowe issue typu story: Router zapytań między modelami według kosztu. Label llm, priorytet High, dodaj do następnego sprintu."
+  },
+  {
+    "id": "train-0783",
+    "author": "Dmytro Kravets",
+    "instruction": "Przenieś PLT-18 do bieżącego sprintu. ASAP."
+  },
+  {
+    "id": "train-0784",
+    "author": "Serhii Polishchuk",
+    "instruction": "przenies PLT-10 do backlogu, ok?"
+  },
+  {
+    "id": "train-0785",
+    "author": "Anastasiia Klymenko",
+    "instruction": "Przenieś PLT-31 do sprintu 32."
+  },
+  {
+    "id": "train-0786",
+    "author": "Dmytro Kravets",
+    "instruction": "Wszystkie zadania z labelem multi-tenant z przyszłych sprintów przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "train-0787",
+    "author": "Serhii Polishchuk",
+    "instruction": "zadanie z odnowieniem domeny firmowej przenies do biezacego sprintu"
+  },
+  {
+    "id": "train-0788",
+    "author": "Dmytro Kravets",
+    "instruction": "Wszystkie nieprzypisane bugi przypisz Vladyslavowi Hrytsenko."
+  },
+  {
+    "id": "train-0789",
+    "author": "Anastasiia Klymenko",
+    "instruction": "Dodaj komentarz do wszystkich zadań z labelem llm: Sprawdzić wpływ na koszt tokenów przed wdrożeniem."
+  },
+  {
+    "id": "train-0790",
+    "author": "Serhii Polishchuk",
+    "instruction": "wszystkim zadaniom z labelem security bez sprintu, ktore maja priorytet nizszy niz high, ustaw high, ok?"
+  },
+  {
+    "id": "train-0791",
+    "author": "Dmytro Kravets",
+    "instruction": "Wszystkie zadania Serhiia Polishchuka bez sprintu przepisz na Mariię Ponomarenko."
+  },
+  {
+    "id": "train-0792",
+    "author": "Dmytro Kravets",
+    "instruction": "PLT-6: zmień status na Done, zaloguj 4h i dodaj komentarz: cluster ready, traffic switch planned for Friday night."
+  },
+  {
+    "id": "train-0793",
+    "author": "Anastasiia Klymenko",
+    "instruction": "PLT-8: zmień status na Done, zaloguj 1h i dodaj komentarz: cache obniżył koszt o 18%."
+  },
+  {
+    "id": "train-0794",
+    "author": "Serhii Polishchuk",
+    "instruction": "zadanie z limitem zapytan na klienta: przypisz do mnie, Serhii Polishchuk, zmien status na In Progress i dodaj komentarz: limit 60 zapytan na minute"
+  },
+  {
+    "id": "train-0795",
+    "author": "Dmytro Kravets",
+    "instruction": "Status page for customers: przenieś do następnego sprintu i ustaw priorytet Medium."
+  },
+  {
+    "id": "train-0796",
+    "author": "Dmytro Kravets",
+    "instruction": "Zrestartuj produkcyjny klaster Kubernetes."
+  },
+  {
+    "id": "train-0797",
+    "author": "Serhii Polishchuk",
+    "instruction": "przypisz PLT-24 do viktorii, ok?"
+  },
+  {
+    "id": "train-0798",
+    "author": "Anastasiia Klymenko",
+    "instruction": "Przypisz PLT-16 Vladyslavowi."
+  },
+  {
+    "id": "train-0799",
+    "author": "Serhii Polishchuk",
+    "instruction": "jaki laptop kupic do programowania do 5000 zl?"
+  },
+  {
+    "id": "train-0800",
+    "author": "Dmytro Kravets",
+    "instruction": "Write me a bash script for log rotation."
+  },
+  {
+    "id": "train-0801",
+    "author": "Lidia Banaś",
+    "instruction": "Kto jest przypisany do DIAL-27?"
+  },
+  {
+    "id": "train-0802",
+    "author": "Sławomir Kubicki",
+    "instruction": "Jaki status ma DIAL-6? Sala A ma dziś zrobić 900 połączeń, a cisza na linii nas zabija!"
+  },
+  {
+    "id": "train-0803",
+    "author": "Krystian Wilczyński",
+    "instruction": "ile godzin poszlo na DIAL-1? ja w tym czasie umowilbym z 20 wizyt, sztos"
+  },
+  {
+    "id": "train-0804",
+    "author": "Sławomir Kubicki",
+    "instruction": "Ile bugów z labelem dialer nie jest zrobionych? Liczba na odprawę!"
+  },
+  {
+    "id": "train-0805",
+    "author": "Lidia Banaś",
+    "instruction": "Które zadania z labelem recording są w przyszłych sprintach?"
+  },
+  {
+    "id": "train-0806",
+    "author": "Krystian Wilczyński",
+    "instruction": "kto ogarnia te urywane rozmowy po kwadransie? ziom, trace przez to klientow"
+  },
+  {
+    "id": "train-0807",
+    "author": "Sławomir Kubicki",
+    "instruction": "Przypisz DIAL-37 do Wiktora. Nowe słuchawki to nowe rekordy!"
+  },
+  {
+    "id": "train-0808",
+    "author": "Lidia Banaś",
+    "instruction": "Ustaw priorytet DIAL-30 na High. Opóźnienie przez VPN wynosi 800 milisekund."
+  },
+  {
+    "id": "train-0809",
+    "author": "Krystian Wilczyński",
+    "instruction": "zmien status DIAL-9 na Done, tablica wynikow juz wisi, moje nazwisko na samej gorze"
+  },
+  {
+    "id": "train-0810",
+    "author": "Sławomir Kubicki",
+    "instruction": "Mikrofony zbierają rozmowy z sąsiednich stanowisk! Ustaw temu zadaniu priorytet High i przypisz je do Lidii."
+  },
+  {
+    "id": "train-0811",
+    "author": "Lidia Banaś",
+    "instruction": "Zadanie z kopią zapasową nagrań rozmów: ustaw priorytet High i przypisz do mnie, Lidii Banaś."
+  },
+  {
+    "id": "train-0812",
+    "author": "Krystian Wilczyński",
+    "instruction": "callbacki gina po restarcie dialera. daj temu priorytet highest i przypisz do mnie, Krystiana Wilczyńskiego"
+  },
+  {
+    "id": "train-0813",
+    "author": "Lidia Banaś",
+    "instruction": "Zaloguj 2h na DIAL-5, opis: strojenie współczynnika połączeń"
+  },
+  {
+    "id": "train-0814",
+    "author": "Sławomir Kubicki",
+    "instruction": "Dodaj komentarz do DIAL-24: Kampania dla gmin startuje w poniedziałek, cel 300 umówionych wizyt!"
+  },
+  {
+    "id": "train-0815",
+    "author": "Krystian Wilczyński",
+    "instruction": "zaloguj 30m na DIAL-29, opis: testy panelu z kierownikiem"
+  },
+  {
+    "id": "train-0816",
+    "author": "Lidia Banaś",
+    "instruction": "Dodaj komentarz do zadania z licencjami dialera na nowe stanowiska: Dostawca daje 10% rabatu przy 20 licencjach."
+  },
+  {
+    "id": "train-0817",
+    "author": "Sławomir Kubicki",
+    "instruction": "Zaloguj 1h na zadanie z raportem najlepszych godzin na dzwonienie, opis: analiza z października."
+  },
+  {
+    "id": "train-0818",
+    "author": "Sławomir Kubicki",
+    "instruction": "Stwórz nowe issue typu story: Ranking sali na żywo w telefonach telemarketerów. Priorytet High."
+  },
+  {
+    "id": "train-0819",
+    "author": "Lidia Banaś",
+    "instruction": "Stwórz nowe issue typu bug: Dialer nie zapisuje statusu rozmowy po rozłączeniu."
+  },
+  {
+    "id": "train-0820",
+    "author": "Krystian Wilczyński",
+    "instruction": "stworz nowe issue typu task: Nowe krzeslo dla najlepszego telemarketera miesiaca"
+  },
+  {
+    "id": "train-0821",
+    "author": "Sławomir Kubicki",
+    "instruction": "Stwórz nowe issue typu task: Kampania jesienna dla domów z pompą ciepła. Przypisz do Krystiana Dudziaka i dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0822",
+    "author": "Lidia Banaś",
+    "instruction": "Stwórz nowe issue typu bug: Nagrania rozmów bez znacznika czasu. Label recording, priorytet High, dodaj do następnego sprintu."
+  },
+  {
+    "id": "train-0823",
+    "author": "Sławomir Kubicki",
+    "instruction": "Przenieś DIAL-35 do bieżącego sprintu! Numer oznaczany jako spam to 30% mniej odebranych połączeń."
+  },
+  {
+    "id": "train-0824",
+    "author": "Lidia Banaś",
+    "instruction": "Przenieś DIAL-14 do backlogu."
+  },
+  {
+    "id": "train-0825",
+    "author": "Krystian Wilczyński",
+    "instruction": "przenies DIAL-36 do sprintu 43, premia musi byc liczona, ziom"
+  },
+  {
+    "id": "train-0826",
+    "author": "Sławomir Kubicki",
+    "instruction": "Wszystkie zadania z labelem recording bez sprintu przenieś do następnego sprintu."
+  },
+  {
+    "id": "train-0827",
+    "author": "Lidia Banaś",
+    "instruction": "Zadanie z kolejką połączeń przychodzących od oddzwaniających klientów przenieś do następnego sprintu."
+  },
+  {
+    "id": "train-0828",
+    "author": "Sławomir Kubicki",
+    "instruction": "Wszystkie nieprzypisane bugi przypisz Lidii Banaś. Chcę czystą tablicę do piątku!"
+  },
+  {
+    "id": "train-0829",
+    "author": "Lidia Banaś",
+    "instruction": "Dodaj komentarz do wszystkich zadań z labelem callback: Testy po aktualizacji dialera w środę."
+  },
+  {
+    "id": "train-0830",
+    "author": "Krystian Wilczyński",
+    "instruction": "wszystkim zadaniom z labelem motivation ustaw priorytet high, ludzie chca premii, ziom"
+  },
+  {
+    "id": "train-0831",
+    "author": "Sławomir Kubicki",
+    "instruction": "Wszystkie zadania Lidii Banaś bez sprintu przepisz na Wiktora Rosiaka."
+  },
+  {
+    "id": "train-0832",
+    "author": "Lidia Banaś",
+    "instruction": "DIAL-12: zmień status na In review, zaloguj 3h i dodaj komentarz: lista 'nie dzwonić' działa teraz we wszystkich kampaniach."
+  },
+  {
+    "id": "train-0833",
+    "author": "Krystian Wilczyński",
+    "instruction": "DIAL-8: zmien status na Done, przypisz do mnie, Krystiana Wilczyńskiego, i dodaj komentarz: sluchawki dzialaja po nowym sterowniku"
+  },
+  {
+    "id": "train-0834",
+    "author": "Sławomir Kubicki",
+    "instruction": "Zadanie z premią za wynik liczoną z dialera przypisz do Krystiana Wilczyńskiego, zmień status na In Progress i przenieś do bieżącego sprintu. Kto pracuje najlepiej, ten liczy premie!"
+  },
+  {
+    "id": "train-0835",
+    "author": "Lidia Banaś",
+    "instruction": "Zadanie z tablicą wyników, która pokazuje wczorajsze dane: zmień status na In Progress i ustaw priorytet Medium."
+  },
+  {
+    "id": "train-0836",
+    "author": "Sławomir Kubicki",
+    "instruction": "Zadzwoń do 50 numerów z kampanii dla gmin i umów wizyty."
+  },
+  {
+    "id": "train-0837",
+    "author": "Lidia Banaś",
+    "instruction": "Przypisz DIAL-34 do Andrzeja."
+  },
+  {
+    "id": "train-0838",
+    "author": "Krystian Wilczyński",
+    "instruction": "jaki status ma DIAL-140? kierownik pytal"
+  },
+  {
+    "id": "train-0839",
+    "author": "Sławomir Kubicki",
+    "instruction": "Przypisz DIAL-19 Krystianowi, to nasz mistrz!"
+  },
+  {
+    "id": "train-0840",
+    "author": "Krystian Wilczyński",
+    "instruction": "jaki samochod kupic za premie?"
+  },
+  {
+    "id": "train-0841",
+    "author": "Sandra Kozieł",
+    "instruction": "Kto jest przypisany do LEAD-4?"
+  },
+  {
+    "id": "train-0842",
+    "author": "Jolanta Kurzawa",
+    "instruction": "Jaki status ma LEAD-6? Chodzi o 6 tysięcy rekordów z porównywarki."
+  },
+  {
+    "id": "train-0843",
+    "author": "Remigiusz Fabiański",
+    "instruction": "Ile godzin zalogowano na LEAD-1?"
+  },
+  {
+    "id": "train-0844",
+    "author": "Jolanta Kurzawa",
+    "instruction": "Ile zadań z labelem sources nie ma przypisanej osoby?"
+  },
+  {
+    "id": "train-0845",
+    "author": "Sandra Kozieł",
+    "instruction": "Które bugi z labelem data-quality są w przyszłych sprintach? Potrzebuję kolumny z kluczami."
+  },
+  {
+    "id": "train-0846",
+    "author": "Remigiusz Fabiański",
+    "instruction": "Kto ogarnia panel dla partnerów do uploadu leadów?"
+  },
+  {
+    "id": "train-0847",
+    "author": "Jolanta Kurzawa",
+    "instruction": "Przypisz LEAD-18 do Sandry Kozieł."
+  },
+  {
+    "id": "train-0848",
+    "author": "Sandra Kozieł",
+    "instruction": "Ustaw priorytet LEAD-30 na Medium. Czas do pierwszego telefonu to kluczowa metryka konwersji."
+  },
+  {
+    "id": "train-0849",
+    "author": "Remigiusz Fabiański",
+    "instruction": "Zmień status LEAD-7 na Done."
+  },
+  {
+    "id": "train-0850",
+    "author": "Jolanta Kurzawa",
+    "instruction": "Zadanie z rejestrem zakupionych baz: ustaw priorytet Highest i przypisz do Remigiusza Fabiańskiego."
+  },
+  {
+    "id": "train-0851",
+    "author": "Sandra Kozieł",
+    "instruction": "Zadanie z mapą leadów według województw przypisz do mnie, Sandry Kozieł, i ustaw priorytet Medium."
+  },
+  {
+    "id": "train-0852",
+    "author": "Remigiusz Fabiański",
+    "instruction": "Bug z duplikatami leadów z formularza i z telefonu: ustaw priorytet High i przypisz do Kajetana."
+  },
+  {
+    "id": "train-0853",
+    "author": "Sandra Kozieł",
+    "instruction": "Zaloguj 2h na LEAD-5, opis: regresja konwersji według regionu"
+  },
+  {
+    "id": "train-0854",
+    "author": "Jolanta Kurzawa",
+    "instruction": "Dodaj komentarz do LEAD-21: 312 rekordów wróciło po imporcie z 3 października."
+  },
+  {
+    "id": "train-0855",
+    "author": "Remigiusz Fabiański",
+    "instruction": "Zaloguj 1h na LEAD-29, opis: negocjacja ceny leadów z agencją"
+  },
+  {
+    "id": "train-0856",
+    "author": "Jolanta Kurzawa",
+    "instruction": "Dodaj komentarz do zadania z archiwizacją leadów starszych niż dwa lata: To dotyczy 18 400 rekordów."
+  },
+  {
+    "id": "train-0857",
+    "author": "Remigiusz Fabiański",
+    "instruction": "Zaloguj 30m na zadanie z ceną za lead od partnerów, opis: aktualizacja cennika"
+  },
+  {
+    "id": "train-0858",
+    "author": "Jolanta Kurzawa",
+    "instruction": "Stwórz nowe issue typu task: Import bazy kontaktów z targów OZE w Kielcach. Priorytet High."
+  },
+  {
+    "id": "train-0859",
+    "author": "Remigiusz Fabiański",
+    "instruction": "Stwórz nowe issue typu task: Umowa z nowym dostawcą leadów z Lublina."
+  },
+  {
+    "id": "train-0860",
+    "author": "Sandra Kozieł",
+    "instruction": "Stwórz nowe issue typu task: Dashboard konwersji leadów według dnia tygodnia."
+  },
+  {
+    "id": "train-0861",
+    "author": "Jolanta Kurzawa",
+    "instruction": "Stwórz nowe issue typu bug: Import gubi zgody z kolumny E. Priorytet Highest, przypisz do Zuzanny Rak i dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0862",
+    "author": "Sandra Kozieł",
+    "instruction": "Stwórz nowe issue typu task: Scoring leadów według wieku dachu. Label scoring, dodaj do następnego sprintu."
+  },
+  {
+    "id": "train-0863",
+    "author": "Jolanta Kurzawa",
+    "instruction": "Przenieś LEAD-18 do bieżącego sprintu. 12% numerów to infolinie firm."
+  },
+  {
+    "id": "train-0864",
+    "author": "Remigiusz Fabiański",
+    "instruction": "Przenieś LEAD-13 do backlogu."
+  },
+  {
+    "id": "train-0865",
+    "author": "Sandra Kozieł",
+    "instruction": "Przenieś LEAD-36 do sprintu 15."
+  },
+  {
+    "id": "train-0866",
+    "author": "Jolanta Kurzawa",
+    "instruction": "Wszystkie zadania z labelem web-form z przyszłych sprintów przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "train-0867",
+    "author": "Remigiusz Fabiański",
+    "instruction": "Zadanie z eksportem leadów dla partnera z Krakowa przenieś do następnego sprintu."
+  },
+  {
+    "id": "train-0868",
+    "author": "Jolanta Kurzawa",
+    "instruction": "Wszystkie nieprzypisane bugi przypisz Sandrze Lach."
+  },
+  {
+    "id": "train-0869",
+    "author": "Sandra Kozieł",
+    "instruction": "Dodaj komentarz do wszystkich zadań z labelem distribution: Podział według nowego wzoru w arkuszu."
+  },
+  {
+    "id": "train-0870",
+    "author": "Remigiusz Fabiański",
+    "instruction": "Wszystkim zadaniom z labelem sources bez sprintu, które nie mają jeszcze priorytetu High, ustaw High."
+  },
+  {
+    "id": "train-0871",
+    "author": "Jolanta Kurzawa",
+    "instruction": "Wszystkie zadania Zuzanny Rak bez sprintu przepisz na Kajetana Wolnego."
+  },
+  {
+    "id": "train-0872",
+    "author": "Sandra Kozieł",
+    "instruction": "LEAD-8: zmień status na Done, zaloguj 1h i dodaj komentarz: filtr usuwa 22% rekordów."
+  },
+  {
+    "id": "train-0873",
+    "author": "Jolanta Kurzawa",
+    "instruction": "LEAD-4: zmień status na In review, zaloguj 3h i dodaj komentarz: Zostało 9 812 unikalnych numerów."
+  },
+  {
+    "id": "train-0874",
+    "author": "Remigiusz Fabiański",
+    "instruction": "Zadanie z leadem z polecenia z premią: przypisz do mnie, Remigiusza Fabiańskiego, zmień status na In Progress i przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "train-0875",
+    "author": "Sandra Kozieł",
+    "instruction": "Zadanie z walidacją numerów telefonów przed importem: przenieś do bieżącego sprintu i ustaw priorytet High."
+  },
+  {
+    "id": "train-0876",
+    "author": "Remigiusz Fabiański",
+    "instruction": "Kup bazę 10 tysięcy kontaktów od dostawcy z Lublina."
+  },
+  {
+    "id": "train-0877",
+    "author": "Jolanta Kurzawa",
+    "instruction": "Usuń z bazy kontaktów wszystkie numery z prefiksem +48 22."
+  },
+  {
+    "id": "train-0878",
+    "author": "Sandra Kozieł",
+    "instruction": "Przypisz LEAD-24 do Mieczysława."
+  },
+  {
+    "id": "train-0879",
+    "author": "Jolanta Kurzawa",
+    "instruction": "Przypisz LEAD-26 Sandrze."
+  },
+  {
+    "id": "train-0880",
+    "author": "Remigiusz Fabiański",
+    "instruction": "Ile kosztuje dziś kilowat mocy paneli fotowoltaicznych?"
+  },
+  {
+    "id": "train-0881",
+    "author": "Kinga Rataj",
+    "instruction": "Kto jest przypisany do SKR-29?"
+  },
+  {
+    "id": "train-0882",
+    "author": "Dariusz Oleksy",
+    "instruction": "Jaki status ma SKR-6? Zdanie „darmowe panele” musi zniknąć ze skryptu, sprawdźmy to!"
+  },
+  {
+    "id": "train-0883",
+    "author": "Hieronim Bąkowski",
+    "instruction": "Uprzejmie proszę o informację, ile godzin zalogowano na SKR-1. Pamiętam czasy, gdy skrypt pisało się na kartce."
+  },
+  {
+    "id": "train-0884",
+    "author": "Dariusz Oleksy",
+    "instruction": "Ile zadań z labelem objections nie ma przypisanej osoby? Każda obiekcja to szansa!"
+  },
+  {
+    "id": "train-0885",
+    "author": "Kinga Rataj",
+    "instruction": "Które zadania z labelem compliance nie są jeszcze zrobione?"
+  },
+  {
+    "id": "train-0886",
+    "author": "Hieronim Bąkowski",
+    "instruction": "Uprzejmie proszę o informację, jaki priorytet ma skrypt dla gospodarzy z magazynem energii. Mój szwagier ma gospodarstwo pod Jędrzejowem."
+  },
+  {
+    "id": "train-0887",
+    "author": "Dariusz Oleksy",
+    "instruction": "Przypisz SKR-21 do Adama! Nagrania najlepszych rozmów to złoto!"
+  },
+  {
+    "id": "train-0888",
+    "author": "Kinga Rataj",
+    "instruction": "Ustaw priorytet SKR-33 na Medium. Klienci mówią „sąsiad żałuje” trzy razy dziennie."
+  },
+  {
+    "id": "train-0889",
+    "author": "Hieronim Bąkowski",
+    "instruction": "Uprzejmie proszę o zmianę statusu SKR-8 na Done. Skrypt umawiania wizyty przetestowałem na dwudziestu rozmowach."
+  },
+  {
+    "id": "train-0890",
+    "author": "Dariusz Oleksy",
+    "instruction": "Zadanie ze zdaniem o ulgach podatkowych: ustaw priorytet Highest i przypisz do Laury Jankowskiej. Zamykamy temat!"
+  },
+  {
+    "id": "train-0891",
+    "author": "Kinga Rataj",
+    "instruction": "Zadanie ze skryptem dla klientów z pompami ciepła przypisz do mnie, Kingi Rataj, i ustaw priorytet High."
+  },
+  {
+    "id": "train-0892",
+    "author": "Hieronim Bąkowski",
+    "instruction": "Uprzejmie proszę, aby zadanie z odpowiedzią na obiekcję o hałasie falownika otrzymało priorytet Medium i trafiło do mnie, Hieronima Bąkowskiego."
+  },
+  {
+    "id": "train-0893",
+    "author": "Kinga Rataj",
+    "instruction": "Zaloguj 2h na SKR-15, opis: trzy wersje odpowiedzi o zimie"
+  },
+  {
+    "id": "train-0894",
+    "author": "Dariusz Oleksy",
+    "instruction": "Dodaj komentarz do SKR-5: Wersja B ma 12% więcej umówionych wizyt!"
+  },
+  {
+    "id": "train-0895",
+    "author": "Hieronim Bąkowski",
+    "instruction": "Uprzejmie proszę o dodanie komentarza do SKR-11: Klienci pytają o to w co trzeciej rozmowie."
+  },
+  {
+    "id": "train-0896",
+    "author": "Kinga Rataj",
+    "instruction": "Dodaj komentarz do zadania ze skryptem pożegnania: Kwestia „Dziękuję za rozmowę, miłego dnia” zostaje bez zmian."
+  },
+  {
+    "id": "train-0897",
+    "author": "Dariusz Oleksy",
+    "instruction": "Zaloguj 1h na zadanie z konkursem na najlepsze zamknięcie rozmowy, opis: regulamin konkursu."
+  },
+  {
+    "id": "train-0898",
+    "author": "Dariusz Oleksy",
+    "instruction": "Stwórz nowe issue typu task: Skrypt dla klientów z dużymi rachunkami za prąd. Priorytet High."
+  },
+  {
+    "id": "train-0899",
+    "author": "Kinga Rataj",
+    "instruction": "Stwórz nowe issue typu task: Nowa odpowiedź na obiekcję 'za drogo'."
+  },
+  {
+    "id": "train-0900",
+    "author": "Hieronim Bąkowski",
+    "instruction": "Uprzejmie proszę o założenie nowego zgłoszenia typu task: Skrypt rozmowy z osobą słabosłyszącą."
+  },
+  {
+    "id": "train-0901",
+    "author": "Dariusz Oleksy",
+    "instruction": "Stwórz nowe issue typu task: Szkolenie z technik zamykania rozmowy. Przypisz je do Adama Pietrasa i dodaj do bieżącego sprintu!"
+  },
+  {
+    "id": "train-0902",
+    "author": "Kinga Rataj",
+    "instruction": "Stwórz nowe issue typu task: Skrypt dla właścicieli domków letniskowych. Label script, dodaj do następnego sprintu."
+  },
+  {
+    "id": "train-0903",
+    "author": "Dariusz Oleksy",
+    "instruction": "Przenieś SKR-18 do bieżącego sprintu. Natychmiast to ucinamy!"
+  },
+  {
+    "id": "train-0904",
+    "author": "Kinga Rataj",
+    "instruction": "Przenieś SKR-13 do backlogu."
+  },
+  {
+    "id": "train-0905",
+    "author": "Hieronim Bąkowski",
+    "instruction": "Uprzejmie proszę o przeniesienie SKR-19 do sprintu 24."
+  },
+  {
+    "id": "train-0906",
+    "author": "Dariusz Oleksy",
+    "instruction": "Wszystkie zadania z labelem training bez sprintu przenieś do następnego sprintu!"
+  },
+  {
+    "id": "train-0907",
+    "author": "Kinga Rataj",
+    "instruction": "Zadanie z wersją skryptu po ukraińsku przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "train-0908",
+    "author": "Dariusz Oleksy",
+    "instruction": "Wszystkie nieprzypisane zadania z labelem compliance przypisz Kindze Szewc!"
+  },
+  {
+    "id": "train-0909",
+    "author": "Kinga Rataj",
+    "instruction": "Dodaj komentarz do wszystkich zadań z labelem callback: Kwestie powitania muszą być takie same w obu skryptach."
+  },
+  {
+    "id": "train-0910",
+    "author": "Hieronim Bąkowski",
+    "instruction": "Uprzejmie proszę o ustawienie priorytetu Medium wszystkim zadaniom z etykietą objections, które mają priorytet Low."
+  },
+  {
+    "id": "train-0911",
+    "author": "Dariusz Oleksy",
+    "instruction": "Wszystkie zadania Laury Jankowskiej bez sprintu przepisz na Adama Pietrasa!"
+  },
+  {
+    "id": "train-0912",
+    "author": "Kinga Rataj",
+    "instruction": "SKR-7: zmień status na Done, zaloguj 2h i dodaj komentarz: Odpowiedź przetestowana na 40 rozmowach."
+  },
+  {
+    "id": "train-0913",
+    "author": "Dariusz Oleksy",
+    "instruction": "SKR-4 zamykamy! Zmień status na Done, zaloguj 1h i dodaj komentarz: Bez obietnicy zerowych rachunków, tylko kredyt i dopłata."
+  },
+  {
+    "id": "train-0914",
+    "author": "Hieronim Bąkowski",
+    "instruction": "Uprzejmie proszę, aby zadanie z brakiem odpowiedzi na pytanie o gwarancję zostało przypisane do mnie, Hieronima Bąkowskiego, otrzymało status In Progress i komentarz: Gwarancja na panele wynosi 25 lat."
+  },
+  {
+    "id": "train-0915",
+    "author": "Kinga Rataj",
+    "instruction": "Zadanie z przeglądem skryptów przez prawniczkę przenieś do bieżącego sprintu i przypisz do Kingi Szewc."
+  },
+  {
+    "id": "train-0916",
+    "author": "Dariusz Oleksy",
+    "instruction": "Wyślij nowy skrypt mailem do wszystkich telemarketerów!"
+  },
+  {
+    "id": "train-0917",
+    "author": "Kinga Rataj",
+    "instruction": "Przypisz SKR-20 Feliksowi."
+  },
+  {
+    "id": "train-0918",
+    "author": "Hieronim Bąkowski",
+    "instruction": "Uprzejmie proszę o przypisanie SKR-23 pani Kindze."
+  },
+  {
+    "id": "train-0919",
+    "author": "Dariusz Oleksy",
+    "instruction": "Ustaw priorytet Highest dla zadania z obiekcją!"
+  },
+  {
+    "id": "train-0920",
+    "author": "Hieronim Bąkowski",
+    "instruction": "Uprzejmie proszę o przepis na pierniki świąteczne."
+  },
+  {
+    "id": "train-0921",
+    "author": "Grzegorz Lenart",
+    "instruction": "Kto ma UMW-33?"
+  },
+  {
+    "id": "train-0922",
+    "author": "Aneta Zych",
+    "instruction": "Jaki status ma UMW-6? W czwartek doradca z rejonu Radom ma trzy wizyty o 10:00."
+  },
+  {
+    "id": "train-0923",
+    "author": "Teodora Wasiak",
+    "instruction": "Uprzejmie proszę o informację, ile godzin zalogowano na UMW-4."
+  },
+  {
+    "id": "train-0924",
+    "author": "Aneta Zych",
+    "instruction": "Ile zadań z labelem appointments nie jest jeszcze zrobionych?"
+  },
+  {
+    "id": "train-0925",
+    "author": "Teodora Wasiak",
+    "instruction": "Uprzejmie proszę o listę zadań z etykietą withdrawals, które nie mają sprintu."
+  },
+  {
+    "id": "train-0926",
+    "author": "Grzegorz Lenart",
+    "instruction": "Jaki priorytet ma zadanie z tabletem bez netu na wsi? Stoję pod Chęcinami bez zasięgu."
+  },
+  {
+    "id": "train-0927",
+    "author": "Aneta Zych",
+    "instruction": "Przypisz UMW-20 do Lecha Kowalika."
+  },
+  {
+    "id": "train-0928",
+    "author": "Teodora Wasiak",
+    "instruction": "Uprzejmie proszę o ustawienie priorytetu UMW-31 na Low. Wzór umowy dla firm nie jest obecnie potrzebny."
+  },
+  {
+    "id": "train-0929",
+    "author": "Grzegorz Lenart",
+    "instruction": "Zmień status UMW-7 na Done. SMS-y przychodzą."
+  },
+  {
+    "id": "train-0930",
+    "author": "Aneta Zych",
+    "instruction": "Zadanie z kolejką wizyt do ponownego umówienia: ustaw priorytet High i przypisz do Darii Bielak."
+  },
+  {
+    "id": "train-0931",
+    "author": "Teodora Wasiak",
+    "instruction": "Uprzejmie proszę, aby zadanie dotyczące aneksu do umowy przy zmianie liczby paneli otrzymało priorytet High i zostało przypisane do mnie, Teodory Wasiak."
+  },
+  {
+    "id": "train-0932",
+    "author": "Grzegorz Lenart",
+    "instruction": "Doradca z Lublina odchodzi. Daj temu zadaniu priorytet High i przypisz do Anety Zych."
+  },
+  {
+    "id": "train-0933",
+    "author": "Grzegorz Lenart",
+    "instruction": "Zaloguj 3h na UMW-16, opis: zdjęcia dachów w Kielcach i Sitkówce"
+  },
+  {
+    "id": "train-0934",
+    "author": "Aneta Zych",
+    "instruction": "Dodaj komentarz do UMW-14: Pierwsze montaże w Busku-Zdroju 4 i 5 listopada."
+  },
+  {
+    "id": "train-0935",
+    "author": "Teodora Wasiak",
+    "instruction": "Uprzejmie proszę o dodanie komentarza do UMW-18: Regulamin dołączono do wszystkich umów z października."
+  },
+  {
+    "id": "train-0936",
+    "author": "Aneta Zych",
+    "instruction": "Zaloguj 1h 30m na zadanie z mapą wizyt doradców w województwie świętokrzyskim, opis: aktualizacja rejonów."
+  },
+  {
+    "id": "train-0937",
+    "author": "Teodora Wasiak",
+    "instruction": "Uprzejmie proszę o dodanie komentarza do zadania dotyczącego protokołu odbioru instalacji: Wzór protokołu zatwierdzony przez prawniczkę."
+  },
+  {
+    "id": "train-0938",
+    "author": "Aneta Zych",
+    "instruction": "Stwórz nowe issue typu task: Grafik doradców na grudzień w rejonie Sandomierz."
+  },
+  {
+    "id": "train-0939",
+    "author": "Grzegorz Lenart",
+    "instruction": "Stwórz nowe issue typu bug: Mapa w tablecie pokazuje zły adres w Morawicy. Priorytet High."
+  },
+  {
+    "id": "train-0940",
+    "author": "Teodora Wasiak",
+    "instruction": "Uprzejmie proszę o założenie nowego zgłoszenia typu task: Wzór oświadczenia o odstąpieniu w wersji papierowej."
+  },
+  {
+    "id": "train-0941",
+    "author": "Aneta Zych",
+    "instruction": "Stwórz nowe issue typu task: Wizyty doradców w gminie Chmielnik. Przypisz je do Grzegorza Mularczyka i dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "train-0942",
+    "author": "Teodora Wasiak",
+    "instruction": "Uprzejmie proszę o założenie nowego zgłoszenia typu task: Rejestr umów kredytowych. Proszę nadać mu etykietę finance i dodać je do następnego sprintu."
+  },
+  {
+    "id": "train-0943",
+    "author": "Aneta Zych",
+    "instruction": "Przenieś UMW-30 do bieżącego sprintu. Odstąpienia wysłane pocztą to w tym miesiącu 15 umów."
+  },
+  {
+    "id": "train-0944",
+    "author": "Grzegorz Lenart",
+    "instruction": "Przenieś UMW-11 do backlogu."
+  },
+  {
+    "id": "train-0945",
+    "author": "Teodora Wasiak",
+    "instruction": "Uprzejmie proszę o przeniesienie UMW-27 do sprintu 10."
+  },
+  {
+    "id": "train-0946",
+    "author": "Aneta Zych",
+    "instruction": "Wszystkie zadania z labelem contracts z przyszłych sprintów przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "train-0947",
+    "author": "Grzegorz Lenart",
+    "instruction": "Szkolenie doradców z umowy elektronicznej przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "train-0948",
+    "author": "Aneta Zych",
+    "instruction": "Wszystkie nieprzypisane bugi przypisz Lechowi Kowalikowi."
+  },
+  {
+    "id": "train-0949",
+    "author": "Teodora Wasiak",
+    "instruction": "Uprzejmie proszę o dodanie komentarza do wszystkich otwartych zadań z etykietą withdrawals: Termin na odstąpienie liczymy od dnia podpisania umowy."
+  },
+  {
+    "id": "train-0950",
+    "author": "Grzegorz Lenart",
+    "instruction": "Wszystkim zadaniom z labelem advisers, które nie mają jeszcze priorytetu High, ustaw High."
+  },
+  {
+    "id": "train-0951",
+    "author": "Aneta Zych",
+    "instruction": "Wszystkie zadania Teodory Wasiak bez sprintu przepisz na Darię Bielak."
+  },
+  {
+    "id": "train-0952",
+    "author": "Grzegorz Lenart",
+    "instruction": "UMW-16 zrobione: zmień status na Done, zaloguj 2h i dodaj komentarz: zdjęcia dachów w umowach od dziś."
+  },
+  {
+    "id": "train-0953",
+    "author": "Teodora Wasiak",
+    "instruction": "Uprzejmie proszę o zmianę statusu UMW-5 na In review, zalogowanie 2h oraz dodanie komentarza: Rejestr odstąpień gotowy do weryfikacji."
+  },
+  {
+    "id": "train-0954",
+    "author": "Aneta Zych",
+    "instruction": "Zadanie z oznaczeniem wizyt u klientów po 75. roku życia przypisz do mnie, Anety Zych, zmień status na In Progress i przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "train-0955",
+    "author": "Grzegorz Lenart",
+    "instruction": "Termin montażu w umowie jest dłuższy, niż mówimy przez telefon. Daj temu zadaniu priorytet High i dodaj komentarz: klienci w Pińczowie się skarżą."
+  },
+  {
+    "id": "train-0956",
+    "author": "Aneta Zych",
+    "instruction": "Wyślij SMS do wszystkich klientów z jutrzejszymi wizytami."
+  },
+  {
+    "id": "train-0957",
+    "author": "Teodora Wasiak",
+    "instruction": "Uprzejmie proszę o wydrukowanie umowy z UMW-25."
+  },
+  {
+    "id": "train-0958",
+    "author": "Grzegorz Lenart",
+    "instruction": "Przypisz UMW-23 Zenonowi."
+  },
+  {
+    "id": "train-0959",
+    "author": "Aneta Zych",
+    "instruction": "Przenieś UMW-28 do sprintu 15."
+  },
+  {
+    "id": "train-0960",
+    "author": "Teodora Wasiak",
+    "instruction": "Uprzejmie proszę o przypisanie UMW-17 panu Grzegorzowi."
+  },
+  {
+    "id": "train-0961",
+    "author": "Kamila Pyka",
+    "instruction": "Kto jest przypisany do RODO-36?"
+  },
+  {
+    "id": "train-0962",
+    "author": "Ryszard Majchrzak",
+    "instruction": "Jaki status ma RODO-13? Ile jeszcze czasu będziemy tracić na te pisma?"
+  },
+  {
+    "id": "train-0963",
+    "author": "Urszula Strzelecka",
+    "instruction": "Proszę o informację, ile godzin zalogowano na RODO-1."
+  },
+  {
+    "id": "train-0964",
+    "author": "Ryszard Majchrzak",
+    "instruction": "Ile mamy niezrobionych zadań z labelem complaints? Jedna liczba."
+  },
+  {
+    "id": "train-0965",
+    "author": "Urszula Strzelecka",
+    "instruction": "Które zadania z etykietą uodo lub uokik nie są zrobione?"
+  },
+  {
+    "id": "train-0966",
+    "author": "Kamila Pyka",
+    "instruction": "Klient krzyczał, że się wypisał, a my dalej dzwonimy. Kto zajmuje się problemem, że dialer dzwoni mimo prośby o usunięcie danych?"
+  },
+  {
+    "id": "train-0967",
+    "author": "Urszula Strzelecka",
+    "instruction": "Proszę przypisać RODO-22 do Borysa Lewczuka."
+  },
+  {
+    "id": "train-0968",
+    "author": "Kamila Pyka",
+    "instruction": "Klientka napisała, że to już nękanie. Proszę ustawić priorytet RODO-25 na High."
+  },
+  {
+    "id": "train-0969",
+    "author": "Ryszard Majchrzak",
+    "instruction": "Zmień status RODO-8 na Done i nie róbmy z tego wielkiej sprawy."
+  },
+  {
+    "id": "train-0970",
+    "author": "Urszula Strzelecka",
+    "instruction": "Zadanie dotyczące terminu przechowywania nagrań rozmów: proszę ustawić priorytet High i przypisać je do mnie, Urszuli Strzeleckiej."
+  },
+  {
+    "id": "train-0971",
+    "author": "Kamila Pyka",
+    "instruction": "Klient pyta, dlaczego dostaje SMS-y po wypisaniu się. Proszę przypisać zadanie z wyjaśnieniami dla tego klienta do Kamili Dziedzic i ustawić priorytet High."
+  },
+  {
+    "id": "train-0972",
+    "author": "Ryszard Majchrzak",
+    "instruction": "Zadanie z ubezpieczeniem od kar: ustaw priorytet Medium i przypisz do Gabrieli. Wolę zapłacić składkę niż karę."
+  },
+  {
+    "id": "train-0973",
+    "author": "Urszula Strzelecka",
+    "instruction": "Proszę zalogować 3h na RODO-5 z opisem: analiza umowy ze sprzedawcą bazy."
+  },
+  {
+    "id": "train-0974",
+    "author": "Ryszard Majchrzak",
+    "instruction": "Dodaj komentarz do RODO-10: Przeprosić klientkę i zablokować numer. Bez dyskusji."
+  },
+  {
+    "id": "train-0975",
+    "author": "Kamila Pyka",
+    "instruction": "Proszę dodać komentarz do RODO-4: Mamy 27 otwartych skarg na koniec tygodnia."
+  },
+  {
+    "id": "train-0976",
+    "author": "Urszula Strzelecka",
+    "instruction": "Proszę dodać komentarz do zadania dotyczącego inspektora ochrony danych: Umowa z inspektorem zewnętrznym do podpisu w piątek."
+  },
+  {
+    "id": "train-0977",
+    "author": "Kamila Pyka",
+    "instruction": "Zaloguj 1h na zadanie ze skargami z mediów społecznościowych, opis: przegląd komentarzy z Facebooka."
+  },
+  {
+    "id": "train-0978",
+    "author": "Urszula Strzelecka",
+    "instruction": "Proszę założyć nowe zgłoszenie typu task: Odpowiedź na pytania UODO z 20 października. Priorytet Highest."
+  },
+  {
+    "id": "train-0979",
+    "author": "Kamila Pyka",
+    "instruction": "Stwórz nowe issue typu task: Skarga klienta z Ostrowca na nagrywanie bez zgody."
+  },
+  {
+    "id": "train-0980",
+    "author": "Ryszard Majchrzak",
+    "instruction": "Stwórz nowe issue typu task: Lista skarg do zamknięcia przed końcem roku."
+  },
+  {
+    "id": "train-0981",
+    "author": "Urszula Strzelecka",
+    "instruction": "Proszę założyć nowe zgłoszenie typu task: Aktualizacja klauzuli informacyjnej w skrypcie. Proszę przypisać je do Borysa Lewczuka i dodać do bieżącego sprintu."
+  },
+  {
+    "id": "train-0982",
+    "author": "Kamila Pyka",
+    "instruction": "Stwórz nowe issue typu task: Szablon przeprosin dla klientów po sprzeciwie. Label templates, dodaj do następnego sprintu."
+  },
+  {
+    "id": "train-0983",
+    "author": "Urszula Strzelecka",
+    "instruction": "Proszę przenieść RODO-21 do bieżącego sprintu. Rzecznik konsumentów czeka na odpowiedź."
+  },
+  {
+    "id": "train-0984",
+    "author": "Ryszard Majchrzak",
+    "instruction": "Przenieś RODO-11 do backlogu. Rejestr może poczekać."
+  },
+  {
+    "id": "train-0985",
+    "author": "Kamila Pyka",
+    "instruction": "Przenieś RODO-24 do sprintu 5."
+  },
+  {
+    "id": "train-0986",
+    "author": "Urszula Strzelecka",
+    "instruction": "Proszę przenieść wszystkie zadania z etykietą documents z przyszłych sprintów do bieżącego sprintu."
+  },
+  {
+    "id": "train-0987",
+    "author": "Kamila Pyka",
+    "instruction": "Zadanie ze skrzynką mailową na sprzeciwy bez właściciela przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "train-0988",
+    "author": "Ryszard Majchrzak",
+    "instruction": "Wszystkie nieprzypisane bugi przypisz Kamili Pyka. Niech to wreszcie ktoś ogarnie."
+  },
+  {
+    "id": "train-0989",
+    "author": "Urszula Strzelecka",
+    "instruction": "Proszę dodać komentarz do wszystkich otwartych zadań z etykietą do-not-call: Lista 'nie dzwonić' musi być sprawdzana przed każdą kampanią."
+  },
+  {
+    "id": "train-0990",
+    "author": "Kamila Pyka",
+    "instruction": "Wszystkim zadaniom z labelem data-requests, które mają priorytet niższy niż High, ustaw priorytet High."
+  },
+  {
+    "id": "train-0991",
+    "author": "Ryszard Majchrzak",
+    "instruction": "Wszystkie moje zadania bez sprintu, czyli zadania Ryszarda Majchrzaka, przepisz na Urszulę Strzelecką. Nie mam czasu na papiery."
+  },
+  {
+    "id": "train-0992",
+    "author": "Kamila Pyka",
+    "instruction": "RODO-4: zmień status na In review, zaloguj 2h i dodaj komentarz: Wszystkie skargi z października mają odpowiedź."
+  },
+  {
+    "id": "train-0993",
+    "author": "Urszula Strzelecka",
+    "instruction": "Proszę zmienić status RODO-7 na Done, zalogować 1h i dodać komentarz: Wzór odpowiedzi zatwierdzony."
+  },
+  {
+    "id": "train-0994",
+    "author": "Ryszard Majchrzak",
+    "instruction": "Pismo z UOKiK przypisz Kamili Pyka, zmień status na In Progress i dodaj komentarz: Odpowiedź ma być gotowa w tym tygodniu."
+  },
+  {
+    "id": "train-0995",
+    "author": "Urszula Strzelecka",
+    "instruction": "Zadanie dotyczące rejestru naruszeń ochrony danych: proszę przenieść do bieżącego sprintu i ustawić priorytet High."
+  },
+  {
+    "id": "train-0996",
+    "author": "Ryszard Majchrzak",
+    "instruction": "Usuń wszystkie skargi starsze niż rok."
+  },
+  {
+    "id": "train-0997",
+    "author": "Urszula Strzelecka",
+    "instruction": "Proszę przypisać RODO-26 do pana Lucjana."
+  },
+  {
+    "id": "train-0998",
+    "author": "Kamila Pyka",
+    "instruction": "Przypisz RODO-31 Kamili."
+  },
+  {
+    "id": "train-0999",
+    "author": "Ryszard Majchrzak",
+    "instruction": "Napisz mi odwołanie od kary z UOKiK."
+  },
+  {
+    "id": "train-1000",
+    "author": "Kamila Pyka",
+    "instruction": "Jak uspokoić zdenerwowanego klienta przez telefon? Masz jakieś sposoby?"
+  }
+]

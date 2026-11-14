@@ -1,0 +1,853 @@
+{
+  "name": "train-bad",
+  "site": "https://example.atlassian.net",
+  "now": "2026-11-25T11:00:00.000+0100",
+  "project": {
+    "key": "BAD",
+    "name": "fizyka.online - badania i ewaluacja"
+  },
+  "board": {
+    "id": "35",
+    "name": "BAD board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:6c45e458-1e2d-57d4-94b6-bd945bea6e0e",
+      "display_name": "Barbara Ziółkowska",
+      "email": "barbara.ziolkowska@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:d5995ee6-da08-5a6b-b2f2-1b0703a0c6ce",
+      "display_name": "Patryk Szostak",
+      "email": "patryk.szostak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:15011ad1-916c-53f5-8183-cc4722a18d27",
+      "display_name": "Nina Woźnicka",
+      "email": "nina.woznicka@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:28240838-ba49-5c7e-9fc2-1dee3b0d48bf",
+      "display_name": "Nina Tomczak",
+      "email": "nina.tomczak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:7b9b0d2d-f93d-52ee-80c7-7c1c444d54c8",
+      "display_name": "Kazimierz Bator",
+      "email": "kazimierz.bator@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:ac756f21-6e17-5132-a6e0-38fe944cfe51",
+      "display_name": "Iga Sobczyk",
+      "email": "iga.sobczyk@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:1b82698d-13da-5213-904e-0c937c689766",
+      "display_name": "Bogusław Fijałkowski",
+      "email": "boguslaw.fijalkowski@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "351",
+      "name": "BAD Sprint 3",
+      "state": "closed",
+      "start_date": "2026-11-04T09:00:00.000Z",
+      "end_date": "2026-11-18T09:00:00.000Z",
+      "goal": "Pretest w szkołach pilotażowych"
+    },
+    {
+      "id": "352",
+      "name": "BAD Sprint 4",
+      "state": "active",
+      "start_date": "2026-11-18T09:00:00.000Z",
+      "end_date": "2026-12-02T09:00:00.000Z",
+      "goal": "Sprawozdanie okresowe dla grantodawcy"
+    },
+    {
+      "id": "353",
+      "name": "BAD Sprint 5",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Posttest i analiza wyników"
+    },
+    {
+      "id": "354",
+      "name": "BAD Sprint 6",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "35001",
+      "key": "BAD-1",
+      "summary": "Pretest wiedzy z fizyki w szkołach pilotażowych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Highest",
+      "assignee": "712020:ac756f21-6e17-5132-a6e0-38fe944cfe51",
+      "reporter": "712020:28240838-ba49-5c7e-9fc2-1dee3b0d48bf",
+      "labels": [
+        "pretest"
+      ],
+      "sprint": "351",
+      "created": "2026-09-17T10:15:00.000+0100",
+      "updated": "2026-09-20T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "350015",
+          "author": "712020:ac756f21-6e17-5132-a6e0-38fe944cfe51",
+          "time_spent_seconds": 21600,
+          "comment": "Przygotowanie testu",
+          "started": "2026-09-19T00:15:00.000+0100"
+        },
+        {
+          "id": "350016",
+          "author": "712020:ac756f21-6e17-5132-a6e0-38fe944cfe51",
+          "time_spent_seconds": 14400,
+          "comment": "Wprowadzenie wyników",
+          "started": "2026-09-20T00:15:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "35002",
+      "key": "BAD-2",
+      "summary": "Dobór szkół do grupy kontrolnej",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:1b82698d-13da-5213-904e-0c937c689766",
+      "reporter": "712020:6c45e458-1e2d-57d4-94b6-bd945bea6e0e",
+      "labels": [
+        "methodology"
+      ],
+      "sprint": "351",
+      "created": "2026-09-19T16:45:00.000+0100",
+      "updated": "2026-09-22T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35003",
+      "key": "BAD-3",
+      "summary": "Eye tracking study of the simulations",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:d5995ee6-da08-5a6b-b2f2-1b0703a0c6ce",
+      "labels": [
+        "research"
+      ],
+      "sprint": "351",
+      "created": "2026-09-20T13:15:00.000+0100",
+      "updated": "2026-09-23T13:15:00.000+0100",
+      "comments": [
+        {
+          "id": "350031",
+          "author": "712020:d5995ee6-da08-5a6b-b2f2-1b0703a0c6ce",
+          "body": "No budget for the eye tracker this year.",
+          "created": "2026-09-21T13:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "35004",
+      "key": "BAD-4",
+      "summary": "Sprawozdanie okresowe dla grantodawcy",
+      "description": "Termin: 15 grudnia. Wymaga wskaźników z pilotażu i listy publikacji.",
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:28240838-ba49-5c7e-9fc2-1dee3b0d48bf",
+      "reporter": "712020:d5995ee6-da08-5a6b-b2f2-1b0703a0c6ce",
+      "labels": [
+        "grant",
+        "deadline"
+      ],
+      "sprint": "352",
+      "created": "2026-09-22T08:00:00.000+0100",
+      "updated": "2026-09-25T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "350045",
+          "author": "712020:28240838-ba49-5c7e-9fc2-1dee3b0d48bf",
+          "time_spent_seconds": 18000,
+          "comment": "Wskaźniki pilotażu",
+          "started": "2026-09-24T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "35005",
+      "key": "BAD-5",
+      "summary": "Ankieta motywacji uczniów do nauki fizyki",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:ac756f21-6e17-5132-a6e0-38fe944cfe51",
+      "reporter": "712020:d5995ee6-da08-5a6b-b2f2-1b0703a0c6ce",
+      "labels": [
+        "survey"
+      ],
+      "sprint": "352",
+      "created": "2026-09-24T09:45:00.000+0100",
+      "updated": "2026-09-27T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35006",
+      "key": "BAD-6",
+      "summary": "Błędne kody uczniów w danych z pretestu",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:7b9b0d2d-f93d-52ee-80c7-7c1c444d54c8",
+      "reporter": "712020:28240838-ba49-5c7e-9fc2-1dee3b0d48bf",
+      "labels": [
+        "data",
+        "pretest"
+      ],
+      "sprint": "352",
+      "created": "2026-09-25T12:00:00.000+0100",
+      "updated": "2026-09-28T12:00:00.000+0100",
+      "comments": [
+        {
+          "id": "350061",
+          "author": "712020:7b9b0d2d-f93d-52ee-80c7-7c1c444d54c8",
+          "body": "W dwóch szkołach kody uczniów się powtarzają.",
+          "created": "2026-09-26T12:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "35007",
+      "key": "BAD-7",
+      "summary": "Statistical analysis plan",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:d5995ee6-da08-5a6b-b2f2-1b0703a0c6ce",
+      "reporter": "712020:6c45e458-1e2d-57d4-94b6-bd945bea6e0e",
+      "labels": [
+        "methodology",
+        "statistics"
+      ],
+      "sprint": "352",
+      "created": "2026-09-27T09:30:00.000+0100",
+      "updated": "2026-09-30T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35008",
+      "key": "BAD-8",
+      "summary": "Wywiady z nauczycielami po pierwszym miesiącu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:ac756f21-6e17-5132-a6e0-38fe944cfe51",
+      "reporter": "712020:28240838-ba49-5c7e-9fc2-1dee3b0d48bf",
+      "labels": [
+        "interviews"
+      ],
+      "sprint": "352",
+      "created": "2026-09-29T14:15:00.000+0100",
+      "updated": "2026-10-02T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35009",
+      "key": "BAD-9",
+      "summary": "Zgoda komisji etycznej na badania z uczniami",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:d5995ee6-da08-5a6b-b2f2-1b0703a0c6ce",
+      "reporter": "712020:15011ad1-916c-53f5-8183-cc4722a18d27",
+      "labels": [
+        "ethics"
+      ],
+      "sprint": "352",
+      "created": "2026-09-30T09:45:00.000+0100",
+      "updated": "2026-10-03T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35010",
+      "key": "BAD-10",
+      "summary": "Spotkanie u rektora w sprawie przedłużenia grantu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:28240838-ba49-5c7e-9fc2-1dee3b0d48bf",
+      "labels": [
+        "grant"
+      ],
+      "sprint": "352",
+      "created": "2026-10-02T10:30:00.000+0100",
+      "updated": "2026-10-05T10:30:00.000+0100",
+      "comments": [
+        {
+          "id": "350101",
+          "author": "712020:28240838-ba49-5c7e-9fc2-1dee3b0d48bf",
+          "body": "Rektor obiecał porozmawiać z grantodawcą o aneksie.",
+          "created": "2026-10-03T10:30:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "35011",
+      "key": "BAD-11",
+      "summary": "Kamienie milowe grantu na pierwszy rok",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:28240838-ba49-5c7e-9fc2-1dee3b0d48bf",
+      "labels": [
+        "grant"
+      ],
+      "sprint": "352",
+      "created": "2026-10-04T08:00:00.000+0100",
+      "updated": "2026-10-07T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35012",
+      "key": "BAD-12",
+      "summary": "Transkrypcja wywiadów z nauczycielami",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:15011ad1-916c-53f5-8183-cc4722a18d27",
+      "reporter": "712020:ac756f21-6e17-5132-a6e0-38fe944cfe51",
+      "labels": [
+        "interviews"
+      ],
+      "sprint": "352",
+      "created": "2026-10-06T17:30:00.000+0100",
+      "updated": "2026-10-09T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35013",
+      "key": "BAD-13",
+      "summary": "Abstrakt na konferencję dydaktyki fizyki",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:7b9b0d2d-f93d-52ee-80c7-7c1c444d54c8",
+      "reporter": "712020:6c45e458-1e2d-57d4-94b6-bd945bea6e0e",
+      "labels": [
+        "publications"
+      ],
+      "sprint": "352",
+      "created": "2026-10-07T09:30:00.000+0100",
+      "updated": "2026-10-10T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35014",
+      "key": "BAD-14",
+      "summary": "Posttest wiedzy po semestrze",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:6c45e458-1e2d-57d4-94b6-bd945bea6e0e",
+      "reporter": "712020:ac756f21-6e17-5132-a6e0-38fe944cfe51",
+      "labels": [
+        "posttest"
+      ],
+      "sprint": "353",
+      "created": "2026-10-09T13:15:00.000+0100",
+      "updated": "2026-10-12T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35015",
+      "key": "BAD-15",
+      "summary": "Porównanie grupy eksperymentalnej z kontrolną",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:7b9b0d2d-f93d-52ee-80c7-7c1c444d54c8",
+      "labels": [
+        "statistics"
+      ],
+      "sprint": "353",
+      "created": "2026-10-11T08:30:00.000+0100",
+      "updated": "2026-10-14T08:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35016",
+      "key": "BAD-16",
+      "summary": "Codebook for the interview analysis",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:7b9b0d2d-f93d-52ee-80c7-7c1c444d54c8",
+      "reporter": "712020:6c45e458-1e2d-57d4-94b6-bd945bea6e0e",
+      "labels": [
+        "interviews",
+        "methodology"
+      ],
+      "sprint": "353",
+      "created": "2026-10-12T08:00:00.000+0100",
+      "updated": "2026-10-15T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35017",
+      "key": "BAD-17",
+      "summary": "Artykuł do czasopisma o edukacji",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:7b9b0d2d-f93d-52ee-80c7-7c1c444d54c8",
+      "labels": [
+        "publications"
+      ],
+      "sprint": "353",
+      "created": "2026-10-14T12:45:00.000+0100",
+      "updated": "2026-10-17T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35018",
+      "key": "BAD-18",
+      "summary": "Wskaźnik liczby uczniów w projekcie poniżej planu",
+      "description": "Plan zakłada 600 uczniów, w pilotażu jest 412.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:ac756f21-6e17-5132-a6e0-38fe944cfe51",
+      "reporter": "712020:ac756f21-6e17-5132-a6e0-38fe944cfe51",
+      "labels": [
+        "grant",
+        "indicators"
+      ],
+      "sprint": null,
+      "created": "2026-10-16T10:15:00.000+0100",
+      "updated": "2026-10-19T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35019",
+      "key": "BAD-19",
+      "summary": "Budżet na nagrody dla uczniów w ankiecie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:ac756f21-6e17-5132-a6e0-38fe944cfe51",
+      "reporter": "712020:ac756f21-6e17-5132-a6e0-38fe944cfe51",
+      "labels": [
+        "grant",
+        "survey"
+      ],
+      "sprint": null,
+      "created": "2026-10-17T15:45:00.000+0100",
+      "updated": "2026-10-20T15:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35020",
+      "key": "BAD-20",
+      "summary": "Anonimizacja danych przed udostępnieniem",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:28240838-ba49-5c7e-9fc2-1dee3b0d48bf",
+      "reporter": "712020:7b9b0d2d-f93d-52ee-80c7-7c1c444d54c8",
+      "labels": [
+        "data",
+        "privacy"
+      ],
+      "sprint": null,
+      "created": "2026-10-19T11:00:00.000+0100",
+      "updated": "2026-10-22T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35021",
+      "key": "BAD-21",
+      "summary": "Repozytorium danych badawczych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:ac756f21-6e17-5132-a6e0-38fe944cfe51",
+      "labels": [
+        "data"
+      ],
+      "sprint": null,
+      "created": "2026-10-21T10:15:00.000+0100",
+      "updated": "2026-10-24T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35022",
+      "key": "BAD-22",
+      "summary": "Ankieta dla rodziców o nauce w domu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:d5995ee6-da08-5a6b-b2f2-1b0703a0c6ce",
+      "reporter": "712020:d5995ee6-da08-5a6b-b2f2-1b0703a0c6ce",
+      "labels": [
+        "survey"
+      ],
+      "sprint": null,
+      "created": "2026-10-22T12:15:00.000+0100",
+      "updated": "2026-10-25T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35023",
+      "key": "BAD-23",
+      "summary": "Missing answers in the motivation survey",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:28240838-ba49-5c7e-9fc2-1dee3b0d48bf",
+      "reporter": "712020:15011ad1-916c-53f5-8183-cc4722a18d27",
+      "labels": [
+        "survey",
+        "data"
+      ],
+      "sprint": null,
+      "created": "2026-10-24T09:45:00.000+0100",
+      "updated": "2026-10-27T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35024",
+      "key": "BAD-24",
+      "summary": "Załącznik nr 3 do sprawozdania: lista szkół",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:6c45e458-1e2d-57d4-94b6-bd945bea6e0e",
+      "reporter": "712020:28240838-ba49-5c7e-9fc2-1dee3b0d48bf",
+      "labels": [
+        "grant"
+      ],
+      "sprint": null,
+      "created": "2026-10-26T10:30:00.000+0100",
+      "updated": "2026-10-29T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35025",
+      "key": "BAD-25",
+      "summary": "Rzetelność testu: alfa Cronbacha",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:6c45e458-1e2d-57d4-94b6-bd945bea6e0e",
+      "labels": [
+        "statistics"
+      ],
+      "sprint": null,
+      "created": "2026-10-28T11:30:00.000+0100",
+      "updated": "2026-10-31T11:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35026",
+      "key": "BAD-26",
+      "summary": "Seminarium zespołu o wynikach pretestu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:28240838-ba49-5c7e-9fc2-1dee3b0d48bf",
+      "reporter": "712020:6c45e458-1e2d-57d4-94b6-bd945bea6e0e",
+      "labels": [
+        "research"
+      ],
+      "sprint": null,
+      "created": "2026-10-29T17:45:00.000+0100",
+      "updated": "2026-11-01T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35027",
+      "key": "BAD-27",
+      "summary": "Wniosek o kolejny grant na szkoły średnie",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:15011ad1-916c-53f5-8183-cc4722a18d27",
+      "reporter": "712020:6c45e458-1e2d-57d4-94b6-bd945bea6e0e",
+      "labels": [
+        "grant"
+      ],
+      "sprint": null,
+      "created": "2026-10-31T17:15:00.000+0100",
+      "updated": "2026-11-03T17:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35028",
+      "key": "BAD-28",
+      "summary": "Lista publikacji projektu na stronę",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:d5995ee6-da08-5a6b-b2f2-1b0703a0c6ce",
+      "labels": [
+        "publications"
+      ],
+      "sprint": null,
+      "created": "2026-11-02T13:00:00.000+0100",
+      "updated": "2026-11-05T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35029",
+      "key": "BAD-29",
+      "summary": "Wyniki pretestu w raporcie dla szkół",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:15011ad1-916c-53f5-8183-cc4722a18d27",
+      "labels": [
+        "pretest",
+        "reports"
+      ],
+      "sprint": "353",
+      "created": "2026-11-03T09:15:00.000+0100",
+      "updated": "2026-11-06T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35030",
+      "key": "BAD-30",
+      "summary": "Dziennik obserwacji lekcji",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:d5995ee6-da08-5a6b-b2f2-1b0703a0c6ce",
+      "reporter": "712020:15011ad1-916c-53f5-8183-cc4722a18d27",
+      "labels": [
+        "methodology"
+      ],
+      "sprint": null,
+      "created": "2026-11-05T13:45:00.000+0100",
+      "updated": "2026-11-08T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35031",
+      "key": "BAD-31",
+      "summary": "Poster for the open day",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:15011ad1-916c-53f5-8183-cc4722a18d27",
+      "labels": [
+        "publications"
+      ],
+      "sprint": null,
+      "created": "2026-11-07T12:30:00.000+0100",
+      "updated": "2026-11-10T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35032",
+      "key": "BAD-32",
+      "summary": "Rozliczenie kosztów wyjazdów do szkół",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:15011ad1-916c-53f5-8183-cc4722a18d27",
+      "labels": [
+        "grant",
+        "costs"
+      ],
+      "sprint": "352",
+      "created": "2026-11-08T11:45:00.000+0100",
+      "updated": "2026-11-11T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35033",
+      "key": "BAD-33",
+      "summary": "Recenzja wewnętrzna artykułu przed wysłaniem",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:d5995ee6-da08-5a6b-b2f2-1b0703a0c6ce",
+      "reporter": "712020:6c45e458-1e2d-57d4-94b6-bd945bea6e0e",
+      "labels": [
+        "publications"
+      ],
+      "sprint": null,
+      "created": "2026-11-10T13:30:00.000+0100",
+      "updated": "2026-11-13T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35034",
+      "key": "BAD-34",
+      "summary": "Dane z aplikacji o czasie nauki uczniów",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:28240838-ba49-5c7e-9fc2-1dee3b0d48bf",
+      "reporter": "712020:7b9b0d2d-f93d-52ee-80c7-7c1c444d54c8",
+      "labels": [
+        "data",
+        "analytics"
+      ],
+      "sprint": null,
+      "created": "2026-11-12T14:15:00.000+0100",
+      "updated": "2026-11-15T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35035",
+      "key": "BAD-35",
+      "summary": "Plan zarządzania danymi dla grantodawcy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:7b9b0d2d-f93d-52ee-80c7-7c1c444d54c8",
+      "labels": [
+        "grant",
+        "data"
+      ],
+      "sprint": null,
+      "created": "2026-11-13T10:15:00.000+0100",
+      "updated": "2026-11-16T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35036",
+      "key": "BAD-36",
+      "summary": "Kopia danych z pretestu na dysku uczelni",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:7b9b0d2d-f93d-52ee-80c7-7c1c444d54c8",
+      "labels": [
+        "data"
+      ],
+      "sprint": null,
+      "created": "2026-11-15T14:45:00.000+0100",
+      "updated": "2026-11-18T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "35037",
+      "key": "BAD-37",
+      "summary": "Wywiad grupowy z uczniami klasy 8",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:28240838-ba49-5c7e-9fc2-1dee3b0d48bf",
+      "reporter": "712020:ac756f21-6e17-5132-a6e0-38fe944cfe51",
+      "labels": [
+        "interviews"
+      ],
+      "sprint": null,
+      "created": "2026-11-17T12:30:00.000+0100",
+      "updated": "2026-11-20T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

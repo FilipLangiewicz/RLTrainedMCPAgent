@@ -1,0 +1,909 @@
+{
+  "name": "train-rtg",
+  "site": "https://example.atlassian.net",
+  "now": "2026-10-21T08:45:00.000+0100",
+  "project": {
+    "key": "RTG",
+    "name": "Medix - diagnostyka obrazowa"
+  },
+  "board": {
+    "id": "28",
+    "name": "RTG board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:7796f24c-a62b-5598-b410-bb19f7e2a225",
+      "display_name": "Leszek Nowakowski",
+      "email": "leszek.nowakowski@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:2dddbf28-eb9e-5ec7-b2c0-0cbdcdb3b981",
+      "display_name": "Iwona Stachowiak",
+      "email": "iwona.stachowiak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:1a613680-26e7-5ea7-9a02-877864f48296",
+      "display_name": "Erik Johansson",
+      "email": "erik.johansson@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:a37ac9fb-9631-5378-9bb7-2ac01cb76a9c",
+      "display_name": "Bartłomiej Cieślak",
+      "email": "bartlomiej.cieslak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:d39f0761-2a5d-557b-966f-d981c2ef8cd0",
+      "display_name": "Bartłomiej Zalewski",
+      "email": "bartlomiej.zalewski@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:4cb997f0-eaae-5730-a78f-52a29a222fce",
+      "display_name": "Sylwia Krajewska",
+      "email": "sylwia.krajewska@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:12a16a63-cb69-5d3d-979b-8d177090d741",
+      "display_name": "Lucyna Wawrzyniak",
+      "email": "lucyna.wawrzyniak@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "281",
+      "name": "RTG Sprint 4",
+      "state": "closed",
+      "start_date": "2026-09-30T09:00:00.000Z",
+      "end_date": "2026-10-14T09:00:00.000Z",
+      "goal": "Nowy serwer PACS"
+    },
+    {
+      "id": "282",
+      "name": "RTG Sprint 5",
+      "state": "active",
+      "start_date": "2026-10-14T09:00:00.000Z",
+      "end_date": "2026-10-28T09:00:00.000Z",
+      "goal": "Opisy badań i terminy USG"
+    },
+    {
+      "id": "283",
+      "name": "RTG Sprint 6",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Teleradiologia"
+    },
+    {
+      "id": "284",
+      "name": "RTG Sprint 7",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "28001",
+      "key": "RTG-1",
+      "summary": "Migracja archiwum badań na nowy serwer PACS",
+      "description": "Archiwum ma 38 TB. Migrujemy w nocy, po 2 TB na noc.",
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:12a16a63-cb69-5d3d-979b-8d177090d741",
+      "reporter": "712020:7796f24c-a62b-5598-b410-bb19f7e2a225",
+      "labels": [
+        "pacs"
+      ],
+      "sprint": "281",
+      "created": "2026-08-13T13:30:00.000+0100",
+      "updated": "2026-08-16T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "280015",
+          "author": "712020:7796f24c-a62b-5598-b410-bb19f7e2a225",
+          "time_spent_seconds": 21600,
+          "comment": "Skrypt migracji",
+          "started": "2026-08-15T00:30:00.000+0100"
+        },
+        {
+          "id": "280016",
+          "author": "712020:7796f24c-a62b-5598-b410-bb19f7e2a225",
+          "time_spent_seconds": 18000,
+          "comment": "Kontrola sum",
+          "started": "2026-08-16T00:30:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "28002",
+      "key": "RTG-2",
+      "summary": "Old CT studies open without the series names",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:7796f24c-a62b-5598-b410-bb19f7e2a225",
+      "reporter": "712020:2dddbf28-eb9e-5ec7-b2c0-0cbdcdb3b981",
+      "labels": [
+        "pacs",
+        "ct"
+      ],
+      "sprint": "281",
+      "created": "2026-08-14T12:30:00.000+0100",
+      "updated": "2026-08-17T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28003",
+      "key": "RTG-3",
+      "summary": "Przeglądarka DICOM dla lekarzy kierujących",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:1a613680-26e7-5ea7-9a02-877864f48296",
+      "reporter": "712020:d39f0761-2a5d-557b-966f-d981c2ef8cd0",
+      "labels": [
+        "viewer"
+      ],
+      "sprint": "281",
+      "created": "2026-08-16T15:45:00.000+0100",
+      "updated": "2026-08-19T15:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28004",
+      "key": "RTG-4",
+      "summary": "Wydruk zdjęć RTG na kliszy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:2dddbf28-eb9e-5ec7-b2c0-0cbdcdb3b981",
+      "labels": [
+        "print"
+      ],
+      "sprint": "281",
+      "created": "2026-08-18T17:15:00.000+0100",
+      "updated": "2026-08-21T17:15:00.000+0100",
+      "comments": [
+        {
+          "id": "280041",
+          "author": "712020:2dddbf28-eb9e-5ec7-b2c0-0cbdcdb3b981",
+          "body": "Nie drukujemy już klisz, pacjent dostaje płytę lub link.",
+          "created": "2026-08-19T17:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "28005",
+      "key": "RTG-5",
+      "summary": "Szablony opisów dla TK głowy i klatki piersiowej",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:2dddbf28-eb9e-5ec7-b2c0-0cbdcdb3b981",
+      "reporter": "712020:4cb997f0-eaae-5730-a78f-52a29a222fce",
+      "labels": [
+        "reports",
+        "ct"
+      ],
+      "sprint": "282",
+      "created": "2026-08-19T11:30:00.000+0100",
+      "updated": "2026-08-22T11:30:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "280055",
+          "author": "712020:2dddbf28-eb9e-5ec7-b2c0-0cbdcdb3b981",
+          "time_spent_seconds": 10800,
+          "comment": "Szablon TK głowy",
+          "started": "2026-08-21T00:30:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "28006",
+      "key": "RTG-6",
+      "summary": "Badanie MR nie pojawia się na liście do opisu",
+      "description": "Aparat wysyła badanie, ale lista do opisu go nie pokazuje. Problem z numerem zlecenia.",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:a37ac9fb-9631-5378-9bb7-2ac01cb76a9c",
+      "reporter": "712020:2dddbf28-eb9e-5ec7-b2c0-0cbdcdb3b981",
+      "labels": [
+        "mr",
+        "worklist"
+      ],
+      "sprint": "282",
+      "created": "2026-08-21T17:00:00.000+0100",
+      "updated": "2026-08-24T17:00:00.000+0100",
+      "comments": [
+        {
+          "id": "280061",
+          "author": "712020:a37ac9fb-9631-5378-9bb7-2ac01cb76a9c",
+          "body": "Pięć badań czekało na opis ponad dobę.",
+          "created": "2026-08-22T17:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "28007",
+      "key": "RTG-7",
+      "summary": "Grafik pracowni USG na dwa tygodnie do przodu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:1a613680-26e7-5ea7-9a02-877864f48296",
+      "reporter": "712020:1a613680-26e7-5ea7-9a02-877864f48296",
+      "labels": [
+        "ultrasound",
+        "schedule"
+      ],
+      "sprint": "282",
+      "created": "2026-08-22T09:00:00.000+0100",
+      "updated": "2026-08-25T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28008",
+      "key": "RTG-8",
+      "summary": "Dyktowanie opisu z rozpoznawaniem mowy",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:4cb997f0-eaae-5730-a78f-52a29a222fce",
+      "reporter": "712020:4cb997f0-eaae-5730-a78f-52a29a222fce",
+      "labels": [
+        "reports"
+      ],
+      "sprint": "282",
+      "created": "2026-08-24T10:45:00.000+0100",
+      "updated": "2026-08-27T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28009",
+      "key": "RTG-9",
+      "summary": "Link do badania dla pacjenta wygasa po 24 godzinach",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:7796f24c-a62b-5598-b410-bb19f7e2a225",
+      "reporter": "712020:d39f0761-2a5d-557b-966f-d981c2ef8cd0",
+      "labels": [
+        "portal"
+      ],
+      "sprint": "282",
+      "created": "2026-08-25T14:15:00.000+0100",
+      "updated": "2026-08-28T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28010",
+      "key": "RTG-10",
+      "summary": "Dawka promieniowania zapisana w opisie badania",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:2dddbf28-eb9e-5ec7-b2c0-0cbdcdb3b981",
+      "reporter": "712020:d39f0761-2a5d-557b-966f-d981c2ef8cd0",
+      "labels": [
+        "reports",
+        "safety"
+      ],
+      "sprint": "282",
+      "created": "2026-08-27T08:45:00.000+0100",
+      "updated": "2026-08-30T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28011",
+      "key": "RTG-11",
+      "summary": "Worklist on the X-ray device shows patients of another clinic",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:1a613680-26e7-5ea7-9a02-877864f48296",
+      "reporter": "712020:1a613680-26e7-5ea7-9a02-877864f48296",
+      "labels": [
+        "worklist",
+        "xray"
+      ],
+      "sprint": "282",
+      "created": "2026-08-29T10:30:00.000+0100",
+      "updated": "2026-09-01T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28012",
+      "key": "RTG-12",
+      "summary": "Nagrywanie płyty CD z badaniem trwa 15 minut",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:7796f24c-a62b-5598-b410-bb19f7e2a225",
+      "labels": [
+        "cd",
+        "performance"
+      ],
+      "sprint": "282",
+      "created": "2026-08-30T15:00:00.000+0100",
+      "updated": "2026-09-02T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28013",
+      "key": "RTG-13",
+      "summary": "Porównanie z poprzednim badaniem w przeglądarce",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:d39f0761-2a5d-557b-966f-d981c2ef8cd0",
+      "labels": [
+        "viewer"
+      ],
+      "sprint": "282",
+      "created": "2026-09-01T13:15:00.000+0100",
+      "updated": "2026-09-04T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28014",
+      "key": "RTG-14",
+      "summary": "Przypomnienie dla pacjenta o przygotowaniu do TK z kontrastem",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:d39f0761-2a5d-557b-966f-d981c2ef8cd0",
+      "reporter": "712020:7796f24c-a62b-5598-b410-bb19f7e2a225",
+      "labels": [
+        "ct",
+        "sms"
+      ],
+      "sprint": "282",
+      "created": "2026-09-02T14:15:00.000+0100",
+      "updated": "2026-09-05T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28015",
+      "key": "RTG-15",
+      "summary": "Teleradiologia: opisy nocne przez zewnętrzną firmę",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:7796f24c-a62b-5598-b410-bb19f7e2a225",
+      "labels": [
+        "teleradiology"
+      ],
+      "sprint": "283",
+      "created": "2026-09-04T09:30:00.000+0100",
+      "updated": "2026-09-07T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28016",
+      "key": "RTG-16",
+      "summary": "VPN for the external radiologists",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:1a613680-26e7-5ea7-9a02-877864f48296",
+      "labels": [
+        "teleradiology",
+        "security"
+      ],
+      "sprint": "283",
+      "created": "2026-09-05T12:00:00.000+0100",
+      "updated": "2026-09-08T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28017",
+      "key": "RTG-17",
+      "summary": "Priorytet opisu dla badań z SOR",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:4cb997f0-eaae-5730-a78f-52a29a222fce",
+      "labels": [
+        "worklist"
+      ],
+      "sprint": "283",
+      "created": "2026-09-07T15:15:00.000+0100",
+      "updated": "2026-09-10T15:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28018",
+      "key": "RTG-18",
+      "summary": "Anonimizacja badań do celów szkoleniowych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:a37ac9fb-9631-5378-9bb7-2ac01cb76a9c",
+      "reporter": "712020:4cb997f0-eaae-5730-a78f-52a29a222fce",
+      "labels": [
+        "privacy",
+        "pacs"
+      ],
+      "sprint": "283",
+      "created": "2026-09-08T10:30:00.000+0100",
+      "updated": "2026-09-11T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28019",
+      "key": "RTG-19",
+      "summary": "Aparat USG w placówce Wola nie wysyła zdjęć do PACS",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:4cb997f0-eaae-5730-a78f-52a29a222fce",
+      "labels": [
+        "ultrasound",
+        "pacs"
+      ],
+      "sprint": null,
+      "created": "2026-09-10T11:15:00.000+0100",
+      "updated": "2026-09-13T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28020",
+      "key": "RTG-20",
+      "summary": "Pomiar w przeglądarce podaje piksele zamiast milimetrów",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:4cb997f0-eaae-5730-a78f-52a29a222fce",
+      "reporter": "712020:7796f24c-a62b-5598-b410-bb19f7e2a225",
+      "labels": [
+        "viewer"
+      ],
+      "sprint": null,
+      "created": "2026-09-12T10:45:00.000+0100",
+      "updated": "2026-09-15T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28021",
+      "key": "RTG-21",
+      "summary": "Statystyka opisów na radiologa w miesiącu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:2dddbf28-eb9e-5ec7-b2c0-0cbdcdb3b981",
+      "reporter": "712020:a37ac9fb-9631-5378-9bb7-2ac01cb76a9c",
+      "labels": [
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-09-13T11:45:00.000+0100",
+      "updated": "2026-09-16T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28022",
+      "key": "RTG-22",
+      "summary": "Kopia zapasowa PACS w drugiej lokalizacji",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:2dddbf28-eb9e-5ec7-b2c0-0cbdcdb3b981",
+      "reporter": "712020:d39f0761-2a5d-557b-966f-d981c2ef8cd0",
+      "labels": [
+        "pacs",
+        "backup"
+      ],
+      "sprint": null,
+      "created": "2026-09-15T15:15:00.000+0100",
+      "updated": "2026-09-18T15:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28023",
+      "key": "RTG-23",
+      "summary": "Opis badania nie trafia do dokumentacji pacjenta",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:7796f24c-a62b-5598-b410-bb19f7e2a225",
+      "reporter": "712020:4cb997f0-eaae-5730-a78f-52a29a222fce",
+      "labels": [
+        "reports",
+        "integration"
+      ],
+      "sprint": null,
+      "created": "2026-09-16T17:30:00.000+0100",
+      "updated": "2026-09-19T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28024",
+      "key": "RTG-24",
+      "summary": "Pre-fetch of old studies before the visit",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:4cb997f0-eaae-5730-a78f-52a29a222fce",
+      "labels": [
+        "pacs"
+      ],
+      "sprint": null,
+      "created": "2026-09-18T11:45:00.000+0100",
+      "updated": "2026-09-21T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28025",
+      "key": "RTG-25",
+      "summary": "Ankieta przed badaniem MR w formie elektronicznej",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:2dddbf28-eb9e-5ec7-b2c0-0cbdcdb3b981",
+      "reporter": "712020:a37ac9fb-9631-5378-9bb7-2ac01cb76a9c",
+      "labels": [
+        "mr"
+      ],
+      "sprint": null,
+      "created": "2026-09-19T10:45:00.000+0100",
+      "updated": "2026-09-22T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28026",
+      "key": "RTG-26",
+      "summary": "Monitor diagnostyczny w gabinecie 3 wymaga kalibracji",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:d39f0761-2a5d-557b-966f-d981c2ef8cd0",
+      "reporter": "712020:7796f24c-a62b-5598-b410-bb19f7e2a225",
+      "labels": [
+        "hardware"
+      ],
+      "sprint": null,
+      "created": "2026-09-21T14:15:00.000+0100",
+      "updated": "2026-09-24T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28027",
+      "key": "RTG-27",
+      "summary": "Badania z mammografu bez opisu strony",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:a37ac9fb-9631-5378-9bb7-2ac01cb76a9c",
+      "reporter": "712020:1a613680-26e7-5ea7-9a02-877864f48296",
+      "labels": [
+        "mammography"
+      ],
+      "sprint": null,
+      "created": "2026-09-23T14:00:00.000+0100",
+      "updated": "2026-09-26T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28028",
+      "key": "RTG-28",
+      "summary": "Zgoda pacjenta na kontrast zapisana w systemie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:a37ac9fb-9631-5378-9bb7-2ac01cb76a9c",
+      "labels": [
+        "ct",
+        "safety"
+      ],
+      "sprint": null,
+      "created": "2026-09-24T12:45:00.000+0100",
+      "updated": "2026-09-27T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28029",
+      "key": "RTG-29",
+      "summary": "Termin rezonansu dla pacjentów z rozrusznikiem",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:7796f24c-a62b-5598-b410-bb19f7e2a225",
+      "labels": [
+        "mr",
+        "schedule"
+      ],
+      "sprint": null,
+      "created": "2026-09-26T16:45:00.000+0100",
+      "updated": "2026-09-29T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28030",
+      "key": "RTG-30",
+      "summary": "The viewer is slow for studies with more than 2000 images",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:1a613680-26e7-5ea7-9a02-877864f48296",
+      "reporter": "712020:2dddbf28-eb9e-5ec7-b2c0-0cbdcdb3b981",
+      "labels": [
+        "viewer",
+        "performance"
+      ],
+      "sprint": "282",
+      "created": "2026-09-27T10:30:00.000+0100",
+      "updated": "2026-09-30T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28031",
+      "key": "RTG-31",
+      "summary": "Słownik rozpoznań w opisach USG",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:2dddbf28-eb9e-5ec7-b2c0-0cbdcdb3b981",
+      "labels": [
+        "ultrasound",
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-09-29T15:30:00.000+0100",
+      "updated": "2026-10-02T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28032",
+      "key": "RTG-32",
+      "summary": "Usunąć stare stacje opisowe z Windows 7",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:2dddbf28-eb9e-5ec7-b2c0-0cbdcdb3b981",
+      "labels": [
+        "hardware"
+      ],
+      "sprint": null,
+      "created": "2026-09-30T16:15:00.000+0100",
+      "updated": "2026-10-03T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28033",
+      "key": "RTG-33",
+      "summary": "Korekta opisu po podpisaniu tworzy drugi dokument",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:4cb997f0-eaae-5730-a78f-52a29a222fce",
+      "reporter": "712020:a37ac9fb-9631-5378-9bb7-2ac01cb76a9c",
+      "labels": [
+        "reports"
+      ],
+      "sprint": "282",
+      "created": "2026-10-02T14:30:00.000+0100",
+      "updated": "2026-10-05T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28034",
+      "key": "RTG-34",
+      "summary": "Licencje przeglądarki DICOM na przyszły rok",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:7796f24c-a62b-5598-b410-bb19f7e2a225",
+      "reporter": "712020:2dddbf28-eb9e-5ec7-b2c0-0cbdcdb3b981",
+      "labels": [],
+      "sprint": null,
+      "created": "2026-10-03T08:30:00.000+0100",
+      "updated": "2026-10-06T08:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28035",
+      "key": "RTG-35",
+      "summary": "Badanie kontrolne co pół roku z automatycznym zaproszeniem",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:2dddbf28-eb9e-5ec7-b2c0-0cbdcdb3b981",
+      "labels": [
+        "schedule"
+      ],
+      "sprint": null,
+      "created": "2026-10-05T10:00:00.000+0100",
+      "updated": "2026-10-08T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28036",
+      "key": "RTG-36",
+      "summary": "Szkolenie techników z nowego aparatu RTG",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:2dddbf28-eb9e-5ec7-b2c0-0cbdcdb3b981",
+      "reporter": "712020:a37ac9fb-9631-5378-9bb7-2ac01cb76a9c",
+      "labels": [
+        "docs",
+        "xray"
+      ],
+      "sprint": "283",
+      "created": "2026-10-07T12:45:00.000+0100",
+      "updated": "2026-10-10T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28037",
+      "key": "RTG-37",
+      "summary": "Opis badania w języku angielskim dla pacjenta",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:2dddbf28-eb9e-5ec7-b2c0-0cbdcdb3b981",
+      "reporter": "712020:7796f24c-a62b-5598-b410-bb19f7e2a225",
+      "labels": [
+        "reports",
+        "i18n"
+      ],
+      "sprint": null,
+      "created": "2026-10-08T17:45:00.000+0100",
+      "updated": "2026-10-11T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28038",
+      "key": "RTG-38",
+      "summary": "Numer zlecenia z rejestracji nie pasuje do numeru w aparacie",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:d39f0761-2a5d-557b-966f-d981c2ef8cd0",
+      "reporter": "712020:a37ac9fb-9631-5378-9bb7-2ac01cb76a9c",
+      "labels": [
+        "worklist",
+        "integration"
+      ],
+      "sprint": null,
+      "created": "2026-10-10T13:30:00.000+0100",
+      "updated": "2026-10-13T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28039",
+      "key": "RTG-39",
+      "summary": "Kolejka badań USG na ekranie w poczekalni",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:a37ac9fb-9631-5378-9bb7-2ac01cb76a9c",
+      "reporter": "712020:4cb997f0-eaae-5730-a78f-52a29a222fce",
+      "labels": [
+        "ultrasound"
+      ],
+      "sprint": null,
+      "created": "2026-10-11T17:00:00.000+0100",
+      "updated": "2026-10-14T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "28040",
+      "key": "RTG-40",
+      "summary": "Wymiana dysku w stacji opisowej radiologa",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:2dddbf28-eb9e-5ec7-b2c0-0cbdcdb3b981",
+      "labels": [
+        "hardware"
+      ],
+      "sprint": "282",
+      "created": "2026-10-13T08:15:00.000+0100",
+      "updated": "2026-10-16T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

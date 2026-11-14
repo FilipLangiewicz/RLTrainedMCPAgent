@@ -515,3 +515,128 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 
 - The team selects all six models for SFT and RL. If the time is too short, the team reduces the number of models later.
 - Add this decision to `docs/MODELS.md`.
+
+## 2026-11-14
+
+### Generator of the train boards and the company Curify
+
+- Branch `40-e2-train-data` starts the work on the train boards and the validation boards (`idm-pro-028`, `idm-pro-030`).
+- The train boards and the validation boards use six invented companies. Each company has its own domain.
+- Add `src/boards.py`. It makes the boards from the hand-written content of a company. Run: `python -m src.boards`.
+- The generator adds the ids, the account ids, the e-mail addresses, the dates, the sprints and the assignees. The same seed gives the same boards.
+- The generator stops if a board breaks a rule of `docs/TASKS.md`. Each board must have these traps:
+  - one person who is not active
+  - two active persons with the same first name
+  - exactly one `Cancelled` issue
+  - summaries in Polish and in English
+- The generator also stops if a project key, a summary or a person occurs on two boards, also on a test board.
+- Add `data/companies/curify.json`: a telemedicine platform with 5 boards (`VID`, `RX`, `PAT`, `DOC`, `PAY`), 200 issues and 15 authors.
+- The boards have 38 to 42 issues, so that the size is not always the same. The status mix is similar to the test boards.
+- Add the boards `data/environments/train-{vid,rx,pat,doc,pay}.json`.
+- 596 tests pass. 6 tests fail also on `main` without this change: 5 tests of `claude_cli` and `test_checksum_finds_a_change`.
+
+### Train boards of Medix
+
+- Add `data/companies/medix.json`: a network of medical centres with 5 boards (`REJ`, `LAB`, `RTG`, `IT`, `NFZ`), 200 issues and 15 authors.
+- Add the boards `data/environments/train-{rej,lab,rtg,it,nfz}.json`.
+- Medix has its own date of the board (`now`), so the sprint dates differ from the dates of Curify.
+- The boards of Curify do not change when the generator runs again.
+
+### Train boards of fizyka.online
+
+- Add `data/companies/fizyka-online.json`: a research project with an AI app for physics in primary schools. It has 5 boards (`FIZ`, `NAU`, `ML`, `SZK`, `BAD`), 194 issues and 15 authors.
+- Add the boards `data/environments/train-{fiz,nau,ml,szk,bad}.json`.
+- Each company file now has `first_board_id`. Before, the board ids came from the order of the files, so a new file changed the ids of other companies.
+- The generator stops if two boards have the same board id.
+- The boards of Curify and Medix keep the ids of their last commit.
+
+### Train boards of WiseAI
+
+- Add `data/companies/wiseai.json`: a company with AI agents for customer service and sales. It has 5 boards (`BOT`, `DEMO`, `GRT`, `RAP`, `PLT`), 191 issues and 15 authors.
+- Add the boards `data/environments/train-{bot,demo,grt,rap,plt}.json`.
+- Most persons of WiseAI have Ukrainian names in the Latin form of their Jira profiles.
+
+### Train boards of SolarDom
+
+- Add `data/companies/solardom.json`: a telemarketing company that sells photovoltaic installations. It has 5 boards (`DIAL`, `LEAD`, `SKR`, `UMW`, `RODO`), 191 issues and 15 authors.
+- Add the boards `data/environments/train-{dial,lead,skr,umw,rodo}.json`.
+- The train split now has 25 boards of 5 companies, 976 issues and 75 authors.
+
+### Validation boards of Housi
+
+- Add `data/companies/housi.json`: one system for the property manager, the service companies and the residents. It has 3 boards (`USR`, `SRW`, `ZRZ`), 117 issues and 9 authors.
+- Add the boards `data/environments/validation-{usr,srw,zrz}.json`. They are for the selection of the SFT settings, not for the training.
+- No project key, summary or person of a validation board occurs on a train board or a test board.
+
+### Train tasks of Curify
+
+- Add the first 200 train tasks (`train-0001` to `train-0200`) in `data/tasks/train/`: `queries.json`, `solutions.json`, `expected.json` and `personas.json`.
+- `personas.json` has the 75 authors of all train companies.
+- Each board has 40 tasks with the mix of the test set: 15 `easy`, 20 `multi_step` and 5 `refusal`. The refusal kinds have the same counts as on the test set.
+- The reference solutions show the skills that the baselines do not have:
+  - A task without a key finds the project with `jira_get_agile_boards` first (117 tasks).
+  - A search after an empty result uses another word or the correct Polish form (19 tasks).
+  - Each sprint id, transition id and person comes from a tool result.
+- A temporary script outside the repository made the files. It checked each task on the simulator:
+  - No reference call gives an error, except the intended read in a `missing_entity` task.
+  - The verifier gives `correct` or `correct_refusal`.
+  - Each key, sprint id, transition id and person in a call occurs in the instruction or in an earlier result.
+  - The expected answer of a `query` task agrees with the last tool result.
+- The checks found 4 wrong expected values before the files were written. The issues had the priority `Highest`, not `High`.
+- The instructions obey the rules of the review of the test set: an explicit action verb, a clear request for a new issue, full questions.
+
+### Train tasks of Medix
+
+- Add 200 train tasks of Medix (`train-0201` to `train-0400`). The tasks of Curify do not change.
+- Each board has the same mix of types and categories as on Curify. The refusal kinds have the counts of the test set.
+- 117 tasks find the project with `jira_get_agile_boards` first. 21 tasks search again after an empty result.
+- One task searches again with a label and a status after an empty text search.
+- The checks found one wrong expected number before the files were written.
+
+### Train tasks of fizyka.online
+
+- Add 200 train tasks of fizyka.online (`train-0401` to `train-0600`). The earlier tasks do not change.
+- Each board has the same mix of types and categories as the other companies.
+- 117 tasks find the project with `jira_get_agile_boards` first. 18 tasks search again after an empty result.
+- All tasks passed the checks at the first build.
+
+### Train tasks of WiseAI
+
+- Add 200 train tasks of WiseAI (`train-0601` to `train-0800`). The earlier tasks do not change.
+- Each board has the same mix of types and categories as the other companies.
+- 117 tasks find the project with `jira_get_agile_boards` first. 20 tasks search again after an empty result.
+- Two tasks search again with a label after an empty text search.
+- All tasks passed the checks at the first build.
+
+### Train tasks of SolarDom and the full train set
+
+- Add 200 train tasks of SolarDom (`train-0801` to `train-1000`). The earlier tasks do not change.
+- The train set now has 1000 tasks on 25 boards:
+  - 375 `easy`, 500 `multi_step` and 125 `refusal` tasks
+  - the refusal kinds have the same proportions as on the test set
+  - 585 tasks find the project with `jira_get_agile_boards` first
+  - 100 tasks search again after an empty result
+- An extra check compared the keys in the answers of the 5 `ambiguous` refusals that use a search. All keys agree with the search results.
+
+### Validation tasks of Housi
+
+- Add 120 validation tasks (`validation-001` to `validation-120`) in `data/tasks/validation/`: `queries.json`, `solutions.json`, `expected.json` and `personas.json`.
+- Each of the 3 validation boards has 40 tasks with the same mix as the train boards: 15 `easy`, 20 `multi_step` and 5 `refusal`.
+- 71 tasks find the project with `jira_get_agile_boards` first. 14 tasks search again after an empty result.
+- No validation instruction occurs in the train set.
+- The same temporary script checked each task. All tasks passed at the first build.
+- The team reviews the train set and the validation set later (`idm-pro-033` to `idm-pro-036`).
+
+### Automatic checks of the train data
+
+- `tests/test_tasks.py` now checks the test, train and validation splits (`idm-pro-032`). The checks of the temporary script are now in the tests.
+- All splits: the reference solutions, the mix of difficulties, the categories, the refusal kinds, the authors and the rules of the instruction text.
+- All pairs of splits: no board, instruction, issue summary or person occurs in two splits.
+- The boards of the train and validation splits must be the output of `src/boards.py` for `data/companies/`.
+- The train and validation splits have two more checks:
+  - Each key, sprint id, transition id, project and person in a call comes from the instruction or from an earlier tool result.
+  - The expected answer of a `query` task agrees with the last tool result. The answer of an `ambiguous` refusal names the issues of the last search.
+- A test run with broken copies of tasks and boards found each of 9 errors.
+- Fix `test_checksum_finds_a_change`. With `core.autocrlf`, the checkout has CRLF line ends, and the test added a second CR.
+- `docs/TASKS.md` describes the new checks.
+- 621 tests pass. 5 tests of `claude_cli` in `tests/test_models.py` fail also on `main`.
