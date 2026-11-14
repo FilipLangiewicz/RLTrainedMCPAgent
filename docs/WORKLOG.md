@@ -584,3 +584,11 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
   - The expected answer of a `query` task agrees with the last tool result.
 - The checks found 4 wrong expected values before the files were written. The issues had the priority `Highest`, not `High`.
 - The instructions obey the rules of the review of the test set: an explicit action verb, a clear request for a new issue, full questions.
+
+### Train tasks of Medix
+
+- Add 200 train tasks of Medix (`train-0201` to `train-0400`). The tasks of Curify do not change.
+- Each board has the same mix of types and categories as on Curify. The refusal kinds have the counts of the test set.
+- 117 tasks find the project with `jira_get_agile_boards` first. 21 tasks search again after an empty result.
+- One task searches again with a label and a status after an empty text search.
+- The checks found one wrong expected number before the files were written.

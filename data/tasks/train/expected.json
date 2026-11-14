@@ -2980,5 +2980,2973 @@
     "category": "refusal",
     "difficulty": "refusal",
     "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0201",
+    "board": "train-rej",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Sebastian Pająk"
+    }
+  },
+  {
+    "id": "train-0202",
+    "board": "train-rej",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "High"
+    }
+  },
+  {
+    "id": "train-0203",
+    "board": "train-rej",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 43200
+    }
+  },
+  {
+    "id": "train-0204",
+    "board": "train-rej",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 4
+    }
+  },
+  {
+    "id": "train-0205",
+    "board": "train-rej",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "REJ-6"
+      ]
+    }
+  },
+  {
+    "id": "train-0206",
+    "board": "train-rej",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "person",
+      "value": "Olena Kovalenko"
+    }
+  },
+  {
+    "id": "train-0207",
+    "board": "train-rej",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "REJ-14",
+        "field": "assignee",
+        "value": "Wiktoria Sobolewska"
+      }
+    ]
+  },
+  {
+    "id": "train-0208",
+    "board": "train-rej",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "REJ-26",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0209",
+    "board": "train-rej",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "REJ-8",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "train-0210",
+    "board": "train-rej",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "REJ-38",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "REJ-38",
+        "field": "assignee",
+        "value": "Damian Kaczmarczyk"
+      }
+    ]
+  },
+  {
+    "id": "train-0211",
+    "board": "train-rej",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "REJ-9",
+        "field": "assignee",
+        "value": "Wiktoria Maciejewska"
+      }
+    ]
+  },
+  {
+    "id": "train-0212",
+    "board": "train-rej",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "REJ-33",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "train-0213",
+    "board": "train-rej",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "REJ-37",
+        "worklog": {
+          "seconds": 4500,
+          "comment": "poprawki instrukcji"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0214",
+    "board": "train-rej",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "REJ-6",
+        "comment": "W piątek zapisaliśmy dwóch pacjentów na 9:00 w placówce Wola."
+      }
+    ]
+  },
+  {
+    "id": "train-0215",
+    "board": "train-rej",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "REJ-11",
+        "comment": "Nagranie po ukraińsku jest gotowe."
+      }
+    ]
+  },
+  {
+    "id": "train-0216",
+    "board": "train-rej",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "REJ-29",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "konfiguracja placówki dyżurnej"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0217",
+    "board": "train-rej",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "REJ-31",
+        "comment": "pytania są w dokumencie ankieta_v2."
+      }
+    ]
+  },
+  {
+    "id": "train-0218",
+    "board": "train-rej",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Rejestracja nie widzi wolnych terminów w sobotę",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0219",
+    "board": "train-rej",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Szkolenie z nowej centrali dla nocnej zmiany",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0220",
+    "board": "train-rej",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Komunikat infolinii po ukraińsku o wynikach badań",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0221",
+    "board": "train-rej",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "SMS z przypomnieniem przychodzi z błędną godziną",
+          "issue_type": "Bug",
+          "priority": "Highest",
+          "assignee": "Wiktoria Maciejewska",
+          "labels": [],
+          "sprint": "REJ Sprint 34"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0222",
+    "board": "train-rej",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Zapisy na wizyty przez Messengera",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "chat"
+          ],
+          "sprint": "REJ Sprint 35"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0223",
+    "board": "train-rej",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "REJ-21",
+        "field": "sprint",
+        "value": "REJ Sprint 34"
+      }
+    ]
+  },
+  {
+    "id": "train-0224",
+    "board": "train-rej",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "REJ-31",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0225",
+    "board": "train-rej",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "REJ-24",
+        "field": "sprint",
+        "value": "REJ Sprint 36"
+      }
+    ]
+  },
+  {
+    "id": "train-0226",
+    "board": "train-rej",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "REJ-16",
+        "field": "sprint",
+        "value": "REJ Sprint 34"
+      },
+      {
+        "issue": "REJ-17",
+        "field": "sprint",
+        "value": "REJ Sprint 34"
+      }
+    ]
+  },
+  {
+    "id": "train-0227",
+    "board": "train-rej",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "REJ-36",
+        "field": "sprint",
+        "value": "REJ Sprint 34"
+      }
+    ]
+  },
+  {
+    "id": "train-0228",
+    "board": "train-rej",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "REJ-21",
+        "field": "assignee",
+        "value": "Damian Kaczmarczyk"
+      },
+      {
+        "issue": "REJ-26",
+        "field": "assignee",
+        "value": "Damian Kaczmarczyk"
+      },
+      {
+        "issue": "REJ-38",
+        "field": "assignee",
+        "value": "Damian Kaczmarczyk"
+      }
+    ]
+  },
+  {
+    "id": "train-0229",
+    "board": "train-rej",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "REJ-8",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "REJ-26",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "REJ-40",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0230",
+    "board": "train-rej",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "REJ-13",
+        "comment": "Sprzęt jest w magazynie na Woli."
+      },
+      {
+        "issue": "REJ-21",
+        "comment": "Sprzęt jest w magazynie na Woli."
+      },
+      {
+        "issue": "REJ-33",
+        "comment": "Sprzęt jest w magazynie na Woli."
+      },
+      {
+        "issue": "REJ-34",
+        "comment": "Sprzęt jest w magazynie na Woli."
+      }
+    ]
+  },
+  {
+    "id": "train-0231",
+    "board": "train-rej",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "REJ-23",
+        "field": "assignee",
+        "value": "Wiktoria Sobolewska"
+      },
+      {
+        "issue": "REJ-29",
+        "field": "assignee",
+        "value": "Wiktoria Sobolewska"
+      },
+      {
+        "issue": "REJ-40",
+        "field": "assignee",
+        "value": "Wiktoria Sobolewska"
+      }
+    ]
+  },
+  {
+    "id": "train-0232",
+    "board": "train-rej",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "REJ-15",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "REJ-15",
+        "worklog": {
+          "seconds": 7200,
+          "comment": null
+        }
+      },
+      {
+        "issue": "REJ-15",
+        "comment": "zgoda na SMS-y zapisuje się przy rejestracji."
+      }
+    ]
+  },
+  {
+    "id": "train-0233",
+    "board": "train-rej",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "REJ-13",
+        "field": "status",
+        "value": "In review"
+      },
+      {
+        "issue": "REJ-13",
+        "field": "assignee",
+        "value": "Damian Kaczmarczyk"
+      },
+      {
+        "issue": "REJ-13",
+        "comment": "Nowa rolka papieru i aktualizacja sterownika, proszę sprawdzić."
+      }
+    ]
+  },
+  {
+    "id": "train-0234",
+    "board": "train-rej",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "REJ-22",
+        "field": "assignee",
+        "value": "Olena Kovalenko"
+      },
+      {
+        "issue": "REJ-22",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "REJ-22",
+        "field": "sprint",
+        "value": "REJ Sprint 34"
+      }
+    ]
+  },
+  {
+    "id": "train-0235",
+    "board": "train-rej",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "REJ-10",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "REJ-10",
+        "field": "assignee",
+        "value": "Sebastian Pająk"
+      },
+      {
+        "issue": "REJ-10",
+        "comment": "polityka mówi 90 dni."
+      }
+    ]
+  },
+  {
+    "id": "train-0236",
+    "board": "train-rej",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0237",
+    "board": "train-rej",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0238",
+    "board": "train-rej",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0239",
+    "board": "train-rej",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0240",
+    "board": "train-rej",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0241",
+    "board": "train-lab",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Teresa Wróblewska"
+    }
+  },
+  {
+    "id": "train-0242",
+    "board": "train-lab",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "Backlog"
+    }
+  },
+  {
+    "id": "train-0243",
+    "board": "train-lab",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 21600
+    }
+  },
+  {
+    "id": "train-0244",
+    "board": "train-lab",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 5
+    }
+  },
+  {
+    "id": "train-0245",
+    "board": "train-lab",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "LAB-7",
+        "LAB-6"
+      ]
+    }
+  },
+  {
+    "id": "train-0246",
+    "board": "train-lab",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "value",
+      "value": "Medium"
+    }
+  },
+  {
+    "id": "train-0247",
+    "board": "train-lab",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "LAB-20",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "train-0248",
+    "board": "train-lab",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "LAB-39",
+        "field": "assignee",
+        "value": "Henryk Sołtys"
+      }
+    ]
+  },
+  {
+    "id": "train-0249",
+    "board": "train-lab",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "LAB-29",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "train-0250",
+    "board": "train-lab",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LAB-15",
+        "field": "priority",
+        "value": "Medium"
+      },
+      {
+        "issue": "LAB-15",
+        "field": "assignee",
+        "value": "Alicja Kubacka"
+      }
+    ]
+  },
+  {
+    "id": "train-0251",
+    "board": "train-lab",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LAB-39",
+        "field": "assignee",
+        "value": "Norbert Szulc"
+      },
+      {
+        "issue": "LAB-39",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0252",
+    "board": "train-lab",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LAB-12",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "LAB-12",
+        "field": "assignee",
+        "value": "Ksenia Borowska"
+      }
+    ]
+  },
+  {
+    "id": "train-0253",
+    "board": "train-lab",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "LAB-6",
+        "worklog": {
+          "seconds": 10800,
+          "comment": "mapowanie ID próbki po ponownym skanie"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0254",
+    "board": "train-lab",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "LAB-8",
+        "comment": "Zakresy referencyjne według wieku są zgodne z zaleceniami KIDL."
+      }
+    ]
+  },
+  {
+    "id": "train-0255",
+    "board": "train-lab",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "LAB-13",
+        "worklog": {
+          "seconds": 1800,
+          "comment": "odczyt temperatury o 2:00"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0256",
+    "board": "train-lab",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LAB-22",
+        "worklog": {
+          "seconds": 5400,
+          "comment": "przegląd kart odczynników"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0257",
+    "board": "train-lab",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LAB-30",
+        "comment": "w nocy nie ma kogo zapytac, procedura pilna"
+      }
+    ]
+  },
+  {
+    "id": "train-0258",
+    "board": "train-lab",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Wynik INR bez jednostki w portalu pacjenta",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0259",
+    "board": "train-lab",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Test komunikatów HL7 ORU z nowego analizatora",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0260",
+    "board": "train-lab",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Skaner w punkcie pobran nie czyta kodow po 22",
+          "issue_type": "Bug",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0261",
+    "board": "train-lab",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Automatyczna walidacja wyników morfologii",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": "Henryk Sołtys",
+          "labels": [],
+          "sprint": "LAB Sprint 11"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0262",
+    "board": "train-lab",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Analizator moczu wysyła wynik bez ID zlecenia",
+          "issue_type": "Bug",
+          "priority": "Highest",
+          "assignee": null,
+          "labels": [
+            "analyzer"
+          ],
+          "sprint": "LAB Sprint 10"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0263",
+    "board": "train-lab",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "LAB-17",
+        "field": "sprint",
+        "value": "LAB Sprint 10"
+      }
+    ]
+  },
+  {
+    "id": "train-0264",
+    "board": "train-lab",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "LAB-13",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0265",
+    "board": "train-lab",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "LAB-34",
+        "field": "sprint",
+        "value": "LAB Sprint 12"
+      }
+    ]
+  },
+  {
+    "id": "train-0266",
+    "board": "train-lab",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LAB-14",
+        "field": "sprint",
+        "value": "LAB Sprint 10"
+      },
+      {
+        "issue": "LAB-15",
+        "field": "sprint",
+        "value": "LAB Sprint 10"
+      }
+    ]
+  },
+  {
+    "id": "train-0267",
+    "board": "train-lab",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LAB-27",
+        "field": "sprint",
+        "value": "LAB Sprint 11"
+      }
+    ]
+  },
+  {
+    "id": "train-0268",
+    "board": "train-lab",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LAB-17",
+        "field": "assignee",
+        "value": "Alicja Mazurek"
+      },
+      {
+        "issue": "LAB-18",
+        "field": "assignee",
+        "value": "Alicja Mazurek"
+      },
+      {
+        "issue": "LAB-19",
+        "field": "assignee",
+        "value": "Alicja Mazurek"
+      }
+    ]
+  },
+  {
+    "id": "train-0269",
+    "board": "train-lab",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LAB-5",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "LAB-26",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "LAB-34",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0270",
+    "board": "train-lab",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LAB-13",
+        "comment": "nocna zmiana prosi o szybka naprawe"
+      },
+      {
+        "issue": "LAB-26",
+        "comment": "nocna zmiana prosi o szybka naprawe"
+      }
+    ]
+  },
+  {
+    "id": "train-0271",
+    "board": "train-lab",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LAB-24",
+        "field": "assignee",
+        "value": "Alicja Kubacka"
+      },
+      {
+        "issue": "LAB-38",
+        "field": "assignee",
+        "value": "Alicja Kubacka"
+      }
+    ]
+  },
+  {
+    "id": "train-0272",
+    "board": "train-lab",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LAB-7",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "LAB-7",
+        "worklog": {
+          "seconds": 14400,
+          "comment": null
+        }
+      },
+      {
+        "issue": "LAB-7",
+        "comment": "ramki ASTM składane z kilku pakietów."
+      }
+    ]
+  },
+  {
+    "id": "train-0273",
+    "board": "train-lab",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LAB-5",
+        "field": "status",
+        "value": "In review"
+      },
+      {
+        "issue": "LAB-5",
+        "worklog": {
+          "seconds": 7200,
+          "comment": null
+        }
+      },
+      {
+        "issue": "LAB-5",
+        "comment": "nazwisko skracane do 20 znakow"
+      }
+    ]
+  },
+  {
+    "id": "train-0274",
+    "board": "train-lab",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LAB-10",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "LAB-10",
+        "field": "assignee",
+        "value": "Norbert Szulc"
+      },
+      {
+        "issue": "LAB-10",
+        "comment": "Wartości krytyczne według tabeli z 2026 roku."
+      }
+    ]
+  },
+  {
+    "id": "train-0275",
+    "board": "train-lab",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LAB-16",
+        "field": "sprint",
+        "value": null
+      },
+      {
+        "issue": "LAB-16",
+        "field": "priority",
+        "value": "Lowest"
+      }
+    ]
+  },
+  {
+    "id": "train-0276",
+    "board": "train-lab",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0277",
+    "board": "train-lab",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0278",
+    "board": "train-lab",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0279",
+    "board": "train-lab",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0280",
+    "board": "train-lab",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0281",
+    "board": "train-rtg",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Erik Johansson"
+    }
+  },
+  {
+    "id": "train-0282",
+    "board": "train-rtg",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "In Progress"
+    }
+  },
+  {
+    "id": "train-0283",
+    "board": "train-rtg",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 10800
+    }
+  },
+  {
+    "id": "train-0284",
+    "board": "train-rtg",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 3
+    }
+  },
+  {
+    "id": "train-0285",
+    "board": "train-rtg",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "RTG-24",
+        "RTG-22",
+        "RTG-19"
+      ]
+    }
+  },
+  {
+    "id": "train-0286",
+    "board": "train-rtg",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "value",
+      "value": "High"
+    }
+  },
+  {
+    "id": "train-0287",
+    "board": "train-rtg",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RTG-12",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0288",
+    "board": "train-rtg",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RTG-24",
+        "field": "assignee",
+        "value": "Bartłomiej Cieślak"
+      }
+    ]
+  },
+  {
+    "id": "train-0289",
+    "board": "train-rtg",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RTG-7",
+        "field": "status",
+        "value": "In review"
+      }
+    ]
+  },
+  {
+    "id": "train-0290",
+    "board": "train-rtg",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RTG-23",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "RTG-23",
+        "field": "assignee",
+        "value": "Bartłomiej Zalewski"
+      }
+    ]
+  },
+  {
+    "id": "train-0291",
+    "board": "train-rtg",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RTG-27",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "RTG-27",
+        "field": "assignee",
+        "value": "Sylwia Krajewska"
+      }
+    ]
+  },
+  {
+    "id": "train-0292",
+    "board": "train-rtg",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RTG-32",
+        "field": "priority",
+        "value": "Low"
+      }
+    ]
+  },
+  {
+    "id": "train-0293",
+    "board": "train-rtg",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RTG-30",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "profiling of the viewer"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0294",
+    "board": "train-rtg",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RTG-9",
+        "comment": "Link ma działać 30 dni, nie 24 godziny."
+      }
+    ]
+  },
+  {
+    "id": "train-0295",
+    "board": "train-rtg",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RTG-14",
+        "comment": "Pacjenci dostają SMS dzień przed badaniem, ale bez informacji o kontraście."
+      }
+    ]
+  },
+  {
+    "id": "train-0296",
+    "board": "train-rtg",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RTG-26",
+        "worklog": {
+          "seconds": 3600,
+          "comment": "pomiar luminancji"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0297",
+    "board": "train-rtg",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RTG-16",
+        "comment": "The vendor sent the certificates."
+      }
+    ]
+  },
+  {
+    "id": "train-0298",
+    "board": "train-rtg",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Opis TK bez godziny podania kontrastu",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0299",
+    "board": "train-rtg",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Nowe fartuchy ołowiane dla pracowni RTG",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0300",
+    "board": "train-rtg",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Export of DICOM studies to a USB stick for patients",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0301",
+    "board": "train-rtg",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Szablon opisu USG gubi wymiary zmian",
+          "issue_type": "Bug",
+          "priority": "Highest",
+          "assignee": "Iwona Stachowiak",
+          "labels": [],
+          "sprint": "RTG Sprint 5"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0302",
+    "board": "train-rtg",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Update the PACS certificates",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "pacs"
+          ],
+          "sprint": "RTG Sprint 6"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0303",
+    "board": "train-rtg",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RTG-19",
+        "field": "sprint",
+        "value": "RTG Sprint 5"
+      }
+    ]
+  },
+  {
+    "id": "train-0304",
+    "board": "train-rtg",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RTG-13",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0305",
+    "board": "train-rtg",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RTG-28",
+        "field": "sprint",
+        "value": "RTG Sprint 7"
+      }
+    ]
+  },
+  {
+    "id": "train-0306",
+    "board": "train-rtg",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RTG-15",
+        "field": "sprint",
+        "value": "RTG Sprint 5"
+      },
+      {
+        "issue": "RTG-16",
+        "field": "sprint",
+        "value": "RTG Sprint 5"
+      }
+    ]
+  },
+  {
+    "id": "train-0307",
+    "board": "train-rtg",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RTG-25",
+        "field": "sprint",
+        "value": "RTG Sprint 6"
+      }
+    ]
+  },
+  {
+    "id": "train-0308",
+    "board": "train-rtg",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RTG-12",
+        "field": "assignee",
+        "value": "Bartłomiej Cieślak"
+      },
+      {
+        "issue": "RTG-19",
+        "field": "assignee",
+        "value": "Bartłomiej Cieślak"
+      }
+    ]
+  },
+  {
+    "id": "train-0309",
+    "board": "train-rtg",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RTG-20",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "RTG-30",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0310",
+    "board": "train-rtg",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RTG-7",
+        "comment": "Pracownia USG jest zamknięta w piątek."
+      },
+      {
+        "issue": "RTG-19",
+        "comment": "Pracownia USG jest zamknięta w piątek."
+      },
+      {
+        "issue": "RTG-31",
+        "comment": "Pracownia USG jest zamknięta w piątek."
+      },
+      {
+        "issue": "RTG-39",
+        "comment": "Pracownia USG jest zamknięta w piątek."
+      }
+    ]
+  },
+  {
+    "id": "train-0311",
+    "board": "train-rtg",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RTG-21",
+        "field": "assignee",
+        "value": "Bartłomiej Zalewski"
+      },
+      {
+        "issue": "RTG-22",
+        "field": "assignee",
+        "value": "Bartłomiej Zalewski"
+      },
+      {
+        "issue": "RTG-25",
+        "field": "assignee",
+        "value": "Bartłomiej Zalewski"
+      },
+      {
+        "issue": "RTG-37",
+        "field": "assignee",
+        "value": "Bartłomiej Zalewski"
+      }
+    ]
+  },
+  {
+    "id": "train-0312",
+    "board": "train-rtg",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RTG-5",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "RTG-5",
+        "worklog": {
+          "seconds": 7200,
+          "comment": null
+        }
+      },
+      {
+        "issue": "RTG-5",
+        "comment": "szablony sprawdzone z doktorem Nowakowskim."
+      }
+    ]
+  },
+  {
+    "id": "train-0313",
+    "board": "train-rtg",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RTG-33",
+        "field": "status",
+        "value": "In review"
+      },
+      {
+        "issue": "RTG-33",
+        "field": "assignee",
+        "value": "Bartłomiej Zalewski"
+      },
+      {
+        "issue": "RTG-33",
+        "comment": "korekta ma nadpisywać dokument."
+      }
+    ]
+  },
+  {
+    "id": "train-0314",
+    "board": "train-rtg",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RTG-8",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "RTG-8",
+        "field": "assignee",
+        "value": "Erik Johansson"
+      },
+      {
+        "issue": "RTG-8",
+        "worklog": {
+          "seconds": 3600,
+          "comment": "test of the Polish model"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0315",
+    "board": "train-rtg",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RTG-34",
+        "field": "priority",
+        "value": "Medium"
+      },
+      {
+        "issue": "RTG-34",
+        "field": "sprint",
+        "value": "RTG Sprint 6"
+      }
+    ]
+  },
+  {
+    "id": "train-0316",
+    "board": "train-rtg",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0317",
+    "board": "train-rtg",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0318",
+    "board": "train-rtg",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0319",
+    "board": "train-rtg",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0320",
+    "board": "train-rtg",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0321",
+    "board": "train-it",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Konstanty Bielawski"
+    }
+  },
+  {
+    "id": "train-0322",
+    "board": "train-it",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "High"
+    }
+  },
+  {
+    "id": "train-0323",
+    "board": "train-it",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 32400
+    }
+  },
+  {
+    "id": "train-0324",
+    "board": "train-it",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 5
+    }
+  },
+  {
+    "id": "train-0325",
+    "board": "train-it",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "IT-41",
+        "IT-6"
+      ]
+    }
+  },
+  {
+    "id": "train-0326",
+    "board": "train-it",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "value",
+      "value": "Medium"
+    }
+  },
+  {
+    "id": "train-0327",
+    "board": "train-it",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "IT-20",
+        "field": "priority",
+        "value": "Highest"
+      }
+    ]
+  },
+  {
+    "id": "train-0328",
+    "board": "train-it",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "IT-37",
+        "field": "assignee",
+        "value": "Tadeusz Wrona"
+      }
+    ]
+  },
+  {
+    "id": "train-0329",
+    "board": "train-it",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "IT-10",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "train-0330",
+    "board": "train-it",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "IT-25",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "IT-25",
+        "field": "assignee",
+        "value": "Paulina Zawisza"
+      }
+    ]
+  },
+  {
+    "id": "train-0331",
+    "board": "train-it",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "IT-35",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "IT-35",
+        "field": "assignee",
+        "value": "Konstanty Bielawski"
+      }
+    ]
+  },
+  {
+    "id": "train-0332",
+    "board": "train-it",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "IT-21",
+        "field": "assignee",
+        "value": "Paulina Gajewska"
+      }
+    ]
+  },
+  {
+    "id": "train-0333",
+    "board": "train-it",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "IT-7",
+        "worklog": {
+          "seconds": 10800,
+          "comment": "wymiana ROUTERA i konfiguracja LTE"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0334",
+    "board": "train-it",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "IT-13",
+        "comment": "Budżet na inwentaryzację to 6 tysięcy złotych, wszystkie placówki do końca grudnia."
+      }
+    ]
+  },
+  {
+    "id": "train-0335",
+    "board": "train-it",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "IT-6",
+        "worklog": {
+          "seconds": 2700,
+          "comment": "kalibracja drukarki recept"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0336",
+    "board": "train-it",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "IT-38",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "wybór narzędzia"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0337",
+    "board": "train-it",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "IT-42",
+        "comment": "przełącznik zamówiony, montaż w sobotę"
+      }
+    ]
+  },
+  {
+    "id": "train-0338",
+    "board": "train-it",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Wi-Fi dla pacjentów w placówce Ursynów",
+          "issue_type": "Story",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0339",
+    "board": "train-it",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "DRUKARKA w rejestracji Wola nie drukuje kodów kreskowych",
+          "issue_type": "Bug",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0340",
+    "board": "train-it",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Drugi monitor dla rejestracji na Mokotowie",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0341",
+    "board": "train-it",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Zakup 10 laptopów dla lekarzy",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Dominika Ryba",
+          "labels": [],
+          "sprint": "IT Sprint 63"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0342",
+    "board": "train-it",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Serwer kopii zapasowych nie wstaje po restarcie",
+          "issue_type": "Bug",
+          "priority": "Highest",
+          "assignee": null,
+          "labels": [
+            "backup"
+          ],
+          "sprint": "IT Sprint 62"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0343",
+    "board": "train-it",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "IT-27",
+        "field": "sprint",
+        "value": "IT Sprint 62"
+      }
+    ]
+  },
+  {
+    "id": "train-0344",
+    "board": "train-it",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "IT-13",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0345",
+    "board": "train-it",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "IT-29",
+        "field": "sprint",
+        "value": "IT Sprint 63"
+      }
+    ]
+  },
+  {
+    "id": "train-0346",
+    "board": "train-it",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "IT-16",
+        "field": "sprint",
+        "value": "IT Sprint 62"
+      },
+      {
+        "issue": "IT-17",
+        "field": "sprint",
+        "value": "IT Sprint 62"
+      }
+    ]
+  },
+  {
+    "id": "train-0347",
+    "board": "train-it",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "IT-33",
+        "field": "sprint",
+        "value": "IT Sprint 62"
+      }
+    ]
+  },
+  {
+    "id": "train-0348",
+    "board": "train-it",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "IT-12",
+        "field": "assignee",
+        "value": "Paulina Gajewska"
+      },
+      {
+        "issue": "IT-22",
+        "field": "assignee",
+        "value": "Paulina Gajewska"
+      },
+      {
+        "issue": "IT-24",
+        "field": "assignee",
+        "value": "Paulina Gajewska"
+      },
+      {
+        "issue": "IT-27",
+        "field": "assignee",
+        "value": "Paulina Gajewska"
+      },
+      {
+        "issue": "IT-31",
+        "field": "assignee",
+        "value": "Paulina Gajewska"
+      },
+      {
+        "issue": "IT-35",
+        "field": "assignee",
+        "value": "Paulina Gajewska"
+      }
+    ]
+  },
+  {
+    "id": "train-0349",
+    "board": "train-it",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "IT-6",
+        "field": "priority",
+        "value": "Low"
+      },
+      {
+        "issue": "IT-23",
+        "field": "priority",
+        "value": "Low"
+      },
+      {
+        "issue": "IT-41",
+        "field": "priority",
+        "value": "Low"
+      }
+    ]
+  },
+  {
+    "id": "train-0350",
+    "board": "train-it",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "IT-8",
+        "comment": "Proszę o kontakt z kadrami przed zmianą."
+      },
+      {
+        "issue": "IT-14",
+        "comment": "Proszę o kontakt z kadrami przed zmianą."
+      },
+      {
+        "issue": "IT-22",
+        "comment": "Proszę o kontakt z kadrami przed zmianą."
+      },
+      {
+        "issue": "IT-36",
+        "comment": "Proszę o kontakt z kadrami przed zmianą."
+      }
+    ]
+  },
+  {
+    "id": "train-0351",
+    "board": "train-it",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "IT-26",
+        "field": "assignee",
+        "value": "Konstanty Bielawski"
+      },
+      {
+        "issue": "IT-32",
+        "field": "assignee",
+        "value": "Konstanty Bielawski"
+      }
+    ]
+  },
+  {
+    "id": "train-0352",
+    "board": "train-it",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "IT-15",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "IT-15",
+        "worklog": {
+          "seconds": 7200,
+          "comment": null
+        }
+      },
+      {
+        "issue": "IT-15",
+        "comment": "LOGOWANIE szybsze po zmianie DNS."
+      }
+    ]
+  },
+  {
+    "id": "train-0353",
+    "board": "train-it",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "IT-12",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "IT-12",
+        "worklog": {
+          "seconds": 3600,
+          "comment": null
+        }
+      },
+      {
+        "issue": "IT-12",
+        "comment": "Skaner zapisuje do folderu Rejestracja/Skany."
+      }
+    ]
+  },
+  {
+    "id": "train-0354",
+    "board": "train-it",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "IT-31",
+        "field": "assignee",
+        "value": "Tadeusz Wrona"
+      },
+      {
+        "issue": "IT-31",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "IT-31",
+        "field": "sprint",
+        "value": "IT Sprint 62"
+      }
+    ]
+  },
+  {
+    "id": "train-0355",
+    "board": "train-it",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "IT-18",
+        "field": "sprint",
+        "value": "IT Sprint 62"
+      },
+      {
+        "issue": "IT-18",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0356",
+    "board": "train-it",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0357",
+    "board": "train-it",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0358",
+    "board": "train-it",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0359",
+    "board": "train-it",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0360",
+    "board": "train-it",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0361",
+    "board": "train-nfz",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Bożena Kmiecik"
+    }
+  },
+  {
+    "id": "train-0362",
+    "board": "train-nfz",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "In Progress"
+    }
+  },
+  {
+    "id": "train-0363",
+    "board": "train-nfz",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 10800
+    }
+  },
+  {
+    "id": "train-0364",
+    "board": "train-nfz",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 1
+    }
+  },
+  {
+    "id": "train-0365",
+    "board": "train-nfz",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "NFZ-31",
+        "NFZ-13",
+        "NFZ-7"
+      ]
+    }
+  },
+  {
+    "id": "train-0366",
+    "board": "train-nfz",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "value",
+      "value": "High"
+    }
+  },
+  {
+    "id": "train-0367",
+    "board": "train-nfz",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "NFZ-25",
+        "field": "priority",
+        "value": "Highest"
+      }
+    ]
+  },
+  {
+    "id": "train-0368",
+    "board": "train-nfz",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "NFZ-30",
+        "field": "assignee",
+        "value": "Jakub Lipiński"
+      }
+    ]
+  },
+  {
+    "id": "train-0369",
+    "board": "train-nfz",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "NFZ-7",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "train-0370",
+    "board": "train-nfz",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NFZ-27",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "NFZ-27",
+        "field": "assignee",
+        "value": "Grażyna Pietruszka"
+      }
+    ]
+  },
+  {
+    "id": "train-0371",
+    "board": "train-nfz",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NFZ-33",
+        "field": "assignee",
+        "value": "Jakub Sowiński"
+      },
+      {
+        "issue": "NFZ-33",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "train-0372",
+    "board": "train-nfz",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NFZ-36",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0373",
+    "board": "train-nfz",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "NFZ-11",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "lista świadczeń bez ICD-10 za październik"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0374",
+    "board": "train-nfz",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "NFZ-19",
+        "comment": "Nadwykonania mają być rozliczone w tym kwartale, bez wymówek!"
+      }
+    ]
+  },
+  {
+    "id": "train-0375",
+    "board": "train-nfz",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "NFZ-31",
+        "worklog": {
+          "seconds": 5400,
+          "comment": "query przychodów po placówkach"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0376",
+    "board": "train-nfz",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NFZ-30",
+        "worklog": {
+          "seconds": 3600,
+          "comment": "przegląd zarządzenia"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0377",
+    "board": "train-nfz",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NFZ-24",
+        "comment": "Kto to zaimportował, ma to wyjaśnić do piątku."
+      }
+    ]
+  },
+  {
+    "id": "train-0378",
+    "board": "train-nfz",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Sprawozdanie za listopad do NFZ",
+          "issue_type": "Task",
+          "priority": "Highest",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0379",
+    "board": "train-nfz",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Raport najlepszych placówek dla zarządu",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0380",
+    "board": "train-nfz",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Dashboard odrzuconych świadczeń według kodu błędu",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0381",
+    "board": "train-nfz",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Kod świadczenia 5.01.00.0000089 odrzucany bez powodu",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": "Fabian Rogowski",
+          "labels": [],
+          "sprint": "NFZ Sprint 16"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0382",
+    "board": "train-nfz",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Lista placówek z najniższym przychodem z NFZ",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "reports"
+          ],
+          "sprint": "NFZ Sprint 17"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0383",
+    "board": "train-nfz",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "NFZ-19",
+        "field": "sprint",
+        "value": "NFZ Sprint 16"
+      }
+    ]
+  },
+  {
+    "id": "train-0384",
+    "board": "train-nfz",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "NFZ-13",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0385",
+    "board": "train-nfz",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "NFZ-33",
+        "field": "sprint",
+        "value": "NFZ Sprint 18"
+      }
+    ]
+  },
+  {
+    "id": "train-0386",
+    "board": "train-nfz",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NFZ-14",
+        "field": "sprint",
+        "value": "NFZ Sprint 16"
+      },
+      {
+        "issue": "NFZ-15",
+        "field": "sprint",
+        "value": "NFZ Sprint 16"
+      }
+    ]
+  },
+  {
+    "id": "train-0387",
+    "board": "train-nfz",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NFZ-31",
+        "field": "sprint",
+        "value": "NFZ Sprint 17"
+      }
+    ]
+  },
+  {
+    "id": "train-0388",
+    "board": "train-nfz",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NFZ-25",
+        "field": "assignee",
+        "value": "Grażyna Pietruszka"
+      },
+      {
+        "issue": "NFZ-27",
+        "field": "assignee",
+        "value": "Grażyna Pietruszka"
+      }
+    ]
+  },
+  {
+    "id": "train-0389",
+    "board": "train-nfz",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NFZ-10",
+        "comment": "Weryfikacja eWUŚ według komunikatu z 1 października."
+      },
+      {
+        "issue": "NFZ-17",
+        "comment": "Weryfikacja eWUŚ według komunikatu z 1 października."
+      },
+      {
+        "issue": "NFZ-29",
+        "comment": "Weryfikacja eWUŚ według komunikatu z 1 października."
+      }
+    ]
+  },
+  {
+    "id": "train-0390",
+    "board": "train-nfz",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NFZ-23",
+        "field": "priority",
+        "value": "Medium"
+      },
+      {
+        "issue": "NFZ-33",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "train-0391",
+    "board": "train-nfz",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NFZ-22",
+        "field": "assignee",
+        "value": "Jakub Lipiński"
+      },
+      {
+        "issue": "NFZ-23",
+        "field": "assignee",
+        "value": "Jakub Lipiński"
+      },
+      {
+        "issue": "NFZ-37",
+        "field": "assignee",
+        "value": "Jakub Lipiński"
+      }
+    ]
+  },
+  {
+    "id": "train-0392",
+    "board": "train-nfz",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NFZ-6",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "NFZ-6",
+        "worklog": {
+          "seconds": 10800,
+          "comment": null
+        }
+      },
+      {
+        "issue": "NFZ-6",
+        "comment": "Wszystkie 140 pozycji poprawione."
+      }
+    ]
+  },
+  {
+    "id": "train-0393",
+    "board": "train-nfz",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NFZ-5",
+        "field": "status",
+        "value": "In review"
+      },
+      {
+        "issue": "NFZ-5",
+        "worklog": {
+          "seconds": 7200,
+          "comment": null
+        }
+      },
+      {
+        "issue": "NFZ-5",
+        "comment": "Ostrzeżenie przetestowane na danych z października."
+      }
+    ]
+  },
+  {
+    "id": "train-0394",
+    "board": "train-nfz",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NFZ-19",
+        "field": "assignee",
+        "value": "Bożena Kmiecik"
+      },
+      {
+        "issue": "NFZ-19",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "NFZ-19",
+        "comment": "Termin to piątek, bez dyskusji."
+      }
+    ]
+  },
+  {
+    "id": "train-0395",
+    "board": "train-nfz",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "NFZ-37",
+        "field": "sprint",
+        "value": "NFZ Sprint 17"
+      },
+      {
+        "issue": "NFZ-37",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "train-0396",
+    "board": "train-nfz",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0397",
+    "board": "train-nfz",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0398",
+    "board": "train-nfz",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0399",
+    "board": "train-nfz",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0400",
+    "board": "train-nfz",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
   }
 ]

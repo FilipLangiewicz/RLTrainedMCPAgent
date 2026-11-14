@@ -4845,5 +4845,4856 @@
     "id": "train-0200",
     "calls": [],
     "answer": "ODMOWA: pomagam tylko w pracy z Jirą tego projektu."
+  },
+  {
+    "id": "train-0201",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "REJ-13",
+          "fields": "summary,assignee"
+        }
+      }
+    ],
+    "answer": "REJ-13 ma przypisaną osobę: Sebastian Pająk."
+  },
+  {
+    "id": "train-0202",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "REJ-10",
+          "fields": "priority"
+        }
+      }
+    ],
+    "answer": "REJ-10 ma priorytet High."
+  },
+  {
+    "id": "train-0203",
+    "calls": [
+      {
+        "name": "jira_get_worklog",
+        "arguments": {
+          "issue_key": "REJ-1"
+        }
+      }
+    ],
+    "answer": "Na REJ-1 zalogowano łącznie 12h."
+  },
+  {
+    "id": "train-0204",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = REJ AND labels = telephony AND assignee is EMPTY",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "4 zadania z labelem telephony nie mają przypisanej osoby."
+  },
+  {
+    "id": "train-0205",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = REJ AND type = Bug AND labels = booking AND sprint in openSprints()",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "W bieżącym sprincie jest tylko REJ-6."
+  },
+  {
+    "id": "train-0206",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = REJ AND summary ~ \"dzieciach\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = REJ AND summary ~ \"dzieci\"",
+          "fields": "summary,assignee",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "REJ-28 ma przypisaną osobę: Olena Kovalenko."
+  },
+  {
+    "id": "train-0207",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Sobolewska",
+          "project_key": "REJ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "REJ-14",
+          "fields": "{\"assignee\": \"Wiktoria Sobolewska\"}"
+        }
+      }
+    ],
+    "answer": "REJ-14 jest przypisane do Wiktorii Sobolewskiej."
+  },
+  {
+    "id": "train-0208",
+    "calls": [
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "REJ-26",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "REJ-26 ma teraz priorytet High."
+  },
+  {
+    "id": "train-0209",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "REJ-8"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "REJ-8",
+          "transition_id": "51"
+        }
+      }
+    ],
+    "answer": "REJ-8 ma status Done."
+  },
+  {
+    "id": "train-0210",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = REJ AND summary ~ \"wyniki\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Damian",
+          "project_key": "REJ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "REJ-38",
+          "fields": "{\"priority\": {\"name\": \"Highest\"}, \"assignee\": \"Damian Kaczmarczyk\"}"
+        }
+      }
+    ],
+    "answer": "REJ-38 ma priorytet Highest i jest przypisane do Damiana Kaczmarczyka."
+  },
+  {
+    "id": "train-0211",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = REJ AND summary ~ \"apostrofem\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Maciejewska",
+          "project_key": "REJ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "REJ-9",
+          "fields": "{\"assignee\": \"Wiktoria Maciejewska\"}"
+        }
+      }
+    ],
+    "answer": "REJ-9 jest przypisane do Wiktorii Maciejewskiej."
+  },
+  {
+    "id": "train-0212",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = REJ AND summary ~ \"zamówieniem\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = REJ AND summary ~ \"Słuchawki\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "REJ-33",
+          "fields": "{\"priority\": {\"name\": \"Medium\"}}"
+        }
+      }
+    ],
+    "answer": "REJ-33 ma teraz priorytet Medium."
+  },
+  {
+    "id": "train-0213",
+    "calls": [
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "REJ-37",
+          "time_spent": "1h 15m",
+          "comment": "poprawki instrukcji"
+        }
+      }
+    ],
+    "answer": "Zalogowano 1h 15m na REJ-37."
+  },
+  {
+    "id": "train-0214",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "REJ-6",
+          "body": "W piątek zapisaliśmy dwóch pacjentów na 9:00 w placówce Wola."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do REJ-6."
+  },
+  {
+    "id": "train-0215",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "REJ-11",
+          "body": "Nagranie po ukraińsku jest gotowe."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do REJ-11."
+  },
+  {
+    "id": "train-0216",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = REJ AND summary ~ \"przekierowaniem\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = REJ AND summary ~ \"Przekierowanie\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "REJ-29",
+          "time_spent": "2h",
+          "comment": "konfiguracja placówki dyżurnej"
+        }
+      }
+    ],
+    "answer": "Zalogowano 2h na REJ-29."
+  },
+  {
+    "id": "train-0217",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = REJ AND summary ~ \"Ankieta\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "REJ-31",
+          "body": "pytania są w dokumencie ankieta_v2."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do REJ-31."
+  },
+  {
+    "id": "train-0218",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "REJ",
+          "summary": "Rejestracja nie widzi wolnych terminów w sobotę",
+          "issue_type": "Bug",
+          "additional_fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Utworzono bug REJ-42 z priorytetem High."
+  },
+  {
+    "id": "train-0219",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "REJ",
+          "summary": "Szkolenie z nowej centrali dla nocnej zmiany",
+          "issue_type": "Task"
+        }
+      }
+    ],
+    "answer": "Utworzono task REJ-42."
+  },
+  {
+    "id": "train-0220",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "REJ",
+          "summary": "Komunikat infolinii po ukraińsku o wynikach badań",
+          "issue_type": "Story"
+        }
+      }
+    ],
+    "answer": "Utworzono story REJ-42."
+  },
+  {
+    "id": "train-0221",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Maciejewska",
+          "project_key": "REJ"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "REJ",
+          "summary": "SMS z przypomnieniem przychodzi z błędną godziną",
+          "issue_type": "Bug",
+          "assignee": "Wiktoria Maciejewska",
+          "additional_fields": "{\"priority\": {\"name\": \"Highest\"}}"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "26"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "262",
+          "issue_keys": "REJ-42"
+        }
+      }
+    ],
+    "answer": "Utworzono bug REJ-42 z priorytetem Highest, przypisany do Wiktorii Maciejewskiej, w sprincie REJ Sprint 34."
+  },
+  {
+    "id": "train-0222",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "REJ",
+          "summary": "Zapisy na wizyty przez Messengera",
+          "issue_type": "Story",
+          "additional_fields": "{\"labels\": [\"chat\"]}"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "26"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "263",
+          "issue_keys": "REJ-42"
+        }
+      }
+    ],
+    "answer": "Utworzono story REJ-42 z labelem chat w sprincie REJ Sprint 35."
+  },
+  {
+    "id": "train-0223",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "REJ"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "26"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "262",
+          "issue_keys": "REJ-21"
+        }
+      }
+    ],
+    "answer": "REJ-21 jest w sprincie REJ Sprint 34."
+  },
+  {
+    "id": "train-0224",
+    "calls": [
+      {
+        "name": "jira_move_issues_to_backlog",
+        "arguments": {
+          "issue_keys": "REJ-31"
+        }
+      }
+    ],
+    "answer": "REJ-31 jest w backlogu."
+  },
+  {
+    "id": "train-0225",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "REJ"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "26"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "264",
+          "issue_keys": "REJ-24"
+        }
+      }
+    ],
+    "answer": "REJ-24 jest w sprincie REJ Sprint 36."
+  },
+  {
+    "id": "train-0226",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = REJ AND labels = chat AND sprint in futureSprints()",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "26"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "262",
+          "issue_keys": "REJ-17,REJ-16"
+        }
+      }
+    ],
+    "answer": "Przeniesiono do REJ Sprint 34: REJ-17, REJ-16."
+  },
+  {
+    "id": "train-0227",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = REJ AND summary ~ \"szczepienie\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "26"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "262",
+          "issue_keys": "REJ-36"
+        }
+      }
+    ],
+    "answer": "REJ-36 jest w sprincie REJ Sprint 34."
+  },
+  {
+    "id": "train-0228",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = REJ AND type = Bug AND assignee is EMPTY AND sprint is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Damian",
+          "project_key": "REJ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "REJ-38",
+          "fields": "{\"assignee\": \"Damian Kaczmarczyk\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "REJ-26",
+          "fields": "{\"assignee\": \"Damian Kaczmarczyk\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "REJ-21",
+          "fields": "{\"assignee\": \"Damian Kaczmarczyk\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Damianowi Kaczmarczykowi: REJ-38, REJ-26, REJ-21."
+  },
+  {
+    "id": "train-0229",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = REJ AND labels = sms AND status in (Backlog, \"In Progress\", \"In review\") AND priority != High",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "REJ-40",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "REJ-26",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "REJ-8",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Priorytet High mają teraz REJ-40, REJ-26 i REJ-8."
+  },
+  {
+    "id": "train-0230",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = REJ AND labels = hardware",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "REJ-34",
+          "body": "Sprzęt jest w magazynie na Woli."
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "REJ-33",
+          "body": "Sprzęt jest w magazynie na Woli."
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "REJ-21",
+          "body": "Sprzęt jest w magazynie na Woli."
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "REJ-13",
+          "body": "Sprzęt jest w magazynie na Woli."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do REJ-34, REJ-33, REJ-21 i REJ-13."
+  },
+  {
+    "id": "train-0231",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = REJ AND assignee = \"Sebastian Pająk\" AND sprint is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Sobolewska",
+          "project_key": "REJ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "REJ-40",
+          "fields": "{\"assignee\": \"Wiktoria Sobolewska\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "REJ-29",
+          "fields": "{\"assignee\": \"Wiktoria Sobolewska\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "REJ-23",
+          "fields": "{\"assignee\": \"Wiktoria Sobolewska\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Wiktorii Sobolewskiej: REJ-40, REJ-29, REJ-23."
+  },
+  {
+    "id": "train-0232",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "REJ-15"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "REJ-15",
+          "transition_id": "51"
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "REJ-15",
+          "time_spent": "2h"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "REJ-15",
+          "body": "zgoda na SMS-y zapisuje się przy rejestracji."
+        }
+      }
+    ],
+    "answer": "REJ-15 ma status Done, zalogowano 2h i dodano komentarz."
+  },
+  {
+    "id": "train-0233",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "REJ-13"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "REJ-13",
+          "transition_id": "31"
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Damian",
+          "project_key": "REJ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "REJ-13",
+          "fields": "{\"assignee\": \"Damian Kaczmarczyk\"}"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "REJ-13",
+          "body": "Nowa rolka papieru i aktualizacja sterownika, proszę sprawdzić."
+        }
+      }
+    ],
+    "answer": "REJ-13 ma status In review, jest przypisane do Damiana Kaczmarczyka i ma nowy komentarz."
+  },
+  {
+    "id": "train-0234",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = REJ AND summary ~ \"Formularz\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Olena",
+          "project_key": "REJ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "REJ-22",
+          "fields": "{\"assignee\": \"Olena Kovalenko\"}"
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "REJ-22"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "REJ-22",
+          "transition_id": "21"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "26"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "262",
+          "issue_keys": "REJ-22"
+        }
+      }
+    ],
+    "answer": "REJ-22 jest przypisane do Oleny Kovalenko, ma status In Progress i jest w sprincie REJ Sprint 34."
+  },
+  {
+    "id": "train-0235",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = REJ AND summary ~ \"nagraniami\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = REJ AND summary ~ \"recordings\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Sebastian",
+          "project_key": "REJ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "REJ-10",
+          "fields": "{\"priority\": {\"name\": \"Highest\"}, \"assignee\": \"Sebastian Pająk\"}"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "REJ-10",
+          "body": "polityka mówi 90 dni."
+        }
+      }
+    ],
+    "answer": "REJ-10 ma priorytet Highest, jest przypisane do Sebastiana Pająka i ma nowy komentarz."
+  },
+  {
+    "id": "train-0236",
+    "calls": [],
+    "answer": "ODMOWA: nie mam narzędzia do dzwonienia do pacjentów. Mogę dodać komentarz do REJ-28."
+  },
+  {
+    "id": "train-0237",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Roman",
+          "project_key": "REJ"
+        }
+      }
+    ],
+    "answer": "ODMOWA: nie znalazłem w projekcie aktywnej osoby o imieniu Roman."
+  },
+  {
+    "id": "train-0238",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Wiktoria",
+          "project_key": "REJ"
+        }
+      }
+    ],
+    "answer": "ODMOWA: w projekcie są dwie osoby o imieniu Wiktoria: Wiktoria Sobolewska i Wiktoria Maciejewska. Napisz, o którą chodzi."
+  },
+  {
+    "id": "train-0239",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "REJ-77",
+          "fields": "status"
+        }
+      }
+    ],
+    "answer": "ODMOWA: zgłoszenie REJ-77 nie istnieje w projekcie."
+  },
+  {
+    "id": "train-0240",
+    "calls": [],
+    "answer": "ODMOWA: pomagam tylko w pracy z Jirą tego projektu."
+  },
+  {
+    "id": "train-0241",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "LAB-7",
+          "fields": "summary,assignee"
+        }
+      }
+    ],
+    "answer": "LAB-7 ma przypisaną osobę: Teresa Wróblewska."
+  },
+  {
+    "id": "train-0242",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "LAB-31",
+          "fields": "status"
+        }
+      }
+    ],
+    "answer": "LAB-31 ma status Backlog."
+  },
+  {
+    "id": "train-0243",
+    "calls": [
+      {
+        "name": "jira_get_worklog",
+        "arguments": {
+          "issue_key": "LAB-4"
+        }
+      }
+    ],
+    "answer": "Na LAB-4 zalogowano łącznie 6h."
+  },
+  {
+    "id": "train-0244",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = LAB AND labels = results AND priority in (High, Highest)",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "5 zadań z labelem results ma priorytet High lub Highest."
+  },
+  {
+    "id": "train-0245",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = LAB AND type = Bug AND labels = analyzer AND statusCategory != Done",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "Niezrobione bugi z labelem analyzer: LAB-7 i LAB-6."
+  },
+  {
+    "id": "train-0246",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = LAB AND summary ~ \"drukarke\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = LAB AND summary ~ \"Drukarka\"",
+          "fields": "summary,priority",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "LAB-26 ma priorytet Medium."
+  },
+  {
+    "id": "train-0247",
+    "calls": [
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "LAB-20",
+          "fields": "{\"priority\": {\"name\": \"Medium\"}}"
+        }
+      }
+    ],
+    "answer": "LAB-20 ma teraz priorytet Medium."
+  },
+  {
+    "id": "train-0248",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Henryk",
+          "project_key": "LAB"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "LAB-39",
+          "fields": "{\"assignee\": \"Henryk Sołtys\"}"
+        }
+      }
+    ],
+    "answer": "LAB-39 jest przypisane do Henryka Sołtysa."
+  },
+  {
+    "id": "train-0249",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "LAB-29"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "LAB-29",
+          "transition_id": "51"
+        }
+      }
+    ],
+    "answer": "LAB-29 ma status Done."
+  },
+  {
+    "id": "train-0250",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = LAB AND summary ~ \"kontrolna\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Kubacka",
+          "project_key": "LAB"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "LAB-15",
+          "fields": "{\"priority\": {\"name\": \"Medium\"}, \"assignee\": \"Alicja Kubacka\"}"
+        }
+      }
+    ],
+    "answer": "LAB-15 ma priorytet Medium i jest przypisane do Alicji Kubackiej."
+  },
+  {
+    "id": "train-0251",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = LAB AND summary ~ \"logiem\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = LAB AND summary ~ \"HL7\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Norbert",
+          "project_key": "LAB"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "LAB-39",
+          "fields": "{\"assignee\": \"Norbert Szulc\", \"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "LAB-39 jest przypisane do Norberta Szulca i ma priorytet High."
+  },
+  {
+    "id": "train-0252",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = LAB AND summary ~ \"zmianie\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Ksenia",
+          "project_key": "LAB"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "LAB-12",
+          "fields": "{\"priority\": {\"name\": \"High\"}, \"assignee\": \"Ksenia Borowska\"}"
+        }
+      }
+    ],
+    "answer": "LAB-12 ma priorytet High i jest przypisane do Kseni Borowskiej."
+  },
+  {
+    "id": "train-0253",
+    "calls": [
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "LAB-6",
+          "time_spent": "3h",
+          "comment": "mapowanie ID próbki po ponownym skanie"
+        }
+      }
+    ],
+    "answer": "Zalogowano 3h na LAB-6."
+  },
+  {
+    "id": "train-0254",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "LAB-8",
+          "body": "Zakresy referencyjne według wieku są zgodne z zaleceniami KIDL."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do LAB-8."
+  },
+  {
+    "id": "train-0255",
+    "calls": [
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "LAB-13",
+          "time_spent": "30m",
+          "comment": "odczyt temperatury o 2:00"
+        }
+      }
+    ],
+    "answer": "Zalogowano 30m na LAB-13."
+  },
+  {
+    "id": "train-0256",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = LAB AND summary ~ \"zużycia\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "LAB-22",
+          "time_spent": "1h 30m",
+          "comment": "przegląd kart odczynników"
+        }
+      }
+    ],
+    "answer": "Zalogowano 1h 30m na LAB-22."
+  },
+  {
+    "id": "train-0257",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = LAB AND summary ~ \"procedura\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "LAB-30",
+          "body": "w nocy nie ma kogo zapytac, procedura pilna"
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do LAB-30."
+  },
+  {
+    "id": "train-0258",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "LAB",
+          "summary": "Wynik INR bez jednostki w portalu pacjenta",
+          "issue_type": "Bug",
+          "additional_fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Utworzono bug LAB-40 z priorytetem High."
+  },
+  {
+    "id": "train-0259",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "LAB",
+          "summary": "Test komunikatów HL7 ORU z nowego analizatora",
+          "issue_type": "Task"
+        }
+      }
+    ],
+    "answer": "Utworzono task LAB-40."
+  },
+  {
+    "id": "train-0260",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "LAB",
+          "summary": "Skaner w punkcie pobran nie czyta kodow po 22",
+          "issue_type": "Bug"
+        }
+      }
+    ],
+    "answer": "Utworzono bug LAB-40."
+  },
+  {
+    "id": "train-0261",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Henryk",
+          "project_key": "LAB"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "LAB",
+          "summary": "Automatyczna walidacja wyników morfologii",
+          "issue_type": "Story",
+          "assignee": "Henryk Sołtys"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "27"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "273",
+          "issue_keys": "LAB-40"
+        }
+      }
+    ],
+    "answer": "Utworzono story LAB-40, przypisane do Henryka Sołtysa, w sprincie LAB Sprint 11."
+  },
+  {
+    "id": "train-0262",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "LAB",
+          "summary": "Analizator moczu wysyła wynik bez ID zlecenia",
+          "issue_type": "Bug",
+          "additional_fields": "{\"priority\": {\"name\": \"Highest\"}, \"labels\": [\"analyzer\"]}"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "27"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "272",
+          "issue_keys": "LAB-40"
+        }
+      }
+    ],
+    "answer": "Utworzono bug LAB-40 z priorytetem Highest i labelem analyzer w sprincie LAB Sprint 10."
+  },
+  {
+    "id": "train-0263",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "LAB"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "27"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "272",
+          "issue_keys": "LAB-17"
+        }
+      }
+    ],
+    "answer": "LAB-17 jest w sprincie LAB Sprint 10."
+  },
+  {
+    "id": "train-0264",
+    "calls": [
+      {
+        "name": "jira_move_issues_to_backlog",
+        "arguments": {
+          "issue_keys": "LAB-13"
+        }
+      }
+    ],
+    "answer": "LAB-13 jest w backlogu."
+  },
+  {
+    "id": "train-0265",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "LAB"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "27"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "274",
+          "issue_keys": "LAB-34"
+        }
+      }
+    ],
+    "answer": "LAB-34 jest w sprincie LAB Sprint 12."
+  },
+  {
+    "id": "train-0266",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = LAB AND labels = quality AND sprint in futureSprints()",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "27"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "272",
+          "issue_keys": "LAB-15,LAB-14"
+        }
+      }
+    ],
+    "answer": "Przeniesiono do LAB Sprint 10: LAB-15, LAB-14."
+  },
+  {
+    "id": "train-0267",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = LAB AND summary ~ \"Podpis\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "27"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "273",
+          "issue_keys": "LAB-27"
+        }
+      }
+    ],
+    "answer": "LAB-27 jest w sprincie LAB Sprint 11."
+  },
+  {
+    "id": "train-0268",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = LAB AND labels = orders AND assignee is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Mazurek",
+          "project_key": "LAB"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "LAB-19",
+          "fields": "{\"assignee\": \"Alicja Mazurek\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "LAB-18",
+          "fields": "{\"assignee\": \"Alicja Mazurek\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "LAB-17",
+          "fields": "{\"assignee\": \"Alicja Mazurek\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Alicji Mazurek: LAB-19, LAB-18, LAB-17."
+  },
+  {
+    "id": "train-0269",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = LAB AND type = Bug AND labels = labels AND statusCategory != Done",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "LAB-34",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "LAB-26",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "LAB-5",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Priorytet High mają teraz LAB-34, LAB-26 i LAB-5."
+  },
+  {
+    "id": "train-0270",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = LAB AND labels = hardware AND status in (Backlog, \"In Progress\", \"In review\")",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "LAB-26",
+          "body": "nocna zmiana prosi o szybka naprawe"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "LAB-13",
+          "body": "nocna zmiana prosi o szybka naprawe"
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do LAB-26 i LAB-13."
+  },
+  {
+    "id": "train-0271",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = LAB AND assignee = \"Teresa Wróblewska\" AND sprint is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Kubacka",
+          "project_key": "LAB"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "LAB-38",
+          "fields": "{\"assignee\": \"Alicja Kubacka\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "LAB-24",
+          "fields": "{\"assignee\": \"Alicja Kubacka\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Alicji Kubackiej: LAB-38, LAB-24."
+  },
+  {
+    "id": "train-0272",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "LAB-7"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "LAB-7",
+          "transition_id": "51"
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "LAB-7",
+          "time_spent": "4h"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "LAB-7",
+          "body": "ramki ASTM składane z kilku pakietów."
+        }
+      }
+    ],
+    "answer": "LAB-7 ma status Done, zalogowano 4h i dodano komentarz."
+  },
+  {
+    "id": "train-0273",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "LAB-5"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "LAB-5",
+          "transition_id": "31"
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "LAB-5",
+          "time_spent": "2h"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "LAB-5",
+          "body": "nazwisko skracane do 20 znakow"
+        }
+      }
+    ],
+    "answer": "LAB-5 ma status In review, zalogowano 2h i dodano komentarz."
+  },
+  {
+    "id": "train-0274",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = LAB AND summary ~ \"krytycznych\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "LAB-10"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "LAB-10",
+          "transition_id": "21"
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Norbert",
+          "project_key": "LAB"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "LAB-10",
+          "fields": "{\"assignee\": \"Norbert Szulc\"}"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "LAB-10",
+          "body": "Wartości krytyczne według tabeli z 2026 roku."
+        }
+      }
+    ],
+    "answer": "LAB-10 ma status In Progress, jest przypisane do Norberta Szulca i ma nowy komentarz."
+  },
+  {
+    "id": "train-0275",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = LAB AND summary ~ \"archiwum\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = LAB AND summary ~ \"Archive\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_move_issues_to_backlog",
+        "arguments": {
+          "issue_keys": "LAB-16"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "LAB-16",
+          "fields": "{\"priority\": {\"name\": \"Lowest\"}}"
+        }
+      }
+    ],
+    "answer": "LAB-16 jest w backlogu i ma priorytet Lowest."
+  },
+  {
+    "id": "train-0276",
+    "calls": [],
+    "answer": "ODMOWA: nie mam narzędzia do drukowania wyników."
+  },
+  {
+    "id": "train-0277",
+    "calls": [],
+    "answer": "ODMOWA: nie mam narzędzia do zarządzania serwerami. Mogę założyć zadanie w projekcie."
+  },
+  {
+    "id": "train-0278",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Zbigniew",
+          "project_key": "LAB"
+        }
+      }
+    ],
+    "answer": "ODMOWA: nie znalazłem w projekcie aktywnej osoby o imieniu Zbigniew."
+  },
+  {
+    "id": "train-0279",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Alicja",
+          "project_key": "LAB"
+        }
+      }
+    ],
+    "answer": "ODMOWA: w projekcie są dwie osoby o imieniu Alicja: Alicja Kubacka i Alicja Mazurek. Napisz, o którą chodzi."
+  },
+  {
+    "id": "train-0280",
+    "calls": [],
+    "answer": "ODMOWA: pomagam tylko w pracy z Jirą tego projektu."
+  },
+  {
+    "id": "train-0281",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "RTG-30",
+          "fields": "summary,assignee"
+        }
+      }
+    ],
+    "answer": "RTG-30 ma przypisaną osobę: Erik Johansson."
+  },
+  {
+    "id": "train-0282",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "RTG-6",
+          "fields": "status"
+        }
+      }
+    ],
+    "answer": "RTG-6 ma status In Progress."
+  },
+  {
+    "id": "train-0283",
+    "calls": [
+      {
+        "name": "jira_get_worklog",
+        "arguments": {
+          "issue_key": "RTG-5"
+        }
+      }
+    ],
+    "answer": "Na RTG-5 zalogowano łącznie 3h."
+  },
+  {
+    "id": "train-0284",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND type = Bug AND labels = worklist AND statusCategory != Done",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "Otwarte bugi z labelem worklist są 3."
+  },
+  {
+    "id": "train-0285",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND labels = pacs AND sprint is EMPTY",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "Bez sprintu są RTG-24, RTG-22 i RTG-19."
+  },
+  {
+    "id": "train-0286",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND summary ~ \"Woli\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND summary ~ \"Wola\"",
+          "fields": "summary,priority",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "RTG-19 ma priorytet High."
+  },
+  {
+    "id": "train-0287",
+    "calls": [
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "RTG-12",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "RTG-12 ma teraz priorytet High."
+  },
+  {
+    "id": "train-0288",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Cieślak",
+          "project_key": "RTG"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "RTG-24",
+          "fields": "{\"assignee\": \"Bartłomiej Cieślak\"}"
+        }
+      }
+    ],
+    "answer": "RTG-24 jest przypisane do Bartłomieja Cieślaka."
+  },
+  {
+    "id": "train-0289",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "RTG-7"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "RTG-7",
+          "transition_id": "31"
+        }
+      }
+    ],
+    "answer": "RTG-7 ma status In review."
+  },
+  {
+    "id": "train-0290",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND summary ~ \"dokumentacji\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Zalewski",
+          "project_key": "RTG"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "RTG-23",
+          "fields": "{\"priority\": {\"name\": \"Highest\"}, \"assignee\": \"Bartłomiej Zalewski\"}"
+        }
+      }
+    ],
+    "answer": "RTG-23 ma priorytet Highest i jest przypisane do Bartłomieja Zalewskiego."
+  },
+  {
+    "id": "train-0291",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND summary ~ \"mammografie\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND summary ~ \"mammografu\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Sylwia",
+          "project_key": "RTG"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "RTG-27",
+          "fields": "{\"priority\": {\"name\": \"High\"}, \"assignee\": \"Sylwia Krajewska\"}"
+        }
+      }
+    ],
+    "answer": "RTG-27 ma priorytet High i jest przypisane do Sylwii Krajewskiej."
+  },
+  {
+    "id": "train-0292",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND summary ~ \"stations\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND summary ~ \"Windows\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "RTG-32",
+          "fields": "{\"priority\": {\"name\": \"Low\"}}"
+        }
+      }
+    ],
+    "answer": "RTG-32 ma teraz priorytet Low."
+  },
+  {
+    "id": "train-0293",
+    "calls": [
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "RTG-30",
+          "time_spent": "2h",
+          "comment": "profiling of the viewer"
+        }
+      }
+    ],
+    "answer": "Zalogowano 2h na RTG-30."
+  },
+  {
+    "id": "train-0294",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "RTG-9",
+          "body": "Link ma działać 30 dni, nie 24 godziny."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do RTG-9."
+  },
+  {
+    "id": "train-0295",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "RTG-14",
+          "body": "Pacjenci dostają SMS dzień przed badaniem, ale bez informacji o kontraście."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do RTG-14."
+  },
+  {
+    "id": "train-0296",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND summary ~ \"kalibracją\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND summary ~ \"kalibracji\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "RTG-26",
+          "time_spent": "1h",
+          "comment": "pomiar luminancji"
+        }
+      }
+    ],
+    "answer": "Zalogowano 1h na RTG-26."
+  },
+  {
+    "id": "train-0297",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND summary ~ \"VPN\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "RTG-16",
+          "body": "The vendor sent the certificates."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do RTG-16."
+  },
+  {
+    "id": "train-0298",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "RTG",
+          "summary": "Opis TK bez godziny podania kontrastu",
+          "issue_type": "Bug",
+          "additional_fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Utworzono bug RTG-41 z priorytetem High."
+  },
+  {
+    "id": "train-0299",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "RTG",
+          "summary": "Nowe fartuchy ołowiane dla pracowni RTG",
+          "issue_type": "Task"
+        }
+      }
+    ],
+    "answer": "Utworzono task RTG-41."
+  },
+  {
+    "id": "train-0300",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "RTG",
+          "summary": "Export of DICOM studies to a USB stick for patients",
+          "issue_type": "Story"
+        }
+      }
+    ],
+    "answer": "Utworzono story RTG-41."
+  },
+  {
+    "id": "train-0301",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Iwona",
+          "project_key": "RTG"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "RTG",
+          "summary": "Szablon opisu USG gubi wymiary zmian",
+          "issue_type": "Bug",
+          "assignee": "Iwona Stachowiak",
+          "additional_fields": "{\"priority\": {\"name\": \"Highest\"}}"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "28"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "282",
+          "issue_keys": "RTG-41"
+        }
+      }
+    ],
+    "answer": "Utworzono bug RTG-41 z priorytetem Highest, przypisany do Iwony Stachowiak, w sprincie RTG Sprint 5."
+  },
+  {
+    "id": "train-0302",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "RTG",
+          "summary": "Update the PACS certificates",
+          "issue_type": "Task",
+          "additional_fields": "{\"labels\": [\"pacs\"]}"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "28"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "283",
+          "issue_keys": "RTG-41"
+        }
+      }
+    ],
+    "answer": "Utworzono task RTG-41 z labelem pacs w sprincie RTG Sprint 6."
+  },
+  {
+    "id": "train-0303",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "RTG"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "28"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "282",
+          "issue_keys": "RTG-19"
+        }
+      }
+    ],
+    "answer": "RTG-19 jest w sprincie RTG Sprint 5."
+  },
+  {
+    "id": "train-0304",
+    "calls": [
+      {
+        "name": "jira_move_issues_to_backlog",
+        "arguments": {
+          "issue_keys": "RTG-13"
+        }
+      }
+    ],
+    "answer": "RTG-13 jest w backlogu."
+  },
+  {
+    "id": "train-0305",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "RTG"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "28"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "284",
+          "issue_keys": "RTG-28"
+        }
+      }
+    ],
+    "answer": "RTG-28 jest w sprincie RTG Sprint 7."
+  },
+  {
+    "id": "train-0306",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND labels = teleradiology AND sprint in futureSprints()",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "28"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "282",
+          "issue_keys": "RTG-16,RTG-15"
+        }
+      }
+    ],
+    "answer": "Przeniesiono do RTG Sprint 5: RTG-16, RTG-15."
+  },
+  {
+    "id": "train-0307",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND summary ~ \"Ankieta\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "28"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "283",
+          "issue_keys": "RTG-25"
+        }
+      }
+    ],
+    "answer": "RTG-25 jest w sprincie RTG Sprint 6."
+  },
+  {
+    "id": "train-0308",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND type = Bug AND assignee is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Cieślak",
+          "project_key": "RTG"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "RTG-19",
+          "fields": "{\"assignee\": \"Bartłomiej Cieślak\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "RTG-12",
+          "fields": "{\"assignee\": \"Bartłomiej Cieślak\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Bartłomiejowi Cieślakowi: RTG-19, RTG-12."
+  },
+  {
+    "id": "train-0309",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND type = Bug AND labels = viewer AND statusCategory != Done",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "RTG-30",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "RTG-20",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Priorytet High mają teraz RTG-30 i RTG-20."
+  },
+  {
+    "id": "train-0310",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND labels = ultrasound",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "RTG-39",
+          "body": "Pracownia USG jest zamknięta w piątek."
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "RTG-31",
+          "body": "Pracownia USG jest zamknięta w piątek."
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "RTG-19",
+          "body": "Pracownia USG jest zamknięta w piątek."
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "RTG-7",
+          "body": "Pracownia USG jest zamknięta w piątek."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do RTG-39, RTG-31, RTG-19 i RTG-7."
+  },
+  {
+    "id": "train-0311",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND assignee = \"Iwona Stachowiak\" AND sprint is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Zalewski",
+          "project_key": "RTG"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "RTG-37",
+          "fields": "{\"assignee\": \"Bartłomiej Zalewski\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "RTG-25",
+          "fields": "{\"assignee\": \"Bartłomiej Zalewski\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "RTG-22",
+          "fields": "{\"assignee\": \"Bartłomiej Zalewski\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "RTG-21",
+          "fields": "{\"assignee\": \"Bartłomiej Zalewski\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Bartłomiejowi Zalewskiemu: RTG-37, RTG-25, RTG-22, RTG-21."
+  },
+  {
+    "id": "train-0312",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "RTG-5"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "RTG-5",
+          "transition_id": "51"
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "RTG-5",
+          "time_spent": "2h"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "RTG-5",
+          "body": "szablony sprawdzone z doktorem Nowakowskim."
+        }
+      }
+    ],
+    "answer": "RTG-5 ma status Done, zalogowano 2h i dodano komentarz."
+  },
+  {
+    "id": "train-0313",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "RTG-33"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "RTG-33",
+          "transition_id": "31"
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Zalewski",
+          "project_key": "RTG"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "RTG-33",
+          "fields": "{\"assignee\": \"Bartłomiej Zalewski\"}"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "RTG-33",
+          "body": "korekta ma nadpisywać dokument."
+        }
+      }
+    ],
+    "answer": "RTG-33 ma status In review, jest przypisane do Bartłomieja Zalewskiego i ma nowy komentarz."
+  },
+  {
+    "id": "train-0314",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND summary ~ \"speech\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND labels = reports AND status = \"In review\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "RTG-8"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "RTG-8",
+          "transition_id": "21"
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Erik",
+          "project_key": "RTG"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "RTG-8",
+          "fields": "{\"assignee\": \"Erik Johansson\"}"
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "RTG-8",
+          "time_spent": "1h",
+          "comment": "test of the Polish model"
+        }
+      }
+    ],
+    "answer": "RTG-8 ma status In Progress, jest przypisane do Erika Johanssona i zalogowano 1h."
+  },
+  {
+    "id": "train-0315",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND summary ~ \"licencjami\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND summary ~ \"Licencje\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "RTG-34",
+          "fields": "{\"priority\": {\"name\": \"Medium\"}}"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "28"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "283",
+          "issue_keys": "RTG-34"
+        }
+      }
+    ],
+    "answer": "RTG-34 ma priorytet Medium i jest w sprincie RTG Sprint 6."
+  },
+  {
+    "id": "train-0316",
+    "calls": [],
+    "answer": "ODMOWA: nie mam narzędzia do wysyłania e-maili. Mogę dodać komentarz do RTG-23."
+  },
+  {
+    "id": "train-0317",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Lucyna",
+          "project_key": "RTG"
+        }
+      }
+    ],
+    "answer": "ODMOWA: nie znalazłem w projekcie aktywnej osoby o imieniu Lucyna."
+  },
+  {
+    "id": "train-0318",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Bartłomiej",
+          "project_key": "RTG"
+        }
+      }
+    ],
+    "answer": "ODMOWA: w projekcie są dwie osoby o imieniu Bartłomiej: Bartłomiej Cieślak i Bartłomiej Zalewski. Napisz, o którego chodzi."
+  },
+  {
+    "id": "train-0319",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = RTG AND summary ~ \"USG\"",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "ODMOWA: pasuje kilka zgłoszeń z USG: RTG-39, RTG-31, RTG-19 i RTG-7. Napisz, o które chodzi."
+  },
+  {
+    "id": "train-0320",
+    "calls": [],
+    "answer": "ODMOWA: pomagam tylko w pracy z Jirą tego projektu."
+  },
+  {
+    "id": "train-0321",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "IT-15",
+          "fields": "summary,assignee"
+        }
+      }
+    ],
+    "answer": "IT-15 ma przypisaną osobę: Konstanty Bielawski."
+  },
+  {
+    "id": "train-0322",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "IT-27",
+          "fields": "priority"
+        }
+      }
+    ],
+    "answer": "IT-27 ma priorytet High."
+  },
+  {
+    "id": "train-0323",
+    "calls": [
+      {
+        "name": "jira_get_worklog",
+        "arguments": {
+          "issue_key": "IT-5"
+        }
+      }
+    ],
+    "answer": "Na IT-5 zalogowano łącznie 9h."
+  },
+  {
+    "id": "train-0324",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = IT AND labels = security AND sprint is EMPTY",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "5 zadań z labelem security nie ma sprintu."
+  },
+  {
+    "id": "train-0325",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = IT AND type = Bug AND labels = printers AND status in (Backlog, \"In Progress\", \"In review\")",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "Otwarte bugi z labelem printers: IT-41 i IT-6."
+  },
+  {
+    "id": "train-0326",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = IT AND summary ~ \"kamerą\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = IT AND summary ~ \"Kamera\"",
+          "fields": "summary,priority",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "IT-24 ma priorytet Medium."
+  },
+  {
+    "id": "train-0327",
+    "calls": [
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "IT-20",
+          "fields": "{\"priority\": {\"name\": \"Highest\"}}"
+        }
+      }
+    ],
+    "answer": "IT-20 ma teraz priorytet Highest."
+  },
+  {
+    "id": "train-0328",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Tadeusz",
+          "project_key": "IT"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "IT-37",
+          "fields": "{\"assignee\": \"Tadeusz Wrona\"}"
+        }
+      }
+    ],
+    "answer": "IT-37 jest przypisane do Tadeusza Wrony."
+  },
+  {
+    "id": "train-0329",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "IT-10"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "IT-10",
+          "transition_id": "51"
+        }
+      }
+    ],
+    "answer": "IT-10 ma status Done."
+  },
+  {
+    "id": "train-0330",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = IT AND summary ~ \"Bemowo\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Zawisza",
+          "project_key": "IT"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "IT-25",
+          "fields": "{\"priority\": {\"name\": \"Highest\"}, \"assignee\": \"Paulina Zawisza\"}"
+        }
+      }
+    ],
+    "answer": "IT-25 ma priorytet Highest i jest przypisane do Pauliny Zawiszy."
+  },
+  {
+    "id": "train-0331",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = IT AND summary ~ \"spieszy\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = IT AND summary ~ \"Zegar\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Konstanty",
+          "project_key": "IT"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "IT-35",
+          "fields": "{\"priority\": {\"name\": \"High\"}, \"assignee\": \"Konstanty Bielawski\"}"
+        }
+      }
+    ],
+    "answer": "IT-35 ma priorytet High i jest przypisane do Konstantego Bielawskiego."
+  },
+  {
+    "id": "train-0332",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = IT AND summary ~ \"zabiegowym\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Gajewska",
+          "project_key": "IT"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "IT-21",
+          "fields": "{\"assignee\": \"Paulina Gajewska\"}"
+        }
+      }
+    ],
+    "answer": "IT-21 jest przypisane do Pauliny Gajewskiej."
+  },
+  {
+    "id": "train-0333",
+    "calls": [
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "IT-7",
+          "time_spent": "3h",
+          "comment": "wymiana ROUTERA i konfiguracja LTE"
+        }
+      }
+    ],
+    "answer": "Zalogowano 3h na IT-7."
+  },
+  {
+    "id": "train-0334",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "IT-13",
+          "body": "Budżet na inwentaryzację to 6 tysięcy złotych, wszystkie placówki do końca grudnia."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do IT-13."
+  },
+  {
+    "id": "train-0335",
+    "calls": [
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "IT-6",
+          "time_spent": "45m",
+          "comment": "kalibracja drukarki recept"
+        }
+      }
+    ],
+    "answer": "Zalogowano 45m na IT-6."
+  },
+  {
+    "id": "train-0336",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = IT AND summary ~ \"Monitoring\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "IT-38",
+          "time_spent": "2h",
+          "comment": "wybór narzędzia"
+        }
+      }
+    ],
+    "answer": "Zalogowano 2h na IT-38."
+  },
+  {
+    "id": "train-0337",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = IT AND summary ~ \"przełącznikiem\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = IT AND summary ~ \"przełącznika\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "IT-42",
+          "body": "przełącznik zamówiony, montaż w sobotę"
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do IT-42."
+  },
+  {
+    "id": "train-0338",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "IT",
+          "summary": "Wi-Fi dla pacjentów w placówce Ursynów",
+          "issue_type": "Story",
+          "additional_fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "Utworzono story IT-44 z priorytetem High."
+  },
+  {
+    "id": "train-0339",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "IT",
+          "summary": "DRUKARKA w rejestracji Wola nie drukuje kodów kreskowych",
+          "issue_type": "Bug"
+        }
+      }
+    ],
+    "answer": "Utworzono bug IT-44."
+  },
+  {
+    "id": "train-0340",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "IT",
+          "summary": "Drugi monitor dla rejestracji na Mokotowie",
+          "issue_type": "Task"
+        }
+      }
+    ],
+    "answer": "Utworzono task IT-44."
+  },
+  {
+    "id": "train-0341",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Dominika",
+          "project_key": "IT"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "IT",
+          "summary": "Zakup 10 laptopów dla lekarzy",
+          "issue_type": "Task",
+          "assignee": "Dominika Ryba"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "29"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "293",
+          "issue_keys": "IT-44"
+        }
+      }
+    ],
+    "answer": "Utworzono task IT-44, przypisany do Dominiki Ryby, w sprincie IT Sprint 63."
+  },
+  {
+    "id": "train-0342",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "IT",
+          "summary": "Serwer kopii zapasowych nie wstaje po restarcie",
+          "issue_type": "Bug",
+          "additional_fields": "{\"priority\": {\"name\": \"Highest\"}, \"labels\": [\"backup\"]}"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "29"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "292",
+          "issue_keys": "IT-44"
+        }
+      }
+    ],
+    "answer": "Utworzono bug IT-44 z priorytetem Highest i labelem backup w sprincie IT Sprint 62."
+  },
+  {
+    "id": "train-0343",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "IT"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "29"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "292",
+          "issue_keys": "IT-27"
+        }
+      }
+    ],
+    "answer": "IT-27 jest w sprincie IT Sprint 62."
+  },
+  {
+    "id": "train-0344",
+    "calls": [
+      {
+        "name": "jira_move_issues_to_backlog",
+        "arguments": {
+          "issue_keys": "IT-13"
+        }
+      }
+    ],
+    "answer": "IT-13 jest w backlogu."
+  },
+  {
+    "id": "train-0345",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "IT"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "29"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "293",
+          "issue_keys": "IT-29"
+        }
+      }
+    ],
+    "answer": "IT-29 jest w sprincie IT Sprint 63."
+  },
+  {
+    "id": "train-0346",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = IT AND labels = backup AND sprint in futureSprints()",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "29"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "292",
+          "issue_keys": "IT-17,IT-16"
+        }
+      }
+    ],
+    "answer": "Przeniesiono do IT Sprint 62: IT-17, IT-16."
+  },
+  {
+    "id": "train-0347",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = IT AND summary ~ \"helpdesku\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "29"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "292",
+          "issue_keys": "IT-33"
+        }
+      }
+    ],
+    "answer": "IT-33 jest w sprincie IT Sprint 62."
+  },
+  {
+    "id": "train-0348",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = IT AND type = Bug AND assignee is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Gajewska",
+          "project_key": "IT"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "IT-35",
+          "fields": "{\"assignee\": \"Paulina Gajewska\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "IT-31",
+          "fields": "{\"assignee\": \"Paulina Gajewska\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "IT-27",
+          "fields": "{\"assignee\": \"Paulina Gajewska\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "IT-24",
+          "fields": "{\"assignee\": \"Paulina Gajewska\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "IT-22",
+          "fields": "{\"assignee\": \"Paulina Gajewska\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "IT-12",
+          "fields": "{\"assignee\": \"Paulina Gajewska\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Paulinie Gajewskiej: IT-35, IT-31, IT-27, IT-24, IT-22, IT-12."
+  },
+  {
+    "id": "train-0349",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = IT AND labels = printers AND status in (Backlog, \"In Progress\", \"In review\") AND priority != Low",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "IT-41",
+          "fields": "{\"priority\": {\"name\": \"Low\"}}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "IT-23",
+          "fields": "{\"priority\": {\"name\": \"Low\"}}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "IT-6",
+          "fields": "{\"priority\": {\"name\": \"Low\"}}"
+        }
+      }
+    ],
+    "answer": "Priorytet Low mają teraz IT-41, IT-23 i IT-6."
+  },
+  {
+    "id": "train-0350",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = IT AND labels = accounts AND status in (Backlog, \"In Progress\", \"In review\")",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "IT-36",
+          "body": "Proszę o kontakt z kadrami przed zmianą."
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "IT-22",
+          "body": "Proszę o kontakt z kadrami przed zmianą."
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "IT-14",
+          "body": "Proszę o kontakt z kadrami przed zmianą."
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "IT-8",
+          "body": "Proszę o kontakt z kadrami przed zmianą."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do IT-36, IT-22, IT-14 i IT-8."
+  },
+  {
+    "id": "train-0351",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = IT AND assignee = \"Arkadiusz Mikulski\" AND sprint is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Konstanty",
+          "project_key": "IT"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "IT-32",
+          "fields": "{\"assignee\": \"Konstanty Bielawski\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "IT-26",
+          "fields": "{\"assignee\": \"Konstanty Bielawski\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Konstantemu Bielawskiemu: IT-32, IT-26."
+  },
+  {
+    "id": "train-0352",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "IT-15"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "IT-15",
+          "transition_id": "51"
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "IT-15",
+          "time_spent": "2h"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "IT-15",
+          "body": "LOGOWANIE szybsze po zmianie DNS."
+        }
+      }
+    ],
+    "answer": "IT-15 ma status Done, zalogowano 2h i dodano komentarz."
+  },
+  {
+    "id": "train-0353",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "IT-12"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "IT-12",
+          "transition_id": "51"
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "IT-12",
+          "time_spent": "1h"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "IT-12",
+          "body": "Skaner zapisuje do folderu Rejestracja/Skany."
+        }
+      }
+    ],
+    "answer": "IT-12 ma status Done, zalogowano 1h i dodano komentarz."
+  },
+  {
+    "id": "train-0354",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = IT AND summary ~ \"Hasło\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Tadeusz",
+          "project_key": "IT"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "IT-31",
+          "fields": "{\"assignee\": \"Tadeusz Wrona\"}"
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "IT-31"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "IT-31",
+          "transition_id": "21"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "29"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "292",
+          "issue_keys": "IT-31"
+        }
+      }
+    ],
+    "answer": "IT-31 jest przypisane do Tadeusza Wrony, ma status In Progress i jest w sprincie IT Sprint 62."
+  },
+  {
+    "id": "train-0355",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = IT AND summary ~ \"antywirus\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = IT AND summary ~ \"Antivirus\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "29"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "292",
+          "issue_keys": "IT-18"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "IT-18",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "IT-18 jest w sprincie IT Sprint 62 i ma priorytet High."
+  },
+  {
+    "id": "train-0356",
+    "calls": [],
+    "answer": "ODMOWA: nie mam narzędzia do składania zamówień. Mogę założyć zadanie w projekcie."
+  },
+  {
+    "id": "train-0357",
+    "calls": [],
+    "answer": "ODMOWA: nie mam narzędzia do resetowania haseł."
+  },
+  {
+    "id": "train-0358",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Waldemar",
+          "project_key": "IT"
+        }
+      }
+    ],
+    "answer": "ODMOWA: nie znalazłem w projekcie aktywnej osoby o imieniu Waldemar."
+  },
+  {
+    "id": "train-0359",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "IT"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "29"
+        }
+      }
+    ],
+    "answer": "ODMOWA: na boardzie nie ma sprintu 70. Są sprinty od IT Sprint 61 do IT Sprint 64."
+  },
+  {
+    "id": "train-0360",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Paulina",
+          "project_key": "IT"
+        }
+      }
+    ],
+    "answer": "ODMOWA: w projekcie są dwie osoby o imieniu Paulina: Paulina Gajewska i Paulina Zawisza. Napisz, o którą chodzi."
+  },
+  {
+    "id": "train-0361",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "NFZ-24",
+          "fields": "summary,assignee"
+        }
+      }
+    ],
+    "answer": "NFZ-24 ma przypisaną osobę: Bożena Kmiecik."
+  },
+  {
+    "id": "train-0362",
+    "calls": [
+      {
+        "name": "jira_get_issue",
+        "arguments": {
+          "issue_key": "NFZ-6",
+          "fields": "status"
+        }
+      }
+    ],
+    "answer": "NFZ-6 ma status In Progress."
+  },
+  {
+    "id": "train-0363",
+    "calls": [
+      {
+        "name": "jira_get_worklog",
+        "arguments": {
+          "issue_key": "NFZ-4"
+        }
+      }
+    ],
+    "answer": "Na NFZ-4 zalogowano łącznie 3h."
+  },
+  {
+    "id": "train-0364",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = NFZ AND type = Bug AND labels = rejections AND statusCategory != Done",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "Jest 1 taki bug."
+  },
+  {
+    "id": "train-0365",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = NFZ AND labels = reports AND sprint in openSprints()",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "W bieżącym sprincie są NFZ-31, NFZ-13 i NFZ-7."
+  },
+  {
+    "id": "train-0366",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = NFZ AND summary ~ \"kontrolą\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = NFZ AND summary ~ \"Kontrola\"",
+          "fields": "summary,priority",
+          "limit": 10
+        }
+      }
+    ],
+    "answer": "NFZ-32 ma priorytet High."
+  },
+  {
+    "id": "train-0367",
+    "calls": [
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "NFZ-25",
+          "fields": "{\"priority\": {\"name\": \"Highest\"}}"
+        }
+      }
+    ],
+    "answer": "NFZ-25 ma teraz priorytet Highest."
+  },
+  {
+    "id": "train-0368",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Lipiński",
+          "project_key": "NFZ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "NFZ-30",
+          "fields": "{\"assignee\": \"Jakub Lipiński\"}"
+        }
+      }
+    ],
+    "answer": "NFZ-30 jest przypisane do Jakuba Lipińskiego."
+  },
+  {
+    "id": "train-0369",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "NFZ-7"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "NFZ-7",
+          "transition_id": "51"
+        }
+      }
+    ],
+    "answer": "NFZ-7 ma status Done."
+  },
+  {
+    "id": "train-0370",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = NFZ AND summary ~ \"rehabilitację\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Grażyna",
+          "project_key": "NFZ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "NFZ-27",
+          "fields": "{\"priority\": {\"name\": \"Highest\"}, \"assignee\": \"Grażyna Pietruszka\"}"
+        }
+      }
+    ],
+    "answer": "NFZ-27 ma priorytet Highest i jest przypisane do Grażyny Pietruszki."
+  },
+  {
+    "id": "train-0371",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = NFZ AND summary ~ \"outlierami\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = NFZ AND summary ~ \"Outliers\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Sowiński",
+          "project_key": "NFZ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "NFZ-33",
+          "fields": "{\"assignee\": \"Jakub Sowiński\", \"priority\": {\"name\": \"Medium\"}}"
+        }
+      }
+    ],
+    "answer": "NFZ-33 jest przypisane do Jakuba Sowińskiego i ma priorytet Medium."
+  },
+  {
+    "id": "train-0372",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = NFZ AND summary ~ \"zaokrąglenia\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "NFZ-36",
+          "fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      }
+    ],
+    "answer": "NFZ-36 ma teraz priorytet High."
+  },
+  {
+    "id": "train-0373",
+    "calls": [
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "NFZ-11",
+          "time_spent": "2h",
+          "comment": "lista świadczeń bez ICD-10 za październik"
+        }
+      }
+    ],
+    "answer": "Zalogowano 2h na NFZ-11."
+  },
+  {
+    "id": "train-0374",
+    "calls": [
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "NFZ-19",
+          "body": "Nadwykonania mają być rozliczone w tym kwartale, bez wymówek!"
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do NFZ-19."
+  },
+  {
+    "id": "train-0375",
+    "calls": [
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "NFZ-31",
+          "time_spent": "1h 30m",
+          "comment": "query przychodów po placówkach"
+        }
+      }
+    ],
+    "answer": "Zalogowano 1h 30m na NFZ-31."
+  },
+  {
+    "id": "train-0376",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = NFZ AND summary ~ \"teleporad\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "NFZ-30",
+          "time_spent": "1h",
+          "comment": "przegląd zarządzenia"
+        }
+      }
+    ],
+    "answer": "Zalogowano 1h na NFZ-30."
+  },
+  {
+    "id": "train-0377",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = NFZ AND summary ~ \"zduplikowanymi\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = NFZ AND summary ~ \"Wola\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "NFZ-24",
+          "body": "Kto to zaimportował, ma to wyjaśnić do piątku."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do NFZ-24."
+  },
+  {
+    "id": "train-0378",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "NFZ",
+          "summary": "Sprawozdanie za listopad do NFZ",
+          "issue_type": "Task",
+          "additional_fields": "{\"priority\": {\"name\": \"Highest\"}}"
+        }
+      }
+    ],
+    "answer": "Utworzono task NFZ-38 z priorytetem Highest."
+  },
+  {
+    "id": "train-0379",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "NFZ",
+          "summary": "Raport najlepszych placówek dla zarządu",
+          "issue_type": "Task"
+        }
+      }
+    ],
+    "answer": "Utworzono task NFZ-38."
+  },
+  {
+    "id": "train-0380",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "NFZ",
+          "summary": "Dashboard odrzuconych świadczeń według kodu błędu",
+          "issue_type": "Story"
+        }
+      }
+    ],
+    "answer": "Utworzono story NFZ-38."
+  },
+  {
+    "id": "train-0381",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Fabian",
+          "project_key": "NFZ"
+        }
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "NFZ",
+          "summary": "Kod świadczenia 5.01.00.0000089 odrzucany bez powodu",
+          "issue_type": "Bug",
+          "assignee": "Fabian Rogowski",
+          "additional_fields": "{\"priority\": {\"name\": \"High\"}}"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "30"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "302",
+          "issue_keys": "NFZ-38"
+        }
+      }
+    ],
+    "answer": "Utworzono bug NFZ-38 z priorytetem High, przypisany do Fabiana Rogowskiego, w sprincie NFZ Sprint 16."
+  },
+  {
+    "id": "train-0382",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_create_issue",
+        "arguments": {
+          "project_key": "NFZ",
+          "summary": "Lista placówek z najniższym przychodem z NFZ",
+          "issue_type": "Task",
+          "additional_fields": "{\"labels\": [\"reports\"]}"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "30"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "303",
+          "issue_keys": "NFZ-38"
+        }
+      }
+    ],
+    "answer": "Utworzono task NFZ-38 z labelem reports w sprincie NFZ Sprint 17."
+  },
+  {
+    "id": "train-0383",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "NFZ"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "30"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "302",
+          "issue_keys": "NFZ-19"
+        }
+      }
+    ],
+    "answer": "NFZ-19 jest w sprincie NFZ Sprint 16."
+  },
+  {
+    "id": "train-0384",
+    "calls": [
+      {
+        "name": "jira_move_issues_to_backlog",
+        "arguments": {
+          "issue_keys": "NFZ-13"
+        }
+      }
+    ],
+    "answer": "NFZ-13 jest w backlogu."
+  },
+  {
+    "id": "train-0385",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {
+          "project_key": "NFZ"
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "30"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "304",
+          "issue_keys": "NFZ-33"
+        }
+      }
+    ],
+    "answer": "NFZ-33 jest w sprincie NFZ Sprint 18."
+  },
+  {
+    "id": "train-0386",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = NFZ AND labels = prevention AND sprint in futureSprints()",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "30"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "302",
+          "issue_keys": "NFZ-15,NFZ-14"
+        }
+      }
+    ],
+    "answer": "Przeniesiono do NFZ Sprint 16: NFZ-15, NFZ-14."
+  },
+  {
+    "id": "train-0387",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = NFZ AND summary ~ \"Ranking\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "30"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "303",
+          "issue_keys": "NFZ-31"
+        }
+      }
+    ],
+    "answer": "NFZ-31 jest w sprincie NFZ Sprint 17."
+  },
+  {
+    "id": "train-0388",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = NFZ AND labels = contract AND assignee is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Grażyna",
+          "project_key": "NFZ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "NFZ-27",
+          "fields": "{\"assignee\": \"Grażyna Pietruszka\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "NFZ-25",
+          "fields": "{\"assignee\": \"Grażyna Pietruszka\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Grażynie Pietruszce: NFZ-27, NFZ-25."
+  },
+  {
+    "id": "train-0389",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = NFZ AND labels = ewus AND status in (Backlog, \"In Progress\", \"In review\")",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "NFZ-29",
+          "body": "Weryfikacja eWUŚ według komunikatu z 1 października."
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "NFZ-17",
+          "body": "Weryfikacja eWUŚ według komunikatu z 1 października."
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "NFZ-10",
+          "body": "Weryfikacja eWUŚ według komunikatu z 1 października."
+        }
+      }
+    ],
+    "answer": "Dodano komentarz do NFZ-29, NFZ-17 i NFZ-10."
+  },
+  {
+    "id": "train-0390",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = NFZ AND labels = reports AND sprint is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "NFZ-33",
+          "fields": "{\"priority\": {\"name\": \"Medium\"}}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "NFZ-23",
+          "fields": "{\"priority\": {\"name\": \"Medium\"}}"
+        }
+      }
+    ],
+    "answer": "Priorytet Medium mają teraz NFZ-33 i NFZ-23."
+  },
+  {
+    "id": "train-0391",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = NFZ AND assignee = \"Fabian Rogowski\" AND sprint is EMPTY",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Lipiński",
+          "project_key": "NFZ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "NFZ-37",
+          "fields": "{\"assignee\": \"Jakub Lipiński\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "NFZ-23",
+          "fields": "{\"assignee\": \"Jakub Lipiński\"}"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "NFZ-22",
+          "fields": "{\"assignee\": \"Jakub Lipiński\"}"
+        }
+      }
+    ],
+    "answer": "Przypisano Jakubowi Lipińskiemu: NFZ-37, NFZ-23, NFZ-22."
+  },
+  {
+    "id": "train-0392",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "NFZ-6"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "NFZ-6",
+          "transition_id": "51"
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "NFZ-6",
+          "time_spent": "3h"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "NFZ-6",
+          "body": "Wszystkie 140 pozycji poprawione."
+        }
+      }
+    ],
+    "answer": "NFZ-6 ma status Done, zalogowano 3h i dodano komentarz."
+  },
+  {
+    "id": "train-0393",
+    "calls": [
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "NFZ-5"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "NFZ-5",
+          "transition_id": "31"
+        }
+      },
+      {
+        "name": "jira_add_worklog",
+        "arguments": {
+          "issue_key": "NFZ-5",
+          "time_spent": "2h"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "NFZ-5",
+          "body": "Ostrzeżenie przetestowane na danych z października."
+        }
+      }
+    ],
+    "answer": "NFZ-5 ma status In review, zalogowano 2h i dodano komentarz."
+  },
+  {
+    "id": "train-0394",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = NFZ AND summary ~ \"nadwykonań\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Bożena",
+          "project_key": "NFZ"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "NFZ-19",
+          "fields": "{\"assignee\": \"Bożena Kmiecik\"}"
+        }
+      },
+      {
+        "name": "jira_get_transitions",
+        "arguments": {
+          "issue_key": "NFZ-19"
+        }
+      },
+      {
+        "name": "jira_transition_issue",
+        "arguments": {
+          "issue_key": "NFZ-19",
+          "transition_id": "21"
+        }
+      },
+      {
+        "name": "jira_add_comment",
+        "arguments": {
+          "issue_key": "NFZ-19",
+          "body": "Termin to piątek, bez dyskusji."
+        }
+      }
+    ],
+    "answer": "NFZ-19 jest przypisane do Bożeny Kmiecik, ma status In Progress i ma nowy komentarz."
+  },
+  {
+    "id": "train-0395",
+    "calls": [
+      {
+        "name": "jira_get_agile_boards",
+        "arguments": {}
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = NFZ AND summary ~ \"archiwizacją\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_search",
+        "arguments": {
+          "jql": "project = NFZ AND summary ~ \"sprawozdań\"",
+          "limit": 10
+        }
+      },
+      {
+        "name": "jira_get_sprints_from_board",
+        "arguments": {
+          "board_id": "30"
+        }
+      },
+      {
+        "name": "jira_add_issues_to_sprint",
+        "arguments": {
+          "sprint_id": "303",
+          "issue_keys": "NFZ-37"
+        }
+      },
+      {
+        "name": "jira_update_issue",
+        "arguments": {
+          "issue_key": "NFZ-37",
+          "fields": "{\"priority\": {\"name\": \"Medium\"}}"
+        }
+      }
+    ],
+    "answer": "NFZ-37 jest w sprincie NFZ Sprint 17 i ma priorytet Medium."
+  },
+  {
+    "id": "train-0396",
+    "calls": [],
+    "answer": "ODMOWA: nie mam narzędzia do wysyłania sprawozdań do NFZ. Mogę zmienić status zadania ze sprawozdaniem."
+  },
+  {
+    "id": "train-0397",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Irena",
+          "project_key": "NFZ"
+        }
+      }
+    ],
+    "answer": "ODMOWA: nie znalazłem w projekcie aktywnej osoby o imieniu Irena."
+  },
+  {
+    "id": "train-0398",
+    "calls": [
+      {
+        "name": "jira_search_assignable_users",
+        "arguments": {
+          "query": "Jakub",
+          "project_key": "NFZ"
+        }
+      }
+    ],
+    "answer": "ODMOWA: w projekcie są dwie osoby o imieniu Jakub: Jakub Sowiński i Jakub Lipiński. Napisz, o którego chodzi."
+  },
+  {
+    "id": "train-0399",
+    "calls": [],
+    "answer": "ODMOWA: pomagam tylko w pracy z Jirą tego projektu."
+  },
+  {
+    "id": "train-0400",
+    "calls": [],
+    "answer": "ODMOWA: pomagam tylko w pracy z Jirą tego projektu."
   }
 ]
