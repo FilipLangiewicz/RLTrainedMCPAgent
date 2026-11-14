@@ -607,3 +607,13 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - 117 tasks find the project with `jira_get_agile_boards` first. 20 tasks search again after an empty result.
 - Two tasks search again with a label after an empty text search.
 - All tasks passed the checks at the first build.
+
+### Train tasks of SolarDom and the full train set
+
+- Add 200 train tasks of SolarDom (`train-0801` to `train-1000`). The earlier tasks do not change.
+- The train set now has 1000 tasks on 25 boards:
+  - 375 `easy`, 500 `multi_step` and 125 `refusal` tasks
+  - the refusal kinds have the same proportions as on the test set
+  - 585 tasks find the project with `jira_get_agile_boards` first
+  - 100 tasks search again after an empty result
+- An extra check compared the keys in the answers of the 5 `ambiguous` refusals that use a search. All keys agree with the search results.

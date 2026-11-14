@@ -12058,5 +12058,3044 @@
     "category": "refusal",
     "difficulty": "refusal",
     "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0801",
+    "board": "train-dial",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Krystian Dudziak"
+    }
+  },
+  {
+    "id": "train-0802",
+    "board": "train-dial",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "In Progress"
+    }
+  },
+  {
+    "id": "train-0803",
+    "board": "train-dial",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 36000
+    }
+  },
+  {
+    "id": "train-0804",
+    "board": "train-dial",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 3
+    }
+  },
+  {
+    "id": "train-0805",
+    "board": "train-dial",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "DIAL-17",
+        "DIAL-16",
+        "DIAL-15"
+      ]
+    }
+  },
+  {
+    "id": "train-0806",
+    "board": "train-dial",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "person",
+      "value": "Natasza Bielska"
+    }
+  },
+  {
+    "id": "train-0807",
+    "board": "train-dial",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DIAL-37",
+        "field": "assignee",
+        "value": "Wiktor Rosiak"
+      }
+    ]
+  },
+  {
+    "id": "train-0808",
+    "board": "train-dial",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DIAL-30",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0809",
+    "board": "train-dial",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DIAL-9",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "train-0810",
+    "board": "train-dial",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DIAL-26",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "DIAL-26",
+        "field": "assignee",
+        "value": "Lidia Banaś"
+      }
+    ]
+  },
+  {
+    "id": "train-0811",
+    "board": "train-dial",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DIAL-31",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "DIAL-31",
+        "field": "assignee",
+        "value": "Lidia Banaś"
+      }
+    ]
+  },
+  {
+    "id": "train-0812",
+    "board": "train-dial",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DIAL-33",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "DIAL-33",
+        "field": "assignee",
+        "value": "Krystian Wilczyński"
+      }
+    ]
+  },
+  {
+    "id": "train-0813",
+    "board": "train-dial",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DIAL-5",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "strojenie współczynnika połączeń"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0814",
+    "board": "train-dial",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DIAL-24",
+        "comment": "Kampania dla gmin startuje w poniedziałek, cel 300 umówionych wizyt!"
+      }
+    ]
+  },
+  {
+    "id": "train-0815",
+    "board": "train-dial",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DIAL-29",
+        "worklog": {
+          "seconds": 1800,
+          "comment": "testy panelu z kierownikiem"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0816",
+    "board": "train-dial",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DIAL-22",
+        "comment": "Dostawca daje 10% rabatu przy 20 licencjach."
+      }
+    ]
+  },
+  {
+    "id": "train-0817",
+    "board": "train-dial",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DIAL-27",
+        "worklog": {
+          "seconds": 3600,
+          "comment": "analiza z października"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0818",
+    "board": "train-dial",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Ranking sali na żywo w telefonach telemarketerów",
+          "issue_type": "Story",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0819",
+    "board": "train-dial",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Dialer nie zapisuje statusu rozmowy po rozłączeniu",
+          "issue_type": "Bug",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0820",
+    "board": "train-dial",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Nowe krzeslo dla najlepszego telemarketera miesiaca",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0821",
+    "board": "train-dial",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Kampania jesienna dla domów z pompą ciepła",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Krystian Dudziak",
+          "labels": [],
+          "sprint": "DIAL Sprint 41"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0822",
+    "board": "train-dial",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Nagrania rozmów bez znacznika czasu",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": null,
+          "labels": [
+            "recording"
+          ],
+          "sprint": "DIAL Sprint 42"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0823",
+    "board": "train-dial",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DIAL-35",
+        "field": "sprint",
+        "value": "DIAL Sprint 41"
+      }
+    ]
+  },
+  {
+    "id": "train-0824",
+    "board": "train-dial",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DIAL-14",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0825",
+    "board": "train-dial",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "DIAL-36",
+        "field": "sprint",
+        "value": "DIAL Sprint 43"
+      }
+    ]
+  },
+  {
+    "id": "train-0826",
+    "board": "train-dial",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DIAL-31",
+        "field": "sprint",
+        "value": "DIAL Sprint 42"
+      },
+      {
+        "issue": "DIAL-38",
+        "field": "sprint",
+        "value": "DIAL Sprint 42"
+      }
+    ]
+  },
+  {
+    "id": "train-0827",
+    "board": "train-dial",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DIAL-39",
+        "field": "sprint",
+        "value": "DIAL Sprint 42"
+      }
+    ]
+  },
+  {
+    "id": "train-0828",
+    "board": "train-dial",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DIAL-23",
+        "field": "assignee",
+        "value": "Lidia Banaś"
+      },
+      {
+        "issue": "DIAL-26",
+        "field": "assignee",
+        "value": "Lidia Banaś"
+      },
+      {
+        "issue": "DIAL-30",
+        "field": "assignee",
+        "value": "Lidia Banaś"
+      }
+    ]
+  },
+  {
+    "id": "train-0829",
+    "board": "train-dial",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DIAL-11",
+        "comment": "Testy po aktualizacji dialera w środę."
+      },
+      {
+        "issue": "DIAL-33",
+        "comment": "Testy po aktualizacji dialera w środę."
+      },
+      {
+        "issue": "DIAL-39",
+        "comment": "Testy po aktualizacji dialera w środę."
+      }
+    ]
+  },
+  {
+    "id": "train-0830",
+    "board": "train-dial",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DIAL-9",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "DIAL-14",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "DIAL-36",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0831",
+    "board": "train-dial",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DIAL-18",
+        "field": "assignee",
+        "value": "Wiktor Rosiak"
+      },
+      {
+        "issue": "DIAL-24",
+        "field": "assignee",
+        "value": "Wiktor Rosiak"
+      },
+      {
+        "issue": "DIAL-25",
+        "field": "assignee",
+        "value": "Wiktor Rosiak"
+      },
+      {
+        "issue": "DIAL-32",
+        "field": "assignee",
+        "value": "Wiktor Rosiak"
+      }
+    ]
+  },
+  {
+    "id": "train-0832",
+    "board": "train-dial",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DIAL-12",
+        "field": "status",
+        "value": "In review"
+      },
+      {
+        "issue": "DIAL-12",
+        "worklog": {
+          "seconds": 10800,
+          "comment": null
+        }
+      },
+      {
+        "issue": "DIAL-12",
+        "comment": "lista 'nie dzwonić' działa teraz we wszystkich kampaniach."
+      }
+    ]
+  },
+  {
+    "id": "train-0833",
+    "board": "train-dial",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DIAL-8",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "DIAL-8",
+        "field": "assignee",
+        "value": "Krystian Wilczyński"
+      },
+      {
+        "issue": "DIAL-8",
+        "comment": "sluchawki dzialaja po nowym sterowniku"
+      }
+    ]
+  },
+  {
+    "id": "train-0834",
+    "board": "train-dial",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DIAL-36",
+        "field": "assignee",
+        "value": "Krystian Wilczyński"
+      },
+      {
+        "issue": "DIAL-36",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "DIAL-36",
+        "field": "sprint",
+        "value": "DIAL Sprint 41"
+      }
+    ]
+  },
+  {
+    "id": "train-0835",
+    "board": "train-dial",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "DIAL-23",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "DIAL-23",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "train-0836",
+    "board": "train-dial",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0837",
+    "board": "train-dial",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0838",
+    "board": "train-dial",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0839",
+    "board": "train-dial",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0840",
+    "board": "train-dial",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0841",
+    "board": "train-lead",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Sandra Lach"
+    }
+  },
+  {
+    "id": "train-0842",
+    "board": "train-lead",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "In Progress"
+    }
+  },
+  {
+    "id": "train-0843",
+    "board": "train-lead",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 25200
+    }
+  },
+  {
+    "id": "train-0844",
+    "board": "train-lead",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 4
+    }
+  },
+  {
+    "id": "train-0845",
+    "board": "train-lead",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "LEAD-17",
+        "LEAD-16"
+      ]
+    }
+  },
+  {
+    "id": "train-0846",
+    "board": "train-lead",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "person",
+      "value": "Zuzanna Rak"
+    }
+  },
+  {
+    "id": "train-0847",
+    "board": "train-lead",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "LEAD-18",
+        "field": "assignee",
+        "value": "Sandra Kozieł"
+      }
+    ]
+  },
+  {
+    "id": "train-0848",
+    "board": "train-lead",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "LEAD-30",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "train-0849",
+    "board": "train-lead",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "LEAD-7",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "train-0850",
+    "board": "train-lead",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LEAD-19",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "LEAD-19",
+        "field": "assignee",
+        "value": "Remigiusz Fabiański"
+      }
+    ]
+  },
+  {
+    "id": "train-0851",
+    "board": "train-lead",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LEAD-35",
+        "field": "assignee",
+        "value": "Sandra Kozieł"
+      },
+      {
+        "issue": "LEAD-35",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "train-0852",
+    "board": "train-lead",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LEAD-37",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "LEAD-37",
+        "field": "assignee",
+        "value": "Kajetan Wolny"
+      }
+    ]
+  },
+  {
+    "id": "train-0853",
+    "board": "train-lead",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "LEAD-5",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "regresja konwersji według regionu"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0854",
+    "board": "train-lead",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "LEAD-21",
+        "comment": "312 rekordów wróciło po imporcie z 3 października."
+      }
+    ]
+  },
+  {
+    "id": "train-0855",
+    "board": "train-lead",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "LEAD-29",
+        "worklog": {
+          "seconds": 3600,
+          "comment": "negocjacja ceny leadów z agencją"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0856",
+    "board": "train-lead",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LEAD-33",
+        "comment": "To dotyczy 18 400 rekordów."
+      }
+    ]
+  },
+  {
+    "id": "train-0857",
+    "board": "train-lead",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LEAD-13",
+        "worklog": {
+          "seconds": 1800,
+          "comment": "aktualizacja cennika"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0858",
+    "board": "train-lead",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Import bazy kontaktów z targów OZE w Kielcach",
+          "issue_type": "Task",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0859",
+    "board": "train-lead",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Umowa z nowym dostawcą leadów z Lublina",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0860",
+    "board": "train-lead",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Dashboard konwersji leadów według dnia tygodnia",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0861",
+    "board": "train-lead",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Import gubi zgody z kolumny E",
+          "issue_type": "Bug",
+          "priority": "Highest",
+          "assignee": "Zuzanna Rak",
+          "labels": [],
+          "sprint": "LEAD Sprint 13"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0862",
+    "board": "train-lead",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Scoring leadów według wieku dachu",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "scoring"
+          ],
+          "sprint": "LEAD Sprint 14"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0863",
+    "board": "train-lead",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "LEAD-18",
+        "field": "sprint",
+        "value": "LEAD Sprint 13"
+      }
+    ]
+  },
+  {
+    "id": "train-0864",
+    "board": "train-lead",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "LEAD-13",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0865",
+    "board": "train-lead",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "LEAD-36",
+        "field": "sprint",
+        "value": "LEAD Sprint 15"
+      }
+    ]
+  },
+  {
+    "id": "train-0866",
+    "board": "train-lead",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LEAD-14",
+        "field": "sprint",
+        "value": "LEAD Sprint 13"
+      },
+      {
+        "issue": "LEAD-15",
+        "field": "sprint",
+        "value": "LEAD Sprint 13"
+      }
+    ]
+  },
+  {
+    "id": "train-0867",
+    "board": "train-lead",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LEAD-23",
+        "field": "sprint",
+        "value": "LEAD Sprint 14"
+      }
+    ]
+  },
+  {
+    "id": "train-0868",
+    "board": "train-lead",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LEAD-12",
+        "field": "assignee",
+        "value": "Sandra Lach"
+      },
+      {
+        "issue": "LEAD-16",
+        "field": "assignee",
+        "value": "Sandra Lach"
+      },
+      {
+        "issue": "LEAD-18",
+        "field": "assignee",
+        "value": "Sandra Lach"
+      },
+      {
+        "issue": "LEAD-32",
+        "field": "assignee",
+        "value": "Sandra Lach"
+      }
+    ]
+  },
+  {
+    "id": "train-0869",
+    "board": "train-lead",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LEAD-11",
+        "comment": "Podział według nowego wzoru w arkuszu."
+      },
+      {
+        "issue": "LEAD-22",
+        "comment": "Podział według nowego wzoru w arkuszu."
+      },
+      {
+        "issue": "LEAD-32",
+        "comment": "Podział według nowego wzoru w arkuszu."
+      }
+    ]
+  },
+  {
+    "id": "train-0870",
+    "board": "train-lead",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LEAD-23",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "LEAD-28",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "LEAD-34",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0871",
+    "board": "train-lead",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LEAD-21",
+        "field": "assignee",
+        "value": "Kajetan Wolny"
+      },
+      {
+        "issue": "LEAD-28",
+        "field": "assignee",
+        "value": "Kajetan Wolny"
+      },
+      {
+        "issue": "LEAD-31",
+        "field": "assignee",
+        "value": "Kajetan Wolny"
+      },
+      {
+        "issue": "LEAD-34",
+        "field": "assignee",
+        "value": "Kajetan Wolny"
+      }
+    ]
+  },
+  {
+    "id": "train-0872",
+    "board": "train-lead",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LEAD-8",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "LEAD-8",
+        "worklog": {
+          "seconds": 3600,
+          "comment": null
+        }
+      },
+      {
+        "issue": "LEAD-8",
+        "comment": "filtr usuwa 22% rekordów."
+      }
+    ]
+  },
+  {
+    "id": "train-0873",
+    "board": "train-lead",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LEAD-4",
+        "field": "status",
+        "value": "In review"
+      },
+      {
+        "issue": "LEAD-4",
+        "worklog": {
+          "seconds": 10800,
+          "comment": null
+        }
+      },
+      {
+        "issue": "LEAD-4",
+        "comment": "Zostało 9 812 unikalnych numerów."
+      }
+    ]
+  },
+  {
+    "id": "train-0874",
+    "board": "train-lead",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LEAD-25",
+        "field": "assignee",
+        "value": "Remigiusz Fabiański"
+      },
+      {
+        "issue": "LEAD-25",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "LEAD-25",
+        "field": "sprint",
+        "value": "LEAD Sprint 13"
+      }
+    ]
+  },
+  {
+    "id": "train-0875",
+    "board": "train-lead",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "LEAD-31",
+        "field": "sprint",
+        "value": "LEAD Sprint 13"
+      },
+      {
+        "issue": "LEAD-31",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0876",
+    "board": "train-lead",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0877",
+    "board": "train-lead",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0878",
+    "board": "train-lead",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0879",
+    "board": "train-lead",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0880",
+    "board": "train-lead",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0881",
+    "board": "train-skr",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Laura Jankowska"
+    }
+  },
+  {
+    "id": "train-0882",
+    "board": "train-skr",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "In Progress"
+    }
+  },
+  {
+    "id": "train-0883",
+    "board": "train-skr",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 21600
+    }
+  },
+  {
+    "id": "train-0884",
+    "board": "train-skr",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 4
+    }
+  },
+  {
+    "id": "train-0885",
+    "board": "train-skr",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "SKR-36",
+        "SKR-30",
+        "SKR-18",
+        "SKR-17",
+        "SKR-11",
+        "SKR-10",
+        "SKR-6"
+      ]
+    }
+  },
+  {
+    "id": "train-0886",
+    "board": "train-skr",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "value",
+      "value": "Medium"
+    }
+  },
+  {
+    "id": "train-0887",
+    "board": "train-skr",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SKR-21",
+        "field": "assignee",
+        "value": "Adam Pietras"
+      }
+    ]
+  },
+  {
+    "id": "train-0888",
+    "board": "train-skr",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SKR-33",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "train-0889",
+    "board": "train-skr",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SKR-8",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "train-0890",
+    "board": "train-skr",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SKR-36",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "SKR-36",
+        "field": "assignee",
+        "value": "Laura Jankowska"
+      }
+    ]
+  },
+  {
+    "id": "train-0891",
+    "board": "train-skr",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SKR-24",
+        "field": "assignee",
+        "value": "Kinga Rataj"
+      },
+      {
+        "issue": "SKR-24",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0892",
+    "board": "train-skr",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SKR-25",
+        "field": "priority",
+        "value": "Medium"
+      },
+      {
+        "issue": "SKR-25",
+        "field": "assignee",
+        "value": "Hieronim Bąkowski"
+      }
+    ]
+  },
+  {
+    "id": "train-0893",
+    "board": "train-skr",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SKR-15",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "trzy wersje odpowiedzi o zimie"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0894",
+    "board": "train-skr",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SKR-5",
+        "comment": "Wersja B ma 12% więcej umówionych wizyt!"
+      }
+    ]
+  },
+  {
+    "id": "train-0895",
+    "board": "train-skr",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SKR-11",
+        "comment": "Klienci pytają o to w co trzeciej rozmowie."
+      }
+    ]
+  },
+  {
+    "id": "train-0896",
+    "board": "train-skr",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SKR-12",
+        "comment": "Kwestia „Dziękuję za rozmowę, miłego dnia” zostaje bez zmian."
+      }
+    ]
+  },
+  {
+    "id": "train-0897",
+    "board": "train-skr",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SKR-28",
+        "worklog": {
+          "seconds": 3600,
+          "comment": "regulamin konkursu"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0898",
+    "board": "train-skr",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Skrypt dla klientów z dużymi rachunkami za prąd",
+          "issue_type": "Task",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0899",
+    "board": "train-skr",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Nowa odpowiedź na obiekcję 'za drogo'",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0900",
+    "board": "train-skr",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Skrypt rozmowy z osobą słabosłyszącą",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0901",
+    "board": "train-skr",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Szkolenie z technik zamykania rozmowy",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Adam Pietras",
+          "labels": [],
+          "sprint": "SKR Sprint 22"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0902",
+    "board": "train-skr",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Skrypt dla właścicieli domków letniskowych",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "script"
+          ],
+          "sprint": "SKR Sprint 23"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0903",
+    "board": "train-skr",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SKR-18",
+        "field": "sprint",
+        "value": "SKR Sprint 22"
+      }
+    ]
+  },
+  {
+    "id": "train-0904",
+    "board": "train-skr",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SKR-13",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0905",
+    "board": "train-skr",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SKR-19",
+        "field": "sprint",
+        "value": "SKR Sprint 24"
+      }
+    ]
+  },
+  {
+    "id": "train-0906",
+    "board": "train-skr",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SKR-21",
+        "field": "sprint",
+        "value": "SKR Sprint 23"
+      },
+      {
+        "issue": "SKR-22",
+        "field": "sprint",
+        "value": "SKR Sprint 23"
+      },
+      {
+        "issue": "SKR-28",
+        "field": "sprint",
+        "value": "SKR Sprint 23"
+      }
+    ]
+  },
+  {
+    "id": "train-0907",
+    "board": "train-skr",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SKR-27",
+        "field": "sprint",
+        "value": "SKR Sprint 22"
+      }
+    ]
+  },
+  {
+    "id": "train-0908",
+    "board": "train-skr",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SKR-18",
+        "field": "assignee",
+        "value": "Kinga Szewc"
+      },
+      {
+        "issue": "SKR-30",
+        "field": "assignee",
+        "value": "Kinga Szewc"
+      }
+    ]
+  },
+  {
+    "id": "train-0909",
+    "board": "train-skr",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SKR-16",
+        "comment": "Kwestie powitania muszą być takie same w obu skryptach."
+      },
+      {
+        "issue": "SKR-35",
+        "comment": "Kwestie powitania muszą być takie same w obu skryptach."
+      }
+    ]
+  },
+  {
+    "id": "train-0910",
+    "board": "train-skr",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SKR-9",
+        "field": "priority",
+        "value": "Medium"
+      },
+      {
+        "issue": "SKR-25",
+        "field": "priority",
+        "value": "Medium"
+      },
+      {
+        "issue": "SKR-33",
+        "field": "priority",
+        "value": "Medium"
+      },
+      {
+        "issue": "SKR-37",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "train-0911",
+    "board": "train-skr",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SKR-27",
+        "field": "assignee",
+        "value": "Adam Pietras"
+      },
+      {
+        "issue": "SKR-28",
+        "field": "assignee",
+        "value": "Adam Pietras"
+      }
+    ]
+  },
+  {
+    "id": "train-0912",
+    "board": "train-skr",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SKR-7",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "SKR-7",
+        "worklog": {
+          "seconds": 7200,
+          "comment": null
+        }
+      },
+      {
+        "issue": "SKR-7",
+        "comment": "Odpowiedź przetestowana na 40 rozmowach."
+      }
+    ]
+  },
+  {
+    "id": "train-0913",
+    "board": "train-skr",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SKR-4",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "SKR-4",
+        "worklog": {
+          "seconds": 3600,
+          "comment": null
+        }
+      },
+      {
+        "issue": "SKR-4",
+        "comment": "Bez obietnicy zerowych rachunków, tylko kredyt i dopłata."
+      }
+    ]
+  },
+  {
+    "id": "train-0914",
+    "board": "train-skr",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SKR-29",
+        "field": "assignee",
+        "value": "Hieronim Bąkowski"
+      },
+      {
+        "issue": "SKR-29",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "SKR-29",
+        "comment": "Gwarancja na panele wynosi 25 lat."
+      }
+    ]
+  },
+  {
+    "id": "train-0915",
+    "board": "train-skr",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SKR-30",
+        "field": "sprint",
+        "value": "SKR Sprint 22"
+      },
+      {
+        "issue": "SKR-30",
+        "field": "assignee",
+        "value": "Kinga Szewc"
+      }
+    ]
+  },
+  {
+    "id": "train-0916",
+    "board": "train-skr",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0917",
+    "board": "train-skr",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0918",
+    "board": "train-skr",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0919",
+    "board": "train-skr",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0920",
+    "board": "train-skr",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-0921",
+    "board": "train-umw",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Grzegorz Lenart"
+    }
+  },
+  {
+    "id": "train-0922",
+    "board": "train-umw",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "In Progress"
+    }
+  },
+  {
+    "id": "train-0923",
+    "board": "train-umw",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 18000
+    }
+  },
+  {
+    "id": "train-0924",
+    "board": "train-umw",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 7
+    }
+  },
+  {
+    "id": "train-0925",
+    "board": "train-umw",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "UMW-32",
+        "UMW-30",
+        "UMW-19"
+      ]
+    }
+  },
+  {
+    "id": "train-0926",
+    "board": "train-umw",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "value",
+      "value": "Medium"
+    }
+  },
+  {
+    "id": "train-0927",
+    "board": "train-umw",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "UMW-20",
+        "field": "assignee",
+        "value": "Lech Kowalik"
+      }
+    ]
+  },
+  {
+    "id": "train-0928",
+    "board": "train-umw",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "UMW-31",
+        "field": "priority",
+        "value": "Low"
+      }
+    ]
+  },
+  {
+    "id": "train-0929",
+    "board": "train-umw",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "UMW-7",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "train-0930",
+    "board": "train-umw",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "UMW-33",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "UMW-33",
+        "field": "assignee",
+        "value": "Daria Bielak"
+      }
+    ]
+  },
+  {
+    "id": "train-0931",
+    "board": "train-umw",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "UMW-21",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "UMW-21",
+        "field": "assignee",
+        "value": "Teodora Wasiak"
+      }
+    ]
+  },
+  {
+    "id": "train-0932",
+    "board": "train-umw",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "UMW-39",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "UMW-39",
+        "field": "assignee",
+        "value": "Aneta Zych"
+      }
+    ]
+  },
+  {
+    "id": "train-0933",
+    "board": "train-umw",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "UMW-16",
+        "worklog": {
+          "seconds": 10800,
+          "comment": "zdjęcia dachów w Kielcach i Sitkówce"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0934",
+    "board": "train-umw",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "UMW-14",
+        "comment": "Pierwsze montaże w Busku-Zdroju 4 i 5 listopada."
+      }
+    ]
+  },
+  {
+    "id": "train-0935",
+    "board": "train-umw",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "UMW-18",
+        "comment": "Regulamin dołączono do wszystkich umów z października."
+      }
+    ]
+  },
+  {
+    "id": "train-0936",
+    "board": "train-umw",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "UMW-29",
+        "worklog": {
+          "seconds": 5400,
+          "comment": "aktualizacja rejonów"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0937",
+    "board": "train-umw",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "UMW-38",
+        "comment": "Wzór protokołu zatwierdzony przez prawniczkę."
+      }
+    ]
+  },
+  {
+    "id": "train-0938",
+    "board": "train-umw",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Grafik doradców na grudzień w rejonie Sandomierz",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0939",
+    "board": "train-umw",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Mapa w tablecie pokazuje zły adres w Morawicy",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0940",
+    "board": "train-umw",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Wzór oświadczenia o odstąpieniu w wersji papierowej",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0941",
+    "board": "train-umw",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Wizyty doradców w gminie Chmielnik",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Grzegorz Mularczyk",
+          "labels": [],
+          "sprint": "UMW Sprint 8"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0942",
+    "board": "train-umw",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Rejestr umów kredytowych",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "finance"
+          ],
+          "sprint": "UMW Sprint 9"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0943",
+    "board": "train-umw",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "UMW-30",
+        "field": "sprint",
+        "value": "UMW Sprint 8"
+      }
+    ]
+  },
+  {
+    "id": "train-0944",
+    "board": "train-umw",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "UMW-11",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0945",
+    "board": "train-umw",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "UMW-27",
+        "field": "sprint",
+        "value": "UMW Sprint 10"
+      }
+    ]
+  },
+  {
+    "id": "train-0946",
+    "board": "train-umw",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "UMW-16",
+        "field": "sprint",
+        "value": "UMW Sprint 8"
+      },
+      {
+        "issue": "UMW-17",
+        "field": "sprint",
+        "value": "UMW Sprint 8"
+      }
+    ]
+  },
+  {
+    "id": "train-0947",
+    "board": "train-umw",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "UMW-35",
+        "field": "sprint",
+        "value": "UMW Sprint 8"
+      }
+    ]
+  },
+  {
+    "id": "train-0948",
+    "board": "train-umw",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "UMW-12",
+        "field": "assignee",
+        "value": "Lech Kowalik"
+      },
+      {
+        "issue": "UMW-20",
+        "field": "assignee",
+        "value": "Lech Kowalik"
+      },
+      {
+        "issue": "UMW-30",
+        "field": "assignee",
+        "value": "Lech Kowalik"
+      },
+      {
+        "issue": "UMW-34",
+        "field": "assignee",
+        "value": "Lech Kowalik"
+      },
+      {
+        "issue": "UMW-36",
+        "field": "assignee",
+        "value": "Lech Kowalik"
+      }
+    ]
+  },
+  {
+    "id": "train-0949",
+    "board": "train-umw",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "UMW-5",
+        "comment": "Termin na odstąpienie liczymy od dnia podpisania umowy."
+      },
+      {
+        "issue": "UMW-19",
+        "comment": "Termin na odstąpienie liczymy od dnia podpisania umowy."
+      },
+      {
+        "issue": "UMW-30",
+        "comment": "Termin na odstąpienie liczymy od dnia podpisania umowy."
+      },
+      {
+        "issue": "UMW-32",
+        "comment": "Termin na odstąpienie liczymy od dnia podpisania umowy."
+      }
+    ]
+  },
+  {
+    "id": "train-0950",
+    "board": "train-umw",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "UMW-8",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "UMW-15",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "UMW-23",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "UMW-34",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "UMW-39",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0951",
+    "board": "train-umw",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "UMW-18",
+        "field": "assignee",
+        "value": "Daria Bielak"
+      },
+      {
+        "issue": "UMW-22",
+        "field": "assignee",
+        "value": "Daria Bielak"
+      },
+      {
+        "issue": "UMW-24",
+        "field": "assignee",
+        "value": "Daria Bielak"
+      },
+      {
+        "issue": "UMW-25",
+        "field": "assignee",
+        "value": "Daria Bielak"
+      },
+      {
+        "issue": "UMW-26",
+        "field": "assignee",
+        "value": "Daria Bielak"
+      }
+    ]
+  },
+  {
+    "id": "train-0952",
+    "board": "train-umw",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "UMW-16",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "UMW-16",
+        "worklog": {
+          "seconds": 7200,
+          "comment": null
+        }
+      },
+      {
+        "issue": "UMW-16",
+        "comment": "zdjęcia dachów w umowach od dziś."
+      }
+    ]
+  },
+  {
+    "id": "train-0953",
+    "board": "train-umw",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "UMW-5",
+        "field": "status",
+        "value": "In review"
+      },
+      {
+        "issue": "UMW-5",
+        "worklog": {
+          "seconds": 7200,
+          "comment": null
+        }
+      },
+      {
+        "issue": "UMW-5",
+        "comment": "Rejestr odstąpień gotowy do weryfikacji."
+      }
+    ]
+  },
+  {
+    "id": "train-0954",
+    "board": "train-umw",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "UMW-37",
+        "field": "assignee",
+        "value": "Aneta Zych"
+      },
+      {
+        "issue": "UMW-37",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "UMW-37",
+        "field": "sprint",
+        "value": "UMW Sprint 8"
+      }
+    ]
+  },
+  {
+    "id": "train-0955",
+    "board": "train-umw",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "UMW-36",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "UMW-36",
+        "comment": "klienci w Pińczowie się skarżą."
+      }
+    ]
+  },
+  {
+    "id": "train-0956",
+    "board": "train-umw",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0957",
+    "board": "train-umw",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0958",
+    "board": "train-umw",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0959",
+    "board": "train-umw",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0960",
+    "board": "train-umw",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0961",
+    "board": "train-rodo",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Gabriela Sroka"
+    }
+  },
+  {
+    "id": "train-0962",
+    "board": "train-rodo",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "Backlog"
+    }
+  },
+  {
+    "id": "train-0963",
+    "board": "train-rodo",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 25200
+    }
+  },
+  {
+    "id": "train-0964",
+    "board": "train-rodo",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 8
+    }
+  },
+  {
+    "id": "train-0965",
+    "board": "train-rodo",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "RODO-32",
+        "RODO-13",
+        "RODO-5"
+      ]
+    }
+  },
+  {
+    "id": "train-0966",
+    "board": "train-rodo",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "person",
+      "value": "Kamila Dziedzic"
+    }
+  },
+  {
+    "id": "train-0967",
+    "board": "train-rodo",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RODO-22",
+        "field": "assignee",
+        "value": "Borys Lewczuk"
+      }
+    ]
+  },
+  {
+    "id": "train-0968",
+    "board": "train-rodo",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RODO-25",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0969",
+    "board": "train-rodo",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RODO-8",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "train-0970",
+    "board": "train-rodo",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RODO-20",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "RODO-20",
+        "field": "assignee",
+        "value": "Urszula Strzelecka"
+      }
+    ]
+  },
+  {
+    "id": "train-0971",
+    "board": "train-rodo",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RODO-38",
+        "field": "assignee",
+        "value": "Kamila Dziedzic"
+      },
+      {
+        "issue": "RODO-38",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0972",
+    "board": "train-rodo",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RODO-27",
+        "field": "priority",
+        "value": "Medium"
+      },
+      {
+        "issue": "RODO-27",
+        "field": "assignee",
+        "value": "Gabriela Sroka"
+      }
+    ]
+  },
+  {
+    "id": "train-0973",
+    "board": "train-rodo",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RODO-5",
+        "worklog": {
+          "seconds": 10800,
+          "comment": "analiza umowy ze sprzedawcą bazy"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0974",
+    "board": "train-rodo",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RODO-10",
+        "comment": "Przeprosić klientkę i zablokować numer. Bez dyskusji."
+      }
+    ]
+  },
+  {
+    "id": "train-0975",
+    "board": "train-rodo",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RODO-4",
+        "comment": "Mamy 27 otwartych skarg na koniec tygodnia."
+      }
+    ]
+  },
+  {
+    "id": "train-0976",
+    "board": "train-rodo",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RODO-22",
+        "comment": "Umowa z inspektorem zewnętrznym do podpisu w piątek."
+      }
+    ]
+  },
+  {
+    "id": "train-0977",
+    "board": "train-rodo",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RODO-19",
+        "worklog": {
+          "seconds": 3600,
+          "comment": "przegląd komentarzy z Facebooka"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0978",
+    "board": "train-rodo",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Odpowiedź na pytania UODO z 20 października",
+          "issue_type": "Task",
+          "priority": "Highest",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0979",
+    "board": "train-rodo",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Skarga klienta z Ostrowca na nagrywanie bez zgody",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0980",
+    "board": "train-rodo",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Lista skarg do zamknięcia przed końcem roku",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0981",
+    "board": "train-rodo",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Aktualizacja klauzuli informacyjnej w skrypcie",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Borys Lewczuk",
+          "labels": [],
+          "sprint": "RODO Sprint 3"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0982",
+    "board": "train-rodo",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Szablon przeprosin dla klientów po sprzeciwie",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "templates"
+          ],
+          "sprint": "RODO Sprint 4"
+        }
+      }
+    ]
+  },
+  {
+    "id": "train-0983",
+    "board": "train-rodo",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RODO-21",
+        "field": "sprint",
+        "value": "RODO Sprint 3"
+      }
+    ]
+  },
+  {
+    "id": "train-0984",
+    "board": "train-rodo",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RODO-11",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "train-0985",
+    "board": "train-rodo",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "RODO-24",
+        "field": "sprint",
+        "value": "RODO Sprint 5"
+      }
+    ]
+  },
+  {
+    "id": "train-0986",
+    "board": "train-rodo",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RODO-15",
+        "field": "sprint",
+        "value": "RODO Sprint 3"
+      },
+      {
+        "issue": "RODO-17",
+        "field": "sprint",
+        "value": "RODO Sprint 3"
+      }
+    ]
+  },
+  {
+    "id": "train-0987",
+    "board": "train-rodo",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RODO-35",
+        "field": "sprint",
+        "value": "RODO Sprint 3"
+      }
+    ]
+  },
+  {
+    "id": "train-0988",
+    "board": "train-rodo",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RODO-12",
+        "field": "assignee",
+        "value": "Kamila Pyka"
+      },
+      {
+        "issue": "RODO-18",
+        "field": "assignee",
+        "value": "Kamila Pyka"
+      },
+      {
+        "issue": "RODO-35",
+        "field": "assignee",
+        "value": "Kamila Pyka"
+      }
+    ]
+  },
+  {
+    "id": "train-0989",
+    "board": "train-rodo",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RODO-12",
+        "comment": "Lista 'nie dzwonić' musi być sprawdzana przed każdą kampanią."
+      },
+      {
+        "issue": "RODO-28",
+        "comment": "Lista 'nie dzwonić' musi być sprawdzana przed każdą kampanią."
+      },
+      {
+        "issue": "RODO-38",
+        "comment": "Lista 'nie dzwonić' musi być sprawdzana przed każdą kampanią."
+      }
+    ]
+  },
+  {
+    "id": "train-0990",
+    "board": "train-rodo",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RODO-6",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "RODO-7",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "RODO-23",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "RODO-31",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0991",
+    "board": "train-rodo",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RODO-30",
+        "field": "assignee",
+        "value": "Urszula Strzelecka"
+      },
+      {
+        "issue": "RODO-33",
+        "field": "assignee",
+        "value": "Urszula Strzelecka"
+      }
+    ]
+  },
+  {
+    "id": "train-0992",
+    "board": "train-rodo",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RODO-4",
+        "field": "status",
+        "value": "In review"
+      },
+      {
+        "issue": "RODO-4",
+        "worklog": {
+          "seconds": 7200,
+          "comment": null
+        }
+      },
+      {
+        "issue": "RODO-4",
+        "comment": "Wszystkie skargi z października mają odpowiedź."
+      }
+    ]
+  },
+  {
+    "id": "train-0993",
+    "board": "train-rodo",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RODO-7",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "RODO-7",
+        "worklog": {
+          "seconds": 3600,
+          "comment": null
+        }
+      },
+      {
+        "issue": "RODO-7",
+        "comment": "Wzór odpowiedzi zatwierdzony."
+      }
+    ]
+  },
+  {
+    "id": "train-0994",
+    "board": "train-rodo",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RODO-13",
+        "field": "assignee",
+        "value": "Kamila Pyka"
+      },
+      {
+        "issue": "RODO-13",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "RODO-13",
+        "comment": "Odpowiedź ma być gotowa w tym tygodniu."
+      }
+    ]
+  },
+  {
+    "id": "train-0995",
+    "board": "train-rodo",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "RODO-33",
+        "field": "sprint",
+        "value": "RODO Sprint 3"
+      },
+      {
+        "issue": "RODO-33",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "train-0996",
+    "board": "train-rodo",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "train-0997",
+    "board": "train-rodo",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "train-0998",
+    "board": "train-rodo",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "train-0999",
+    "board": "train-rodo",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "train-1000",
+    "board": "train-rodo",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
   }
 ]
