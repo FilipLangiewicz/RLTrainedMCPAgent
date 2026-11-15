@@ -550,3 +550,34 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
   | Qwen3.5-4B | 207 |
 
 - Decision: after SFT, the probe runs again on train or validation tasks. The team selects the models for RL from this second probe. An RL job saves a checkpoint and continues in the next job, because a Kaggle session stops after 12 h.
+
+## 2026-11-13
+
+- Branch `07-rl-method`. Jobs 51 to 61 measured the generation engine and the GPU layout of an RL step on two T4 GPUs. The results are in `jobs/JOBS.md` and `docs/RL_METHODS.md`.
+- vLLM 0.33 runs on the T4 in fp16 for all six models. It needs its own environment. Gemma 4 needs a patch of the tile size, because the T4 has 64 KB of shared memory.
+- vLLM writes 64 rollouts 2 to 9 times faster than `transformers` on one GPU. The success rates are the same.
+- The log-probabilities of vLLM and of `transformers` differ by 0.0008 to 0.0027 on average, also with a LoRA adapter. The save and the load of an adapter take less than 1 s.
+- Add to `src/rl_probe.py` the engines `vllm`, `pipeline` and `sleep`.
+- Job 59 measured full RL steps (64 rollouts, vLLM on GPU 0 and the trainer on GPU 1) without an optimizer step. Job 61 tested a layout in which vLLM sleeps and two trainer copies use both GPUs. This layout failed three times, so the team does not use it.
+- The backward pass takes most of each step. The estimate of 2026-11-12 is not correct. These times for 200 steps replace it:
+
+  | Model | Layout | Hours |
+  |---|---|---|
+  | Bielik 1.5B | vLLM and trainer | 19 |
+  | Gemma 4 E2B | `transformers` on two GPUs | 39 |
+  | Gemma 4 E4B | `transformers` on two GPUs | 67 |
+  | Bielik 4.5B | vLLM and trainer (estimate) | 53 |
+  | Qwen3.5-2B | vLLM and trainer | 95 |
+  | Qwen3.5-4B | vLLM and trainer (estimate) | 210 |
+
+- Update the interactive page with these results.
+
+## 2026-11-15
+
+- The team accepted the decisions of idm-pro-047. The list is in a comment of the issue and in `docs/RL_METHODS.md`:
+  - GRPO in TRL with the DAPO and Dr. GRPO changes, and LoRA with rank 16;
+  - a binary reward (a partial reward is a possible later variant);
+  - no RFT round before GRPO;
+  - vLLM and the trainer on separate GPUs for Bielik and Qwen, `transformers` on both GPUs for Gemma 4.
+- The models for RL are open. The team selects them after the second probe on the SFT models.
+- A comment in idm-pro-048 tells that the RL code must use these results.
