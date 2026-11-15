@@ -490,11 +490,12 @@ class LocalModel(Model):
     backend = "transformers"
 
     def __init__(self, family: str, path: str, revision: str | None = None, thinking: bool = False,
-                 dtype: str = "bfloat16", max_new_tokens: int = 1024, device: str | None = None):
+                 dtype: str = "bfloat16", max_new_tokens: int = 1024, device: str | None = None,
+                 temperature: float = 0.0):
         import torch
 
         super().__init__(get_family(family), path, revision, thinking)
-        self.torch, self.max_new_tokens = torch, max_new_tokens
+        self.torch, self.max_new_tokens, self.temperature = torch, max_new_tokens, temperature
         # The device "auto" splits a model that is too large for one GPU over all GPUs.
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
         avoid_gqa_in_sdpa()
@@ -510,9 +511,11 @@ class LocalModel(Model):
         self.steps += 1
         prompt = self.family.render(self.tokenizer, messages, tools, self.thinking)
         inputs = self.tokenizer(prompt, return_tensors="pt", add_special_tokens=False).to(self.device)
+        # RL needs samples from the full distribution. Thus a temperature above 0 disables top-k and top-p.
+        sampling = ({"do_sample": True, "temperature": self.temperature, "top_p": 1.0, "top_k": 0} if self.temperature > 0
+                    else {"do_sample": False, "temperature": None, "top_p": None, "top_k": None})
         with self.torch.no_grad():
-            output = self.model.generate(**inputs, max_new_tokens=self.max_new_tokens, do_sample=False,
-                                         temperature=None, top_p=None, top_k=None)
+            output = self.model.generate(**inputs, max_new_tokens=self.max_new_tokens, **sampling)
         new = output[0, inputs["input_ids"].shape[1]:]
         # The tool-call marks of some families are special tokens, so the decode keeps them.
         text = self.tokenizer.decode(new, skip_special_tokens=False)
@@ -742,7 +745,7 @@ def make_model(cfg: dict, outputs=None) -> Model:
     if backend == "transformers":
         return LocalModel(cfg["family"], cfg["path"], revision=cfg.get("revision"), thinking=cfg["thinking"],
                           dtype=cfg.get("dtype", "bfloat16"), max_new_tokens=cfg.get("max_new_tokens", 1024),
-                          device=cfg.get("device"))
+                          device=cfg.get("device"), temperature=cfg.get("temperature", 0.0))
     if backend == "claude_cli":
         return ClaudeCliModel(cfg["path"], effort=cfg.get("effort", "medium"))
     return ApiModel(cfg["path"], base_url=cfg.get("base_url"), api_key_env=cfg.get("api_key_env", "OPENAI_API_KEY"),

@@ -1,0 +1,217 @@
+{
+  "config": {
+    "agent": {
+      "error_limit": 5,
+      "loop_limit": 3,
+      "max_steps": 25,
+      "prompt": "v3"
+    },
+    "model": {
+      "backend": "transformers",
+      "dtype": "float16",
+      "family": "bielik",
+      "max_new_tokens": 1024,
+      "path": "/kaggle/input/models/combainsidm/idm-pro-bielik-1-5b-v3/transformers/base/1/bielik-1.5b",
+      "revision": "1907cec498b762e8223b7cffc2b8f279c417a44d",
+      "temperature": 1.0,
+      "thinking": false
+    },
+    "probe": {
+      "batch_sizes": [
+        1,
+        4,
+        8
+      ],
+      "group": 8,
+      "lengths": [
+        2048,
+        4096,
+        6144,
+        8192,
+        12288
+      ],
+      "lora_rank": 16,
+      "new_tokens": 128,
+      "rollout_minutes": 70,
+      "split": "test",
+      "tasks": 16
+    }
+  },
+  "probe": {
+    "split": "test",
+    "tasks": 16,
+    "group": 8,
+    "rollout_minutes": 70,
+    "batch_sizes": [
+      1,
+      4,
+      8
+    ],
+    "new_tokens": 128,
+    "lora_rank": 16,
+    "lengths": [
+      2048,
+      4096,
+      6144,
+      8192,
+      12288
+    ],
+    "seed": 0
+  },
+  "torch": "2.11.0+cu130",
+  "gpu": "Tesla T4",
+  "load_s": 31.6,
+  "weights_gb": 2.97,
+  "generation": {
+    "batches": [
+      {
+        "batch": 1,
+        "prompt_tokens": 4038,
+        "new_tokens": 128,
+        "time_s": 7.89,
+        "tokens_per_s": 16.2,
+        "peak_gb": 3.36
+      },
+      {
+        "batch": 4,
+        "prompt_tokens": 4038,
+        "new_tokens": 128,
+        "time_s": 10.83,
+        "tokens_per_s": 47.3,
+        "peak_gb": 4.48
+      },
+      {
+        "batch": 8,
+        "prompt_tokens": 4038,
+        "new_tokens": 128,
+        "time_s": 21.26,
+        "tokens_per_s": 48.2,
+        "peak_gb": 5.97
+      }
+    ],
+    "mismatch": {
+      "tokens": 128,
+      "mean_abs_logprob_diff": 0.00117,
+      "max_abs_logprob_diff": 0.0254,
+      "ratio_min": 0.9861,
+      "ratio_max": 1.0257
+    }
+  },
+  "rollouts": {
+    "tasks": 16,
+    "complete_groups": 16,
+    "rollouts": 128,
+    "sampled_pass1": 0.0,
+    "pass_at_group": 0.0,
+    "groups_with_signal": 0.0,
+    "groups_all_zero": 1.0,
+    "groups_all_one": 0.0,
+    "groups_with_partial_signal_only": 0.062,
+    "reward_by_category": {
+      "query": 0.0,
+      "update": 0.0,
+      "log": 0.0,
+      "create": 0.0,
+      "sprint": 0.0,
+      "bulk": 0.0,
+      "workflow": 0.0,
+      "refusal": 0.0
+    },
+    "rollout_time_s": {
+      "mean": 15.2,
+      "median": 11.243,
+      "max": 69.282
+    },
+    "output_tokens_mean": 341.6,
+    "input_tokens_mean": 9566.8,
+    "stop_reasons": {
+      "answer": 112,
+      "loop_errors": 15,
+      "loop_same": 1
+    }
+  },
+  "rollout_minutes_used": 33.3,
+  "backward": {
+    "lora_rank": 16,
+    "trainable_params": 21102592,
+    "all_params": 1617610240,
+    "trainable_share": 0.01305,
+    "real": [
+      {
+        "tokens": 4199,
+        "trained_tokens": 100,
+        "time_s": 4.39,
+        "peak_gb": 4.19,
+        "loss": 0.4982,
+        "grad_norm": 10.5104,
+        "finite": true
+      },
+      {
+        "tokens": 4600,
+        "trained_tokens": 348,
+        "time_s": 4.67,
+        "peak_gb": 4.32,
+        "loss": 1.0558,
+        "grad_norm": 4.8427,
+        "finite": true
+      },
+      {
+        "tokens": 11401,
+        "trained_tokens": 995,
+        "time_s": 15.63,
+        "peak_gb": 6.19,
+        "loss": 0.0878,
+        "grad_norm": 2.1504,
+        "finite": true
+      }
+    ],
+    "ladder": [
+      {
+        "tokens": 2048,
+        "trained_tokens": 300,
+        "time_s": 1.92,
+        "peak_gb": 3.65,
+        "loss": 0.6369,
+        "grad_norm": 2.6175,
+        "finite": true
+      },
+      {
+        "tokens": 4096,
+        "trained_tokens": 300,
+        "time_s": 4.19,
+        "peak_gb": 4.19,
+        "loss": 1.4457,
+        "grad_norm": 9.8219,
+        "finite": true
+      },
+      {
+        "tokens": 6144,
+        "trained_tokens": 300,
+        "time_s": 6.94,
+        "peak_gb": 4.73,
+        "loss": 0.0009,
+        "grad_norm": 0.3845,
+        "finite": true
+      },
+      {
+        "tokens": 8192,
+        "trained_tokens": 300,
+        "time_s": 9.89,
+        "peak_gb": 5.27,
+        "loss": 0.1416,
+        "grad_norm": 2.7873,
+        "finite": true
+      },
+      {
+        "tokens": 12288,
+        "trained_tokens": 300,
+        "time_s": 16.99,
+        "peak_gb": 6.34,
+        "loss": 0.0026,
+        "grad_norm": 0.9401,
+        "finite": true
+      }
+    ]
+  },
+  "total_s": 2101.2
+}

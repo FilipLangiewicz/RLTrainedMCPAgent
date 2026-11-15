@@ -1,0 +1,199 @@
+{
+  "config": {
+    "agent": {
+      "error_limit": 5,
+      "loop_limit": 3,
+      "max_steps": 25,
+      "prompt": "v3"
+    },
+    "model": {
+      "backend": "transformers",
+      "device": "cpu",
+      "dtype": "float16",
+      "family": "gemma4",
+      "max_new_tokens": 1024,
+      "path": "/kaggle/input/models/combainsidm/idm-pro-gemma-4-e4b/transformers/base/1/gemma-4-e4b",
+      "revision": "4ecc2ba63bcac23ba4a767fc87025b1450f84c9c",
+      "temperature": 1.0,
+      "thinking": false
+    },
+    "probe": {
+      "batch_sizes": [
+        1,
+        4,
+        8,
+        16
+      ],
+      "group": 4,
+      "lengths": [
+        4096,
+        8192,
+        12288,
+        16384
+      ],
+      "lora_rank": 16,
+      "new_tokens": 128,
+      "offload_ple": true,
+      "rollout_minutes": 6,
+      "split": "test",
+      "tasks": 2
+    }
+  },
+  "probe": {
+    "split": "test",
+    "tasks": 2,
+    "group": 4,
+    "rollout_minutes": 6,
+    "batch_sizes": [
+      1,
+      4,
+      8,
+      16
+    ],
+    "new_tokens": 128,
+    "lora_rank": 16,
+    "lengths": [
+      4096,
+      8192,
+      12288,
+      16384
+    ],
+    "seed": 0,
+    "offload_ple": true
+  },
+  "torch": "2.11.0+cu130",
+  "gpu": "Tesla T4",
+  "offload": {
+    "tables": [
+      "model.language_model.embed_tokens_per_layer"
+    ],
+    "cpu_params": 2818572288
+  },
+  "load_s": 57.6,
+  "weights_gb": 9.54,
+  "generation": {
+    "batches": [
+      {
+        "batch": 1,
+        "prompt_tokens": 4451,
+        "new_tokens": 128,
+        "time_s": 14.36,
+        "tokens_per_s": 8.9,
+        "peak_gb": 10.36
+      },
+      {
+        "batch": 4,
+        "prompt_tokens": 4451,
+        "new_tokens": 128,
+        "time_s": 26.03,
+        "tokens_per_s": 19.7,
+        "peak_gb": 12.73
+      },
+      {
+        "batch": 8,
+        "prompt_tokens": 4451,
+        "error": "out of memory"
+      },
+      {
+        "batch": 16,
+        "prompt_tokens": 4451,
+        "error": "out of memory"
+      }
+    ],
+    "mismatch": {
+      "tokens": 128,
+      "mean_abs_logprob_diff": 0.00164,
+      "max_abs_logprob_diff": 0.02352,
+      "ratio_min": 0.9768,
+      "ratio_max": 1.0166
+    }
+  },
+  "cache": {
+    "tokens": 128,
+    "max_abs_logprob_diff": 0.0,
+    "top1_logprob_diff": 0.0,
+    "same_argmax": 1.0
+  },
+  "rollouts": {
+    "tasks": 2,
+    "complete_groups": 2,
+    "rollouts": 8,
+    "sampled_pass1": 0.5,
+    "pass_at_group": 0.5,
+    "groups_with_signal": 0.0,
+    "groups_all_zero": 0.5,
+    "groups_all_one": 0.5,
+    "groups_with_partial_signal_only": 0.0,
+    "reward_by_category": {
+      "query": 0.0,
+      "update": 1.0
+    },
+    "rollout_time_s": {
+      "mean": 22.5,
+      "median": 14.137,
+      "max": 71.976
+    },
+    "output_tokens_mean": 173.5,
+    "input_tokens_mean": 8768.1,
+    "stop_reasons": {
+      "answer": 8
+    }
+  },
+  "rollout_minutes_used": 4.3,
+  "backward": {
+    "lora_rank": 16,
+    "trainable_params": 38879232,
+    "all_params": 7979980064,
+    "trainable_share": 0.00487,
+    "train_mode_check": {
+      "top1_logprob_diff": 0.0,
+      "same_argmax": 1.0
+    },
+    "real": [
+      {
+        "tokens": 4487,
+        "trained_tokens": 36,
+        "time_s": 16.18,
+        "peak_gb": 12.28,
+        "loss": 0.5817,
+        "grad_norm": 6.9104,
+        "finite": true
+      },
+      {
+        "tokens": 5031,
+        "trained_tokens": 54,
+        "time_s": 18.85,
+        "peak_gb": 12.6,
+        "loss": 0.1323,
+        "grad_norm": 3.8238,
+        "finite": true
+      },
+      {
+        "tokens": 5518,
+        "trained_tokens": 75,
+        "time_s": 21.58,
+        "peak_gb": 12.89,
+        "loss": 0.1273,
+        "grad_norm": 3.6155,
+        "finite": true
+      }
+    ],
+    "ladder": [
+      {
+        "tokens": 4096,
+        "trained_tokens": 300,
+        "time_s": 14.24,
+        "peak_gb": 12.33,
+        "loss": 1.8078,
+        "grad_norm": 13.1773,
+        "finite": true
+      },
+      {
+        "tokens": 8192,
+        "trained_tokens": 300,
+        "error": "out of memory"
+      }
+    ]
+  },
+  "total_s": 402.1
+}

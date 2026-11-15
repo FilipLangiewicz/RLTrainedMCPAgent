@@ -1,0 +1,22 @@
+model:
+  backend: transformers
+  family: bielik
+  path: /kaggle/input/idm-pro-bielik-4-5b-v3/transformers/base/1
+  thinking: false
+  dtype: float16
+  max_new_tokens: 1024
+  temperature: 1.0
+agent:
+  prompt: v3
+  max_steps: 25
+  loop_limit: 3
+  error_limit: 5
+probe:
+  split: test
+  tasks: 16
+  group: 8
+  rollout_minutes: 70
+  batch_sizes: [1, 4, 8]
+  new_tokens: 128
+  lora_rank: 16
+  lengths: [2048, 4096, 6144, 8192, 12288]

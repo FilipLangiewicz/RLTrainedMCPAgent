@@ -516,6 +516,62 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - The team selects all six models for SFT and RL. If the time is too short, the team reduces the number of models later.
 - Add this decision to `docs/MODELS.md`.
 
+## 2026-11-12
+
+### Research of the RL methods (issue idm-pro-047)
+
+- Branch `07-rl-method`. The research covers about 120 sources about these topics:
+  - RLHF, DPO, RLVR and the GRPO family;
+  - agent RL with tools and the design of the reward;
+  - LoRA in RL and the dynamics of an RL run.
+- An interactive page for the team explains the methods and gives the proposal. `docs/RL_methods_research.md` gets the summary after the decision.
+- `LocalModel` gets the setting `temperature`. The default 0 keeps the greedy output of the baselines. A temperature above 0 samples from the full distribution (no top-k and no top-p).
+
+### RL probe on Kaggle
+
+- Add `src/rl_probe.py`. It measures the cost and the signal of RL for one model. It does not train the model.
+- The probe uses 16 test tasks only for the measure. No test task goes into the train set, the validation set or a choice of settings.
+- Jobs 41 to 49 ran the probe for all six models. The results are in `jobs/JOBS.md`.
+- Before SFT, 0 to 38% of the groups of 8 rollouts have mixed rewards. Most groups have only zeros. Thus RL needs SFT first and a filter of the tasks by difficulty.
+- The partial reward gives a signal in only 0 to 12.5% of the groups. The binary reward stays the main reward.
+- In fp16 on a T4, the log-probabilities of the generation and of the forward pass differ by at most 0.037. No NaN occurred.
+- Gemma 4: the per-layer lookup table (PLE) can stay in CPU memory. The weights on the GPU then fall from 9.5 GB to 5.1 GB (E2B), and E4B fits on one GPU.
+- Gemma 4 gives the same log-probabilities with and without the KV cache, and in train mode.
+- The Kaggle image has torchao 0.10. PEFT 0.21 stops with an ImportError for it. A job that uses PEFT must remove torchao first.
+- The estimate is for 200 GRPO steps of 64 rollouts on two T4. The times are:
+
+  | Model | Hours |
+  |---|---|
+  | Bielik 1.5B | 27 |
+  | Gemma 4 E2B | 31 |
+  | Gemma 4 E4B | 65 |
+  | Qwen3.5-2B | 81 |
+  | Bielik 4.5B | 136 |
+  | Qwen3.5-4B | 207 |
+
+- Decision: after SFT, the probe runs again on train or validation tasks. The team selects the models for RL from this second probe. An RL job saves a checkpoint and continues in the next job, because a Kaggle session stops after 12 h.
+
+## 2026-11-13
+
+- Branch `07-rl-method`. Jobs 51 to 61 measured the generation engine and the GPU layout of an RL step on two T4 GPUs. The results are in `jobs/JOBS.md` and `docs/RL_METHODS.md`.
+- vLLM 0.33 runs on the T4 in fp16 for all six models. It needs its own environment. Gemma 4 needs a patch of the tile size, because the T4 has 64 KB of shared memory.
+- vLLM writes 64 rollouts 2 to 9 times faster than `transformers` on one GPU. The success rates are the same.
+- The log-probabilities of vLLM and of `transformers` differ by 0.0008 to 0.0027 on average, also with a LoRA adapter. The save and the load of an adapter take less than 1 s.
+- Add to `src/rl_probe.py` the engines `vllm`, `pipeline` and `sleep`.
+- Job 59 measured full RL steps (64 rollouts, vLLM on GPU 0 and the trainer on GPU 1) without an optimizer step. Job 61 tested a layout in which vLLM sleeps and two trainer copies use both GPUs. This layout failed three times, so the team does not use it.
+- The backward pass takes most of each step. The estimate of 2026-11-12 is not correct. These times for 200 steps replace it:
+
+  | Model | Layout | Hours |
+  |---|---|---|
+  | Bielik 1.5B | vLLM and trainer | 19 |
+  | Gemma 4 E2B | `transformers` on two GPUs | 39 |
+  | Gemma 4 E4B | `transformers` on two GPUs | 67 |
+  | Bielik 4.5B | vLLM and trainer (estimate) | 53 |
+  | Qwen3.5-2B | vLLM and trainer | 95 |
+  | Qwen3.5-4B | vLLM and trainer (estimate) | 210 |
+
+- Update the interactive page with these results.
+
 ## 2026-11-14
 
 ### Generator of the train boards and the company Curify
@@ -640,3 +696,13 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - Fix `test_checksum_finds_a_change`. With `core.autocrlf`, the checkout has CRLF line ends, and the test added a second CR.
 - `docs/TASKS.md` describes the new checks.
 - 621 tests pass. 5 tests of `claude_cli` in `tests/test_models.py` fail also on `main`.
+
+## 2026-11-15
+
+- The team accepted the decisions of idm-pro-047. The list is in a comment of the issue and in `docs/RL_METHODS.md`:
+  - GRPO in TRL with the DAPO and Dr. GRPO changes, and LoRA with rank 16;
+  - a binary reward (a partial reward is a possible later variant);
+  - no RFT round before GRPO;
+  - vLLM and the trainer on separate GPUs for Bielik and Qwen, `transformers` on both GPUs for Gemma 4.
+- The models for RL are open. The team selects them after the second probe on the SFT models.
+- A comment in idm-pro-048 tells that the RL code must use these results.
