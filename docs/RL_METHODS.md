@@ -13,7 +13,7 @@ This file records the choice of the RL method and of the reward for E3 (issue id
 | Start of RL | After SFT | made | Before SFT, most groups of rollouts have only zero rewards. |
 | Warm start with RFT | No RFT round before GRPO | made | SFT already gives the warm start. GPU time is the main limit. |
 | Models for RL | Selected after a second probe on the SFT models, on train or validation tasks | open | The budget limits the number of models that we can train. Rollout times change after SFT. |
-| Generation engine | Bielik 1.5B and Qwen3.5-2B: vLLM on GPU 0, the trainer on GPU 1. Gemma 4: `transformers` on both GPUs. | made | Measured in jobs 51 to 61. See "Generation engine and GPU layout". |
+| Generation engine | Bielik 1.5B, Bielik 4.5B and Qwen3.5-2B: vLLM on GPU 0, the trainer on GPU 1. Gemma 4: `transformers` on both GPUs. | made | Measured in jobs 51 to 61. The full step of Bielik 4.5B is an estimate from measured parts. See "Generation engine and GPU layout". |
 | Long runs | A checkpoint every 25 steps (LoRA adapter, optimizer state, step, task filter). The next job continues from it. | made | A Kaggle session stops after 12 h. |
 
 ## Options that we considered
