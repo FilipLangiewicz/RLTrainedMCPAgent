@@ -9,7 +9,7 @@ This file records the choice of the RL method and of the reward for E3 (issue id
 | Method | GRPO with the DAPO and Dr. GRPO changes, in TRL (`GRPOTrainer`, `loss_type="dapo"`, no KL term) | made | Standard method in 2025-2026. No critic, so it fits on a T4. TRL supports multi-turn tool calls. |
 | Weights | LoRA, rank 16, all linear layers | made | In RL, LoRA gives the same result as full fine-tuning. The memory is small. |
 | Reward | Binary: 1 for a correct task, else 0. A write on the board in a refusal task gives -0.2. | made | A binary reward is difficult to exploit. A partial reward helped only 0 to 12.5% of the groups. |
-| Partial reward | Only as a separate variant (one change) | made | The evidence in papers is mixed. |
+| Partial reward | Only as a separate variant | made | The evidence in papers is mixed. |
 | Start of RL | After SFT | made | Before SFT, most groups of rollouts have only zero rewards. |
 | Warm start with RFT | No RFT round before GRPO | made | SFT already gives the warm start. GPU time is the main limit. |
 | Models for RL | Selected after a second probe on the SFT models, on train or validation tasks | open | The budget limits the number of models that we can train. Rollout times change after SFT. |
