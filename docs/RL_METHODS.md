@@ -15,8 +15,6 @@ This file records the choice of the RL method and of the reward for E3 (issue id
 | Models for RL | Selected after a second probe on the SFT models, on train or validation tasks | open | The budget limits the number of models that we can train. Rollout times change after SFT. |
 | Generation engine | Bielik 1.5B and Qwen3.5-2B: vLLM on GPU 0, the trainer on GPU 1. Gemma 4: `transformers` on both GPUs. | made | Measured in jobs 51 to 61. See "Generation engine and GPU layout". |
 | Long runs | A checkpoint every 25 steps (LoRA adapter, optimizer state, step, task filter). The next job continues from it. | made | A Kaggle session stops after 12 h. |
-| Kaggle accounts | More than one account is allowed for RL | made | It shortens the calendar time. Each account needs access to the private weights. |
-| Test set | Used only for the cost probe | made | No test task goes into the train set, the validation set or a choice of settings. |
 
 ## Options that we considered
 
