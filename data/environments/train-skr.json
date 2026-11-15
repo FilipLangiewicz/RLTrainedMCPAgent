@@ -1,0 +1,862 @@
+{
+  "name": "train-skr",
+  "site": "https://example.atlassian.net",
+  "now": "2026-10-07T09:15:00.000+0100",
+  "project": {
+    "key": "SKR",
+    "name": "SolarDom - skrypty rozmów"
+  },
+  "board": {
+    "id": "43",
+    "name": "SKR board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:e1c9e7ca-db70-54b0-8148-19080395b9fa",
+      "display_name": "Dariusz Oleksy",
+      "email": "dariusz.oleksy@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:2d6f713d-759e-5008-b492-e2d11802b6a4",
+      "display_name": "Kinga Rataj",
+      "email": "kinga.rataj@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:4a941f8f-398b-5f81-be98-7e19aa0210cd",
+      "display_name": "Hieronim Bąkowski",
+      "email": "hieronim.bakowski@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:b75dd69f-1aa7-5a88-aa76-8f1459c20cda",
+      "display_name": "Kinga Szewc",
+      "email": "kinga.szewc@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:c55a6878-c3e8-5ea3-99cf-58d6b2dabecd",
+      "display_name": "Adam Pietras",
+      "email": "adam.pietras@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:b7da79fd-7886-5241-854c-72f34185593a",
+      "display_name": "Laura Jankowska",
+      "email": "laura.jankowska@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:5d7ea582-64f6-59ce-8732-608fc3abeab2",
+      "display_name": "Feliks Gil",
+      "email": "feliks.gil@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "431",
+      "name": "SKR Sprint 21",
+      "state": "closed",
+      "start_date": "2026-09-16T09:00:00.000Z",
+      "end_date": "2026-09-30T09:00:00.000Z",
+      "goal": "Nowy skrypt otwarcia rozmowy"
+    },
+    {
+      "id": "432",
+      "name": "SKR Sprint 22",
+      "state": "active",
+      "start_date": "2026-09-30T09:00:00.000Z",
+      "end_date": "2026-10-14T09:00:00.000Z",
+      "goal": "Odpowiedzi na obiekcje i testy A/B"
+    },
+    {
+      "id": "433",
+      "name": "SKR Sprint 23",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Skrypt dla rolników"
+    },
+    {
+      "id": "434",
+      "name": "SKR Sprint 24",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "43001",
+      "key": "SKR-1",
+      "summary": "Nowy skrypt otwarcia rozmowy w 15 sekund",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:2d6f713d-759e-5008-b492-e2d11802b6a4",
+      "reporter": "712020:2d6f713d-759e-5008-b492-e2d11802b6a4",
+      "labels": [
+        "script",
+        "opening"
+      ],
+      "sprint": "431",
+      "created": "2026-07-30T17:15:00.000+0100",
+      "updated": "2026-08-02T17:15:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "430015",
+          "author": "712020:2d6f713d-759e-5008-b492-e2d11802b6a4",
+          "time_spent_seconds": 14400,
+          "comment": "Trzy wersje otwarcia",
+          "started": "2026-08-01T00:15:00.000+0100"
+        },
+        {
+          "id": "430016",
+          "author": "712020:2d6f713d-759e-5008-b492-e2d11802b6a4",
+          "time_spent_seconds": 7200,
+          "comment": "Nagrania testowe",
+          "started": "2026-08-02T00:15:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "43002",
+      "key": "SKR-2",
+      "summary": "Skrypt podaje stare kwoty dopłat",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:e1c9e7ca-db70-54b0-8148-19080395b9fa",
+      "reporter": "712020:2d6f713d-759e-5008-b492-e2d11802b6a4",
+      "labels": [
+        "script",
+        "subsidies"
+      ],
+      "sprint": "431",
+      "created": "2026-08-01T08:15:00.000+0100",
+      "updated": "2026-08-04T08:15:00.000+0100",
+      "comments": [
+        {
+          "id": "430021",
+          "author": "712020:e1c9e7ca-db70-54b0-8148-19080395b9fa",
+          "body": "Kwoty zgodne z nowym naborem programu dopłat.",
+          "created": "2026-08-02T08:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "43003",
+      "key": "SKR-3",
+      "summary": "Script in Silesian dialect",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Cancelled",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:4a941f8f-398b-5f81-be98-7e19aa0210cd",
+      "labels": [
+        "script"
+      ],
+      "sprint": "431",
+      "created": "2026-08-02T08:45:00.000+0100",
+      "updated": "2026-08-05T08:45:00.000+0100",
+      "comments": [
+        {
+          "id": "430031",
+          "author": "712020:4a941f8f-398b-5f81-be98-7e19aa0210cd",
+          "body": "Customers thought it was a joke.",
+          "created": "2026-08-03T08:45:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "43004",
+      "key": "SKR-4",
+      "summary": "Odpowiedź na obiekcję 'nie mam pieniędzy'",
+      "description": "Pokazać kredyt i dopłatę. Nie obiecywać zerowych rachunków.",
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:e1c9e7ca-db70-54b0-8148-19080395b9fa",
+      "reporter": "712020:2d6f713d-759e-5008-b492-e2d11802b6a4",
+      "labels": [
+        "objections"
+      ],
+      "sprint": "432",
+      "created": "2026-08-04T13:45:00.000+0100",
+      "updated": "2026-08-07T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "430045",
+          "author": "712020:e1c9e7ca-db70-54b0-8148-19080395b9fa",
+          "time_spent_seconds": 7200,
+          "comment": "Nowa wersja odpowiedzi",
+          "started": "2026-08-06T00:45:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "43005",
+      "key": "SKR-5",
+      "summary": "Test A/B dwóch otwarć rozmowy",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:e1c9e7ca-db70-54b0-8148-19080395b9fa",
+      "reporter": "712020:b75dd69f-1aa7-5a88-aa76-8f1459c20cda",
+      "labels": [
+        "ab-test",
+        "opening"
+      ],
+      "sprint": "432",
+      "created": "2026-08-06T17:15:00.000+0100",
+      "updated": "2026-08-09T17:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43006",
+      "key": "SKR-6",
+      "summary": "Skrypt obiecuje 'darmowe panele'",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:b75dd69f-1aa7-5a88-aa76-8f1459c20cda",
+      "reporter": "712020:c55a6878-c3e8-5ea3-99cf-58d6b2dabecd",
+      "labels": [
+        "script",
+        "compliance"
+      ],
+      "sprint": "432",
+      "created": "2026-08-07T14:00:00.000+0100",
+      "updated": "2026-08-10T14:00:00.000+0100",
+      "comments": [
+        {
+          "id": "430061",
+          "author": "712020:b75dd69f-1aa7-5a88-aa76-8f1459c20cda",
+          "body": "Prawniczka prosi o usunięcie tego zdania natychmiast.",
+          "created": "2026-08-08T14:00:00.000+0100"
+        },
+        {
+          "id": "430062",
+          "author": "712020:b75dd69f-1aa7-5a88-aa76-8f1459c20cda",
+          "body": "Trzy skargi w tym miesiącu cytują to zdanie.",
+          "created": "2026-08-09T14:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "43007",
+      "key": "SKR-7",
+      "summary": "Answer to the objection 'I already have an offer'",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:e1c9e7ca-db70-54b0-8148-19080395b9fa",
+      "reporter": "712020:b75dd69f-1aa7-5a88-aa76-8f1459c20cda",
+      "labels": [
+        "objections"
+      ],
+      "sprint": "432",
+      "created": "2026-08-09T17:30:00.000+0100",
+      "updated": "2026-08-12T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43008",
+      "key": "SKR-8",
+      "summary": "Skrypt na umówienie wizyty doradcy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:4a941f8f-398b-5f81-be98-7e19aa0210cd",
+      "reporter": "712020:e1c9e7ca-db70-54b0-8148-19080395b9fa",
+      "labels": [
+        "script",
+        "appointments"
+      ],
+      "sprint": "432",
+      "created": "2026-08-11T12:30:00.000+0100",
+      "updated": "2026-08-14T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43009",
+      "key": "SKR-9",
+      "summary": "Ściągawka z obiekcjami na biurko",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Low",
+      "assignee": "712020:5d7ea582-64f6-59ce-8732-608fc3abeab2",
+      "reporter": "712020:4a941f8f-398b-5f81-be98-7e19aa0210cd",
+      "labels": [
+        "objections",
+        "print"
+      ],
+      "sprint": "432",
+      "created": "2026-08-12T17:15:00.000+0100",
+      "updated": "2026-08-15T17:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43010",
+      "key": "SKR-10",
+      "summary": "Informacja o nagrywaniu na początku rozmowy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:b75dd69f-1aa7-5a88-aa76-8f1459c20cda",
+      "reporter": "712020:e1c9e7ca-db70-54b0-8148-19080395b9fa",
+      "labels": [
+        "compliance",
+        "opening"
+      ],
+      "sprint": "432",
+      "created": "2026-08-14T12:15:00.000+0100",
+      "updated": "2026-08-17T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43011",
+      "key": "SKR-11",
+      "summary": "Odpowiedź na pytanie 'skąd macie mój numer'",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:4a941f8f-398b-5f81-be98-7e19aa0210cd",
+      "reporter": "712020:2d6f713d-759e-5008-b492-e2d11802b6a4",
+      "labels": [
+        "objections",
+        "compliance"
+      ],
+      "sprint": "432",
+      "created": "2026-08-16T11:45:00.000+0100",
+      "updated": "2026-08-19T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43012",
+      "key": "SKR-12",
+      "summary": "Skrypt pożegnania, gdy klient odmawia",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:b75dd69f-1aa7-5a88-aa76-8f1459c20cda",
+      "labels": [
+        "script"
+      ],
+      "sprint": "432",
+      "created": "2026-08-18T17:15:00.000+0100",
+      "updated": "2026-08-21T17:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43013",
+      "key": "SKR-13",
+      "summary": "Wyniki testu A/B z września",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:c55a6878-c3e8-5ea3-99cf-58d6b2dabecd",
+      "reporter": "712020:c55a6878-c3e8-5ea3-99cf-58d6b2dabecd",
+      "labels": [
+        "ab-test",
+        "reports"
+      ],
+      "sprint": "432",
+      "created": "2026-08-19T14:30:00.000+0100",
+      "updated": "2026-08-22T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43014",
+      "key": "SKR-14",
+      "summary": "Skrypt dla rolników z magazynem energii",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:e1c9e7ca-db70-54b0-8148-19080395b9fa",
+      "labels": [
+        "script",
+        "farmers"
+      ],
+      "sprint": "433",
+      "created": "2026-08-21T09:45:00.000+0100",
+      "updated": "2026-08-24T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43015",
+      "key": "SKR-15",
+      "summary": "Obiekcja 'panele nie działają zimą'",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:2d6f713d-759e-5008-b492-e2d11802b6a4",
+      "reporter": "712020:e1c9e7ca-db70-54b0-8148-19080395b9fa",
+      "labels": [
+        "objections"
+      ],
+      "sprint": "433",
+      "created": "2026-08-23T16:30:00.000+0100",
+      "updated": "2026-08-26T16:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43016",
+      "key": "SKR-16",
+      "summary": "Script for the customers who call back",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:2d6f713d-759e-5008-b492-e2d11802b6a4",
+      "reporter": "712020:c55a6878-c3e8-5ea3-99cf-58d6b2dabecd",
+      "labels": [
+        "script",
+        "callback"
+      ],
+      "sprint": "433",
+      "created": "2026-08-24T09:15:00.000+0100",
+      "updated": "2026-08-27T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43017",
+      "key": "SKR-17",
+      "summary": "Słowa zakazane w rozmowie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:b7da79fd-7886-5241-854c-72f34185593a",
+      "reporter": "712020:b75dd69f-1aa7-5a88-aa76-8f1459c20cda",
+      "labels": [
+        "compliance"
+      ],
+      "sprint": "433",
+      "created": "2026-08-26T13:45:00.000+0100",
+      "updated": "2026-08-29T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43018",
+      "key": "SKR-18",
+      "summary": "Telemarketerzy przedstawiają się jako doradcy z gminy",
+      "description": "W nagraniach z sali B pada zdanie 'dzwonię w sprawie programu gminy'.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": null,
+      "reporter": "712020:2d6f713d-759e-5008-b492-e2d11802b6a4",
+      "labels": [
+        "compliance"
+      ],
+      "sprint": null,
+      "created": "2026-08-28T08:45:00.000+0100",
+      "updated": "2026-08-31T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43019",
+      "key": "SKR-19",
+      "summary": "Skrypt dla klientów po 70. roku życia",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:4a941f8f-398b-5f81-be98-7e19aa0210cd",
+      "labels": [
+        "script"
+      ],
+      "sprint": null,
+      "created": "2026-08-29T13:45:00.000+0100",
+      "updated": "2026-09-01T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43020",
+      "key": "SKR-20",
+      "summary": "Odpowiedź na obiekcję 'muszę zapytać żony'",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:e1c9e7ca-db70-54b0-8148-19080395b9fa",
+      "labels": [
+        "objections"
+      ],
+      "sprint": null,
+      "created": "2026-08-31T12:00:00.000+0100",
+      "updated": "2026-09-03T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43021",
+      "key": "SKR-21",
+      "summary": "Nagrania najlepszych rozmów do szkoleń",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:4a941f8f-398b-5f81-be98-7e19aa0210cd",
+      "labels": [
+        "training"
+      ],
+      "sprint": null,
+      "created": "2026-09-02T12:00:00.000+0100",
+      "updated": "2026-09-05T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43022",
+      "key": "SKR-22",
+      "summary": "Szkolenie nowych telemarketerów ze skryptu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:c55a6878-c3e8-5ea3-99cf-58d6b2dabecd",
+      "reporter": "712020:2d6f713d-759e-5008-b492-e2d11802b6a4",
+      "labels": [
+        "training"
+      ],
+      "sprint": null,
+      "created": "2026-09-03T11:15:00.000+0100",
+      "updated": "2026-09-06T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43023",
+      "key": "SKR-23",
+      "summary": "Script text does not fit on the screen of the dialer",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:b7da79fd-7886-5241-854c-72f34185593a",
+      "labels": [
+        "ui"
+      ],
+      "sprint": null,
+      "created": "2026-09-05T14:45:00.000+0100",
+      "updated": "2026-09-08T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43024",
+      "key": "SKR-24",
+      "summary": "Skrypt dla klientów z pompą ciepła",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:4a941f8f-398b-5f81-be98-7e19aa0210cd",
+      "labels": [
+        "script"
+      ],
+      "sprint": null,
+      "created": "2026-09-07T10:30:00.000+0100",
+      "updated": "2026-09-10T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43025",
+      "key": "SKR-25",
+      "summary": "Odpowiedź na obiekcję o hałasie falownika",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:b7da79fd-7886-5241-854c-72f34185593a",
+      "labels": [
+        "objections"
+      ],
+      "sprint": null,
+      "created": "2026-09-09T13:15:00.000+0100",
+      "updated": "2026-09-12T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43026",
+      "key": "SKR-26",
+      "summary": "Pytania kwalifikujące: dach, kierunek, rachunek",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:2d6f713d-759e-5008-b492-e2d11802b6a4",
+      "reporter": "712020:2d6f713d-759e-5008-b492-e2d11802b6a4",
+      "labels": [
+        "script",
+        "qualification"
+      ],
+      "sprint": null,
+      "created": "2026-09-10T10:30:00.000+0100",
+      "updated": "2026-09-13T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43027",
+      "key": "SKR-27",
+      "summary": "Wersja skryptu po ukraińsku",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:b7da79fd-7886-5241-854c-72f34185593a",
+      "reporter": "712020:b7da79fd-7886-5241-854c-72f34185593a",
+      "labels": [
+        "script",
+        "i18n"
+      ],
+      "sprint": null,
+      "created": "2026-09-12T14:00:00.000+0100",
+      "updated": "2026-09-15T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43028",
+      "key": "SKR-28",
+      "summary": "Konkurs na najlepsze zamknięcie rozmowy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": "712020:b7da79fd-7886-5241-854c-72f34185593a",
+      "reporter": "712020:b7da79fd-7886-5241-854c-72f34185593a",
+      "labels": [
+        "training"
+      ],
+      "sprint": null,
+      "created": "2026-09-14T16:00:00.000+0100",
+      "updated": "2026-09-17T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43029",
+      "key": "SKR-29",
+      "summary": "Skrypt nie ma odpowiedzi na pytanie o gwarancję",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:b7da79fd-7886-5241-854c-72f34185593a",
+      "reporter": "712020:2d6f713d-759e-5008-b492-e2d11802b6a4",
+      "labels": [
+        "objections"
+      ],
+      "sprint": "432",
+      "created": "2026-09-15T14:00:00.000+0100",
+      "updated": "2026-09-18T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43030",
+      "key": "SKR-30",
+      "summary": "Przegląd skryptów przez prawniczkę",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:e1c9e7ca-db70-54b0-8148-19080395b9fa",
+      "labels": [
+        "compliance"
+      ],
+      "sprint": null,
+      "created": "2026-09-17T17:45:00.000+0100",
+      "updated": "2026-09-20T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43031",
+      "key": "SKR-31",
+      "summary": "Monthly update of the electricity prices in the script",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:e1c9e7ca-db70-54b0-8148-19080395b9fa",
+      "reporter": "712020:4a941f8f-398b-5f81-be98-7e19aa0210cd",
+      "labels": [
+        "script"
+      ],
+      "sprint": null,
+      "created": "2026-09-19T17:30:00.000+0100",
+      "updated": "2026-09-22T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43032",
+      "key": "SKR-32",
+      "summary": "Skrót skryptu na 90 sekund",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:c55a6878-c3e8-5ea3-99cf-58d6b2dabecd",
+      "reporter": "712020:e1c9e7ca-db70-54b0-8148-19080395b9fa",
+      "labels": [
+        "script"
+      ],
+      "sprint": null,
+      "created": "2026-09-20T13:15:00.000+0100",
+      "updated": "2026-09-23T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43033",
+      "key": "SKR-33",
+      "summary": "Odpowiedź na obiekcję 'sąsiad żałuje paneli'",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:b75dd69f-1aa7-5a88-aa76-8f1459c20cda",
+      "labels": [
+        "objections"
+      ],
+      "sprint": null,
+      "created": "2026-09-22T14:45:00.000+0100",
+      "updated": "2026-09-25T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43034",
+      "key": "SKR-34",
+      "summary": "Biblioteka udanych rozmów z opisem",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:e1c9e7ca-db70-54b0-8148-19080395b9fa",
+      "labels": [
+        "training"
+      ],
+      "sprint": "433",
+      "created": "2026-09-24T09:45:00.000+0100",
+      "updated": "2026-09-27T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43035",
+      "key": "SKR-35",
+      "summary": "Skrypt drugiego telefonu po tygodniu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:e1c9e7ca-db70-54b0-8148-19080395b9fa",
+      "labels": [
+        "script",
+        "callback"
+      ],
+      "sprint": null,
+      "created": "2026-09-25T11:00:00.000+0100",
+      "updated": "2026-09-28T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43036",
+      "key": "SKR-36",
+      "summary": "Zdanie o ulgach podatkowych niezgodne z przepisami",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:c55a6878-c3e8-5ea3-99cf-58d6b2dabecd",
+      "labels": [
+        "compliance",
+        "subsidies"
+      ],
+      "sprint": null,
+      "created": "2026-09-27T16:30:00.000+0100",
+      "updated": "2026-09-30T16:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "43037",
+      "key": "SKR-37",
+      "summary": "Ankieta telemarketerów o trudnych pytaniach klientów",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:e1c9e7ca-db70-54b0-8148-19080395b9fa",
+      "labels": [
+        "objections"
+      ],
+      "sprint": null,
+      "created": "2026-09-29T12:15:00.000+0100",
+      "updated": "2026-10-02T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

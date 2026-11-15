@@ -1,0 +1,881 @@
+{
+  "name": "train-plt",
+  "site": "https://example.atlassian.net",
+  "now": "2026-12-01T10:00:00.000+0100",
+  "project": {
+    "key": "PLT",
+    "name": "WiseAI - platforma"
+  },
+  "board": {
+    "id": "40",
+    "name": "PLT board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:f57252dc-4f87-530a-a66b-4963e47c7478",
+      "display_name": "Dmytro Kravets",
+      "email": "dmytro.kravets@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:cec0b1a7-5dcc-57ec-896e-fabca2b3a0b0",
+      "display_name": "Serhii Polishchuk",
+      "email": "serhii.polishchuk@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:2a68ffda-a3dd-5bef-b1c2-094695f17225",
+      "display_name": "Anastasiia Klymenko",
+      "email": "anastasiia.klymenko@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:0e54a24d-fbf4-5a04-bd5d-3d4faa3585de",
+      "display_name": "Vladyslav Hrytsenko",
+      "email": "vladyslav.hrytsenko@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:776b3621-98e6-51db-9c30-13beff32676d",
+      "display_name": "Vladyslav Savchenko",
+      "email": "vladyslav.savchenko@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:9814abf7-3d0e-5186-854b-8d21dc5d248f",
+      "display_name": "Mariia Ponomarenko",
+      "email": "mariia.ponomarenko@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:7122037f-5add-5559-a0fb-5baac9a87c17",
+      "display_name": "Viktoriia Kostenko",
+      "email": "viktoriia.kostenko@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "401",
+      "name": "PLT Sprint 30",
+      "state": "closed",
+      "start_date": "2026-11-10T09:00:00.000Z",
+      "end_date": "2026-11-24T09:00:00.000Z",
+      "goal": "Monitoring i alerty"
+    },
+    {
+      "id": "402",
+      "name": "PLT Sprint 31",
+      "state": "active",
+      "start_date": "2026-11-24T09:00:00.000Z",
+      "end_date": "2026-12-08T09:00:00.000Z",
+      "goal": "Niższe koszty modeli i nowy klaster"
+    },
+    {
+      "id": "403",
+      "name": "PLT Sprint 32",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Wielu klientów na jednej instancji"
+    },
+    {
+      "id": "404",
+      "name": "PLT Sprint 33",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "40001",
+      "key": "PLT-1",
+      "summary": "Alerty o błędach agenta na kanale zespołu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:776b3621-98e6-51db-9c30-13beff32676d",
+      "reporter": "712020:2a68ffda-a3dd-5bef-b1c2-094695f17225",
+      "labels": [
+        "monitoring",
+        "alerts"
+      ],
+      "sprint": "401",
+      "created": "2026-09-23T09:15:00.000+0100",
+      "updated": "2026-09-26T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "400015",
+          "author": "712020:776b3621-98e6-51db-9c30-13beff32676d",
+          "time_spent_seconds": 14400,
+          "comment": "Konfiguracja alertów",
+          "started": "2026-09-25T00:15:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "40002",
+      "key": "PLT-2",
+      "summary": "Dashboard of the response time per customer",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:7122037f-5add-5559-a0fb-5baac9a87c17",
+      "reporter": "712020:2a68ffda-a3dd-5bef-b1c2-094695f17225",
+      "labels": [
+        "monitoring"
+      ],
+      "sprint": "401",
+      "created": "2026-09-24T16:30:00.000+0100",
+      "updated": "2026-09-27T16:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40003",
+      "key": "PLT-3",
+      "summary": "Migracja na serwery bare metal",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:776b3621-98e6-51db-9c30-13beff32676d",
+      "labels": [
+        "infra"
+      ],
+      "sprint": "401",
+      "created": "2026-09-26T15:15:00.000+0100",
+      "updated": "2026-09-29T15:15:00.000+0100",
+      "comments": [
+        {
+          "id": "400031",
+          "author": "712020:776b3621-98e6-51db-9c30-13beff32676d",
+          "body": "Zostajemy w chmurze, koszt migracji za wysoki.",
+          "created": "2026-09-27T15:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "40004",
+      "key": "PLT-4",
+      "summary": "Rachunek za API modeli wzrósł trzykrotnie",
+      "description": "Środowisko testowe używa dużego modelu zamiast małego.",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:2a68ffda-a3dd-5bef-b1c2-094695f17225",
+      "reporter": "712020:776b3621-98e6-51db-9c30-13beff32676d",
+      "labels": [
+        "cost",
+        "llm"
+      ],
+      "sprint": "402",
+      "created": "2026-09-28T08:15:00.000+0100",
+      "updated": "2026-10-01T08:15:00.000+0100",
+      "comments": [
+        {
+          "id": "400041",
+          "author": "712020:2a68ffda-a3dd-5bef-b1c2-094695f17225",
+          "body": "Faktura za listopad to 4 200 USD.",
+          "created": "2026-09-29T08:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "40005",
+      "key": "PLT-5",
+      "summary": "Mniejszy model do prostych pytań klientów",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:f57252dc-4f87-530a-a66b-4963e47c7478",
+      "reporter": "712020:776b3621-98e6-51db-9c30-13beff32676d",
+      "labels": [
+        "cost",
+        "llm"
+      ],
+      "sprint": "402",
+      "created": "2026-09-29T12:30:00.000+0100",
+      "updated": "2026-10-02T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "400055",
+          "author": "712020:f57252dc-4f87-530a-a66b-4963e47c7478",
+          "time_spent_seconds": 18000,
+          "comment": "Router zapytań",
+          "started": "2026-10-01T00:30:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "40006",
+      "key": "PLT-6",
+      "summary": "Nowy klaster Kubernetes dla produkcji",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:f57252dc-4f87-530a-a66b-4963e47c7478",
+      "reporter": "712020:9814abf7-3d0e-5186-854b-8d21dc5d248f",
+      "labels": [
+        "infra",
+        "kubernetes"
+      ],
+      "sprint": "402",
+      "created": "2026-10-01T12:45:00.000+0100",
+      "updated": "2026-10-04T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40007",
+      "key": "PLT-7",
+      "summary": "Backup of the conversation database",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "High",
+      "assignee": "712020:2a68ffda-a3dd-5bef-b1c2-094695f17225",
+      "reporter": "712020:cec0b1a7-5dcc-57ec-896e-fabca2b3a0b0",
+      "labels": [
+        "backup",
+        "database"
+      ],
+      "sprint": "402",
+      "created": "2026-10-03T15:15:00.000+0100",
+      "updated": "2026-10-06T15:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40008",
+      "key": "PLT-8",
+      "summary": "Cache odpowiedzi dla powtarzalnych pytań",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:2a68ffda-a3dd-5bef-b1c2-094695f17225",
+      "reporter": "712020:9814abf7-3d0e-5186-854b-8d21dc5d248f",
+      "labels": [
+        "cost",
+        "performance"
+      ],
+      "sprint": "402",
+      "created": "2026-10-04T10:00:00.000+0100",
+      "updated": "2026-10-07T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40009",
+      "key": "PLT-9",
+      "summary": "Klucze API klientów w menedżerze sekretów",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:f57252dc-4f87-530a-a66b-4963e47c7478",
+      "reporter": "712020:0e54a24d-fbf4-5a04-bd5d-3d4faa3585de",
+      "labels": [
+        "security"
+      ],
+      "sprint": "402",
+      "created": "2026-10-06T11:00:00.000+0100",
+      "updated": "2026-10-09T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40010",
+      "key": "PLT-10",
+      "summary": "Limit zapytań na klienta",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:cec0b1a7-5dcc-57ec-896e-fabca2b3a0b0",
+      "labels": [
+        "rate-limit"
+      ],
+      "sprint": "402",
+      "created": "2026-10-07T14:45:00.000+0100",
+      "updated": "2026-10-10T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40011",
+      "key": "PLT-11",
+      "summary": "Wdrożenie w nocy zrywa aktywne rozmowy",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:2a68ffda-a3dd-5bef-b1c2-094695f17225",
+      "labels": [
+        "deploy"
+      ],
+      "sprint": "402",
+      "created": "2026-10-09T08:30:00.000+0100",
+      "updated": "2026-10-12T08:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40012",
+      "key": "PLT-12",
+      "summary": "Logi rozmów starsze niż 90 dni do usunięcia",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:cec0b1a7-5dcc-57ec-896e-fabca2b3a0b0",
+      "reporter": "712020:0e54a24d-fbf4-5a04-bd5d-3d4faa3585de",
+      "labels": [
+        "privacy",
+        "database"
+      ],
+      "sprint": "402",
+      "created": "2026-10-11T15:30:00.000+0100",
+      "updated": "2026-10-14T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40013",
+      "key": "PLT-13",
+      "summary": "Certyfikat TLS dla domeny demo wygasa w grudniu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:f57252dc-4f87-530a-a66b-4963e47c7478",
+      "labels": [
+        "security",
+        "certificates"
+      ],
+      "sprint": "402",
+      "created": "2026-10-12T11:45:00.000+0100",
+      "updated": "2026-10-15T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40014",
+      "key": "PLT-14",
+      "summary": "Wielu klientów na jednej instancji platformy",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:9814abf7-3d0e-5186-854b-8d21dc5d248f",
+      "reporter": "712020:2a68ffda-a3dd-5bef-b1c2-094695f17225",
+      "labels": [
+        "multi-tenant"
+      ],
+      "sprint": "403",
+      "created": "2026-10-14T13:30:00.000+0100",
+      "updated": "2026-10-17T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40015",
+      "key": "PLT-15",
+      "summary": "Separacja danych klientów w bazie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:0e54a24d-fbf4-5a04-bd5d-3d4faa3585de",
+      "reporter": "712020:776b3621-98e6-51db-9c30-13beff32676d",
+      "labels": [
+        "multi-tenant",
+        "privacy"
+      ],
+      "sprint": "403",
+      "created": "2026-10-15T08:15:00.000+0100",
+      "updated": "2026-10-18T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40016",
+      "key": "PLT-16",
+      "summary": "Staging environment for the customers",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:f57252dc-4f87-530a-a66b-4963e47c7478",
+      "labels": [
+        "infra"
+      ],
+      "sprint": "403",
+      "created": "2026-10-17T08:30:00.000+0100",
+      "updated": "2026-10-20T08:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40017",
+      "key": "PLT-17",
+      "summary": "Testy obciążeniowe przed pilotem w firmie Kotwica",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:f57252dc-4f87-530a-a66b-4963e47c7478",
+      "reporter": "712020:0e54a24d-fbf4-5a04-bd5d-3d4faa3585de",
+      "labels": [
+        "performance"
+      ],
+      "sprint": "403",
+      "created": "2026-10-19T13:15:00.000+0100",
+      "updated": "2026-10-22T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40018",
+      "key": "PLT-18",
+      "summary": "Panel administracyjny dostępny bez VPN",
+      "description": "Adres panelu jest publiczny. Wystarczy login i hasło.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": null,
+      "reporter": "712020:9814abf7-3d0e-5186-854b-8d21dc5d248f",
+      "labels": [
+        "security"
+      ],
+      "sprint": null,
+      "created": "2026-10-20T17:45:00.000+0100",
+      "updated": "2026-10-23T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40019",
+      "key": "PLT-19",
+      "summary": "Automatyczne skalowanie przy wzroście ruchu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:cec0b1a7-5dcc-57ec-896e-fabca2b3a0b0",
+      "reporter": "712020:f57252dc-4f87-530a-a66b-4963e47c7478",
+      "labels": [
+        "kubernetes"
+      ],
+      "sprint": null,
+      "created": "2026-10-22T15:00:00.000+0100",
+      "updated": "2026-10-25T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40020",
+      "key": "PLT-20",
+      "summary": "Pipeline CI trwa 40 minut",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:0e54a24d-fbf4-5a04-bd5d-3d4faa3585de",
+      "labels": [
+        "ci"
+      ],
+      "sprint": null,
+      "created": "2026-10-23T10:30:00.000+0100",
+      "updated": "2026-10-26T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40021",
+      "key": "PLT-21",
+      "summary": "Wersjonowanie promptów agenta w repozytorium",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:cec0b1a7-5dcc-57ec-896e-fabca2b3a0b0",
+      "reporter": "712020:2a68ffda-a3dd-5bef-b1c2-094695f17225",
+      "labels": [
+        "llm"
+      ],
+      "sprint": null,
+      "created": "2026-10-25T09:45:00.000+0100",
+      "updated": "2026-10-28T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40022",
+      "key": "PLT-22",
+      "summary": "Fallback to the second model provider",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:cec0b1a7-5dcc-57ec-896e-fabca2b3a0b0",
+      "reporter": "712020:776b3621-98e6-51db-9c30-13beff32676d",
+      "labels": [
+        "llm",
+        "reliability"
+      ],
+      "sprint": null,
+      "created": "2026-10-27T15:00:00.000+0100",
+      "updated": "2026-10-30T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40023",
+      "key": "PLT-23",
+      "summary": "Koszt rozmowy liczony dla każdego klienta",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:2a68ffda-a3dd-5bef-b1c2-094695f17225",
+      "labels": [
+        "cost",
+        "billing"
+      ],
+      "sprint": null,
+      "created": "2026-10-28T08:15:00.000+0100",
+      "updated": "2026-10-31T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40024",
+      "key": "PLT-24",
+      "summary": "Stara wersja Pythona na serwerze kolejki",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:0e54a24d-fbf4-5a04-bd5d-3d4faa3585de",
+      "labels": [
+        "infra"
+      ],
+      "sprint": null,
+      "created": "2026-10-30T16:45:00.000+0100",
+      "updated": "2026-11-02T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40025",
+      "key": "PLT-25",
+      "summary": "Pamięć kontenera agenta rośnie przez cały dzień",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:776b3621-98e6-51db-9c30-13beff32676d",
+      "reporter": "712020:2a68ffda-a3dd-5bef-b1c2-094695f17225",
+      "labels": [
+        "performance"
+      ],
+      "sprint": null,
+      "created": "2026-10-31T17:30:00.000+0100",
+      "updated": "2026-11-03T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40026",
+      "key": "PLT-26",
+      "summary": "Dokumentacja architektury platformy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:cec0b1a7-5dcc-57ec-896e-fabca2b3a0b0",
+      "reporter": "712020:cec0b1a7-5dcc-57ec-896e-fabca2b3a0b0",
+      "labels": [
+        "docs"
+      ],
+      "sprint": null,
+      "created": "2026-11-02T08:15:00.000+0100",
+      "updated": "2026-11-05T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40027",
+      "key": "PLT-27",
+      "summary": "Uprawnienia zespołu do produkcji tylko do odczytu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:776b3621-98e6-51db-9c30-13beff32676d",
+      "labels": [
+        "security"
+      ],
+      "sprint": null,
+      "created": "2026-11-04T16:15:00.000+0100",
+      "updated": "2026-11-07T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40028",
+      "key": "PLT-28",
+      "summary": "Disaster recovery plan",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:9814abf7-3d0e-5186-854b-8d21dc5d248f",
+      "reporter": "712020:9814abf7-3d0e-5186-854b-8d21dc5d248f",
+      "labels": [
+        "backup"
+      ],
+      "sprint": null,
+      "created": "2026-11-05T12:30:00.000+0100",
+      "updated": "2026-11-08T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40029",
+      "key": "PLT-29",
+      "summary": "Wyłączenie starego serwera dema",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:776b3621-98e6-51db-9c30-13beff32676d",
+      "labels": [
+        "infra"
+      ],
+      "sprint": null,
+      "created": "2026-11-07T13:15:00.000+0100",
+      "updated": "2026-11-10T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40030",
+      "key": "PLT-30",
+      "summary": "Monitoring kosztów chmury z alertem budżetowym",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:0e54a24d-fbf4-5a04-bd5d-3d4faa3585de",
+      "labels": [
+        "cost",
+        "monitoring"
+      ],
+      "sprint": "402",
+      "created": "2026-11-08T16:00:00.000+0100",
+      "updated": "2026-11-11T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40031",
+      "key": "PLT-31",
+      "summary": "Ewaluacja agenta na 200 rozmowach z pilotów",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:cec0b1a7-5dcc-57ec-896e-fabca2b3a0b0",
+      "reporter": "712020:776b3621-98e6-51db-9c30-13beff32676d",
+      "labels": [
+        "llm",
+        "quality"
+      ],
+      "sprint": null,
+      "created": "2026-11-10T13:15:00.000+0100",
+      "updated": "2026-11-13T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40032",
+      "key": "PLT-32",
+      "summary": "Webhooks to the customer CRM fail without a retry",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:cec0b1a7-5dcc-57ec-896e-fabca2b3a0b0",
+      "labels": [
+        "integration"
+      ],
+      "sprint": null,
+      "created": "2026-11-12T08:15:00.000+0100",
+      "updated": "2026-11-15T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40033",
+      "key": "PLT-33",
+      "summary": "Odnowienie domeny firmowej",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:cec0b1a7-5dcc-57ec-896e-fabca2b3a0b0",
+      "reporter": "712020:f57252dc-4f87-530a-a66b-4963e47c7478",
+      "labels": [
+        "infra"
+      ],
+      "sprint": "403",
+      "created": "2026-11-13T10:45:00.000+0100",
+      "updated": "2026-11-16T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40034",
+      "key": "PLT-34",
+      "summary": "Skaner podatności w pipeline CI",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:2a68ffda-a3dd-5bef-b1c2-094695f17225",
+      "reporter": "712020:cec0b1a7-5dcc-57ec-896e-fabca2b3a0b0",
+      "labels": [
+        "security",
+        "ci"
+      ],
+      "sprint": null,
+      "created": "2026-11-15T16:00:00.000+0100",
+      "updated": "2026-11-18T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40035",
+      "key": "PLT-35",
+      "summary": "Kolejka wiadomości gubi zdarzenia przy restarcie",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:9814abf7-3d0e-5186-854b-8d21dc5d248f",
+      "reporter": "712020:9814abf7-3d0e-5186-854b-8d21dc5d248f",
+      "labels": [
+        "reliability"
+      ],
+      "sprint": null,
+      "created": "2026-11-16T13:30:00.000+0100",
+      "updated": "2026-11-19T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40036",
+      "key": "PLT-36",
+      "summary": "Rotacja haseł do bazy danych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:9814abf7-3d0e-5186-854b-8d21dc5d248f",
+      "reporter": "712020:0e54a24d-fbf4-5a04-bd5d-3d4faa3585de",
+      "labels": [
+        "security",
+        "database"
+      ],
+      "sprint": null,
+      "created": "2026-11-18T10:15:00.000+0100",
+      "updated": "2026-11-21T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40037",
+      "key": "PLT-37",
+      "summary": "Status page dla klientów",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:2a68ffda-a3dd-5bef-b1c2-094695f17225",
+      "labels": [
+        "monitoring"
+      ],
+      "sprint": null,
+      "created": "2026-11-20T08:45:00.000+0100",
+      "updated": "2026-11-23T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40038",
+      "key": "PLT-38",
+      "summary": "Wdrożenie nowej wersji agenta u klienta Meblux",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:f57252dc-4f87-530a-a66b-4963e47c7478",
+      "reporter": "712020:776b3621-98e6-51db-9c30-13beff32676d",
+      "labels": [
+        "deploy"
+      ],
+      "sprint": "402",
+      "created": "2026-11-21T09:45:00.000+0100",
+      "updated": "2026-11-24T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "40039",
+      "key": "PLT-39",
+      "summary": "Opóźnienie odpowiedzi modelu w godzinach szczytu",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:2a68ffda-a3dd-5bef-b1c2-094695f17225",
+      "labels": [
+        "llm",
+        "performance"
+      ],
+      "sprint": null,
+      "created": "2026-11-23T08:00:00.000+0100",
+      "updated": "2026-11-26T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

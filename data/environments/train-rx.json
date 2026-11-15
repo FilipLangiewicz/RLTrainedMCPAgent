@@ -1,0 +1,969 @@
+{
+  "name": "train-rx",
+  "site": "https://example.atlassian.net",
+  "now": "2026-11-04T09:30:00.000+0100",
+  "project": {
+    "key": "RX",
+    "name": "Curify - e-recepty i e-zwolnienia"
+  },
+  "board": {
+    "id": "22",
+    "name": "RX board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:bc8d45ef-123c-5c79-a515-f0b0e2d68baf",
+      "display_name": "Bogdan Kalinowski",
+      "email": "bogdan.kalinowski@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:b77a5ffc-e2d9-5f6e-9205-dcc1cea30ae3",
+      "display_name": "Ilona Szymańska",
+      "email": "ilona.szymanska@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:5fe89ee4-63e0-5ab7-aa2e-7fd63ebb15d9",
+      "display_name": "Hannah Becker",
+      "email": "hannah.becker@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:d66117bc-9db6-57a8-b305-87182e86aa65",
+      "display_name": "Marcin Pietrzak",
+      "email": "marcin.pietrzak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:a3aaf3cc-5426-5711-9d38-9bd13560ba19",
+      "display_name": "Marcin Woźniak",
+      "email": "marcin.wozniak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:3a40dff1-743a-5fe0-9d55-0004a3eac700",
+      "display_name": "Dorota Kaczor",
+      "email": "dorota.kaczor@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:68436348-dfb8-598c-9bf9-3ba1b6890cee",
+      "display_name": "Jarosław Mróz",
+      "email": "jaroslaw.mroz@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "221",
+      "name": "RX Sprint 42",
+      "state": "closed",
+      "start_date": "2026-10-14T09:00:00.000Z",
+      "end_date": "2026-10-28T09:00:00.000Z",
+      "goal": "Podpis kwalifikowany w chmurze"
+    },
+    {
+      "id": "222",
+      "name": "RX Sprint 43",
+      "state": "active",
+      "start_date": "2026-10-28T09:00:00.000Z",
+      "end_date": "2026-11-11T09:00:00.000Z",
+      "goal": "Nowe kody recept i zwolnienia do ZUS"
+    },
+    {
+      "id": "223",
+      "name": "RX Sprint 44",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Recepty roczne i pakietowe"
+    },
+    {
+      "id": "224",
+      "name": "RX Sprint 45",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "22001",
+      "key": "RX-1",
+      "summary": "Podpis kwalifikowany w chmurze dla lekarzy",
+      "description": "Lekarz podpisuje receptę bez karty kryptograficznej, przez dostawcę podpisu w chmurze.",
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:a3aaf3cc-5426-5711-9d38-9bd13560ba19",
+      "reporter": "712020:5fe89ee4-63e0-5ab7-aa2e-7fd63ebb15d9",
+      "labels": [
+        "signature",
+        "p1"
+      ],
+      "sprint": "221",
+      "created": "2026-08-27T09:45:00.000+0100",
+      "updated": "2026-08-30T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "220015",
+          "author": "712020:a3aaf3cc-5426-5711-9d38-9bd13560ba19",
+          "time_spent_seconds": 28800,
+          "comment": "Integracja z dostawcą podpisu",
+          "started": "2026-08-29T00:45:00.000+0100"
+        },
+        {
+          "id": "220016",
+          "author": "712020:a3aaf3cc-5426-5711-9d38-9bd13560ba19",
+          "time_spent_seconds": 14400,
+          "comment": "Testy na środowisku P1",
+          "started": "2026-08-30T00:45:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "22002",
+      "key": "RX-2",
+      "summary": "Recepta znika z listy po odrzuceniu przez P1",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:a3aaf3cc-5426-5711-9d38-9bd13560ba19",
+      "reporter": "712020:a3aaf3cc-5426-5711-9d38-9bd13560ba19",
+      "labels": [
+        "p1",
+        "backend"
+      ],
+      "sprint": "221",
+      "created": "2026-08-28T09:15:00.000+0100",
+      "updated": "2026-08-31T09:15:00.000+0100",
+      "comments": [
+        {
+          "id": "220021",
+          "author": "712020:a3aaf3cc-5426-5711-9d38-9bd13560ba19",
+          "body": "Teraz zapisujemy odrzucone recepty ze statusem i kodem błędu.",
+          "created": "2026-08-29T09:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "22003",
+      "key": "RX-3",
+      "summary": "Druk informacyjny recepty w wersji A6",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Low",
+      "assignee": "712020:68436348-dfb8-598c-9bf9-3ba1b6890cee",
+      "reporter": "712020:a3aaf3cc-5426-5711-9d38-9bd13560ba19",
+      "labels": [
+        "print"
+      ],
+      "sprint": "221",
+      "created": "2026-08-30T11:00:00.000+0100",
+      "updated": "2026-09-02T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22004",
+      "key": "RX-4",
+      "summary": "Export of prescriptions to the old XML format",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:5fe89ee4-63e0-5ab7-aa2e-7fd63ebb15d9",
+      "labels": [
+        "integration"
+      ],
+      "sprint": "221",
+      "created": "2026-08-31T15:15:00.000+0100",
+      "updated": "2026-09-03T15:15:00.000+0100",
+      "comments": [
+        {
+          "id": "220041",
+          "author": "712020:5fe89ee4-63e0-5ab7-aa2e-7fd63ebb15d9",
+          "body": "P1 does not accept this format any more.",
+          "created": "2026-09-01T15:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "22005",
+      "key": "RX-5",
+      "summary": "Wysyłka e-zwolnienia do ZUS z kodem pokrewieństwa",
+      "description": "Zwolnienie na opiekę nad dzieckiem wymaga kodu pokrewieństwa i daty urodzenia dziecka.",
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:5fe89ee4-63e0-5ab7-aa2e-7fd63ebb15d9",
+      "reporter": "712020:b77a5ffc-e2d9-5f6e-9205-dcc1cea30ae3",
+      "labels": [
+        "zus",
+        "sick-leave"
+      ],
+      "sprint": "222",
+      "created": "2026-09-02T11:45:00.000+0100",
+      "updated": "2026-09-05T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "220055",
+          "author": "712020:5fe89ee4-63e0-5ab7-aa2e-7fd63ebb15d9",
+          "time_spent_seconds": 18000,
+          "comment": "Model danych zwolnienia",
+          "started": "2026-09-04T00:45:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "22006",
+      "key": "RX-6",
+      "summary": "Kod recepty SMS nie dochodzi do numerów zagranicznych",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:3a40dff1-743a-5fe0-9d55-0004a3eac700",
+      "reporter": "712020:3a40dff1-743a-5fe0-9d55-0004a3eac700",
+      "labels": [
+        "sms",
+        "p1"
+      ],
+      "sprint": "222",
+      "created": "2026-09-03T09:00:00.000+0100",
+      "updated": "2026-09-06T09:00:00.000+0100",
+      "comments": [
+        {
+          "id": "220061",
+          "author": "712020:3a40dff1-743a-5fe0-9d55-0004a3eac700",
+          "body": "Bramka SMS odrzuca numery z prefiksem +380.",
+          "created": "2026-09-04T09:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "22007",
+      "key": "RX-7",
+      "summary": "Walidacja dawkowania przed wysłaniem recepty",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:5fe89ee4-63e0-5ab7-aa2e-7fd63ebb15d9",
+      "reporter": "712020:5fe89ee4-63e0-5ab7-aa2e-7fd63ebb15d9",
+      "labels": [
+        "validation"
+      ],
+      "sprint": "222",
+      "created": "2026-09-05T13:30:00.000+0100",
+      "updated": "2026-09-08T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22008",
+      "key": "RX-8",
+      "summary": "Error message for an expired doctor certificate",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:a3aaf3cc-5426-5711-9d38-9bd13560ba19",
+      "reporter": "712020:d66117bc-9db6-57a8-b305-87182e86aa65",
+      "labels": [
+        "signature",
+        "ui"
+      ],
+      "sprint": "222",
+      "created": "2026-09-06T11:45:00.000+0100",
+      "updated": "2026-09-09T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22009",
+      "key": "RX-9",
+      "summary": "Lista leków refundowanych z listopadowego obwieszczenia",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:a3aaf3cc-5426-5711-9d38-9bd13560ba19",
+      "reporter": "712020:5fe89ee4-63e0-5ab7-aa2e-7fd63ebb15d9",
+      "labels": [
+        "drugs",
+        "refund"
+      ],
+      "sprint": "222",
+      "created": "2026-09-08T17:00:00.000+0100",
+      "updated": "2026-09-11T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "220095",
+          "author": "712020:a3aaf3cc-5426-5711-9d38-9bd13560ba19",
+          "time_spent_seconds": 10800,
+          "comment": "Import obwieszczenia",
+          "started": "2026-09-10T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "22010",
+      "key": "RX-10",
+      "summary": "Anulowanie e-zwolnienia w ciągu 3 dni",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:d66117bc-9db6-57a8-b305-87182e86aa65",
+      "reporter": "712020:3a40dff1-743a-5fe0-9d55-0004a3eac700",
+      "labels": [
+        "zus",
+        "sick-leave"
+      ],
+      "sprint": "222",
+      "created": "2026-09-09T16:15:00.000+0100",
+      "updated": "2026-09-12T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22011",
+      "key": "RX-11",
+      "summary": "Wyszukiwarka leków nie znajduje nazw z myślnikiem",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:3a40dff1-743a-5fe0-9d55-0004a3eac700",
+      "reporter": "712020:d66117bc-9db6-57a8-b305-87182e86aa65",
+      "labels": [
+        "drugs",
+        "search"
+      ],
+      "sprint": "222",
+      "created": "2026-09-11T10:45:00.000+0100",
+      "updated": "2026-09-14T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22012",
+      "key": "RX-12",
+      "summary": "Retry of requests to P1 after a timeout",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:5fe89ee4-63e0-5ab7-aa2e-7fd63ebb15d9",
+      "reporter": "712020:bc8d45ef-123c-5c79-a515-f0b0e2d68baf",
+      "labels": [
+        "p1",
+        "backend"
+      ],
+      "sprint": "222",
+      "created": "2026-09-12T11:45:00.000+0100",
+      "updated": "2026-09-15T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22013",
+      "key": "RX-13",
+      "summary": "Historia recept pacjenta w panelu lekarza",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:b77a5ffc-e2d9-5f6e-9205-dcc1cea30ae3",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": "222",
+      "created": "2026-09-14T15:30:00.000+0100",
+      "updated": "2026-09-17T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22014",
+      "key": "RX-14",
+      "summary": "Błędna data ważności recepty na antybiotyk",
+      "description": "Recepta na antybiotyk ma ważność 30 dni zamiast 7.",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:d66117bc-9db6-57a8-b305-87182e86aa65",
+      "reporter": "712020:d66117bc-9db6-57a8-b305-87182e86aa65",
+      "labels": [
+        "validation",
+        "drugs"
+      ],
+      "sprint": "222",
+      "created": "2026-09-15T17:00:00.000+0100",
+      "updated": "2026-09-18T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22015",
+      "key": "RX-15",
+      "summary": "Certyfikat do P1 wygasa 30 listopada",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": null,
+      "reporter": "712020:d66117bc-9db6-57a8-b305-87182e86aa65",
+      "labels": [
+        "p1",
+        "security"
+      ],
+      "sprint": "222",
+      "created": "2026-09-17T08:15:00.000+0100",
+      "updated": "2026-09-20T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22016",
+      "key": "RX-16",
+      "summary": "Recepty roczne na leki stałe",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:b77a5ffc-e2d9-5f6e-9205-dcc1cea30ae3",
+      "labels": [
+        "drugs"
+      ],
+      "sprint": "223",
+      "created": "2026-09-18T10:30:00.000+0100",
+      "updated": "2026-09-21T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22017",
+      "key": "RX-17",
+      "summary": "Pakiet recept: kilka leków pod jednym kodem",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:d66117bc-9db6-57a8-b305-87182e86aa65",
+      "labels": [
+        "p1"
+      ],
+      "sprint": "223",
+      "created": "2026-09-20T16:45:00.000+0100",
+      "updated": "2026-09-23T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22018",
+      "key": "RX-18",
+      "summary": "Upgrade the HL7 FHIR library",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:5fe89ee4-63e0-5ab7-aa2e-7fd63ebb15d9",
+      "labels": [
+        "integration"
+      ],
+      "sprint": "223",
+      "created": "2026-09-21T08:00:00.000+0100",
+      "updated": "2026-09-24T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22019",
+      "key": "RX-19",
+      "summary": "Podpowiedź zamiennika, gdy lek jest niedostępny",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:d66117bc-9db6-57a8-b305-87182e86aa65",
+      "labels": [
+        "drugs"
+      ],
+      "sprint": "223",
+      "created": "2026-09-23T17:30:00.000+0100",
+      "updated": "2026-09-26T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22020",
+      "key": "RX-20",
+      "summary": "Zwolnienie wystawione w niedzielę ma datę poniedziałku",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:bc8d45ef-123c-5c79-a515-f0b0e2d68baf",
+      "reporter": "712020:d66117bc-9db6-57a8-b305-87182e86aa65",
+      "labels": [
+        "zus",
+        "sick-leave"
+      ],
+      "sprint": "223",
+      "created": "2026-09-24T10:15:00.000+0100",
+      "updated": "2026-09-27T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22021",
+      "key": "RX-21",
+      "summary": "Numer PESEL dziecka bez walidacji sumy kontrolnej",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:a3aaf3cc-5426-5711-9d38-9bd13560ba19",
+      "reporter": "712020:5fe89ee4-63e0-5ab7-aa2e-7fd63ebb15d9",
+      "labels": [
+        "validation"
+      ],
+      "sprint": null,
+      "created": "2026-09-26T15:00:00.000+0100",
+      "updated": "2026-09-29T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22022",
+      "key": "RX-22",
+      "summary": "Raport recept wystawionych w miesiącu dla NFZ",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:bc8d45ef-123c-5c79-a515-f0b0e2d68baf",
+      "labels": [
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-09-27T16:00:00.000+0100",
+      "updated": "2026-09-30T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22023",
+      "key": "RX-23",
+      "summary": "Pharmacist cannot see the dosage note",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:a3aaf3cc-5426-5711-9d38-9bd13560ba19",
+      "reporter": "712020:5fe89ee4-63e0-5ab7-aa2e-7fd63ebb15d9",
+      "labels": [
+        "p1"
+      ],
+      "sprint": null,
+      "created": "2026-09-29T08:00:00.000+0100",
+      "updated": "2026-10-02T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22024",
+      "key": "RX-24",
+      "summary": "Uprawnienia pielęgniarki do recept na kontynuację",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:b77a5ffc-e2d9-5f6e-9205-dcc1cea30ae3",
+      "labels": [
+        "permissions"
+      ],
+      "sprint": null,
+      "created": "2026-09-30T09:15:00.000+0100",
+      "updated": "2026-10-03T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22025",
+      "key": "RX-25",
+      "summary": "Logi wymiany z P1 trzymane dłużej niż 90 dni",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:5fe89ee4-63e0-5ab7-aa2e-7fd63ebb15d9",
+      "labels": [
+        "privacy",
+        "backend"
+      ],
+      "sprint": null,
+      "created": "2026-10-02T16:45:00.000+0100",
+      "updated": "2026-10-05T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22026",
+      "key": "RX-26",
+      "summary": "Ostrzeżenie o interakcji leków",
+      "description": "Przy dodaniu drugiego leku sprawdzamy bazę interakcji i pokazujemy ostrzeżenie.",
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:5fe89ee4-63e0-5ab7-aa2e-7fd63ebb15d9",
+      "reporter": "712020:d66117bc-9db6-57a8-b305-87182e86aa65",
+      "labels": [
+        "drugs",
+        "validation"
+      ],
+      "sprint": null,
+      "created": "2026-10-03T12:15:00.000+0100",
+      "updated": "2026-10-06T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22027",
+      "key": "RX-27",
+      "summary": "Szablony najczęstszych recept lekarza",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:d66117bc-9db6-57a8-b305-87182e86aa65",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": null,
+      "created": "2026-10-05T11:45:00.000+0100",
+      "updated": "2026-10-08T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22028",
+      "key": "RX-28",
+      "summary": "Recepta dla cudzoziemca bez numeru PESEL",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:d66117bc-9db6-57a8-b305-87182e86aa65",
+      "labels": [
+        "validation",
+        "p1"
+      ],
+      "sprint": null,
+      "created": "2026-10-06T13:00:00.000+0100",
+      "updated": "2026-10-09T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22029",
+      "key": "RX-29",
+      "summary": "Wydruk zwolnienia ucina adres pracodawcy",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:a3aaf3cc-5426-5711-9d38-9bd13560ba19",
+      "reporter": "712020:b77a5ffc-e2d9-5f6e-9205-dcc1cea30ae3",
+      "labels": [
+        "print",
+        "sick-leave"
+      ],
+      "sprint": null,
+      "created": "2026-10-08T10:45:00.000+0100",
+      "updated": "2026-10-11T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22030",
+      "key": "RX-30",
+      "summary": "Document the error codes of P1 for the support team",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:bc8d45ef-123c-5c79-a515-f0b0e2d68baf",
+      "reporter": "712020:d66117bc-9db6-57a8-b305-87182e86aa65",
+      "labels": [
+        "docs"
+      ],
+      "sprint": null,
+      "created": "2026-10-09T17:45:00.000+0100",
+      "updated": "2026-10-12T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22031",
+      "key": "RX-31",
+      "summary": "Integracja z Rejestrem Asystentów Medycznych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:3a40dff1-743a-5fe0-9d55-0004a3eac700",
+      "labels": [
+        "integration"
+      ],
+      "sprint": null,
+      "created": "2026-10-11T12:45:00.000+0100",
+      "updated": "2026-10-14T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22032",
+      "key": "RX-32",
+      "summary": "Wolne ładowanie słownika leków przy pierwszym logowaniu",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:b77a5ffc-e2d9-5f6e-9205-dcc1cea30ae3",
+      "labels": [
+        "performance",
+        "drugs"
+      ],
+      "sprint": "222",
+      "created": "2026-10-12T09:45:00.000+0100",
+      "updated": "2026-10-15T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22033",
+      "key": "RX-33",
+      "summary": "Szkolenie dla lekarzy z nowych kodów zwolnień",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:3a40dff1-743a-5fe0-9d55-0004a3eac700",
+      "reporter": "712020:3a40dff1-743a-5fe0-9d55-0004a3eac700",
+      "labels": [
+        "sick-leave"
+      ],
+      "sprint": "222",
+      "created": "2026-10-13T17:30:00.000+0100",
+      "updated": "2026-10-16T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22034",
+      "key": "RX-34",
+      "summary": "Odnowienie recepty na prośbę pacjenta z aplikacji",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:b77a5ffc-e2d9-5f6e-9205-dcc1cea30ae3",
+      "labels": [
+        "p1"
+      ],
+      "sprint": "223",
+      "created": "2026-10-15T15:30:00.000+0100",
+      "updated": "2026-10-18T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22035",
+      "key": "RX-35",
+      "summary": "Dawka 'pół tabletki' zapisuje się jako 0",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "High",
+      "assignee": "712020:d66117bc-9db6-57a8-b305-87182e86aa65",
+      "reporter": "712020:a3aaf3cc-5426-5711-9d38-9bd13560ba19",
+      "labels": [
+        "validation"
+      ],
+      "sprint": "222",
+      "created": "2026-10-16T09:30:00.000+0100",
+      "updated": "2026-10-19T09:30:00.000+0100",
+      "comments": [
+        {
+          "id": "220351",
+          "author": "712020:d66117bc-9db6-57a8-b305-87182e86aa65",
+          "body": "Pole dawki przyjmuje tylko liczby całkowite.",
+          "created": "2026-10-17T09:30:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "22036",
+      "key": "RX-36",
+      "summary": "Monitorowanie czasu odpowiedzi P1",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:b77a5ffc-e2d9-5f6e-9205-dcc1cea30ae3",
+      "labels": [
+        "monitoring",
+        "p1"
+      ],
+      "sprint": null,
+      "created": "2026-10-18T09:15:00.000+0100",
+      "updated": "2026-10-21T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22037",
+      "key": "RX-37",
+      "summary": "Przygotować listę pytań do CSIOZ o recepty pakietowe",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:bc8d45ef-123c-5c79-a515-f0b0e2d68baf",
+      "reporter": "712020:5fe89ee4-63e0-5ab7-aa2e-7fd63ebb15d9",
+      "labels": [],
+      "sprint": null,
+      "created": "2026-10-19T08:00:00.000+0100",
+      "updated": "2026-10-22T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22038",
+      "key": "RX-38",
+      "summary": "Duplicate sick leave after a double click on 'Send'",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:d66117bc-9db6-57a8-b305-87182e86aa65",
+      "reporter": "712020:b77a5ffc-e2d9-5f6e-9205-dcc1cea30ae3",
+      "labels": [
+        "zus",
+        "frontend"
+      ],
+      "sprint": null,
+      "created": "2026-10-21T09:30:00.000+0100",
+      "updated": "2026-10-24T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22039",
+      "key": "RX-39",
+      "summary": "Usunąć stary moduł recept papierowych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:b77a5ffc-e2d9-5f6e-9205-dcc1cea30ae3",
+      "reporter": "712020:a3aaf3cc-5426-5711-9d38-9bd13560ba19",
+      "labels": [
+        "backend"
+      ],
+      "sprint": null,
+      "created": "2026-10-22T08:45:00.000+0100",
+      "updated": "2026-10-25T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22040",
+      "key": "RX-40",
+      "summary": "Kopia zapasowa kluczy podpisu w sejfie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:5fe89ee4-63e0-5ab7-aa2e-7fd63ebb15d9",
+      "labels": [
+        "signature",
+        "security"
+      ],
+      "sprint": null,
+      "created": "2026-10-24T09:15:00.000+0100",
+      "updated": "2026-10-27T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22041",
+      "key": "RX-41",
+      "summary": "Recepta na lek recepturowy z opisem składu",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:a3aaf3cc-5426-5711-9d38-9bd13560ba19",
+      "reporter": "712020:bc8d45ef-123c-5c79-a515-f0b0e2d68baf",
+      "labels": [
+        "drugs"
+      ],
+      "sprint": null,
+      "created": "2026-10-25T10:45:00.000+0100",
+      "updated": "2026-10-28T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "22042",
+      "key": "RX-42",
+      "summary": "Termin wizyty kontrolnej na zwolnieniu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:3a40dff1-743a-5fe0-9d55-0004a3eac700",
+      "reporter": "712020:5fe89ee4-63e0-5ab7-aa2e-7fd63ebb15d9",
+      "labels": [
+        "sick-leave"
+      ],
+      "sprint": null,
+      "created": "2026-10-27T12:00:00.000+0100",
+      "updated": "2026-10-30T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

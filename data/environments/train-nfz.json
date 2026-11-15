@@ -1,0 +1,844 @@
+{
+  "name": "train-nfz",
+  "site": "https://example.atlassian.net",
+  "now": "2026-10-21T08:45:00.000+0100",
+  "project": {
+    "key": "NFZ",
+    "name": "Medix - rozliczenia NFZ"
+  },
+  "board": {
+    "id": "30",
+    "name": "NFZ board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:a765ce57-6d59-5485-8dde-5e4fa5cd3d20",
+      "display_name": "Grażyna Pietruszka",
+      "email": "grazyna.pietruszka@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:4f4c6202-c6c3-5e90-b997-3a5c51cfb7d8",
+      "display_name": "Stanisław Góral",
+      "email": "stanislaw.goral@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:12399ef2-3528-5239-8174-7d6a1918d396",
+      "display_name": "Jakub Sowiński",
+      "email": "jakub.sowinski@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:5a7d2073-f84c-5546-951d-1ad8213a799e",
+      "display_name": "Jakub Lipiński",
+      "email": "jakub.lipinski@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:8e50299b-a9e8-5e28-8ff5-18eca7e24f23",
+      "display_name": "Bożena Kmiecik",
+      "email": "bozena.kmiecik@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:27b834bc-3fc0-5f74-876f-ce66c81a3865",
+      "display_name": "Fabian Rogowski",
+      "email": "fabian.rogowski@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:c6bb2941-a1cb-5192-8c51-da5b87d26c44",
+      "display_name": "Irena Dobosz",
+      "email": "irena.dobosz@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "301",
+      "name": "NFZ Sprint 15",
+      "state": "closed",
+      "start_date": "2026-09-30T09:00:00.000Z",
+      "end_date": "2026-10-14T09:00:00.000Z",
+      "goal": "Sprawozdanie za wrzesień"
+    },
+    {
+      "id": "302",
+      "name": "NFZ Sprint 16",
+      "state": "active",
+      "start_date": "2026-10-14T09:00:00.000Z",
+      "end_date": "2026-10-28T09:00:00.000Z",
+      "goal": "Limity świadczeń i odrzucone pozycje"
+    },
+    {
+      "id": "303",
+      "name": "NFZ Sprint 17",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Rozliczenia profilaktyki"
+    },
+    {
+      "id": "304",
+      "name": "NFZ Sprint 18",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "30001",
+      "key": "NFZ-1",
+      "summary": "Sprawozdanie świadczeń za wrzesień do NFZ",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Highest",
+      "assignee": "712020:12399ef2-3528-5239-8174-7d6a1918d396",
+      "reporter": "712020:a765ce57-6d59-5485-8dde-5e4fa5cd3d20",
+      "labels": [
+        "report",
+        "deadline"
+      ],
+      "sprint": "301",
+      "created": "2026-08-13T08:00:00.000+0100",
+      "updated": "2026-08-16T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "300015",
+          "author": "712020:12399ef2-3528-5239-8174-7d6a1918d396",
+          "time_spent_seconds": 21600,
+          "comment": "Weryfikacja pozycji",
+          "started": "2026-08-15T00:00:00.000+0100"
+        },
+        {
+          "id": "300016",
+          "author": "712020:12399ef2-3528-5239-8174-7d6a1918d396",
+          "time_spent_seconds": 7200,
+          "comment": "Wysyłka",
+          "started": "2026-08-16T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "30002",
+      "key": "NFZ-2",
+      "summary": "Odrzucone świadczenia z powodu braku ubezpieczenia w eWUŚ",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:c6bb2941-a1cb-5192-8c51-da5b87d26c44",
+      "reporter": "712020:27b834bc-3fc0-5f74-876f-ce66c81a3865",
+      "labels": [
+        "ewus",
+        "rejections"
+      ],
+      "sprint": "301",
+      "created": "2026-08-15T09:00:00.000+0100",
+      "updated": "2026-08-18T09:00:00.000+0100",
+      "comments": [
+        {
+          "id": "300021",
+          "author": "712020:4f4c6202-c6c3-5e90-b997-3a5c51cfb7d8",
+          "body": "Sprawdzamy eWUŚ przy rejestracji, a nie dopiero przy rozliczeniu.",
+          "created": "2026-08-16T09:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "30003",
+      "key": "NFZ-3",
+      "summary": "Old XML export for the settlements",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:12399ef2-3528-5239-8174-7d6a1918d396",
+      "labels": [
+        "export"
+      ],
+      "sprint": "301",
+      "created": "2026-08-16T16:45:00.000+0100",
+      "updated": "2026-08-19T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30004",
+      "key": "NFZ-4",
+      "summary": "Limit świadczeń kardiologii przekroczony o 12%",
+      "description": "System nie ostrzega rejestracji, gdy limit kontraktu jest bliski końca.",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:8e50299b-a9e8-5e28-8ff5-18eca7e24f23",
+      "reporter": "712020:a765ce57-6d59-5485-8dde-5e4fa5cd3d20",
+      "labels": [
+        "limits"
+      ],
+      "sprint": "302",
+      "created": "2026-08-18T10:45:00.000+0100",
+      "updated": "2026-08-21T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "300045",
+          "author": "712020:8e50299b-a9e8-5e28-8ff5-18eca7e24f23",
+          "time_spent_seconds": 10800,
+          "comment": "Analiza wykonania kontraktu",
+          "started": "2026-08-20T00:45:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "30005",
+      "key": "NFZ-5",
+      "summary": "Ostrzeżenie przy 90% wykorzystania limitu",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:a765ce57-6d59-5485-8dde-5e4fa5cd3d20",
+      "reporter": "712020:a765ce57-6d59-5485-8dde-5e4fa5cd3d20",
+      "labels": [
+        "limits",
+        "notifications"
+      ],
+      "sprint": "302",
+      "created": "2026-08-20T17:15:00.000+0100",
+      "updated": "2026-08-23T17:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30006",
+      "key": "NFZ-6",
+      "summary": "Korekta odrzuconych pozycji z sierpnia",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:27b834bc-3fc0-5f74-876f-ce66c81a3865",
+      "reporter": "712020:5a7d2073-f84c-5546-951d-1ad8213a799e",
+      "labels": [
+        "rejections"
+      ],
+      "sprint": "302",
+      "created": "2026-08-21T08:00:00.000+0100",
+      "updated": "2026-08-24T08:00:00.000+0100",
+      "comments": [
+        {
+          "id": "300061",
+          "author": "712020:27b834bc-3fc0-5f74-876f-ce66c81a3865",
+          "body": "Zostało 140 pozycji do poprawy.",
+          "created": "2026-08-22T08:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "30007",
+      "key": "NFZ-7",
+      "summary": "Dashboard of the contract usage by clinic",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:a765ce57-6d59-5485-8dde-5e4fa5cd3d20",
+      "reporter": "712020:27b834bc-3fc0-5f74-876f-ce66c81a3865",
+      "labels": [
+        "reports",
+        "limits"
+      ],
+      "sprint": "302",
+      "created": "2026-08-23T17:30:00.000+0100",
+      "updated": "2026-08-26T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30008",
+      "key": "NFZ-8",
+      "summary": "Kod świadczenia znika po edycji wizyty",
+      "description": "Po zmianie godziny wizyty system usuwa kod świadczenia. Wizyta nie trafia do rozliczenia.",
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "Highest",
+      "assignee": "712020:4f4c6202-c6c3-5e90-b997-3a5c51cfb7d8",
+      "reporter": "712020:27b834bc-3fc0-5f74-876f-ce66c81a3865",
+      "labels": [
+        "validation",
+        "backend"
+      ],
+      "sprint": "302",
+      "created": "2026-08-25T10:45:00.000+0100",
+      "updated": "2026-08-28T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30009",
+      "key": "NFZ-9",
+      "summary": "Słownik produktów rozliczeniowych na 2027 rok",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:5a7d2073-f84c-5546-951d-1ad8213a799e",
+      "reporter": "712020:a765ce57-6d59-5485-8dde-5e4fa5cd3d20",
+      "labels": [
+        "dictionary"
+      ],
+      "sprint": "302",
+      "created": "2026-08-26T10:15:00.000+0100",
+      "updated": "2026-08-29T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30010",
+      "key": "NFZ-10",
+      "summary": "Weryfikacja eWUŚ dla pacjentów z kartą EKUZ",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:a765ce57-6d59-5485-8dde-5e4fa5cd3d20",
+      "reporter": "712020:4f4c6202-c6c3-5e90-b997-3a5c51cfb7d8",
+      "labels": [
+        "ewus"
+      ],
+      "sprint": "302",
+      "created": "2026-08-28T16:15:00.000+0100",
+      "updated": "2026-08-31T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30011",
+      "key": "NFZ-11",
+      "summary": "Raport świadczeń bez rozpoznania ICD-10",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:27b834bc-3fc0-5f74-876f-ce66c81a3865",
+      "reporter": "712020:5a7d2073-f84c-5546-951d-1ad8213a799e",
+      "labels": [
+        "report",
+        "validation"
+      ],
+      "sprint": "302",
+      "created": "2026-08-30T16:30:00.000+0100",
+      "updated": "2026-09-02T16:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30012",
+      "key": "NFZ-12",
+      "summary": "Rozliczenie wizyt domowych osobno od gabinetowych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:27b834bc-3fc0-5f74-876f-ce66c81a3865",
+      "reporter": "712020:27b834bc-3fc0-5f74-876f-ce66c81a3865",
+      "labels": [
+        "report"
+      ],
+      "sprint": "302",
+      "created": "2026-09-01T12:30:00.000+0100",
+      "updated": "2026-09-04T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30013",
+      "key": "NFZ-13",
+      "summary": "Porównanie przychodów NFZ rok do roku",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:a765ce57-6d59-5485-8dde-5e4fa5cd3d20",
+      "labels": [
+        "reports"
+      ],
+      "sprint": "302",
+      "created": "2026-09-02T15:45:00.000+0100",
+      "updated": "2026-09-05T15:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30014",
+      "key": "NFZ-14",
+      "summary": "Rozliczenie programu profilaktyki chorób serca",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:a765ce57-6d59-5485-8dde-5e4fa5cd3d20",
+      "reporter": "712020:12399ef2-3528-5239-8174-7d6a1918d396",
+      "labels": [
+        "prevention"
+      ],
+      "sprint": "303",
+      "created": "2026-09-04T14:00:00.000+0100",
+      "updated": "2026-09-07T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30015",
+      "key": "NFZ-15",
+      "summary": "Program profilaktyki raka szyjki macicy: kody świadczeń",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:a765ce57-6d59-5485-8dde-5e4fa5cd3d20",
+      "reporter": "712020:8e50299b-a9e8-5e28-8ff5-18eca7e24f23",
+      "labels": [
+        "prevention",
+        "dictionary"
+      ],
+      "sprint": "303",
+      "created": "2026-09-06T15:30:00.000+0100",
+      "updated": "2026-09-09T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30016",
+      "key": "NFZ-16",
+      "summary": "Automatic check of the service codes before the export",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:5a7d2073-f84c-5546-951d-1ad8213a799e",
+      "reporter": "712020:27b834bc-3fc0-5f74-876f-ce66c81a3865",
+      "labels": [
+        "validation",
+        "export"
+      ],
+      "sprint": "303",
+      "created": "2026-09-07T10:15:00.000+0100",
+      "updated": "2026-09-10T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30017",
+      "key": "NFZ-17",
+      "summary": "Pacjent zapisany jako zmarły w eWUŚ",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:5a7d2073-f84c-5546-951d-1ad8213a799e",
+      "reporter": "712020:27b834bc-3fc0-5f74-876f-ce66c81a3865",
+      "labels": [
+        "ewus"
+      ],
+      "sprint": "303",
+      "created": "2026-09-09T14:00:00.000+0100",
+      "updated": "2026-09-12T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30018",
+      "key": "NFZ-18",
+      "summary": "Termin sprawozdania za październik: 10 listopada",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": "712020:12399ef2-3528-5239-8174-7d6a1918d396",
+      "reporter": "712020:8e50299b-a9e8-5e28-8ff5-18eca7e24f23",
+      "labels": [
+        "report",
+        "deadline"
+      ],
+      "sprint": null,
+      "created": "2026-09-11T12:15:00.000+0100",
+      "updated": "2026-09-14T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30019",
+      "key": "NFZ-19",
+      "summary": "Rozliczenie nadwykonań za trzeci kwartał",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:4f4c6202-c6c3-5e90-b997-3a5c51cfb7d8",
+      "reporter": "712020:12399ef2-3528-5239-8174-7d6a1918d396",
+      "labels": [
+        "limits"
+      ],
+      "sprint": null,
+      "created": "2026-09-12T09:15:00.000+0100",
+      "updated": "2026-09-15T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30020",
+      "key": "NFZ-20",
+      "summary": "Uprawnienia działu rozliczeń do edycji wizyt",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:4f4c6202-c6c3-5e90-b997-3a5c51cfb7d8",
+      "labels": [
+        "permissions"
+      ],
+      "sprint": null,
+      "created": "2026-09-14T08:15:00.000+0100",
+      "updated": "2026-09-17T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30021",
+      "key": "NFZ-21",
+      "summary": "Wizyta bez podpisu lekarza w rozliczeniu",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:12399ef2-3528-5239-8174-7d6a1918d396",
+      "reporter": "712020:5a7d2073-f84c-5546-951d-1ad8213a799e",
+      "labels": [
+        "validation"
+      ],
+      "sprint": null,
+      "created": "2026-09-16T16:00:00.000+0100",
+      "updated": "2026-09-19T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30022",
+      "key": "NFZ-22",
+      "summary": "Eksport rozliczeń do systemu księgowego Medix",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:27b834bc-3fc0-5f74-876f-ce66c81a3865",
+      "reporter": "712020:4f4c6202-c6c3-5e90-b997-3a5c51cfb7d8",
+      "labels": [
+        "export"
+      ],
+      "sprint": null,
+      "created": "2026-09-17T10:30:00.000+0100",
+      "updated": "2026-09-20T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30023",
+      "key": "NFZ-23",
+      "summary": "Średni czas od wizyty do rozliczenia",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:27b834bc-3fc0-5f74-876f-ce66c81a3865",
+      "reporter": "712020:5a7d2073-f84c-5546-951d-1ad8213a799e",
+      "labels": [
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-09-19T08:45:00.000+0100",
+      "updated": "2026-09-22T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30024",
+      "key": "NFZ-24",
+      "summary": "Duplicate services after the import from the clinic in Wola",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:8e50299b-a9e8-5e28-8ff5-18eca7e24f23",
+      "reporter": "712020:12399ef2-3528-5239-8174-7d6a1918d396",
+      "labels": [
+        "rejections",
+        "backend"
+      ],
+      "sprint": null,
+      "created": "2026-09-21T12:45:00.000+0100",
+      "updated": "2026-09-24T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30025",
+      "key": "NFZ-25",
+      "summary": "Odwołanie od decyzji NFZ w sprawie kar umownych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:8e50299b-a9e8-5e28-8ff5-18eca7e24f23",
+      "labels": [
+        "contract"
+      ],
+      "sprint": null,
+      "created": "2026-09-23T14:00:00.000+0100",
+      "updated": "2026-09-26T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30026",
+      "key": "NFZ-26",
+      "summary": "Wykaz świadczeń odrzuconych za zły kod lekarza",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:5a7d2073-f84c-5546-951d-1ad8213a799e",
+      "labels": [
+        "rejections"
+      ],
+      "sprint": null,
+      "created": "2026-09-24T15:00:00.000+0100",
+      "updated": "2026-09-27T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30027",
+      "key": "NFZ-27",
+      "summary": "Aneks do umowy z NFZ na rehabilitację",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:5a7d2073-f84c-5546-951d-1ad8213a799e",
+      "labels": [
+        "contract"
+      ],
+      "sprint": null,
+      "created": "2026-09-26T11:30:00.000+0100",
+      "updated": "2026-09-29T11:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30028",
+      "key": "NFZ-28",
+      "summary": "Ostrzeżenie o skierowaniu starszym niż rok",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:12399ef2-3528-5239-8174-7d6a1918d396",
+      "reporter": "712020:4f4c6202-c6c3-5e90-b997-3a5c51cfb7d8",
+      "labels": [
+        "validation"
+      ],
+      "sprint": null,
+      "created": "2026-09-28T10:45:00.000+0100",
+      "updated": "2026-10-01T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30029",
+      "key": "NFZ-29",
+      "summary": "Pacjent z dwóch oddziałów NFZ w jednym miesiącu",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:27b834bc-3fc0-5f74-876f-ce66c81a3865",
+      "labels": [
+        "ewus"
+      ],
+      "sprint": null,
+      "created": "2026-09-29T16:00:00.000+0100",
+      "updated": "2026-10-02T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30030",
+      "key": "NFZ-30",
+      "summary": "Instrukcja rozliczania teleporad",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:4f4c6202-c6c3-5e90-b997-3a5c51cfb7d8",
+      "labels": [
+        "docs"
+      ],
+      "sprint": null,
+      "created": "2026-10-01T15:00:00.000+0100",
+      "updated": "2026-10-04T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30031",
+      "key": "NFZ-31",
+      "summary": "Ranking placówek według przychodu z NFZ",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:5a7d2073-f84c-5546-951d-1ad8213a799e",
+      "labels": [
+        "reports"
+      ],
+      "sprint": "302",
+      "created": "2026-10-03T17:00:00.000+0100",
+      "updated": "2026-10-06T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30032",
+      "key": "NFZ-32",
+      "summary": "Kontrola NFZ w placówce Mokotów: lista dokumentów",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:8e50299b-a9e8-5e28-8ff5-18eca7e24f23",
+      "labels": [
+        "audit"
+      ],
+      "sprint": null,
+      "created": "2026-10-04T12:30:00.000+0100",
+      "updated": "2026-10-07T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30033",
+      "key": "NFZ-33",
+      "summary": "Outliers in the number of services per doctor",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:a765ce57-6d59-5485-8dde-5e4fa5cd3d20",
+      "labels": [
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-10-06T12:15:00.000+0100",
+      "updated": "2026-10-09T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30034",
+      "key": "NFZ-34",
+      "summary": "Odświeżanie słownika lekarzy z rejestru",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": "712020:8e50299b-a9e8-5e28-8ff5-18eca7e24f23",
+      "reporter": "712020:27b834bc-3fc0-5f74-876f-ce66c81a3865",
+      "labels": [
+        "dictionary"
+      ],
+      "sprint": null,
+      "created": "2026-10-08T14:45:00.000+0100",
+      "updated": "2026-10-11T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30035",
+      "key": "NFZ-35",
+      "summary": "Rozliczenie badań laboratoryjnych w pakiecie wizyty",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:4f4c6202-c6c3-5e90-b997-3a5c51cfb7d8",
+      "reporter": "712020:5a7d2073-f84c-5546-951d-1ad8213a799e",
+      "labels": [
+        "report"
+      ],
+      "sprint": "303",
+      "created": "2026-10-09T14:30:00.000+0100",
+      "updated": "2026-10-12T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30036",
+      "key": "NFZ-36",
+      "summary": "Błąd zaokrąglenia punktów rozliczeniowych",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:27b834bc-3fc0-5f74-876f-ce66c81a3865",
+      "labels": [
+        "backend"
+      ],
+      "sprint": null,
+      "created": "2026-10-11T15:00:00.000+0100",
+      "updated": "2026-10-14T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "30037",
+      "key": "NFZ-37",
+      "summary": "Archiwum sprawozdań z ostatnich 5 lat",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:27b834bc-3fc0-5f74-876f-ce66c81a3865",
+      "reporter": "712020:12399ef2-3528-5239-8174-7d6a1918d396",
+      "labels": [
+        "report"
+      ],
+      "sprint": null,
+      "created": "2026-10-13T14:00:00.000+0100",
+      "updated": "2026-10-16T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

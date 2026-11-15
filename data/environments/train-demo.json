@@ -1,0 +1,875 @@
+{
+  "name": "train-demo",
+  "site": "https://example.atlassian.net",
+  "now": "2026-12-01T10:00:00.000+0100",
+  "project": {
+    "key": "DEMO",
+    "name": "WiseAI - dema i prezentacje"
+  },
+  "board": {
+    "id": "37",
+    "name": "DEMO board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:60d889a7-14dc-540c-b057-e038c6282732",
+      "display_name": "Robinho Nasario",
+      "email": "robinho.nasario@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:f6a8c5aa-b26c-5207-bac7-74fd5823af84",
+      "display_name": "Yuliia Marchenko",
+      "email": "yuliia.marchenko@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:5bd01c66-26ee-54d4-bb63-d80804c25cd2",
+      "display_name": "Hubert Kałuża",
+      "email": "hubert.kaluza@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:c73edaa2-32ef-5b2b-af4a-19850cc87aa3",
+      "display_name": "Kateryna Boiko",
+      "email": "kateryna.boiko@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:f1815436-4189-5b04-8b3e-72a99b8b52be",
+      "display_name": "Kateryna Zinchenko",
+      "email": "kateryna.zinchenko@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:f47832c0-1559-5b62-bd3a-7413db6959f0",
+      "display_name": "Ihor Shapoval",
+      "email": "ihor.shapoval@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:59712c77-57a3-5497-85e3-f13ebaa3ebe1",
+      "display_name": "Larysa Fedorchuk",
+      "email": "larysa.fedorchuk@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "371",
+      "name": "DEMO Sprint 9",
+      "state": "closed",
+      "start_date": "2026-11-10T09:00:00.000Z",
+      "end_date": "2026-11-24T09:00:00.000Z",
+      "goal": "Demo dla funduszu inwestycyjnego"
+    },
+    {
+      "id": "372",
+      "name": "DEMO Sprint 10",
+      "state": "active",
+      "start_date": "2026-11-24T09:00:00.000Z",
+      "end_date": "2026-12-08T09:00:00.000Z",
+      "goal": "Targi technologiczne w Lizbonie"
+    },
+    {
+      "id": "373",
+      "name": "DEMO Sprint 11",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Nowy pitch deck"
+    },
+    {
+      "id": "374",
+      "name": "DEMO Sprint 12",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "37001",
+      "key": "DEMO-1",
+      "summary": "Demo agenta dla funduszu inwestycyjnego",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Highest",
+      "assignee": "712020:59712c77-57a3-5497-85e3-f13ebaa3ebe1",
+      "reporter": "712020:5bd01c66-26ee-54d4-bb63-d80804c25cd2",
+      "labels": [
+        "investors",
+        "demo"
+      ],
+      "sprint": "371",
+      "created": "2026-09-23T15:00:00.000+0100",
+      "updated": "2026-09-26T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "370015",
+          "author": "712020:60d889a7-14dc-540c-b057-e038c6282732",
+          "time_spent_seconds": 21600,
+          "comment": "Scenariusz dema",
+          "started": "2026-09-25T00:00:00.000+0100"
+        },
+        {
+          "id": "370016",
+          "author": "712020:60d889a7-14dc-540c-b057-e038c6282732",
+          "time_spent_seconds": 7200,
+          "comment": "Próba generalna",
+          "started": "2026-09-26T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "37002",
+      "key": "DEMO-2",
+      "summary": "Nagranie wideo z dema na stronę",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:5bd01c66-26ee-54d4-bb63-d80804c25cd2",
+      "reporter": "712020:60d889a7-14dc-540c-b057-e038c6282732",
+      "labels": [
+        "video",
+        "marketing"
+      ],
+      "sprint": "371",
+      "created": "2026-09-25T16:45:00.000+0100",
+      "updated": "2026-09-28T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37003",
+      "key": "DEMO-3",
+      "summary": "Live demo with a real customer database",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Cancelled",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:c73edaa2-32ef-5b2b-af4a-19850cc87aa3",
+      "labels": [
+        "demo"
+      ],
+      "sprint": "371",
+      "created": "2026-09-26T08:45:00.000+0100",
+      "updated": "2026-09-29T08:45:00.000+0100",
+      "comments": [
+        {
+          "id": "370031",
+          "author": "712020:c73edaa2-32ef-5b2b-af4a-19850cc87aa3",
+          "body": "Too risky, we use the demo database.",
+          "created": "2026-09-27T08:45:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "37004",
+      "key": "DEMO-4",
+      "summary": "Stoisko na targach technologicznych w Lizbonie",
+      "description": "Ekran z agentem na żywo, ulotki po angielsku i portugalsku.",
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:c73edaa2-32ef-5b2b-af4a-19850cc87aa3",
+      "reporter": "712020:f1815436-4189-5b04-8b3e-72a99b8b52be",
+      "labels": [
+        "events"
+      ],
+      "sprint": "372",
+      "created": "2026-09-28T16:45:00.000+0100",
+      "updated": "2026-10-01T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "370045",
+          "author": "712020:c73edaa2-32ef-5b2b-af4a-19850cc87aa3",
+          "time_spent_seconds": 10800,
+          "comment": "Projekt stoiska",
+          "started": "2026-09-30T00:45:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "37005",
+      "key": "DEMO-5",
+      "summary": "Demo po portugalsku dla partnerów z Brazylii",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:c73edaa2-32ef-5b2b-af4a-19850cc87aa3",
+      "reporter": "712020:f6a8c5aa-b26c-5207-bac7-74fd5823af84",
+      "labels": [
+        "demo",
+        "i18n"
+      ],
+      "sprint": "372",
+      "created": "2026-09-29T16:00:00.000+0100",
+      "updated": "2026-10-02T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37006",
+      "key": "DEMO-6",
+      "summary": "Demo agenta zawiesza się po 3 minutach",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:f47832c0-1559-5b62-bd3a-7413db6959f0",
+      "reporter": "712020:5bd01c66-26ee-54d4-bb63-d80804c25cd2",
+      "labels": [
+        "demo",
+        "stability"
+      ],
+      "sprint": "372",
+      "created": "2026-10-01T13:15:00.000+0100",
+      "updated": "2026-10-04T13:15:00.000+0100",
+      "comments": [
+        {
+          "id": "370061",
+          "author": "712020:f47832c0-1559-5b62-bd3a-7413db6959f0",
+          "body": "Zdarzyło się dwa razy podczas próby.",
+          "created": "2026-10-02T13:15:00.000+0100"
+        },
+        {
+          "id": "370062",
+          "author": "712020:f47832c0-1559-5b62-bd3a-7413db6959f0",
+          "body": "Przyczyna: limit zapytań na koncie testowym.",
+          "created": "2026-10-03T13:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "37007",
+      "key": "DEMO-7",
+      "summary": "Slide with the customer results",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:f47832c0-1559-5b62-bd3a-7413db6959f0",
+      "reporter": "712020:5bd01c66-26ee-54d4-bb63-d80804c25cd2",
+      "labels": [
+        "deck"
+      ],
+      "sprint": "372",
+      "created": "2026-10-03T16:00:00.000+0100",
+      "updated": "2026-10-06T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37008",
+      "key": "DEMO-8",
+      "summary": "Scenariusz dema dla sektora ubezpieczeń",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:60d889a7-14dc-540c-b057-e038c6282732",
+      "reporter": "712020:60d889a7-14dc-540c-b057-e038c6282732",
+      "labels": [
+        "demo"
+      ],
+      "sprint": "372",
+      "created": "2026-10-04T12:30:00.000+0100",
+      "updated": "2026-10-07T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37009",
+      "key": "DEMO-9",
+      "summary": "Logo klientów na stronie głównej",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Low",
+      "assignee": "712020:f6a8c5aa-b26c-5207-bac7-74fd5823af84",
+      "reporter": "712020:f1815436-4189-5b04-8b3e-72a99b8b52be",
+      "labels": [
+        "marketing",
+        "website"
+      ],
+      "sprint": "372",
+      "created": "2026-10-06T10:45:00.000+0100",
+      "updated": "2026-10-09T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37010",
+      "key": "DEMO-10",
+      "summary": "Pitch deck w wersji na 5 minut",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:f1815436-4189-5b04-8b3e-72a99b8b52be",
+      "reporter": "712020:c73edaa2-32ef-5b2b-af4a-19850cc87aa3",
+      "labels": [
+        "deck",
+        "investors"
+      ],
+      "sprint": "372",
+      "created": "2026-10-08T17:45:00.000+0100",
+      "updated": "2026-10-11T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37011",
+      "key": "DEMO-11",
+      "summary": "Wizytówki dla zespołu na targi",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:60d889a7-14dc-540c-b057-e038c6282732",
+      "labels": [
+        "events"
+      ],
+      "sprint": "372",
+      "created": "2026-10-09T08:45:00.000+0100",
+      "updated": "2026-10-12T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37012",
+      "key": "DEMO-12",
+      "summary": "Demo database with 1000 fake orders",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:5bd01c66-26ee-54d4-bb63-d80804c25cd2",
+      "reporter": "712020:f1815436-4189-5b04-8b3e-72a99b8b52be",
+      "labels": [
+        "demo",
+        "data"
+      ],
+      "sprint": "372",
+      "created": "2026-10-11T16:00:00.000+0100",
+      "updated": "2026-10-14T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37013",
+      "key": "DEMO-13",
+      "summary": "Spotkanie z aniołem biznesu w Warszawie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:c73edaa2-32ef-5b2b-af4a-19850cc87aa3",
+      "reporter": "712020:c73edaa2-32ef-5b2b-af4a-19850cc87aa3",
+      "labels": [
+        "investors"
+      ],
+      "sprint": "372",
+      "created": "2026-10-13T16:00:00.000+0100",
+      "updated": "2026-10-16T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37014",
+      "key": "DEMO-14",
+      "summary": "Nowy pitch deck z modelem przychodów",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:f47832c0-1559-5b62-bd3a-7413db6959f0",
+      "labels": [
+        "deck",
+        "investors"
+      ],
+      "sprint": "373",
+      "created": "2026-10-14T11:00:00.000+0100",
+      "updated": "2026-10-17T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37015",
+      "key": "DEMO-15",
+      "summary": "Animacja: jak działa agent w trzech krokach",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:c73edaa2-32ef-5b2b-af4a-19850cc87aa3",
+      "labels": [
+        "video"
+      ],
+      "sprint": "373",
+      "created": "2026-10-16T13:45:00.000+0100",
+      "updated": "2026-10-19T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37016",
+      "key": "DEMO-16",
+      "summary": "Case study of the Meblux pilot",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:f6a8c5aa-b26c-5207-bac7-74fd5823af84",
+      "reporter": "712020:f1815436-4189-5b04-8b3e-72a99b8b52be",
+      "labels": [
+        "marketing"
+      ],
+      "sprint": "373",
+      "created": "2026-10-18T14:00:00.000+0100",
+      "updated": "2026-10-21T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37017",
+      "key": "DEMO-17",
+      "summary": "Webinar dla sklepów internetowych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:c73edaa2-32ef-5b2b-af4a-19850cc87aa3",
+      "reporter": "712020:f47832c0-1559-5b62-bd3a-7413db6959f0",
+      "labels": [
+        "events",
+        "marketing"
+      ],
+      "sprint": "373",
+      "created": "2026-10-19T08:15:00.000+0100",
+      "updated": "2026-10-22T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37018",
+      "key": "DEMO-18",
+      "summary": "Demo pokazuje dane innego klienta",
+      "description": "Na ekranie dema widać nazwę klienta Meblux. Trzeba użyć danych fikcyjnych.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": "712020:f1815436-4189-5b04-8b3e-72a99b8b52be",
+      "reporter": "712020:c73edaa2-32ef-5b2b-af4a-19850cc87aa3",
+      "labels": [
+        "demo",
+        "privacy"
+      ],
+      "sprint": null,
+      "created": "2026-10-21T08:45:00.000+0100",
+      "updated": "2026-10-24T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37019",
+      "key": "DEMO-19",
+      "summary": "Artykuł o firmie w portalu technologicznym",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:5bd01c66-26ee-54d4-bb63-d80804c25cd2",
+      "labels": [
+        "pr"
+      ],
+      "sprint": null,
+      "created": "2026-10-23T16:15:00.000+0100",
+      "updated": "2026-10-26T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37020",
+      "key": "DEMO-20",
+      "summary": "Wersja dema offline bez internetu",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:c73edaa2-32ef-5b2b-af4a-19850cc87aa3",
+      "labels": [
+        "demo",
+        "events"
+      ],
+      "sprint": null,
+      "created": "2026-10-24T10:15:00.000+0100",
+      "updated": "2026-10-27T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37021",
+      "key": "DEMO-21",
+      "summary": "Zdjęcia zespołu do sekcji 'O nas'",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:f6a8c5aa-b26c-5207-bac7-74fd5823af84",
+      "reporter": "712020:c73edaa2-32ef-5b2b-af4a-19850cc87aa3",
+      "labels": [
+        "website"
+      ],
+      "sprint": null,
+      "created": "2026-10-26T09:00:00.000+0100",
+      "updated": "2026-10-29T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37022",
+      "key": "DEMO-22",
+      "summary": "Demo na konferencji o handlu w Poznaniu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:f47832c0-1559-5b62-bd3a-7413db6959f0",
+      "labels": [
+        "events"
+      ],
+      "sprint": null,
+      "created": "2026-10-27T17:00:00.000+0100",
+      "updated": "2026-10-30T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37023",
+      "key": "DEMO-23",
+      "summary": "Investor update for November",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:f1815436-4189-5b04-8b3e-72a99b8b52be",
+      "reporter": "712020:f6a8c5aa-b26c-5207-bac7-74fd5823af84",
+      "labels": [
+        "investors"
+      ],
+      "sprint": null,
+      "created": "2026-10-29T15:00:00.000+0100",
+      "updated": "2026-11-01T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37024",
+      "key": "DEMO-24",
+      "summary": "Tłumaczenie strony na ukraiński",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:f1815436-4189-5b04-8b3e-72a99b8b52be",
+      "labels": [
+        "website",
+        "i18n"
+      ],
+      "sprint": null,
+      "created": "2026-10-31T14:15:00.000+0100",
+      "updated": "2026-11-03T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37025",
+      "key": "DEMO-25",
+      "summary": "Prezentacja dla komisji konkursowej",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:60d889a7-14dc-540c-b057-e038c6282732",
+      "labels": [
+        "deck"
+      ],
+      "sprint": null,
+      "created": "2026-11-01T11:45:00.000+0100",
+      "updated": "2026-11-04T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37026",
+      "key": "DEMO-26",
+      "summary": "Film z opinią klienta",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:f1815436-4189-5b04-8b3e-72a99b8b52be",
+      "labels": [
+        "video",
+        "marketing"
+      ],
+      "sprint": null,
+      "created": "2026-11-03T11:15:00.000+0100",
+      "updated": "2026-11-06T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37027",
+      "key": "DEMO-27",
+      "summary": "Agent w demie mówi z dziwnym akcentem",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:60d889a7-14dc-540c-b057-e038c6282732",
+      "reporter": "712020:f47832c0-1559-5b62-bd3a-7413db6959f0",
+      "labels": [
+        "demo",
+        "voice"
+      ],
+      "sprint": null,
+      "created": "2026-11-05T17:15:00.000+0100",
+      "updated": "2026-11-08T17:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37028",
+      "key": "DEMO-28",
+      "summary": "Gadżety z logo na targi",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": "712020:f47832c0-1559-5b62-bd3a-7413db6959f0",
+      "reporter": "712020:f1815436-4189-5b04-8b3e-72a99b8b52be",
+      "labels": [
+        "events"
+      ],
+      "sprint": null,
+      "created": "2026-11-06T17:45:00.000+0100",
+      "updated": "2026-11-09T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37029",
+      "key": "DEMO-29",
+      "summary": "Wpis na LinkedIn po każdym demie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:c73edaa2-32ef-5b2b-af4a-19850cc87aa3",
+      "reporter": "712020:f1815436-4189-5b04-8b3e-72a99b8b52be",
+      "labels": [
+        "marketing"
+      ],
+      "sprint": null,
+      "created": "2026-11-08T09:00:00.000+0100",
+      "updated": "2026-11-11T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37030",
+      "key": "DEMO-30",
+      "summary": "Demo account expires after 7 days",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:f1815436-4189-5b04-8b3e-72a99b8b52be",
+      "labels": [
+        "demo"
+      ],
+      "sprint": "372",
+      "created": "2026-11-10T12:00:00.000+0100",
+      "updated": "2026-11-13T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37031",
+      "key": "DEMO-31",
+      "summary": "Lista kontaktów z targów do CRM sprzedaży",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:f6a8c5aa-b26c-5207-bac7-74fd5823af84",
+      "labels": [
+        "sales"
+      ],
+      "sprint": "373",
+      "created": "2026-11-11T15:30:00.000+0100",
+      "updated": "2026-11-14T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37032",
+      "key": "DEMO-32",
+      "summary": "Porównanie z konkurencją na jednym slajdzie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:f6a8c5aa-b26c-5207-bac7-74fd5823af84",
+      "labels": [
+        "deck"
+      ],
+      "sprint": null,
+      "created": "2026-11-13T14:45:00.000+0100",
+      "updated": "2026-11-16T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37033",
+      "key": "DEMO-33",
+      "summary": "Zgłoszenie do konkursu startupów",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:f6a8c5aa-b26c-5207-bac7-74fd5823af84",
+      "labels": [
+        "events",
+        "pr"
+      ],
+      "sprint": null,
+      "created": "2026-11-15T12:15:00.000+0100",
+      "updated": "2026-11-18T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37034",
+      "key": "DEMO-34",
+      "summary": "Mail do uczestników webinaru z nagraniem",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:f47832c0-1559-5b62-bd3a-7413db6959f0",
+      "reporter": "712020:c73edaa2-32ef-5b2b-af4a-19850cc87aa3",
+      "labels": [
+        "marketing"
+      ],
+      "sprint": null,
+      "created": "2026-11-16T09:45:00.000+0100",
+      "updated": "2026-11-19T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37035",
+      "key": "DEMO-35",
+      "summary": "Strona z cennikiem dla klientów",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:f47832c0-1559-5b62-bd3a-7413db6959f0",
+      "labels": [
+        "website",
+        "sales"
+      ],
+      "sprint": null,
+      "created": "2026-11-18T14:30:00.000+0100",
+      "updated": "2026-11-21T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37036",
+      "key": "DEMO-36",
+      "summary": "Wywiad founder'a w podcaście o startupach",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:c73edaa2-32ef-5b2b-af4a-19850cc87aa3",
+      "reporter": "712020:60d889a7-14dc-540c-b057-e038c6282732",
+      "labels": [
+        "pr"
+      ],
+      "sprint": null,
+      "created": "2026-11-20T13:00:00.000+0100",
+      "updated": "2026-11-23T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37037",
+      "key": "DEMO-37",
+      "summary": "Scenario of the demo for banks",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:f47832c0-1559-5b62-bd3a-7413db6959f0",
+      "reporter": "712020:5bd01c66-26ee-54d4-bb63-d80804c25cd2",
+      "labels": [
+        "demo"
+      ],
+      "sprint": null,
+      "created": "2026-11-21T10:00:00.000+0100",
+      "updated": "2026-11-24T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "37038",
+      "key": "DEMO-38",
+      "summary": "Rezerwacja hotelu na targi w Lizbonie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Low",
+      "assignee": "712020:f6a8c5aa-b26c-5207-bac7-74fd5823af84",
+      "reporter": "712020:60d889a7-14dc-540c-b057-e038c6282732",
+      "labels": [
+        "events"
+      ],
+      "sprint": "372",
+      "created": "2026-11-23T12:15:00.000+0100",
+      "updated": "2026-11-26T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

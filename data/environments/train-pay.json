@@ -1,0 +1,916 @@
+{
+  "name": "train-pay",
+  "site": "https://example.atlassian.net",
+  "now": "2026-11-04T09:30:00.000+0100",
+  "project": {
+    "key": "PAY",
+    "name": "Curify - płatności i abonamenty"
+  },
+  "board": {
+    "id": "25",
+    "name": "PAY board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:c962e31c-2f1b-5dfc-8f45-6ddd93f169b0",
+      "display_name": "Magdalena Czerwińska",
+      "email": "magdalena.czerwinska@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:06c73693-e082-57ae-be53-6ed20a41e38b",
+      "display_name": "Dawid Kozłowski",
+      "email": "dawid.kozlowski@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:c5ac59e4-30b9-59e0-9752-2878c93433d8",
+      "display_name": "Agata Wilczek",
+      "email": "agata.wilczek@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:102ac041-5838-59bf-afab-36663b018e95",
+      "display_name": "Agata Rogalska",
+      "email": "agata.rogalska@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:2f4eee08-9ab5-53fb-b2ae-9fd54e311eec",
+      "display_name": "Tereza Nováková",
+      "email": "tereza.novakova@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:d56b60a9-68a5-5f0a-a26b-7a2e702465e7",
+      "display_name": "Kacper Laskowski",
+      "email": "kacper.laskowski@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:7bc9ca3b-864b-5bbb-bbe7-a8e16ecfbe74",
+      "display_name": "Emil Zawadzki",
+      "email": "emil.zawadzki@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "251",
+      "name": "PAY Sprint 11",
+      "state": "closed",
+      "start_date": "2026-10-14T09:00:00.000Z",
+      "end_date": "2026-10-28T09:00:00.000Z",
+      "goal": "Abonament rodzinny"
+    },
+    {
+      "id": "252",
+      "name": "PAY Sprint 12",
+      "state": "active",
+      "start_date": "2026-10-28T09:00:00.000Z",
+      "end_date": "2026-11-11T09:00:00.000Z",
+      "goal": "Faktury zbiorcze dla firm i zwroty"
+    },
+    {
+      "id": "253",
+      "name": "PAY Sprint 13",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Płatności cykliczne kartą"
+    },
+    {
+      "id": "254",
+      "name": "PAY Sprint 14",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "25001",
+      "key": "PAY-1",
+      "summary": "Abonament rodzinny dla czterech osób",
+      "description": "Jeden płatnik, do czterech pacjentów, wspólny limit konsultacji.",
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:06c73693-e082-57ae-be53-6ed20a41e38b",
+      "reporter": "712020:c962e31c-2f1b-5dfc-8f45-6ddd93f169b0",
+      "labels": [
+        "subscriptions"
+      ],
+      "sprint": "251",
+      "created": "2026-08-27T13:45:00.000+0100",
+      "updated": "2026-08-30T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "250015",
+          "author": "712020:06c73693-e082-57ae-be53-6ed20a41e38b",
+          "time_spent_seconds": 21600,
+          "comment": "Model abonamentu",
+          "started": "2026-08-29T00:45:00.000+0100"
+        },
+        {
+          "id": "250016",
+          "author": "712020:06c73693-e082-57ae-be53-6ed20a41e38b",
+          "time_spent_seconds": 7200,
+          "comment": "Cennik",
+          "started": "2026-08-30T00:45:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "25002",
+      "key": "PAY-2",
+      "summary": "Podwójne obciążenie karty przy odnowieniu abonamentu",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "Highest",
+      "assignee": "712020:7bc9ca3b-864b-5bbb-bbe7-a8e16ecfbe74",
+      "reporter": "712020:c962e31c-2f1b-5dfc-8f45-6ddd93f169b0",
+      "labels": [
+        "cards",
+        "subscriptions"
+      ],
+      "sprint": "251",
+      "created": "2026-08-28T10:15:00.000+0100",
+      "updated": "2026-08-31T10:15:00.000+0100",
+      "comments": [
+        {
+          "id": "250021",
+          "author": "712020:102ac041-5838-59bf-afab-36663b018e95",
+          "body": "Zwroty dla 14 klientów wykonane ręcznie.",
+          "created": "2026-08-29T10:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "25003",
+      "key": "PAY-3",
+      "summary": "Payment by bank transfer for companies",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:c962e31c-2f1b-5dfc-8f45-6ddd93f169b0",
+      "labels": [
+        "b2b"
+      ],
+      "sprint": "251",
+      "created": "2026-08-30T09:45:00.000+0100",
+      "updated": "2026-09-02T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25004",
+      "key": "PAY-4",
+      "summary": "Faktura zbiorcza dla klientów firmowych",
+      "description": "Jedna faktura na koniec miesiąca za wszystkie konsultacje pracowników firmy.",
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:2f4eee08-9ab5-53fb-b2ae-9fd54e311eec",
+      "reporter": "712020:d56b60a9-68a5-5f0a-a26b-7a2e702465e7",
+      "labels": [
+        "invoices",
+        "b2b"
+      ],
+      "sprint": "252",
+      "created": "2026-09-01T13:30:00.000+0100",
+      "updated": "2026-09-04T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "250045",
+          "author": "712020:2f4eee08-9ab5-53fb-b2ae-9fd54e311eec",
+          "time_spent_seconds": 18000,
+          "comment": "Szablon faktury zbiorczej",
+          "started": "2026-09-03T00:30:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "25005",
+      "key": "PAY-5",
+      "summary": "Zwrot za odwołaną wizytę trwa 14 dni",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:2f4eee08-9ab5-53fb-b2ae-9fd54e311eec",
+      "reporter": "712020:06c73693-e082-57ae-be53-6ed20a41e38b",
+      "labels": [
+        "refunds"
+      ],
+      "sprint": "252",
+      "created": "2026-09-02T16:30:00.000+0100",
+      "updated": "2026-09-05T16:30:00.000+0100",
+      "comments": [
+        {
+          "id": "250051",
+          "author": "712020:2f4eee08-9ab5-53fb-b2ae-9fd54e311eec",
+          "body": "Klienci piszą skargi na infolinię.",
+          "created": "2026-09-03T16:30:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "25006",
+      "key": "PAY-6",
+      "summary": "Numeracja faktur zaczyna się od nowa po restarcie serwera",
+      "description": "Licznik numerów jest w pamięci. Po restarcie dwie faktury mają ten sam numer.",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:06c73693-e082-57ae-be53-6ed20a41e38b",
+      "reporter": "712020:c962e31c-2f1b-5dfc-8f45-6ddd93f169b0",
+      "labels": [
+        "invoices",
+        "backend"
+      ],
+      "sprint": "252",
+      "created": "2026-09-04T09:45:00.000+0100",
+      "updated": "2026-09-07T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25007",
+      "key": "PAY-7",
+      "summary": "Webhook from the payment gateway without a signature check",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "High",
+      "assignee": "712020:102ac041-5838-59bf-afab-36663b018e95",
+      "reporter": "712020:102ac041-5838-59bf-afab-36663b018e95",
+      "labels": [
+        "security",
+        "gateway"
+      ],
+      "sprint": "252",
+      "created": "2026-09-05T16:00:00.000+0100",
+      "updated": "2026-09-08T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25008",
+      "key": "PAY-8",
+      "summary": "Kod rabatowy dla nowych pacjentów",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:102ac041-5838-59bf-afab-36663b018e95",
+      "reporter": "712020:102ac041-5838-59bf-afab-36663b018e95",
+      "labels": [
+        "discounts"
+      ],
+      "sprint": "252",
+      "created": "2026-09-07T11:00:00.000+0100",
+      "updated": "2026-09-10T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25009",
+      "key": "PAY-9",
+      "summary": "Raport przychodów z abonamentów dla zarządu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:2f4eee08-9ab5-53fb-b2ae-9fd54e311eec",
+      "reporter": "712020:c962e31c-2f1b-5dfc-8f45-6ddd93f169b0",
+      "labels": [
+        "reports"
+      ],
+      "sprint": "252",
+      "created": "2026-09-08T17:00:00.000+0100",
+      "updated": "2026-09-11T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "250095",
+          "author": "712020:2f4eee08-9ab5-53fb-b2ae-9fd54e311eec",
+          "time_spent_seconds": 10800,
+          "comment": "",
+          "started": "2026-09-10T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "25010",
+      "key": "PAY-10",
+      "summary": "Faktura korygująca przy częściowym zwrocie",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:06c73693-e082-57ae-be53-6ed20a41e38b",
+      "reporter": "712020:2f4eee08-9ab5-53fb-b2ae-9fd54e311eec",
+      "labels": [
+        "invoices",
+        "refunds"
+      ],
+      "sprint": "252",
+      "created": "2026-09-10T17:30:00.000+0100",
+      "updated": "2026-09-13T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25011",
+      "key": "PAY-11",
+      "summary": "Waluta EUR dla pacjentów z zagranicy",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:c5ac59e4-30b9-59e0-9752-2878c93433d8",
+      "labels": [
+        "gateway"
+      ],
+      "sprint": "252",
+      "created": "2026-09-12T10:45:00.000+0100",
+      "updated": "2026-09-15T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25012",
+      "key": "PAY-12",
+      "summary": "Mail z fakturą trafia do spamu",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:102ac041-5838-59bf-afab-36663b018e95",
+      "reporter": "712020:2f4eee08-9ab5-53fb-b2ae-9fd54e311eec",
+      "labels": [
+        "invoices",
+        "email"
+      ],
+      "sprint": "252",
+      "created": "2026-09-13T16:45:00.000+0100",
+      "updated": "2026-09-16T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25013",
+      "key": "PAY-13",
+      "summary": "Update the VAT rates table",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:c962e31c-2f1b-5dfc-8f45-6ddd93f169b0",
+      "reporter": "712020:102ac041-5838-59bf-afab-36663b018e95",
+      "labels": [
+        "invoices"
+      ],
+      "sprint": "252",
+      "created": "2026-09-15T15:30:00.000+0100",
+      "updated": "2026-09-18T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25014",
+      "key": "PAY-14",
+      "summary": "Stary moduł płatności blokuje aktualizację frameworka",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:06c73693-e082-57ae-be53-6ed20a41e38b",
+      "reporter": "712020:2f4eee08-9ab5-53fb-b2ae-9fd54e311eec",
+      "labels": [
+        "backend"
+      ],
+      "sprint": "252",
+      "created": "2026-09-16T11:45:00.000+0100",
+      "updated": "2026-09-19T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25015",
+      "key": "PAY-15",
+      "summary": "Przypomnienie o kończącej się karcie płatniczej",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:06c73693-e082-57ae-be53-6ed20a41e38b",
+      "labels": [
+        "cards",
+        "email"
+      ],
+      "sprint": "252",
+      "created": "2026-09-18T16:45:00.000+0100",
+      "updated": "2026-09-21T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25016",
+      "key": "PAY-16",
+      "summary": "Płatności cykliczne kartą bez ponownego logowania",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:d56b60a9-68a5-5f0a-a26b-7a2e702465e7",
+      "reporter": "712020:d56b60a9-68a5-5f0a-a26b-7a2e702465e7",
+      "labels": [
+        "cards",
+        "subscriptions"
+      ],
+      "sprint": "253",
+      "created": "2026-09-19T12:45:00.000+0100",
+      "updated": "2026-09-22T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25017",
+      "key": "PAY-17",
+      "summary": "Abonament roczny z rabatem 15%",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:2f4eee08-9ab5-53fb-b2ae-9fd54e311eec",
+      "reporter": "712020:c5ac59e4-30b9-59e0-9752-2878c93433d8",
+      "labels": [
+        "subscriptions",
+        "discounts"
+      ],
+      "sprint": "253",
+      "created": "2026-09-21T15:45:00.000+0100",
+      "updated": "2026-09-24T15:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25018",
+      "key": "PAY-18",
+      "summary": "Retry failed card payments after 3 days",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:d56b60a9-68a5-5f0a-a26b-7a2e702465e7",
+      "reporter": "712020:c962e31c-2f1b-5dfc-8f45-6ddd93f169b0",
+      "labels": [
+        "cards"
+      ],
+      "sprint": "253",
+      "created": "2026-09-22T15:30:00.000+0100",
+      "updated": "2026-09-25T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25019",
+      "key": "PAY-19",
+      "summary": "Eksport płatności do systemu księgowego",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:d56b60a9-68a5-5f0a-a26b-7a2e702465e7",
+      "reporter": "712020:102ac041-5838-59bf-afab-36663b018e95",
+      "labels": [
+        "accounting"
+      ],
+      "sprint": "253",
+      "created": "2026-09-24T13:45:00.000+0100",
+      "updated": "2026-09-27T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25020",
+      "key": "PAY-20",
+      "summary": "BLIK nie działa w aplikacji na iOS",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:c962e31c-2f1b-5dfc-8f45-6ddd93f169b0",
+      "labels": [
+        "gateway",
+        "ios"
+      ],
+      "sprint": "253",
+      "created": "2026-09-26T17:15:00.000+0100",
+      "updated": "2026-09-29T17:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25021",
+      "key": "PAY-21",
+      "summary": "Klient widzi cenę brutto bez informacji o VAT",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:06c73693-e082-57ae-be53-6ed20a41e38b",
+      "labels": [
+        "ui",
+        "invoices"
+      ],
+      "sprint": null,
+      "created": "2026-09-27T11:15:00.000+0100",
+      "updated": "2026-09-30T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25022",
+      "key": "PAY-22",
+      "summary": "Uzgodnienie wpłat z wyciągiem bankowym",
+      "description": "Codzienny plik z banku porównujemy z płatnościami z bramki.",
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:c962e31c-2f1b-5dfc-8f45-6ddd93f169b0",
+      "labels": [
+        "accounting"
+      ],
+      "sprint": null,
+      "created": "2026-09-29T13:15:00.000+0100",
+      "updated": "2026-10-02T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25023",
+      "key": "PAY-23",
+      "summary": "Pakiet 5 konsultacji do wykorzystania w roku",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:d56b60a9-68a5-5f0a-a26b-7a2e702465e7",
+      "labels": [
+        "subscriptions"
+      ],
+      "sprint": null,
+      "created": "2026-09-30T17:30:00.000+0100",
+      "updated": "2026-10-03T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25024",
+      "key": "PAY-24",
+      "summary": "Rezygnacja z abonamentu jednym kliknięciem",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:2f4eee08-9ab5-53fb-b2ae-9fd54e311eec",
+      "reporter": "712020:c962e31c-2f1b-5dfc-8f45-6ddd93f169b0",
+      "labels": [
+        "subscriptions",
+        "ui"
+      ],
+      "sprint": null,
+      "created": "2026-10-02T17:45:00.000+0100",
+      "updated": "2026-10-05T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25025",
+      "key": "PAY-25",
+      "summary": "Gateway timeout is shown as a successful payment",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": null,
+      "reporter": "712020:102ac041-5838-59bf-afab-36663b018e95",
+      "labels": [
+        "gateway",
+        "backend"
+      ],
+      "sprint": null,
+      "created": "2026-10-03T12:15:00.000+0100",
+      "updated": "2026-10-06T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25026",
+      "key": "PAY-26",
+      "summary": "Duplikaty klientów w systemie księgowym",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:c5ac59e4-30b9-59e0-9752-2878c93433d8",
+      "labels": [
+        "accounting"
+      ],
+      "sprint": null,
+      "created": "2026-10-05T16:15:00.000+0100",
+      "updated": "2026-10-08T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25027",
+      "key": "PAY-27",
+      "summary": "Karta podarunkowa na konsultacje",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:2f4eee08-9ab5-53fb-b2ae-9fd54e311eec",
+      "reporter": "712020:c5ac59e4-30b9-59e0-9752-2878c93433d8",
+      "labels": [
+        "discounts"
+      ],
+      "sprint": null,
+      "created": "2026-10-07T09:00:00.000+0100",
+      "updated": "2026-10-10T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25028",
+      "key": "PAY-28",
+      "summary": "Usunąć nieużywane plany cenowe z 2024 roku",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:102ac041-5838-59bf-afab-36663b018e95",
+      "labels": [
+        "subscriptions"
+      ],
+      "sprint": null,
+      "created": "2026-10-08T14:00:00.000+0100",
+      "updated": "2026-10-11T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25029",
+      "key": "PAY-29",
+      "summary": "Raport zwrotów miesięcznie dla księgowości",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:c5ac59e4-30b9-59e0-9752-2878c93433d8",
+      "labels": [
+        "refunds",
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-10-10T08:00:00.000+0100",
+      "updated": "2026-10-13T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25030",
+      "key": "PAY-30",
+      "summary": "Data sprzedaży na fakturze zła dla wizyt po północy",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:06c73693-e082-57ae-be53-6ed20a41e38b",
+      "labels": [
+        "invoices"
+      ],
+      "sprint": "252",
+      "created": "2026-10-11T12:15:00.000+0100",
+      "updated": "2026-10-14T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25031",
+      "key": "PAY-31",
+      "summary": "Faktura w języku angielskim",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:2f4eee08-9ab5-53fb-b2ae-9fd54e311eec",
+      "reporter": "712020:102ac041-5838-59bf-afab-36663b018e95",
+      "labels": [
+        "invoices",
+        "i18n"
+      ],
+      "sprint": null,
+      "created": "2026-10-13T09:30:00.000+0100",
+      "updated": "2026-10-16T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25032",
+      "key": "PAY-32",
+      "summary": "Limit konsultacji w abonamencie liczy wizyty odwołane",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:c5ac59e4-30b9-59e0-9752-2878c93433d8",
+      "reporter": "712020:2f4eee08-9ab5-53fb-b2ae-9fd54e311eec",
+      "labels": [
+        "subscriptions"
+      ],
+      "sprint": "253",
+      "created": "2026-10-14T08:00:00.000+0100",
+      "updated": "2026-10-17T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25033",
+      "key": "PAY-33",
+      "summary": "Przegląd umowy z operatorem płatności",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:c962e31c-2f1b-5dfc-8f45-6ddd93f169b0",
+      "reporter": "712020:06c73693-e082-57ae-be53-6ed20a41e38b",
+      "labels": [],
+      "sprint": null,
+      "created": "2026-10-16T09:30:00.000+0100",
+      "updated": "2026-10-19T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25034",
+      "key": "PAY-34",
+      "summary": "Log every change of a subscription price",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:c5ac59e4-30b9-59e0-9752-2878c93433d8",
+      "reporter": "712020:c5ac59e4-30b9-59e0-9752-2878c93433d8",
+      "labels": [
+        "audit",
+        "subscriptions"
+      ],
+      "sprint": null,
+      "created": "2026-10-17T10:00:00.000+0100",
+      "updated": "2026-10-20T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25035",
+      "key": "PAY-35",
+      "summary": "Płatność za wizytę po jej zakończeniu",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:d56b60a9-68a5-5f0a-a26b-7a2e702465e7",
+      "labels": [
+        "gateway"
+      ],
+      "sprint": null,
+      "created": "2026-10-19T10:15:00.000+0100",
+      "updated": "2026-10-22T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25036",
+      "key": "PAY-36",
+      "summary": "Pole NIP odrzuca numery z myślnikami",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:c962e31c-2f1b-5dfc-8f45-6ddd93f169b0",
+      "reporter": "712020:c5ac59e4-30b9-59e0-9752-2878c93433d8",
+      "labels": [
+        "b2b",
+        "validation"
+      ],
+      "sprint": null,
+      "created": "2026-10-21T16:15:00.000+0100",
+      "updated": "2026-10-24T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25037",
+      "key": "PAY-37",
+      "summary": "Panel firmy: lista pracowników w abonamencie",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:06c73693-e082-57ae-be53-6ed20a41e38b",
+      "labels": [
+        "b2b"
+      ],
+      "sprint": null,
+      "created": "2026-10-22T17:00:00.000+0100",
+      "updated": "2026-10-25T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25038",
+      "key": "PAY-38",
+      "summary": "Testy obciążeniowe bramki przed końcem miesiąca",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:2f4eee08-9ab5-53fb-b2ae-9fd54e311eec",
+      "reporter": "712020:2f4eee08-9ab5-53fb-b2ae-9fd54e311eec",
+      "labels": [
+        "gateway",
+        "performance"
+      ],
+      "sprint": null,
+      "created": "2026-10-24T10:30:00.000+0100",
+      "updated": "2026-10-27T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25039",
+      "key": "PAY-39",
+      "summary": "Monitoring nieudanych płatności w Grafanie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:c962e31c-2f1b-5dfc-8f45-6ddd93f169b0",
+      "reporter": "712020:2f4eee08-9ab5-53fb-b2ae-9fd54e311eec",
+      "labels": [
+        "monitoring"
+      ],
+      "sprint": null,
+      "created": "2026-10-25T15:30:00.000+0100",
+      "updated": "2026-10-28T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "25040",
+      "key": "PAY-40",
+      "summary": "Cena abonamentu w aplikacji różni się od ceny na stronie",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:c5ac59e4-30b9-59e0-9752-2878c93433d8",
+      "labels": [
+        "subscriptions",
+        "ui"
+      ],
+      "sprint": null,
+      "created": "2026-10-27T10:30:00.000+0100",
+      "updated": "2026-10-30T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

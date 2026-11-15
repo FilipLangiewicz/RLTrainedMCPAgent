@@ -1,0 +1,878 @@
+{
+  "name": "train-rodo",
+  "site": "https://example.atlassian.net",
+  "now": "2026-10-07T09:15:00.000+0100",
+  "project": {
+    "key": "RODO",
+    "name": "SolarDom - skargi i zgodność"
+  },
+  "board": {
+    "id": "45",
+    "name": "RODO board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:f4e694f3-9110-57ca-85d7-124ff2f7540b",
+      "display_name": "Urszula Strzelecka",
+      "email": "urszula.strzelecka@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:1cf8e449-907a-5fc0-aa05-7dac1e8ccec9",
+      "display_name": "Kamila Pyka",
+      "email": "kamila.pyka@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:7cd6d534-b5f9-5951-bbd0-c5da71c019d3",
+      "display_name": "Ryszard Majchrzak",
+      "email": "ryszard.majchrzak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:29b1ef3c-6afc-50bc-9be9-e71b425426ef",
+      "display_name": "Kamila Dziedzic",
+      "email": "kamila.dziedzic@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:7e034951-cfa6-56c9-bdea-c85071220e2f",
+      "display_name": "Borys Lewczuk",
+      "email": "borys.lewczuk@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:d6aa9366-4ebd-539f-b315-f694de56005c",
+      "display_name": "Gabriela Sroka",
+      "email": "gabriela.sroka@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:094e88d6-df11-5b59-b863-8ddfce8f9a8b",
+      "display_name": "Lucjan Bednarz",
+      "email": "lucjan.bednarz@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "451",
+      "name": "RODO Sprint 2",
+      "state": "closed",
+      "start_date": "2026-09-16T09:00:00.000Z",
+      "end_date": "2026-09-30T09:00:00.000Z",
+      "goal": "Lista 'nie dzwonić'"
+    },
+    {
+      "id": "452",
+      "name": "RODO Sprint 3",
+      "state": "active",
+      "start_date": "2026-09-30T09:00:00.000Z",
+      "end_date": "2026-10-14T09:00:00.000Z",
+      "goal": "Odpowiedzi na skargi w 14 dni"
+    },
+    {
+      "id": "453",
+      "name": "RODO Sprint 4",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Audyt zgód marketingowych"
+    },
+    {
+      "id": "454",
+      "name": "RODO Sprint 5",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "45001",
+      "key": "RODO-1",
+      "summary": "Lista numerów 'nie dzwonić' wspólna dla wszystkich kampanii",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "Highest",
+      "assignee": "712020:f4e694f3-9110-57ca-85d7-124ff2f7540b",
+      "reporter": "712020:7e034951-cfa6-56c9-bdea-c85071220e2f",
+      "labels": [
+        "do-not-call"
+      ],
+      "sprint": "451",
+      "created": "2026-07-30T09:15:00.000+0100",
+      "updated": "2026-08-02T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "450015",
+          "author": "712020:f4e694f3-9110-57ca-85d7-124ff2f7540b",
+          "time_spent_seconds": 18000,
+          "comment": "Wspólna lista",
+          "started": "2026-08-01T00:15:00.000+0100"
+        },
+        {
+          "id": "450016",
+          "author": "712020:f4e694f3-9110-57ca-85d7-124ff2f7540b",
+          "time_spent_seconds": 7200,
+          "comment": "Testy z dialerem",
+          "started": "2026-08-02T00:15:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "45002",
+      "key": "RODO-2",
+      "summary": "Rejestr skarg klientów",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:094e88d6-df11-5b59-b863-8ddfce8f9a8b",
+      "reporter": "712020:1cf8e449-907a-5fc0-aa05-7dac1e8ccec9",
+      "labels": [
+        "complaints"
+      ],
+      "sprint": "451",
+      "created": "2026-08-01T12:30:00.000+0100",
+      "updated": "2026-08-04T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45003",
+      "key": "RODO-3",
+      "summary": "Call centre in another country to avoid the rules",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:29b1ef3c-6afc-50bc-9be9-e71b425426ef",
+      "labels": [
+        "compliance"
+      ],
+      "sprint": "451",
+      "created": "2026-08-02T12:15:00.000+0100",
+      "updated": "2026-08-05T12:15:00.000+0100",
+      "comments": [
+        {
+          "id": "450031",
+          "author": "712020:29b1ef3c-6afc-50bc-9be9-e71b425426ef",
+          "body": "The lawyer says the same rules apply. Closed.",
+          "created": "2026-08-03T12:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "45004",
+      "key": "RODO-4",
+      "summary": "Odpowiedzi na skargi w terminie 14 dni",
+      "description": "Każda skarga ma termin odpowiedzi i osobę odpowiedzialną.",
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:29b1ef3c-6afc-50bc-9be9-e71b425426ef",
+      "reporter": "712020:7e034951-cfa6-56c9-bdea-c85071220e2f",
+      "labels": [
+        "complaints",
+        "deadline"
+      ],
+      "sprint": "452",
+      "created": "2026-08-04T14:00:00.000+0100",
+      "updated": "2026-08-07T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "450045",
+          "author": "712020:29b1ef3c-6afc-50bc-9be9-e71b425426ef",
+          "time_spent_seconds": 10800,
+          "comment": "Szablony odpowiedzi",
+          "started": "2026-08-06T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "45005",
+      "key": "RODO-5",
+      "summary": "Wezwanie z UODO w sprawie bazy z porównywarki",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:1cf8e449-907a-5fc0-aa05-7dac1e8ccec9",
+      "reporter": "712020:7e034951-cfa6-56c9-bdea-c85071220e2f",
+      "labels": [
+        "uodo",
+        "deadline"
+      ],
+      "sprint": "452",
+      "created": "2026-08-05T13:15:00.000+0100",
+      "updated": "2026-08-08T13:15:00.000+0100",
+      "comments": [
+        {
+          "id": "450051",
+          "author": "712020:1cf8e449-907a-5fc0-aa05-7dac1e8ccec9",
+          "body": "Termin odpowiedzi: 21 października.",
+          "created": "2026-08-06T13:15:00.000+0100"
+        },
+        {
+          "id": "450052",
+          "author": "712020:1cf8e449-907a-5fc0-aa05-7dac1e8ccec9",
+          "body": "Potrzebna umowa ze sprzedawcą bazy i dowody zgód.",
+          "created": "2026-08-07T13:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "45006",
+      "key": "RODO-6",
+      "summary": "Wniosek klienta o kopię nagrania rozmowy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:f4e694f3-9110-57ca-85d7-124ff2f7540b",
+      "reporter": "712020:1cf8e449-907a-5fc0-aa05-7dac1e8ccec9",
+      "labels": [
+        "data-requests"
+      ],
+      "sprint": "452",
+      "created": "2026-08-07T12:45:00.000+0100",
+      "updated": "2026-08-10T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45007",
+      "key": "RODO-7",
+      "summary": "Template answer to the right of access",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:29b1ef3c-6afc-50bc-9be9-e71b425426ef",
+      "reporter": "712020:7e034951-cfa6-56c9-bdea-c85071220e2f",
+      "labels": [
+        "data-requests",
+        "templates"
+      ],
+      "sprint": "452",
+      "created": "2026-08-09T14:00:00.000+0100",
+      "updated": "2026-08-12T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45008",
+      "key": "RODO-8",
+      "summary": "Klauzula informacyjna czytana w rozmowie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:7e034951-cfa6-56c9-bdea-c85071220e2f",
+      "reporter": "712020:7cd6d534-b5f9-5951-bbd0-c5da71c019d3",
+      "labels": [
+        "compliance",
+        "script"
+      ],
+      "sprint": "452",
+      "created": "2026-08-10T10:45:00.000+0100",
+      "updated": "2026-08-13T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45009",
+      "key": "RODO-9",
+      "summary": "Upoważnienia do przetwarzania danych dla telemarketerów",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:1cf8e449-907a-5fc0-aa05-7dac1e8ccec9",
+      "reporter": "712020:1cf8e449-907a-5fc0-aa05-7dac1e8ccec9",
+      "labels": [
+        "documents"
+      ],
+      "sprint": "452",
+      "created": "2026-08-12T10:30:00.000+0100",
+      "updated": "2026-08-15T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45010",
+      "key": "RODO-10",
+      "summary": "Skarga klientki z Końskich na 11 telefonów w tygodniu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:f4e694f3-9110-57ca-85d7-124ff2f7540b",
+      "reporter": "712020:29b1ef3c-6afc-50bc-9be9-e71b425426ef",
+      "labels": [
+        "complaints"
+      ],
+      "sprint": "452",
+      "created": "2026-08-14T11:00:00.000+0100",
+      "updated": "2026-08-17T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45011",
+      "key": "RODO-11",
+      "summary": "Rejestr czynności przetwarzania danych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:7e034951-cfa6-56c9-bdea-c85071220e2f",
+      "labels": [
+        "documents"
+      ],
+      "sprint": "452",
+      "created": "2026-08-15T11:45:00.000+0100",
+      "updated": "2026-08-18T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45012",
+      "key": "RODO-12",
+      "summary": "Sprzeciw wobec marketingu zgłoszony mailem nie trafia na listę",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:7e034951-cfa6-56c9-bdea-c85071220e2f",
+      "labels": [
+        "do-not-call",
+        "email"
+      ],
+      "sprint": "452",
+      "created": "2026-08-17T12:30:00.000+0100",
+      "updated": "2026-08-20T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45013",
+      "key": "RODO-13",
+      "summary": "Pismo z UOKiK o praktykach sprzedażowych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": "712020:f4e694f3-9110-57ca-85d7-124ff2f7540b",
+      "reporter": "712020:7e034951-cfa6-56c9-bdea-c85071220e2f",
+      "labels": [
+        "uokik"
+      ],
+      "sprint": "452",
+      "created": "2026-08-19T13:15:00.000+0100",
+      "updated": "2026-08-22T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45014",
+      "key": "RODO-14",
+      "summary": "Audyt zgód marketingowych we wszystkich bazach",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:7e034951-cfa6-56c9-bdea-c85071220e2f",
+      "labels": [
+        "consents",
+        "audit"
+      ],
+      "sprint": "453",
+      "created": "2026-08-20T09:45:00.000+0100",
+      "updated": "2026-08-23T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45015",
+      "key": "RODO-15",
+      "summary": "Umowy powierzenia z dostawcami baz",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:1cf8e449-907a-5fc0-aa05-7dac1e8ccec9",
+      "labels": [
+        "documents",
+        "consents"
+      ],
+      "sprint": "453",
+      "created": "2026-08-22T13:00:00.000+0100",
+      "updated": "2026-08-25T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45016",
+      "key": "RODO-16",
+      "summary": "Training about personal data for the call floor",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:f4e694f3-9110-57ca-85d7-124ff2f7540b",
+      "reporter": "712020:29b1ef3c-6afc-50bc-9be9-e71b425426ef",
+      "labels": [
+        "training"
+      ],
+      "sprint": "453",
+      "created": "2026-08-24T13:15:00.000+0100",
+      "updated": "2026-08-27T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45017",
+      "key": "RODO-17",
+      "summary": "Procedura naruszenia ochrony danych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:7cd6d534-b5f9-5951-bbd0-c5da71c019d3",
+      "reporter": "712020:d6aa9366-4ebd-539f-b315-f694de56005c",
+      "labels": [
+        "documents",
+        "incident"
+      ],
+      "sprint": "453",
+      "created": "2026-08-25T13:30:00.000+0100",
+      "updated": "2026-08-28T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45018",
+      "key": "RODO-18",
+      "summary": "Telemarketer zapisał PESEL klienta w notatce",
+      "description": "Notatki rozmów nie mają filtra na numery PESEL.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:7e034951-cfa6-56c9-bdea-c85071220e2f",
+      "labels": [
+        "incident"
+      ],
+      "sprint": null,
+      "created": "2026-08-27T14:45:00.000+0100",
+      "updated": "2026-08-30T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45019",
+      "key": "RODO-19",
+      "summary": "Skargi z mediów społecznościowych w rejestrze",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:7cd6d534-b5f9-5951-bbd0-c5da71c019d3",
+      "labels": [
+        "complaints"
+      ],
+      "sprint": null,
+      "created": "2026-08-29T08:00:00.000+0100",
+      "updated": "2026-09-01T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45020",
+      "key": "RODO-20",
+      "summary": "Termin przechowywania nagrań rozmów",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:1cf8e449-907a-5fc0-aa05-7dac1e8ccec9",
+      "labels": [
+        "recording",
+        "documents"
+      ],
+      "sprint": null,
+      "created": "2026-08-30T16:00:00.000+0100",
+      "updated": "2026-09-02T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45021",
+      "key": "RODO-21",
+      "summary": "Odpowiedź do rzecznika konsumentów w Kielcach",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:f4e694f3-9110-57ca-85d7-124ff2f7540b",
+      "labels": [
+        "complaints"
+      ],
+      "sprint": null,
+      "created": "2026-09-01T13:00:00.000+0100",
+      "updated": "2026-09-04T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45022",
+      "key": "RODO-22",
+      "summary": "Inspektor ochrony danych na umowę zewnętrzną",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:d6aa9366-4ebd-539f-b315-f694de56005c",
+      "labels": [
+        "documents"
+      ],
+      "sprint": null,
+      "created": "2026-09-02T17:00:00.000+0100",
+      "updated": "2026-09-05T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45023",
+      "key": "RODO-23",
+      "summary": "Deleted customer data still in the backups",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:d6aa9366-4ebd-539f-b315-f694de56005c",
+      "reporter": "712020:7cd6d534-b5f9-5951-bbd0-c5da71c019d3",
+      "labels": [
+        "data-requests",
+        "backup"
+      ],
+      "sprint": null,
+      "created": "2026-09-04T12:15:00.000+0100",
+      "updated": "2026-09-07T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45024",
+      "key": "RODO-24",
+      "summary": "Raport skarg miesięcznie dla właściciela",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:29b1ef3c-6afc-50bc-9be9-e71b425426ef",
+      "reporter": "712020:7e034951-cfa6-56c9-bdea-c85071220e2f",
+      "labels": [
+        "reports",
+        "complaints"
+      ],
+      "sprint": null,
+      "created": "2026-09-06T14:00:00.000+0100",
+      "updated": "2026-09-09T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45025",
+      "key": "RODO-25",
+      "summary": "Wzór odpowiedzi na skargę o nachalne telefony",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:29b1ef3c-6afc-50bc-9be9-e71b425426ef",
+      "reporter": "712020:1cf8e449-907a-5fc0-aa05-7dac1e8ccec9",
+      "labels": [
+        "templates",
+        "complaints"
+      ],
+      "sprint": null,
+      "created": "2026-09-07T14:45:00.000+0100",
+      "updated": "2026-09-10T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45026",
+      "key": "RODO-26",
+      "summary": "Weryfikacja wieku klienta przed umową",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:f4e694f3-9110-57ca-85d7-124ff2f7540b",
+      "labels": [
+        "compliance"
+      ],
+      "sprint": null,
+      "created": "2026-09-09T09:30:00.000+0100",
+      "updated": "2026-09-12T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45027",
+      "key": "RODO-27",
+      "summary": "Ubezpieczenie od kar za naruszenie danych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:7e034951-cfa6-56c9-bdea-c85071220e2f",
+      "labels": [
+        "insurance"
+      ],
+      "sprint": null,
+      "created": "2026-09-11T08:00:00.000+0100",
+      "updated": "2026-09-14T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45028",
+      "key": "RODO-28",
+      "summary": "Klient prosi o usunięcie danych, a dialer dalej dzwoni",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": "712020:29b1ef3c-6afc-50bc-9be9-e71b425426ef",
+      "reporter": "712020:f4e694f3-9110-57ca-85d7-124ff2f7540b",
+      "labels": [
+        "do-not-call",
+        "data-requests"
+      ],
+      "sprint": null,
+      "created": "2026-09-12T13:15:00.000+0100",
+      "updated": "2026-09-15T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45029",
+      "key": "RODO-29",
+      "summary": "Kontrola nagrań pod kątem zakazanych zdań",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:1cf8e449-907a-5fc0-aa05-7dac1e8ccec9",
+      "labels": [
+        "recording",
+        "compliance"
+      ],
+      "sprint": "452",
+      "created": "2026-09-14T08:30:00.000+0100",
+      "updated": "2026-09-17T08:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45030",
+      "key": "RODO-30",
+      "summary": "Polityka prywatności na stronie do aktualizacji",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:7cd6d534-b5f9-5951-bbd0-c5da71c019d3",
+      "reporter": "712020:f4e694f3-9110-57ca-85d7-124ff2f7540b",
+      "labels": [
+        "website",
+        "documents"
+      ],
+      "sprint": null,
+      "created": "2026-09-16T12:30:00.000+0100",
+      "updated": "2026-09-19T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45031",
+      "key": "RODO-31",
+      "summary": "Annual report of the data requests",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:d6aa9366-4ebd-539f-b315-f694de56005c",
+      "labels": [
+        "reports",
+        "data-requests"
+      ],
+      "sprint": null,
+      "created": "2026-09-17T10:00:00.000+0100",
+      "updated": "2026-09-20T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45032",
+      "key": "RODO-32",
+      "summary": "Spotkanie z kancelarią w sprawie pisma z UOKiK",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:1cf8e449-907a-5fc0-aa05-7dac1e8ccec9",
+      "reporter": "712020:7e034951-cfa6-56c9-bdea-c85071220e2f",
+      "labels": [
+        "uokik"
+      ],
+      "sprint": null,
+      "created": "2026-09-19T13:30:00.000+0100",
+      "updated": "2026-09-22T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45033",
+      "key": "RODO-33",
+      "summary": "Rejestr naruszeń ochrony danych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:7cd6d534-b5f9-5951-bbd0-c5da71c019d3",
+      "reporter": "712020:1cf8e449-907a-5fc0-aa05-7dac1e8ccec9",
+      "labels": [
+        "incident"
+      ],
+      "sprint": null,
+      "created": "2026-09-21T11:00:00.000+0100",
+      "updated": "2026-09-24T11:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45034",
+      "key": "RODO-34",
+      "summary": "Zgody zbierane w formularzu kalkulatora na stronie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:1cf8e449-907a-5fc0-aa05-7dac1e8ccec9",
+      "reporter": "712020:d6aa9366-4ebd-539f-b315-f694de56005c",
+      "labels": [
+        "consents",
+        "web-form"
+      ],
+      "sprint": "453",
+      "created": "2026-09-22T10:30:00.000+0100",
+      "updated": "2026-09-25T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45035",
+      "key": "RODO-35",
+      "summary": "Skrzynka mailowa na sprzeciwy bez właściciela",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:29b1ef3c-6afc-50bc-9be9-e71b425426ef",
+      "labels": [
+        "email"
+      ],
+      "sprint": null,
+      "created": "2026-09-24T16:15:00.000+0100",
+      "updated": "2026-09-27T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45036",
+      "key": "RODO-36",
+      "summary": "Odpowiedzi na skargi wysyłane z prywatnych skrzynek",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:d6aa9366-4ebd-539f-b315-f694de56005c",
+      "reporter": "712020:d6aa9366-4ebd-539f-b315-f694de56005c",
+      "labels": [
+        "complaints",
+        "email"
+      ],
+      "sprint": null,
+      "created": "2026-09-26T14:15:00.000+0100",
+      "updated": "2026-09-29T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45037",
+      "key": "RODO-37",
+      "summary": "Lista kontroli przed kampanią w nowym regionie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": "712020:7e034951-cfa6-56c9-bdea-c85071220e2f",
+      "reporter": "712020:f4e694f3-9110-57ca-85d7-124ff2f7540b",
+      "labels": [
+        "compliance"
+      ],
+      "sprint": null,
+      "created": "2026-09-27T16:00:00.000+0100",
+      "updated": "2026-09-30T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "45038",
+      "key": "RODO-38",
+      "summary": "Wyjaśnienia dla klienta, który dostał SMS po sprzeciwie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:1cf8e449-907a-5fc0-aa05-7dac1e8ccec9",
+      "reporter": "712020:1cf8e449-907a-5fc0-aa05-7dac1e8ccec9",
+      "labels": [
+        "complaints",
+        "do-not-call"
+      ],
+      "sprint": null,
+      "created": "2026-09-29T13:30:00.000+0100",
+      "updated": "2026-10-02T13:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

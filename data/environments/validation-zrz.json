@@ -1,0 +1,900 @@
+{
+  "name": "validation-zrz",
+  "site": "https://example.atlassian.net",
+  "now": "2026-11-18T13:00:00.000+0100",
+  "project": {
+    "key": "ZRZ",
+    "name": "Housi - panel zarządcy"
+  },
+  "board": {
+    "id": "53",
+    "name": "ZRZ board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:749db586-7784-5d3c-a9bc-799d5074131a",
+      "display_name": "Izabela Rudzka",
+      "email": "izabela.rudzka@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:ccd8b85e-fc9f-5db7-8fe2-668e800b1494",
+      "display_name": "Bolesław Kurant",
+      "email": "boleslaw.kurant@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:a4023096-86ff-54ea-af6d-31e142b0ec43",
+      "display_name": "Matteo Rinaldi",
+      "email": "matteo.rinaldi@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:723f747c-b8ab-5e3c-824f-082fddf8eea4",
+      "display_name": "Izabela Wojtas",
+      "email": "izabela.wojtas@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:8327abba-312a-5963-9a98-e1ae541f10d3",
+      "display_name": "Albert Chmiel",
+      "email": "albert.chmiel@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:27bef274-f119-5260-84fe-e417c430a69d",
+      "display_name": "Edward Pacholczyk",
+      "email": "edward.pacholczyk@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:42abf563-3fe4-5a0f-84db-b605cd59a375",
+      "display_name": "Wanda Rybicka",
+      "email": "wanda.rybicka@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "531",
+      "name": "ZRZ Sprint 31",
+      "state": "closed",
+      "start_date": "2026-10-28T09:00:00.000Z",
+      "end_date": "2026-11-11T09:00:00.000Z",
+      "goal": "Budynki i lokale w panelu"
+    },
+    {
+      "id": "532",
+      "name": "ZRZ Sprint 32",
+      "state": "active",
+      "start_date": "2026-11-11T09:00:00.000Z",
+      "end_date": "2026-11-25T09:00:00.000Z",
+      "goal": "Raporty dla wspólnot"
+    },
+    {
+      "id": "533",
+      "name": "ZRZ Sprint 33",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Dokumentacja techniczna budynków"
+    },
+    {
+      "id": "534",
+      "name": "ZRZ Sprint 34",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "53001",
+      "key": "ZRZ-1",
+      "summary": "Import budynków i lokali z arkusza zarządcy",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:749db586-7784-5d3c-a9bc-799d5074131a",
+      "reporter": "712020:a4023096-86ff-54ea-af6d-31e142b0ec43",
+      "labels": [
+        "buildings",
+        "import"
+      ],
+      "sprint": "531",
+      "created": "2026-09-10T15:30:00.000+0100",
+      "updated": "2026-09-13T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "530015",
+          "author": "712020:749db586-7784-5d3c-a9bc-799d5074131a",
+          "time_spent_seconds": 18000,
+          "comment": "Mapowanie arkusza",
+          "started": "2026-09-12T00:30:00.000+0100"
+        },
+        {
+          "id": "530016",
+          "author": "712020:749db586-7784-5d3c-a9bc-799d5074131a",
+          "time_spent_seconds": 7200,
+          "comment": "Kontrola adresów",
+          "started": "2026-09-13T00:30:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "53002",
+      "key": "ZRZ-2",
+      "summary": "Lokale z literą w numerze odrzucane przy imporcie",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:a4023096-86ff-54ea-af6d-31e142b0ec43",
+      "reporter": "712020:8327abba-312a-5963-9a98-e1ae541f10d3",
+      "labels": [
+        "import",
+        "validation"
+      ],
+      "sprint": "531",
+      "created": "2026-09-11T09:15:00.000+0100",
+      "updated": "2026-09-14T09:15:00.000+0100",
+      "comments": [
+        {
+          "id": "530021",
+          "author": "712020:a4023096-86ff-54ea-af6d-31e142b0ec43",
+          "body": "Lokal 12A i 12B importują się poprawnie.",
+          "created": "2026-09-12T09:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "53003",
+      "key": "ZRZ-3",
+      "summary": "Integration with the old accounting program of the manager",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:723f747c-b8ab-5e3c-824f-082fddf8eea4",
+      "labels": [
+        "integration"
+      ],
+      "sprint": "531",
+      "created": "2026-09-13T11:30:00.000+0100",
+      "updated": "2026-09-16T11:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53004",
+      "key": "ZRZ-4",
+      "summary": "Lista najemców lokalu z historią",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:42abf563-3fe4-5a0f-84db-b605cd59a375",
+      "reporter": "712020:27bef274-f119-5260-84fe-e417c430a69d",
+      "labels": [
+        "tenants"
+      ],
+      "sprint": "531",
+      "created": "2026-09-15T17:45:00.000+0100",
+      "updated": "2026-09-18T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53005",
+      "key": "ZRZ-5",
+      "summary": "Raport usterek dla zebrania wspólnoty",
+      "description": "Raport za rok: liczba usterek, koszty napraw i czas reakcji serwisów.",
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:ccd8b85e-fc9f-5db7-8fe2-668e800b1494",
+      "reporter": "712020:749db586-7784-5d3c-a9bc-799d5074131a",
+      "labels": [
+        "reports",
+        "community"
+      ],
+      "sprint": "532",
+      "created": "2026-09-16T10:00:00.000+0100",
+      "updated": "2026-09-19T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "530055",
+          "author": "712020:ccd8b85e-fc9f-5db7-8fe2-668e800b1494",
+          "time_spent_seconds": 14400,
+          "comment": "Zapytania do raportu",
+          "started": "2026-09-18T00:00:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "53006",
+      "key": "ZRZ-6",
+      "summary": "Mapa budynków zarządcy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:ccd8b85e-fc9f-5db7-8fe2-668e800b1494",
+      "reporter": "712020:723f747c-b8ab-5e3c-824f-082fddf8eea4",
+      "labels": [
+        "buildings",
+        "maps"
+      ],
+      "sprint": "532",
+      "created": "2026-09-18T12:30:00.000+0100",
+      "updated": "2026-09-21T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53007",
+      "key": "ZRZ-7",
+      "summary": "Zarządca widzi budynki innego zarządcy",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:a4023096-86ff-54ea-af6d-31e142b0ec43",
+      "reporter": "712020:ccd8b85e-fc9f-5db7-8fe2-668e800b1494",
+      "labels": [
+        "permissions",
+        "privacy"
+      ],
+      "sprint": "532",
+      "created": "2026-09-20T08:30:00.000+0100",
+      "updated": "2026-09-23T08:30:00.000+0100",
+      "comments": [
+        {
+          "id": "530071",
+          "author": "712020:a4023096-86ff-54ea-af6d-31e142b0ec43",
+          "body": "Dotyczy kont dodanych w październiku.",
+          "created": "2026-09-21T08:30:00.000+0100"
+        },
+        {
+          "id": "530072",
+          "author": "712020:a4023096-86ff-54ea-af6d-31e142b0ec43",
+          "body": "Błąd w filtrze organizacji.",
+          "created": "2026-09-22T08:30:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "53008",
+      "key": "ZRZ-8",
+      "summary": "Cost of repairs per building chart",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:27bef274-f119-5260-84fe-e417c430a69d",
+      "reporter": "712020:a4023096-86ff-54ea-af6d-31e142b0ec43",
+      "labels": [
+        "reports",
+        "charts"
+      ],
+      "sprint": "532",
+      "created": "2026-09-21T16:45:00.000+0100",
+      "updated": "2026-09-24T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53009",
+      "key": "ZRZ-9",
+      "summary": "Uprawnienia członka zarządu wspólnoty do odczytu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:ccd8b85e-fc9f-5db7-8fe2-668e800b1494",
+      "reporter": "712020:27bef274-f119-5260-84fe-e417c430a69d",
+      "labels": [
+        "permissions",
+        "community"
+      ],
+      "sprint": "532",
+      "created": "2026-09-23T14:45:00.000+0100",
+      "updated": "2026-09-26T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53010",
+      "key": "ZRZ-10",
+      "summary": "Ogłoszenie dla mieszkańców jednego budynku",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:27bef274-f119-5260-84fe-e417c430a69d",
+      "reporter": "712020:8327abba-312a-5963-9a98-e1ae541f10d3",
+      "labels": [
+        "announcements"
+      ],
+      "sprint": "532",
+      "created": "2026-09-24T15:45:00.000+0100",
+      "updated": "2026-09-27T15:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53011",
+      "key": "ZRZ-11",
+      "summary": "Filtr zgłoszeń według statusu i budynku",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:ccd8b85e-fc9f-5db7-8fe2-668e800b1494",
+      "labels": [
+        "reports",
+        "ui"
+      ],
+      "sprint": "532",
+      "created": "2026-09-26T11:45:00.000+0100",
+      "updated": "2026-09-29T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53012",
+      "key": "ZRZ-12",
+      "summary": "Panel nie mieści tabeli lokali na laptopie",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:8327abba-312a-5963-9a98-e1ae541f10d3",
+      "labels": [
+        "ui"
+      ],
+      "sprint": "532",
+      "created": "2026-09-28T17:30:00.000+0100",
+      "updated": "2026-10-01T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53013",
+      "key": "ZRZ-13",
+      "summary": "Wysyłka raportu do zarządu wspólnoty mailem",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:a4023096-86ff-54ea-af6d-31e142b0ec43",
+      "labels": [
+        "reports",
+        "email"
+      ],
+      "sprint": "532",
+      "created": "2026-09-29T08:00:00.000+0100",
+      "updated": "2026-10-02T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53014",
+      "key": "ZRZ-14",
+      "summary": "Dokumentacja techniczna budynku w panelu",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:723f747c-b8ab-5e3c-824f-082fddf8eea4",
+      "labels": [
+        "documents",
+        "buildings"
+      ],
+      "sprint": "533",
+      "created": "2026-10-01T17:00:00.000+0100",
+      "updated": "2026-10-04T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53015",
+      "key": "ZRZ-15",
+      "summary": "Książka obiektu budowlanego w wersji elektronicznej",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:723f747c-b8ab-5e3c-824f-082fddf8eea4",
+      "reporter": "712020:749db586-7784-5d3c-a9bc-799d5074131a",
+      "labels": [
+        "documents",
+        "inspections"
+      ],
+      "sprint": "533",
+      "created": "2026-10-02T16:15:00.000+0100",
+      "updated": "2026-10-05T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53016",
+      "key": "ZRZ-16",
+      "summary": "Upload of the building plans in PDF",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:8327abba-312a-5963-9a98-e1ae541f10d3",
+      "reporter": "712020:a4023096-86ff-54ea-af6d-31e142b0ec43",
+      "labels": [
+        "documents"
+      ],
+      "sprint": "533",
+      "created": "2026-10-04T11:45:00.000+0100",
+      "updated": "2026-10-07T11:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53017",
+      "key": "ZRZ-17",
+      "summary": "Termin przeglądów budynku w kalendarzu zarządcy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:8327abba-312a-5963-9a98-e1ae541f10d3",
+      "reporter": "712020:ccd8b85e-fc9f-5db7-8fe2-668e800b1494",
+      "labels": [
+        "inspections",
+        "calendar"
+      ],
+      "sprint": "533",
+      "created": "2026-10-06T11:30:00.000+0100",
+      "updated": "2026-10-09T11:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53018",
+      "key": "ZRZ-18",
+      "summary": "Raport kosztów pokazuje kwoty brutto jako netto",
+      "description": "Na zebraniu wspólnoty koszty wyglądały na niższe o 23%.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:a4023096-86ff-54ea-af6d-31e142b0ec43",
+      "reporter": "712020:a4023096-86ff-54ea-af6d-31e142b0ec43",
+      "labels": [
+        "reports",
+        "billing"
+      ],
+      "sprint": null,
+      "created": "2026-10-07T16:15:00.000+0100",
+      "updated": "2026-10-10T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53019",
+      "key": "ZRZ-19",
+      "summary": "Uchwały wspólnoty przypięte do budynku",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:27bef274-f119-5260-84fe-e417c430a69d",
+      "reporter": "712020:8327abba-312a-5963-9a98-e1ae541f10d3",
+      "labels": [
+        "community",
+        "documents"
+      ],
+      "sprint": null,
+      "created": "2026-10-09T13:15:00.000+0100",
+      "updated": "2026-10-12T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53020",
+      "key": "ZRZ-20",
+      "summary": "Głosowanie nad uchwałą w aplikacji",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:a4023096-86ff-54ea-af6d-31e142b0ec43",
+      "labels": [
+        "community"
+      ],
+      "sprint": null,
+      "created": "2026-10-10T13:45:00.000+0100",
+      "updated": "2026-10-13T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53021",
+      "key": "ZRZ-21",
+      "summary": "Fundusz remontowy budynku w panelu",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:a4023096-86ff-54ea-af6d-31e142b0ec43",
+      "labels": [
+        "billing",
+        "community"
+      ],
+      "sprint": null,
+      "created": "2026-10-12T17:15:00.000+0100",
+      "updated": "2026-10-15T17:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53022",
+      "key": "ZRZ-22",
+      "summary": "Export of the list of flats to Excel",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:a4023096-86ff-54ea-af6d-31e142b0ec43",
+      "reporter": "712020:a4023096-86ff-54ea-af6d-31e142b0ec43",
+      "labels": [
+        "buildings"
+      ],
+      "sprint": null,
+      "created": "2026-10-14T17:00:00.000+0100",
+      "updated": "2026-10-17T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53023",
+      "key": "ZRZ-23",
+      "summary": "Panel zarządcy bez wersji na tablet",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:ccd8b85e-fc9f-5db7-8fe2-668e800b1494",
+      "labels": [
+        "ui"
+      ],
+      "sprint": null,
+      "created": "2026-10-15T17:00:00.000+0100",
+      "updated": "2026-10-18T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53024",
+      "key": "ZRZ-24",
+      "summary": "Zmiana zarządcy budynku z przeniesieniem historii",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:ccd8b85e-fc9f-5db7-8fe2-668e800b1494",
+      "reporter": "712020:749db586-7784-5d3c-a9bc-799d5074131a",
+      "labels": [
+        "buildings"
+      ],
+      "sprint": null,
+      "created": "2026-10-17T12:45:00.000+0100",
+      "updated": "2026-10-20T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53025",
+      "key": "ZRZ-25",
+      "summary": "Archiwum zgłoszeń starszych niż pięć lat",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:723f747c-b8ab-5e3c-824f-082fddf8eea4",
+      "reporter": "712020:a4023096-86ff-54ea-af6d-31e142b0ec43",
+      "labels": [
+        "archive"
+      ],
+      "sprint": null,
+      "created": "2026-10-18T11:30:00.000+0100",
+      "updated": "2026-10-21T11:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53026",
+      "key": "ZRZ-26",
+      "summary": "Powiadomienie zarządcy o awarii w nocy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:8327abba-312a-5963-9a98-e1ae541f10d3",
+      "labels": [
+        "emergency",
+        "alerts"
+      ],
+      "sprint": null,
+      "created": "2026-10-20T12:30:00.000+0100",
+      "updated": "2026-10-23T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53027",
+      "key": "ZRZ-27",
+      "summary": "Wyszukiwarka lokali nie znajduje adresu z ukośnikiem",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:a4023096-86ff-54ea-af6d-31e142b0ec43",
+      "reporter": "712020:749db586-7784-5d3c-a9bc-799d5074131a",
+      "labels": [
+        "search"
+      ],
+      "sprint": "532",
+      "created": "2026-10-22T08:15:00.000+0100",
+      "updated": "2026-10-25T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53028",
+      "key": "ZRZ-28",
+      "summary": "Szkolenie dla zarządców z panelu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:749db586-7784-5d3c-a9bc-799d5074131a",
+      "reporter": "712020:27bef274-f119-5260-84fe-e417c430a69d",
+      "labels": [
+        "docs",
+        "training"
+      ],
+      "sprint": null,
+      "created": "2026-10-23T12:30:00.000+0100",
+      "updated": "2026-10-26T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53029",
+      "key": "ZRZ-29",
+      "summary": "Dashboard with the open faults per building",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:27bef274-f119-5260-84fe-e417c430a69d",
+      "reporter": "712020:27bef274-f119-5260-84fe-e417c430a69d",
+      "labels": [
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-10-25T08:15:00.000+0100",
+      "updated": "2026-10-28T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53030",
+      "key": "ZRZ-30",
+      "summary": "Druk ogłoszenia na tablicę w klatce",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:723f747c-b8ab-5e3c-824f-082fddf8eea4",
+      "labels": [
+        "announcements",
+        "print"
+      ],
+      "sprint": null,
+      "created": "2026-10-26T14:45:00.000+0100",
+      "updated": "2026-10-29T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53031",
+      "key": "ZRZ-31",
+      "summary": "Licznik wody w lokalu i odczyty mieszkańców",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:749db586-7784-5d3c-a9bc-799d5074131a",
+      "labels": [
+        "meters"
+      ],
+      "sprint": null,
+      "created": "2026-10-28T12:45:00.000+0100",
+      "updated": "2026-10-31T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53032",
+      "key": "ZRZ-32",
+      "summary": "Odczyt licznika ze zdjęcia",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:749db586-7784-5d3c-a9bc-799d5074131a",
+      "reporter": "712020:8327abba-312a-5963-9a98-e1ae541f10d3",
+      "labels": [
+        "meters",
+        "ml"
+      ],
+      "sprint": null,
+      "created": "2026-10-30T10:30:00.000+0100",
+      "updated": "2026-11-02T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53033",
+      "key": "ZRZ-33",
+      "summary": "Dwa budynki o tym samym adresie po imporcie",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:749db586-7784-5d3c-a9bc-799d5074131a",
+      "labels": [
+        "import",
+        "buildings"
+      ],
+      "sprint": null,
+      "created": "2026-10-31T09:15:00.000+0100",
+      "updated": "2026-11-03T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53034",
+      "key": "ZRZ-34",
+      "summary": "Pełnomocnictwo zarządcy w dokumentach wspólnoty",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:a4023096-86ff-54ea-af6d-31e142b0ec43",
+      "labels": [
+        "documents"
+      ],
+      "sprint": "533",
+      "created": "2026-11-02T12:00:00.000+0100",
+      "updated": "2026-11-05T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53035",
+      "key": "ZRZ-35",
+      "summary": "Uwagi zarządców z pilotażu w trzech wspólnotach",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:8327abba-312a-5963-9a98-e1ae541f10d3",
+      "labels": [
+        "feedback"
+      ],
+      "sprint": null,
+      "created": "2026-11-03T10:00:00.000+0100",
+      "updated": "2026-11-06T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53036",
+      "key": "ZRZ-36",
+      "summary": "Rola księgowej wspólnoty w panelu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:ccd8b85e-fc9f-5db7-8fe2-668e800b1494",
+      "labels": [
+        "permissions"
+      ],
+      "sprint": null,
+      "created": "2026-11-05T17:45:00.000+0100",
+      "updated": "2026-11-08T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53037",
+      "key": "ZRZ-37",
+      "summary": "Wykres zgłoszeń według miesięcy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:a4023096-86ff-54ea-af6d-31e142b0ec43",
+      "labels": [
+        "reports",
+        "charts"
+      ],
+      "sprint": null,
+      "created": "2026-11-07T08:15:00.000+0100",
+      "updated": "2026-11-10T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53038",
+      "key": "ZRZ-38",
+      "summary": "Raport roczny dla wspólnoty przy ul. Lipowej 12",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:ccd8b85e-fc9f-5db7-8fe2-668e800b1494",
+      "reporter": "712020:8327abba-312a-5963-9a98-e1ae541f10d3",
+      "labels": [
+        "reports",
+        "community"
+      ],
+      "sprint": null,
+      "created": "2026-11-08T17:45:00.000+0100",
+      "updated": "2026-11-11T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "53039",
+      "key": "ZRZ-39",
+      "summary": "Session timeout of the manager panel is 5 minutes",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:ccd8b85e-fc9f-5db7-8fe2-668e800b1494",
+      "labels": [
+        "login"
+      ],
+      "sprint": null,
+      "created": "2026-11-10T10:30:00.000+0100",
+      "updated": "2026-11-13T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

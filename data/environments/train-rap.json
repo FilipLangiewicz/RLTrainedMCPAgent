@@ -1,0 +1,849 @@
+{
+  "name": "train-rap",
+  "site": "https://example.atlassian.net",
+  "now": "2026-12-01T10:00:00.000+0100",
+  "project": {
+    "key": "RAP",
+    "name": "WiseAI - raportowanie i rozliczenia projektów"
+  },
+  "board": {
+    "id": "39",
+    "name": "RAP board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:1f05bf18-986c-5cdb-8f58-ccf8de16b17c",
+      "display_name": "Oksana Savchuk",
+      "email": "oksana.savchuk@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:df15895b-e0ff-5c56-bb04-7b977f955106",
+      "display_name": "Bohdan Moroz",
+      "email": "bohdan.moroz@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:0529cb9a-e6d5-5e50-a69d-329957dd5f4b",
+      "display_name": "Wiesława Gąsior",
+      "email": "wieslawa.gasior@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:d58bd41e-ddb6-5557-8f9c-60cc5d35d207",
+      "display_name": "Oksana Rudenko",
+      "email": "oksana.rudenko@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:1dbe8fd2-1d81-5375-a8d7-22ec1008a0dd",
+      "display_name": "Roman Ostapchuk",
+      "email": "roman.ostapchuk@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:a198aaa3-01e7-5fd9-9bca-55db64db3a66",
+      "display_name": "Olha Yaremchuk",
+      "email": "olha.yaremchuk@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:e5f1325d-9b89-58f4-8630-8afc6605b1f5",
+      "display_name": "Yevhen Danylenko",
+      "email": "yevhen.danylenko@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "391",
+      "name": "RAP Sprint 24",
+      "state": "closed",
+      "start_date": "2026-11-10T09:00:00.000Z",
+      "end_date": "2026-11-24T09:00:00.000Z",
+      "goal": "Wniosek o płatność za trzeci kwartał"
+    },
+    {
+      "id": "392",
+      "name": "RAP Sprint 25",
+      "state": "active",
+      "start_date": "2026-11-24T09:00:00.000Z",
+      "end_date": "2026-12-08T09:00:00.000Z",
+      "goal": "Przygotowanie do audytu projektu"
+    },
+    {
+      "id": "393",
+      "name": "RAP Sprint 26",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Raport końcowy projektu"
+    },
+    {
+      "id": "394",
+      "name": "RAP Sprint 27",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "39001",
+      "key": "RAP-1",
+      "summary": "Wniosek o płatność za trzeci kwartał",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Highest",
+      "assignee": "712020:e5f1325d-9b89-58f4-8630-8afc6605b1f5",
+      "reporter": "712020:0529cb9a-e6d5-5e50-a69d-329957dd5f4b",
+      "labels": [
+        "payment-claim",
+        "deadline"
+      ],
+      "sprint": "391",
+      "created": "2026-09-23T17:30:00.000+0100",
+      "updated": "2026-09-26T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "390015",
+          "author": "712020:df15895b-e0ff-5c56-bb04-7b977f955106",
+          "time_spent_seconds": 21600,
+          "comment": "Zestawienie wydatków",
+          "started": "2026-09-25T00:30:00.000+0100"
+        },
+        {
+          "id": "390016",
+          "author": "712020:df15895b-e0ff-5c56-bb04-7b977f955106",
+          "time_spent_seconds": 7200,
+          "comment": "Wysyłka w systemie",
+          "started": "2026-09-26T00:30:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "39002",
+      "key": "RAP-2",
+      "summary": "Ewidencja czasu pracy zespołu za wrzesień",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:0529cb9a-e6d5-5e50-a69d-329957dd5f4b",
+      "reporter": "712020:df15895b-e0ff-5c56-bb04-7b977f955106",
+      "labels": [
+        "timesheets"
+      ],
+      "sprint": "391",
+      "created": "2026-09-25T13:45:00.000+0100",
+      "updated": "2026-09-28T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39003",
+      "key": "RAP-3",
+      "summary": "Old Excel template for the cost report",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:d58bd41e-ddb6-5557-8f9c-60cc5d35d207",
+      "labels": [
+        "templates"
+      ],
+      "sprint": "391",
+      "created": "2026-09-26T14:00:00.000+0100",
+      "updated": "2026-09-29T14:00:00.000+0100",
+      "comments": [
+        {
+          "id": "390031",
+          "author": "712020:d58bd41e-ddb6-5557-8f9c-60cc5d35d207",
+          "body": "The funding agency gave a new template.",
+          "created": "2026-09-27T14:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "39004",
+      "key": "RAP-4",
+      "summary": "Korekta wniosku o płatność po uwagach opiekuna",
+      "description": "Opiekun projektu nie uznał dwóch faktur za usługi chmurowe.",
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:1dbe8fd2-1d81-5375-a8d7-22ec1008a0dd",
+      "reporter": "712020:d58bd41e-ddb6-5557-8f9c-60cc5d35d207",
+      "labels": [
+        "payment-claim"
+      ],
+      "sprint": "392",
+      "created": "2026-09-28T15:15:00.000+0100",
+      "updated": "2026-10-01T15:15:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "390045",
+          "author": "712020:1dbe8fd2-1d81-5375-a8d7-22ec1008a0dd",
+          "time_spent_seconds": 10800,
+          "comment": "Wyjaśnienia do faktur",
+          "started": "2026-09-30T00:15:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "39005",
+      "key": "RAP-5",
+      "summary": "Przygotowanie dokumentów do audytu projektu",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:1dbe8fd2-1d81-5375-a8d7-22ec1008a0dd",
+      "reporter": "712020:df15895b-e0ff-5c56-bb04-7b977f955106",
+      "labels": [
+        "audit"
+      ],
+      "sprint": "392",
+      "created": "2026-09-30T09:00:00.000+0100",
+      "updated": "2026-10-03T09:00:00.000+0100",
+      "comments": [
+        {
+          "id": "390051",
+          "author": "712020:1dbe8fd2-1d81-5375-a8d7-22ec1008a0dd",
+          "body": "Audyt zaczyna się 14 grudnia.",
+          "created": "2026-10-01T09:00:00.000+0100"
+        },
+        {
+          "id": "390052",
+          "author": "712020:1dbe8fd2-1d81-5375-a8d7-22ec1008a0dd",
+          "body": "Brakuje protokołów odbioru dwóch usług.",
+          "created": "2026-10-02T09:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "39006",
+      "key": "RAP-6",
+      "summary": "Opis faktur zgodnie z wymogami projektu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:1f05bf18-986c-5cdb-8f58-ccf8de16b17c",
+      "reporter": "712020:a198aaa3-01e7-5fd9-9bca-55db64db3a66",
+      "labels": [
+        "invoices"
+      ],
+      "sprint": "392",
+      "created": "2026-10-01T17:00:00.000+0100",
+      "updated": "2026-10-04T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39007",
+      "key": "RAP-7",
+      "summary": "Cost eligibility check for the GPU servers",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "High",
+      "assignee": "712020:a198aaa3-01e7-5fd9-9bca-55db64db3a66",
+      "reporter": "712020:0529cb9a-e6d5-5e50-a69d-329957dd5f4b",
+      "labels": [
+        "eligibility"
+      ],
+      "sprint": "392",
+      "created": "2026-10-03T16:30:00.000+0100",
+      "updated": "2026-10-06T16:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39008",
+      "key": "RAP-8",
+      "summary": "Raport z osiągnięcia drugiego kamienia milowego",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "High",
+      "assignee": "712020:a198aaa3-01e7-5fd9-9bca-55db64db3a66",
+      "reporter": "712020:a198aaa3-01e7-5fd9-9bca-55db64db3a66",
+      "labels": [
+        "milestones",
+        "reports"
+      ],
+      "sprint": "392",
+      "created": "2026-10-05T14:45:00.000+0100",
+      "updated": "2026-10-08T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39009",
+      "key": "RAP-9",
+      "summary": "Archiwizacja dokumentów projektu na 10 lat",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Low",
+      "assignee": "712020:1dbe8fd2-1d81-5375-a8d7-22ec1008a0dd",
+      "reporter": "712020:0529cb9a-e6d5-5e50-a69d-329957dd5f4b",
+      "labels": [
+        "archive"
+      ],
+      "sprint": "392",
+      "created": "2026-10-06T17:00:00.000+0100",
+      "updated": "2026-10-09T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39010",
+      "key": "RAP-10",
+      "summary": "Rozliczenie delegacji na targi w Lizbonie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:a198aaa3-01e7-5fd9-9bca-55db64db3a66",
+      "reporter": "712020:0529cb9a-e6d5-5e50-a69d-329957dd5f4b",
+      "labels": [
+        "travel"
+      ],
+      "sprint": "392",
+      "created": "2026-10-08T09:30:00.000+0100",
+      "updated": "2026-10-11T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39011",
+      "key": "RAP-11",
+      "summary": "Brak podpisu na protokole odbioru prototypu",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:df15895b-e0ff-5c56-bb04-7b977f955106",
+      "reporter": "712020:1dbe8fd2-1d81-5375-a8d7-22ec1008a0dd",
+      "labels": [
+        "audit",
+        "documents"
+      ],
+      "sprint": "392",
+      "created": "2026-10-10T14:00:00.000+0100",
+      "updated": "2026-10-13T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39012",
+      "key": "RAP-12",
+      "summary": "Zestawienie wskaźników do raportu rocznego",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:df15895b-e0ff-5c56-bb04-7b977f955106",
+      "labels": [
+        "indicators",
+        "reports"
+      ],
+      "sprint": "392",
+      "created": "2026-10-12T16:45:00.000+0100",
+      "updated": "2026-10-15T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39013",
+      "key": "RAP-13",
+      "summary": "Timesheets do not match the payroll for October",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:0529cb9a-e6d5-5e50-a69d-329957dd5f4b",
+      "labels": [
+        "timesheets"
+      ],
+      "sprint": "392",
+      "created": "2026-10-13T16:45:00.000+0100",
+      "updated": "2026-10-16T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39014",
+      "key": "RAP-14",
+      "summary": "Raport końcowy projektu",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:a198aaa3-01e7-5fd9-9bca-55db64db3a66",
+      "reporter": "712020:1dbe8fd2-1d81-5375-a8d7-22ec1008a0dd",
+      "labels": [
+        "reports"
+      ],
+      "sprint": "393",
+      "created": "2026-10-15T10:30:00.000+0100",
+      "updated": "2026-10-18T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39015",
+      "key": "RAP-15",
+      "summary": "Rozliczenie zaliczki przed końcem roku",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:df15895b-e0ff-5c56-bb04-7b977f955106",
+      "reporter": "712020:d58bd41e-ddb6-5557-8f9c-60cc5d35d207",
+      "labels": [
+        "payment-claim"
+      ],
+      "sprint": "393",
+      "created": "2026-10-17T09:45:00.000+0100",
+      "updated": "2026-10-20T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39016",
+      "key": "RAP-16",
+      "summary": "Inwentaryzacja sprzętu kupionego w projekcie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:1dbe8fd2-1d81-5375-a8d7-22ec1008a0dd",
+      "reporter": "712020:a198aaa3-01e7-5fd9-9bca-55db64db3a66",
+      "labels": [
+        "audit"
+      ],
+      "sprint": "393",
+      "created": "2026-10-18T14:00:00.000+0100",
+      "updated": "2026-10-21T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39017",
+      "key": "RAP-17",
+      "summary": "Lista zmian w budżecie do akceptacji",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:1dbe8fd2-1d81-5375-a8d7-22ec1008a0dd",
+      "labels": [
+        "budget"
+      ],
+      "sprint": "393",
+      "created": "2026-10-20T16:15:00.000+0100",
+      "updated": "2026-10-23T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39018",
+      "key": "RAP-18",
+      "summary": "Faktura za usługi chmurowe bez numeru umowy",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:0529cb9a-e6d5-5e50-a69d-329957dd5f4b",
+      "labels": [
+        "invoices",
+        "eligibility"
+      ],
+      "sprint": null,
+      "created": "2026-10-22T14:30:00.000+0100",
+      "updated": "2026-10-25T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39019",
+      "key": "RAP-19",
+      "summary": "Procedura zapytań ofertowych w projekcie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:df15895b-e0ff-5c56-bb04-7b977f955106",
+      "reporter": "712020:a198aaa3-01e7-5fd9-9bca-55db64db3a66",
+      "labels": [
+        "procurement"
+      ],
+      "sprint": null,
+      "created": "2026-10-23T16:15:00.000+0100",
+      "updated": "2026-10-26T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39020",
+      "key": "RAP-20",
+      "summary": "Wyjaśnienie opóźnienia trzeciego kamienia milowego",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:df15895b-e0ff-5c56-bb04-7b977f955106",
+      "reporter": "712020:df15895b-e0ff-5c56-bb04-7b977f955106",
+      "labels": [
+        "milestones"
+      ],
+      "sprint": null,
+      "created": "2026-10-25T15:00:00.000+0100",
+      "updated": "2026-10-28T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39021",
+      "key": "RAP-21",
+      "summary": "Oznakowanie projektu na stronie internetowej",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:a198aaa3-01e7-5fd9-9bca-55db64db3a66",
+      "labels": [
+        "promotion"
+      ],
+      "sprint": null,
+      "created": "2026-10-27T08:00:00.000+0100",
+      "updated": "2026-10-30T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39022",
+      "key": "RAP-22",
+      "summary": "Currency difference in the travel costs",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:1f05bf18-986c-5cdb-8f58-ccf8de16b17c",
+      "reporter": "712020:0529cb9a-e6d5-5e50-a69d-329957dd5f4b",
+      "labels": [
+        "travel"
+      ],
+      "sprint": null,
+      "created": "2026-10-28T12:00:00.000+0100",
+      "updated": "2026-10-31T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39023",
+      "key": "RAP-23",
+      "summary": "Korespondencja z opiekunem projektu w jednym folderze",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:0529cb9a-e6d5-5e50-a69d-329957dd5f4b",
+      "labels": [
+        "archive"
+      ],
+      "sprint": null,
+      "created": "2026-10-30T08:00:00.000+0100",
+      "updated": "2026-11-02T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39024",
+      "key": "RAP-24",
+      "summary": "Rozliczenie wynagrodzeń programistów w projekcie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:d58bd41e-ddb6-5557-8f9c-60cc5d35d207",
+      "reporter": "712020:0529cb9a-e6d5-5e50-a69d-329957dd5f4b",
+      "labels": [
+        "payroll"
+      ],
+      "sprint": null,
+      "created": "2026-11-01T14:15:00.000+0100",
+      "updated": "2026-11-04T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39025",
+      "key": "RAP-25",
+      "summary": "Zwrot niewykorzystanej części zaliczki",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:0529cb9a-e6d5-5e50-a69d-329957dd5f4b",
+      "labels": [
+        "payment-claim"
+      ],
+      "sprint": null,
+      "created": "2026-11-03T14:00:00.000+0100",
+      "updated": "2026-11-06T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39026",
+      "key": "RAP-26",
+      "summary": "Plan kontroli na miejscu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:d58bd41e-ddb6-5557-8f9c-60cc5d35d207",
+      "reporter": "712020:a198aaa3-01e7-5fd9-9bca-55db64db3a66",
+      "labels": [
+        "audit"
+      ],
+      "sprint": null,
+      "created": "2026-11-04T17:15:00.000+0100",
+      "updated": "2026-11-07T17:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39027",
+      "key": "RAP-27",
+      "summary": "Wydatki poniesione przed datą rozpoczęcia projektu",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:1dbe8fd2-1d81-5375-a8d7-22ec1008a0dd",
+      "labels": [
+        "eligibility"
+      ],
+      "sprint": null,
+      "created": "2026-11-06T17:00:00.000+0100",
+      "updated": "2026-11-09T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39028",
+      "key": "RAP-28",
+      "summary": "Raport z działań promocyjnych projektu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:1dbe8fd2-1d81-5375-a8d7-22ec1008a0dd",
+      "reporter": "712020:0529cb9a-e6d5-5e50-a69d-329957dd5f4b",
+      "labels": [
+        "promotion",
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-11-08T11:30:00.000+0100",
+      "updated": "2026-11-11T11:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39029",
+      "key": "RAP-29",
+      "summary": "Monthly cost report for the management",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:a198aaa3-01e7-5fd9-9bca-55db64db3a66",
+      "labels": [
+        "reports"
+      ],
+      "sprint": "392",
+      "created": "2026-11-09T14:00:00.000+0100",
+      "updated": "2026-11-12T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39030",
+      "key": "RAP-30",
+      "summary": "Notatka z rozmowy z audytorem",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:df15895b-e0ff-5c56-bb04-7b977f955106",
+      "labels": [
+        "audit"
+      ],
+      "sprint": null,
+      "created": "2026-11-11T12:15:00.000+0100",
+      "updated": "2026-11-14T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39031",
+      "key": "RAP-31",
+      "summary": "Ewidencja środków trwałych z projektu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:0529cb9a-e6d5-5e50-a69d-329957dd5f4b",
+      "labels": [
+        "assets"
+      ],
+      "sprint": null,
+      "created": "2026-11-13T16:30:00.000+0100",
+      "updated": "2026-11-16T16:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39032",
+      "key": "RAP-32",
+      "summary": "Umowa z podwykonawcą bez klauzuli o prawach autorskich",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:0529cb9a-e6d5-5e50-a69d-329957dd5f4b",
+      "labels": [
+        "documents",
+        "audit"
+      ],
+      "sprint": null,
+      "created": "2026-11-14T12:30:00.000+0100",
+      "updated": "2026-11-17T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39033",
+      "key": "RAP-33",
+      "summary": "Szkolenie zespołu z ewidencji czasu pracy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:1dbe8fd2-1d81-5375-a8d7-22ec1008a0dd",
+      "reporter": "712020:1dbe8fd2-1d81-5375-a8d7-22ec1008a0dd",
+      "labels": [
+        "timesheets"
+      ],
+      "sprint": null,
+      "created": "2026-11-16T17:15:00.000+0100",
+      "updated": "2026-11-19T17:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39034",
+      "key": "RAP-34",
+      "summary": "Archive of the procurement documents",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:df15895b-e0ff-5c56-bb04-7b977f955106",
+      "labels": [
+        "procurement",
+        "archive"
+      ],
+      "sprint": null,
+      "created": "2026-11-18T12:30:00.000+0100",
+      "updated": "2026-11-21T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39035",
+      "key": "RAP-35",
+      "summary": "Rozliczenie kosztów pośrednich ryczałtem",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:a198aaa3-01e7-5fd9-9bca-55db64db3a66",
+      "reporter": "712020:d58bd41e-ddb6-5557-8f9c-60cc5d35d207",
+      "labels": [
+        "budget"
+      ],
+      "sprint": null,
+      "created": "2026-11-19T08:00:00.000+0100",
+      "updated": "2026-11-22T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39036",
+      "key": "RAP-36",
+      "summary": "Rejestr umów w projekcie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:df15895b-e0ff-5c56-bb04-7b977f955106",
+      "labels": [
+        "documents"
+      ],
+      "sprint": "393",
+      "created": "2026-11-21T09:15:00.000+0100",
+      "updated": "2026-11-24T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "39037",
+      "key": "RAP-37",
+      "summary": "Termin wniosku o płatność za czwarty kwartał",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:0529cb9a-e6d5-5e50-a69d-329957dd5f4b",
+      "reporter": "712020:df15895b-e0ff-5c56-bb04-7b977f955106",
+      "labels": [
+        "payment-claim",
+        "deadline"
+      ],
+      "sprint": null,
+      "created": "2026-11-23T13:00:00.000+0100",
+      "updated": "2026-11-26T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

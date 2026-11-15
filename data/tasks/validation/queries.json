@@ -1,0 +1,602 @@
+[
+  {
+    "id": "validation-001",
+    "author": "Kordian Siwiec",
+    "instruction": "Kto ma USR-7? crash z fotkami w piwnicy, potrzebuje info"
+  },
+  {
+    "id": "validation-002",
+    "author": "Marlena Pietrasik",
+    "instruction": "Mamy 320 zgłoszeń w tym miesiącu. Jaki status ma USR-10?"
+  },
+  {
+    "id": "validation-003",
+    "author": "Józefa Wiącek",
+    "instruction": "Ile godzin zalogowano już na USR-1? Mieszkańcy z Lipowej często pytają o zdjęcia w zgłoszeniach."
+  },
+  {
+    "id": "validation-004",
+    "author": "Marlena Pietrasik",
+    "instruction": "Ile zadań z labelem emergency nie ma przypisanej osoby?"
+  },
+  {
+    "id": "validation-005",
+    "author": "Kordian Siwiec",
+    "instruction": "ktore bugi z labelem media sa otwarte? same klucze"
+  },
+  {
+    "id": "validation-006",
+    "author": "Józefa Wiącek",
+    "instruction": "Pani z trzeciego piętra mówi, że po zmianie lokalu widzi zgłoszenia poprzednich lokatorów. Jaki priorytet ma to zgłoszenie?"
+  },
+  {
+    "id": "validation-007",
+    "author": "Marlena Pietrasik",
+    "instruction": "Przypisz USR-12 do Olafa."
+  },
+  {
+    "id": "validation-008",
+    "author": "Kordian Siwiec",
+    "instruction": "ustaw priorytet USR-34 na high, po update wylogowuje wszystkich"
+  },
+  {
+    "id": "validation-009",
+    "author": "Józefa Wiącek",
+    "instruction": "Proszę zmienić status USR-9 na Done. Mieszkańcy już oceniają naprawy i bardzo to chwalą."
+  },
+  {
+    "id": "validation-010",
+    "author": "Marlena Pietrasik",
+    "instruction": "Zadanie z dużym przyciskiem 'Zgłoś usterkę' dla seniorów: ustaw priorytet High i przypisz do Kordiana."
+  },
+  {
+    "id": "validation-011",
+    "author": "Kordian Siwiec",
+    "instruction": "bug z obroconymi zdjeciami na iphone: ustaw priority medium i przypisz do mnie, Kordian Siwiec"
+  },
+  {
+    "id": "validation-012",
+    "author": "Józefa Wiącek",
+    "instruction": "Dzwoniła pani z Klonowej, że opis usterki się ucina, bo jest za długi. Proszę dać temu zgłoszeniu priorytet Medium i przypisać je do Dagmary."
+  },
+  {
+    "id": "validation-013",
+    "author": "Kordian Siwiec",
+    "instruction": "zaloguj 2h na USR-7, opis: retry uploadu przy slabym zasiegu"
+  },
+  {
+    "id": "validation-014",
+    "author": "Marlena Pietrasik",
+    "instruction": "Dodaj komentarz do USR-14: Od stycznia awarie zgłasza średnio 40 mieszkańców miesięcznie."
+  },
+  {
+    "id": "validation-015",
+    "author": "Józefa Wiącek",
+    "instruction": "Proszę dodać komentarz do USR-21: Mieszkańcy z ul. Lipowej proszą o komunikat dzień wcześniej."
+  },
+  {
+    "id": "validation-016",
+    "author": "Marlena Pietrasik",
+    "instruction": "Zaloguj 1h na zadanie ze statystyką czasu od zgłoszenia do naprawy, opis: zestawienie z października."
+  },
+  {
+    "id": "validation-017",
+    "author": "Józefa Wiącek",
+    "instruction": "Proszę dodać komentarz do zgłoszenia o kategorii hałasu od sąsiada: Mieszkańcy dzwonią z tym codziennie."
+  },
+  {
+    "id": "validation-018",
+    "author": "Marlena Pietrasik",
+    "instruction": "Stwórz nowe issue typu story: Zgłoszenie usterki przez SMS. Priorytet High."
+  },
+  {
+    "id": "validation-019",
+    "author": "Kordian Siwiec",
+    "instruction": "stworz nowe issue typu bug: Push o statusie przychodzi dwa razy na Androidzie"
+  },
+  {
+    "id": "validation-020",
+    "author": "Józefa Wiącek",
+    "instruction": "Proszę założyć nowe zgłoszenie typu task: Papierowa instrukcja zgłaszania usterek dla seniorów."
+  },
+  {
+    "id": "validation-021",
+    "author": "Marlena Pietrasik",
+    "instruction": "Stwórz nowe issue typu task: Testy aplikacji z mieszkańcami z ul. Klonowej. Przypisz do Dagmary Kos i dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "validation-022",
+    "author": "Kordian Siwiec",
+    "instruction": "stworz nowe issue typu bug: Mapa budynku nie laduje sie na iOS 17. daj label ios i dodaj do nastepnego sprintu"
+  },
+  {
+    "id": "validation-023",
+    "author": "Marlena Pietrasik",
+    "instruction": "Przenieś USR-18 do bieżącego sprintu. To wyciek danych mieszkańców."
+  },
+  {
+    "id": "validation-024",
+    "author": "Kordian Siwiec",
+    "instruction": "przenies USR-12 do backlogu"
+  },
+  {
+    "id": "validation-025",
+    "author": "Józefa Wiącek",
+    "instruction": "Proszę przenieść USR-21 do sprintu 29."
+  },
+  {
+    "id": "validation-026",
+    "author": "Marlena Pietrasik",
+    "instruction": "Wszystkie zadania z labelem emergency z przyszłych sprintów przenieś do bieżącego sprintu. Zima idzie."
+  },
+  {
+    "id": "validation-027",
+    "author": "Józefa Wiącek",
+    "instruction": "Proszę przenieść zadanie ze zgodą mieszkańca na wejście serwisu pod nieobecność do następnego sprintu."
+  },
+  {
+    "id": "validation-028",
+    "author": "Marlena Pietrasik",
+    "instruction": "Wszystkie nieprzypisane bugi przypisz Kordianowi Siwcowi."
+  },
+  {
+    "id": "validation-029",
+    "author": "Kordian Siwiec",
+    "instruction": "dodaj komentarz do wszystkich zadan z labelem push: sprawdzic po release 2.4"
+  },
+  {
+    "id": "validation-030",
+    "author": "Józefa Wiącek",
+    "instruction": "Proszę ustawić priorytet Medium wszystkim zadaniom z labelem feedback."
+  },
+  {
+    "id": "validation-031",
+    "author": "Marlena Pietrasik",
+    "instruction": "Wszystkie zadania Dagmary Kos bez sprintu przepisz na Olafa Ziembę."
+  },
+  {
+    "id": "validation-032",
+    "author": "Kordian Siwiec",
+    "instruction": "USR-8 gotowe: zmien status na Done, zaloguj 1h i dodaj komentarz: formularz krotszy o 3 pola"
+  },
+  {
+    "id": "validation-033",
+    "author": "Marlena Pietrasik",
+    "instruction": "USR-5: zmień status na In review, zaloguj 2h i dodaj komentarz: Statusy przetestowane z 15 mieszkańcami."
+  },
+  {
+    "id": "validation-034",
+    "author": "Józefa Wiącek",
+    "instruction": "Biorę zadanie z widokiem zgłoszeń dla dyspozytorki z filtrem budynku. Proszę przypisać je do mnie, Józefy Wiącek, zmienić status na In Progress i dodać komentarz: Potrzebny filtr także po klatce."
+  },
+  {
+    "id": "validation-035",
+    "author": "Kordian Siwiec",
+    "instruction": "zadanie z czatem z serwisantem: przenies do nastepnego sprintu i ustaw priority medium"
+  },
+  {
+    "id": "validation-036",
+    "author": "Józefa Wiącek",
+    "instruction": "Proszę zadzwonić do pani z Lipowej 12 i powiedzieć, że serwisant będzie jutro."
+  },
+  {
+    "id": "validation-037",
+    "author": "Marlena Pietrasik",
+    "instruction": "Przypisz USR-20 do Leona."
+  },
+  {
+    "id": "validation-038",
+    "author": "Kordian Siwiec",
+    "instruction": "przenies USR-13 do sprintu 35"
+  },
+  {
+    "id": "validation-039",
+    "author": "Józefa Wiącek",
+    "instruction": "Proszę przypisać USR-33 pani Marlenie."
+  },
+  {
+    "id": "validation-040",
+    "author": "Kordian Siwiec",
+    "instruction": "jaki telefon z androidem polecasz do 1500 zl?"
+  },
+  {
+    "id": "validation-041",
+    "author": "Nikodem Ostrowiak",
+    "instruction": "Kto ma SRW-31?"
+  },
+  {
+    "id": "validation-042",
+    "author": "Wacław Grzelak",
+    "instruction": "Jaki status ma SRW-7? Serwisant jeździ po mieście i szuka piętra."
+  },
+  {
+    "id": "validation-043",
+    "author": "Ludmiła Szpak",
+    "instruction": "Ile godzin zalogowano na SRW-1?"
+  },
+  {
+    "id": "validation-044",
+    "author": "Ludmiła Szpak",
+    "instruction": "Ile zadań z labelem protocols nie jest zrobionych?"
+  },
+  {
+    "id": "validation-045",
+    "author": "Nikodem Ostrowiak",
+    "instruction": "Które bugi z labelem dispatch są otwarte? Klucze."
+  },
+  {
+    "id": "validation-046",
+    "author": "Wacław Grzelak",
+    "instruction": "Jaki priorytet ma przegląd gazówki w budynkach?"
+  },
+  {
+    "id": "validation-047",
+    "author": "Wacław Grzelak",
+    "instruction": "Przypisz SRW-21 do Reginy."
+  },
+  {
+    "id": "validation-048",
+    "author": "Ludmiła Szpak",
+    "instruction": "Ustaw priorytet SRW-28 na Medium. W październiku średni dojazd wynosił 94 minuty."
+  },
+  {
+    "id": "validation-049",
+    "author": "Nikodem Ostrowiak",
+    "instruction": "Zmień status SRW-9 na Done."
+  },
+  {
+    "id": "validation-050",
+    "author": "Wacław Grzelak",
+    "instruction": "Ten bug, że serwisant zamyka zlecenie bez protokołu: ustaw priorytet High i przypisz do Stefanii."
+  },
+  {
+    "id": "validation-051",
+    "author": "Ludmiła Szpak",
+    "instruction": "Zadanie z cennikiem usług w umowie serwisowej: ustaw priorytet High i przypisz do mnie, Ludmiły Szpak."
+  },
+  {
+    "id": "validation-052",
+    "author": "Nikodem Ostrowiak",
+    "instruction": "Bug z dwoma technikami na jednym zleceniu: przypisz do mnie, Nikodema Ostrowiaka, i ustaw priorytet High."
+  },
+  {
+    "id": "validation-053",
+    "author": "Nikodem Ostrowiak",
+    "instruction": "Zaloguj 3h na SRW-7, opis: adres i piętro w widoku zlecenia"
+  },
+  {
+    "id": "validation-054",
+    "author": "Wacław Grzelak",
+    "instruction": "Dodaj komentarz do SRW-13: Brakuje zaworów 1/2 cala w hurtowni, druga wizyta w piątek."
+  },
+  {
+    "id": "validation-055",
+    "author": "Ludmiła Szpak",
+    "instruction": "Zaloguj 1h na SRW-8, opis: terminy z 12 umów serwisowych"
+  },
+  {
+    "id": "validation-056",
+    "author": "Ludmiła Szpak",
+    "instruction": "Dodaj komentarz do zadania z przeglądem rocznym wind w osiedlu Zielone Tarasy: Przegląd zaplanowany na 18 listopada, godz. 8:00."
+  },
+  {
+    "id": "validation-057",
+    "author": "Wacław Grzelak",
+    "instruction": "Zaloguj 2h na zadanie z przypomnieniem o przeglądzie kominiarskim, opis: lista kominów z trzech budynków."
+  },
+  {
+    "id": "validation-058",
+    "author": "Wacław Grzelak",
+    "instruction": "Stwórz nowe issue typu bug: Zlecenie na przeciek pionu nie ma zdjęć od mieszkańca."
+  },
+  {
+    "id": "validation-059",
+    "author": "Ludmiła Szpak",
+    "instruction": "Stwórz nowe issue typu task: Raport napraw za październik dla zarządcy. Priorytet High."
+  },
+  {
+    "id": "validation-060",
+    "author": "Nikodem Ostrowiak",
+    "instruction": "Stwórz nowe issue typu task: Indeks na tabeli zleceń według firmy serwisowej."
+  },
+  {
+    "id": "validation-061",
+    "author": "Wacław Grzelak",
+    "instruction": "Stwórz nowe issue typu task: Lista hydraulików na dyżur świąteczny. Przypisz do Reginy Kuś i dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "validation-062",
+    "author": "Ludmiła Szpak",
+    "instruction": "Stwórz nowe issue typu task: Szablon protokołu przeglądu gazowego. Label protocols, priorytet High, dodaj do następnego sprintu."
+  },
+  {
+    "id": "validation-063",
+    "author": "Wacław Grzelak",
+    "instruction": "Przenieś SRW-19 do bieżącego sprintu. Święta za pasem, a dyżuru nie ma."
+  },
+  {
+    "id": "validation-064",
+    "author": "Nikodem Ostrowiak",
+    "instruction": "Przenieś SRW-13 do backlogu."
+  },
+  {
+    "id": "validation-065",
+    "author": "Ludmiła Szpak",
+    "instruction": "Przenieś SRW-20 do sprintu 17."
+  },
+  {
+    "id": "validation-066",
+    "author": "Ludmiła Szpak",
+    "instruction": "Wszystkie zadania z labelem billing z przyszłych sprintów przenieś do bieżącego sprintu."
+  },
+  {
+    "id": "validation-067",
+    "author": "Nikodem Ostrowiak",
+    "instruction": "Zadanie z magazynem części zamiennych w budynku przenieś do następnego sprintu."
+  },
+  {
+    "id": "validation-068",
+    "author": "Wacław Grzelak",
+    "instruction": "Wszystkie nieprzypisane bugi przypisz Nikodemowi Fijasowi."
+  },
+  {
+    "id": "validation-069",
+    "author": "Ludmiła Szpak",
+    "instruction": "Dodaj komentarz do wszystkich otwartych zadań z labelem contracts: Sprawdzić terminy umów do 30 listopada."
+  },
+  {
+    "id": "validation-070",
+    "author": "Nikodem Ostrowiak",
+    "instruction": "Wszystkim zadaniom z labelem inspections ustaw priorytet High."
+  },
+  {
+    "id": "validation-071",
+    "author": "Wacław Grzelak",
+    "instruction": "Wszystkie zadania Ludmiły Szpak bez sprintu przepisz na Reginę Kuś."
+  },
+  {
+    "id": "validation-072",
+    "author": "Nikodem Ostrowiak",
+    "instruction": "SRW-5: zmień status na Done, zaloguj 2h i dodaj komentarz: zdjęcia przed i po dołączone do protokołu."
+  },
+  {
+    "id": "validation-073",
+    "author": "Ludmiła Szpak",
+    "instruction": "SRW-6: zmień status na In review, zaloguj 1h i dodaj komentarz: Podpis przetestowany na 8 zleceniach z 6 listopada."
+  },
+  {
+    "id": "validation-074",
+    "author": "Wacław Grzelak",
+    "instruction": "Zadanie z ubezpieczycielem po zalaniu przypisz do mnie, Wacława Grzelaka, zmień status na In Progress i dodaj komentarz: Pion w klatce B, zalane dwa lokale."
+  },
+  {
+    "id": "validation-075",
+    "author": "Ludmiła Szpak",
+    "instruction": "Zadanie z rozliczeniami miesięcznymi z firmami serwisowymi przenieś do bieżącego sprintu i przypisz do mnie, Ludmiły Szpak."
+  },
+  {
+    "id": "validation-076",
+    "author": "Wacław Grzelak",
+    "instruction": "Zamów 20 zaworów w hurtowni na Grochowskiej."
+  },
+  {
+    "id": "validation-077",
+    "author": "Ludmiła Szpak",
+    "instruction": "Wystaw fakturę dla firmy serwisowej za październik."
+  },
+  {
+    "id": "validation-078",
+    "author": "Nikodem Ostrowiak",
+    "instruction": "Przypisz SRW-30 do Bernarda."
+  },
+  {
+    "id": "validation-079",
+    "author": "Ludmiła Szpak",
+    "instruction": "Przypisz SRW-27 Nikodemowi."
+  },
+  {
+    "id": "validation-080",
+    "author": "Wacław Grzelak",
+    "instruction": "Jak samemu wymienić uszczelkę w kranie?"
+  },
+  {
+    "id": "validation-081",
+    "author": "Matteo Rinaldi",
+    "instruction": "Allora, who is assigned to ZRZ-27? Grazie"
+  },
+  {
+    "id": "validation-082",
+    "author": "Izabela Rudzka",
+    "instruction": "Jaki status ma ZRZ-5? Zebranie wspólnoty przy ul. Lipowej 12 jest w czwartek."
+  },
+  {
+    "id": "validation-083",
+    "author": "Bolesław Kurant",
+    "instruction": "Szanowni Państwo, ile godzin zalogowano na ZRZ-1? Pozostaję z wyrazami szacunku."
+  },
+  {
+    "id": "validation-084",
+    "author": "Izabela Rudzka",
+    "instruction": "Ile zadań z labelem reports nie ma przypisanej osoby?"
+  },
+  {
+    "id": "validation-085",
+    "author": "Bolesław Kurant",
+    "instruction": "Uprzejmie proszę o wskazanie zadań z etykietą documents, które są zaplanowane w przyszłych sprintach."
+  },
+  {
+    "id": "validation-086",
+    "author": "Matteo Rinaldi",
+    "instruction": "Who works on the diagram of the repair costs per building? Perfetto, grazie"
+  },
+  {
+    "id": "validation-087",
+    "author": "Izabela Rudzka",
+    "instruction": "Przypisz ZRZ-11 do Alberta."
+  },
+  {
+    "id": "validation-088",
+    "author": "Bolesław Kurant",
+    "instruction": "Szanowni Państwo, uprzejmie proszę o nadanie zgłoszeniu ZRZ-26 priorytetu Highest. Awaria w nocy to sprawa poważna."
+  },
+  {
+    "id": "validation-089",
+    "author": "Matteo Rinaldi",
+    "instruction": "Please change the status of ZRZ-8 to Done. Perfetto!"
+  },
+  {
+    "id": "validation-090",
+    "author": "Izabela Rudzka",
+    "instruction": "Zadanie z dwoma budynkami o tym samym adresie: ustaw priorytet Highest i przypisz do Matteo Rinaldiego."
+  },
+  {
+    "id": "validation-091",
+    "author": "Bolesław Kurant",
+    "instruction": "Szanowni Państwo, uprzejmie proszę, aby zadanie dotyczące funduszu remontowego otrzymało priorytet High i zostało przypisane do pana Edwarda Pacholczyka."
+  },
+  {
+    "id": "validation-092",
+    "author": "Matteo Rinaldi",
+    "instruction": "The bug with the session timeout of 5 minutes: please assign it to me, Matteo Rinaldi, and set the priority to Medium. Grazie"
+  },
+  {
+    "id": "validation-093",
+    "author": "Matteo Rinaldi",
+    "instruction": "Please log 3h on ZRZ-7, description: organization filter fix. Grazie"
+  },
+  {
+    "id": "validation-094",
+    "author": "Izabela Rudzka",
+    "instruction": "Dodaj komentarz do ZRZ-13: Zarząd wspólnoty przy ul. Lipowej 12 chce raport co miesiąc."
+  },
+  {
+    "id": "validation-095",
+    "author": "Bolesław Kurant",
+    "instruction": "Szanowni Państwo, uprzejmie proszę o dodanie komentarza do ZRZ-24: Historię budynku należy przekazać nowemu zarządcy w całości."
+  },
+  {
+    "id": "validation-096",
+    "author": "Izabela Rudzka",
+    "instruction": "Zaloguj 1h 30m na zadanie z wykresem zgłoszeń według miesięcy, opis: dane od stycznia."
+  },
+  {
+    "id": "validation-097",
+    "author": "Bolesław Kurant",
+    "instruction": "Szanowni Państwo, uprzejmie proszę o dodanie komentarza do zadania dotyczącego książki obiektu budowlanego: Wersja papierowa musi być nadal prowadzona."
+  },
+  {
+    "id": "validation-098",
+    "author": "Izabela Rudzka",
+    "instruction": "Stwórz nowe issue typu task: Raport zużycia wody dla budynku przy ul. Klonowej 5."
+  },
+  {
+    "id": "validation-099",
+    "author": "Bolesław Kurant",
+    "instruction": "Szanowni Państwo, uprzejmie proszę o założenie nowego zgłoszenia typu story: Wydruk rocznego sprawozdania dla wspólnoty."
+  },
+  {
+    "id": "validation-100",
+    "author": "Matteo Rinaldi",
+    "instruction": "Please create a new bug: The building map does not load on Firefox. Priorytet High."
+  },
+  {
+    "id": "validation-101",
+    "author": "Izabela Rudzka",
+    "instruction": "Stwórz nowe issue typu task: Import budynków nowego zarządcy z Wilanowa. Przypisz do Izabeli Wojtas i dodaj do bieżącego sprintu."
+  },
+  {
+    "id": "validation-102",
+    "author": "Matteo Rinaldi",
+    "instruction": "Please create a new task: Dark theme for the manager panel. Add the label ui and put it in the next sprint. Grazie"
+  },
+  {
+    "id": "validation-103",
+    "author": "Izabela Rudzka",
+    "instruction": "Przenieś ZRZ-18 do bieżącego sprintu. Koszty muszą być poprawne przed zebraniem."
+  },
+  {
+    "id": "validation-104",
+    "author": "Matteo Rinaldi",
+    "instruction": "Please move ZRZ-12 to the backlog."
+  },
+  {
+    "id": "validation-105",
+    "author": "Bolesław Kurant",
+    "instruction": "Szanowni Państwo, uprzejmie proszę o przeniesienie ZRZ-21 do sprintu 34."
+  },
+  {
+    "id": "validation-106",
+    "author": "Izabela Rudzka",
+    "instruction": "Wszystkie zadania z labelem community bez sprintu przenieś do następnego sprintu."
+  },
+  {
+    "id": "validation-107",
+    "author": "Bolesław Kurant",
+    "instruction": "Szanowni Państwo, uprzejmie proszę o przeniesienie zadania dotyczącego pełnomocnictwa zarządcy do bieżącego sprintu."
+  },
+  {
+    "id": "validation-108",
+    "author": "Izabela Rudzka",
+    "instruction": "Wszystkie nieprzypisane bugi przypisz Albertowi Chmielowi."
+  },
+  {
+    "id": "validation-109",
+    "author": "Matteo Rinaldi",
+    "instruction": "Please add a comment to all issues with the label import: Check the flat numbers with letters. Grazie"
+  },
+  {
+    "id": "validation-110",
+    "author": "Bolesław Kurant",
+    "instruction": "Szanowni Państwo, uprzejmie proszę o nadanie priorytetu High wszystkim zadaniom z etykietą permissions, które mają priorytet niższy niż High."
+  },
+  {
+    "id": "validation-111",
+    "author": "Izabela Rudzka",
+    "instruction": "Wszystkie zadania Bolesława Kuranta bez sprintu przepisz na Izabelę Wojtas."
+  },
+  {
+    "id": "validation-112",
+    "author": "Matteo Rinaldi",
+    "instruction": "ZRZ-7 is fixed: please move it to In review, log 2h and add a comment: Organization filter checked on all accounts. Grazie"
+  },
+  {
+    "id": "validation-113",
+    "author": "Izabela Rudzka",
+    "instruction": "ZRZ-9: zmień status na Done, zaloguj 1h i dodaj komentarz: Członkowie zarządu widzą tylko raporty."
+  },
+  {
+    "id": "validation-114",
+    "author": "Bolesław Kurant",
+    "instruction": "Szanowni Państwo, uprzejmie proszę, aby zadanie dotyczące roli księgowej wspólnoty zostało przypisane do mnie, Bolesława Kuranta, otrzymało status In Progress oraz komentarz: Księgowa ma widzieć tylko fundusz remontowy."
+  },
+  {
+    "id": "validation-115",
+    "author": "Matteo Rinaldi",
+    "instruction": "The issue with the flat search and the slash in the address: please move it to In Progress and set the priority to High. Grazie"
+  },
+  {
+    "id": "validation-116",
+    "author": "Izabela Rudzka",
+    "instruction": "Wyślij raport usterek do zarządu wspólnoty przy ul. Lipowej 12."
+  },
+  {
+    "id": "validation-117",
+    "author": "Bolesław Kurant",
+    "instruction": "Szanowni Państwo, uprzejmie proszę o przypisanie ZRZ-35 pani Wandzie."
+  },
+  {
+    "id": "validation-118",
+    "author": "Matteo Rinaldi",
+    "instruction": "Please assign ZRZ-31 to Izabela. Grazie"
+  },
+  {
+    "id": "validation-119",
+    "author": "Izabela Rudzka",
+    "instruction": "Ustaw priorytet High dla zadania z raportem."
+  },
+  {
+    "id": "validation-120",
+    "author": "Bolesław Kurant",
+    "instruction": "Szanowni Państwo, jak obliczyć zaliczkę na fundusz remontowy dla lokalu o powierzchni 60 m²?"
+  }
+]

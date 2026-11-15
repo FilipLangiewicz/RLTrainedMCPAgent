@@ -1,0 +1,900 @@
+{
+  "name": "train-lab",
+  "site": "https://example.atlassian.net",
+  "now": "2026-10-21T08:45:00.000+0100",
+  "project": {
+    "key": "LAB",
+    "name": "Medix - laboratorium"
+  },
+  "board": {
+    "id": "27",
+    "name": "LAB board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:f8aaa3c0-aca2-5b46-8de9-b65389484d43",
+      "display_name": "Teresa Wróblewska",
+      "email": "teresa.wroblewska@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:e02eef8f-a024-5848-9028-a63804147ce3",
+      "display_name": "Norbert Szulc",
+      "email": "norbert.szulc@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:9b80bd78-0bf0-5077-af2e-24fb71b4058b",
+      "display_name": "Alicja Kubacka",
+      "email": "alicja.kubacka@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:52c9d58f-2b52-569d-8007-2ee681e654f6",
+      "display_name": "Alicja Mazurek",
+      "email": "alicja.mazurek@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:ee4dc160-de4c-5b57-b83c-77a9f022c7d2",
+      "display_name": "Ksenia Borowska",
+      "email": "ksenia.borowska@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:bfb540d3-b20a-53fa-a0a1-f2a31b5dc1bf",
+      "display_name": "Henryk Sołtys",
+      "email": "henryk.soltys@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:bc9c4e50-30c0-5888-a70f-5093b4b9ac44",
+      "display_name": "Zbigniew Bartos",
+      "email": "zbigniew.bartos@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "271",
+      "name": "LAB Sprint 9",
+      "state": "closed",
+      "start_date": "2026-09-30T09:00:00.000Z",
+      "end_date": "2026-10-14T09:00:00.000Z",
+      "goal": "Nowy analizator hematologiczny"
+    },
+    {
+      "id": "272",
+      "name": "LAB Sprint 10",
+      "state": "active",
+      "start_date": "2026-10-14T09:00:00.000Z",
+      "end_date": "2026-10-28T09:00:00.000Z",
+      "goal": "Wyniki online i etykiety probówek"
+    },
+    {
+      "id": "273",
+      "name": "LAB Sprint 11",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Kontrola jakości"
+    },
+    {
+      "id": "274",
+      "name": "LAB Sprint 12",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "27001",
+      "key": "LAB-1",
+      "summary": "Podłączenie nowego analizatora hematologicznego",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:bfb540d3-b20a-53fa-a0a1-f2a31b5dc1bf",
+      "reporter": "712020:e02eef8f-a024-5848-9028-a63804147ce3",
+      "labels": [
+        "analyzer",
+        "hl7"
+      ],
+      "sprint": "271",
+      "created": "2026-08-13T08:15:00.000+0100",
+      "updated": "2026-08-16T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "270015",
+          "author": "712020:bfb540d3-b20a-53fa-a0a1-f2a31b5dc1bf",
+          "time_spent_seconds": 25200,
+          "comment": "Mapowanie parametrów morfologii",
+          "started": "2026-08-15T00:15:00.000+0100"
+        },
+        {
+          "id": "270016",
+          "author": "712020:bfb540d3-b20a-53fa-a0a1-f2a31b5dc1bf",
+          "time_spent_seconds": 10800,
+          "comment": "Walidacja wyników",
+          "started": "2026-08-16T00:15:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "27002",
+      "key": "LAB-2",
+      "summary": "Wynik CRP bez jednostki w wydruku",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:52c9d58f-2b52-569d-8007-2ee681e654f6",
+      "reporter": "712020:52c9d58f-2b52-569d-8007-2ee681e654f6",
+      "labels": [
+        "print",
+        "results"
+      ],
+      "sprint": "271",
+      "created": "2026-08-14T13:45:00.000+0100",
+      "updated": "2026-08-17T13:45:00.000+0100",
+      "comments": [
+        {
+          "id": "270021",
+          "author": "712020:52c9d58f-2b52-569d-8007-2ee681e654f6",
+          "body": "Jednostka mg/l jest już w szablonie.",
+          "created": "2026-08-15T13:45:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "27003",
+      "key": "LAB-3",
+      "summary": "Barcode scanner beeps twice for one tube",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:ee4dc160-de4c-5b57-b83c-77a9f022c7d2",
+      "labels": [
+        "hardware"
+      ],
+      "sprint": "271",
+      "created": "2026-08-16T15:00:00.000+0100",
+      "updated": "2026-08-19T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27004",
+      "key": "LAB-4",
+      "summary": "Wyniki badań dostępne online dla pacjenta",
+      "description": "Pacjent dostaje SMS, gdy wszystkie wyniki zlecenia są zatwierdzone.",
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:e02eef8f-a024-5848-9028-a63804147ce3",
+      "reporter": "712020:bfb540d3-b20a-53fa-a0a1-f2a31b5dc1bf",
+      "labels": [
+        "results",
+        "portal"
+      ],
+      "sprint": "272",
+      "created": "2026-08-18T16:45:00.000+0100",
+      "updated": "2026-08-21T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "270045",
+          "author": "712020:e02eef8f-a024-5848-9028-a63804147ce3",
+          "time_spent_seconds": 14400,
+          "comment": "Statusy zleceń",
+          "started": "2026-08-20T00:45:00.000+0100"
+        },
+        {
+          "id": "270046",
+          "author": "712020:e02eef8f-a024-5848-9028-a63804147ce3",
+          "time_spent_seconds": 7200,
+          "comment": "",
+          "started": "2026-08-21T00:45:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "27005",
+      "key": "LAB-5",
+      "summary": "Etykieta probówki nie mieści nazwiska z dwoma członami",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:bfb540d3-b20a-53fa-a0a1-f2a31b5dc1bf",
+      "reporter": "712020:52c9d58f-2b52-569d-8007-2ee681e654f6",
+      "labels": [
+        "labels",
+        "print"
+      ],
+      "sprint": "272",
+      "created": "2026-08-19T09:30:00.000+0100",
+      "updated": "2026-08-22T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27006",
+      "key": "LAB-6",
+      "summary": "Wynik glukozy trafia do złego pacjenta po ponownym skanie",
+      "description": "Po ponownym zeskanowaniu kodu analizator przypisuje wynik do poprzedniego zlecenia.",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:e02eef8f-a024-5848-9028-a63804147ce3",
+      "reporter": "712020:ee4dc160-de4c-5b57-b83c-77a9f022c7d2",
+      "labels": [
+        "analyzer",
+        "results"
+      ],
+      "sprint": "272",
+      "created": "2026-08-21T09:30:00.000+0100",
+      "updated": "2026-08-24T09:30:00.000+0100",
+      "comments": [
+        {
+          "id": "270061",
+          "author": "712020:e02eef8f-a024-5848-9028-a63804147ce3",
+          "body": "Wstrzymaliśmy ponowne skany do czasu poprawki.",
+          "created": "2026-08-22T09:30:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "27007",
+      "key": "LAB-7",
+      "summary": "ASTM messages from the urine analyzer are cut",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "High",
+      "assignee": "712020:f8aaa3c0-aca2-5b46-8de9-b65389484d43",
+      "reporter": "712020:bfb540d3-b20a-53fa-a0a1-f2a31b5dc1bf",
+      "labels": [
+        "analyzer"
+      ],
+      "sprint": "272",
+      "created": "2026-08-23T17:45:00.000+0100",
+      "updated": "2026-08-26T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27008",
+      "key": "LAB-8",
+      "summary": "Zakres referencyjny zależny od wieku pacjenta",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:bfb540d3-b20a-53fa-a0a1-f2a31b5dc1bf",
+      "reporter": "712020:9b80bd78-0bf0-5077-af2e-24fb71b4058b",
+      "labels": [
+        "results"
+      ],
+      "sprint": "272",
+      "created": "2026-08-24T12:15:00.000+0100",
+      "updated": "2026-08-27T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27009",
+      "key": "LAB-9",
+      "summary": "Druk zbiorczy etykiet dla punktu pobrań",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:ee4dc160-de4c-5b57-b83c-77a9f022c7d2",
+      "reporter": "712020:9b80bd78-0bf0-5077-af2e-24fb71b4058b",
+      "labels": [
+        "labels"
+      ],
+      "sprint": "272",
+      "created": "2026-08-26T12:45:00.000+0100",
+      "updated": "2026-08-29T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "270095",
+          "author": "712020:ee4dc160-de4c-5b57-b83c-77a9f022c7d2",
+          "time_spent_seconds": 7200,
+          "comment": "",
+          "started": "2026-08-28T00:45:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "27010",
+      "key": "LAB-10",
+      "summary": "Oznaczenie wyników krytycznych na czerwono",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:bfb540d3-b20a-53fa-a0a1-f2a31b5dc1bf",
+      "reporter": "712020:9b80bd78-0bf0-5077-af2e-24fb71b4058b",
+      "labels": [
+        "results",
+        "ui"
+      ],
+      "sprint": "272",
+      "created": "2026-08-27T15:30:00.000+0100",
+      "updated": "2026-08-30T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27011",
+      "key": "LAB-11",
+      "summary": "Powiadomienie lekarza o wyniku krytycznym",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:e02eef8f-a024-5848-9028-a63804147ce3",
+      "reporter": "712020:ee4dc160-de4c-5b57-b83c-77a9f022c7d2",
+      "labels": [
+        "results",
+        "notifications"
+      ],
+      "sprint": "272",
+      "created": "2026-08-29T10:45:00.000+0100",
+      "updated": "2026-09-01T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27012",
+      "key": "LAB-12",
+      "summary": "Lista zleceń nie odświeża się na nocnej zmianie",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:9b80bd78-0bf0-5077-af2e-24fb71b4058b",
+      "labels": [
+        "ui"
+      ],
+      "sprint": "272",
+      "created": "2026-08-31T16:45:00.000+0100",
+      "updated": "2026-09-03T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27013",
+      "key": "LAB-13",
+      "summary": "Kontrola temperatury lodówki z odczynnikami",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:bfb540d3-b20a-53fa-a0a1-f2a31b5dc1bf",
+      "reporter": "712020:f8aaa3c0-aca2-5b46-8de9-b65389484d43",
+      "labels": [
+        "hardware",
+        "quality"
+      ],
+      "sprint": "272",
+      "created": "2026-09-01T10:15:00.000+0100",
+      "updated": "2026-09-04T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27014",
+      "key": "LAB-14",
+      "summary": "Program kontroli jakości międzylaboratoryjnej",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:f8aaa3c0-aca2-5b46-8de9-b65389484d43",
+      "reporter": "712020:9b80bd78-0bf0-5077-af2e-24fb71b4058b",
+      "labels": [
+        "quality"
+      ],
+      "sprint": "273",
+      "created": "2026-09-03T08:45:00.000+0100",
+      "updated": "2026-09-06T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27015",
+      "key": "LAB-15",
+      "summary": "Karta kontrolna Levey-Jenningsa dla glukozy",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:9b80bd78-0bf0-5077-af2e-24fb71b4058b",
+      "labels": [
+        "quality"
+      ],
+      "sprint": "273",
+      "created": "2026-09-04T17:00:00.000+0100",
+      "updated": "2026-09-07T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27016",
+      "key": "LAB-16",
+      "summary": "Archive results older than 20 years",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:f8aaa3c0-aca2-5b46-8de9-b65389484d43",
+      "reporter": "712020:52c9d58f-2b52-569d-8007-2ee681e654f6",
+      "labels": [
+        "results"
+      ],
+      "sprint": "273",
+      "created": "2026-09-06T15:15:00.000+0100",
+      "updated": "2026-09-09T15:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27017",
+      "key": "LAB-17",
+      "summary": "Zlecenie z gabinetu bez kodu ICD-10",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:e02eef8f-a024-5848-9028-a63804147ce3",
+      "labels": [
+        "orders",
+        "validation"
+      ],
+      "sprint": "273",
+      "created": "2026-09-08T13:00:00.000+0100",
+      "updated": "2026-09-11T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27018",
+      "key": "LAB-18",
+      "summary": "Cennik badań dla pacjentów prywatnych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:9b80bd78-0bf0-5077-af2e-24fb71b4058b",
+      "labels": [
+        "orders"
+      ],
+      "sprint": null,
+      "created": "2026-09-09T14:15:00.000+0100",
+      "updated": "2026-09-12T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27019",
+      "key": "LAB-19",
+      "summary": "Pakiet badań 'przed operacją' jednym kliknięciem",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:bfb540d3-b20a-53fa-a0a1-f2a31b5dc1bf",
+      "labels": [
+        "orders"
+      ],
+      "sprint": null,
+      "created": "2026-09-11T12:00:00.000+0100",
+      "updated": "2026-09-14T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27020",
+      "key": "LAB-20",
+      "summary": "Wynik TSH z przecinkiem i kropką w jednym raporcie",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:e02eef8f-a024-5848-9028-a63804147ce3",
+      "labels": [
+        "results",
+        "print"
+      ],
+      "sprint": null,
+      "created": "2026-09-12T14:30:00.000+0100",
+      "updated": "2026-09-15T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27021",
+      "key": "LAB-21",
+      "summary": "Integracja z laboratorium zewnętrznym dla badań genetycznych",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:52c9d58f-2b52-569d-8007-2ee681e654f6",
+      "reporter": "712020:ee4dc160-de4c-5b57-b83c-77a9f022c7d2",
+      "labels": [
+        "hl7",
+        "orders"
+      ],
+      "sprint": null,
+      "created": "2026-09-14T12:45:00.000+0100",
+      "updated": "2026-09-17T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27022",
+      "key": "LAB-22",
+      "summary": "Rejestr zużycia odczynników",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:f8aaa3c0-aca2-5b46-8de9-b65389484d43",
+      "labels": [
+        "quality"
+      ],
+      "sprint": null,
+      "created": "2026-09-16T09:00:00.000+0100",
+      "updated": "2026-09-19T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27023",
+      "key": "LAB-23",
+      "summary": "Upgrade the middleware of the analyzers",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:f8aaa3c0-aca2-5b46-8de9-b65389484d43",
+      "labels": [
+        "analyzer"
+      ],
+      "sprint": null,
+      "created": "2026-09-17T10:00:00.000+0100",
+      "updated": "2026-09-20T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27024",
+      "key": "LAB-24",
+      "summary": "Pacjent widzi wynik przed zatwierdzeniem przez diagnostę",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": "712020:f8aaa3c0-aca2-5b46-8de9-b65389484d43",
+      "reporter": "712020:ee4dc160-de4c-5b57-b83c-77a9f022c7d2",
+      "labels": [
+        "portal",
+        "permissions"
+      ],
+      "sprint": null,
+      "created": "2026-09-19T16:45:00.000+0100",
+      "updated": "2026-09-22T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27025",
+      "key": "LAB-25",
+      "summary": "Kolejka próbek pilnych (cito)",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:e02eef8f-a024-5848-9028-a63804147ce3",
+      "reporter": "712020:9b80bd78-0bf0-5077-af2e-24fb71b4058b",
+      "labels": [
+        "orders"
+      ],
+      "sprint": null,
+      "created": "2026-09-20T09:30:00.000+0100",
+      "updated": "2026-09-23T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27026",
+      "key": "LAB-26",
+      "summary": "Drukarka etykiet w punkcie pobrań Wola gubi ustawienia",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:52c9d58f-2b52-569d-8007-2ee681e654f6",
+      "labels": [
+        "hardware",
+        "labels"
+      ],
+      "sprint": null,
+      "created": "2026-09-22T16:45:00.000+0100",
+      "updated": "2026-09-25T16:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27027",
+      "key": "LAB-27",
+      "summary": "Podpis elektroniczny diagnosty pod wynikiem",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:e02eef8f-a024-5848-9028-a63804147ce3",
+      "reporter": "712020:bfb540d3-b20a-53fa-a0a1-f2a31b5dc1bf",
+      "labels": [
+        "results"
+      ],
+      "sprint": null,
+      "created": "2026-09-24T12:30:00.000+0100",
+      "updated": "2026-09-27T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27028",
+      "key": "LAB-28",
+      "summary": "Statystyka czasu od pobrania do wyniku",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:52c9d58f-2b52-569d-8007-2ee681e654f6",
+      "reporter": "712020:ee4dc160-de4c-5b57-b83c-77a9f022c7d2",
+      "labels": [
+        "reports"
+      ],
+      "sprint": "273",
+      "created": "2026-09-25T15:45:00.000+0100",
+      "updated": "2026-09-28T15:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27029",
+      "key": "LAB-29",
+      "summary": "Wyniki w PDF bez polskich znaków",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:ee4dc160-de4c-5b57-b83c-77a9f022c7d2",
+      "reporter": "712020:52c9d58f-2b52-569d-8007-2ee681e654f6",
+      "labels": [
+        "print"
+      ],
+      "sprint": "272",
+      "created": "2026-09-27T17:30:00.000+0100",
+      "updated": "2026-09-30T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27030",
+      "key": "LAB-30",
+      "summary": "Procedura na awarię analizatora w nocy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:e02eef8f-a024-5848-9028-a63804147ce3",
+      "labels": [
+        "docs"
+      ],
+      "sprint": null,
+      "created": "2026-09-28T17:30:00.000+0100",
+      "updated": "2026-10-01T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27031",
+      "key": "LAB-31",
+      "summary": "Wrong reference range for children under 2 years",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:9b80bd78-0bf0-5077-af2e-24fb71b4058b",
+      "reporter": "712020:9b80bd78-0bf0-5077-af2e-24fb71b4058b",
+      "labels": [
+        "results"
+      ],
+      "sprint": "272",
+      "created": "2026-09-30T09:00:00.000+0100",
+      "updated": "2026-10-03T09:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27032",
+      "key": "LAB-32",
+      "summary": "Zamówienie nowych statywów na probówki",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:ee4dc160-de4c-5b57-b83c-77a9f022c7d2",
+      "labels": [],
+      "sprint": null,
+      "created": "2026-10-02T09:15:00.000+0100",
+      "updated": "2026-10-05T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27033",
+      "key": "LAB-33",
+      "summary": "Porównanie wyników z poprzednim badaniem pacjenta",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:9b80bd78-0bf0-5077-af2e-24fb71b4058b",
+      "reporter": "712020:bfb540d3-b20a-53fa-a0a1-f2a31b5dc1bf",
+      "labels": [
+        "results",
+        "ui"
+      ],
+      "sprint": null,
+      "created": "2026-10-03T13:00:00.000+0100",
+      "updated": "2026-10-06T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27034",
+      "key": "LAB-34",
+      "summary": "Kod kreskowy zlecenia nieczytelny na tanich drukarkach",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:52c9d58f-2b52-569d-8007-2ee681e654f6",
+      "labels": [
+        "labels"
+      ],
+      "sprint": null,
+      "created": "2026-10-05T08:00:00.000+0100",
+      "updated": "2026-10-08T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27035",
+      "key": "LAB-35",
+      "summary": "Uprawnienia technika do korekty wyniku",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:ee4dc160-de4c-5b57-b83c-77a9f022c7d2",
+      "labels": [
+        "permissions"
+      ],
+      "sprint": null,
+      "created": "2026-10-06T13:15:00.000+0100",
+      "updated": "2026-10-09T13:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27036",
+      "key": "LAB-36",
+      "summary": "Automatyczne powtórzenie badania poza zakresem pomiarowym",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:9b80bd78-0bf0-5077-af2e-24fb71b4058b",
+      "reporter": "712020:9b80bd78-0bf0-5077-af2e-24fb71b4058b",
+      "labels": [
+        "analyzer"
+      ],
+      "sprint": null,
+      "created": "2026-10-08T12:30:00.000+0100",
+      "updated": "2026-10-11T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27037",
+      "key": "LAB-37",
+      "summary": "Szkolenie z nowego analizatora dla nocnej zmiany",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:bc9c4e50-30c0-5888-a70f-5093b4b9ac44",
+      "reporter": "712020:ee4dc160-de4c-5b57-b83c-77a9f022c7d2",
+      "labels": [
+        "docs",
+        "analyzer"
+      ],
+      "sprint": "272",
+      "created": "2026-10-10T14:15:00.000+0100",
+      "updated": "2026-10-13T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27038",
+      "key": "LAB-38",
+      "summary": "Opis próbki hemolizowanej w wyniku",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:f8aaa3c0-aca2-5b46-8de9-b65389484d43",
+      "reporter": "712020:f8aaa3c0-aca2-5b46-8de9-b65389484d43",
+      "labels": [
+        "results"
+      ],
+      "sprint": null,
+      "created": "2026-10-11T08:00:00.000+0100",
+      "updated": "2026-10-14T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "27039",
+      "key": "LAB-39",
+      "summary": "HL7 interface log fills the disk in 3 days",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:9b80bd78-0bf0-5077-af2e-24fb71b4058b",
+      "labels": [
+        "hl7"
+      ],
+      "sprint": null,
+      "created": "2026-10-13T16:30:00.000+0100",
+      "updated": "2026-10-16T16:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

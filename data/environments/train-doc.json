@@ -1,0 +1,914 @@
+{
+  "name": "train-doc",
+  "site": "https://example.atlassian.net",
+  "now": "2026-11-04T09:30:00.000+0100",
+  "project": {
+    "key": "DOC",
+    "name": "Curify - panel lekarza"
+  },
+  "board": {
+    "id": "24",
+    "name": "DOC board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:89ddf4fb-ecd6-5a8b-9dfe-3dbd80ae0199",
+      "display_name": "Konrad Sikorski",
+      "email": "konrad.sikorski@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:add261d2-efc1-5702-9552-1e44bb7f67ff",
+      "display_name": "Halina Stępień",
+      "email": "halina.stepien@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:08f76ded-25f9-56cc-a5f5-ae603672f849",
+      "display_name": "Ryan Walsh",
+      "email": "ryan.walsh@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:44ca6af5-5351-54b1-818a-1b58de66edef",
+      "display_name": "Piotr Adamczyk",
+      "email": "piotr.adamczyk@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:fedb16ee-de93-5db4-b407-6e9c695273f5",
+      "display_name": "Piotr Jabłoński",
+      "email": "piotr.jablonski@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:b8790c6f-4955-5836-876c-40a9edca46e4",
+      "display_name": "Ewelina Michalska",
+      "email": "ewelina.michalska@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:15e244de-d0ac-5c4a-bb07-eb383f337d11",
+      "display_name": "Beata Głowacka",
+      "email": "beata.glowacka@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "241",
+      "name": "DOC Sprint 25",
+      "state": "closed",
+      "start_date": "2026-10-14T09:00:00.000Z",
+      "end_date": "2026-10-28T09:00:00.000Z",
+      "goal": "Grafik dyżurów"
+    },
+    {
+      "id": "242",
+      "name": "DOC Sprint 26",
+      "state": "active",
+      "start_date": "2026-10-28T09:00:00.000Z",
+      "end_date": "2026-11-11T09:00:00.000Z",
+      "goal": "Szablony zaleceń i notatki głosowe"
+    },
+    {
+      "id": "243",
+      "name": "DOC Sprint 27",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Skierowania elektroniczne"
+    },
+    {
+      "id": "244",
+      "name": "DOC Sprint 28",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "24001",
+      "key": "DOC-1",
+      "summary": "Grafik dyżurów lekarzy w widoku tygodnia",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:add261d2-efc1-5702-9552-1e44bb7f67ff",
+      "reporter": "712020:add261d2-efc1-5702-9552-1e44bb7f67ff",
+      "labels": [
+        "schedule",
+        "frontend"
+      ],
+      "sprint": "241",
+      "created": "2026-08-27T15:45:00.000+0100",
+      "updated": "2026-08-30T15:45:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "240015",
+          "author": "712020:add261d2-efc1-5702-9552-1e44bb7f67ff",
+          "time_spent_seconds": 25200,
+          "comment": "Widok tygodnia",
+          "started": "2026-08-29T00:45:00.000+0100"
+        },
+        {
+          "id": "240016",
+          "author": "712020:add261d2-efc1-5702-9552-1e44bb7f67ff",
+          "time_spent_seconds": 10800,
+          "comment": "Przeciąganie dyżurów",
+          "started": "2026-08-30T00:45:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "24002",
+      "key": "DOC-2",
+      "summary": "Dyżur nocny dzieli się na dwa dni w grafiku",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:44ca6af5-5351-54b1-818a-1b58de66edef",
+      "reporter": "712020:add261d2-efc1-5702-9552-1e44bb7f67ff",
+      "labels": [
+        "schedule"
+      ],
+      "sprint": "241",
+      "created": "2026-08-28T10:30:00.000+0100",
+      "updated": "2026-08-31T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24003",
+      "key": "DOC-3",
+      "summary": "Export of the schedule to Google Calendar",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Cancelled",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:08f76ded-25f9-56cc-a5f5-ae603672f849",
+      "labels": [
+        "schedule",
+        "integration"
+      ],
+      "sprint": "241",
+      "created": "2026-08-30T14:00:00.000+0100",
+      "updated": "2026-09-02T14:00:00.000+0100",
+      "comments": [
+        {
+          "id": "240031",
+          "author": "712020:08f76ded-25f9-56cc-a5f5-ae603672f849",
+          "body": "Doctors use the clinic calendars, the export is not needed.",
+          "created": "2026-08-31T14:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "24004",
+      "key": "DOC-4",
+      "summary": "Uprawnienia do zamiany dyżurów",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:b8790c6f-4955-5836-876c-40a9edca46e4",
+      "reporter": "712020:44ca6af5-5351-54b1-818a-1b58de66edef",
+      "labels": [
+        "schedule",
+        "permissions"
+      ],
+      "sprint": "241",
+      "created": "2026-09-01T17:00:00.000+0100",
+      "updated": "2026-09-04T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24005",
+      "key": "DOC-5",
+      "summary": "Szablony zaleceń dla najczęstszych rozpoznań",
+      "description": "Lekarz wybiera rozpoznanie ICD-10 i dostaje gotowy tekst zaleceń do edycji.",
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:89ddf4fb-ecd6-5a8b-9dfe-3dbd80ae0199",
+      "reporter": "712020:89ddf4fb-ecd6-5a8b-9dfe-3dbd80ae0199",
+      "labels": [
+        "notes"
+      ],
+      "sprint": "242",
+      "created": "2026-09-02T10:30:00.000+0100",
+      "updated": "2026-09-05T10:30:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "240055",
+          "author": "712020:89ddf4fb-ecd6-5a8b-9dfe-3dbd80ae0199",
+          "time_spent_seconds": 18000,
+          "comment": "Lista rozpoznań i szablony",
+          "started": "2026-09-04T00:30:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "24006",
+      "key": "DOC-6",
+      "summary": "Notatka głosowa zamieniana na tekst",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:b8790c6f-4955-5836-876c-40a9edca46e4",
+      "reporter": "712020:89ddf4fb-ecd6-5a8b-9dfe-3dbd80ae0199",
+      "labels": [
+        "notes",
+        "ml"
+      ],
+      "sprint": "242",
+      "created": "2026-09-04T09:15:00.000+0100",
+      "updated": "2026-09-07T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24007",
+      "key": "DOC-7",
+      "summary": "Notatka z wizyty znika po utracie połączenia",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:44ca6af5-5351-54b1-818a-1b58de66edef",
+      "reporter": "712020:89ddf4fb-ecd6-5a8b-9dfe-3dbd80ae0199",
+      "labels": [
+        "notes",
+        "frontend"
+      ],
+      "sprint": "242",
+      "created": "2026-09-05T16:45:00.000+0100",
+      "updated": "2026-09-08T16:45:00.000+0100",
+      "comments": [
+        {
+          "id": "240071",
+          "author": "712020:44ca6af5-5351-54b1-818a-1b58de66edef",
+          "body": "Lekarka straciła 10 minut pisania, potrzebny autozapis.",
+          "created": "2026-09-06T16:45:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "24008",
+      "key": "DOC-8",
+      "summary": "Search for patients by the last 4 digits of PESEL",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:44ca6af5-5351-54b1-818a-1b58de66edef",
+      "reporter": "712020:b8790c6f-4955-5836-876c-40a9edca46e4",
+      "labels": [
+        "search"
+      ],
+      "sprint": "242",
+      "created": "2026-09-07T09:45:00.000+0100",
+      "updated": "2026-09-10T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24009",
+      "key": "DOC-9",
+      "summary": "Wyszukiwarka ICD-10 nie rozumie polskich znaków",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:89ddf4fb-ecd6-5a8b-9dfe-3dbd80ae0199",
+      "reporter": "712020:b8790c6f-4955-5836-876c-40a9edca46e4",
+      "labels": [
+        "search",
+        "notes"
+      ],
+      "sprint": "242",
+      "created": "2026-09-08T17:15:00.000+0100",
+      "updated": "2026-09-11T17:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24010",
+      "key": "DOC-10",
+      "summary": "Licznik wizyt dziennie w nagłówku panelu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Low",
+      "assignee": "712020:15e244de-d0ac-5c4a-bb07-eb383f337d11",
+      "reporter": "712020:b8790c6f-4955-5836-876c-40a9edca46e4",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": "242",
+      "created": "2026-09-10T17:00:00.000+0100",
+      "updated": "2026-09-13T17:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24011",
+      "key": "DOC-11",
+      "summary": "Skróty klawiszowe w notatce",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:b8790c6f-4955-5836-876c-40a9edca46e4",
+      "reporter": "712020:b8790c6f-4955-5836-876c-40a9edca46e4",
+      "labels": [
+        "notes",
+        "frontend"
+      ],
+      "sprint": "242",
+      "created": "2026-09-12T16:15:00.000+0100",
+      "updated": "2026-09-15T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24012",
+      "key": "DOC-12",
+      "summary": "Panel freezes when a patient has more than 200 visits",
+      "description": "The visit list loads all visits at once. We need paging.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:fedb16ee-de93-5db4-b407-6e9c695273f5",
+      "reporter": "712020:89ddf4fb-ecd6-5a8b-9dfe-3dbd80ae0199",
+      "labels": [
+        "performance"
+      ],
+      "sprint": "242",
+      "created": "2026-09-13T14:45:00.000+0100",
+      "updated": "2026-09-16T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24013",
+      "key": "DOC-13",
+      "summary": "Podgląd wyników badań z laboratorium partnera",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:fedb16ee-de93-5db4-b407-6e9c695273f5",
+      "labels": [
+        "integration",
+        "lab"
+      ],
+      "sprint": "242",
+      "created": "2026-09-15T08:00:00.000+0100",
+      "updated": "2026-09-18T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24014",
+      "key": "DOC-14",
+      "summary": "Automatyczne wylogowanie przerywa pisanie notatki",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:add261d2-efc1-5702-9552-1e44bb7f67ff",
+      "reporter": "712020:fedb16ee-de93-5db4-b407-6e9c695273f5",
+      "labels": [
+        "security",
+        "notes"
+      ],
+      "sprint": "242",
+      "created": "2026-09-16T17:30:00.000+0100",
+      "updated": "2026-09-19T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "240145",
+          "author": "712020:add261d2-efc1-5702-9552-1e44bb7f67ff",
+          "time_spent_seconds": 7200,
+          "comment": "",
+          "started": "2026-09-18T00:30:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "24015",
+      "key": "DOC-15",
+      "summary": "Zmiana kolorów statusów wizyt według makiety",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:89ddf4fb-ecd6-5a8b-9dfe-3dbd80ae0199",
+      "reporter": "712020:89ddf4fb-ecd6-5a8b-9dfe-3dbd80ae0199",
+      "labels": [
+        "ui"
+      ],
+      "sprint": "242",
+      "created": "2026-09-18T12:45:00.000+0100",
+      "updated": "2026-09-21T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24016",
+      "key": "DOC-16",
+      "summary": "Wystawianie e-skierowania z panelu",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:89ddf4fb-ecd6-5a8b-9dfe-3dbd80ae0199",
+      "reporter": "712020:b8790c6f-4955-5836-876c-40a9edca46e4",
+      "labels": [
+        "referrals"
+      ],
+      "sprint": "243",
+      "created": "2026-09-19T09:30:00.000+0100",
+      "updated": "2026-09-22T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24017",
+      "key": "DOC-17",
+      "summary": "Lista skierowań wystawionych przez lekarza",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:b8790c6f-4955-5836-876c-40a9edca46e4",
+      "labels": [
+        "referrals"
+      ],
+      "sprint": "243",
+      "created": "2026-09-21T14:15:00.000+0100",
+      "updated": "2026-09-24T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24018",
+      "key": "DOC-18",
+      "summary": "Dictionary of referral types from the ministry",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:89ddf4fb-ecd6-5a8b-9dfe-3dbd80ae0199",
+      "reporter": "712020:b8790c6f-4955-5836-876c-40a9edca46e4",
+      "labels": [
+        "referrals",
+        "integration"
+      ],
+      "sprint": "243",
+      "created": "2026-09-22T13:00:00.000+0100",
+      "updated": "2026-09-25T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24019",
+      "key": "DOC-19",
+      "summary": "Panel nie działa w przeglądarce Firefox 115 ESR",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:add261d2-efc1-5702-9552-1e44bb7f67ff",
+      "reporter": "712020:89ddf4fb-ecd6-5a8b-9dfe-3dbd80ae0199",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": "243",
+      "created": "2026-09-24T09:15:00.000+0100",
+      "updated": "2026-09-27T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24020",
+      "key": "DOC-20",
+      "summary": "Lekarz widzi wizyty innego lekarza po zmianie gabinetu",
+      "description": "Po przełączeniu gabinetu lista wizyt nie odświeża się i pokazuje dane poprzedniej osoby.",
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Highest",
+      "assignee": null,
+      "reporter": "712020:08f76ded-25f9-56cc-a5f5-ae603672f849",
+      "labels": [
+        "permissions",
+        "security"
+      ],
+      "sprint": null,
+      "created": "2026-09-26T10:45:00.000+0100",
+      "updated": "2026-09-29T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24021",
+      "key": "DOC-21",
+      "summary": "Druk zaświadczenia o wizycie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:08f76ded-25f9-56cc-a5f5-ae603672f849",
+      "reporter": "712020:add261d2-efc1-5702-9552-1e44bb7f67ff",
+      "labels": [
+        "print"
+      ],
+      "sprint": null,
+      "created": "2026-09-27T08:00:00.000+0100",
+      "updated": "2026-09-30T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24022",
+      "key": "DOC-22",
+      "summary": "Statystyki czasu trwania wizyt dla kierownika",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:b8790c6f-4955-5836-876c-40a9edca46e4",
+      "labels": [
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-09-29T09:45:00.000+0100",
+      "updated": "2026-10-02T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24023",
+      "key": "DOC-23",
+      "summary": "Ulubione leki lekarza na górze listy",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:add261d2-efc1-5702-9552-1e44bb7f67ff",
+      "labels": [
+        "prescriptions"
+      ],
+      "sprint": null,
+      "created": "2026-09-30T12:15:00.000+0100",
+      "updated": "2026-10-03T12:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24024",
+      "key": "DOC-24",
+      "summary": "Remove the unused fax integration",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": "712020:fedb16ee-de93-5db4-b407-6e9c695273f5",
+      "reporter": "712020:add261d2-efc1-5702-9552-1e44bb7f67ff",
+      "labels": [
+        "integration"
+      ],
+      "sprint": null,
+      "created": "2026-10-02T14:15:00.000+0100",
+      "updated": "2026-10-05T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24025",
+      "key": "DOC-25",
+      "summary": "Kopiowanie notatki z poprzedniej wizyty",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:44ca6af5-5351-54b1-818a-1b58de66edef",
+      "labels": [
+        "notes"
+      ],
+      "sprint": null,
+      "created": "2026-10-03T08:00:00.000+0100",
+      "updated": "2026-10-06T08:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24026",
+      "key": "DOC-26",
+      "summary": "Pole wagi przyjmuje wartość ujemną",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:fedb16ee-de93-5db4-b407-6e9c695273f5",
+      "reporter": "712020:fedb16ee-de93-5db4-b407-6e9c695273f5",
+      "labels": [
+        "validation"
+      ],
+      "sprint": null,
+      "created": "2026-10-05T14:00:00.000+0100",
+      "updated": "2026-10-08T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24027",
+      "key": "DOC-27",
+      "summary": "Powiadomienie o pacjencie w poczekalni",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:89ddf4fb-ecd6-5a8b-9dfe-3dbd80ae0199",
+      "labels": [
+        "notifications"
+      ],
+      "sprint": "243",
+      "created": "2026-10-07T14:45:00.000+0100",
+      "updated": "2026-10-10T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24028",
+      "key": "DOC-28",
+      "summary": "Two doctors can edit the same note at once",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:add261d2-efc1-5702-9552-1e44bb7f67ff",
+      "reporter": "712020:89ddf4fb-ecd6-5a8b-9dfe-3dbd80ae0199",
+      "labels": [
+        "notes",
+        "backend"
+      ],
+      "sprint": null,
+      "created": "2026-10-08T10:00:00.000+0100",
+      "updated": "2026-10-11T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24029",
+      "key": "DOC-29",
+      "summary": "Widok kalendarza na dużym monitorze jest za wąski",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:08f76ded-25f9-56cc-a5f5-ae603672f849",
+      "reporter": "712020:fedb16ee-de93-5db4-b407-6e9c695273f5",
+      "labels": [
+        "ui",
+        "schedule"
+      ],
+      "sprint": null,
+      "created": "2026-10-10T16:00:00.000+0100",
+      "updated": "2026-10-13T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24030",
+      "key": "DOC-30",
+      "summary": "Szkolenie wideo z panelu dla nowych lekarzy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:08f76ded-25f9-56cc-a5f5-ae603672f849",
+      "reporter": "712020:08f76ded-25f9-56cc-a5f5-ae603672f849",
+      "labels": [
+        "docs"
+      ],
+      "sprint": "242",
+      "created": "2026-10-11T14:15:00.000+0100",
+      "updated": "2026-10-14T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24031",
+      "key": "DOC-31",
+      "summary": "Historia zmian w dokumentacji medycznej",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:add261d2-efc1-5702-9552-1e44bb7f67ff",
+      "labels": [
+        "notes",
+        "audit"
+      ],
+      "sprint": null,
+      "created": "2026-10-13T17:15:00.000+0100",
+      "updated": "2026-10-16T17:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24032",
+      "key": "DOC-32",
+      "summary": "Eksport dokumentacji pacjenta do PDF",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:fedb16ee-de93-5db4-b407-6e9c695273f5",
+      "reporter": "712020:b8790c6f-4955-5836-876c-40a9edca46e4",
+      "labels": [
+        "print"
+      ],
+      "sprint": null,
+      "created": "2026-10-14T16:30:00.000+0100",
+      "updated": "2026-10-17T16:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24033",
+      "key": "DOC-33",
+      "summary": "Błędny wiek pacjenta urodzonego 29 lutego",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:fedb16ee-de93-5db4-b407-6e9c695273f5",
+      "reporter": "712020:add261d2-efc1-5702-9552-1e44bb7f67ff",
+      "labels": [
+        "validation"
+      ],
+      "sprint": "242",
+      "created": "2026-10-16T15:15:00.000+0100",
+      "updated": "2026-10-19T15:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24034",
+      "key": "DOC-34",
+      "summary": "Zebrać uwagi lekarzy z pilotażu notatek głosowych",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:add261d2-efc1-5702-9552-1e44bb7f67ff",
+      "labels": [
+        "ml"
+      ],
+      "sprint": null,
+      "created": "2026-10-17T12:30:00.000+0100",
+      "updated": "2026-10-20T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24035",
+      "key": "DOC-35",
+      "summary": "Upgrade the rich text editor to version 6",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:44ca6af5-5351-54b1-818a-1b58de66edef",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": null,
+      "created": "2026-10-19T15:45:00.000+0100",
+      "updated": "2026-10-22T15:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24036",
+      "key": "DOC-36",
+      "summary": "Przypisanie asystentki do lekarza",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:08f76ded-25f9-56cc-a5f5-ae603672f849",
+      "labels": [
+        "permissions"
+      ],
+      "sprint": null,
+      "created": "2026-10-21T17:30:00.000+0100",
+      "updated": "2026-10-24T17:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24037",
+      "key": "DOC-37",
+      "summary": "Pole alergii pacjenta widoczne na każdej zakładce",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:add261d2-efc1-5702-9552-1e44bb7f67ff",
+      "reporter": "712020:fedb16ee-de93-5db4-b407-6e9c695273f5",
+      "labels": [
+        "notes",
+        "ui"
+      ],
+      "sprint": "243",
+      "created": "2026-10-22T13:45:00.000+0100",
+      "updated": "2026-10-25T13:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24038",
+      "key": "DOC-38",
+      "summary": "Zbyt długie ładowanie listy pacjentów rano",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:44ca6af5-5351-54b1-818a-1b58de66edef",
+      "reporter": "712020:08f76ded-25f9-56cc-a5f5-ae603672f849",
+      "labels": [
+        "performance"
+      ],
+      "sprint": "242",
+      "created": "2026-10-24T14:45:00.000+0100",
+      "updated": "2026-10-27T14:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24039",
+      "key": "DOC-39",
+      "summary": "Zakładka z teleporadami z ostatniego tygodnia",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:44ca6af5-5351-54b1-818a-1b58de66edef",
+      "reporter": "712020:08f76ded-25f9-56cc-a5f5-ae603672f849",
+      "labels": [
+        "frontend"
+      ],
+      "sprint": null,
+      "created": "2026-10-25T14:00:00.000+0100",
+      "updated": "2026-10-28T14:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "24040",
+      "key": "DOC-40",
+      "summary": "Słownik skrótów medycznych w notatce",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:add261d2-efc1-5702-9552-1e44bb7f67ff",
+      "reporter": "712020:08f76ded-25f9-56cc-a5f5-ae603672f849",
+      "labels": [
+        "notes"
+      ],
+      "sprint": null,
+      "created": "2026-10-27T15:45:00.000+0100",
+      "updated": "2026-10-30T15:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

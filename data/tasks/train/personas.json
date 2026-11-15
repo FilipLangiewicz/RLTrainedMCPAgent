@@ -1,0 +1,452 @@
+[
+  {
+    "name": "Matylda Jedynak",
+    "board": "train-vid",
+    "role": "Product owner of the video visits, a serial entrepreneur",
+    "style": "Startup words (MVP, scale, quick win, pivot). Mentions her other companies and fast decisions. Writes in a hurry, but the request is clear."
+  },
+  {
+    "name": "Rafał Domański",
+    "board": "train-vid",
+    "role": "WebRTC developer",
+    "style": "Developer slang, short lines, often no Polish letters. Uses words like 'ticket', 'fix', 'prod'."
+  },
+  {
+    "name": "Liam Murphy",
+    "board": "train-vid",
+    "role": "Backend developer from Ireland",
+    "style": "Writes only in English. Short and friendly, 'cheers' at the end."
+  },
+  {
+    "name": "Bogdan Kalinowski",
+    "board": "train-rx",
+    "role": "Tech lead of e-prescriptions",
+    "style": "Lists points with dashes. Names the law, ZUS or P1 as the reason for the request."
+  },
+  {
+    "name": "Ilona Szymańska",
+    "board": "train-rx",
+    "role": "Business analyst",
+    "style": "Polite questions: 'czy mogłabyś', 'byłabym wdzięczna'. Explains why she needs the change."
+  },
+  {
+    "name": "Hannah Becker",
+    "board": "train-rx",
+    "role": "Developer from Germany who learns Polish",
+    "style": "Polish with small grammar errors and wrong cases. Sometimes adds an English word in brackets."
+  },
+  {
+    "name": "Patrycja Lewandowska",
+    "board": "train-pat",
+    "role": "Product manager of the patient app",
+    "style": "Enthusiastic marketing tone, exclamation marks and emoji. Talks about the users and the release."
+  },
+  {
+    "name": "Szymon Krupa",
+    "board": "train-pat",
+    "role": "iOS developer",
+    "style": "Lower case, abbreviations (pls, asap, imo, btw), no full stops."
+  },
+  {
+    "name": "Julia Kowalczyk",
+    "board": "train-pat",
+    "role": "UX designer",
+    "style": "Describes what the user sees on the screen. Rarely knows issue keys."
+  },
+  {
+    "name": "Halina Stępień",
+    "board": "train-doc",
+    "role": "Medical advisor, a family doctor",
+    "style": "Formal letter style ('Szanowni Państwo', 'z poważaniem'). Uses medical words and not Jira words."
+  },
+  {
+    "name": "Konrad Sikorski",
+    "board": "train-doc",
+    "role": "Frontend developer of the doctor panel",
+    "style": "Very short commands in the imperative, no greetings."
+  },
+  {
+    "name": "Ryan Walsh",
+    "board": "train-doc",
+    "role": "Developer from the USA",
+    "style": "Polish sentences with many English words, informal ('hej', 'super')."
+  },
+  {
+    "name": "Magdalena Czerwińska",
+    "board": "train-pay",
+    "role": "Product owner of payments and subscriptions",
+    "style": "Business language with numbers and deadlines: the end of the month, invoices, revenue."
+  },
+  {
+    "name": "Dawid Kozłowski",
+    "board": "train-pay",
+    "role": "Backend developer",
+    "style": "Complains about old code and ironic remarks, but the request is exact."
+  },
+  {
+    "name": "Agata Wilczek",
+    "board": "train-pay",
+    "role": "Accountant",
+    "style": "Not sure about IT words, apologizes and explains a lot. Writes full polite sentences."
+  },
+  {
+    "name": "Aleksander Brzeziński",
+    "board": "train-fiz",
+    "role": "Lead developer of the student app",
+    "style": "Writes like a commit message: short points, always the issue key."
+  },
+  {
+    "name": "Klara Wysocka",
+    "board": "train-fiz",
+    "role": "Designer of the physics simulations",
+    "style": "Enthusiastic about physics phenomena (rzut ukośny, siła wyporu, obwód elektryczny). Long sentences with examples from the lessons."
+  },
+  {
+    "name": "Daniela Costa",
+    "board": "train-fiz",
+    "role": "Erasmus intern from Portugal",
+    "style": "Writes in English, very polite, asks for a confirmation at the end."
+  },
+  {
+    "name": "Bogumiła Sarnecka",
+    "board": "train-nau",
+    "role": "Physics teacher from a pilot school",
+    "style": "Talks like to pupils ('proszę o...'). Names her classes (7b, 8a) and the time of the lessons."
+  },
+  {
+    "name": "Witold Szymczak",
+    "board": "train-nau",
+    "role": "Backend developer of the teacher panel",
+    "style": "Dry and exact. One request in one sentence, no greetings."
+  },
+  {
+    "name": "Roksana Wieczorek",
+    "board": "train-nau",
+    "role": "Product designer",
+    "style": "Explains the view of a teacher with many examples. Rarely knows issue keys."
+  },
+  {
+    "name": "Ignacy Renifer",
+    "board": "train-ml",
+    "role": "Young researcher of the AI tutor, the favourite of the project manager",
+    "style": "A little crazy. Says awkward things, wild ideas and jokes that nobody laughs at. Colleagues tease him and he does not mind. The request is clear."
+  },
+  {
+    "name": "Lena Dąbrowska",
+    "board": "train-ml",
+    "role": "ML engineer",
+    "style": "Careful. Gives metrics, numbers and model names."
+  },
+  {
+    "name": "Arash Karimi",
+    "board": "train-ml",
+    "role": "Postdoc from Iran",
+    "style": "Polish and English in one sentence, academic words (baseline, ablation, hipoteza)."
+  },
+  {
+    "name": "Jacek Kacprzyk",
+    "board": "train-szk",
+    "role": "Project manager",
+    "style": "Always in a hurry, writes between meetings. Mentions people that he knows and things that he arranged. Thanks loyal people. The request is short and clear."
+  },
+  {
+    "name": "Marzena Cichocka",
+    "board": "train-szk",
+    "role": "Coordinator of the school pilots",
+    "style": "Names schools by number and town (SP 12 w Radomiu) and gives deadlines."
+  },
+  {
+    "name": "Robert Gawroński",
+    "board": "train-szk",
+    "role": "Trainer of the teachers",
+    "style": "Writes from the road between schools. Tells what the teachers said in the training."
+  },
+  {
+    "name": "Barbara Ziółkowska",
+    "board": "train-bad",
+    "role": "Research methodologist",
+    "style": "Academic Polish, long sentences with research words (grupa kontrolna, pretest, posttest)."
+  },
+  {
+    "name": "Patryk Szostak",
+    "board": "train-bad",
+    "role": "Grant specialist",
+    "style": "Office language: wskaźniki, kamienie milowe, załącznik nr 3, termin sprawozdania."
+  },
+  {
+    "name": "Nina Woźnicka",
+    "board": "train-bad",
+    "role": "PhD student",
+    "style": "Unsure, apologizes for the question, often ends with an emoji."
+  },
+  {
+    "name": "Elżbieta Kurowska",
+    "board": "train-rej",
+    "role": "Head of the registration desks",
+    "style": "Practical. Counts patients, calls and queues. Lists the complaints of the front desk, then gives the exact request."
+  },
+  {
+    "name": "Wiktoria Sobolewska",
+    "board": "train-rej",
+    "role": "Call centre consultant",
+    "style": "Young and chatty: 'hejka', 'mega', 'serio'. Many questions in one message, but one clear request."
+  },
+  {
+    "name": "Olena Kovalenko",
+    "board": "train-rej",
+    "role": "Call centre consultant from Ukraine",
+    "style": "Simple Polish sentences, sometimes wrong word order. Always asks at the end if she wrote it correctly."
+  },
+  {
+    "name": "Teresa Wróblewska",
+    "board": "train-lab",
+    "role": "Head of the laboratory, a laboratory diagnostician",
+    "style": "Pedantic. Exact laboratory words (morfologia, CRP, probówka EDTA) and numbers with units."
+  },
+  {
+    "name": "Norbert Szulc",
+    "board": "train-lab",
+    "role": "Integration engineer of the analyzers",
+    "style": "Terse technical lines about protocols (HL7, ASTM). Always uses issue keys."
+  },
+  {
+    "name": "Ksenia Borowska",
+    "board": "train-lab",
+    "role": "Laboratory technician on the night shift",
+    "style": "Writes at night, tired. Short sentences, small typos, mentions the time and the night shift."
+  },
+  {
+    "name": "Leszek Nowakowski",
+    "board": "train-rtg",
+    "role": "Head of radiology",
+    "style": "Impatient radiologist. Abbreviations (TK, MR, USG, opis), no greetings, writes between examinations."
+  },
+  {
+    "name": "Iwona Stachowiak",
+    "board": "train-rtg",
+    "role": "X-ray technician",
+    "style": "Tells step by step what happened at the device. Does not know issue keys and describes the issue in words."
+  },
+  {
+    "name": "Erik Johansson",
+    "board": "train-rtg",
+    "role": "PACS engineer from Sweden",
+    "style": "English with a few Polish words that he knows (dziękuję, proszę, dzień dobry)."
+  },
+  {
+    "name": "Arkadiusz Mikulski",
+    "board": "train-it",
+    "role": "Head of IT of all clinics",
+    "style": "Talks about plans and budgets. Names the clinic by its district (Mokotów, Wola, Ursynów)."
+  },
+  {
+    "name": "Tadeusz Wrona",
+    "board": "train-it",
+    "role": "Senior system administrator",
+    "style": "Grumpy old administrator. Very short, device names in capital letters, complains about the users."
+  },
+  {
+    "name": "Dominika Ryba",
+    "board": "train-it",
+    "role": "Helpdesk specialist",
+    "style": "Passes on what the staff said, with their words in quotes. Kind and a little chaotic."
+  },
+  {
+    "name": "Stanisław Góral",
+    "board": "train-nfz",
+    "role": "President of Medix",
+    "style": "Very firm and does not accept objections. Superlatives, capital letters, 'natychmiast', blames other people. Short sentences, the request is clear."
+  },
+  {
+    "name": "Grażyna Pietruszka",
+    "board": "train-nfz",
+    "role": "Head of NFZ settlements",
+    "style": "Calm and exact. Names the NFZ deadlines and the codes of the services."
+  },
+  {
+    "name": "Jakub Sowiński",
+    "board": "train-nfz",
+    "role": "Data analyst",
+    "style": "Asks with numbers and percentages. Uses English data words (dashboard, query, outlier)."
+  },
+  {
+    "name": "Sławomir Kubicki",
+    "board": "train-dial",
+    "role": "Head of the call floor",
+    "style": "Loud and motivating. Talks about targets, calls per hour and the best result of the day."
+  },
+  {
+    "name": "Lidia Banaś",
+    "board": "train-dial",
+    "role": "Administrator of the dialer",
+    "style": "Technical and exact. Gives numbers of seconds, queues and lines."
+  },
+  {
+    "name": "Krystian Wilczyński",
+    "board": "train-dial",
+    "role": "Top telemarketer",
+    "style": "Young and cocky. Slang ('ziom', 'sztos'), brags about his sales, then gives the request."
+  },
+  {
+    "name": "Jolanta Kurzawa",
+    "board": "train-lead",
+    "role": "Manager of the contact databases",
+    "style": "Careful with data. Counts the records and names the source of each list."
+  },
+  {
+    "name": "Remigiusz Fabiański",
+    "board": "train-lead",
+    "role": "Buyer of the lead lists",
+    "style": "Short business messages about deals, prices of the lists and partners."
+  },
+  {
+    "name": "Sandra Kozieł",
+    "board": "train-lead",
+    "role": "Sales analyst",
+    "style": "Excel words and percentages: konwersja, kolumna, filtr."
+  },
+  {
+    "name": "Dariusz Oleksy",
+    "board": "train-skr",
+    "role": "Sales trainer",
+    "style": "Coach language with exclamation marks: 'zamykamy', 'technika trzech tak', 'obiekcja to szansa'."
+  },
+  {
+    "name": "Kinga Rataj",
+    "board": "train-skr",
+    "role": "Writer of the call scripts",
+    "style": "Puts example lines of the script in quotes, then tells what to change."
+  },
+  {
+    "name": "Hieronim Bąkowski",
+    "board": "train-skr",
+    "role": "Senior telemarketer, 63 years old",
+    "style": "Old-fashioned and very polite. Long sentences, 'uprzejmie proszę', stories from his calls."
+  },
+  {
+    "name": "Aneta Zych",
+    "board": "train-umw",
+    "role": "Coordinator of the field advisers",
+    "style": "Calendar style: dates, hours and the names of villages and towns."
+  },
+  {
+    "name": "Grzegorz Lenart",
+    "board": "train-umw",
+    "role": "Field adviser",
+    "style": "Writes from the car between visits. Very short, names the customer by the town."
+  },
+  {
+    "name": "Teodora Wasiak",
+    "board": "train-umw",
+    "role": "Back office specialist",
+    "style": "Formal. Names documents exactly: umowa, aneks, oświadczenie o odstąpieniu."
+  },
+  {
+    "name": "Urszula Strzelecka",
+    "board": "train-rodo",
+    "role": "Lawyer of the company",
+    "style": "Legal language. Names articles of RODO and the offices UODO and UOKiK."
+  },
+  {
+    "name": "Kamila Pyka",
+    "board": "train-rodo",
+    "role": "Complaints specialist",
+    "style": "Quotes what the angry customers said, then asks for one action."
+  },
+  {
+    "name": "Ryszard Majchrzak",
+    "board": "train-rodo",
+    "role": "Owner of SolarDom",
+    "style": "Impatient. Thinks that complaints waste time and money. Wants each thing closed fast."
+  },
+  {
+    "name": "Oleksandr Bondarenko",
+    "board": "train-bot",
+    "role": "Tech lead of the AI agent",
+    "style": "Polite technical Polish with some calques from Ukrainian. Gives the issue key and the exact change."
+  },
+  {
+    "name": "Iryna Melnyk",
+    "board": "train-bot",
+    "role": "Customer success manager",
+    "style": "Quotes what the pilot customers said. Sometimes adds a Ukrainian word such as 'diakuju' at the end."
+  },
+  {
+    "name": "Kornelia Sęk",
+    "board": "train-bot",
+    "role": "QA engineer",
+    "style": "Short bug report style: what happened, what she expected, then the request."
+  },
+  {
+    "name": "Robinho Nasario",
+    "board": "train-demo",
+    "role": "Founder and CEO from Brazil",
+    "style": "Charming salesman. Polish with Portuguese and English words (amigo, top, incrível). Names important people that he met and turns each problem into an opportunity. The request is clear."
+  },
+  {
+    "name": "Yuliia Marchenko",
+    "board": "train-demo",
+    "role": "Designer of the presentations",
+    "style": "Short messages with exact slide numbers and dates."
+  },
+  {
+    "name": "Hubert Kałuża",
+    "board": "train-demo",
+    "role": "Sales manager",
+    "style": "Sales slang (lead, pipeline, closing). Very optimistic about each meeting."
+  },
+  {
+    "name": "Nataliia Lysenko",
+    "board": "train-grt",
+    "role": "Writer of the funding applications",
+    "style": "Formal language of applications: cel projektu, wskaźniki, harmonogram, budżet."
+  },
+  {
+    "name": "Taras Hnatiuk",
+    "board": "train-grt",
+    "role": "Financial analyst",
+    "style": "Numbers and tables. Asks for one exact value or one change."
+  },
+  {
+    "name": "Danuta Wrzos",
+    "board": "train-grt",
+    "role": "External consultant for funding",
+    "style": "Old-school consultant. Long formal sentences, reminds about deadlines and the rules of the call."
+  },
+  {
+    "name": "Oksana Savchuk",
+    "board": "train-rap",
+    "role": "Project accountant",
+    "style": "Exact amounts in PLN and invoice numbers. Calm and brief."
+  },
+  {
+    "name": "Bohdan Moroz",
+    "board": "train-rap",
+    "role": "Manager of the funded projects",
+    "style": "Brief status updates. Asks for lists of issues and their state."
+  },
+  {
+    "name": "Wiesława Gąsior",
+    "board": "train-rap",
+    "role": "Contact person for the audits",
+    "style": "Worried tone. Asks to check each thing twice and to keep the documents."
+  },
+  {
+    "name": "Dmytro Kravets",
+    "board": "train-plt",
+    "role": "DevOps engineer",
+    "style": "English technical words, very short lines, often writes about night deployments."
+  },
+  {
+    "name": "Serhii Polishchuk",
+    "board": "train-plt",
+    "role": "Backend developer",
+    "style": "Polish without Polish letters. Many questions, but one clear request."
+  },
+  {
+    "name": "Anastasiia Klymenko",
+    "board": "train-plt",
+    "role": "ML engineer",
+    "style": "Talks about the cost of tokens and the names of the models."
+  }
+]

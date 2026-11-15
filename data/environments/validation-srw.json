@@ -1,0 +1,876 @@
+{
+  "name": "validation-srw",
+  "site": "https://example.atlassian.net",
+  "now": "2026-11-18T13:00:00.000+0100",
+  "project": {
+    "key": "SRW",
+    "name": "Housi - serwisy i naprawy"
+  },
+  "board": {
+    "id": "52",
+    "name": "SRW board",
+    "type": "scrum"
+  },
+  "persons": [
+    {
+      "account_id": "712020:08df8301-41b1-50f7-80f3-f175d9d4bba0",
+      "display_name": "Wacław Grzelak",
+      "email": "waclaw.grzelak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:c5d59bba-34a1-58ea-b12b-bebd1a36a24e",
+      "display_name": "Ludmiła Szpak",
+      "email": "ludmila.szpak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:ad193ab0-3df8-5ef7-aabe-50a1576fdcb8",
+      "display_name": "Nikodem Ostrowiak",
+      "email": "nikodem.ostrowiak@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:d26d6e91-14ef-50d9-bf54-8ab7748d4c9b",
+      "display_name": "Nikodem Fijas",
+      "email": "nikodem.fijas@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:9b3a4310-623b-503c-ace8-7ef8bdebfbd1",
+      "display_name": "Regina Kuś",
+      "email": "regina.kus@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:e1b65489-7b57-5ab2-be90-22515836066b",
+      "display_name": "Stefania Dorosz",
+      "email": "stefania.dorosz@example.com",
+      "active": true
+    },
+    {
+      "account_id": "712020:dfaa7d10-21a2-5e06-8fc3-89f22f4a15a4",
+      "display_name": "Bernard Mazurkiewicz",
+      "email": "bernard.mazurkiewicz@example.com",
+      "active": false
+    }
+  ],
+  "sprints": [
+    {
+      "id": "521",
+      "name": "SRW Sprint 14",
+      "state": "closed",
+      "start_date": "2026-10-28T09:00:00.000Z",
+      "end_date": "2026-11-11T09:00:00.000Z",
+      "goal": "Przydział zgłoszeń do firm serwisowych"
+    },
+    {
+      "id": "522",
+      "name": "SRW Sprint 15",
+      "state": "active",
+      "start_date": "2026-11-11T09:00:00.000Z",
+      "end_date": "2026-11-25T09:00:00.000Z",
+      "goal": "Protokoły napraw ze zdjęciami"
+    },
+    {
+      "id": "523",
+      "name": "SRW Sprint 16",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": "Rozliczenia z firmami serwisowymi"
+    },
+    {
+      "id": "524",
+      "name": "SRW Sprint 17",
+      "state": "future",
+      "start_date": null,
+      "end_date": null,
+      "goal": ""
+    }
+  ],
+  "issues": [
+    {
+      "id": "52001",
+      "key": "SRW-1",
+      "summary": "Automatyczny przydział zgłoszenia do firmy serwisowej",
+      "description": "Przydział według kategorii usterki i budynku z umowy serwisowej.",
+      "issue_type": "Story",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "712020:9b3a4310-623b-503c-ace8-7ef8bdebfbd1",
+      "reporter": "712020:c5d59bba-34a1-58ea-b12b-bebd1a36a24e",
+      "labels": [
+        "dispatch",
+        "contractors"
+      ],
+      "sprint": "521",
+      "created": "2026-09-10T15:15:00.000+0100",
+      "updated": "2026-09-13T15:15:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "520015",
+          "author": "712020:9b3a4310-623b-503c-ace8-7ef8bdebfbd1",
+          "time_spent_seconds": 21600,
+          "comment": "Reguły przydziału",
+          "started": "2026-09-12T00:15:00.000+0100"
+        },
+        {
+          "id": "520016",
+          "author": "712020:9b3a4310-623b-503c-ace8-7ef8bdebfbd1",
+          "time_spent_seconds": 10800,
+          "comment": "Testy na trzech budynkach",
+          "started": "2026-09-13T00:15:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "52002",
+      "key": "SRW-2",
+      "summary": "Firma serwisowa dostaje zgłoszenia z budynku bez umowy",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:dfaa7d10-21a2-5e06-8fc3-89f22f4a15a4",
+      "reporter": "712020:c5d59bba-34a1-58ea-b12b-bebd1a36a24e",
+      "labels": [
+        "dispatch",
+        "contracts"
+      ],
+      "sprint": "521",
+      "created": "2026-09-12T14:30:00.000+0100",
+      "updated": "2026-09-15T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52003",
+      "key": "SRW-3",
+      "summary": "Pagers for the emergency service",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Cancelled",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:08df8301-41b1-50f7-80f3-f175d9d4bba0",
+      "labels": [
+        "emergency"
+      ],
+      "sprint": "521",
+      "created": "2026-09-13T11:00:00.000+0100",
+      "updated": "2026-09-16T11:00:00.000+0100",
+      "comments": [
+        {
+          "id": "520031",
+          "author": "712020:08df8301-41b1-50f7-80f3-f175d9d4bba0",
+          "body": "All technicians have phones, pagers are not needed.",
+          "created": "2026-09-14T11:00:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "52004",
+      "key": "SRW-4",
+      "summary": "Lista firm serwisowych z kategoriami",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:9b3a4310-623b-503c-ace8-7ef8bdebfbd1",
+      "reporter": "712020:c5d59bba-34a1-58ea-b12b-bebd1a36a24e",
+      "labels": [
+        "contractors"
+      ],
+      "sprint": "521",
+      "created": "2026-09-15T12:45:00.000+0100",
+      "updated": "2026-09-18T12:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52005",
+      "key": "SRW-5",
+      "summary": "Protokół naprawy ze zdjęciami przed i po",
+      "description": null,
+      "issue_type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "712020:e1b65489-7b57-5ab2-be90-22515836066b",
+      "reporter": "712020:d26d6e91-14ef-50d9-bf54-8ab7748d4c9b",
+      "labels": [
+        "protocols",
+        "media"
+      ],
+      "sprint": "522",
+      "created": "2026-09-16T16:15:00.000+0100",
+      "updated": "2026-09-19T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": [
+        {
+          "id": "520055",
+          "author": "712020:e1b65489-7b57-5ab2-be90-22515836066b",
+          "time_spent_seconds": 14400,
+          "comment": "Szablon protokołu",
+          "started": "2026-09-18T00:15:00.000+0100"
+        }
+      ]
+    },
+    {
+      "id": "52006",
+      "key": "SRW-6",
+      "summary": "Podpis mieszkańca na protokole w telefonie serwisanta",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "712020:c5d59bba-34a1-58ea-b12b-bebd1a36a24e",
+      "reporter": "712020:9b3a4310-623b-503c-ace8-7ef8bdebfbd1",
+      "labels": [
+        "protocols",
+        "e-signature"
+      ],
+      "sprint": "522",
+      "created": "2026-09-18T14:15:00.000+0100",
+      "updated": "2026-09-21T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52007",
+      "key": "SRW-7",
+      "summary": "Serwisant nie widzi adresu i piętra w zleceniu",
+      "description": "Po ostatniej aktualizacji zlecenie pokazuje tylko numer lokalu.",
+      "issue_type": "Bug",
+      "status": "In Progress",
+      "priority": "Highest",
+      "assignee": "712020:e1b65489-7b57-5ab2-be90-22515836066b",
+      "reporter": "712020:9b3a4310-623b-503c-ace8-7ef8bdebfbd1",
+      "labels": [
+        "orders",
+        "app"
+      ],
+      "sprint": "522",
+      "created": "2026-09-20T11:15:00.000+0100",
+      "updated": "2026-09-23T11:15:00.000+0100",
+      "comments": [
+        {
+          "id": "520071",
+          "author": "712020:e1b65489-7b57-5ab2-be90-22515836066b",
+          "body": "Dwóch serwisantów pojechało pod zły adres.",
+          "created": "2026-09-21T11:15:00.000+0100"
+        }
+      ],
+      "worklogs": []
+    },
+    {
+      "id": "52008",
+      "key": "SRW-8",
+      "summary": "Deadline of the repair from the service contract",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "High",
+      "assignee": "712020:9b3a4310-623b-503c-ace8-7ef8bdebfbd1",
+      "reporter": "712020:08df8301-41b1-50f7-80f3-f175d9d4bba0",
+      "labels": [
+        "sla",
+        "contracts"
+      ],
+      "sprint": "522",
+      "created": "2026-09-21T13:00:00.000+0100",
+      "updated": "2026-09-24T13:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52009",
+      "key": "SRW-9",
+      "summary": "Zlecenie odrzucone przez serwis wraca do dyspozytora",
+      "description": null,
+      "issue_type": "Task",
+      "status": "In review",
+      "priority": "Medium",
+      "assignee": "712020:ad193ab0-3df8-5ef7-aabe-50a1576fdcb8",
+      "reporter": "712020:d26d6e91-14ef-50d9-bf54-8ab7748d4c9b",
+      "labels": [
+        "dispatch"
+      ],
+      "sprint": "522",
+      "created": "2026-09-23T08:45:00.000+0100",
+      "updated": "2026-09-26T08:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52010",
+      "key": "SRW-10",
+      "summary": "Lista części użytych w naprawie",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Done",
+      "priority": "Medium",
+      "assignee": "712020:9b3a4310-623b-503c-ace8-7ef8bdebfbd1",
+      "reporter": "712020:08df8301-41b1-50f7-80f3-f175d9d4bba0",
+      "labels": [
+        "protocols",
+        "parts"
+      ],
+      "sprint": "522",
+      "created": "2026-09-25T16:15:00.000+0100",
+      "updated": "2026-09-28T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52011",
+      "key": "SRW-11",
+      "summary": "Alert, gdy naprawa przekroczy termin z umowy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:e1b65489-7b57-5ab2-be90-22515836066b",
+      "reporter": "712020:ad193ab0-3df8-5ef7-aabe-50a1576fdcb8",
+      "labels": [
+        "sla",
+        "alerts"
+      ],
+      "sprint": "522",
+      "created": "2026-09-26T14:30:00.000+0100",
+      "updated": "2026-09-29T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52012",
+      "key": "SRW-12",
+      "summary": "Kalendarz wizyt serwisantów na tydzień",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:c5d59bba-34a1-58ea-b12b-bebd1a36a24e",
+      "reporter": "712020:e1b65489-7b57-5ab2-be90-22515836066b",
+      "labels": [
+        "calendar"
+      ],
+      "sprint": "522",
+      "created": "2026-09-28T16:00:00.000+0100",
+      "updated": "2026-10-01T16:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52013",
+      "key": "SRW-13",
+      "summary": "Druga wizyta, gdy brakuje części",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:e1b65489-7b57-5ab2-be90-22515836066b",
+      "labels": [
+        "orders",
+        "parts"
+      ],
+      "sprint": "522",
+      "created": "2026-09-30T17:45:00.000+0100",
+      "updated": "2026-10-03T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52014",
+      "key": "SRW-14",
+      "summary": "Rozliczenia miesięczne z firmami serwisowymi",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:08df8301-41b1-50f7-80f3-f175d9d4bba0",
+      "labels": [
+        "billing",
+        "contractors"
+      ],
+      "sprint": "523",
+      "created": "2026-10-01T16:30:00.000+0100",
+      "updated": "2026-10-04T16:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52015",
+      "key": "SRW-15",
+      "summary": "Cennik usług w umowie serwisowej",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:e1b65489-7b57-5ab2-be90-22515836066b",
+      "reporter": "712020:ad193ab0-3df8-5ef7-aabe-50a1576fdcb8",
+      "labels": [
+        "billing",
+        "contracts"
+      ],
+      "sprint": "523",
+      "created": "2026-10-03T08:15:00.000+0100",
+      "updated": "2026-10-06T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52016",
+      "key": "SRW-16",
+      "summary": "Invoice of the service company linked to the repair",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:ad193ab0-3df8-5ef7-aabe-50a1576fdcb8",
+      "labels": [
+        "billing"
+      ],
+      "sprint": "523",
+      "created": "2026-10-05T15:30:00.000+0100",
+      "updated": "2026-10-08T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52017",
+      "key": "SRW-17",
+      "summary": "Ocena firm serwisowych przez zarządcę",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:08df8301-41b1-50f7-80f3-f175d9d4bba0",
+      "reporter": "712020:d26d6e91-14ef-50d9-bf54-8ab7748d4c9b",
+      "labels": [
+        "contractors",
+        "feedback"
+      ],
+      "sprint": "523",
+      "created": "2026-10-06T14:15:00.000+0100",
+      "updated": "2026-10-09T14:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52018",
+      "key": "SRW-18",
+      "summary": "Protokół naprawy windy bez numeru urządzenia UDT",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:c5d59bba-34a1-58ea-b12b-bebd1a36a24e",
+      "reporter": "712020:c5d59bba-34a1-58ea-b12b-bebd1a36a24e",
+      "labels": [
+        "protocols",
+        "elevators"
+      ],
+      "sprint": null,
+      "created": "2026-10-08T09:45:00.000+0100",
+      "updated": "2026-10-11T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52019",
+      "key": "SRW-19",
+      "summary": "Pogotowie techniczne w nocy i w święta",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:e1b65489-7b57-5ab2-be90-22515836066b",
+      "labels": [
+        "emergency"
+      ],
+      "sprint": null,
+      "created": "2026-10-10T09:45:00.000+0100",
+      "updated": "2026-10-13T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52020",
+      "key": "SRW-20",
+      "summary": "Przeglądy okresowe instalacji gazowej",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:08df8301-41b1-50f7-80f3-f175d9d4bba0",
+      "labels": [
+        "inspections",
+        "gas"
+      ],
+      "sprint": null,
+      "created": "2026-10-11T09:30:00.000+0100",
+      "updated": "2026-10-14T09:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52021",
+      "key": "SRW-21",
+      "summary": "Przypomnienie o przeglądzie kominiarskim",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:e1b65489-7b57-5ab2-be90-22515836066b",
+      "labels": [
+        "inspections"
+      ],
+      "sprint": null,
+      "created": "2026-10-13T08:15:00.000+0100",
+      "updated": "2026-10-16T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52022",
+      "key": "SRW-22",
+      "summary": "Serwisant zamyka zlecenie bez protokołu",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:d26d6e91-14ef-50d9-bf54-8ab7748d4c9b",
+      "labels": [
+        "protocols",
+        "orders"
+      ],
+      "sprint": null,
+      "created": "2026-10-14T08:15:00.000+0100",
+      "updated": "2026-10-17T08:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52023",
+      "key": "SRW-23",
+      "summary": "Mobile app of the technician works only online",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:08df8301-41b1-50f7-80f3-f175d9d4bba0",
+      "reporter": "712020:c5d59bba-34a1-58ea-b12b-bebd1a36a24e",
+      "labels": [
+        "app",
+        "offline"
+      ],
+      "sprint": null,
+      "created": "2026-10-16T09:15:00.000+0100",
+      "updated": "2026-10-19T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52024",
+      "key": "SRW-24",
+      "summary": "Gwarancja na wykonaną naprawę w historii lokalu",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:c5d59bba-34a1-58ea-b12b-bebd1a36a24e",
+      "reporter": "712020:08df8301-41b1-50f7-80f3-f175d9d4bba0",
+      "labels": [
+        "warranty"
+      ],
+      "sprint": null,
+      "created": "2026-10-18T10:45:00.000+0100",
+      "updated": "2026-10-21T10:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52025",
+      "key": "SRW-25",
+      "summary": "Zlecenia dla firmy, która wypowiedziała umowę",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:08df8301-41b1-50f7-80f3-f175d9d4bba0",
+      "labels": [
+        "dispatch",
+        "contracts"
+      ],
+      "sprint": null,
+      "created": "2026-10-19T15:00:00.000+0100",
+      "updated": "2026-10-22T15:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52026",
+      "key": "SRW-26",
+      "summary": "Magazyn części zamiennych w budynku",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:d26d6e91-14ef-50d9-bf54-8ab7748d4c9b",
+      "reporter": "712020:9b3a4310-623b-503c-ace8-7ef8bdebfbd1",
+      "labels": [
+        "parts"
+      ],
+      "sprint": null,
+      "created": "2026-10-21T16:15:00.000+0100",
+      "updated": "2026-10-24T16:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52027",
+      "key": "SRW-27",
+      "summary": "Raport napraw według kategorii usterki",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:ad193ab0-3df8-5ef7-aabe-50a1576fdcb8",
+      "labels": [
+        "reports"
+      ],
+      "sprint": null,
+      "created": "2026-10-23T10:00:00.000+0100",
+      "updated": "2026-10-26T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52028",
+      "key": "SRW-28",
+      "summary": "Czas dojazdu serwisanta liczony z GPS",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:ad193ab0-3df8-5ef7-aabe-50a1576fdcb8",
+      "labels": [
+        "sla"
+      ],
+      "sprint": null,
+      "created": "2026-10-24T12:00:00.000+0100",
+      "updated": "2026-10-27T12:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52029",
+      "key": "SRW-29",
+      "summary": "Zdjęcia z protokołu nie trafiają do zarządcy",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:c5d59bba-34a1-58ea-b12b-bebd1a36a24e",
+      "reporter": "712020:ad193ab0-3df8-5ef7-aabe-50a1576fdcb8",
+      "labels": [
+        "protocols",
+        "media"
+      ],
+      "sprint": "522",
+      "created": "2026-10-26T11:15:00.000+0100",
+      "updated": "2026-10-29T11:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52030",
+      "key": "SRW-30",
+      "summary": "Instrukcja aplikacji dla serwisantów",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": null,
+      "reporter": "712020:d26d6e91-14ef-50d9-bf54-8ab7748d4c9b",
+      "labels": [
+        "docs"
+      ],
+      "sprint": null,
+      "created": "2026-10-28T15:30:00.000+0100",
+      "updated": "2026-10-31T15:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52031",
+      "key": "SRW-31",
+      "summary": "Two technicians assigned to the same order",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:c5d59bba-34a1-58ea-b12b-bebd1a36a24e",
+      "reporter": "712020:e1b65489-7b57-5ab2-be90-22515836066b",
+      "labels": [
+        "dispatch"
+      ],
+      "sprint": null,
+      "created": "2026-10-29T10:00:00.000+0100",
+      "updated": "2026-11-01T10:00:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52032",
+      "key": "SRW-32",
+      "summary": "Zgłoszenie przekazane do ubezpieczyciela po zalaniu",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:d26d6e91-14ef-50d9-bf54-8ab7748d4c9b",
+      "reporter": "712020:08df8301-41b1-50f7-80f3-f175d9d4bba0",
+      "labels": [
+        "insurance"
+      ],
+      "sprint": null,
+      "created": "2026-10-31T17:45:00.000+0100",
+      "updated": "2026-11-03T17:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52033",
+      "key": "SRW-33",
+      "summary": "Przegląd roczny wind w osiedlu Zielone Tarasy",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": null,
+      "reporter": "712020:08df8301-41b1-50f7-80f3-f175d9d4bba0",
+      "labels": [
+        "inspections",
+        "elevators"
+      ],
+      "sprint": "523",
+      "created": "2026-11-02T14:30:00.000+0100",
+      "updated": "2026-11-05T14:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52034",
+      "key": "SRW-34",
+      "summary": "Umowy serwisowe kończą się bez ostrzeżenia",
+      "description": null,
+      "issue_type": "Bug",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": "712020:c5d59bba-34a1-58ea-b12b-bebd1a36a24e",
+      "reporter": "712020:ad193ab0-3df8-5ef7-aabe-50a1576fdcb8",
+      "labels": [
+        "contracts",
+        "alerts"
+      ],
+      "sprint": null,
+      "created": "2026-11-03T09:45:00.000+0100",
+      "updated": "2026-11-06T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52035",
+      "key": "SRW-35",
+      "summary": "Koszt naprawy powyżej limitu wymaga zgody zarządcy",
+      "description": null,
+      "issue_type": "Story",
+      "status": "Backlog",
+      "priority": "High",
+      "assignee": null,
+      "reporter": "712020:9b3a4310-623b-503c-ace8-7ef8bdebfbd1",
+      "labels": [
+        "billing",
+        "approvals"
+      ],
+      "sprint": null,
+      "created": "2026-11-05T09:15:00.000+0100",
+      "updated": "2026-11-08T09:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52036",
+      "key": "SRW-36",
+      "summary": "Eksport protokołów do PDF dla wspólnoty",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Medium",
+      "assignee": "712020:c5d59bba-34a1-58ea-b12b-bebd1a36a24e",
+      "reporter": "712020:d26d6e91-14ef-50d9-bf54-8ab7748d4c9b",
+      "labels": [
+        "protocols",
+        "print"
+      ],
+      "sprint": null,
+      "created": "2026-11-07T09:45:00.000+0100",
+      "updated": "2026-11-10T09:45:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52037",
+      "key": "SRW-37",
+      "summary": "Lista serwisantów z uprawnieniami gazowymi",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Low",
+      "assignee": "712020:e1b65489-7b57-5ab2-be90-22515836066b",
+      "reporter": "712020:d26d6e91-14ef-50d9-bf54-8ab7748d4c9b",
+      "labels": [
+        "contractors",
+        "gas"
+      ],
+      "sprint": null,
+      "created": "2026-11-08T10:15:00.000+0100",
+      "updated": "2026-11-11T10:15:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    },
+    {
+      "id": "52038",
+      "key": "SRW-38",
+      "summary": "Usunąć testowe firmy serwisowe z produkcji",
+      "description": null,
+      "issue_type": "Task",
+      "status": "Backlog",
+      "priority": "Lowest",
+      "assignee": null,
+      "reporter": "712020:d26d6e91-14ef-50d9-bf54-8ab7748d4c9b",
+      "labels": [
+        "contractors"
+      ],
+      "sprint": null,
+      "created": "2026-11-10T12:30:00.000+0100",
+      "updated": "2026-11-13T12:30:00.000+0100",
+      "comments": [],
+      "worklogs": []
+    }
+  ]
+}

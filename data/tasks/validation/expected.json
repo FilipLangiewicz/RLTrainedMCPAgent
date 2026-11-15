@@ -1,0 +1,1825 @@
+[
+  {
+    "id": "validation-001",
+    "board": "validation-usr",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Marlena Sobieraj"
+    }
+  },
+  {
+    "id": "validation-002",
+    "board": "validation-usr",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "Backlog"
+    }
+  },
+  {
+    "id": "validation-003",
+    "board": "validation-usr",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 28800
+    }
+  },
+  {
+    "id": "validation-004",
+    "board": "validation-usr",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 1
+    }
+  },
+  {
+    "id": "validation-005",
+    "board": "validation-usr",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "USR-39",
+        "USR-27",
+        "USR-7"
+      ]
+    }
+  },
+  {
+    "id": "validation-006",
+    "board": "validation-usr",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "value",
+      "value": "Highest"
+    }
+  },
+  {
+    "id": "validation-007",
+    "board": "validation-usr",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "USR-12",
+        "field": "assignee",
+        "value": "Olaf Ziemba"
+      }
+    ]
+  },
+  {
+    "id": "validation-008",
+    "board": "validation-usr",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "USR-34",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "validation-009",
+    "board": "validation-usr",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "USR-9",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "validation-010",
+    "board": "validation-usr",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "USR-26",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "USR-26",
+        "field": "assignee",
+        "value": "Kordian Siwiec"
+      }
+    ]
+  },
+  {
+    "id": "validation-011",
+    "board": "validation-usr",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "USR-27",
+        "field": "priority",
+        "value": "Medium"
+      },
+      {
+        "issue": "USR-27",
+        "field": "assignee",
+        "value": "Kordian Siwiec"
+      }
+    ]
+  },
+  {
+    "id": "validation-012",
+    "board": "validation-usr",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "USR-40",
+        "field": "priority",
+        "value": "Medium"
+      },
+      {
+        "issue": "USR-40",
+        "field": "assignee",
+        "value": "Dagmara Kos"
+      }
+    ]
+  },
+  {
+    "id": "validation-013",
+    "board": "validation-usr",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "USR-7",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "retry uploadu przy slabym zasiegu"
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-014",
+    "board": "validation-usr",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "USR-14",
+        "comment": "Od stycznia awarie zgłasza średnio 40 mieszkańców miesięcznie."
+      }
+    ]
+  },
+  {
+    "id": "validation-015",
+    "board": "validation-usr",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "USR-21",
+        "comment": "Mieszkańcy z ul. Lipowej proszą o komunikat dzień wcześniej."
+      }
+    ]
+  },
+  {
+    "id": "validation-016",
+    "board": "validation-usr",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "USR-36",
+        "worklog": {
+          "seconds": 3600,
+          "comment": "zestawienie z października"
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-017",
+    "board": "validation-usr",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "USR-29",
+        "comment": "Mieszkańcy dzwonią z tym codziennie."
+      }
+    ]
+  },
+  {
+    "id": "validation-018",
+    "board": "validation-usr",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Zgłoszenie usterki przez SMS",
+          "issue_type": "Story",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-019",
+    "board": "validation-usr",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Push o statusie przychodzi dwa razy na Androidzie",
+          "issue_type": "Bug",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-020",
+    "board": "validation-usr",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Papierowa instrukcja zgłaszania usterek dla seniorów",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-021",
+    "board": "validation-usr",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Testy aplikacji z mieszkańcami z ul. Klonowej",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Dagmara Kos",
+          "labels": [],
+          "sprint": "USR Sprint 27"
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-022",
+    "board": "validation-usr",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Mapa budynku nie laduje sie na iOS 17",
+          "issue_type": "Bug",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "ios"
+          ],
+          "sprint": "USR Sprint 28"
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-023",
+    "board": "validation-usr",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "USR-18",
+        "field": "sprint",
+        "value": "USR Sprint 27"
+      }
+    ]
+  },
+  {
+    "id": "validation-024",
+    "board": "validation-usr",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "USR-12",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "validation-025",
+    "board": "validation-usr",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "USR-21",
+        "field": "sprint",
+        "value": "USR Sprint 29"
+      }
+    ]
+  },
+  {
+    "id": "validation-026",
+    "board": "validation-usr",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "USR-14",
+        "field": "sprint",
+        "value": "USR Sprint 27"
+      },
+      {
+        "issue": "USR-15",
+        "field": "sprint",
+        "value": "USR Sprint 27"
+      },
+      {
+        "issue": "USR-16",
+        "field": "sprint",
+        "value": "USR Sprint 27"
+      }
+    ]
+  },
+  {
+    "id": "validation-027",
+    "board": "validation-usr",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "USR-38",
+        "field": "sprint",
+        "value": "USR Sprint 28"
+      }
+    ]
+  },
+  {
+    "id": "validation-028",
+    "board": "validation-usr",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "USR-10",
+        "field": "assignee",
+        "value": "Kordian Siwiec"
+      },
+      {
+        "issue": "USR-18",
+        "field": "assignee",
+        "value": "Kordian Siwiec"
+      },
+      {
+        "issue": "USR-27",
+        "field": "assignee",
+        "value": "Kordian Siwiec"
+      },
+      {
+        "issue": "USR-31",
+        "field": "assignee",
+        "value": "Kordian Siwiec"
+      },
+      {
+        "issue": "USR-34",
+        "field": "assignee",
+        "value": "Kordian Siwiec"
+      },
+      {
+        "issue": "USR-39",
+        "field": "assignee",
+        "value": "Kordian Siwiec"
+      }
+    ]
+  },
+  {
+    "id": "validation-029",
+    "board": "validation-usr",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "USR-6",
+        "comment": "sprawdzic po release 2.4"
+      },
+      {
+        "issue": "USR-20",
+        "comment": "sprawdzic po release 2.4"
+      },
+      {
+        "issue": "USR-23",
+        "comment": "sprawdzic po release 2.4"
+      }
+    ]
+  },
+  {
+    "id": "validation-030",
+    "board": "validation-usr",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "USR-9",
+        "field": "priority",
+        "value": "Medium"
+      },
+      {
+        "issue": "USR-28",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "validation-031",
+    "board": "validation-usr",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "USR-24",
+        "field": "assignee",
+        "value": "Olaf Ziemba"
+      },
+      {
+        "issue": "USR-26",
+        "field": "assignee",
+        "value": "Olaf Ziemba"
+      }
+    ]
+  },
+  {
+    "id": "validation-032",
+    "board": "validation-usr",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "USR-8",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "USR-8",
+        "worklog": {
+          "seconds": 3600,
+          "comment": null
+        }
+      },
+      {
+        "issue": "USR-8",
+        "comment": "formularz krotszy o 3 pola"
+      }
+    ]
+  },
+  {
+    "id": "validation-033",
+    "board": "validation-usr",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "USR-5",
+        "field": "status",
+        "value": "In review"
+      },
+      {
+        "issue": "USR-5",
+        "worklog": {
+          "seconds": 7200,
+          "comment": null
+        }
+      },
+      {
+        "issue": "USR-5",
+        "comment": "Statusy przetestowane z 15 mieszkańcami."
+      }
+    ]
+  },
+  {
+    "id": "validation-034",
+    "board": "validation-usr",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "USR-37",
+        "field": "assignee",
+        "value": "Józefa Wiącek"
+      },
+      {
+        "issue": "USR-37",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "USR-37",
+        "comment": "Potrzebny filtr także po klatce."
+      }
+    ]
+  },
+  {
+    "id": "validation-035",
+    "board": "validation-usr",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "USR-25",
+        "field": "sprint",
+        "value": "USR Sprint 28"
+      },
+      {
+        "issue": "USR-25",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "validation-036",
+    "board": "validation-usr",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "validation-037",
+    "board": "validation-usr",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "validation-038",
+    "board": "validation-usr",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "validation-039",
+    "board": "validation-usr",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "validation-040",
+    "board": "validation-usr",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "validation-041",
+    "board": "validation-srw",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Ludmiła Szpak"
+    }
+  },
+  {
+    "id": "validation-042",
+    "board": "validation-srw",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "In Progress"
+    }
+  },
+  {
+    "id": "validation-043",
+    "board": "validation-srw",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 32400
+    }
+  },
+  {
+    "id": "validation-044",
+    "board": "validation-srw",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 6
+    }
+  },
+  {
+    "id": "validation-045",
+    "board": "validation-srw",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "SRW-31",
+        "SRW-25"
+      ]
+    }
+  },
+  {
+    "id": "validation-046",
+    "board": "validation-srw",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "value",
+      "value": "Medium"
+    }
+  },
+  {
+    "id": "validation-047",
+    "board": "validation-srw",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SRW-21",
+        "field": "assignee",
+        "value": "Regina Kuś"
+      }
+    ]
+  },
+  {
+    "id": "validation-048",
+    "board": "validation-srw",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SRW-28",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "validation-049",
+    "board": "validation-srw",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SRW-9",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "validation-050",
+    "board": "validation-srw",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SRW-22",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "SRW-22",
+        "field": "assignee",
+        "value": "Stefania Dorosz"
+      }
+    ]
+  },
+  {
+    "id": "validation-051",
+    "board": "validation-srw",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SRW-15",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "SRW-15",
+        "field": "assignee",
+        "value": "Ludmiła Szpak"
+      }
+    ]
+  },
+  {
+    "id": "validation-052",
+    "board": "validation-srw",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SRW-31",
+        "field": "assignee",
+        "value": "Nikodem Ostrowiak"
+      },
+      {
+        "issue": "SRW-31",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "validation-053",
+    "board": "validation-srw",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SRW-7",
+        "worklog": {
+          "seconds": 10800,
+          "comment": "adres i piętro w widoku zlecenia"
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-054",
+    "board": "validation-srw",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SRW-13",
+        "comment": "Brakuje zaworów 1/2 cala w hurtowni, druga wizyta w piątek."
+      }
+    ]
+  },
+  {
+    "id": "validation-055",
+    "board": "validation-srw",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SRW-8",
+        "worklog": {
+          "seconds": 3600,
+          "comment": "terminy z 12 umów serwisowych"
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-056",
+    "board": "validation-srw",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SRW-33",
+        "comment": "Przegląd zaplanowany na 18 listopada, godz. 8:00."
+      }
+    ]
+  },
+  {
+    "id": "validation-057",
+    "board": "validation-srw",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SRW-21",
+        "worklog": {
+          "seconds": 7200,
+          "comment": "lista kominów z trzech budynków"
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-058",
+    "board": "validation-srw",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Zlecenie na przeciek pionu nie ma zdjęć od mieszkańca",
+          "issue_type": "Bug",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-059",
+    "board": "validation-srw",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Raport napraw za październik dla zarządcy",
+          "issue_type": "Task",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-060",
+    "board": "validation-srw",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Indeks na tabeli zleceń według firmy serwisowej",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-061",
+    "board": "validation-srw",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Lista hydraulików na dyżur świąteczny",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Regina Kuś",
+          "labels": [],
+          "sprint": "SRW Sprint 15"
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-062",
+    "board": "validation-srw",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Szablon protokołu przeglądu gazowego",
+          "issue_type": "Task",
+          "priority": "High",
+          "assignee": null,
+          "labels": [
+            "protocols"
+          ],
+          "sprint": "SRW Sprint 16"
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-063",
+    "board": "validation-srw",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SRW-19",
+        "field": "sprint",
+        "value": "SRW Sprint 15"
+      }
+    ]
+  },
+  {
+    "id": "validation-064",
+    "board": "validation-srw",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SRW-13",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "validation-065",
+    "board": "validation-srw",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "SRW-20",
+        "field": "sprint",
+        "value": "SRW Sprint 17"
+      }
+    ]
+  },
+  {
+    "id": "validation-066",
+    "board": "validation-srw",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SRW-14",
+        "field": "sprint",
+        "value": "SRW Sprint 15"
+      },
+      {
+        "issue": "SRW-15",
+        "field": "sprint",
+        "value": "SRW Sprint 15"
+      },
+      {
+        "issue": "SRW-16",
+        "field": "sprint",
+        "value": "SRW Sprint 15"
+      }
+    ]
+  },
+  {
+    "id": "validation-067",
+    "board": "validation-srw",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SRW-26",
+        "field": "sprint",
+        "value": "SRW Sprint 16"
+      }
+    ]
+  },
+  {
+    "id": "validation-068",
+    "board": "validation-srw",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SRW-22",
+        "field": "assignee",
+        "value": "Nikodem Fijas"
+      },
+      {
+        "issue": "SRW-25",
+        "field": "assignee",
+        "value": "Nikodem Fijas"
+      }
+    ]
+  },
+  {
+    "id": "validation-069",
+    "board": "validation-srw",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SRW-8",
+        "comment": "Sprawdzić terminy umów do 30 listopada."
+      },
+      {
+        "issue": "SRW-15",
+        "comment": "Sprawdzić terminy umów do 30 listopada."
+      },
+      {
+        "issue": "SRW-25",
+        "comment": "Sprawdzić terminy umów do 30 listopada."
+      },
+      {
+        "issue": "SRW-34",
+        "comment": "Sprawdzić terminy umów do 30 listopada."
+      }
+    ]
+  },
+  {
+    "id": "validation-070",
+    "board": "validation-srw",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SRW-20",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "SRW-21",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "SRW-33",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "validation-071",
+    "board": "validation-srw",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SRW-18",
+        "field": "assignee",
+        "value": "Regina Kuś"
+      },
+      {
+        "issue": "SRW-24",
+        "field": "assignee",
+        "value": "Regina Kuś"
+      },
+      {
+        "issue": "SRW-31",
+        "field": "assignee",
+        "value": "Regina Kuś"
+      },
+      {
+        "issue": "SRW-34",
+        "field": "assignee",
+        "value": "Regina Kuś"
+      },
+      {
+        "issue": "SRW-36",
+        "field": "assignee",
+        "value": "Regina Kuś"
+      }
+    ]
+  },
+  {
+    "id": "validation-072",
+    "board": "validation-srw",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SRW-5",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "SRW-5",
+        "worklog": {
+          "seconds": 7200,
+          "comment": null
+        }
+      },
+      {
+        "issue": "SRW-5",
+        "comment": "zdjęcia przed i po dołączone do protokołu."
+      }
+    ]
+  },
+  {
+    "id": "validation-073",
+    "board": "validation-srw",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SRW-6",
+        "field": "status",
+        "value": "In review"
+      },
+      {
+        "issue": "SRW-6",
+        "worklog": {
+          "seconds": 3600,
+          "comment": null
+        }
+      },
+      {
+        "issue": "SRW-6",
+        "comment": "Podpis przetestowany na 8 zleceniach z 6 listopada."
+      }
+    ]
+  },
+  {
+    "id": "validation-074",
+    "board": "validation-srw",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SRW-32",
+        "field": "assignee",
+        "value": "Wacław Grzelak"
+      },
+      {
+        "issue": "SRW-32",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "SRW-32",
+        "comment": "Pion w klatce B, zalane dwa lokale."
+      }
+    ]
+  },
+  {
+    "id": "validation-075",
+    "board": "validation-srw",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "SRW-14",
+        "field": "sprint",
+        "value": "SRW Sprint 15"
+      },
+      {
+        "issue": "SRW-14",
+        "field": "assignee",
+        "value": "Ludmiła Szpak"
+      }
+    ]
+  },
+  {
+    "id": "validation-076",
+    "board": "validation-srw",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "validation-077",
+    "board": "validation-srw",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "validation-078",
+    "board": "validation-srw",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "validation-079",
+    "board": "validation-srw",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "validation-080",
+    "board": "validation-srw",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  },
+  {
+    "id": "validation-081",
+    "board": "validation-zrz",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "person",
+      "value": "Matteo Rinaldi"
+    }
+  },
+  {
+    "id": "validation-082",
+    "board": "validation-zrz",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "value",
+      "value": "In Progress"
+    }
+  },
+  {
+    "id": "validation-083",
+    "board": "validation-zrz",
+    "category": "query",
+    "difficulty": "easy",
+    "answer": {
+      "type": "time",
+      "value": 25200
+    }
+  },
+  {
+    "id": "validation-084",
+    "board": "validation-zrz",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "number",
+      "value": 3
+    }
+  },
+  {
+    "id": "validation-085",
+    "board": "validation-zrz",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "keys",
+      "value": [
+        "ZRZ-34",
+        "ZRZ-16",
+        "ZRZ-15",
+        "ZRZ-14"
+      ]
+    }
+  },
+  {
+    "id": "validation-086",
+    "board": "validation-zrz",
+    "category": "query",
+    "difficulty": "multi_step",
+    "answer": {
+      "type": "person",
+      "value": "Edward Pacholczyk"
+    }
+  },
+  {
+    "id": "validation-087",
+    "board": "validation-zrz",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "ZRZ-11",
+        "field": "assignee",
+        "value": "Albert Chmiel"
+      }
+    ]
+  },
+  {
+    "id": "validation-088",
+    "board": "validation-zrz",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "ZRZ-26",
+        "field": "priority",
+        "value": "Highest"
+      }
+    ]
+  },
+  {
+    "id": "validation-089",
+    "board": "validation-zrz",
+    "category": "update",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "ZRZ-8",
+        "field": "status",
+        "value": "Done"
+      }
+    ]
+  },
+  {
+    "id": "validation-090",
+    "board": "validation-zrz",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ZRZ-33",
+        "field": "priority",
+        "value": "Highest"
+      },
+      {
+        "issue": "ZRZ-33",
+        "field": "assignee",
+        "value": "Matteo Rinaldi"
+      }
+    ]
+  },
+  {
+    "id": "validation-091",
+    "board": "validation-zrz",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ZRZ-21",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "ZRZ-21",
+        "field": "assignee",
+        "value": "Edward Pacholczyk"
+      }
+    ]
+  },
+  {
+    "id": "validation-092",
+    "board": "validation-zrz",
+    "category": "update",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ZRZ-39",
+        "field": "assignee",
+        "value": "Matteo Rinaldi"
+      },
+      {
+        "issue": "ZRZ-39",
+        "field": "priority",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "validation-093",
+    "board": "validation-zrz",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "ZRZ-7",
+        "worklog": {
+          "seconds": 10800,
+          "comment": "organization filter fix"
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-094",
+    "board": "validation-zrz",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "ZRZ-13",
+        "comment": "Zarząd wspólnoty przy ul. Lipowej 12 chce raport co miesiąc."
+      }
+    ]
+  },
+  {
+    "id": "validation-095",
+    "board": "validation-zrz",
+    "category": "log",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "ZRZ-24",
+        "comment": "Historię budynku należy przekazać nowemu zarządcy w całości."
+      }
+    ]
+  },
+  {
+    "id": "validation-096",
+    "board": "validation-zrz",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ZRZ-37",
+        "worklog": {
+          "seconds": 5400,
+          "comment": "dane od stycznia"
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-097",
+    "board": "validation-zrz",
+    "category": "log",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ZRZ-15",
+        "comment": "Wersja papierowa musi być nadal prowadzona."
+      }
+    ]
+  },
+  {
+    "id": "validation-098",
+    "board": "validation-zrz",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Raport zużycia wody dla budynku przy ul. Klonowej 5",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-099",
+    "board": "validation-zrz",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Wydruk rocznego sprawozdania dla wspólnoty",
+          "issue_type": "Story",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-100",
+    "board": "validation-zrz",
+    "category": "create",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "The building map does not load on Firefox",
+          "issue_type": "Bug",
+          "priority": "High",
+          "assignee": null,
+          "labels": [],
+          "sprint": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-101",
+    "board": "validation-zrz",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Import budynków nowego zarządcy z Wilanowa",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": "Izabela Wojtas",
+          "labels": [],
+          "sprint": "ZRZ Sprint 32"
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-102",
+    "board": "validation-zrz",
+    "category": "create",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "new_issue": {
+          "summary": "Dark theme for the manager panel",
+          "issue_type": "Task",
+          "priority": "Medium",
+          "assignee": null,
+          "labels": [
+            "ui"
+          ],
+          "sprint": "ZRZ Sprint 33"
+        }
+      }
+    ]
+  },
+  {
+    "id": "validation-103",
+    "board": "validation-zrz",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "ZRZ-18",
+        "field": "sprint",
+        "value": "ZRZ Sprint 32"
+      }
+    ]
+  },
+  {
+    "id": "validation-104",
+    "board": "validation-zrz",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "ZRZ-12",
+        "field": "sprint",
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "validation-105",
+    "board": "validation-zrz",
+    "category": "sprint",
+    "difficulty": "easy",
+    "changes": [
+      {
+        "issue": "ZRZ-21",
+        "field": "sprint",
+        "value": "ZRZ Sprint 34"
+      }
+    ]
+  },
+  {
+    "id": "validation-106",
+    "board": "validation-zrz",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ZRZ-19",
+        "field": "sprint",
+        "value": "ZRZ Sprint 33"
+      },
+      {
+        "issue": "ZRZ-20",
+        "field": "sprint",
+        "value": "ZRZ Sprint 33"
+      },
+      {
+        "issue": "ZRZ-21",
+        "field": "sprint",
+        "value": "ZRZ Sprint 33"
+      },
+      {
+        "issue": "ZRZ-38",
+        "field": "sprint",
+        "value": "ZRZ Sprint 33"
+      }
+    ]
+  },
+  {
+    "id": "validation-107",
+    "board": "validation-zrz",
+    "category": "sprint",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ZRZ-34",
+        "field": "sprint",
+        "value": "ZRZ Sprint 32"
+      }
+    ]
+  },
+  {
+    "id": "validation-108",
+    "board": "validation-zrz",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ZRZ-12",
+        "field": "assignee",
+        "value": "Albert Chmiel"
+      },
+      {
+        "issue": "ZRZ-23",
+        "field": "assignee",
+        "value": "Albert Chmiel"
+      },
+      {
+        "issue": "ZRZ-33",
+        "field": "assignee",
+        "value": "Albert Chmiel"
+      },
+      {
+        "issue": "ZRZ-39",
+        "field": "assignee",
+        "value": "Albert Chmiel"
+      }
+    ]
+  },
+  {
+    "id": "validation-109",
+    "board": "validation-zrz",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ZRZ-1",
+        "comment": "Check the flat numbers with letters."
+      },
+      {
+        "issue": "ZRZ-2",
+        "comment": "Check the flat numbers with letters."
+      },
+      {
+        "issue": "ZRZ-33",
+        "comment": "Check the flat numbers with letters."
+      }
+    ]
+  },
+  {
+    "id": "validation-110",
+    "board": "validation-zrz",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ZRZ-9",
+        "field": "priority",
+        "value": "High"
+      },
+      {
+        "issue": "ZRZ-36",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "validation-111",
+    "board": "validation-zrz",
+    "category": "bulk",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ZRZ-24",
+        "field": "assignee",
+        "value": "Izabela Wojtas"
+      },
+      {
+        "issue": "ZRZ-38",
+        "field": "assignee",
+        "value": "Izabela Wojtas"
+      }
+    ]
+  },
+  {
+    "id": "validation-112",
+    "board": "validation-zrz",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ZRZ-7",
+        "field": "status",
+        "value": "In review"
+      },
+      {
+        "issue": "ZRZ-7",
+        "worklog": {
+          "seconds": 7200,
+          "comment": null
+        }
+      },
+      {
+        "issue": "ZRZ-7",
+        "comment": "Organization filter checked on all accounts."
+      }
+    ]
+  },
+  {
+    "id": "validation-113",
+    "board": "validation-zrz",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ZRZ-9",
+        "field": "status",
+        "value": "Done"
+      },
+      {
+        "issue": "ZRZ-9",
+        "worklog": {
+          "seconds": 3600,
+          "comment": null
+        }
+      },
+      {
+        "issue": "ZRZ-9",
+        "comment": "Członkowie zarządu widzą tylko raporty."
+      }
+    ]
+  },
+  {
+    "id": "validation-114",
+    "board": "validation-zrz",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ZRZ-36",
+        "field": "assignee",
+        "value": "Bolesław Kurant"
+      },
+      {
+        "issue": "ZRZ-36",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "ZRZ-36",
+        "comment": "Księgowa ma widzieć tylko fundusz remontowy."
+      }
+    ]
+  },
+  {
+    "id": "validation-115",
+    "board": "validation-zrz",
+    "category": "workflow",
+    "difficulty": "multi_step",
+    "changes": [
+      {
+        "issue": "ZRZ-27",
+        "field": "status",
+        "value": "In Progress"
+      },
+      {
+        "issue": "ZRZ-27",
+        "field": "priority",
+        "value": "High"
+      }
+    ]
+  },
+  {
+    "id": "validation-116",
+    "board": "validation-zrz",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "no_tool"
+  },
+  {
+    "id": "validation-117",
+    "board": "validation-zrz",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "missing_entity"
+  },
+  {
+    "id": "validation-118",
+    "board": "validation-zrz",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "validation-119",
+    "board": "validation-zrz",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "ambiguous"
+  },
+  {
+    "id": "validation-120",
+    "board": "validation-zrz",
+    "category": "refusal",
+    "difficulty": "refusal",
+    "refusal_kind": "out_of_domain"
+  }
+]
