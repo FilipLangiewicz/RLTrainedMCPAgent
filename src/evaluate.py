@@ -12,7 +12,14 @@ from pathlib import Path
 
 import yaml
 
-from src.agent import DEFAULT_ERROR_LIMIT, DEFAULT_LOOP_LIMIT, DEFAULT_MAX_STEPS, DEFAULT_PROMPT, Trajectory, run_task
+from src.agent import (
+    DEFAULT_ERROR_LIMIT,
+    DEFAULT_LOOP_LIMIT,
+    DEFAULT_MAX_STEPS,
+    DEFAULT_PROMPT,
+    Trajectory,
+    run_task,
+)
 from src.environment import load_board
 from src.models import ModelStopped, Prompt, check_config, load_prompt, make_model
 from src.tasks import DATA_DIR, board_path, load_tasks
@@ -197,12 +204,12 @@ def write_report(output_dir: Path, reference: bool = False) -> None:
         options = run["config"]["model"]
         temperature = options.get("temperature", 0)
         thinking = "saved" if any(t.get("thinking") for t in trajectories.values()) else "not returned by the service"
-        lines += [f"Effort: {options.get('reasoning_effort') or 'default of the service'}. Thinking text: {thinking}. "
-                  f"Temperature: {'default of the service' if temperature is None else temperature}. "
-                  f"Tool calls: native. Python: {run.get('python')}.", ""]
-        lines += [f"Time of all tasks: {metrics['total_time_s']:.0f} s. Input tokens: {metrics['total_input_tokens']}, "
-                  f"of these cached: {metrics['total_cached_input_tokens']}. Output tokens: {metrics['total_output_tokens']}. "
-                  f"Cost: {metrics['total_cost_usd']:.2f} USD.", ""]
+        lines += [(f"Effort: {options.get('reasoning_effort') or 'default of the service'}. Thinking text: {thinking}. "
+                   f"Temperature: {'default of the service' if temperature is None else temperature}. "
+                   f"Tool calls: native. Python: {run.get('python')}."), ""]
+        lines += [(f"Time of all tasks: {metrics['total_time_s']:.0f} s. Input tokens: {metrics['total_input_tokens']}, "
+                   f"of these cached: {metrics['total_cached_input_tokens']}. Output tokens: {metrics['total_output_tokens']}. "
+                   f"Cost: {metrics['total_cost_usd']:.2f} USD."), ""]
     else:
         lines += ["## What SFT and RL must teach", "", COMMENT_PLACEHOLDER, ""]
     why_title, why_rule = ("", "") if reference else (" Why |", "---|")
@@ -237,7 +244,7 @@ def fill_report(report: Path, why: Path, comment: Path, output: Path) -> None:
                  for line in Path(why).read_text(encoding="utf-8").splitlines() if line.strip())
     cells = {task: cell.strip() for task, cell in cells.items()}
     items = [line for line in Path(comment).read_text(encoding="utf-8").splitlines() if line.strip()]
-    rows = re.findall(r"^\| (test-\d+) \|.*\|  \| [01] \|$", text, flags=re.M)
+    rows = re.findall(r"^\| (test-\d+) \|.*\|  \| [01] \|$", text, flags=re.MULTILINE)
     problems = []
     if COMMENT_PLACEHOLDER not in text or not rows or text.count("\n| test-") != len(rows):
         problems.append("the report is not an unfilled report of write_report")
@@ -259,7 +266,7 @@ def fill_report(report: Path, why: Path, comment: Path, output: Path) -> None:
     if problems:
         raise ValueError("\n".join(problems))
     text = text.replace(COMMENT_PLACEHOLDER, "\n".join(items), 1)
-    text = re.sub(r"^(\| (test-\d+) \|.*\|)  (\| [01] \|)$", lambda m: f"{m[1]} {cells[m[2]]} {m[3]}", text, flags=re.M)
+    text = re.sub(r"^(\| (test-\d+) \|.*\|)  (\| [01] \|)$", lambda m: f"{m[1]} {cells[m[2]]} {m[3]}", text, flags=re.MULTILINE)
     Path(output).parent.mkdir(parents=True, exist_ok=True)
     Path(output).write_text(text, encoding="utf-8", newline="\n")
 

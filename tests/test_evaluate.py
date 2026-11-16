@@ -5,7 +5,14 @@ from pathlib import Path
 
 import pytest
 
-from src.evaluate import COMMENT_PLACEHOLDER, fill_report, load_config, main, merge, run_evaluation
+from src.evaluate import (
+    COMMENT_PLACEHOLDER,
+    fill_report,
+    load_config,
+    main,
+    merge,
+    run_evaluation,
+)
 from src.models import FAMILIES, ModelStopped, ScriptedModel
 from src.tasks import load_tasks, split_dir
 
