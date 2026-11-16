@@ -717,3 +717,19 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - A rollout that stops at the context limit does not go to the loss. The system prompt with the tools alone has 4000 to 5200 tokens.
 - The plan protects the runs against OOM: a sample length limit, a memory check before step 1 and a recovery in a step.
 - A comment in idm-pro-048 tells the SFT task about `src/rl/tokens.py`.
+
+### RL code (idm-pro-048)
+
+- Add the package `src/rl/` from the OpenSpec change `e3-rl-training`:
+  - `config.py`: the defaults of idm-pro-047, a stop on an unknown key, no test split in train mode;
+  - `tokens.py`: samples from the exact tokens of each turn, and `conversation_tokens` for SFT;
+  - `rollouts.py`: the reward and the group statistics, with the agent loop of the evaluation;
+  - `grpo.py`: the Dr. GRPO advantage and the DAPO loss with log-probabilities in chunks;
+  - `policy.py` and `engines.py`: the `vllm` engine and the `transformers` engine with two model copies;
+  - `checkpoint.py` and `train.py`: checkpoints, `--resume`, the deadline, the memory check, the measure mode.
+- The `transformers` backend of the model layer merges the LoRA adapters of `model.adapters`.
+- Remove `src/rl_probe.py`.
+- 32 new tests in `tests/test_rl.py`.
+- Smoke jobs 63 to 75: all six models complete. Job 69 found a fault: chunks of 1024 positions need several GB for the logits of Gemma 4. The fix uses chunks of 256 positions. Now Gemma 4 E4B fits 8192 tokens in the backward pass.
+- Acceptance jobs 77, 79, 81 and 83: all six models pass on the final code (see `jobs/JOBS.md`).
+- The summary of the RL results comes after the real RL runs (idm-pro-049 and later).
