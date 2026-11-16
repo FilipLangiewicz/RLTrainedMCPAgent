@@ -706,3 +706,14 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
   - vLLM and the trainer on separate GPUs for Bielik and Qwen, `transformers` on both GPUs for Gemma 4.
 - The models for RL are open. The team selects them after the second probe on the SFT models.
 - A comment in idm-pro-048 tells that the RL code must use these results.
+
+## 2026-11-16
+
+### Plan of the RL code (idm-pro-048)
+
+- Add the OpenSpec change `e3-rl-training` on the branch `41-e3-rl-code`. The implementation follows in a separate session.
+- The trainer is our own code, not the GRPO trainer of TRL. The loss must use the exact tokens of each turn, and TRL accepts one sequence for each rollout.
+- The agent loop does not change. Thus the RL rollouts and the evaluation use the same loop, prompt and parsers.
+- A rollout that stops at the context limit does not go to the loss. The system prompt with the tools alone has 4000 to 5200 tokens.
+- The plan protects the runs against OOM: a sample length limit, a memory check before step 1 and a recovery in a step.
+- A comment in idm-pro-048 tells the SFT task about `src/rl/tokens.py`.
