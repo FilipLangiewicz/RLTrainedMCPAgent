@@ -22,7 +22,7 @@ RL_DEFAULTS = {
     "learning_rate": 1e-5, "warmup_steps": 0, "weight_decay": 0.0, "max_grad_norm": 1.0,
     "lora_rank": 16, "lora_alpha": 32, "lora_dropout": 0.0,
     "loss_type": "dapo", "clip_low": 0.2, "clip_high": 0.28, "reward": "binary", "temperature": 1.0,
-    "max_sample_tokens": 8192, "max_context_tokens": None, "max_oom_per_step": 2, "logprob_chunk": 1024,
+    "max_sample_tokens": 8192, "max_context_tokens": None, "max_oom_per_step": 2, "logprob_chunk": 256,
     "save_every": 25, "keep_checkpoints": 2, "eval_every": 25, "eval_tasks": 40, "deadline_hours": 10.0,
     "memory_check": True, "loss_scale": 1024.0,
 }

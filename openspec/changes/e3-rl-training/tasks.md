@@ -42,14 +42,14 @@
 Local checks are only the short `pytest` tests. All checks with a model or with heavy work run on Kaggle. Each test runs on the train and the validation splits. Each test must take less than about 30 minutes. The job numbers are the next odd numbers. If a test fails, fix the code and run the same model again before the next model.
 
 - [x] 5.1 Add the job folder with `run.py` and the YAML configs. `run.py` clones the branch, installs `requirements-kaggle.txt`, removes torchao and makes the vLLM environment with a fixed version. Verify that the configs pass the config check locally.
-- [ ] 5.2 Bielik 1.5B, engine `vllm`: 3 steps, a validation, a checkpoint at each step, the final adapter. Then a second job continues from the checkpoint for 2 steps. Verify `metrics.jsonl`, `status.json: complete` and the start step of job 2.
-- [ ] 5.3 Bielik 1.5B: run the measure mode on 4 validation tasks. Run a short evaluation of the adapter of 5.2 with `model.adapters` on 4 validation tasks. Verify `metrics.json` of the evaluation and the group statistics.
-- [ ] 5.4 Gemma 4 E2B, engine `transformers` on two GPUs: the same test as 5.2 without the second job. Verify that both copies have the same LoRA weights after a step.
+- [x] 5.2 Bielik 1.5B, engine `vllm`: 3 steps, a validation, a checkpoint at each step, the final adapter. Then a second job continues from the checkpoint for 2 steps. Verify `metrics.jsonl`, `status.json: complete` and the start step of job 2.
+- [x] 5.3 Bielik 1.5B: run the measure mode on 4 validation tasks. Run a short evaluation of the adapter of 5.2 with `model.adapters` on 4 validation tasks. Verify `metrics.json` of the evaluation and the group statistics.
+- [x] 5.4 Gemma 4 E2B, engine `transformers` on two GPUs: the same test as 5.2 without the second job. Verify that both copies have the same LoRA weights after a step.
 - [ ] 5.5 Gemma 4 E4B, Bielik 4.5B and Qwen3.5-2B: the same test as 5.4 with their default engines. Verify the records and the peak GPU memory of each model. For Gemma 4 E4B, first run the memory check with `rl.max_sample_tokens: 8192`. Verify that the run stops before step 1 with the status `error`.
 - [ ] 5.6 Qwen3.5-4B, engine `vllm`: 2 tasks, a group of 4, a context limit of 8192 tokens, 2 steps. Verify the records.
 - [ ] 5.7 Acceptance: run 5.2 (with the second job), 5.4, 5.5 and 5.6 again on the final commit. The code is accepted only if all six models pass. Record each job in `jobs/JOBS.md`.
 
 ## 6. Documentation
 
-- [ ] 6.1 Add to `docs/RL_METHODS.md` a short note: the method of idm-pro-047 stays, the trainer is our own code, and the reason (design Decision 1). Verify the note against the STE rules.
+- [x] 6.1 Add to `docs/RL_METHODS.md` a short note: the method of idm-pro-047 stays, the trainer is our own code, and the reason (design Decision 1). Verify the note against the STE rules.
 - [ ] 6.2 Add the entries to `docs/WORKLOG.md` and the job rows to `jobs/JOBS.md`. Write a comment in idm-pro-048 with the result of the acceptance. Add a note: the summary of the RL results comes after the real runs.

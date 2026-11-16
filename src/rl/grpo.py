@@ -39,7 +39,8 @@ def _chunk_logprobs(hidden, weight, targets, softcap: float, temperature: float)
         logits = torch.tanh(logits / softcap) * softcap
     if temperature != 1.0:
         logits = logits / temperature
-    return torch.log_softmax(logits, -1).gather(-1, targets[:, None])[:, 0]
+    # The log-probability of one token needs only its logit and the logsumexp, not a full log_softmax tensor.
+    return logits.gather(-1, targets[:, None])[:, 0] - torch.logsumexp(logits, -1)
 
 
 def token_logprobs(hidden, weight, targets, chunk: int = 1024, softcap: float = 0.0, temperature: float = 1.0):

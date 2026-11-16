@@ -296,7 +296,7 @@ def memory_check(policy, length: int) -> dict:
         if not is_oom(e):
             raise
         raise MemoryCheckError(f"out of memory in the memory check with {length} tokens on {policy.device}: "
-                               f"lower rl.max_sample_tokens") from None
+                               f"lower rl.max_sample_tokens ({str(e)[:300]})") from None
     finally:
         policy.model.eval()
         for p in policy.parameters():

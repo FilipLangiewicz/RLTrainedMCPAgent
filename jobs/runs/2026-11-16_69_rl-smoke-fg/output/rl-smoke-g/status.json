@@ -1,0 +1,7 @@
+{
+  "status": "error",
+  "step": 0,
+  "time": "2026-11-16T19:10:30+00:00",
+  "error": "MemoryCheckError: out of memory in the memory check with 5376 tokens on cuda:0: lower rl.max_sample_tokens",
+  "traceback": "Traceback (most recent call last):\n  File \"/tmp/repo/src/rl/train.py\", line 628, in main\n    run[\"memory_check\"] = [memory_check(p, rl[\"max_sample_tokens\"]) for p in policies]\n                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/repo/src/rl/train.py\", line 298, in memory_check\n    raise MemoryCheckError(f\"out of memory in the memory check with {length} tokens on {policy.device}: \"\n                           f\"lower rl.max_sample_tokens\") from None\nMemoryCheckError: out of memory in the memory check with 5376 tokens on cuda:0: lower rl.max_sample_tokens\n"
+}

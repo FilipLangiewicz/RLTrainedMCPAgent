@@ -108,6 +108,12 @@ Layout C (vLLM generates, then sleeps, and two trainer copies use both GPUs) fai
 - Keep vLLM in a separate environment (it brings its own PyTorch). Use `--max-num-batched-tokens 4096` and 85 to 90% of the GPU memory for models with about 9 GB of weights.
 - Keep the PLE table of Gemma 4 in CPU memory in the trainer.
 
+### Trainer of the RL code (idm-pro-048)
+
+The method of idm-pro-047 stays: GRPO with the DAPO loss, the Dr. GRPO advantage, LoRA with rank 16 and the binary reward. Only the trainer changes. The trainer is our own code in `src/rl/`, not `GRPOTrainer` of TRL.
+
+The reason: the loss must use the exact tokens that the model sampled in each turn. The parser can change the text of a turn before the next prompt, for example after a Bielik call. Thus one rollout can need more than one sequence. `GRPOTrainer` accepts only one sequence for each rollout. `AsyncGRPOTrainer` of TRL 1.18 needs flash-attn3 and bf16, and a T4 has neither. The design of the OpenSpec change `e3-rl-training` (Decision 1) has the details.
+
 ## Main sources
 
 - DeepSeekMath (GRPO): https://arxiv.org/abs/2402.03300
