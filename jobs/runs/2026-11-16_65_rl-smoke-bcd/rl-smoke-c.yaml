@@ -1,0 +1,11 @@
+model:
+  family: bielik
+  path: /kaggle/input/idm-pro-bielik-1-5b-v3/transformers/base/1
+  adapters:
+  - output:rl-smoke-a/final
+rl:
+  mode: measure
+  split: validation
+  tasks: 4
+  group: 4
+  max_sample_tokens: 8192
