@@ -67,6 +67,21 @@ For each group of rollouts of one task, the advantage SHALL be the reward minus 
 - **WHEN** the gradient of a step has a value that is not finite
 - **THEN** the LoRA weights do not change, and the records show the event
 
+### Requirement: Memory limits
+No sample in the backward pass SHALL be longer than `rl.max_sample_tokens`. Before step 1, the run SHALL do one forward and backward pass with a sequence of this length. If this check gives an out-of-memory error, the run SHALL stop before step 1. An out-of-memory error of one sample in a step SHALL skip this sample. More than `rl.max_oom_per_step` such errors SHALL cancel the update of the step.
+
+#### Scenario: Limit too high for the GPU
+- **WHEN** the config gives `rl.max_sample_tokens: 8192` for Gemma 4 E4B
+- **THEN** the memory check fails, and `status.json` tells the user to lower `rl.max_sample_tokens`
+
+#### Scenario: One long sample
+- **WHEN** one sample of a step gives an out-of-memory error in the backward pass
+- **THEN** the step uses the gradients of the other samples, and the records count one error
+
+#### Scenario: Context and output larger than the sample limit
+- **WHEN** `rl.max_context_tokens` plus `model.max_new_tokens` is larger than `rl.max_sample_tokens`
+- **THEN** the config check stops the run before the first step
+
 ### Requirement: Generation engines
 The run SHALL support two engines. The engine `vllm` has a vLLM server on one GPU and the trainer on the other GPU. The engine `transformers` has one model copy on each GPU. The config SHALL select the engine. The two engines SHALL give the same interface to the rest of the run.
 
@@ -101,6 +116,12 @@ Every `rl.eval_every` steps, the run SHALL do one greedy rollout for each of `rl
 
 ### Requirement: Checkpoints and continuation
 The run SHALL write a checkpoint every `rl.save_every` steps. A checkpoint SHALL have the adapter, the optimizer state and the schedule state. It SHALL also have the step, the position in the task order and the random states. A run with `--resume` SHALL continue from a checkpoint. It SHALL stop if its config differs from the config of the checkpoint in a key other than the run length.
+
+The run SHALL keep the adapters of all checkpoints. It SHALL keep the optimizer state only in the last `rl.keep_checkpoints` checkpoints.
+
+#### Scenario: Adapters of a long run
+- **WHEN** a run of 200 steps writes a checkpoint every 25 steps
+- **THEN** the output has the adapters of all 8 checkpoints, and the optimizer state of the last 2
 
 #### Scenario: Two jobs
 - **WHEN** job 1 stops after step 25 and job 2 starts with `--resume` from the checkpoint of step 25

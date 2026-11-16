@@ -145,6 +145,29 @@ The model layer gets the same `model.adapters` setting (see the delta of `model-
 - For `gemma4`, the per-layer lookup tables (PLE) stay in CPU memory (as in the probe).
 - The Kaggle job removes torchao before the import of PEFT.
 
+Protection against an out-of-memory error (OOM) has four layers:
+
+1. **A length limit for each sample.** The probe measured the longest sequence that fits in one backward pass of a T4:
+
+   | Model | Weights | Peak at 8192 tokens | Limit of the probe |
+   |---|---|---|---|
+   | Bielik 1.5B | 3.0 GB | 5.3 GB | more than 12288 |
+   | Qwen3.5-2B | 3.5 GB | 7.3 GB | more than 12288 |
+   | Gemma 4 E2B (PLE in CPU) | 5.1 GB | 9.1 GB | more than 16384 |
+   | Bielik 4.5B | 7.8 GB | 14.1 GB | 8192 |
+   | Qwen3.5-4B | 8.9 GB | 12.8 GB | 8192 |
+   | Gemma 4 E4B (PLE in CPU) | 9.5 GB | out of memory | about 5500 |
+
+   `rl.max_sample_tokens` limits the length of a sample. A merged sample that is too long becomes shorter samples (one for each turn). A single turn that is too long does not go to the backward pass. The records count these turns. The config of each model gives a value below its limit, for example 4096 for Gemma 4 E4B. `rl.max_context_tokens` plus `model.max_new_tokens` must not be larger than `rl.max_sample_tokens`. The config check stops the run otherwise.
+
+2. **A memory check at the start.** Before step 1, the trainer does one forward and backward pass with a sequence of `rl.max_sample_tokens` tokens. Then it frees the gradients. If this pass fails, the run stops immediately with the status `error` and the message "lower rl.max_sample_tokens". Thus a wrong config costs minutes, not hours.
+
+3. **Recovery in a step.** If one sample gives an OOM in the backward pass, the trainer frees the memory and skips this sample. The gradients of the other samples stay. If more than `rl.max_oom_per_step` samples (default 2) fail in one step, the step does no update. The records count each OOM. With the `transformers` engine, an OOM in the generation stops this rollout, and its group does not go to the update. Thus an OOM does not give a false reward of 0.
+
+4. **The safe stop (Decision 9).** If the run fails in a way that recovery does not cover, it writes `status.json` and a checkpoint, and it exits with code 0.
+
+The vLLM server limits its own memory with `--gpu-memory-utilization` and its KV cache. A full KV cache makes requests wait, but it does not stop the server. The CPU memory of the `transformers` engine is a risk for Gemma 4, because each copy has a PLE table in CPU memory. The two copies share one PLE table, as in job 61. The records of each step have the peak GPU memory and the CPU memory.
+
 ### 9. Checkpoints and long runs
 
 A checkpoint is a folder `checkpoints/step-<N>/` in the output folder. It has:
@@ -155,9 +178,19 @@ A checkpoint is a folder `checkpoints/step-<N>/` in the output folder. It has:
 - the random states;
 - a hash of the config.
 
-The run writes a checkpoint every `rl.save_every` steps (default 25) and keeps the last `rl.keep_checkpoints` (default 2). The command `--resume <folder>` continues from a checkpoint. The run stops if the config differs from the config of the checkpoint. The settings of the run length (`rl.steps`, `rl.deadline_hours`) can differ.
+The run writes a checkpoint every `rl.save_every` steps (default 25). It keeps the adapters of all checkpoints, because they are small. It keeps the optimizer state only in the last `rl.keep_checkpoints` checkpoints (default 2). Only these checkpoints can continue a run.
 
-After `rl.deadline_hours` (default 11), no new step starts. The run writes a checkpoint and stops. The top level of the run catches each error. It writes the error into `status.json`, writes a checkpoint if possible and exits with code 0. Thus Kaggle keeps the output of a failed run.
+Sizes, from the trainable parameters of the probe (17 to 50 million):
+
+- one adapter in fp32: 70 to 200 MB;
+- one optimizer state (Adam): 140 to 400 MB;
+- 200 steps: 8 adapters and 2 optimizer states, at most about 2.5 GB.
+
+The output folder of Kaggle has about 20 GB. The merged weights for vLLM go to `/kaggle/temp`, not to the output folder.
+
+The command `--resume <folder>` continues from a checkpoint. The run stops if the config differs from the config of the checkpoint. The settings of the run length (`rl.steps`, `rl.deadline_hours`) can differ.
+
+After `rl.deadline_hours` (default 10), no new step starts. The run writes a checkpoint and stops. The top level of the run catches each error. It writes the error into `status.json`, writes a checkpoint if possible and exits with code 0. Thus Kaggle keeps the output of a failed run.
 
 A next job adds the output of the previous job as a kernel source and gives its last checkpoint to `--resume`.
 
@@ -212,7 +245,9 @@ Main keys of `rl` and their defaults:
 | `max_context_tokens` | 8192 | probe |
 | `save_every` | 25 | idm-pro-047 |
 | `eval_every` / `eval_tasks` | 25 / 40 | |
-| `deadline_hours` | 11 | Kaggle limit |
+| `deadline_hours` | 10 | Kaggle limit of 12 h, with a margin |
+| `max_sample_tokens` | 8192 | probe (see Decision 8) |
+| `max_oom_per_step` | 2 | |
 | `temperature` | 1.0 | probe |
 
 `loss_type` has only the value `dapo` in this change. The key exists so that a later variant does not change the config form.
@@ -235,6 +270,8 @@ Main keys of `rl` and their defaults:
 `src/rl_probe.py` goes away. Its vLLM server code, the T4 patch and the PLE code move to `src/rl/engines.py` and `src/rl/policy.py`.
 
 ### 15. Tests
+
+Local tests are only short `pytest` tests of pure functions. `AGENTS.md` asks for `pytest` before each merge, and these tests take seconds. All other checks run on Kaggle: GPU jobs for all parts with a model, CPU jobs for heavy checks without a GPU.
 
 Local tests (no model, no GPU):
 
