@@ -1,0 +1,16 @@
+model:
+  family: qwen3.5
+  path: /kaggle/input/idm-pro-qwen3-5-4b/transformers/base/1
+engine:
+  batched_tokens: 4096
+  gpu_memory: 0.9
+rl:
+  steps: 2
+  tasks_per_step: 2
+  group: 4
+  save_every: 1
+  keep_checkpoints: 2
+  eval_every: 2
+  eval_tasks: 2
+  deadline_hours: 1.0
+  max_sample_tokens: 8192

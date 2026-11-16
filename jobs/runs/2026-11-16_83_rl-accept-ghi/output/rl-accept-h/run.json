@@ -1,0 +1,87 @@
+{
+  "config": {
+    "model": {
+      "backend": "transformers",
+      "family": "bielik",
+      "path": "/kaggle/input/models/combainsidm/idm-pro-bielik-1-5b-v3/transformers/base/1/bielik-1.5b",
+      "adapters": [
+        "/kaggle/input/notebooks/combainsidm/rltrainedmcpagent-rl-accept-abc/rl-accept-a/final"
+      ],
+      "revision": null,
+      "thinking": false,
+      "dtype": "float16",
+      "max_new_tokens": 1024
+    },
+    "agent": {
+      "prompt": "v3",
+      "max_steps": 25,
+      "loop_limit": 3,
+      "error_limit": 5
+    },
+    "engine": {
+      "name": "vllm",
+      "overlap": true,
+      "concurrency": 64,
+      "port": 8000,
+      "gpu_memory": 0.85,
+      "max_seqs": 64,
+      "batched_tokens": null,
+      "patch": false,
+      "start_minutes": 30,
+      "merged_dir": "/kaggle/temp/merged"
+    },
+    "rl": {
+      "mode": "measure",
+      "split": "validation",
+      "eval_split": "validation",
+      "steps": 200,
+      "epochs": 1,
+      "tasks_per_step": 8,
+      "group": 4,
+      "tasks": 4,
+      "seed": 0,
+      "learning_rate": 1e-05,
+      "warmup_steps": 0,
+      "weight_decay": 0.0,
+      "max_grad_norm": 1.0,
+      "lora_rank": 16,
+      "lora_alpha": 32,
+      "lora_dropout": 0.0,
+      "loss_type": "dapo",
+      "clip_low": 0.2,
+      "clip_high": 0.28,
+      "reward": "binary",
+      "temperature": 1.0,
+      "max_sample_tokens": 8192,
+      "max_context_tokens": 8192,
+      "max_oom_per_step": 2,
+      "logprob_chunk": 256,
+      "save_every": 25,
+      "keep_checkpoints": 2,
+      "eval_every": 25,
+      "eval_tasks": 40,
+      "deadline_hours": 10.0,
+      "memory_check": true,
+      "loss_scale": 1024.0
+    }
+  },
+  "git_commit": "02a77a73413ba56bff4d74ccc03e34697d099b35",
+  "python": "3.13.16",
+  "torch": "2.11.0+cu130",
+  "transformers": "5.22.1",
+  "peft": "0.21.2",
+  "vllm": "0.33.0",
+  "gpus": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "resume": null,
+  "start": "2026-11-16T21:00:23+00:00",
+  "load_s": 10.2,
+  "engine": {
+    "vllm_start_s": 80.1,
+    "served_path": "/kaggle/temp/merged",
+    "max_context_tokens": 8192
+  },
+  "trainable_params": 0
+}

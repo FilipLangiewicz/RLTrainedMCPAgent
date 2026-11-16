@@ -1,0 +1,7 @@
+{
+  "status": "error",
+  "step": 0,
+  "time": "2026-11-16T20:18:55+00:00",
+  "error": "MemoryCheckError: out of memory in the memory check with 12288 tokens on cuda:0: lower rl.max_sample_tokens (CUDA out of memory. Tried to allocate 240.00 MiB. GPU 0 has a total capacity of 14.56 GiB of which 222.81 MiB is free. Including non-PyTorch memory, this process has 14.34 GiB memory in use. Of the allocated memory 14.14 GiB is allocated by PyTorch, and 80.84 MiB is reserved by PyTorch but unallocat)",
+  "traceback": "Traceback (most recent call last):\n  File \"/tmp/repo/src/rl/train.py\", line 628, in main\n    run[\"memory_check\"] = [memory_check(p, rl[\"max_sample_tokens\"]) for p in policies]\n                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/repo/src/rl/train.py\", line 298, in memory_check\n    raise MemoryCheckError(f\"out of memory in the memory check with {length} tokens on {policy.device}: \"\n                           f\"lower rl.max_sample_tokens ({str(e)[:300]})\") from None\nMemoryCheckError: out of memory in the memory check with 12288 tokens on cuda:0: lower rl.max_sample_tokens (CUDA out of memory. Tried to allocate 240.00 MiB. GPU 0 has a total capacity of 14.56 GiB of which 222.81 MiB is free. Including non-PyTorch memory, this process has 14.34 GiB memory in use. Of the allocated memory 14.14 GiB is allocated by PyTorch, and 80.84 MiB is reserved by PyTorch but unallocat)\n"
+}

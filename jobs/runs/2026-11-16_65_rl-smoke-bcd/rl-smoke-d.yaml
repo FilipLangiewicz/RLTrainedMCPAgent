@@ -1,0 +1,21 @@
+model:
+  backend: transformers
+  family: bielik
+  path: /kaggle/input/idm-pro-bielik-1-5b-v3/transformers/base/1
+  adapters:
+  - output:rl-smoke-a/final
+  dtype: float16
+  max_new_tokens: 1024
+agent:
+  prompt: v3
+  max_steps: 25
+  loop_limit: 3
+  error_limit: 5
+tasks:
+  split: validation
+  limit: null
+  ids:
+  - validation-046
+  - validation-007
+  - validation-015
+  - validation-101
