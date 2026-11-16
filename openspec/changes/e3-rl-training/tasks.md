@@ -2,7 +2,7 @@
 
 ## 1. Config and samples
 
-- [ ] 1.1 Add `src/rl/__init__.py` and `src/rl/config.py`: the sections `model`, `agent`, `engine` and `rl`, the defaults of design Decision 13, a stop on an unknown key, a stop on the split `test` in train mode. Also stop if `rl.max_context_tokens` plus `model.max_new_tokens` is larger than `rl.max_sample_tokens`. Verify with tests in `tests/test_rl.py`.
+- [ ] 1.1 Add `src/rl/__init__.py` and `src/rl/config.py`: the sections `model`, `agent`, `engine` and `rl`, the defaults of design Decision 13, a stop on an unknown key, a stop on the split `test` in train mode. Verify with tests in `tests/test_rl.py`.
 - [ ] 1.2 Add `src/rl/tokens.py`: the turn record, the samples with masks from the turns, and the conversation function for SFT. A merged sample longer than `rl.max_sample_tokens` becomes one sample for each turn. Verify with tests that use a small fake tokenizer: stable prefix, changed prefix, masks, the length limit.
 
 ## 2. Reward and loss
@@ -16,7 +16,7 @@
 - [ ] 3.2 Add `src/rl/policy.py`. It loads the trainer model in fp16 and merges the start adapters. It adds the new RL adapter and the gradient checkpoints. It keeps the PLE tables of `gemma4` in CPU memory. Move the PLE code from `src/rl_probe.py`. Verify the config of the RL adapter with a test that needs no model.
 - [ ] 3.3 Add `src/rl/engines.py` with these parts:
   - the engine interface;
-  - the model object for one rollout, which records the turns and checks `rl.max_context_tokens`;
+  - the model object for one rollout, which records the turns and checks `rl.max_context_tokens`. A rollout that stops at this limit does not go to the loss;
   - the `vllm` engine: server, T4 patch, adapter load, log-probabilities;
   - the `transformers` engine: two copies, sum of the LoRA gradients.
 
@@ -46,7 +46,7 @@ Local checks are only the short `pytest` tests. All checks with a model or with 
 - [ ] 5.3 Bielik 1.5B: run the measure mode on 4 validation tasks. Run a short evaluation of the adapter of 5.2 with `model.adapters` on 4 validation tasks. Verify `metrics.json` of the evaluation and the group statistics.
 - [ ] 5.4 Gemma 4 E2B, engine `transformers` on two GPUs: the same test as 5.2 without the second job. Verify that both copies have the same LoRA weights after a step.
 - [ ] 5.5 Gemma 4 E4B, Bielik 4.5B and Qwen3.5-2B: the same test as 5.4 with their default engines. Verify the records and the peak GPU memory of each model. For Gemma 4 E4B, first run the memory check with `rl.max_sample_tokens: 8192`. Verify that the run stops before step 1 with the status `error`.
-- [ ] 5.6 Qwen3.5-4B, engine `vllm`: 2 tasks, a group of 4, a context limit of 4096 tokens, 2 steps. Verify the records.
+- [ ] 5.6 Qwen3.5-4B, engine `vllm`: 2 tasks, a group of 4, a context limit of 8192 tokens, 2 steps. Verify the records.
 - [ ] 5.7 Acceptance: run 5.2 (with the second job), 5.4, 5.5 and 5.6 again on the final commit. The code is accepted only if all six models pass. Record each job in `jobs/JOBS.md`.
 
 ## 6. Documentation

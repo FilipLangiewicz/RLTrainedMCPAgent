@@ -72,7 +72,27 @@ The engine gives a new model object for each rollout. This object has the interf
 The limits of an RL run are settings of the run:
 
 - `agent.max_steps`, `agent.loop_limit` and `agent.error_limit` go to the agent loop. They can be tighter than in the evaluation.
-- `rl.max_context_tokens`: if a prompt is longer, the model object raises an error. The agent loop stops the rollout with the stop reason `error`. The rollout gets the reward 0. Its earlier turns stay in the batch.
+- `rl.max_context_tokens`: if a prompt is longer, the model object raises an error. The agent loop stops the rollout with the stop reason `error`.
+
+A rollout that stops at the context limit does not go to the loss, and its group uses only the other rollouts. This is the overlong filter of DAPO. A reward of 0 for such a rollout teaches the model to avoid long tasks, also when a long path is correct. Loops of the same call and series of errors have their own stop reasons, so they still get the reward 0.
+
+The probe gives the lengths of the prompts (estimates from the token counts of jobs 41 to 49):
+
+| Model | First prompt | Last prompt, median | Last prompt, 90% | Longest correct rollout |
+|---|---|---|---|---|
+| Bielik 1.5B | 4013 | 4470 | 4854 | no correct rollout |
+| Bielik 4.5B | 4016 | 4698 | 5117 | 4559 |
+| Gemma 4 E2B | 4408 | 4588 | 7026 | 7474 |
+| Gemma 4 E4B | 4403 | 4857 | 5682 | 5838 |
+| Qwen3.5-2B | 5184 | 5761 | 10015 | 11691 |
+| Qwen3.5-4B | 5192 | 6077 | 10199 | 13247 |
+
+The system prompt and the tools alone have 4000 to 5200 tokens. Thus a context limit must be well above 5200 tokens. The limit of each model is the backward limit of Decision 8. It covers all correct rollouts of the probe, with two exceptions:
+
+- Gemma 4 E4B (about 5500 tokens) cuts the longest 10% of its rollouts.
+- Qwen3.5-4B (8192 tokens) cuts its correct rollouts above 8192 tokens.
+
+For these two models, idm-pro-049 decides after the second probe. The rollouts after SFT can be shorter. If the cut is too large, two fixes are possible: one copy of the model on both GPUs, or a prompt part without gradients. The evaluation has no context limit.
 
 The evaluation configs do not have these settings. Thus the test set keeps its limits.
 
@@ -158,7 +178,7 @@ Protection against an out-of-memory error (OOM) has four layers:
    | Qwen3.5-4B | 8.9 GB | 12.8 GB | 8192 |
    | Gemma 4 E4B (PLE in CPU) | 9.5 GB | out of memory | about 5500 |
 
-   `rl.max_sample_tokens` limits the length of a sample. A merged sample that is too long becomes shorter samples (one for each turn). A single turn that is too long does not go to the backward pass. The records count these turns. The config of each model gives a value below its limit, for example 4096 for Gemma 4 E4B. `rl.max_context_tokens` plus `model.max_new_tokens` must not be larger than `rl.max_sample_tokens`. The config check stops the run otherwise.
+   `rl.max_sample_tokens` limits the length of a sample. A merged sample that is too long becomes shorter samples (one for each turn). A single turn that is too long does not go to the backward pass. The records count these turns. The config of each model gives a value below its limit. The default of `rl.max_context_tokens` is the value of `rl.max_sample_tokens`.
 
 2. **A memory check at the start.** Before step 1, the trainer does one forward and backward pass with a sequence of `rl.max_sample_tokens` tokens. Then it frees the gradients. If this pass fails, the run stops immediately with the status `error` and the message "lower rl.max_sample_tokens". Thus a wrong config costs minutes, not hours.
 
@@ -242,7 +262,7 @@ Main keys of `rl` and their defaults:
 | `loss_type` | `dapo` | idm-pro-047 |
 | `clip_low` / `clip_high` | 0.2 / 0.28 | DAPO |
 | `reward` | `binary` | idm-pro-047 |
-| `max_context_tokens` | 8192 | probe |
+| `max_context_tokens` | the value of `max_sample_tokens` | see Decision 3 |
 | `save_every` | 25 | idm-pro-047 |
 | `eval_every` / `eval_tasks` | 25 / 40 | |
 | `deadline_hours` | 10 | Kaggle limit of 12 h, with a margin |

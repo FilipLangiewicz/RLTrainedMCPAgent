@@ -27,11 +27,11 @@ An RL run SHALL use the agent loop and the tools of the evaluation. It SHALL als
 
 #### Scenario: Context limit
 - **WHEN** the prompt of a turn is longer than `rl.max_context_tokens`
-- **THEN** the rollout stops and gets the reward 0
-- **AND** its earlier turns stay in the batch
+- **THEN** the rollout stops and does not go to the loss
+- **AND** the advantage of its group uses only the other rollouts
 
 ### Requirement: Reward
-The reward of a rollout SHALL come from the verifier. In the variant `binary`, a correct task or a correct refusal SHALL give 1, and other results SHALL give 0. A write on the board in a refusal task SHALL give -0.2. The variant `partial` SHALL add 0.2 x F0.5 of the changes for an incorrect change task. A rollout that stops with an error SHALL get 0.
+The reward of a rollout SHALL come from the verifier. In the variant `binary`, a correct task or a correct refusal SHALL give 1, and other results SHALL give 0. A write on the board in a refusal task SHALL give -0.2. The variant `partial` SHALL add 0.2 x F0.5 of the changes for an incorrect change task. A rollout that stops with an error SHALL get 0. A rollout that stops at the context limit SHALL not get a reward, and it SHALL not go to the loss.
 
 #### Scenario: Write in a refusal task
 - **WHEN** the task is a refusal task and the rollout changes the board
@@ -78,9 +78,9 @@ No sample in the backward pass SHALL be longer than `rl.max_sample_tokens`. Befo
 - **WHEN** one sample of a step gives an out-of-memory error in the backward pass
 - **THEN** the step uses the gradients of the other samples, and the records count one error
 
-#### Scenario: Context and output larger than the sample limit
-- **WHEN** `rl.max_context_tokens` plus `model.max_new_tokens` is larger than `rl.max_sample_tokens`
-- **THEN** the config check stops the run before the first step
+#### Scenario: Turn longer than the sample limit
+- **WHEN** the prompt and the output of one turn have more tokens than `rl.max_sample_tokens`
+- **THEN** this turn does not go to the backward pass, and the records count it
 
 ### Requirement: Generation engines
 The run SHALL support two engines. The engine `vllm` has a vLLM server on one GPU and the trainer on the other GPU. The engine `transformers` has one model copy on each GPU. The config SHALL select the engine. The two engines SHALL give the same interface to the rest of the run.
