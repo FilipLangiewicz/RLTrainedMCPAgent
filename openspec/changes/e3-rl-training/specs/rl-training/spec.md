@@ -71,7 +71,7 @@ For each group of rollouts of one task, the advantage SHALL be the reward minus 
 No sample in the backward pass SHALL be longer than `rl.max_sample_tokens`. Before step 1, the run SHALL do one forward and backward pass with a sequence of this length. If this check gives an out-of-memory error, the run SHALL stop before step 1. An out-of-memory error of one sample in a step SHALL skip this sample. More than `rl.max_oom_per_step` such errors SHALL cancel the update of the step.
 
 #### Scenario: Limit too high for the GPU
-- **WHEN** the config gives `rl.max_sample_tokens: 8192` for Gemma 4 E4B
+- **WHEN** the config gives `rl.max_sample_tokens: 12288` for Gemma 4 E4B
 - **THEN** the memory check fails, and `status.json` tells the user to lower `rl.max_sample_tokens`
 
 #### Scenario: One long sample

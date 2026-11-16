@@ -53,7 +53,7 @@
       "max_sample_tokens": 5376,
       "max_context_tokens": 5376,
       "max_oom_per_step": 2,
-      "logprob_chunk": 1024,
+      "logprob_chunk": 256,
       "save_every": 1,
       "keep_checkpoints": 2,
       "eval_every": 3,
@@ -63,7 +63,7 @@
       "loss_scale": 1024.0
     }
   },
-  "git_commit": "ecb36102138c776ae12c8ae2e750a97dd12f7ff2",
+  "git_commit": "8a42bbb691a20e3f27121542d9784fd352382850",
   "python": "3.13.16",
   "torch": "2.11.0+cu130",
   "transformers": "5.22.1",
@@ -73,8 +73,22 @@
     "Tesla T4"
   ],
   "resume": null,
-  "start": "2026-11-16T19:09:26+00:00",
-  "load_s": 57.2,
+  "start": "2026-11-16T19:29:25+00:00",
+  "load_s": 56.9,
   "engine": {},
-  "trainable_params": 34881536
+  "trainable_params": 34881536,
+  "memory_check": [
+    {
+      "device": "cuda:0",
+      "tokens": 5376,
+      "peak_gb": 12.58,
+      "time_s": 19.3
+    },
+    {
+      "device": "cuda:1",
+      "tokens": 5376,
+      "peak_gb": 12.58,
+      "time_s": 17.6
+    }
+  ]
 }

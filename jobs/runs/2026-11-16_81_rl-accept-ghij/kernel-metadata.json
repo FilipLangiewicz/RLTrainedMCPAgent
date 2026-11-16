@@ -1,0 +1,20 @@
+{
+  "id": "combainsidm/rltrainedmcpagent-rl-accept-ghij",
+  "title": "rltrainedmcpagent-rl-accept-ghij",
+  "code_file": "run.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [
+    "combainsidm/rltrainedmcpagent-rl-accept-abc"
+  ],
+  "model_sources": [
+    "combainsidm/idm-pro-bielik-1-5b-v3/transformers/base/1",
+    "combainsidm/idm-pro-qwen3-5-4b/transformers/base/1"
+  ]
+}

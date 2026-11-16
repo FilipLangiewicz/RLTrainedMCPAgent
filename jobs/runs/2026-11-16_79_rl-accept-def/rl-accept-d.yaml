@@ -1,0 +1,13 @@
+model:
+  family: gemma4
+  path: /kaggle/input/idm-pro-gemma-4-e2b/transformers/base/1
+rl:
+  steps: 3
+  tasks_per_step: 2
+  group: 4
+  save_every: 1
+  keep_checkpoints: 2
+  eval_every: 3
+  eval_tasks: 4
+  deadline_hours: 1.0
+  max_sample_tokens: 12288
