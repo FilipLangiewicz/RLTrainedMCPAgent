@@ -1,4 +1,4 @@
-"""Acceptance of the RL code: Bielik 1.5B continues job 77, the measure mode and an evaluation with its adapter, then Qwen3.5-4B."""
+"""Acceptance of the RL code: Bielik 1.5B continues job 77, then the measure mode and an evaluation with its adapter."""
 import json
 import os
 import subprocess
@@ -9,9 +9,9 @@ from pathlib import Path
 REPO = "https://github.com/FilipLangiewicz/RLTrainedMCPAgent.git"
 BRANCH = "41-e3-rl-code"
 CLONE = "/tmp/repo"
-JOB = "2026-11-16_81_rl-accept-ghij"
+JOB = "2026-11-16_83_rl-accept-ghi"
 # Each stage is one command: an RL run ("train", optionally with "resume") or an evaluation ("evaluate").
-STAGES = [{"codename": "rl-accept-g", "kind": "train", "resume": "rl-accept-a", "vllm": True}, {"codename": "rl-accept-h", "kind": "train", "vllm": True}, {"codename": "rl-accept-i", "kind": "evaluate", "vllm": False}, {"codename": "rl-accept-j", "kind": "train", "vllm": True}]
+STAGES = [{"codename": "rl-accept-g", "kind": "train", "resume": "rl-accept-a", "vllm": True}, {"codename": "rl-accept-h", "kind": "train", "vllm": True}, {"codename": "rl-accept-i", "kind": "evaluate", "vllm": False}]
 VLLM = "vllm==0.33.0"  # The version of jobs 51 to 61.
 ENV = "/tmp/vllm-env"
 DEADLINE_S = int(2.5 * 3600)
