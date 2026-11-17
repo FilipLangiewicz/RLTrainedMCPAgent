@@ -646,6 +646,7 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 ### Report of E1
 
 - Branch `62-e1-report` adds `docs/E1_REPORT.md`. It is the document of the milestone E1.
-- The report describes the project, the system, the tools, the verifier, the test set, the models and the settings of a run.
+- The report describes the project, the system, the test set and the models.
 - It has the full content of `data/results/baseline/report-all-baseline-comparison.md`, with the figures.
-- It adds an error analysis of the local models from their reports, and the next steps for E2 and E3.
+- It adds a short list of the main errors of the local models.
+- A second version makes the report shorter. It has only general statistics of the test set.
