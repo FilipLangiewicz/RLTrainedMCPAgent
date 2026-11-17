@@ -44,11 +44,13 @@ All data is synthetic, with no personal data. The boards of the three sets belon
 | Tasks | 200 | 1000 | 120 |
 | Boards (Jira projects) | 5 | 25 | 3 |
 | Companies | 1 | 5 | 1 |
-| Issues | 200 | 976 | 117 |
+| Jira issues on the boards | 200 | 976 | 117 |
 | Authors of instructions | 16 | 75 | 9 |
 | `easy` tasks | 72 | 375 | 45 |
 | `multi_step` tasks | 103 | 500 | 60 |
 | `refusal` tasks | 25 | 125 | 15 |
+
+A task is one instruction for the model. A Jira issue is a ticket on a board. Each board has 40 tasks. The test boards have 40 issues each, and the other boards have 38 to 42 issues.
 
 - `easy`: the instruction gives the issue key, and the task has one operation.
 - `multi_step`: the model must find the issue with a search, or it must do more than one operation.
