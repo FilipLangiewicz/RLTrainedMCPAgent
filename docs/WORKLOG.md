@@ -649,4 +649,5 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - The report describes the project, the system, the test set and the models.
 - It has the full content of `data/results/baseline/report-all-baseline-comparison.md`, with the figures.
 - It adds a short list of the main errors of the local models.
-- A second version makes the report shorter. It has only general statistics of the test set.
+- A second version makes the report shorter. It has only general statistics of the data.
+- A third version adds the train set and the validation set to the statistics. The diagram now agrees with the code of the evaluation.

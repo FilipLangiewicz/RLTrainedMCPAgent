@@ -14,32 +14,51 @@ The research question: can a small local model, with fine-tuning for one task, c
 
 ```mermaid
 flowchart LR
-    I["Instruction"] --> A["Agent loop"]
-    A <--> M["Model"]
-    A <-->|"MCP: 14 tools"| S["Jira simulator"]
-    S -->|final board| V["Verifier"]
+    B["Board of the task<br/>(initial state)"] -->|copy| SIM["Jira simulator"]
+    P["System prompt"] --> A["Agent loop"]
+    I["Instruction"] --> A
+    A <-->|"messages,<br/>tool schemas"| M["Model"]
+    A <-->|"tool calls<br/>and results"| S["MCP server<br/>(14 tools)"]
+    S <--> SIM
+    B -->|initial board| V["Verifier"]
+    SIM -->|final board| V
     A -->|final answer| V
     X["Expected result"] --> V
-    V --> G["Grade"]
+    V --> G["correct /<br/>correct_refusal /<br/>incorrect"]
 ```
 
-- The simulator keeps one Jira project: issues, persons and sprints.
-- The 14 tools have the same contract as `mcp-atlassian`, an MCP server for real Jira. We tested all tools on a Jira Cloud site, and the simulator gives the same results.
-- The verifier is a program. It compares the final board and the answer with the expected result.
+1. Each task gets a new copy of its board in the simulator: a Jira project with issues, persons and sprints.
+2. The agent loop gives the system prompt, the instruction and the tool schemas to the model.
+3. The model sends tool calls. The MCP server runs them on the simulator and returns the results.
+4. The loop stops when the model gives an answer without a tool call, or when a limit stops it.
+5. The verifier compares the initial board with the final board. It checks these changes and the answer against the expected result.
 
-## Test set
+The 14 tools have the names, the schemas and the result format of `mcp-atlassian` 0.23.1, an MCP server for real Jira. We recorded 43 calls on a Jira Cloud site. A test runs these calls on the simulator and compares the results.
 
-| Property | Value |
-|---|---|
-| Tasks | 200 |
-| Boards | 5 Jira projects, 40 issues each |
-| Data | Synthetic, with no personal data |
-| `easy` tasks | 72 (the issue key is in the instruction, one operation) |
-| `multi_step` tasks | 103 (a search or more than one operation) |
-| `refusal` tasks | 25 (the correct answer is a refusal) |
-| Categories | 8: `query`, `update`, `log`, `create`, `sprint`, `bulk`, `workflow`, `refusal` |
+## Data
 
-Each task has an instruction and an expected result: the expected changes of the board, or the expected answer. A reference solution of each task passes the verifier. Both team members did a review of the tasks. The test set is frozen, and it is separate from the train data.
+All data is synthetic, with no personal data. The boards of the three sets belong to different invented companies. No board, instruction, issue or person occurs in two sets.
+
+| Property | Test | Train | Validation |
+|---|---|---|---|
+| Tasks | 200 | 1000 | 120 |
+| Boards (Jira projects) | 5 | 25 | 3 |
+| Companies | 1 | 5 | 1 |
+| Issues | 200 | 976 | 117 |
+| Authors of instructions | 16 | 75 | 9 |
+| `easy` tasks | 72 | 375 | 45 |
+| `multi_step` tasks | 103 | 500 | 60 |
+| `refusal` tasks | 25 | 125 | 15 |
+
+- `easy`: the instruction gives the issue key, and the task has one operation.
+- `multi_step`: the model must find the issue with a search, or it must do more than one operation.
+- `refusal`: no tool can do the request, or the request is not clear. The correct answer is a refusal.
+
+Each task has an instruction, an expected result and a reference solution. The reference solution of each task passes the verifier. All sets have the same 8 categories.
+
+- The test set is for the measurement only. Both team members did a review of it, and it is frozen.
+- The train set is for SFT and RL.
+- The validation set is for the selection of the training settings.
 
 ## Models and settings
 
