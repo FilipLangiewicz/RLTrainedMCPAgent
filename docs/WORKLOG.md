@@ -640,3 +640,12 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - Fix `test_checksum_finds_a_change`. With `core.autocrlf`, the checkout has CRLF line ends, and the test added a second CR.
 - `docs/TASKS.md` describes the new checks.
 - 621 tests pass. 5 tests of `claude_cli` in `tests/test_models.py` fail also on `main`.
+
+## 2026-11-18
+
+### Report of E1
+
+- Branch `62-e1-report` adds `docs/E1_REPORT.md`. It is the document of the milestone E1.
+- The report describes the project, the system, the tools, the verifier, the test set, the models and the settings of a run.
+- It has the full content of `data/results/baseline/report-all-baseline-comparison.md`, with the figures.
+- It adds an error analysis of the local models from their reports, and the next steps for E2 and E3.
