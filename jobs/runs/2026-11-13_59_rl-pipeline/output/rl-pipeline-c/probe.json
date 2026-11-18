@@ -1,0 +1,125 @@
+{
+  "config": {
+    "agent": {
+      "error_limit": 5,
+      "loop_limit": 3,
+      "max_steps": 25,
+      "prompt": "v3"
+    },
+    "model": {
+      "backend": "transformers",
+      "dtype": "float16",
+      "family": "qwen3.5",
+      "max_new_tokens": 1024,
+      "path": "/kaggle/input/models/combainsidm/idm-pro-qwen3-5-2b/transformers/base/1/qwen3.5-2b",
+      "temperature": 1.0,
+      "thinking": false
+    },
+    "probe": {
+      "concurrency": 64,
+      "engine": "pipeline",
+      "group": 8,
+      "logprob_samples": 24,
+      "lora_rank": 16,
+      "offload_ple": false,
+      "split": "test",
+      "steps": 3,
+      "tasks": 16,
+      "tasks_per_step": 8,
+      "vllm": {
+        "max_len": 16384,
+        "max_seqs": 64,
+        "mem": 0.85,
+        "patch": false,
+        "port": 8000,
+        "start_minutes": 30,
+        "tp": 1
+      }
+    }
+  },
+  "probe": {
+    "split": "test",
+    "tasks": 16,
+    "group": 8,
+    "rollout_minutes": 60,
+    "batch_sizes": [
+      1,
+      4,
+      8
+    ],
+    "new_tokens": 128,
+    "lora_rank": 16,
+    "lengths": [
+      2048,
+      4096,
+      8192,
+      12288
+    ],
+    "seed": 0,
+    "concurrency": 64,
+    "engine": "pipeline",
+    "logprob_samples": 24,
+    "offload_ple": false,
+    "steps": 3,
+    "tasks_per_step": 8,
+    "vllm": {
+      "max_len": 16384,
+      "max_seqs": 64,
+      "mem": 0.85,
+      "patch": false,
+      "port": 8000,
+      "start_minutes": 30,
+      "tp": 1
+    }
+  },
+  "trainable_params": 10911744,
+  "server_start_s": 650.1,
+  "adapter_v0": {
+    "save_s": 0.12,
+    "load_s": 0.06,
+    "size_mb": 41.7
+  },
+  "logprob_check_lora": {
+    "samples": 24,
+    "tokens": 770,
+    "mean_abs_logprob_diff": 0.00209,
+    "p99_abs_logprob_diff": 0.02098,
+    "max_abs_logprob_diff": 0.02738
+  },
+  "steps": [
+    {
+      "step": 0,
+      "generate_s": 575.1,
+      "rollouts": 64,
+      "success": 0.031
+    },
+    {
+      "step": 1,
+      "wall_s": 1493.3,
+      "generate_s": 547.6,
+      "train": {
+        "sequences": 61,
+        "out_of_memory": 3,
+        "tokens": 506137,
+        "time_s": 1493.1
+      },
+      "save_s": 0.1,
+      "swap_s": 0.06,
+      "rollouts": 64
+    },
+    {
+      "step": 2,
+      "wall_s": 1928.6,
+      "generate_s": 694.4,
+      "train": {
+        "sequences": 63,
+        "out_of_memory": 1,
+        "tokens": 535018,
+        "time_s": 1928.4
+      },
+      "save_s": 0.11,
+      "swap_s": 0.06,
+      "rollouts": 64
+    }
+  ]
+}

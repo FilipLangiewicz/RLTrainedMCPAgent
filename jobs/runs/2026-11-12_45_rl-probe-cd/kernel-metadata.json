@@ -1,0 +1,15 @@
+{
+  "id": "combainsidm/rltrainedmcpagent-rl-probe-cd",
+  "title": "rltrainedmcpagent-rl-probe-cd",
+  "code_file": "run.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": ["combainsidm/idm-pro-qwen3-5-2b/transformers/base/1","combainsidm/idm-pro-qwen3-5-4b/transformers/base/1"]
+}

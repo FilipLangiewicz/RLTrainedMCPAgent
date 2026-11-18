@@ -1,0 +1,19 @@
+{
+  "id": "combainsidm/rltrainedmcpagent-rl-smoke-bcd",
+  "title": "rltrainedmcpagent-rl-smoke-bcd",
+  "code_file": "run.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [
+    "combainsidm/rltrainedmcpagent-rl-smoke-a"
+  ],
+  "model_sources": [
+    "combainsidm/idm-pro-bielik-1-5b-v3/transformers/base/1"
+  ]
+}

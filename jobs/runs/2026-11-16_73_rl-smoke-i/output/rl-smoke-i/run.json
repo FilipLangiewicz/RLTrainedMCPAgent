@@ -1,0 +1,93 @@
+{
+  "config": {
+    "model": {
+      "backend": "transformers",
+      "family": "qwen3.5",
+      "path": "/kaggle/input/models/combainsidm/idm-pro-qwen3-5-2b/transformers/base/1/qwen3.5-2b",
+      "adapters": [],
+      "revision": null,
+      "thinking": false,
+      "dtype": "float16",
+      "max_new_tokens": 1024
+    },
+    "agent": {
+      "prompt": "v3",
+      "max_steps": 25,
+      "loop_limit": 3,
+      "error_limit": 5
+    },
+    "engine": {
+      "name": "vllm",
+      "overlap": true,
+      "concurrency": 64,
+      "port": 8000,
+      "gpu_memory": 0.85,
+      "max_seqs": 64,
+      "batched_tokens": 4096,
+      "patch": false,
+      "start_minutes": 30,
+      "merged_dir": "/kaggle/temp/merged"
+    },
+    "rl": {
+      "mode": "train",
+      "split": "train",
+      "eval_split": "validation",
+      "steps": 3,
+      "epochs": 1,
+      "tasks_per_step": 2,
+      "group": 4,
+      "tasks": 16,
+      "seed": 0,
+      "learning_rate": 1e-05,
+      "warmup_steps": 0,
+      "weight_decay": 0.0,
+      "max_grad_norm": 1.0,
+      "lora_rank": 16,
+      "lora_alpha": 32,
+      "lora_dropout": 0.0,
+      "loss_type": "dapo",
+      "clip_low": 0.2,
+      "clip_high": 0.28,
+      "reward": "binary",
+      "temperature": 1.0,
+      "max_sample_tokens": 12288,
+      "max_context_tokens": 12288,
+      "max_oom_per_step": 2,
+      "logprob_chunk": 1024,
+      "save_every": 1,
+      "keep_checkpoints": 2,
+      "eval_every": 3,
+      "eval_tasks": 4,
+      "deadline_hours": 1.0,
+      "memory_check": true,
+      "loss_scale": 1024.0
+    }
+  },
+  "git_commit": "ecb36102138c776ae12c8ae2e750a97dd12f7ff2",
+  "python": "3.13.16",
+  "torch": "2.11.0+cu130",
+  "transformers": "5.22.1",
+  "peft": "0.21.2",
+  "vllm": "0.33.0",
+  "gpus": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "resume": null,
+  "start": "2026-11-16T19:12:13+00:00",
+  "load_s": 11.8,
+  "engine": {
+    "vllm_start_s": 660.1,
+    "served_path": "/kaggle/input/models/combainsidm/idm-pro-qwen3-5-2b/transformers/base/1/qwen3.5-2b",
+    "max_context_tokens": 12288
+  },
+  "trainable_params": 10911744,
+  "memory_check": [
+    {
+      "device": "cuda:1",
+      "tokens": 12288,
+      "peak_gb": 8.48,
+      "time_s": 51.5
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "n": 4,
+  "score": 0.25,
+  "correct": 0.25,
+  "correct_refusal": 0.0,
+  "by_difficulty": {
+    "easy": {
+      "n": 2,
+      "score": 0.5,
+      "correct": 0.5,
+      "correct_refusal": 0.0
+    },
+    "multi_step": {
+      "n": 2,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    }
+  },
+  "by_category": {
+    "create": {
+      "n": 1,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "log": {
+      "n": 1,
+      "score": 1.0,
+      "correct": 1.0,
+      "correct_refusal": 0.0
+    },
+    "query": {
+      "n": 1,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    },
+    "update": {
+      "n": 1,
+      "score": 0.0,
+      "correct": 0.0,
+      "correct_refusal": 0.0
+    }
+  },
+  "mean_steps": 2.75,
+  "mean_invalid_calls": 1.5,
+  "mean_tool_errors": 0.5,
+  "mean_input_tokens": 11800.75,
+  "mean_output_tokens": 468.0,
+  "mean_time_s": 18.809,
+  "total_time_s": 75.234,
+  "total_input_tokens": 47203,
+  "total_cached_input_tokens": 0,
+  "total_output_tokens": 1872,
+  "total_cost_usd": 0.0,
+  "errors": 0,
+  "health": {
+    "empty_answers": 0,
+    "garbled_tasks": 0,
+    "no_tool_call_tasks": 0,
+    "invalid_call_tasks": 2,
+    "max_steps_tasks": 0,
+    "loop_same_tasks": 1,
+    "loop_errors_tasks": 0
+  },
+  "run": {
+    "codename": "rl-smoke-d",
+    "config": {
+      "agent": {
+        "error_limit": 5,
+        "loop_limit": 3,
+        "max_steps": 25,
+        "prompt": "v3"
+      },
+      "model": {
+        "thinking": false,
+        "adapters": [
+          "/kaggle/input/notebooks/combainsidm/rltrainedmcpagent-rl-smoke-a/rl-smoke-a/final"
+        ],
+        "backend": "transformers",
+        "dtype": "float16",
+        "family": "bielik",
+        "max_new_tokens": 1024,
+        "path": "/kaggle/input/models/combainsidm/idm-pro-bielik-1-5b-v3/transformers/base/1/bielik-1.5b"
+      },
+      "tasks": {
+        "ids": [
+          "validation-046",
+          "validation-007",
+          "validation-015",
+          "validation-101"
+        ],
+        "limit": null,
+        "split": "validation"
+      }
+    },
+    "model": {
+      "backend": "transformers",
+      "family": "bielik",
+      "path": "/kaggle/input/models/combainsidm/idm-pro-bielik-1-5b-v3/transformers/base/1/bielik-1.5b",
+      "revision": null,
+      "thinking": false,
+      "adapters": [
+        "/kaggle/input/notebooks/combainsidm/rltrainedmcpagent-rl-smoke-a/rl-smoke-a/final"
+      ]
+    },
+    "prompt_version": "v3",
+    "prompt_sha256": "ab031c43c307ad829f18abfd871c903d4f9f2fe0b68725162a8c8ddc1fd75a06",
+    "git_commit": "ecb36102138c776ae12c8ae2e750a97dd12f7ff2",
+    "python": "3.13.16",
+    "torch": "2.11.0+cu130",
+    "transformers": "5.22.1",
+    "device": "Tesla T4",
+    "date": "2026-11-16T17:54:28+00:00",
+    "wall_time_s": 75.253,
+    "shards": [
+      "0/1"
+    ]
+  }
+}

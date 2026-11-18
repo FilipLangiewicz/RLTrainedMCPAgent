@@ -472,6 +472,51 @@ def load_weights(path: str, revision: str | None, dtype: str, device_map: str | 
     return tokenizer, model
 
 
+def model_fingerprint(path: str | Path) -> dict | None:
+    """The shape of a base model from its config.json. Two models with the same shape accept the same adapters."""
+    file = Path(path) / "config.json"
+    if not file.is_file():
+        return None
+    config = json.loads(file.read_text(encoding="utf-8"))
+    text = config.get("text_config") or config
+    return {"model_type": config.get("model_type"), "hidden_size": text.get("hidden_size"),
+            "num_hidden_layers": text.get("num_hidden_layers"), "vocab_size": text.get("vocab_size")}
+
+
+def adapter_base(adapter: str | Path) -> dict | None:
+    """The fingerprint of the base model of a LoRA adapter, or None if the adapter does not tell it."""
+    folder = Path(adapter)
+    if (folder / "base_model.json").is_file():
+        return json.loads((folder / "base_model.json").read_text(encoding="utf-8"))
+    base = json.loads((folder / "adapter_config.json").read_text(encoding="utf-8")).get("base_model_name_or_path")
+    return model_fingerprint(base) if base and Path(base).is_dir() else None
+
+
+def check_adapters(path: str, adapters: list[str]) -> None:
+    """Stop before the first task if an adapter does not exist or belongs to another base model."""
+    base = model_fingerprint(path)
+    for adapter in adapters:
+        if not (Path(adapter) / "adapter_config.json").is_file():
+            raise ValueError(f"The adapter {adapter} has no adapter_config.json.")
+        other = adapter_base(adapter)
+        if base is not None and other is not None and other != base:
+            raise ValueError(f"The adapter {adapter} belongs to another base model ({other}), not to {path} ({base}).")
+
+
+def merge_adapters(model, adapters: list[str]):
+    """Merge the LoRA adapters into the base weights, in the order of the list."""
+    if not adapters:
+        return model
+    from peft import PeftModel
+
+    for adapter in adapters:
+        try:
+            model = PeftModel.from_pretrained(model, adapter).merge_and_unload()
+        except (RuntimeError, ValueError, KeyError) as e:
+            raise ValueError(f"The adapter {adapter} does not fit the model: {e}") from e
+    return model
+
+
 def avoid_gqa_in_sdpa() -> None:
     """On a GPU older than Ampere (for example a T4), repeat the key and value heads before the attention.
 
@@ -490,15 +535,18 @@ class LocalModel(Model):
     backend = "transformers"
 
     def __init__(self, family: str, path: str, revision: str | None = None, thinking: bool = False,
-                 dtype: str = "bfloat16", max_new_tokens: int = 1024, device: str | None = None):
+                 dtype: str = "bfloat16", max_new_tokens: int = 1024, device: str | None = None,
+                 temperature: float = 0.0, adapters: list[str] | None = None):
         import torch
 
         super().__init__(get_family(family), path, revision, thinking)
-        self.torch, self.max_new_tokens = torch, max_new_tokens
+        self.adapters = list(adapters or [])
+        self.torch, self.max_new_tokens, self.temperature = torch, max_new_tokens, temperature
         # The device "auto" splits a model that is too large for one GPU over all GPUs.
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
         avoid_gqa_in_sdpa()
         self.tokenizer, self.model = load_weights(path, revision, dtype, "auto" if self.device == "auto" else None)
+        self.model = merge_adapters(self.model, self.adapters)
         if self.device == "auto":
             self.device = self.model.device
         else:
@@ -506,13 +554,18 @@ class LocalModel(Model):
         self.model.eval()
         self.revision = revision or getattr(self.model.config, "_commit_hash", None)
 
+    def describe(self) -> dict:
+        return {**super().describe(), "adapters": self.adapters}
+
     def generate(self, messages, tools):
         self.steps += 1
         prompt = self.family.render(self.tokenizer, messages, tools, self.thinking)
         inputs = self.tokenizer(prompt, return_tensors="pt", add_special_tokens=False).to(self.device)
+        # RL needs samples from the full distribution. Thus a temperature above 0 disables top-k and top-p.
+        sampling = ({"do_sample": True, "temperature": self.temperature, "top_p": 1.0, "top_k": 0} if self.temperature > 0
+                    else {"do_sample": False, "temperature": None, "top_p": None, "top_k": None})
         with self.torch.no_grad():
-            output = self.model.generate(**inputs, max_new_tokens=self.max_new_tokens, do_sample=False,
-                                         temperature=None, top_p=None, top_k=None)
+            output = self.model.generate(**inputs, max_new_tokens=self.max_new_tokens, **sampling)
         new = output[0, inputs["input_ids"].shape[1]:]
         # The tool-call marks of some families are special tokens, so the decode keeps them.
         text = self.tokenizer.decode(new, skip_special_tokens=False)
@@ -726,6 +779,10 @@ def check_config(cfg: dict) -> dict:
     cfg = {"thinking": False, **cfg}
     if cfg.get("backend") not in BACKENDS:
         raise ValueError(f"Unknown backend '{cfg.get('backend')}'. Use {', '.join(BACKENDS)}.")
+    if cfg.get("adapters"):
+        if cfg["backend"] != "transformers":
+            raise ValueError("Only the backend transformers accepts model.adapters.")
+        check_adapters(cfg["path"], cfg["adapters"])
     if cfg.get("family") is not None or cfg["backend"] not in ("openai", "claude_cli"):
         family = get_family(cfg.get("family"))
         if cfg["thinking"] and not family.has_thinking:
@@ -742,7 +799,8 @@ def make_model(cfg: dict, outputs=None) -> Model:
     if backend == "transformers":
         return LocalModel(cfg["family"], cfg["path"], revision=cfg.get("revision"), thinking=cfg["thinking"],
                           dtype=cfg.get("dtype", "bfloat16"), max_new_tokens=cfg.get("max_new_tokens", 1024),
-                          device=cfg.get("device"))
+                          device=cfg.get("device"), temperature=cfg.get("temperature", 0.0),
+                          adapters=cfg.get("adapters"))
     if backend == "claude_cli":
         return ClaudeCliModel(cfg["path"], effort=cfg.get("effort", "medium"))
     return ApiModel(cfg["path"], base_url=cfg.get("base_url"), api_key_env=cfg.get("api_key_env", "OPENAI_API_KEY"),

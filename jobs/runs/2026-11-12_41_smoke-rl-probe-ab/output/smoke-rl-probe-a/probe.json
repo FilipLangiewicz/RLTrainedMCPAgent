@@ -1,0 +1,166 @@
+{
+  "config": {
+    "agent": {
+      "error_limit": 5,
+      "loop_limit": 3,
+      "max_steps": 25,
+      "prompt": "v3"
+    },
+    "model": {
+      "backend": "transformers",
+      "dtype": "float16",
+      "family": "gemma4",
+      "max_new_tokens": 1024,
+      "path": "/kaggle/input/models/combainsidm/idm-pro-gemma-4-e2b/transformers/base/1/gemma-4-e2b",
+      "revision": "4adf15748de9e1a0097b6274cee9c15836c41c37",
+      "temperature": 1.0,
+      "thinking": false
+    },
+    "probe": {
+      "batch_sizes": [
+        1,
+        4
+      ],
+      "group": 2,
+      "lengths": [
+        2048,
+        4096
+      ],
+      "lora_rank": 16,
+      "new_tokens": 32,
+      "rollout_minutes": 5,
+      "split": "test",
+      "tasks": 2
+    }
+  },
+  "probe": {
+    "split": "test",
+    "tasks": 2,
+    "group": 2,
+    "rollout_minutes": 5,
+    "batch_sizes": [
+      1,
+      4
+    ],
+    "new_tokens": 32,
+    "lora_rank": 16,
+    "lengths": [
+      2048,
+      4096
+    ],
+    "seed": 0
+  },
+  "torch": "2.11.0+cu130",
+  "gpu": "Tesla T4",
+  "load_s": 45.4,
+  "weights_gb": 9.51,
+  "generation": {
+    "batches": [
+      {
+        "batch": 1,
+        "prompt_tokens": 4451,
+        "new_tokens": 32,
+        "time_s": 4.05,
+        "tokens_per_s": 7.9,
+        "peak_gb": 10.14
+      },
+      {
+        "batch": 4,
+        "prompt_tokens": 4451,
+        "new_tokens": 32,
+        "time_s": 9.83,
+        "tokens_per_s": 13.0,
+        "peak_gb": 11.96
+      }
+    ],
+    "mismatch": {
+      "tokens": 32,
+      "mean_abs_logprob_diff": 0.00192,
+      "max_abs_logprob_diff": 0.02197,
+      "ratio_min": 0.9832,
+      "ratio_max": 1.0222
+    }
+  },
+  "rollouts": {
+    "tasks": 2,
+    "complete_groups": 2,
+    "rollouts": 4,
+    "sampled_pass1": 0.5,
+    "pass_at_group": 0.5,
+    "groups_with_signal": 0.0,
+    "groups_all_zero": 0.5,
+    "groups_all_one": 0.5,
+    "groups_with_partial_signal_only": 0.0,
+    "reward_by_category": {
+      "query": 0.0,
+      "update": 1.0
+    },
+    "rollout_time_s": {
+      "mean": 6.8,
+      "median": 7.961,
+      "max": 8.023
+    },
+    "output_tokens_mean": 53.5,
+    "input_tokens_mean": 6946.0,
+    "stop_reasons": {
+      "answer": 4
+    }
+  },
+  "rollout_minutes_used": 0.8,
+  "backward": {
+    "lora_rank": 16,
+    "trainable_params": 26333184,
+    "all_params": 5130630688,
+    "trainable_share": 0.00513,
+    "real": [
+      {
+        "tokens": 4499,
+        "trained_tokens": 48,
+        "time_s": 9.96,
+        "peak_gb": 11.53,
+        "loss": 0.7449,
+        "grad_norm": 15.5047,
+        "finite": true
+      },
+      {
+        "tokens": 5031,
+        "trained_tokens": 54,
+        "time_s": 11.35,
+        "peak_gb": 11.76,
+        "loss": 0.3206,
+        "grad_norm": 11.0509,
+        "finite": true
+      },
+      {
+        "tokens": 5032,
+        "trained_tokens": 55,
+        "time_s": 11.35,
+        "peak_gb": 11.76,
+        "loss": 0.1551,
+        "grad_norm": 8.5585,
+        "finite": true
+      }
+    ],
+    "ladder": [
+      {
+        "tokens": 2048,
+        "trained_tokens": 300,
+        "time_s": 3.47,
+        "peak_gb": 11.28,
+        "loss": 2.9187,
+        "grad_norm": 62.3821,
+        "finite": true
+      },
+      {
+        "tokens": 4096,
+        "trained_tokens": 300,
+        "time_s": 8.58,
+        "peak_gb": 11.63,
+        "loss": 2.3719,
+        "grad_norm": 59.232,
+        "finite": true
+      }
+    ]
+  },
+  "total_s": 141.8
+}

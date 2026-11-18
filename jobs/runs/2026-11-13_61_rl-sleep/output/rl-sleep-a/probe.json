@@ -1,0 +1,79 @@
+{
+  "config": {
+    "agent": {
+      "error_limit": 5,
+      "loop_limit": 3,
+      "max_steps": 25,
+      "prompt": "v3"
+    },
+    "model": {
+      "backend": "transformers",
+      "dtype": "float16",
+      "family": "gemma4",
+      "max_new_tokens": 1024,
+      "path": "/kaggle/input/models/combainsidm/idm-pro-gemma-4-e2b/transformers/base/1/gemma-4-e2b",
+      "temperature": 1.0,
+      "thinking": false
+    },
+    "probe": {
+      "concurrency": 64,
+      "engine": "sleep",
+      "group": 8,
+      "logprob_samples": 24,
+      "lora_rank": 16,
+      "offload_ple": true,
+      "split": "test",
+      "steps": 3,
+      "tasks": 16,
+      "tasks_per_step": 8,
+      "vllm": {
+        "batched_tokens": 4096,
+        "max_len": 16384,
+        "max_seqs": 64,
+        "mem": 0.85,
+        "patch": true,
+        "port": 8000,
+        "start_minutes": 30,
+        "tp": 1
+      }
+    }
+  },
+  "probe": {
+    "split": "test",
+    "tasks": 16,
+    "group": 8,
+    "rollout_minutes": 60,
+    "batch_sizes": [
+      1,
+      4,
+      8
+    ],
+    "new_tokens": 128,
+    "lora_rank": 16,
+    "lengths": [
+      2048,
+      4096,
+      8192,
+      12288
+    ],
+    "seed": 0,
+    "concurrency": 64,
+    "engine": "sleep",
+    "logprob_samples": 24,
+    "offload_ple": true,
+    "steps": 3,
+    "tasks_per_step": 8,
+    "vllm": {
+      "batched_tokens": 4096,
+      "max_len": 16384,
+      "max_seqs": 64,
+      "mem": 0.85,
+      "patch": true,
+      "port": 8000,
+      "start_minutes": 30,
+      "tp": 1
+    }
+  },
+  "server_start_s": 360.1,
+  "error": "Traceback (most recent call last):\n  File \"/tmp/repo/src/rl_probe.py\", line 785, in main_sleep\n    post_json(url + \"/sleep?level=1\", {})\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/repo/src/rl_probe.py\", line 564, in post_json\n    with urllib.request.urlopen(req, timeout=600) as r:\n         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.13/urllib/request.py\", line 189, in urlopen\n    return opener.open(url, data, timeout)\n           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.13/urllib/request.py\", line 489, in open\n    response = self._open(req, data)\nTimeoutError: timed out\n"
+}
