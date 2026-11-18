@@ -733,3 +733,14 @@ All six models completed 200 tasks with the hard limits. No task has more than 2
 - Smoke jobs 63 to 75: all six models complete. Job 69 found a fault: chunks of 1024 positions need several GB for the logits of Gemma 4. The fix uses chunks of 256 positions. Now Gemma 4 E4B fits 8192 tokens in the backward pass.
 - Acceptance jobs 77, 79, 81 and 83: all six models pass on the final code (see `jobs/JOBS.md`).
 - The summary of the RL results comes after the real RL runs (idm-pro-049 and later).
+
+## 2026-11-18
+
+### Report of E1
+
+- Branch `62-e1-report` adds `docs/E1_REPORT.md`. It is the document of the milestone E1.
+- The report describes the project, the system, the test set and the models.
+- It has the full content of `data/results/baseline/report-all-baseline-comparison.md`, with the figures.
+- It adds a short list of the main errors of the local models.
+- A second version makes the report shorter. It has only general statistics of the data.
+- A third version adds the train set and the validation set to the statistics. The diagram now agrees with the code of the evaluation.
